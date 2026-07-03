@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CalcSnaps – Free Online Calculators for Everyday Needs</title>
+    <meta name="description" content="Free online calculators: Pain & Suffering, Productivity, Aggregate, Golf Club Length, Dog Heat Cycle, Venmo Fee. Simple, fast, no signup.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="CalcSnaps – Free Online Calculators for Everyday Needs">
+    <meta property="og:description" content="Free online calculators: Pain & Suffering, Productivity, Aggregate, Golf Club Length, Dog Heat Cycle, Venmo Fee. Simple, fast, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com">
+    <meta property="og:site_name" content="CalcSnaps">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "CalcSnaps",
+        "url": "https://calcsnaps.com",
+        "description": "Free online calculators for unique needs: Pain & Suffering, Productivity, Golf, Dog Heat Cycle, Venmo fees."
+    }
+    </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            text-decoration: none;
+            color: #0f172a;
+        }
+        
+        .logo span {
+            color: #8b5cf6;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .nav a {
+            color: #1e293b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        
+        .nav a:hover {
+            color: #8b5cf6;
+        }
+        
+        .nav a.active {
+            color: #8b5cf6;
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 32px;
+            margin: 24px 0 48px;
+            padding: 64px 48px;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: #a78bfa;
+            margin-bottom: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #c084fc, #fbbf24);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero .tagline {
+            font-size: 20px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== CALCULATOR GRID ===== */
+        .calc-section {
+            margin: 48px 0 64px;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            color: #64748b;
+            margin-bottom: 40px;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+        
+        .calc-card {
+            background: white;
+            border-radius: 24px;
+            padding: 28px;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .calc-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            border-color: #c084fc;
+        }
+        
+        .calc-icon {
+            font-size: 44px;
+            margin-bottom: 20px;
+        }
+        
+        .calc-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        
+        .calc-card p {
+            color: #64748b;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .calc-badge {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #8b5cf6;
+        }
+        
+        /* ===== VIEW ALL BUTTON ===== */
+        .view-all-wrap {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .btn-view-all {
+            display: inline-block;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+        }
+        
+        .btn-view-all:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+        
+        /* ===== VALUE PROPOSITION ===== */
+        .value-prop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 48px 0 64px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 32px 24px;
+            background: white;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .value-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .value-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #0a0f1a;
+            border-radius: 24px;
+            padding: 40px 32px 24px;
+            margin: 64px 0 24px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .footer-col p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 4px 0;
+            transition: color 0.2s;
+        }
+        
+        .footer-col a:hover {
+            color: #8b5cf6;
+        }
+        
+        .footer-col .about-link {
+            color: #8b5cf6;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        
+        .footer-col .about-link:hover {
+            color: #a78bfa;
+        }
+        
+        /* Social Icons */
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        
+        .footer-social a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+        
+        .footer-social a:hover {
+            color: #8b5cf6;
+        }
+        
+        /* Footer Bottom - Center */
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            color: #64748b;
+            font-size: 13px;
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 24px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .tagline {
+                font-size: 16px;
+            }
+            .value-prop {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 26px;
+            }
+            .calc-grid {
+                gap: 16px;
+            }
+            .btn-view-all {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .nav {
+                justify-content: center;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav {
+                gap: 12px;
+            }
+            .nav a {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/" class="active">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+        
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="hero-badge">⚡ Instant • Free • No Signup</div>
+            <h1>
+                <span class="gradient-text">Unique Calculators</span><br>
+                for Everyday Needs
+            </h1>
+            <p class="tagline">From productivity to pet care — tools designed to simplify your life.</p>
+        </section>
+        
+        <!-- ===== CALCULATOR GRID ===== -->
+        <section class="calc-section">
+            <h2 class="section-title">🧮 Featured Calculators</h2>
+            <p class="section-subtitle">Our most popular free calculators</p>
+            
+            <div class="calc-grid">
+                <a href="/pain-suffering-calculator" class="calc-card">
+                    <div class="calc-icon">⚖️</div>
+                    <h3>Pain & Suffering Calculator</h3>
+                    <p>Estimate compensation for pain and suffering in personal injury cases.</p>
+                    <span class="calc-badge">Legal • Damages</span>
+                </a>
+                
+                <a href="/productivity-calculator" class="calc-card">
+                    <div class="calc-icon">📈</div>
+                    <h3>Productivity Calculator</h3>
+                    <p>Measure your efficiency, track focus time, and optimize your workflow.</p>
+                    <span class="calc-badge">Work • Time Management</span>
+                </a>
+                
+                <a href="/uk-aggregate-calculator" class="calc-card">
+                    <div class="calc-icon">🔢</div>
+                    <h3>Aggregate Calculator</h3>
+                    <p>Calculate total sums, averages, and combined values from multiple inputs.</p>
+                    <span class="calc-badge">Math • Statistics</span>
+                </a>
+                
+                <a href="/golf-club-length-calculator" class="calc-card">
+                    <div class="calc-icon">🏌️</div>
+                    <h3>Golf Club Length Calculator</h3>
+                    <p>Find your ideal golf club length based on height and wrist-to-floor measurement.</p>
+                    <span class="calc-badge">Sports • Golf</span>
+                </a>
+                
+                <a href="/dog-heat-cycle-calculator" class="calc-card">
+                    <div class="calc-icon">🐕</div>
+                    <h3>Dog Heat Cycle Calculator</h3>
+                    <p>Track and predict your dog's heat cycles for better breeding or care planning.</p>
+                    <span class="calc-badge">Pet Care • Breeding</span>
+                </a>
+                
+                <a href="/venmo-fee-calculator" class="calc-card">
+                    <div class="calc-icon">💸</div>
+                    <h3>Venmo Fee Calculator</h3>
+                    <p>Calculate Venmo transaction fees for business or personal payments.</p>
+                    <span class="calc-badge">Finance • Payment</span>
+                </a>
+            </div>
+            
+            <!-- View All Button -->
+            <div class="view-all-wrap">
+                <a href="/all-calculators" class="btn-view-all">
+                    🔍 View All Calculators →
+                </a>
+            </div>
+        </section>
+        
+        <!-- ===== VALUE PROPOSITION ===== -->
+        <section class="value-prop">
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h4>Lightning Fast</h4>
+                <p>Instant calculations. No waiting, no reloads.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h4>100% Free</h4>
+                <p>No hidden fees, no premium tiers. Always free.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h4>Privacy First</h4>
+                <p>No tracking, no signup. Your data stays yours.</p>
+            </div>
+        </section>
+        
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <!-- Column 1: Brand -->
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap — fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                
+                <!-- Column 3: Popular Calculators -->
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                    <a href="/productivity-calculator">Productivity</a>
+                    <a href="/uk-aggregate-calculator">Aggregate</a>
+                    <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+                </div>
+                
+                <!-- Column 4: Legal -->
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom - Center -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
