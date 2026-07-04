@@ -1,0 +1,1871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- ===== CALCULATOR META TAGS ===== -->
+    <title>Pain & Suffering Calculator | Free Injury Settlement Estimate | CalcSnaps</title>
+    <meta name="description" content="Free pain and suffering calculator for personal injury claims. Get instant settlement estimates based on medical costs, state multipliers, and fault percentage. No signup required.">
+    <meta name="keywords" content="pain and suffering calculator, injury settlement calculator, personal injury claim, accident compensation, settlement estimate, car accident settlement">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/pain-suffering-calculator">
+    
+    <!-- ===== CALCULATOR OPEN GRAPH ===== -->
+    <meta property="og:title" content="Pain & Suffering Calculator | Free Injury Settlement Estimate | CalcSnaps">
+    <meta property="og:description" content="Free pain and suffering calculator for personal injury claims. Get instant settlement estimates.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/pain-suffering-calculator">
+    
+    <!-- ===== CALCULATOR SCHEMA ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Pain & Suffering Calculator",
+        "description": "Free personal injury settlement estimator",
+        "url": "https://calcsnaps.com/pain-suffering-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <!-- ===== ARTICLE META TAGS ===== -->
+    <meta name="description" content="Complete guide to pain and suffering calculation with formulas, state multipliers, and settlement strategies. Learn how to calculate your injury claim value.">
+    <meta name="keywords" content="pain and suffering calculator, injury settlement, personal injury claim, pain and suffering formula, non-economic damages, compensation calculation">
+    <meta property="og:title" content="Complete Guide to Pain and Suffering Calculation | CalcSnaps">
+    <meta property="og:description" content="Learn how pain and suffering is calculated with state multipliers, formulas, and settlement strategies.">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://calcsnaps.com/pain-suffering-guide">
+    
+    <!-- ===== ARTICLE FAQ SCHEMA ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do they figure out pain and suffering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "They typically use the multiplier method (medical expenses × severity multiplier) or per diem method (daily rate × recovery days), adjusted for state laws and specific circumstances of your case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is compensation calculated for pain and suffering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Compensation calculation combines your economic damages (medical bills, lost wages) with a multiplier based on injury severity, then adjusts for factors like state laws, shared fault, and future suffering."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the formula for pain and suffering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pain and suffering is usually calculated using the multiplier method (medical expenses × 1.5–5) or the per diem method (daily pain value × recovery days)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does one calculate pain and suffering?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It is calculated by evaluating medical costs, injury severity, recovery time, and emotional distress using accepted legal methods."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is pain and suffering hard to prove?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, because it is subjective, but strong medical records, pain journals, and therapy notes make it easier to prove."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- ===== GLOBAL CSS (TUM KHUD LINK KAROGE) ===== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ===== CALCULATOR + ARTICLE CSS (MERGE) ===== -->
+    <style>
+        /* ===== CALCULATOR CSS ===== */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --secondary: #fbbf24;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --danger: #ef4444;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.5;
+        }
+        
+        .calc-page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .calculator-card {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .calc-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 32px 30px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .calc-header h1 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+        
+        .calc-header .subtitle {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ffffff !important;
+        }
+        
+        .calc-badge {
+            background: rgba(139, 92, 246, 0.2);
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 13px;
+            display: inline-block;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #ffffff !important;
+        }
+        
+        .calc-features {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .calc-features span {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #ffffff !important;
+        }
+        
+        .calc-content {
+            padding: 30px;
+        }
+        
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .step-dot {
+            width: 36px;
+            height: 36px;
+            background: #e2e8f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: #64748b;
+            transition: all 0.3s;
+        }
+        
+        .step-dot.active {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .step-dot.completed {
+            background: var(--success);
+            color: white;
+        }
+        
+        .step {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            font-size: 16px;
+            transition: all 0.2s;
+            background: white;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        .hint-text {
+            display: block;
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 6px;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            -webkit-appearance: none;
+            padding: 0;
+        }
+        
+        input[type="range"]:focus {
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 12px;
+            font-size: 16px;
+        }
+        
+        .emoji-scale {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .emoji {
+            flex: 1;
+            text-align: center;
+            padding: 12px 8px;
+            background: var(--light);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .emoji:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+        }
+        
+        .emoji.selected {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .emoji span {
+            font-size: 28px;
+            display: block;
+        }
+        
+        .emoji small {
+            font-size: 11px;
+            color: var(--gray);
+        }
+        
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 16px 0;
+        }
+        
+        .state-card {
+            background: var(--light);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .state-card:hover {
+            border-color: var(--primary);
+        }
+        
+        .state-card.selected {
+            background: rgba(139, 92, 246, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .fault-container {
+            background: #fef9e3;
+            border: 2px solid var(--secondary);
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .fault-container.show {
+            display: block;
+        }
+        
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            width: 100%;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #e2e8f0;
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .navigation .btn {
+            flex: 1;
+        }
+        
+        .result-container {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+            border-radius: 24px;
+            padding: 24px;
+            margin: 20px 0;
+            display: none;
+            border: 2px solid #d1fae5;
+        }
+        
+        .result-amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--success);
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .calculation-explanation {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 20px 0;
+            font-size: 14px;
+            color: #0369a1;
+        }
+        
+        .calculation-formula {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 13px;
+            margin-top: 8px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .breakdown {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .breakdown-item.total {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--success);
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .breakdown-item.reduction {
+            color: #dc2626;
+            background: #fee2e2;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 5px 0;
+        }
+        
+        .breakdown-item.state-multiplier {
+            color: #2563eb;
+            background: #dbeafe;
+            border-radius: 6px;
+            padding: 8px 12px;
+            margin: 5px 0;
+        }
+        
+        .disclaimer {
+            background: #fef9e3;
+            padding: 16px;
+            border-radius: 16px;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #92400e;
+            text-align: center;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .catastrophic-warning {
+            background: #fee2e2;
+            border-left: 4px solid var(--danger);
+            padding: 16px;
+            border-radius: 16px;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .catastrophic-warning.show {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .calc-page {
+                padding: 16px;
+            }
+            .calc-header {
+                padding: 24px 20px;
+            }
+            .calc-header h1 {
+                font-size: 24px;
+            }
+            .calc-content {
+                padding: 20px;
+            }
+            .step-title {
+                font-size: 20px;
+            }
+            .state-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .emoji-scale {
+                flex-wrap: wrap;
+            }
+            .emoji {
+                min-width: 60px;
+            }
+            .result-amount {
+                font-size: 36px;
+            }
+            .navigation {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .state-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            .state-card {
+                font-size: 12px;
+                padding: 8px;
+            }
+            .step-dot {
+                width: 32px;
+                height: 32px;
+                font-size: 12px;
+            }
+        }
+        
+        /* ===== ARTICLE CSS ===== */
+        .article-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .article-title {
+            font-size: 36px;
+            color: #1a202c;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid #8b5cf6;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .content-section {
+            margin-bottom: 40px;
+        }
+        
+        .article-content h2 {
+            color: #2d3748;
+            font-size: 28px;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .article-content h3 {
+            color: #4a5568;
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+        }
+        
+        .article-content h4 {
+            color: #718096;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 15px 0 15px 30px;
+        }
+        
+        .article-content li {
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+        
+        .warning-box {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .success-box {
+            background: #f0fff4;
+            border-left: 4px solid #48bb78;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .calculation-example {
+            background: #edf2f7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 15px;
+            border: 1px solid #cbd5e0;
+        }
+        
+        .formula {
+            background: rgba(139, 92, 246, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            border: 1px solid #fbbf24;
+        }
+        
+        .state-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .state-table th {
+            background: #0f172a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .state-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .state-table tr:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        .state-table tr:hover {
+            background: #edf2f7;
+        }
+        
+        .injury-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .injury-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .injury-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .injury-card h4 {
+            color: #2d3748;
+            margin-top: 0;
+        }
+        
+        .injury-range {
+            color: #8b5cf6;
+            font-weight: bold;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .steps-container {
+            counter-reset: step-counter;
+            margin: 30px 0;
+        }
+        
+        .article-step {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+        }
+        
+        .article-step::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: #8b5cf6;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+        
+        .faq-question {
+            color: #2d3748;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: #8b5cf6;
+        }
+        
+        .faq-answer {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .factors-box {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .factors-box h4 {
+            color: #2d3748;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .factor-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+        
+        .factor-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .calc-cta {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .calc-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .calc-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+            display: block;
+        }
+        
+        .calc-cta a span {
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        
+        .related-links {
+            background: #f1f5f9;
+            border-radius: 20px;
+            padding: 28px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .related-links h4 {
+            color: #0f172a;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .related-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .related-grid a {
+            color: #8b5cf6;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .related-grid a:hover {
+            background: #8b5cf6;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-link {
+            background: #fbbf24;
+            color: #0f172a !important;
+            font-weight: bold;
+        }
+        
+        .calculator-link:hover {
+            background: #f59e0b !important;
+            color: #0f172a !important;
+        }
+        
+        .disclaimer-box {
+            background: #fff7ed;
+            border: 2px solid #fbbf24;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .disclaimer-box h4 {
+            color: #c2410c;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .disclaimer-box p {
+            color: #c2410c;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .article-container {
+                margin: 20px 10px;
+                padding: 20px;
+                border-radius: 15px;
+            }
+            .article-title {
+                font-size: 28px;
+            }
+            .article-content h2 {
+                font-size: 24px;
+            }
+            .article-content h3 {
+                font-size: 20px;
+            }
+            .state-table {
+                font-size: 14px;
+            }
+            .injury-grid {
+                grid-template-columns: 1fr;
+            }
+            .article-step {
+                padding-left: 45px;
+            }
+            .article-step::before {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            .calculation-example {
+                font-size: 14px;
+                padding: 15px;
+            }
+            .formula {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .related-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .related-grid a {
+                width: 100%;
+                text-align: center;
+            }
+            .calc-cta a {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 24px;
+            }
+            .article-content h2 {
+                font-size: 22px;
+            }
+            .article-content h3 {
+                font-size: 18px;
+            }
+            .factors-box {
+                padding: 15px;
+            }
+        }
+        
+        @media print {
+            .article-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+            .calc-cta, .related-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== HEADER (HOMEPAGE WALA) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/" class="active">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        
+        <!-- ===== CALCULATOR ===== -->
+        <div id="calculator-section">
+            <div class="calc-page">
+                <div class="calculator-card">
+                    <div class="calc-header">
+                        <div class="calc-badge">⚡ Free • No Signup • Instant</div>
+                        <h1>Pain & Suffering Calculator</h1>
+                        <p class="subtitle">Estimate your personal injury claim value in 2 minutes</p>
+                        <div class="calc-features">
+                            <span>✓ State-Specific</span>
+                            <span>✓ Fault Adjustment</span>
+                            <span>✓ Industry Formula</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-content">
+                        <div class="step-indicator" id="stepIndicator">
+                            <div class="step-dot" data-step="1">1</div>
+                            <div class="step-dot" data-step="2">2</div>
+                            <div class="step-dot" data-step="3">3</div>
+                            <div class="step-dot" data-step="4">4</div>
+                            <div class="step-dot" data-step="5">5</div>
+                        </div>
+                        
+                        <!-- Step 1 -->
+                        <div class="step active" id="step1">
+                            <h2 class="step-title">Accident Details</h2>
+                            <div class="form-group">
+                                <label>Accident Type</label>
+                                <select id="accidentType">
+                                    <option value="">Select accident type</option>
+                                    <option value="car">Car Accident</option>
+                                    <option value="truck">Truck Accident</option>
+                                    <option value="motorcycle">Motorcycle Accident</option>
+                                    <option value="slip">Slip & Fall</option>
+                                    <option value="work">Workplace Injury</option>
+                                    <option value="medical">Medical Malpractice</option>
+                                </select>
+                                <span class="hint-text">Different accident types may have different settlement ranges</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Your State</label>
+                                <div class="state-grid" id="stateGrid">
+                                    <div class="state-card" data-state="california">California</div>
+                                    <div class="state-card" data-state="texas">Texas</div>
+                                    <div class="state-card" data-state="florida">Florida</div>
+                                    <div class="state-card" data-state="newyork">New York</div>
+                                    <div class="state-card" data-state="illinois">Illinois</div>
+                                    <div class="state-card" data-state="pennsylvania">Pennsylvania</div>
+                                    <div class="state-card" data-state="ohio">Ohio</div>
+                                    <div class="state-card" data-state="georgia">Georgia</div>
+                                    <div class="state-card" data-state="other">Other State</div>
+                                </div>
+                                <span class="hint-text">State laws affect settlement values due to different liability rules</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Fault Status</label>
+                                <select id="fault">
+                                    <option value="">Select fault status</option>
+                                    <option value="other">Other Party 100% at Fault</option>
+                                    <option value="shared">Shared Fault</option>
+                                    <option value="myself">I was at Fault</option>
+                                </select>
+                                <span class="hint-text">Fault percentage directly impacts your final settlement amount</span>
+                            </div>
+                            <div class="fault-container" id="faultContainer">
+                                <label>Your Fault Percentage</label>
+                                <input type="range" id="faultSlider" min="0" max="100" value="0">
+                                <div class="slider-value" id="faultValue">0%</div>
+                                <span class="hint-text">In most states, if you're more than 50% at fault, you may not recover damages</span>
+                            </div>
+                            <button class="btn" id="nextToStep2">Continue →</button>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="step" id="step2">
+                            <h2 class="step-title">Financial Losses</h2>
+                            <div class="form-group">
+                                <label>Medical Bills ($)</label>
+                                <input type="number" id="medicalBills" placeholder="Total medical expenses">
+                                <span class="hint-text">Include hospital bills, medication, physical therapy, future medical costs</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Lost Income ($)</label>
+                                <input type="number" id="lostIncome" placeholder="Lost wages, salary">
+                                <span class="hint-text">Salary, bonuses, missed work days, lost earning capacity</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Other Expenses ($)</label>
+                                <input type="number" id="otherExpenses" placeholder="Travel, care, property damage">
+                                <span class="hint-text">Transportation to appointments, home care, damaged property</span>
+                            </div>
+                            <div class="navigation">
+                                <button class="btn btn-secondary" id="backToStep1">← Back</button>
+                                <button class="btn" id="nextToStep3">Continue →</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="step" id="step3">
+                            <h2 class="step-title">Injury Severity</h2>
+                            <div class="form-group">
+                                <label>Injury Type</label>
+                                <select id="injurySeverity">
+                                    <option value="minor">Minor - Bruises, small cuts</option>
+                                    <option value="moderate">Moderate - Sprains, fractures</option>
+                                    <option value="serious">Serious - Broken bones, surgery</option>
+                                    <option value="severe">Severe - Head trauma, back injury</option>
+                                    <option value="catastrophic">Catastrophic - Permanent disability</option>
+                                </select>
+                                <span class="hint-text">More severe injuries typically result in higher multipliers</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Recovery Time (months)</label>
+                                <input type="number" id="recoveryTime" placeholder="Estimated recovery duration">
+                                <span class="hint-text">Longer recovery times increase pain and suffering compensation</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Permanent Effects</label>
+                                <select id="permanentEffects">
+                                    <option value="none">No permanent effects</option>
+                                    <option value="minor">Minor scarring</option>
+                                    <option value="moderate">Moderate permanent limitation</option>
+                                    <option value="severe">Severe permanent disability</option>
+                                </select>
+                                <span class="hint-text">Permanent injuries significantly increase claim value</span>
+                            </div>
+                            <div class="navigation">
+                                <button class="btn btn-secondary" id="backToStep2">← Back</button>
+                                <button class="btn" id="nextToStep4">Continue →</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="step" id="step4">
+                            <h2 class="step-title">Pain Assessment</h2>
+                            <div class="form-group">
+                                <label>Physical Pain Level (1-10)</label>
+                                <input type="range" id="physicalPain" min="1" max="10" value="5">
+                                <div class="slider-value" id="physicalPainValue">5/10 - Moderate</div>
+                                <span class="hint-text">1 = no pain, 10 = worst pain imaginable</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Emotional & Mental Impact</label>
+                                <div class="emoji-scale" id="mentalStress">
+                                    <div class="emoji" data-value="1" data-desc="Minimal">😊<br><small>Minimal</small></div>
+                                    <div class="emoji" data-value="3" data-desc="Mild">😐<br><small>Mild</small></div>
+                                    <div class="emoji" data-value="5" data-desc="Moderate">😢<br><small>Moderate</small></div>
+                                    <div class="emoji" data-value="8" data-desc="Severe">😫<br><small>Severe</small></div>
+                                    <div class="emoji" data-value="10" data-desc="Extreme">🤕<br><small>Extreme</small></div>
+                                </div>
+                                <span class="hint-text">Anxiety, depression, PTSD, and emotional distress affect compensation</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Impact on Daily Life</label>
+                                <select id="lifeImpact">
+                                    <option value="1">Mild - Minor inconvenience</option>
+                                    <option value="2">Moderate - Affects daily activities</option>
+                                    <option value="3">Severe - Cannot perform daily tasks</option>
+                                    <option value="4">Extreme - Complete lifestyle change</option>
+                                </select>
+                                <span class="hint-text">How has the injury affected your ability to live normally?</span>
+                            </div>
+                            <div class="navigation">
+                                <button class="btn btn-secondary" id="backToStep3">← Back</button>
+                                <button class="btn" id="nextToStep5">Calculate Claim →</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 5 -->
+                        <div class="step" id="step5">
+                            <h2 class="step-title">Your Estimate</h2>
+                            <div class="result-container" id="resultContainer">
+                                <div class="result-amount" id="finalAmount">$0</div>
+                                <div class="calculation-explanation" id="calculationExplanation">
+                                    <h4>📊 How Your Claim Was Calculated:</h4>
+                                    <div class="calculation-formula" id="formulaDisplay">Loading calculation formula...</div>
+                                    <small>This calculation follows the industry-standard multiplier method for pain & suffering claims.</small>
+                                </div>
+                                <div class="breakdown" id="breakdown">
+                                    <h4 style="margin-bottom: 16px; color: #1e293b;">Claim Breakdown:</h4>
+                                    <div class="breakdown-item"><span>Medical Expenses:</span><span id="medicalBreakdown">$0</span></div>
+                                    <div class="breakdown-item"><span>Lost Income:</span><span id="incomeBreakdown">$0</span></div>
+                                    <div class="breakdown-item"><span>Other Damages:</span><span id="otherBreakdown">$0</span></div>
+                                    <div class="breakdown-item" id="painSufferingItem"><span>Pain & Suffering (<span id="painMultiplierText">1.0x</span>):</span><span id="painBreakdown">$0</span></div>
+                                    <div class="breakdown-item state-multiplier" id="stateMultiplierItem" style="display: none;"><span>State Factor (<span id="stateMultiplierText">1.0x</span>):</span><span id="stateMultiplierAmount">+ $0</span></div>
+                                    <div class="breakdown-item reduction" id="faultReductionItem" style="display: none;"><span>Fault Reduction (<span id="faultPercentageDisplay">0%</span>):</span><span id="faultReductionAmount">- $0</span></div>
+                                    <div class="breakdown-item total"><span>Total Estimated Claim:</span><span id="totalBreakdown">$0</span></div>
+                                </div>
+                                <div class="catastrophic-warning" id="catastrophicWarning">
+                                    <strong>⚠️ Catastrophic Injury</strong><br>Your injury is classified as catastrophic. Consult a qualified attorney for accurate assessment.
+                                </div>
+                                <div style="background: #fef3c7; padding: 16px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #fbbf24;">
+                                    <strong style="color: #92400e;">💡 Important Legal Notice</strong><br>
+                                    <small style="color: #92400e;">This estimate is based on your inputs and typical settlement ranges. Actual amounts may vary. Consult with a qualified attorney for precise case evaluation.</small>
+                                </div>
+                                <button class="btn" id="resetBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">🔄 Calculate Another Claim</button>
+                            </div>
+                            <div class="navigation">
+                                <button class="btn btn-secondary" id="backToStep4">← Back</button>
+                                <button class="btn" id="calculateBtn">Calculate Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <strong>⚠️ Disclaimer:</strong> This tool provides estimates only. Not legal advice. Consult with a qualified attorney for your specific case.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== ARTICLE ===== -->
+        <div class="article-container">
+            <header class="article-header">
+                <h1 class="article-title">Complete Guide to Pain and Suffering Calculation</h1>
+                <div class="highlight-box">
+                    <p><strong>Key Takeaway:</strong> Pain and suffering compensation can be 3-5 times your medical bills. Understanding how it's calculated helps you avoid accepting low settlement offers from insurance companies.</p>
+                </div>
+            </header>
+            
+            <article class="article-content">
+                <!-- All article content here (same as yours) -->
+                <section class="content-section">
+                    <h2>What is Pain and Suffering?</h2>
+                    <p>Pain and suffering refers to the physical pain a person experiences after an injury. A Pain and Suffering Calculator helps estimate the value of these non-economic damages. It also includes emotional distress, mental anguish, and loss of enjoyment of life.</p>
+                    <p>Pain and suffering goes beyond medical bills and visible injuries. It covers long-term discomfort, anxiety, depression, and lifestyle changes caused by the accident. These damages are real, even though they are harder to measure in money.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Why Estimating Your Pain and Suffering is Crucial?</h2>
+                    <p>Estimating pain and suffering is crucial because insurance companies often undervalue these damages. Without an estimate, injured victims may accept low settlement offers too quickly. Knowing your value helps protect your financial future.</p>
+                    <p>A proper estimate gives you confidence during settlement negotiations. It helps you decide whether an offer is fair or needs to be challenged. This knowledge also prepares you before speaking with a lawyer or insurance adjuster.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Understanding Pain and Suffering Damages</h2>
+                    <p>Pain and suffering damages represent the non-economic damages in a personal injury case. Pain and suffering damages respond to how an injury impacts an individual's comfort, mental health, and life.</p>
+                    <p>From a legal perspective, suffering damages are recognized under tort law. Courts and insurance companies acknowledge that injuries cause more than just medical costs - they also cause emotional pain, distress, and loss of enjoyment of life.</p>
+                    <h3>Economic Damages (Medical Bills, Lost Income, Property Damage)</h3>
+                    <p>Also called special damages, these are the tangible, out-of-pocket financial losses with clear documentation. They form the foundation of your claim.</p>
+                    <ul>
+                        <li><strong>Medical Bills:</strong> Past, present, and estimated future costs for hospitals, surgery, medication, therapy, and medical devices.</li>
+                        <li><strong>Lost Wages:</strong> Income you did not earn because you were recovering, including lost vacation/sick time and proven loss of earning capacity.</li>
+                        <li><strong>Property Damage:</strong> The cost to repair or replace your vehicle, clothing, or other damaged property.</li>
+                        <li><strong>Other Expenses:</strong> Mileage to medical appointments, costs for home care, or home modifications for a disability.</li>
+                    </ul>
+                    <h3>Non-Economic Damages (Pain, Emotional Distress, Loss of Enjoyment)</h3>
+                    <p>These are the non-economic damages - the pain and suffering we've been discussing. They compensate for the intangible, subjective losses that profoundly affect your quality of life. This category includes physical pain, mental anguish, emotional distress, loss of consortium, and diminished quality of life.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>What Qualifies as Pain & Suffering?</h2>
+                    <p>Pain and suffering can take many forms, depending on the severity of the injury and the circumstances of the accident.</p>
+                    <ul>
+                        <li>Physical pain caused by injuries or medical treatment</li>
+                        <li>Emotional distress such as anxiety, depression, or fear</li>
+                        <li>Mental trauma following serious injury or medical malpractice</li>
+                        <li>Loss of enjoyment of life, including limited mobility or inability to work</li>
+                    </ul>
+                    <p>These factors are often central to personal injury cases and suffering settlements.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Factors That Increase Value of Pain and Suffering</h2>
+                    <p>Several elements influence the value of pain and suffering damages:</p>
+                    <ul>
+                        <li><strong>Injury severity</strong>, including serious injury or permanent disability</li>
+                        <li><strong>Recovery time</strong>, especially when long-term medical treatment is required</li>
+                        <li><strong>Emotional impact</strong>, such as ongoing distress or emotional pain</li>
+                        <li><strong>Life disruption</strong>, including inability to earn wages or enjoy daily activities</li>
+                    </ul>
+                    <p>Insurance companies and attorneys closely examine these factors when calculating compensation.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How Is Pain and Suffering Calculated?</h2>
+                    <p>Pain and suffering damages are not calculated randomly. In most personal injury cases, there are two widely accepted methods used to estimate pain and suffering. Each method focuses on different aspects of an injury and recovery.</p>
+                    <h3>1. The Multiplier Method (The One Most People Use)</h3>
+                    <p>This is the most common way to calculate pain and suffering, and it's pretty straightforward.</p>
+                    <div class="formula">Pain and Suffering = (Medical Bills + Lost Wages) × Injury Multiplier</div>
+                    <p>Let's break it down:</p>
+                    <ul>
+                        <li><strong>Medical Bills:</strong> This is everything - hospital visits, prescriptions, physical therapy, even travel to and from appointments.</li>
+                        <li><strong>Injury Multiplier:</strong> This is a number, usually between 1.5 and 5, that represents how serious your injury is.</li>
+                    </ul>
+                    <p>For example:</p>
+                    <ul>
+                        <li>Minor scrapes or short-term pain: multiplier around 1.5–2x</li>
+                        <li>Broken bones or injuries needing surgery: 2.5–4x</li>
+                        <li>Severe or life changing injuries (like long-term disability): 4–5x</li>
+                    </ul>
+                    <div class="calculation-example">
+                        <strong>Real Example Calculation:</strong><br>
+                        Medical bills: $20,000<br>
+                        Lost wages: $5,000<br>
+                        Injury severity: moderate, so let's use a 3x multiplier<br><br>
+                        <strong>Pain and suffering = ($20,000 + $5,000) × 3 = $75,000</strong><br><br>
+                        That $75,000 is on top of your actual medical bills and lost income.
+                    </div>
+                    <h3>2. The Per Diem (Daily Rate) Method</h3>
+                    <p>Some lawyers prefer this approach, especially if your recovery is expected to take a long time or if there's a lot of emotional distress involved.</p>
+                    <div class="formula">Pain and Suffering = Daily Rate × Number of Recovery Days</div>
+                    <ul>
+                        <li><strong>Daily rate:</strong> Often based on what you earn in a day, or a set amount like $100–$300.</li>
+                        <li><strong>Recovery days:</strong> This includes both physical healing time and emotional recovery.</li>
+                    </ul>
+                    <p>This method can be helpful if your suffering isn't directly tied to high medical bills, but it's used less often than the multiplier method.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>The Role of the State Factor (Very Important)</h2>
+                    <p>Many people overlook this, but state laws have a major impact on pain and suffering compensation. Each state handles damages differently. Some states favor injured victims, while others impose strict limits.</p>
+                    <p>This adjustment is known as the <strong>state factor</strong>.</p>
+                    <h3>A Quick Look at State Factors:</h3>
+                    <table class="state-table">
+                        <thead>
+                            <tr><th>State</th><th>State Factor</th><th>Why It Matters</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>California</td><td>1.2x</td><td>No caps on pain and suffering payouts; courts tend to favor plaintiffs</td></tr>
+                            <tr><td>Texas</td><td>0.9x</td><td>Damage caps exist; conservative courts often award less</td></tr>
+                            <tr><td>New York</td><td>1.3x</td><td>High jury awards are common, especially in cities</td></tr>
+                            <tr><td>Florida</td><td>1.1x</td><td>"No-fault" state, but you can still sue for serious injuries</td></tr>
+                            <tr><td>Illinois</td><td>1.15x</td><td>No caps, moderate jury tendencies</td></tr>
+                            <tr><td>Pennsylvania</td><td>1.1x</td><td>Follows modified comparative negligence rules</td></tr>
+                            <tr><td>Ohio</td><td>0.95x</td><td>Some damage caps apply in certain cases</td></tr>
+                            <tr><td>Georgia</td><td>1.0x</td><td>Middle-of-the-road, balanced system</td></tr>
+                        </tbody>
+                    </table>
+                    <h3>Example with State Factor Applied</h3>
+                    <div class="calculation-example">
+                        <strong>Base Calculation:</strong><br>
+                        Medical bills: $15,000<br>
+                        Multiplier: 2.5x (moderate injury)<br><br>
+                        <strong>In California:</strong><br>
+                        $15,000 × 2.5 × 1.2 = <strong>$45,000</strong><br><br>
+                        <strong>In Texas:</strong><br>
+                        $15,000 × 2.5 × 0.9 = <strong>$33,750</strong><br><br>
+                        That's a <strong>$11,250 difference</strong> just because of your location. Insurance companies know this and they often use it to their advantage.
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Fault Adjustment (Comparative Negligence)</h2>
+                    <p>Most accidents involve shared responsibility. That's why fault adjustment is applied after calculating pain and suffering.</p>
+                    <div class="formula">Adjusted Settlement = Pain and Suffering × (1 – Fault Percentage)</div>
+                    <div class="calculation-example">
+                        <strong>Example:</strong><br>
+                        Pain and suffering: $50,000<br>
+                        Fault percentage: 20%<br><br>
+                        <strong>Adjusted settlement = $50,000 × 0.8 = $40,000</strong>
+                    </div>
+                    <p>This adjustment is essential for accuracy and is automatically handled by advanced calculators.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How Our Pain and Suffering Calculator Works</h2>
+                    <h3>Step-by-Step Guide to Using Our Tool</h3>
+                    <div class="steps-container">
+                        <div class="article-step"><h4>Step 1: Enter Basic Information</h4><p>Select your state (crucial for accurate calculations) and choose your accident type (car, slip and fall, etc.)</p></div>
+                        <div class="article-step"><h4>Step 2: Input Financial Details</h4><p>Total medical expenses, lost wages and income, and other related costs.</p></div>
+                        <div class="article-step"><h4>Step 3: Describe Your Injuries</h4><p>Injury severity level, recovery time estimate, and any permanent effects.</p></div>
+                        <div class="article-step"><h4>Step 4: Evaluate Your Pain</h4><p>Physical pain level (1-10 scale), emotional distress impact, and how it affects your daily life.</p></div>
+                        <div class="article-step"><h4>Step 5: Get Your Results</h4><p>Instant estimate of your settlement with detailed breakdown and state-specific adjustments included.</p></div>
+                    </div>
+                    <h3>How It Calculates Your Settlement</h3>
+                    <p>Behind the scenes, our calculator does several important things:</p>
+                    <ol>
+                        <li><strong>Applies the Correct Multiplier</strong> - Based on your injury severity and impact on life.</li>
+                        <li><strong>Incorporates State-Specific Factors</strong> - Automatically adjusts for state damage caps and laws.</li>
+                        <li><strong>Accounts for Shared Fault</strong> - Reduces compensation according to state negligence rules.</li>
+                        <li><strong>Considers Emotional Components</strong> - Properly values psychological impacts.</li>
+                    </ol>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Benefits of Using Our Calculator</h2>
+                    <div class="success-box"><h4>Accuracy Without Complexity</h4><p>You get insurance-level calculations without needing to understand all the nuances yourself.</p></div>
+                    <div class="success-box"><h4>Pre-Negotiation Power</h4><p>Walking into discussions with an insurance adjuster with a number in hand changes the dynamic completely.</p></div>
+                    <div class="success-box"><h4>Free and Unlimited</h4><p>Unlike some settlement calculators that charge or limit use, ours is completely free pain and suffering analysis.</p></div>
+                    <div class="success-box"><h4>Educational Value</h4><p>Seeing how different factors affect your claim value helps you understand what really matters in your case.</p></div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How State Factor Works in Our Calculator</h2>
+                    <div class="calculation-example">
+                        <strong>Example Comparison:</strong><br>
+                        Same injury, same medical expenses ($20,000), same multiplier (3x)<br><br>
+                        <strong>California (Plaintiff-Friendly):</strong><br>
+                        State factor: 1.2x<br>
+                        Calculation: $20,000 × 3 × 1.2 = <strong>$72,000</strong><br><br>
+                        <strong>Texas (Conservative Laws):</strong><br>
+                        State factor: 0.9x<br>
+                        Calculation: $20,000 × 3 × 0.9 = <strong>$54,000</strong><br><br>
+                        <strong>Difference: $18,000</strong> - just because of location!
+                    </div>
+                    <h3>State-Specific Considerations Our Calculator Handles</h3>
+                    <ul>
+                        <li><strong>Damage Caps:</strong> Some states limit how much you can receive for non-economic damages.</li>
+                        <li><strong>Comparative Negligence Rules:</strong> Different rules for fault allocation across states.</li>
+                        <li><strong>Statute of Limitations:</strong> Different filing deadlines by state.</li>
+                        <li><strong>Insurance Minimums:</strong> Different minimum insurance requirements by state.</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Factors That Affect Pain and Suffering Values</h2>
+                    <div class="factors-box">
+                        <h4>Factors That Increase Your Settlement Value</h4>
+                        <div class="factor-item"><strong>Medical Documentation Quality</strong><br>Detailed medical records are gold in personal injury claims.</div>
+                        <div class="factor-item"><strong>Visible Injuries and Scars</strong><br>Visible injuries often receive higher compensation.</div>
+                        <div class="factor-item"><strong>Impact on Daily Activities</strong><br>The more your life is disrupted, the higher your pain and suffering value.</div>
+                        <div class="factor-item"><strong>Emotional Trauma Evidence</strong><br>Documented emotional distress adds substantial value.</div>
+                        <div class="factor-item"><strong>Permanent Effects</strong><br>Any lasting disability increases your settlement significantly.</div>
+                    </div>
+                    <div class="factors-box">
+                        <h4>Factors That Decrease Your Settlement Value</h4>
+                        <div class="factor-item"><strong>Pre-existing Injuries</strong><br>Insurers will claim your current pain isn't from the new accident.</div>
+                        <div class="factor-item"><strong>Social Media Evidence</strong><br>Photos showing you active after the accident can destroy your claim.</div>
+                        <div class="factor-item"><strong>Gaps in Medical Treatment</strong><br>Missing appointments makes injuries seem less serious.</div>
+                        <div class="factor-item"><strong>Contributory Negligence</strong><br>Being even partially at fault can reduce your settlement.</div>
+                        <div class="factor-item"><strong>Minor Vehicle Damage</strong><br>Insurers argue: "If the car wasn't badly damaged, how could you be seriously injured?"</div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Common Injury Types and Average Pain & Suffering Awards</h2>
+                    <p>While every case is unique, here are some general ranges:</p>
+                    <div class="injury-grid">
+                        <div class="injury-card"><h4>Whiplash and Soft Tissue Injuries</h4><p>Medical expenses: $5,000 - $15,000</p><p>Typical multiplier: 1.5x - 2.5x</p><div class="injury-range">Pain & suffering: $7,500 - $37,500</div></div>
+                        <div class="injury-card"><h4>Broken Bones</h4><p>Medical expenses: $10,000 - $50,000</p><p>Typical multiplier: 2.5x - 4x</p><div class="injury-range">Pain & suffering: $25,000 - $200,000</div></div>
+                        <div class="injury-card"><h4>Back Injuries (Herniated Discs)</h4><p>Medical expenses: $20,000 - $100,000+</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $60,000 - $500,000+</div></div>
+                        <div class="injury-card"><h4>Head Trauma (Concussions)</h4><p>Medical expenses: $15,000 - $75,000</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $45,000 - $375,000</div></div>
+                    </div>
+                    <p><em>Remember: These are rough estimates. Your specific case could be higher or lower based on all the factors we've discussed.</em></p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How Insurance Companies Calculate Pain and Suffering</h2>
+                    <p>Let's be honest: insurance companies aren't in the business of giving away money. Their approach to pain and suffering calculations is fundamentally different from what's fair to the injured person.</p>
+                    <div class="warning-box">
+                        <h4>The Insurance Adjuster's Mindset:</h4>
+                        <ul>
+                            <li>Start low (often 30-50% of actual value)</li>
+                            <li>Negotiate slowly upward</li>
+                            <li>Use delay tactics hoping you'll settle for less</li>
+                            <li>Focus on minimizing their payout, not your suffering</li>
+                        </ul>
+                    </div>
+                    <h3>Their Secret Formulas and Adjustments</h3>
+                    <p>Insurance companies use proprietary software with names like Colossus or Claims Outcome Advisor. These tools:</p>
+                    <ul>
+                        <li>Automatically reduce multipliers</li>
+                        <li>Question medical expenses</li>
+                        <li>Apply aggressive state factors</li>
+                        <li>Generate low initial offers</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How to Counter Low Insurance Offers?</h2>
+                    <div class="steps-container">
+                        <div class="article-step"><h4>Strategy 1: Come Prepared</h4><p>Use our calculator before negotiations.</p></div>
+                        <div class="article-step"><h4>Strategy 2: Document Everything</h4><p>The more evidence of suffering you have, the harder it is for them to lowball you.</p></div>
+                        <div class="article-step"><h4>Strategy 3: Understand Their Game</h4><p>Their first offer is just the opening move.</p></div>
+                        <div class="article-step"><h4>Strategy 4: Know When to Escalate</h4><p>If they won't move to a reasonable number, mention "speaking with a personal injury attorney".</p></div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>How to Document Your Pain and Suffering?</h2>
+                    <h3>Evidence That Increases Your Settlement</h3>
+                    <ul>
+                        <li><strong>Pain Journals:</strong> Daily entries about pain levels, activities you can't do, emotional state</li>
+                        <li><strong>Photographic Evidence:</strong> Injuries at their worst, progress over time, assistive devices</li>
+                        <li><strong>Witness Statements:</strong> Family members, friends, colleagues who see your daily struggle</li>
+                    </ul>
+                    <h3>Medical Records and Doctor Statements</h3>
+                    <ul>
+                        <li>Comprehensive medical records including all treatments</li>
+                        <li>Doctor statements on diagnosis, prognosis, and recovery time</li>
+                        <li>Specialist evaluations for specific injuries</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>When to Hire an Attorney for Pain and Suffering Claims</h2>
+                    <div class="warning-box">
+                        <h4>You Definitely Need a Lawyer When:</h4>
+                        <ul>
+                            <li>Medical expenses exceed $10,000 or surgery was required</li>
+                            <li>There is permanent disability or lasting effects</li>
+                            <li>Fault is disputed or unclear</li>
+                            <li>Multiple parties are involved</li>
+                            <li>Insurance company is acting in bad faith</li>
+                            <li>Injuries are complex (brain injuries, spinal cord damage)</li>
+                        </ul>
+                    </div>
+                    <p>Studies show that people with attorneys typically receive <strong>3-4 times more compensation</strong> than those without, even after legal fees.</p>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Common Pitfalls and Mistakes to Avoid</h2>
+                    <div class="warning-box">
+                        <h4>What Not to Do During Your Claim:</h4>
+                        <ul>
+                            <li>Don't give recorded statements without consulting a lawyer</li>
+                            <li>Avoid posting on social media about your injury or recovery</li>
+                            <li>Don't settle too quickly - the first offer is usually the worst</li>
+                            <li>Never miss medical appointments</li>
+                            <li>Always follow doctor's orders</li>
+                        </ul>
+                    </div>
+                    <h3>Common Calculation Errors</h3>
+                    <ul>
+                        <li>Undervaluing non-economic damages</li>
+                        <li>Choosing wrong multiplier based on misunderstanding injury severity</li>
+                        <li>Forgetting future costs and ongoing expenses</li>
+                        <li>Ignoring state-specific adjustments</li>
+                        <li>Poor documentation of pain and suffering</li>
+                    </ul>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Frequently Asked Questions (FAQs)</h2>
+                    <div class="faq-item active">
+                        <div class="faq-question">Q1: How do they figure out pain and suffering?</div>
+                        <div class="faq-answer"><p>They typically use the multiplier method (medical expenses × severity multiplier) or per diem method (daily rate × recovery days), adjusted for state laws and specific circumstances of your case.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q2: How is compensation calculated for pain and suffering?</div>
+                        <div class="faq-answer"><p>Compensation calculation combines your economic damages (medical bills, lost wages) with a multiplier based on injury severity, then adjusts for factors like state laws, shared fault, and future suffering.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q3: What is the formula for pain and suffering?</div>
+                        <div class="faq-answer"><p>Pain and suffering is usually calculated using the multiplier method (medical expenses × 1.5–5) or the per diem method (daily pain value × recovery days).</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q4: How does one calculate pain and suffering?</div>
+                        <div class="faq-answer"><p>It is calculated by evaluating medical costs, injury severity, recovery time, and emotional distress using accepted legal methods.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Q5: Is pain and suffering hard to prove?</div>
+                        <div class="faq-answer"><p>Yes, because it is subjective, but strong medical records, pain journals, and therapy notes make it easier to prove.</p></div>
+                    </div>
+                </section>
+                
+                <section class="content-section">
+                    <h2>Conclusion: Know Your True Pain and Suffering Claim Value</h2>
+                    <p>A pain and suffering calculator helps injured victims understand potential compensation by analyzing damages, expenses, and emotional distress. While calculators are useful tools, they do not replace legal advice.</p>
+                    <p>For accurate evaluation and fair compensation, consulting a personal injury attorney is always recommended.</p>
+                </section>
+                
+                <!-- CALCULATOR CTA BUTTON -->
+                <div class="calc-cta">
+                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                        <span>📊</span> Try Our Pain & Suffering Calculator → <span>⚡</span>
+                    </a>
+                </div>
+                
+                <!-- RELATED LINKS SECTION -->
+                <div class="related-links">
+                    <h4>🔗 Related Calculators</h4>
+                    <div class="related-grid">
+                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📊 Pain & Suffering Calculator</a>
+                        <a href="/productivity-calculator">📈 Productivity Calculator</a>
+                        <a href="/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
+                        <a href="/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
+                        <a href="/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                        <a href="/venmo-fee-calculator">💸 Venmo Fee Calculator</a>
+                    </div>
+                </div>
+                
+                <section class="content-section">
+                    <div class="disclaimer-box">
+                        <h4>⚠️ Important Disclaimer</h4>
+                        <p>This calculator provides estimates only and should not be considered legal advice. Actual compensation depends on many factors including:</p>
+                        <ul>
+                            <li>Strength of liability evidence</li>
+                            <li>Insurance policy limits</li>
+                            <li>Jury sympathy and jurisdiction</li>
+                            <li>Quality of legal representation</li>
+                            <li>Defendant's ability to pay</li>
+                            <li>Comparative or contributory negligence</li>
+                        </ul>
+                        <p><strong>Every case is unique. For an accurate evaluation of your claim, consult with an experienced personal injury attorney.</strong></p>
+                    </div>
+                </section>
+            </article>
+        </div>
+        
+    </div>
+    
+    <!-- ===== FOOTER (HOMEPAGE WALA) ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/productivity-calculator">Productivity</a>
+                <a href="/uk-aggregate-calculator">Aggregate</a>
+                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // ===== CALCULATOR JAVASCRIPT =====
+        let currentStep = 1;
+        let selectedState = '';
+        let mentalStressValue = 5;
+        let faultPercentage = 0;
+        
+        function showStep(step) {
+            document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+            document.querySelectorAll('.step-dot').forEach((dot, i) => {
+                dot.classList.remove('active', 'completed');
+                if (i + 1 < step) dot.classList.add('completed');
+                if (i + 1 === step) dot.classList.add('active');
+            });
+            currentStep = step;
+            document.querySelector('.calc-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        document.getElementById('nextToStep2')?.addEventListener('click', () => showStep(2));
+        document.getElementById('backToStep1')?.addEventListener('click', () => showStep(1));
+        document.getElementById('nextToStep3')?.addEventListener('click', () => showStep(3));
+        document.getElementById('backToStep2')?.addEventListener('click', () => showStep(2));
+        document.getElementById('nextToStep4')?.addEventListener('click', () => showStep(4));
+        document.getElementById('backToStep3')?.addEventListener('click', () => showStep(3));
+        document.getElementById('nextToStep5')?.addEventListener('click', () => showStep(5));
+        document.getElementById('backToStep4')?.addEventListener('click', () => showStep(4));
+        
+        document.querySelectorAll('.state-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.state-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                selectedState = this.dataset.state;
+            });
+        });
+        
+        document.getElementById('fault')?.addEventListener('change', function() {
+            const container = document.getElementById('faultContainer');
+            faultPercentage = 0;
+            document.getElementById('faultSlider').value = 0;
+            document.getElementById('faultValue').textContent = '0%';
+            if (this.value === 'shared') {
+                container.classList.add('show');
+            } else {
+                container.classList.remove('show');
+                if (this.value === 'myself') {
+                    faultPercentage = 100;
+                    document.getElementById('faultSlider').value = 100;
+                    document.getElementById('faultValue').textContent = '100%';
+                }
+            }
+        });
+        
+        document.getElementById('faultSlider')?.addEventListener('input', function() {
+            faultPercentage = parseInt(this.value);
+            document.getElementById('faultValue').textContent = faultPercentage + '%';
+        });
+        
+        document.getElementById('physicalPain')?.addEventListener('input', function() {
+            const val = parseInt(this.value);
+            let text = val + '/10 - ';
+            if (val <= 3) text += 'Mild';
+            else if (val <= 6) text += 'Moderate';
+            else if (val <= 8) text += 'Severe';
+            else text += 'Extreme';
+            document.getElementById('physicalPainValue').textContent = text;
+        });
+        
+        document.querySelectorAll('#mentalStress .emoji').forEach(emoji => {
+            emoji.addEventListener('click', function() {
+                document.querySelectorAll('#mentalStress .emoji').forEach(e => e.classList.remove('selected'));
+                this.classList.add('selected');
+                mentalStressValue = parseInt(this.dataset.value);
+            });
+        });
+        document.querySelector('#mentalStress .emoji[data-value="5"]')?.classList.add('selected');
+        
+        function formatCurrency(amount) {
+            return '$' + Math.round(amount).toLocaleString();
+        }
+        
+        function getStateName(stateCode) {
+            const states = {
+                california: 'California',
+                texas: 'Texas',
+                florida: 'Florida',
+                newyork: 'New York',
+                illinois: 'Illinois',
+                pennsylvania: 'Pennsylvania',
+                ohio: 'Ohio',
+                georgia: 'Georgia',
+                other: 'Your State'
+            };
+            return states[stateCode] || 'Your State';
+        }
+        
+        function calculateClaim() {
+            const medical = parseFloat(document.getElementById('medicalBills')?.value) || 0;
+            const income = parseFloat(document.getElementById('lostIncome')?.value) || 0;
+            const other = parseFloat(document.getElementById('otherExpenses')?.value) || 0;
+            const physical = parseInt(document.getElementById('physicalPain')?.value) || 5;
+            const lifeImpact = parseInt(document.getElementById('lifeImpact')?.value) || 1;
+            const severity = document.getElementById('injurySeverity')?.value || 'moderate';
+            let severityMultiplier = 1.5;
+            let severityName = 'Moderate';
+            switch(severity) {
+                case 'minor': severityMultiplier = 1.5; severityName = 'Minor'; break;
+                case 'moderate': severityMultiplier = 2.5; severityName = 'Moderate'; break;
+                case 'serious': severityMultiplier = 3.5; severityName = 'Serious'; break;
+                case 'severe': severityMultiplier = 4.5; severityName = 'Severe'; break;
+                case 'catastrophic': severityMultiplier = 5; severityName = 'Catastrophic'; break;
+            }
+            const economicDamages = medical + income + other;
+            const painMultiplierValue = (physical + mentalStressValue + lifeImpact * 2) / 20;
+            let stateMultiplier = 1;
+            let stateName = getStateName(selectedState);
+            switch(selectedState) {
+                case 'california': stateMultiplier = 1.2; break;
+                case 'texas': stateMultiplier = 0.9; break;
+                case 'florida': stateMultiplier = 1.1; break;
+                case 'newyork': stateMultiplier = 1.3; break;
+                case 'illinois': stateMultiplier = 1.15; break;
+                case 'pennsylvania': stateMultiplier = 1.1; break;
+                case 'ohio': stateMultiplier = 0.95; break;
+                case 'georgia': stateMultiplier = 1.0; break;
+                default: stateMultiplier = 1; stateName = 'Your State';
+            }
+            const painSufferingBase = economicDamages * severityMultiplier * painMultiplierValue;
+            const painSufferingWithState = painSufferingBase * stateMultiplier;
+            const stateEffect = painSufferingWithState - painSufferingBase;
+            const originalTotal = economicDamages + painSufferingWithState;
+            let total = originalTotal;
+            let reductionAmount = 0;
+            let appliedPercentage = faultPercentage;
+            const faultStatus = document.getElementById('fault')?.value;
+            if (faultStatus === 'myself') {
+                appliedPercentage = 100;
+            }
+            if (appliedPercentage > 0 && appliedPercentage <= 50) {
+                reductionAmount = originalTotal * (appliedPercentage / 100);
+                total = originalTotal - reductionAmount;
+            } else if (appliedPercentage > 50) {
+                reductionAmount = originalTotal;
+                total = 0;
+            }
+            const combinedMultiplier = (severityMultiplier * painMultiplierValue * stateMultiplier).toFixed(2);
+            document.getElementById('formulaDisplay').innerHTML = 
+                `Pain & Suffering = (Medical + Lost Income + Other) × ${severityMultiplier.toFixed(1)}x (${severityName}) × ${stateMultiplier.toFixed(1)}x (${stateName})<br>` +
+                `= $${formatCurrency(economicDamages)} × ${(severityMultiplier * stateMultiplier).toFixed(2)}x = $${formatCurrency(painSufferingWithState)}`;
+            document.getElementById('medicalBreakdown').textContent = formatCurrency(medical);
+            document.getElementById('incomeBreakdown').textContent = formatCurrency(income);
+            document.getElementById('otherBreakdown').textContent = formatCurrency(other);
+            document.getElementById('painBreakdown').textContent = formatCurrency(painSufferingWithState);
+            document.getElementById('painMultiplierText').textContent = `${combinedMultiplier}x (${stateMultiplier.toFixed(1)}x State)`;
+            document.getElementById('totalBreakdown').textContent = formatCurrency(total);
+            document.getElementById('finalAmount').textContent = formatCurrency(total);
+            const stateMultiplierItem = document.getElementById('stateMultiplierItem');
+            if (stateMultiplier !== 1 && selectedState !== '') {
+                document.getElementById('stateMultiplierText').textContent = `${stateMultiplier.toFixed(2)}x (${stateName})`;
+                document.getElementById('stateMultiplierAmount').textContent = stateEffect >= 0 ? '+ ' + formatCurrency(stateEffect) : '- ' + formatCurrency(Math.abs(stateEffect));
+                stateMultiplierItem.style.display = 'flex';
+            } else {
+                stateMultiplierItem.style.display = 'none';
+            }
+            const faultReductionItem = document.getElementById('faultReductionItem');
+            if (appliedPercentage > 0 && appliedPercentage <= 100) {
+                document.getElementById('faultPercentageDisplay').textContent = appliedPercentage + '%';
+                document.getElementById('faultReductionAmount').textContent = '- ' + formatCurrency(reductionAmount);
+                faultReductionItem.style.display = 'flex';
+            } else {
+                faultReductionItem.style.display = 'none';
+            }
+            const warning = document.getElementById('catastrophicWarning');
+            if (severity === 'catastrophic') {
+                warning.classList.add('show');
+            } else {
+                warning.classList.remove('show');
+            }
+            document.getElementById('resultContainer').style.display = 'block';
+            document.getElementById('calculateBtn').style.display = 'none';
+        }
+        
+        document.getElementById('calculateBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            calculateClaim();
+        });
+        
+        document.getElementById('resetBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            location.reload();
+        });
+        
+        document.querySelector('#mentalStress .emoji[data-value="5"]')?.classList.add('selected');
+        
+        // ===== ARTICLE FAQ JAVASCRIPT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentElement;
+                    faqItem.classList.toggle('active');
+                });
+            });
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].parentElement.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
