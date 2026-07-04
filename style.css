@@ -1,0 +1,486 @@
+/* ============================================
+   CALCSNAPS — GLOBAL STYLESHEET
+   Version: 1.0
+   Colors: Purple (#8b5cf6) + Dark Navy (#0f172a)
+   Website: calcsnaps.com
+   ============================================ */
+
+/* ===== 1. GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+
+/* ===== 2. CSS VARIABLES (BRAND COLORS) ===== */
+:root {
+    /* Primary Colors */
+    --primary: #8b5cf6;
+    --primary-dark: #7c3aed;
+    --primary-light: #a78bfa;
+    
+    /* Secondary Colors */
+    --secondary: #fbbf24;
+    
+    /* Neutral Colors */
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+    --light: #f8fafc;
+    --gray: #94a3b8;
+    --text-dark: #1e293b;
+    --text-light: #ffffff;
+    --border: #e2e8f0;
+    
+    /* Status Colors */
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    
+    /* Font */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    
+    /* Spacing & Layout */
+    --container-max: 1280px;
+    --radius: 24px;
+    --radius-sm: 12px;
+    --radius-lg: 32px;
+    --shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 25px 50px -12px rgba(0,0,0,0.25);
+    --transition: all 0.3s ease;
+}
+
+/* ===== 3. RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+/* ===== 4. CONTAINER ===== */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== 5. TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 56px; }
+h2 { font-size: 32px; }
+h3 { font-size: 22px; }
+h4 { font-size: 18px; }
+
+p {
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* ===== 6. HEADER ===== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--primary);
+}
+
+.nav a.active::after,
+.nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+}
+
+/* ===== 7. HERO ===== */
+.hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+    border-radius: var(--radius-lg);
+    margin: 24px 0 48px;
+    padding: 64px 48px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(139, 92, 246, 0.2);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--primary-light);
+    margin-bottom: 24px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.hero h1 {
+    color: var(--text-light);
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #c084fc, var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero .tagline {
+    color: var(--gray);
+    font-size: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== 8. CALCULATOR GRID ===== */
+.calc-section {
+    margin: 48px 0 64px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.calc-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: var(--transition);
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.calc-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: #c084fc;
+}
+
+.calc-icon {
+    font-size: 44px;
+    margin-bottom: 20px;
+}
+
+.calc-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.calc-card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.calc-badge {
+    display: inline-block;
+    background: #f1f5f9;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+/* ===== 9. VIEW ALL BUTTON ===== */
+.view-all-wrap {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.btn-view-all {
+    display: inline-block;
+    padding: 16px 48px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 60px;
+    transition: var(--transition);
+    box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+}
+
+.btn-view-all:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* ===== 10. VALUE PROPOSITION ===== */
+.value-prop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 48px 0 64px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.value-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.value-card h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark);
+}
+
+.value-card p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* ===== 11. FOOTER ===== */
+.footer {
+    background: #0a0f1a;
+    border-radius: var(--radius);
+    padding: 40px 32px 24px;
+    margin: 64px 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 32px;
+}
+
+.footer-col h4 {
+    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-col a {
+    display: block;
+    color: var(--gray);
+    font-size: 14px;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: var(--primary);
+}
+
+.footer-col .about-link {
+    color: var(--primary);
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.footer-col .about-link:hover {
+    color: var(--primary-light);
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.footer-social a {
+    color: var(--gray);
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* ===== 12. COMMON UTILITIES ===== */
+.text-center { text-align: center; }
+.text-primary { color: var(--primary); }
+.text-gray { color: var(--gray); }
+.text-white { color: var(--text-light); }
+
+.mt-1 { margin-top: 16px; }
+.mt-2 { margin-top: 32px; }
+.mt-3 { margin-top: 48px; }
+
+.mb-1 { margin-bottom: 16px; }
+.mb-2 { margin-bottom: 32px; }
+.mb-3 { margin-bottom: 48px; }
+
+.py-1 { padding-top: 16px; padding-bottom: 16px; }
+.py-2 { padding-top: 32px; padding-bottom: 32px; }
+.py-3 { padding-top: 48px; padding-bottom: 48px; }
+
+/* ===== 13. RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; }
+    h3 { font-size: 20px; }
+    
+    .hero {
+        padding: 40px 24px;
+    }
+    .hero h1 { font-size: 32px; }
+    .hero .tagline { font-size: 16px; }
+    
+    .value-prop {
+        grid-template-columns: 1fr;
+    }
+    
+    .calc-grid {
+        gap: 16px;
+    }
+    
+    .btn-view-all {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .nav {
+        justify-content: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav {
+        gap: 12px;
+    }
+    .nav a {
+        font-size: 14px;
+    }
+    .container {
+        padding: 0 16px;
+    }
+}
