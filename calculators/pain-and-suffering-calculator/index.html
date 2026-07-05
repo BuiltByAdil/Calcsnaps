@@ -94,11 +94,26 @@
     }
     </script>
     
-    <!-- ===== GLOBAL CSS (TUM KHUD LINK KAROGE) ===== -->
+    <!-- ===== GLOBAL CSS ===== -->
     <link rel="stylesheet" href="../../style.css">
     
     <!-- ===== CALCULATOR + ARTICLE CSS (MERGE) ===== -->
     <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Header + Container) */
+        /* ============================================ */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px 24px !important;
+            box-sizing: border-box !important;
+        }
+
         /* ===== CALCULATOR CSS ===== */
         :root {
             --primary: #8b5cf6;
@@ -1010,7 +1025,7 @@
 </head>
 <body>
     
-    <!-- ===== HEADER (HOMEPAGE WALA) ===== -->
+    <!-- ===== HEADER (HOMEPAGE WALA - FIXED) ===== -->
     <header class="header">
         <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
         <nav class="nav">
@@ -1021,6 +1036,7 @@
         </nav>
     </header>
     
+    <!-- ===== CONTAINER (max-width: 900px) ===== -->
     <div class="container">
         
         <!-- ===== CALCULATOR ===== -->
@@ -1245,7 +1261,6 @@
             </header>
             
             <article class="article-content">
-                <!-- All article content here (same as yours) -->
                 <section class="content-section">
                     <h2>What is Pain and Suffering?</h2>
                     <p>Pain and suffering refers to the physical pain a person experiences after an injury. A Pain and Suffering Calculator helps estimate the value of these non-economic damages. It also includes emotional distress, mental anguish, and loss of enjoyment of life.</p>
