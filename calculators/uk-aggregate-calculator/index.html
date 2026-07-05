@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- ===== CALCULATOR META TAGS ===== -->
+    <title>UK Aggregate Calculator | MOT Type 1, Gravel, Topsoil, Sand | CalcSnaps</title>
+    <meta name="description" content="Free UK aggregate calculator for MOT Type 1, gravel, topsoil, sand. Calculate volume (m³), weight (tonnes), bulk bags, and cost. Instant results with compaction and waste allowance.">
+    <meta name="keywords" content="aggregate calculator uk, mot type 1 calculator, gravel calculator, topsoil calculator, sand calculator, bulk bag calculator">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/aggregate-calculator-uk">
+    
+    <!-- ===== ARTICLE META TAGS ===== -->
+    <meta name="description" content="Complete guide to UK aggregate calculator for MOT Type 1, gravel, topsoil & sand. Learn to calculate volume, tonnes, bulk bags & cost with step-by-step examples.">
+    <meta name="keywords" content="uk aggregate calculator, mot type 1 calculator, gravel calculator, topsoil calculator, bulk bag calculator, aggregate calculator uk">
+    <link rel="canonical" href="https://calcsnaps.com/uk-aggregate-calculator-guide">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="UK Aggregate Calculator | MOT Type 1, Gravel, Topsoil, Sand | CalcSnaps">
+    <meta property="og:description" content="Free UK aggregate calculator for construction and landscaping. Calculate volume, weight, bulk bags, and cost instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/aggregate-calculator-uk">
+    <meta property="og:title" content="UK Aggregate Calculator Guide | MOT Type 1, Gravel & Topsoil | CalcSnaps">
+    <meta property="og:description" content="Complete guide to UK aggregate calculator. Learn to calculate volume, tonnes, bulk bags & cost with step-by-step examples.">
+    <meta property="og:type" content="article">
+    
+    <!-- ===== SCHEMA MARKUP ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UK Aggregate Calculator",
+        "description": "Calculate construction aggregate requirements including volume, weight, bulk bags, and cost",
+        "url": "https://calcsnaps.com/aggregate-calculator-uk",
+        "applicationCategory": "ConstructionApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "GBP"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "UK Aggregate Calculator Guide: Complete Guide to MOT Type 1, Gravel & Topsoil",
+        "description": "Complete guide to UK aggregate calculator for MOT Type 1, gravel, topsoil & sand. Learn to calculate volume, tonnes, bulk bags & cost.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/uk-aggregate-calculator-guide"
+        }
+    }
+    </script>
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Header + Container) */
+        /* ============================================ */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px 24px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* ===== CALCULATOR CSS ===== */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --secondary: #fbbf24;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --text-dark: #4a5568;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 0px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        /* Main Container */
+        .calc-card {
+            max-width: 750px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        /* Header */
+        .calc-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 28px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .calc-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .calc-header h1 i {
+            color: var(--secondary);
+        }
+        
+        .calc-header p {
+            font-size: 15px;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+        
+        .uk-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            margin-top: 12px;
+            color: var(--primary-light);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Body */
+        .calc-body {
+            padding: 28px;
+        }
+        
+        /* Unit Toggle */
+        .unit-toggle {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 28px;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .unit-btn {
+            flex: 1;
+            text-align: center;
+            padding: 12px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .unit-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .unit-btn:hover:not(.active) {
+            background: #f8fafc;
+            border-color: var(--primary-light);
+        }
+        
+        /* Input Grid */
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .input-group {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .input-group label {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .input-group .input-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
+            outline: none;
+            padding: 4px 0;
+        }
+        
+        .input-group .unit-symbol {
+            font-size: 14px;
+            color: var(--text-dark);
+        }
+        
+        /* Material Select */
+        .material-select {
+            margin-bottom: 24px;
+        }
+        
+        .material-select label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 20px;
+            font-size: 16px;
+            background: white;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+        
+        /* Density Display */
+        .density-info {
+            background: rgba(139, 92, 246, 0.05);
+            border-radius: 16px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .density-label {
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+        
+        .density-value {
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        /* Toggle Row */
+        .toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .toggle-label {
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .toggle-switch {
+            display: flex;
+            gap: 8px;
+            background: transparent;
+            padding: 0;
+        }
+        
+        .toggle-option {
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+        
+        .toggle-option.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .toggle-option:hover:not(.active) {
+            background: #f8fafc;
+            border-color: var(--primary-light);
+        }
+        
+        /* Price Input */
+        .price-input {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--light);
+            border-radius: 16px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .price-input span {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .price-input input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 8px;
+            font-size: 16px;
+            outline: none;
+            min-width: 100px;
+        }
+        
+        .price-hint {
+            font-size: 12px;
+            color: var(--text-dark);
+            margin-left: auto;
+        }
+        
+        /* Results Panel */
+        .results-panel {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.02));
+            border-radius: 28px;
+            padding: 24px;
+            margin-top: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 20px;
+            padding: 18px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .result-label {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+        
+        .result-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .result-value.small {
+            font-size: 20px;
+        }
+        
+        .bulk-bags {
+            background: white;
+            border-radius: 20px;
+            padding: 18px;
+            margin-top: 16px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .bulk-bags .result-value {
+            font-size: 32px;
+        }
+        
+        .bulk-bags .result-label {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: none;
+        }
+        
+        .print-btn {
+            background: #e2e8f0;
+            color: var(--dark);
+        }
+        
+        .print-btn:hover {
+            background: #cbd5e1;
+            transform: translateY(-2px);
+        }
+        
+        .reset-btn {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .reset-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 600px) {
+            .calc-header h1 {
+                font-size: 26px;
+            }
+            .calc-body {
+                padding: 20px;
+            }
+            .input-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            .toggle-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .toggle-switch {
+                flex-wrap: wrap;
+            }
+            .price-input {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .price-hint {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 450px) {
+            .result-value {
+                font-size: 22px;
+            }
+        }
+
+        /* ===== ARTICLE CSS ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .article-container {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin: 30px 0;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .article-header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .article-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .article-content {
+            padding: 40px;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .article-content h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark-light);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .article-content p {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        .article-content li {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .density-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--light);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .density-table th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+        }
+        
+        .density-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .density-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .pro-tip {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin: 25px 0;
+        }
+        
+        .pro-tip h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .calc-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .calc-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+        
+        .calc-cta a span {
+            font-size: 22px;
+            margin-right: 8px;
+        }
+        
+        .faq-section {
+            background: var(--light);
+            border-radius: 24px;
+            padding: 24px;
+            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-question i {
+            transition: transform 0.2s;
+            color: var(--gray);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 12px;
+            color: var(--text-dark);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .related-links {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 28px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .related-links h4 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .related-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .related-grid a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .related-grid a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-link {
+            background: var(--secondary);
+            color: var(--dark) !important;
+            font-weight: bold;
+        }
+        
+        .calculator-link:hover {
+            background: #f59e0b !important;
+            color: var(--dark) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .article-header {
+                padding: 30px 20px;
+            }
+            .article-header h1 {
+                font-size: 28px;
+            }
+            .article-header p {
+                font-size: 16px;
+            }
+            .article-content {
+                padding: 24px 20px;
+            }
+            .article-content h2 {
+                font-size: 24px;
+            }
+            .article-content h3 {
+                font-size: 20px;
+            }
+            .density-table {
+                font-size: 14px;
+                display: block;
+                overflow-x: auto;
+            }
+            .related-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .related-grid a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 24px;
+            }
+            .article-content h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== HEADER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/" class="active">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
+    <div class="container">
+        
+        <!-- ===== CALCULATOR SECTION ===== -->
+        <div id="calculator-section" class="calc-card">
+            <div class="calc-header">
+                <h1>
+                    <i class="fas fa-truck"></i>
+                    UK Aggregate Calculator
+                </h1>
+                <p>MOT Type 1 · Gravel · Topsoil · Sand · Ballast · Slate</p>
+                <div class="uk-badge">
+                    <i class="fas fa-map-marker-alt"></i> UK Construction Standard
+                </div>
+            </div>
+            
+            <div class="calc-body">
+                <!-- Unit Toggle -->
+                <div class="unit-toggle">
+                    <button class="unit-btn active" data-unit="metric">Metric (m, tonnes)</button>
+                    <button class="unit-btn" data-unit="imperial">Imperial (ft, lbs)</button>
+                </div>
+                
+                <!-- Dimensions Grid -->
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Length</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="length" value="5" step="0.1">
+                            <span class="unit-symbol" id="lengthUnit">m</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Width</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="width" value="4" step="0.1">
+                            <span class="unit-symbol" id="widthUnit">m</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Depth</label>
+                        <div class="input-wrapper">
+                            <input type="number" id="depth" value="0.1" step="0.01">
+                            <span class="unit-symbol" id="depthUnit">m</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Material Selection -->
+                <div class="material-select">
+                    <label><i class="fas fa-layer-group"></i> Material Type</label>
+                    <select id="material">
+                        <option value="mot">MOT Type 1 / Hardcore (1.9–2.2 t/m³)</option>
+                        <option value="gravel">Gravel / Pea Shingle (1.5–1.7 t/m³)</option>
+                        <option value="topsoil">Topsoil (1.3–1.5 t/m³)</option>
+                        <option value="building_sand">Building Sand (1.4–1.6 t/m³)</option>
+                        <option value="sharp_sand">Sharp Sand (1.5–1.7 t/m³)</option>
+                        <option value="ballast">General Ballast (1.7–1.9 t/m³)</option>
+                        <option value="slate">Slate Chippings (1.2–1.4 t/m³)</option>
+                    </select>
+                </div>
+                
+                <!-- Density Info -->
+                <div class="density-info">
+                    <span class="density-label"><i class="fas fa-weight-hanging"></i> Bulk Density:</span>
+                    <span class="density-value" id="densityValue">1.90–2.20 t/m³</span>
+                </div>
+                
+                <!-- Compaction Toggle -->
+                <div class="toggle-row">
+                    <span class="toggle-label"><i class="fas fa-compress-alt"></i> Compaction Factor</span>
+                    <div class="toggle-switch" id="compactionToggle">
+                        <button class="toggle-option active" data-compact="true">Compacted</button>
+                        <button class="toggle-option" data-compact="false">Loose</button>
+                    </div>
+                </div>
+                
+                <!-- Waste Toggle -->
+                <div class="toggle-row">
+                    <span class="toggle-label"><i class="fas fa-trash-alt"></i> Waste Allowance</span>
+                    <div class="toggle-switch" id="wasteToggle">
+                        <button class="toggle-option active" data-waste="10">+10% (Recommended)</button>
+                        <button class="toggle-option" data-waste="0">No Waste</button>
+                        <button class="toggle-option" data-waste="5">+5%</button>
+                    </div>
+                </div>
+                
+                <!-- Price Input -->
+                <div class="price-input">
+                    <span><i class="fas fa-pound-sign"></i> Price per tonne:</span>
+                    <input type="number" id="pricePerTonne" value="20" step="2" placeholder="£">
+                    <span class="price-hint">(typical UK rate £12–25)</span>
+                </div>
+                
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label"><i class="fas fa-cube"></i> Volume</div>
+                            <div class="result-value" id="volumeResult">0.00</div>
+                            <div class="result-label" id="volumeUnitLabel">m³</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label"><i class="fas fa-weight-hanging"></i> Weight</div>
+                            <div class="result-value" id="weightResult">0.00</div>
+                            <div class="result-label" id="weightUnitLabel">tonnes</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label"><i class="fas fa-pound-sign"></i> Estimated Cost</div>
+                            <div class="result-value" id="costResult">£0.00</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label"><i class="fas fa-truck"></i> Required Vehicles</div>
+                            <div class="result-value" id="vehicleResult">0</div>
+                            <div class="result-label">(8-wheel tipper - 20 tonnes)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bulk-bags">
+                        <div class="result-label"><i class="fas fa-shopping-bag"></i> Bulk Bags (800kg)</div>
+                        <div class="result-value" id="bulkBagsResult">0</div>
+                        <div class="result-label">bags needed</div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn print-btn" id="printBtn">
+                        <i class="fas fa-print"></i> Print Report
+                    </button>
+                    <button class="action-btn reset-btn" id="resetBtn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== ARTICLE ===== -->
+        <div class="article-container">
+            <div class="article-header">
+                <h1>UK Aggregate Calculator: The Complete Guide to Calculating MOT Type 1, Gravel, Topsoil and More</h1>
+                <p>Learn to calculate exactly what you need for your driveway, garden, or construction project</p>
+            </div>
+            
+            <div class="article-content">
+                <p>I have been in the construction and landscaping industry for over 15 years, working on everything from small garden paths to large-scale driveway installations across the UK. If there is one thing I have learned, it is this: ordering the wrong amount of aggregate is a costly mistake. Too little and your project grinds to a halt. Too much and you are left with a pile of material you do not need, and money wasted.</p>
+                
+                <p>That is exactly why I created this guide and our free <strong>UK aggregate calculator</strong>. Whether you are laying a new driveway with MOT Type 1, spreading gravel on a garden path, or preparing topsoil for a planting project, getting your calculations right is essential.</p>
+                
+                <p>In this guide, I will walk you through everything I have learned about aggregate calculation over the years. You will understand how to measure correctly, account for compaction, factor in waste, and convert volume to weight, all using the same formulas I use on-site. By the end, you will be able to use our <strong>aggregate calculator</strong> with confidence and order exactly what you need, saving time, money, and stress.</p>
+                
+                <h2>What is an Aggregate Calculator and Why Do You Need One?</h2>
+                <p>Let us start with the basics. An <strong>aggregate calculator</strong> is a simple but powerful tool that helps you determine exactly how much material you need for your project. Instead of guessing or relying on rough estimates, you get precise figures for volume in cubic metres, weight in tonnes, and even cost.</p>
+                
+                <h3>Why Accurate Aggregate Calculation Matters</h3>
+                <p>I have seen too many projects go sideways because of poor estimates. Here is what happens when you get it wrong:</p>
+                <ul>
+                    <li><strong>Under-ordering:</strong> Your project stops halfway through. You pay for another delivery which often comes with additional delivery charges. Your timeline slips.</li>
+                    <li><strong>Over-ordering:</strong> You have paid for material you do not need. Now you have a pile of aggregate sitting on your driveway, and you have to figure out how to dispose of it or store it.</li>
+                </ul>
+                <p><strong>The solution?</strong> A proper aggregate calculator. It takes the guesswork out of ordering and gives you confidence that you are ordering the right amount, whether you are buying in tonnes or bulk bags.</p>
+                
+                <h3>Who Uses Aggregate Calculators?</h3>
+                <p>In my experience, aggregate calculators are used by:</p>
+                <ul>
+                    <li><strong>Homeowners:</strong> Planning driveways, patios, garden paths, or landscaping projects.</li>
+                    <li><strong>Builders and Contractors:</strong> Ordering materials for foundations, sub-bases, and concrete mixes.</li>
+                    <li><strong>Landscapers:</strong> Calculating topsoil, gravel, and decorative aggregates for garden projects.</li>
+                    <li><strong>DIY Enthusiasts:</strong> Anyone taking on a home improvement project.</li>
+                </ul>
+                <p>Our <strong>UK aggregate calculator</strong> is designed to work for all these scenarios, with specific options for MOT Type 1, gravel, topsoil, sand, ballast, and slate.</p>
+                
+                <h2>Understanding UK Aggregate Measurements</h2>
+                <p>Before you can calculate anything, you need to understand how aggregate is measured in the UK. This is where many people get confused, but it is actually straightforward once you know the basics.</p>
+                
+                <h3>Volume (Cubic Metres) vs Weight (Tonnes)</h3>
+                <p>When you order aggregate, you are usually buying by <strong>weight</strong>, either in tonnes or bulk bags. But to know how many tonnes you need, you first need to calculate the <strong>volume</strong> of space you are filling.</p>
+                <p><strong>Volume</strong> is measured in cubic metres (m³). It is simply: <strong>Length × Width × Depth</strong>.</p>
+                <div class="pro-tip">
+                    <h4><i class="fas fa-calculator"></i> Example:</h4>
+                    <p>If you are covering an area 5 metres long, 4 metres wide, and 0.1 metres deep (100mm), your volume is: <strong>5m × 4m × 0.1m = 2 cubic metres (2 m³)</strong></p>
+                </div>
+                
+                <h3>Bulk Density Explained</h3>
+                <p>Bulk density is how much a cubic metre of a material weighs. It varies depending on the type of aggregate. Here are the typical densities I use on-site for common UK materials:</p>
+                
+                <table class="density-table">
+                    <thead>
+                        <tr>
+                            <th>Material</th>
+                            <th>Bulk Density (t/m³)</th>
+                            <th>Common UK Uses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>MOT Type 1 / Hardcore</strong></td>
+                        <td>1.9 – 2.2</td>
+                        <td>Driveway sub-base, road foundations, hardstanding</td>
+                        </tr>
+                        <tr>
+                        <td><strong>Gravel / Pea Shingle</strong></td>
+                        <td>1.5 – 1.7</td>
+                        <td>Drainage, paths, decorative ground cover</td>
+                        </tr>
+                        <tr>
+                        <td><strong>Topsoil</strong></td>
+                        <td>1.3 – 1.5</td>
+                        <td>Landscaping, garden beds, lawn preparation</td>
+                        </tr>
+                        <tr>
+                        <td><strong>Building Sand</strong></td>
+                        <td>1.4 – 1.6</td>
+                        <td>Mortar, bricklaying, plastering</td>
+                        </tr>
+                        <tr>
+                        <td><strong>Sharp Sand</strong></td>
+                        <td>1.5 – 1.7</td>
+                        <td>Screeding, block paving, concrete mixes</td>
+                        </tr>
+                        <tr>
+                        <td><strong>General Ballast</strong></td>
+                        <td>1.7 – 1.9</td>
+                        <td>Concrete mixing, foundations</td>
+                        </tr>
+                        <tr>
+                        <td><strong>Slate Chippings</strong></td>
+                        <td>1.2 – 1.4</td>
+                        <td>Decorative garden paths, driveways</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Why does this matter?</strong> Because 2 cubic metres of MOT Type 1 weighs a lot more than 2 cubic metres of topsoil. If you do not account for density, your weight calculation will be wrong, and you will either under-order or over-order.</p>
+                
+                <h2>How to Calculate Aggregate Requirements (Step-by-Step)</h2>
+                <p>Over the years, I have developed a simple, reliable method for calculating aggregate needs. I use this same process on every project, and it is exactly what our calculator automates for you.</p>
+                
+                <h3>Step 1: Measure Your Area</h3>
+                <p>Start by measuring the length and width of the area you are covering. Use a tape measure and record your measurements in <strong>metres</strong> (or feet if you are using imperial units). For irregular shapes, break them down into rectangles, calculate each area, and add them together.</p>
+                
+                <h3>Step 2: Determine the Depth</h3>
+                <p>This is where experience matters. The depth you need depends entirely on your project. Here are the depths I recommend based on years of practical work:</p>
+                <ul>
+                    <li><strong>Driveways (MOT Type 1):</strong> 100–150mm (0.1–0.15m)</li>
+                    <li><strong>Paths (Gravel):</strong> 50–75mm (0.05–0.075m)</li>
+                    <li><strong>Patios (Base Layer):</strong> 75–100mm (0.075–0.1m)</li>
+                    <li><strong>Garden Beds (Topsoil):</strong> 50–100mm (0.05–0.1m)</li>
+                    <li><strong>Concrete Foundations:</strong> 100–150mm (0.1–0.15m)</li>
+                </ul>
+                <div class="pro-tip">
+                    <h4><i class="fas fa-lightbulb"></i> Pro Tip:</h4>
+                    <p>Always check with your supplier or a structural engineer if you are unsure, especially for load-bearing applications like driveways. For official UK construction standards, refer to the <a href="https://nhbc-standards.co.uk/2024/3-general/3-1-concrete-and-its-reinforcement/3-1-4-site-mixed-concrete/" target="_blank" rel="noopener noreferrer">NHBC Standards for site-mixed concrete</a>, which provide detailed guidance on mix proportions and aggregate requirements.</p>
+                </div>
+                
+                <h3>Step 3: Calculate Volume</h3>
+                <p>This is the simple part: <strong>Length × Width × Depth = Volume (m³)</strong></p>
+                <p><strong>Example:</strong> A driveway 10m long, 5m wide, with a depth of 0.1m: <strong>10 × 5 × 0.1 = 5 cubic metres (5 m³)</strong></p>
+                
+                <h3>Step 4: Account for Compaction</h3>
+                <p>Here is a mistake I see all the time: people forget that aggregate compacts. When you lay MOT Type 1 for a driveway and roll it with a compactor, it settles. If you order exactly the volume of loose material, you will end up short.</p>
+                <p><strong>The rule I use:</strong> Add <strong>10% extra for compaction</strong>. For loose material that will be compacted, multiply your volume by 1.1.</p>
+                <p><strong>Example:</strong> 5 m³ × 1.1 = 5.5 m³</p>
+                
+                <h3>Step 5: Add Waste Allowance</h3>
+                <p>No matter how careful you are, there is always waste, spillage, uneven ground, or material that gets left behind. I recommend adding <strong>5–10% waste allowance</strong>.</p>
+                <ul>
+                    <li><strong>Simple, flat areas:</strong> 5% is usually enough.</li>
+                    <li><strong>Complex shapes or uneven ground:</strong> Add 10%.</li>
+                </ul>
+                <p><strong>Example:</strong> 5.5 m³ × 1.1 = 6.05 m³</p>
+                
+                <h3>Step 6: Convert Volume to Weight</h3>
+                <p>Now we convert cubic metres to tonnes. Use the density of your chosen material.</p>
+                <p><strong>Formula:</strong> Volume (m³) × Density (t/m³) = Weight (tonnes)</p>
+                <p><strong>Example (MOT Type 1, density 2.05 t/m³):</strong> 6.05 m³ × 2.05 = 12.40 tonnes</p>
+                
+                <h3>Step 7: Calculate Cost</h3>
+                <p>Finally, multiply the weight by your supplier's price per tonne. In the UK, MOT Type 1 typically costs between <strong>£12 and £25 per tonne</strong>, depending on your location and quantity.</p>
+                <p><strong>Example:</strong> 12.40 tonnes × £20 = £248.00</p>
+                
+                <h2>How Our UK Aggregate Calculator Works</h2>
+                <p>I built this calculator to do all these steps in seconds. Here is how to use it.</p>
+                
+                <h3>Step-by-Step Guide</h3>
+                <ul>
+                    <li><strong>Enter your dimensions:</strong> Length, width, and depth. Switch between metric (metres) and imperial (feet/inches) with one click.</li>
+                    <li><strong>Select your material:</strong> Choose from MOT Type 1, gravel, topsoil, building sand, sharp sand, ballast, or slate.</li>
+                    <li><strong>Set compaction:</strong> Choose "Compacted" if the material will be rolled or compacted. Choose "Loose" if it will not.</li>
+                    <li><strong>Select waste allowance:</strong> Add 0%, 5%, or 10% waste depending on your project complexity.</li>
+                    <li><strong>Enter your price per tonne:</strong> Use your supplier's rate, the default £20 reflects the typical UK price range.</li>
+                    <li><strong>Get instant results:</strong> Volume, weight, estimated cost, required 20-tonne tipper trucks, and number of 800kg bulk bags.</li>
+                </ul>
+                
+                <h3>Understanding Your Results</h3>
+                <ul>
+                    <li><strong>Volume:</strong> The total space your material will occupy (in m³ or yd³).</li>
+                    <li><strong>Weight:</strong> The total tonnes or lbs you need to order.</li>
+                    <li><strong>Estimated Cost:</strong> The total cost based on your price per tonne.</li>
+                    <li><strong>Required Vehicles:</strong> How many 20-tonne tipper trucks you will need for delivery.</li>
+                    <li><strong>Bulk Bags:</strong> How many 800kg bulk bags you will need, perfect for smaller projects or DIY.</li>
+                </ul>
+                
+                <h2>Common Aggregate Projects in the UK</h2>
+                <p>Over the years, I have helped homeowners and contractors with countless projects. Here is how to calculate for the most common ones.</p>
+                
+                <h3>Driveways (MOT Type 1)</h3>
+                <p>MOT Type 1 is the standard sub-base material for driveways in the UK. It is crushed stone that compacts well and provides excellent drainage.</p>
+                <p><strong>Typical depth:</strong> 100–150mm (0.1–0.15m) | <strong>Density:</strong> 2.05 t/m³ (average)</p>
+                <div class="pro-tip">
+                    <h4><i class="fas fa-calculator"></i> Example: 10m × 5m driveway, 100mm depth</h4>
+                    <p>Volume: 10 × 5 × 0.1 = 5 m³ → With compaction (10%): 5.5 m³ → With waste (10%): 6.05 m³ → Weight: 6.05 × 2.05 = <strong>12.4 tonnes</strong></p>
+                </div>
+                
+                <h3>Gravel Paths and Patios</h3>
+                <p>Gravel is popular for paths and decorative areas. It is lighter than MOT Type 1 and easier to work with.</p>
+                <p><strong>Typical depth:</strong> 50–75mm (0.05–0.075m) | <strong>Density:</strong> 1.6 t/m³ (average)</p>
+                <div class="pro-tip">
+                    <h4><i class="fas fa-calculator"></i> Example: 8m × 3m path, 50mm depth</h4>
+                    <p>Volume: 8 × 3 × 0.05 = 1.2 m³ → With waste (5%): 1.26 m³ → Weight: 1.26 × 1.6 = <strong>2.02 tonnes</strong></p>
+                </div>
+                
+                <h3>Garden Landscaping (Topsoil)</h3>
+                <p>When you are creating new garden beds or preparing for turf, topsoil is essential. It is the lightest of the common aggregates.</p>
+                <p><strong>Typical depth:</strong> 50–100mm (0.05–0.1m) | <strong>Density:</strong> 1.4 t/m³ (average)</p>
+                <div class="pro-tip">
+                    <h4><i class="fas fa-calculator"></i> Example: 12m × 4m garden bed, 100mm depth</h4>
+                    <p>Volume: 12 × 4 × 0.1 = 4.8 m³ → With waste (5%): 5.04 m³ → Weight: 5.04 × 1.4 = <strong>7.06 tonnes</strong></p>
+                </div>
+                
+                <h2>How to Save Money on Aggregate Purchases</h2>
+                <p>After helping hundreds of clients order materials, I have learned a few tricks to save money without cutting corners.</p>
+                <ul>
+                    <li><strong>Buy in bulk when it makes sense:</strong> If you need more than 10 tonnes, ordering a full tipper lorry is usually cheaper per tonne than buying bulk bags.</li>
+                    <li><strong>Compare supplier prices:</strong> MOT Type 1 typically £12–25 per tonne, Gravel £10–20 per tonne, Topsoil £15–30 per tonne.</li>
+                    <li><strong>Consider recycled aggregates:</strong> Recycled MOT Type 1 is often cheaper (around £8–15 per tonne) and performs just as well for non-structural applications.</li>
+                    <li><strong>Account for delivery costs:</strong> Delivery costs can add £50–100 to your order. Ordering more tonnes in one delivery reduces the cost per tonne.</li>
+                </ul>
+                
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 style="border-bottom: none; margin-top: 0; padding-bottom: 0;">Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            How much MOT Type 1 do I need for a driveway?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For a standard driveway, calculate the area (length × width), multiply by depth (0.1–0.15m), add 10% for compaction, and 5–10% for waste. Then multiply by density (2.05 t/m³). A 10m × 5m driveway needs about <strong>12–13 tonnes</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the difference between compacted and loose aggregate?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Loose aggregate is freshly delivered material before it is compacted. When you compact it with a roller or wacker plate, it settles by about 10%. Always add <strong>10% extra if you are compacting</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How many bulk bags do I need for 1 tonne?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>One bulk bag typically holds <strong>800kg (0.8 tonnes)</strong>. For 1 tonne, you will need 1.25 bags, so order 2 bags if you need more than 0.8 tonnes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I use this calculator for gravel paths?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes. Use a depth of <strong>50–75mm</strong> and select "Gravel" from the material list. Add 5% waste for simple paths.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What is the typical price of MOT Type 1 in the UK?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Prices vary by region, but typically range from <strong>£12 to £25 per tonne</strong>. Recycled MOT Type 1 can be cheaper (£8–15 per tonne).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>Conclusion</h2>
+                <p>After 15 years of working on projects across the UK, I can tell you one thing for certain: <strong>getting your aggregate calculation right is one of the most important steps in any construction or landscaping project.</strong> It saves you time, money, and stress, and it ensures your project goes smoothly from start to finish.</p>
+                <p>Our <strong>UK aggregate calculator</strong> does all the heavy lifting for you. It accounts for material density, compaction, waste allowance, and even calculates cost, vehicles, and bulk bags. Whether you are a homeowner planning a driveway, a builder ordering materials for a foundation, or a landscaper preparing garden beds, this tool will give you accurate results in seconds.</p>
+                <p>Now you know exactly how to calculate your requirements. Use the calculator at the top of this page, double-check your measurements, and order with confidence.</p>
+                
+                <!-- CALCULATOR CTA BUTTON -->
+                <div class="calc-cta">
+                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                        <span>🧮</span> Try Our UK Aggregate Calculator → <span>⚡</span>
+                    </a>
+                </div>
+                
+                <!-- RELATED LINKS SECTION -->
+                <div class="related-links">
+                    <h4>🔗 Related Calculators</h4>
+                    <div class="related-grid">
+                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🧮 UK Aggregate Calculator</a>
+                        <a href="/pain-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                        <a href="/productivity-calculator">📈 Productivity Calculator</a>
+                        <a href="/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
+                        <a href="/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                        <a href="/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- ===== FOOTER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/productivity-calculator">Productivity</a>
+                <a href="/uk-aggregate-calculator">Aggregate</a>
+                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        (function() {
+            // Material densities (t/m³) - UK standard ranges
+            const materialData = {
+                mot: { name: "MOT Type 1", min: 1.9, max: 2.2, avg: 2.05, desc: "1.9–2.2 t/m³" },
+                gravel: { name: "Gravel", min: 1.5, max: 1.7, avg: 1.6, desc: "1.5–1.7 t/m³" },
+                topsoil: { name: "Topsoil", min: 1.3, max: 1.5, avg: 1.4, desc: "1.3–1.5 t/m³" },
+                building_sand: { name: "Building Sand", min: 1.4, max: 1.6, avg: 1.5, desc: "1.4–1.6 t/m³" },
+                sharp_sand: { name: "Sharp Sand", min: 1.5, max: 1.7, avg: 1.6, desc: "1.5–1.7 t/m³" },
+                ballast: { name: "General Ballast", min: 1.7, max: 1.9, avg: 1.8, desc: "1.7–1.9 t/m³" },
+                slate: { name: "Slate Chippings", min: 1.2, max: 1.4, avg: 1.3, desc: "1.2–1.4 t/m³" }
+            };
+            
+            // State
+            let currentUnit = 'metric';
+            let isCompacted = true;
+            let wastePercent = 10;
+            
+            // DOM Elements
+            const lengthInput = document.getElementById('length');
+            const widthInput = document.getElementById('width');
+            const depthInput = document.getElementById('depth');
+            const materialSelect = document.getElementById('material');
+            const densityValueSpan = document.getElementById('densityValue');
+            const priceInput = document.getElementById('pricePerTonne');
+            
+            const volumeResult = document.getElementById('volumeResult');
+            const weightResult = document.getElementById('weightResult');
+            const costResult = document.getElementById('costResult');
+            const vehicleResult = document.getElementById('vehicleResult');
+            const bulkBagsResult = document.getElementById('bulkBagsResult');
+            
+            const lengthUnitSpan = document.getElementById('lengthUnit');
+            const widthUnitSpan = document.getElementById('widthUnit');
+            const depthUnitSpan = document.getElementById('depthUnit');
+            const volumeUnitLabel = document.getElementById('volumeUnitLabel');
+            const weightUnitLabel = document.getElementById('weightUnitLabel');
+            
+            // Update material density display
+            function updateMaterialDisplay() {
+                const material = materialSelect.value;
+                const data = materialData[material];
+                if (data) {
+                    densityValueSpan.textContent = data.desc;
+                }
+            }
+            
+            // Get density based on material (using average for calculation)
+            function getDensity() {
+                const material = materialSelect.value;
+                const data = materialData[material];
+                return data ? data.avg : 1.8;
+            }
+            
+            // Get compaction factor
+            function getCompactionFactor() {
+                return isCompacted ? 1.1 : 1.0;
+            }
+            
+            // Calculate everything
+            function calculate() {
+                let length = parseFloat(lengthInput.value) || 0;
+                let width = parseFloat(widthInput.value) || 0;
+                let depth = parseFloat(depthInput.value) || 0;
+                let price = parseFloat(priceInput.value) || 0;
+                
+                if (currentUnit === 'imperial') {
+                    length = length * 0.3048;
+                    width = width * 0.3048;
+                    depth = depth * 0.0254;
+                }
+                
+                let volume = length * width * depth;
+                
+                const compactionFactor = getCompactionFactor();
+                volume = volume * compactionFactor;
+                
+                const wasteMultiplier = 1 + (wastePercent / 100);
+                volume = volume * wasteMultiplier;
+                
+                const density = getDensity();
+                let weight = volume * density;
+                
+                let cost = weight * price;
+                const vehicles = Math.ceil(weight / 20);
+                const bulkBags = Math.ceil(weight / 0.8);
+                
+                if (currentUnit === 'metric') {
+                    volumeResult.textContent = volume.toFixed(2);
+                    weightResult.textContent = weight.toFixed(2);
+                    volumeUnitLabel.textContent = 'm³';
+                    weightUnitLabel.textContent = 'tonnes';
+                } else {
+                    let volumeImperial = volume * 1.30795;
+                    let weightImperial = weight * 2204.62;
+                    volumeResult.textContent = volumeImperial.toFixed(2);
+                    weightResult.textContent = Math.round(weightImperial).toLocaleString();
+                    volumeUnitLabel.textContent = 'yd³';
+                    weightUnitLabel.textContent = 'lbs';
+                }
+                
+                costResult.textContent = `£${cost.toFixed(2)}`;
+                vehicleResult.textContent = vehicles;
+                bulkBagsResult.textContent = bulkBags;
+            }
+            
+            // Update unit display
+            function updateUnits() {
+                if (currentUnit === 'metric') {
+                    lengthUnitSpan.textContent = 'm';
+                    widthUnitSpan.textContent = 'm';
+                    depthUnitSpan.textContent = 'm';
+                    lengthInput.placeholder = '5';
+                    widthInput.placeholder = '4';
+                    depthInput.placeholder = '0.1';
+                } else {
+                    lengthUnitSpan.textContent = 'ft';
+                    widthUnitSpan.textContent = 'ft';
+                    depthUnitSpan.textContent = 'in';
+                    lengthInput.placeholder = '16';
+                    widthInput.placeholder = '13';
+                    depthInput.placeholder = '4';
+                }
+                calculate();
+            }
+            
+            // Reset to defaults
+            function resetCalculator() {
+                if (currentUnit === 'metric') {
+                    lengthInput.value = '5';
+                    widthInput.value = '4';
+                    depthInput.value = '0.1';
+                } else {
+                    lengthInput.value = '16';
+                    widthInput.value = '13';
+                    depthInput.value = '4';
+                }
+                materialSelect.value = 'mot';
+                priceInput.value = '20';
+                isCompacted = true;
+                wastePercent = 10;
+                
+                document.querySelectorAll('#compactionToggle .toggle-option').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.compact === 'true') btn.classList.add('active');
+                });
+                document.querySelectorAll('#wasteToggle .toggle-option').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.waste === '10') btn.classList.add('active');
+                });
+                
+                updateMaterialDisplay();
+                calculate();
+            }
+            
+            // Print report
+            function printReport() {
+                const material = materialSelect.options[materialSelect.selectedIndex]?.text || 'Material';
+                const volume = volumeResult.textContent;
+                const weight = weightResult.textContent;
+                const cost = costResult.textContent;
+                const vehicles = vehicleResult.textContent;
+                const bulkBags = bulkBagsResult.textContent;
+                const unitType = currentUnit === 'metric' ? 'Metric' : 'Imperial';
+                const date = new Date().toLocaleString();
+                
+                const printContent = `
+                    <html>
+                    <head>
+                        <title>UK Aggregate Calculator Report</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 30px; }
+                            h1 { color: #0f172a; border-bottom: 2px solid #8b5cf6; padding-bottom: 10px; }
+                            .report-box { margin: 20px 0; padding: 20px; background: #f8fafc; border-radius: 12px; }
+                            table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                            td { padding: 10px; border-bottom: 1px solid #e2e8f0; }
+                            td:first-child { font-weight: 600; width: 40%; }
+                            .footer { margin-top: 40px; text-align: center; color: #64748b; font-size: 12px; }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>UK Aggregate Calculator Report</h1>
+                        <p>Generated: ${date}</p>
+                        
+                        <div class="report-box">
+                            <table>
+                                <tr><td>Material Type</td><td><strong>${material}</strong></td></tr>
+                                <tr><td>Length</td><td>${lengthInput.value} ${currentUnit === 'metric' ? 'm' : 'ft'}</td></tr>
+                                <tr><td>Width</td><td>${widthInput.value} ${currentUnit === 'metric' ? 'm' : 'ft'}</td></tr>
+                                <tr><td>Depth</td><td>${depthInput.value} ${currentUnit === 'metric' ? 'm' : 'in'}</td></tr>
+                                <tr><td>Compacted</td><td>${isCompacted ? 'Yes (+10%)' : 'No'}</td></tr>
+                                <tr><td>Waste Allowance</td><td>+${wastePercent}%</td></tr>
+                                <tr><td>Volume</td><td><strong>${volume} ${unitType === 'Metric' ? 'm³' : 'yd³'}</strong></td></tr>
+                                <tr><td>Weight</td><td><strong>${weight} ${unitType === 'Metric' ? 'tonnes' : 'lbs'}</strong></td></tr>
+                                <tr><td>Estimated Cost</td><td><strong>${cost}</strong></td></tr>
+                                <tr><td>8-Wheel Tippers (20t)</td><td>${vehicles} vehicles</td></tr>
+                                <tr><td>Bulk Bags (800kg)</td><td>${bulkBags} bags</td></tr>
+                            </table>
+                        </div>
+                        
+                        <div class="footer">
+                            <p>CalcSnaps - UK Aggregate Calculator | Professional construction & landscaping tool</p>
+                            <p>Densities based on UK construction standards. Always consult your supplier for exact material specifications.</p>
+                        </div>
+                    </body>
+                    </html>
+                `;
+                
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(printContent);
+                printWindow.document.close();
+                setTimeout(() => printWindow.print(), 500);
+            }
+            
+            // Event Listeners
+            function attachEvents() {
+                lengthInput.addEventListener('input', calculate);
+                widthInput.addEventListener('input', calculate);
+                depthInput.addEventListener('input', calculate);
+                materialSelect.addEventListener('change', () => {
+                    updateMaterialDisplay();
+                    calculate();
+                });
+                priceInput.addEventListener('input', calculate);
+                
+                document.querySelectorAll('.unit-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        currentUnit = this.dataset.unit;
+                        updateUnits();
+                    });
+                });
+                
+                document.querySelectorAll('#compactionToggle .toggle-option').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('#compactionToggle .toggle-option').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        isCompacted = this.dataset.compact === 'true';
+                        calculate();
+                    });
+                });
+                
+                document.querySelectorAll('#wasteToggle .toggle-option').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        document.querySelectorAll('#wasteToggle .toggle-option').forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+                        wastePercent = parseInt(this.dataset.waste);
+                        calculate();
+                    });
+                });
+                
+                document.getElementById('resetBtn').addEventListener('click', resetCalculator);
+                document.getElementById('printBtn').addEventListener('click', printReport);
+            }
+            
+            updateMaterialDisplay();
+            attachEvents();
+            calculate();
+        })();
+
+        // ===== ARTICLE FAQ JAVASCRIPT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+            });
+            
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
