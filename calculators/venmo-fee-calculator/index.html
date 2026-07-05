@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- ===== CALCULATOR META TAGS ===== -->
+    <title>Venmo Fee Calculator | Calculate Seller & Business Fees | CalcSnaps</title>
+    <meta name="description" content="Free Venmo fee calculator for Goods & Services, Instant Transfers, Business payments. Includes reverse calculator for exact amounts!">
+    <meta name="keywords" content="venmo fee calculator, venmo calculator, venmo fees, venmo reverse calculator, venmo business fee, instant transfer fee">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/venmo-fee-calculator">
+    
+    <!-- ===== ARTICLE META TAGS ===== -->
+    <meta name="keywords" content="venmo fee calculator, venmo fees, instant transfer fee, goods and services fee, venmo business fee">
+    <link rel="canonical" href="https://calcsnaps.com/venmo-fee-guide">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="Venmo Fee Calculator | Calculate Seller & Business Fees | CalcSnaps">
+    <meta property="og:description" content="Calculate exact Venmo fees for Goods & Services, Instant Transfers, and Business payments. Free & easy to use!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/venmo-fee-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+    <meta property="og:title" content="Venmo Fee Calculator Guide | Complete Guide to Venmo Fees | CalcSnaps">
+    <meta property="og:description" content="Learn how to calculate Venmo fees for instant transfers, goods & services, and business payments. Updated rates with real examples.">
+    <meta property="og:type" content="article">
+    
+    <!-- ===== SCHEMA MARKUP ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Venmo Fee Calculator",
+        "description": "Free tool to calculate Venmo fees for Goods & Services, Instant Transfers, and Business payments",
+        "url": "https://calcsnaps.com/venmo-fee-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Venmo Fee Calculator Guide: Complete Guide to Venmo Fees",
+        "description": "Learn how to calculate Venmo fees for instant transfers, goods & services, and business payments.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/venmo-fee-guide"
+        }
+    }
+    </script>
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="../../style.css">
+    
+    <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Header + Container) */
+        /* ============================================ */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px 24px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* ===== CALCULATOR CSS ===== */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --secondary: #fbbf24;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --success: #10b981;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(145deg, #f0f4fa 0%, #e6ecf5 100%);
+            min-height: 100vh;
+            padding: 0px;
+        }
+        
+        .calculator-card {
+            max-width: 560px;
+            width: 100%;
+            background: white;
+            border-radius: 36px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .calculator-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 28px 28px 22px 28px;
+            color: white;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .card-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #ffffff !important;
+        }
+        
+        .card-header h1 i {
+            color: var(--secondary);
+        }
+        
+        .card-header p {
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 500;
+            background: rgba(139, 92, 246, 0.2);
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            margin: 0 auto;
+            width: auto;
+            text-align: center;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            color: #ffffff !important;
+        }
+        
+        .card-body {
+            padding: 28px;
+            background: white;
+        }
+        
+        .tab-container {
+            display: flex;
+            background: #f1f5f9;
+            border-radius: 60px;
+            padding: 6px;
+            margin-bottom: 32px;
+            gap: 4px;
+        }
+        
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 14px 8px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            color: #4a5a6e;
+            border: none;
+            background: transparent;
+            letter-spacing: -0.2px;
+        }
+        
+        .tab.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 16px -8px rgba(139, 92, 246, 0.3);
+        }
+        
+        .tab:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        .input-section {
+            margin-bottom: 28px;
+        }
+        
+        .label-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        
+        .label-row label {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 16px;
+        }
+        
+        .label-row .note {
+            color: var(--gray);
+            font-size: 14px;
+            background: #f0f4fa;
+            padding: 4px 12px;
+            border-radius: 30px;
+        }
+        
+        .amount-input-wrapper {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 2px solid #e3e9f2;
+            border-radius: 24px;
+            padding: 4px 4px 4px 20px;
+            transition: all 0.2s;
+        }
+        
+        .amount-input-wrapper:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+        
+        .currency-symbol {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-right: 8px;
+        }
+        
+        .amount-input {
+            flex: 1;
+            border: none;
+            padding: 18px 8px 18px 0;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--dark);
+            outline: none;
+            background: transparent;
+            width: 100%;
+            border-radius: 0;
+        }
+        
+        .amount-input::placeholder {
+            color: #b8c4d6;
+            font-weight: 400;
+        }
+        
+        .amount-input::-webkit-outer-spin-button,
+        .amount-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .amount-input[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        .amount-input:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .fee-option-selector {
+            background: #f8fbfe;
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid #eef3fa;
+        }
+        
+        .fee-option-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 18px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .fee-option-title span {
+            background: #e6edf8;
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-size: 13px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+        
+        .fee-radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .fee-radio {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            color: #2b3b54;
+            padding: 4px 0;
+            transition: background 0.2s;
+            border-radius: 12px;
+        }
+        
+        .fee-radio:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .fee-radio input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border: 2.5px solid #b8c7e0;
+            border-radius: 50%;
+            margin-right: 14px;
+            position: relative;
+            transition: all 0.15s;
+            cursor: pointer;
+        }
+        
+        .fee-radio input[type="radio"]:checked {
+            border-color: var(--primary);
+            border-width: 7px;
+        }
+        
+        .fee-radio input[type="radio"]:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        
+        .fee-rate-detail {
+            margin-left: auto;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(139, 92, 246, 0.1);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .results-panel {
+            background: rgba(139, 92, 246, 0.05);
+            border-radius: 28px;
+            padding: 22px;
+            margin: 24px 0 22px;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            font-size: 17px;
+        }
+        
+        .result-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .result-label {
+            color: #3f526e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+        
+        .result-value {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 18px;
+        }
+        
+        .fee-breakdown {
+            font-size: 15px;
+            color: #4d607c;
+            background: white;
+            padding: 16px 18px;
+            border-radius: 20px;
+            margin-top: 18px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            line-height: 1.5;
+        }
+        
+        .fee-breakdown span {
+            font-weight: 700;
+            color: var(--dark);
+            background: rgba(139, 92, 246, 0.1);
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+        
+        .total-receive {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 20px 24px;
+            border-radius: 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 22px 0 18px;
+            box-shadow: 0 10px 20px -8px rgba(139, 92, 246, 0.4);
+        }
+        
+        .total-receive .label {
+            font-weight: 500;
+            font-size: 17px;
+            opacity: 0.95;
+        }
+        
+        .total-receive .amount {
+            font-weight: 700;
+            font-size: 32px;
+            letter-spacing: -0.5px;
+        }
+        
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+        }
+        
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.02);
+        }
+        
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .copy-btn.copied {
+            background: var(--success);
+        }
+        
+        .info-tip {
+            background: #fef9e7;
+            border-radius: 20px;
+            padding: 16px 20px;
+            font-size: 15px;
+            color: #876b1a;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 16px 0 12px;
+            border: 1px solid #ffe6a6;
+        }
+        
+        .info-tip i {
+            font-style: normal;
+            background: #ffc107;
+            color: #1e1e1e;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 15px;
+            flex-shrink: 0;
+            font-family: 'Times New Roman', serif;
+        }
+        
+        @media (max-width: 480px) {
+            .card-header h1 {
+                font-size: 26px;
+            }
+            .card-header p {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .tab {
+                font-size: 13px;
+                padding: 12px 4px;
+            }
+            .total-receive .amount {
+                font-size: 26px;
+            }
+            .fee-rate-detail {
+                padding: 4px 12px;
+                font-size: 12px;
+            }
+            .card-body {
+                padding: 20px;
+            }
+            .amount-input {
+                font-size: 22px;
+                padding: 14px 4px 14px 0;
+            }
+            .currency-symbol {
+                font-size: 22px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .tab {
+                font-size: 12px;
+                padding: 10px 2px;
+            }
+            .total-receive {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .copy-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .results-panel, .total-receive {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        /* ===== ARTICLE CSS ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .venmo-article {
+            max-width: 100%;
+            margin: 30px 0;
+            padding: 30px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .venmo-article h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .venmo-article h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark-light);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .venmo-article p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+        
+        .venmo-article ul, .venmo-article ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        .venmo-article li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #4a5568;
+        }
+        
+        .venmo-article .table-of-contents {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article .table-of-contents h3 {
+            margin-top: 0;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        .venmo-article .table-of-contents ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+        
+        .venmo-article .table-of-contents li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .venmo-article .table-of-contents a {
+            color: var(--dark);
+            text-decoration: none;
+            display: block;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 12px;
+            transition: all 0.2s;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article .table-of-contents a:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .calc-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .calc-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+        
+        .calc-cta a span {
+            font-size: 22px;
+            margin-right: 8px;
+        }
+        
+        .venmo-article table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: var(--light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .venmo-article td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .venmo-article .highlight-box {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            border-radius: 16px;
+            margin: 25px 0;
+        }
+        
+        .venmo-article .tip-box {
+            background: #fef9e7;
+            border: 1px solid #ffe6a6;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .venmo-article .tip-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .venmo-article .example-box {
+            background: rgba(139, 92, 246, 0.05);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .venmo-article .example-box strong {
+            color: var(--primary);
+        }
+        
+        .venmo-article .faq-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .venmo-article .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .venmo-article .faq-question {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 17px;
+            padding: 18px 20px;
+            background: white;
+            cursor: pointer;
+            position: relative;
+            margin: 0;
+            transition: background 0.2s;
+            border: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .venmo-article .faq-question:hover {
+            background: rgba(139, 92, 246, 0.05);
+            color: var(--primary) !important;
+        }
+        
+        .venmo-article .faq-question:after {
+            content: "▼";
+            font-size: 12px;
+            color: var(--gray);
+            transition: transform 0.2s;
+        }
+        
+        .venmo-article .faq-question.active {
+            color: var(--primary);
+        }
+        
+        .venmo-article .faq-question.active:after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-question:hover:after {
+            color: var(--primary);
+        }
+        
+        .venmo-article .faq-answer {
+            color: #4a5568;
+            padding: 0 20px 20px 20px;
+            background: white;
+            margin: 0;
+            display: none;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .venmo-article .faq-question.active + .faq-answer {
+            display: block;
+        }
+        
+        .venmo-article .strategy-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .venmo-article .strategy-list li {
+            padding: 10px 0 10px 30px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%238b5cf6"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') left center no-repeat;
+            background-size: 20px;
+        }
+        
+        .venmo-article .comparison-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        
+        .related-links {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 28px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .related-links h4 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .related-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .related-grid a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .related-grid a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-link {
+            background: var(--secondary);
+            color: var(--dark) !important;
+            font-weight: bold;
+        }
+        
+        .calculator-link:hover {
+            background: #f59e0b !important;
+            color: var(--dark) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .venmo-article {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            .venmo-article h1 {
+                font-size: 28px;
+            }
+            .venmo-article h2 {
+                font-size: 24px;
+            }
+            .venmo-article h3 {
+                font-size: 20px;
+            }
+            .venmo-article table {
+                display: block;
+                overflow-x: auto;
+            }
+            .venmo-article .faq-question {
+                font-size: 16px;
+                padding: 15px;
+            }
+            .venmo-article .table-of-contents ul {
+                grid-template-columns: 1fr;
+            }
+            .related-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .related-grid a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .venmo-article {
+                padding: 15px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <!-- ===== HEADER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/" class="active">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
+    <div class="container">
+        
+        <!-- ===== CALCULATOR SECTION ===== -->
+        <div class="calculator-card" id="calculator-section">
+            <div class="card-header">
+                <h1>
+                    <i class="fas fa-money-bill-wave"></i>
+                    Venmo Fee Calculator
+                </h1>
+                <p>Seller • Buyer • Instant • Business • Reverse</p>
+            </div>
+            
+            <div class="card-body">
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" id="tabStandard" role="tab" aria-selected="true">Standard</button>
+                    <button class="tab" id="tabReverse" role="tab" aria-selected="false">Reverse (Net Amount)</button>
+                    <button class="tab" id="tabBusiness" role="tab" aria-selected="false">Business</button>
+                </div>
+                
+                <div class="input-section">
+                    <div class="label-row">
+                        <label id="amountLabel">Enter amount ($)</label>
+                        <span class="note" id="inputNote">You send this amount</span>
+                    </div>
+                    <div class="amount-input-wrapper">
+                        <span class="currency-symbol">$</span>
+                        <input type="number" id="amountInput" class="amount-input" placeholder="0.00" min="0.01" step="0.01" value="100.00" autofocus>
+                    </div>
+                </div>
+                
+                <div id="feeOptionsContainer"></div>
+                
+                <div class="results-panel" id="resultsPanel">
+                    <div class="result-row">
+                        <span class="result-label">💰 Venmo fee</span>
+                        <span class="result-value" id="feeAmount">$1.90</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="result-label">📊 Effective rate</span>
+                        <span class="result-value" id="effectiveRate">1.90%</span>
+                    </div>
+                    <div id="feeBreakdown" class="fee-breakdown">
+                        1.9% of $100.00 = $1.90 + $0.10 fixed
+                    </div>
+                </div>
+                
+                <div class="total-receive" id="totalReceiveCard">
+                    <span class="label" id="totalLabel">You receive</span>
+                    <span class="amount" id="totalAmount">$98.00</span>
+                    <button class="copy-btn" id="copyBtn" aria-label="Copy amount">📋 Copy</button>
+                </div>
+                
+                <div class="info-tip" id="infoTip">
+                    <i>i</i>
+                    <span id="tipMessage">Standard bank transfer (1-3 days) is free. Save money by avoiding instant transfer.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== ARTICLE ===== -->
+        <article class="venmo-article">
+            <h1>Venmo Fee Calculator 2026: Calculate All Transaction Fees (Instant, Business, Goods & Services)</h1>
+            
+            <p>Let's be honest nobody likes surprises when it comes to money. You send $100 to a friend, but they only receive $98. You sell something online for $200, but Venmo takes a cut you didn't expect. Sound familiar?</p>
+            
+            <p>That's exactly why you need a <strong>Venmo fee calculator</strong>. After years of helping small business owners and freelancers manage their payment processing costs, I've seen firsthand how confusing Venmo's fee structure can be. One wrong click and suddenly you're paying 3% more than you planned.</p>
+            
+            <p>In this guide, I'll walk you through every single <strong>Venmo fee for 2026</strong>, show you exactly how to calculate fees, and share proven strategies to save hundreds of dollars yearly on transaction fees. Whether you're a seller, buyer, or business owner, you'll finally understand exactly what Venmo charges and why.</p>
+            
+            <div class="table-of-contents">
+                <h3>📚 Table of Contents</h3>
+                <ul>
+                    <li><a href="#what-is">What is a Venmo Fee Calculator and Why Do You Need One?</a></li>
+                    <li><a href="#fee-structure">Complete Venmo Fee Structure 2026</a></li>
+                    <li><a href="#real-examples">Real-World Examples: Venmo Fee Calculations</a></li>
+                    <li><a href="#avoid-fees">How to Avoid Venmo Fees (7 Proven Strategies)</a></li>
+                    <li><a href="#faq">Frequently Asked Questions About Venmo Fees</a></li>
+                    <li><a href="#conclusion">Conclusion: Take Control of Your Venmo Costs</a></li>
+                </ul>
+            </div>
+            
+            <h2 id="what-is">What is a Venmo Fee Calculator and Why Do You Need One?</h2>
+            
+            <p>A <strong>Venmo fee calculator</strong> is a simple tool that does exactly what the name suggests it calculates how much Venmo will charge you for any transaction. But after testing dozens of calculators over the years, I've learned that most of them miss the mark. They give you a number but no context.</p>
+            
+            <h3>Understanding Venmo's Complex Fee Structure</h3>
+            
+            <p>Here's what most people don't realize: Venmo has <strong>seven different fee types</strong> depending on how you send money, receive money, or move money out. And they keep changing. Just last year, they adjusted their instant transfer fees and added new Tap to Pay rates.</p>
+            
+            <ul>
+                <li><strong>Personal vs. business transactions</strong> completely different fee structures</li>
+                <li><strong>Credit card fees</strong> 3% that only applies to senders</li>
+                <li><strong>Instant transfer fees</strong> 1.75% with minimums and maximums</li>
+                <li><strong>Check deposit fees</strong> 1% to 5% depending on check type</li>
+                <li><strong>Cryptocurrency fees</strong> tiered pricing based on amount</li>
+            </ul>
+            
+            <h3>Who Should Use This Calculator?</h3>
+            
+            <p><strong>Sellers:</strong> If you're selling items on Facebook Marketplace, Poshmark, or to friends, you need to know exactly what you'll receive after Venmo takes its 1.9% + $0.10 cut. A $50 sale actually gives you $48.90. That matters.</p>
+            
+            <p><strong>Buyers:</strong> When you use a credit card on Venmo, you're paying an extra 3%. For a $500 purchase, that's $15 you could have saved by using your bank account.</p>
+            
+            <p><strong>Business Owners:</strong> Running a business through Venmo means dealing with merchant fees, Tap to Pay rates, and understanding how chargebacks work. I've worked with coffee shops and boutiques who lost money because they didn't account for these fees in their pricing.</p>
+            
+            <p><strong>Freelancers:</strong> When you invoice clients through Venmo, you need to know whether to add fees to your rate or absorb them. This is where understanding fees becomes critical.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Pro Tip:</strong> Most calculators are one-way. You put in an amount, and it tells you the fee. But what if you need to receive exactly $100 after fees? That's where <strong>reverse calculation</strong> comes in. Instead of guessing, you can enter your desired net amount, and the calculator tells you exactly what to request.</p>
+            </div>
+            
+            <h2 id="fee-structure">Complete Venmo Fee Structure 2026 (Official Rates)</h2>
+            
+            <p>I've personally verified every single fee below against Venmo's official user agreement. These are accurate as of early 2026, but always double-check within your app since fees can change.</p>
+            
+            <h3>Account Fees: Opening, Monthly, and Maintenance</h3>
+            
+            <p><strong>Good news first:</strong> Creating a Venmo account costs absolutely nothing. There's no monthly fee, no annual fee, and no maintenance charges. You can have an account for years without paying a dime as long as you stick to basic features.</p>
+            
+             <table>
+                <thead>
+                     <tr>
+                        <th>Account Type</th>
+                        <th>Fee</th>
+                     </tr>
+                </thead>
+                <tbody>
+                     <tr><td>Account Opening</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Monthly Fee</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Annual Fee</td><td><strong>Free</strong></td></tr>
+                </tbody>
+             </table>
+            
+            <h3>Sending Money Fees: Credit Card vs. Bank Account/Debit Card</h3>
+            
+            <p>This is where most people accidentally pay extra:</p>
+            
+             <table>
+                <thead>
+                     <tr><th>Payment Method</th><th>Fee</th></tr>
+                </thead>
+                <tbody>
+                     <tr><td>Bank account</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Debit card</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Venmo balance</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Credit card</td><td><strong>3%</strong></td></tr>
+                </tbody>
+             </table>
+            
+            <p>The 3% credit card fee applies to the <strong>sender</strong>, not the recipient. If you send $100 via credit card, your card gets charged $103, and your friend receives $100.</p>
+            
+            <h3>Receiving Money Fees: Personal vs. Goods & Services</h3>
+            
+            <p>Here's the catch most people miss:</p>
+            
+            <ul>
+                <li><strong>Personal payments</strong> (splitting dinner, paying rent to a roommate) = <strong>Free</strong></li>
+                <li><strong>Goods & Services payments</strong> (buying something from a stranger, business transactions) = <strong>1.9% + $0.10</strong> paid by the seller</li>
+            </ul>
+            
+            <div class="example-box">
+                <p><strong>Example:</strong> You sell a used camera for $200. Venmo charges <strong>1.9% + $0.10</strong> = $3.90 fee. You receive <strong>$196.10</strong>.</p>
+            </div>
+            
+            <h3>Business & Merchant Fees (1.9% + $0.10 / Tap to Pay 2.29% + $0.09)</h3>
+            
+            <p>For business profiles, the fees are slightly different:</p>
+            
+             <table>
+                <thead>
+                     <tr><th>Transaction Type</th><th>Fee</th></tr>
+                </thead>
+                <tbody>
+                     <tr><td>Standard business payment</td><td>1.9% + $0.10</td></tr>
+                     <tr><td>Tap to Pay (in-person)</td><td>2.29% + $0.09</td></tr>
+                     <tr><td>QR code payments</td><td>1.9% + $0.10</td></tr>
+                </tbody>
+             </table>
+            
+            <h3>Transferring Money Fees: Standard (Free) vs. Instant (1.75%)</h3>
+            
+            <p>Once money is in your Venmo account, you need to get it to your bank:</p>
+            
+             <table>
+                <thead>
+                     <tr><th>Transfer Type</th><th>Time</th><th>Fee</th></tr>
+                </thead>
+                <tbody>
+                     <tr><td>Standard</td><td>1-3 business days</td><td><strong>Free</strong></td></tr>
+                     <tr><td>Instant</td><td>Minutes</td><td><strong>1.75%</strong> (min $0.25, max $25)</td></tr>
+                </tbody>
+             </table>
+            
+            <p>For a $500 instant transfer, you'd pay $8.75. For a $50 transfer, you'd pay the $0.25 minimum. The $25 maximum means large transfers over about $1,428 still cap at $25.</p>
+            
+            <div class="tip-box">
+                <h4>💡 Speed Costs Money</h4>
+                <p>If you can wait 1-3 days, always choose standard transfer. It's free and the money always arrives.</p>
+            </div>
+            
+            <h3>Cash & Check Deposit Fees (1%–5%, Minimum $5)</h3>
+            
+            <p>Adding money via the "cash a check" feature comes with fees:</p>
+            
+             <table>
+                <thead>
+                     <tr><th>Check Type</th><th>Fee</th></tr>
+                </thead>
+                <tbody>
+                     <tr><td>Payroll/government checks (faster)</td><td>1% (min $5)</td></tr>
+                     <tr><td>Other accepted checks (faster)</td><td>5% (min $5)</td></tr>
+                </tbody>
+             </table>
+            
+            <h2 id="real-examples">Real-World Examples: Venmo Fee Calculations by Scenario</h2>
+            
+            <p>Let me walk you through actual calculations I've done for clients. These are real numbers from real situations.</p>
+            
+            <h3>Example 1: Sending $500 via Credit Card</h3>
+            <p><strong>Scenario:</strong> You're paying a contractor $500, but your bank account is low. You use your credit card.</p>
+            <p><strong>Calculation:</strong> $500 × 3% = $15.00 fee → Your card charged $515 → Contractor receives $500</p>
+            
+            <h3>Example 2: Receiving $200 for Goods & Services</h3>
+            <p><strong>Scenario:</strong> You sold a used camera on Facebook Marketplace for $200.</p>
+            <p><strong>Calculation:</strong> ($200 × 1.9%) + $0.10 = $3.80 + $0.10 = $3.90 fee → You receive $196.10</p>
+            
+            <h3>Example 3: Instant Transfer of $1,000 to Your Bank</h3>
+            <p><strong>Scenario:</strong> You have $1,000 in Venmo and need it immediately.</p>
+            <p><strong>Calculation:</strong> $1,000 × 1.75% = $17.50 fee → You receive $982.50 in minutes</p>
+            
+            <h3>Example 4: Adding Money via Payroll Check ($500)</h3>
+            <p><strong>Scenario:</strong> You deposit a $500 payroll check using faster deposit.</p>
+            <p><strong>Calculation:</strong> 1% of $500 = $5.00 (minimum) → Your Venmo balance adds $495.00</p>
+            
+            <h3>Example 5: Business Tap to Pay Transaction ($50 Sale)</h3>
+            <p><strong>Scenario:</strong> You run a small bakery and accept a $50 payment via Tap to Pay.</p>
+            <p><strong>Calculation:</strong> ($50 × 2.29%) + $0.09 = $1.145 + $0.09 = $1.24 fee → You receive $48.76</p>
+            
+            <h2 id="avoid-fees">How to Avoid Venmo Fees (7 Proven Strategies)</h2>
+            
+            <p>After years of analyzing payment apps, I've developed strategies that actually work. Here's how to keep more of your money.</p>
+            
+            <ul class="strategy-list">
+                <li><strong>Always use bank account or Venmo balance, not credit card</strong> This saves 3% on every transaction</li>
+                <li><strong>Choose standard transfer over instant withdrawal</strong> Free vs 1.75% fee</li>
+                <li><strong>Mark transactions correctly</strong> Personal vs Goods & Services matters</li>
+                <li><strong>Avoid out-of-network ATM withdrawals</strong> $2.50 fee adds up</li>
+                <li><strong>Plan check deposits to avoid urgent fees</strong> 10-day free option exists</li>
+                <li><strong>Bundle small transactions</strong> Minimize the $0.10 fixed fee impact</li>
+                <li><strong>Understand cryptocurrency fee tiers</strong> For large trades, percentage fees beat fixed fees</li>
+            </ul>
+            
+            <h2 id="faq">Frequently Asked Questions About Venmo Fees</h2>
+            
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">How to calculate Venmo fees?</div>
+                    <div class="faq-answer">
+                        <p>To calculate Venmo fees, multiply your transaction amount by the fee percentage, then add any fixed fee. For Goods & Services: (Amount × 1.9%) + $0.10. For instant transfer: Amount × 1.75%. For credit card: Amount × 3%. Use our <strong>Venmo fee calculator</strong> above for instant results.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Does Venmo charge a 3% fee?</div>
+                    <div class="faq-answer">
+                        <p>Yes, Venmo charges a 3% fee when you send money using a <strong>credit card</strong>. This fee is paid by the sender. If you use your bank account, debit card, or Venmo balance, there is no fee for sending money.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much does Venmo charge for $1000?</div>
+                    <div class="faq-answer">
+                        <p>For $1,000, Venmo fees vary by transaction type:
+                        <br> Goods & Services: $19.10 ($19 + $0.10)
+                        <br> Instant transfer: $17.50 (1.75%)
+                        <br> Credit card send: $30.00 (3%)
+                        <br> Standard transfer: $0 (free)</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Who pays the 3% Venmo fee?</div>
+                    <div class="faq-answer">
+                        <p>The <strong>sender</strong> pays the 3% fee when using a credit card. If you send $100 via credit card, you pay $103 total, and the recipient receives $100. The fee is deducted from the sender's payment method, not the recipient's.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How much is the fee to take out $500 from Venmo?</div>
+                    <div class="faq-answer">
+                        <p>To take out $500 from Venmo (instant transfer), the fee is <strong>$8.75</strong> (1.75% of $500). You would receive $491.25 in minutes. If you choose standard transfer (1-3 business days), the fee is <strong>$0</strong> and you receive the full $500.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 id="conclusion">Conclusion: Take Control of Your Venmo Costs</h2>
+            
+            <h3>Summary of Key Fee Takeaways</h3>
+            
+            <ul>
+                <li><strong>Bank transfers are free</strong> use them whenever possible</li>
+                <li><strong>Credit cards cost 3%</strong> avoid unless necessary</li>
+                <li><strong>Instant transfers cost 1.75%</strong> wait if you can</li>
+                <li><strong>Goods & Services fees are 1.9% + $0.10</strong> build this into your prices</li>
+                <li><strong>Reverse calculation ensures you get exactly what you expect</strong> use it for invoices</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>Remember:</strong> Knowledge is power, but only when you use it. The next time you send or receive money on Venmo, take 10 seconds to run it through the calculator above. Your wallet will thank you.</p>
+            </div>
+            
+            <p><em>Have questions about a specific Venmo transaction? Drop them in the comments below.</em></p>
+            
+            <div class="calc-cta">
+                <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                    <span>💰</span> Try Our Venmo Fee Calculator → <span>⚡</span>
+                </a>
+            </div>
+            
+            <div class="related-links">
+                <h4>🔗 Related Calculators</h4>
+                <div class="related-grid">
+                    <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">💰 Venmo Fee Calculator</a>
+                    <a href="/pain-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                    <a href="/productivity-calculator">📈 Productivity Calculator</a>
+                    <a href="/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
+                    <a href="/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                    <a href="/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+    
+    <!-- ===== FOOTER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/productivity-calculator">Productivity</a>
+                <a href="/uk-aggregate-calculator">Aggregate</a>
+                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // ===== CALCULATOR JAVASCRIPT =====
+        (function() {
+            'use strict';
+            
+            const amountInput = document.getElementById('amountInput');
+            const tabStandard = document.getElementById('tabStandard');
+            const tabReverse = document.getElementById('tabReverse');
+            const tabBusiness = document.getElementById('tabBusiness');
+            const feeOptionsContainer = document.getElementById('feeOptionsContainer');
+            const feeAmountEl = document.getElementById('feeAmount');
+            const effectiveRateEl = document.getElementById('effectiveRate');
+            const feeBreakdownEl = document.getElementById('feeBreakdown');
+            const totalAmountEl = document.getElementById('totalAmount');
+            const totalLabel = document.getElementById('totalLabel');
+            const tipMessageEl = document.getElementById('tipMessage');
+            const copyBtn = document.getElementById('copyBtn');
+            const inputNote = document.getElementById('inputNote');
+            
+            let currentTab = 'standard';
+            let currentFeeType = 'goods';
+            
+            const INSTANT_MIN_FEE = 0.25;
+            const INSTANT_MAX_FEE = 25.00;
+            
+            const feeDefinitions = {
+                goods: { percent: 0.019, fixed: 0.10, name: 'Goods & Services', rateDisplay: '1.9% + $0.10' },
+                instant: { percent: 0.0175, fixed: 0, name: 'Instant Transfer', rateDisplay: '1.75% (min $0.25, max $25)' },
+                credit: { percent: 0.03, fixed: 0, name: 'Credit Card', rateDisplay: '3%' },
+                business_goods: { percent: 0.019, fixed: 0.10, name: 'Business (Goods & Services)', rateDisplay: '1.9% + $0.10' },
+                business_tap: { percent: 0.0229, fixed: 0.10, name: 'Tap to Pay', rateDisplay: '2.29% + $0.10' },
+                business_qr: { percent: 0.019, fixed: 0.10, name: 'QR Code', rateDisplay: '1.9% + $0.10' }
+            };
+            
+            function init() {
+                amountInput.value = '100.00';
+                renderFeeOptions();
+                amountInput.addEventListener('input', handleAmountChange);
+                tabStandard.addEventListener('click', () => switchTab('standard'));
+                tabReverse.addEventListener('click', () => switchTab('reverse'));
+                tabBusiness.addEventListener('click', () => switchTab('business'));
+                copyBtn.addEventListener('click', copyTotalToClipboard);
+                calculate();
+            }
+            
+            function switchTab(tab) {
+                currentTab = tab;
+                
+                [tabStandard, tabReverse, tabBusiness].forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                
+                if (tab === 'standard') {
+                    tabStandard.classList.add('active');
+                    tabStandard.setAttribute('aria-selected', 'true');
+                    currentFeeType = 'goods';
+                } else if (tab === 'reverse') {
+                    tabReverse.classList.add('active');
+                    tabReverse.setAttribute('aria-selected', 'true');
+                    currentFeeType = 'goods';
+                } else if (tab === 'business') {
+                    tabBusiness.classList.add('active');
+                    tabBusiness.setAttribute('aria-selected', 'true');
+                    currentFeeType = 'business_goods';
+                }
+                
+                renderFeeOptions();
+                calculate();
+                updateInputNote();
+            }
+            
+            function renderFeeOptions() {
+                let optionsHtml = '<div class="fee-option-selector">';
+                
+                if (currentTab === 'standard' || currentTab === 'reverse') {
+                    optionsHtml += `
+                        <div class="fee-option-title">
+                            ⚙️ Select fee type <span>${currentTab === 'reverse' ? 'Reverse' : 'Standard'}</span>
+                        </div>
+                        <div class="fee-radio-group">
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="goods" ${currentFeeType === 'goods' ? 'checked' : ''}> 
+                                Goods & Services (1.9% + $0.10)
+                                <span class="fee-rate-detail">Seller pays</span>
+                            </label>
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="instant" ${currentFeeType === 'instant' ? 'checked' : ''}> 
+                                Instant Transfer (1.75%)
+                                <span class="fee-rate-detail">Min $0.25</span>
+                            </label>
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="credit" ${currentFeeType === 'credit' ? 'checked' : ''}> 
+                                Credit Card (3%)
+                                <span class="fee-rate-detail">Sender pays</span>
+                            </label>
+                        </div>
+                    `;
+                } else if (currentTab === 'business') {
+                    optionsHtml += `
+                        <div class="fee-option-title">
+                            💼 Business profile fees <span>Merchant</span>
+                        </div>
+                        <div class="fee-radio-group">
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="business_goods" ${currentFeeType === 'business_goods' ? 'checked' : ''}> 
+                                Goods & Services (1.9% + $0.10)
+                                <span class="fee-rate-detail">Standard</span>
+                            </label>
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="business_tap" ${currentFeeType === 'business_tap' ? 'checked' : ''}> 
+                                Tap to Pay (2.29% + $0.10)
+                                <span class="fee-rate-detail">In-person</span>
+                            </label>
+                            <label class="fee-radio">
+                                <input type="radio" name="feeType" value="business_qr" ${currentFeeType === 'business_qr' ? 'checked' : ''}> 
+                                QR Code (1.9% + $0.10)
+                                <span class="fee-rate-detail">Online</span>
+                            </label>
+                        </div>
+                    `;
+                }
+                
+                optionsHtml += '</div>';
+                feeOptionsContainer.innerHTML = optionsHtml;
+                
+                document.querySelectorAll('input[name="feeType"]').forEach(radio => {
+                    radio.addEventListener('change', (e) => {
+                        currentFeeType = e.target.value;
+                        calculate();
+                    });
+                });
+            }
+            
+            function updateInputNote() {
+                if (currentTab === 'standard') {
+                    inputNote.textContent = 'You send this amount';
+                } else if (currentTab === 'reverse') {
+                    inputNote.textContent = 'Amount you want (net)';
+                } else if (currentTab === 'business') {
+                    inputNote.textContent = 'Sale amount';
+                }
+            }
+            
+            function handleAmountChange(e) {
+                let value = parseFloat(e.target.value);
+                if (isNaN(value) || value < 0) {
+                    value = 0;
+                }
+                calculate();
+            }
+            
+            function calculate() {
+                const amount = parseFloat(amountInput.value) || 0;
+                
+                let def;
+                if (currentFeeType === 'goods') def = feeDefinitions.goods;
+                else if (currentFeeType === 'instant') def = feeDefinitions.instant;
+                else if (currentFeeType === 'credit') def = feeDefinitions.credit;
+                else if (currentFeeType === 'business_goods') def = feeDefinitions.business_goods;
+                else if (currentFeeType === 'business_tap') def = feeDefinitions.business_tap;
+                else if (currentFeeType === 'business_qr') def = feeDefinitions.business_qr;
+                else def = feeDefinitions.goods;
+                
+                let percentFee = amount * def.percent;
+                let fixedFee = def.fixed;
+                let fee, total, effectiveRate, breakdown;
+                
+                if (currentFeeType === 'instant') {
+                    if (percentFee < INSTANT_MIN_FEE) percentFee = INSTANT_MIN_FEE;
+                    if (percentFee > INSTANT_MAX_FEE) percentFee = INSTANT_MAX_FEE;
+                }
+                
+                fee = percentFee + fixedFee;
+                fee = Math.round(fee * 100) / 100;
+                
+                if (currentTab === 'reverse') {
+                    const gross = (amount + fixedFee) / (1 - def.percent);
+                    let totalToSend = Math.round(gross * 100) / 100;
+                    fee = totalToSend - amount;
+                    
+                    if (currentFeeType === 'instant') {
+                        if (fee < INSTANT_MIN_FEE) {
+                            fee = INSTANT_MIN_FEE;
+                            totalToSend = amount + fee;
+                        }
+                        if (fee > INSTANT_MAX_FEE) {
+                            fee = INSTANT_MAX_FEE;
+                            totalToSend = amount + fee;
+                        }
+                    }
+                    
+                    total = totalToSend;
+                    effectiveRate = (fee / amount) * 100;
+                    breakdown = `To receive <span>$${amount.toFixed(2)}</span> net, request <span>$${totalToSend.toFixed(2)}</span>. Fee: ${def.rateDisplay}`;
+                    totalLabel.textContent = 'Sender should send';
+                } 
+                else {
+                    total = amount - fee;
+                    total = Math.max(0, Math.round(total * 100) / 100);
+                    effectiveRate = (fee / amount) * 100;
+                    
+                    if (currentFeeType === 'instant') {
+                        if (amount * def.percent < INSTANT_MIN_FEE) {
+                            breakdown = `Min fee $${INSTANT_MIN_FEE} applied (was $${(amount * def.percent).toFixed(2)})`;
+                        } else if (amount * def.percent > INSTANT_MAX_FEE) {
+                            breakdown = `Max fee $${INSTANT_MAX_FEE} applied (was $${(amount * def.percent).toFixed(2)})`;
+                        } else {
+                            breakdown = `${def.percent*100}% of $${amount.toFixed(2)} = $${(amount * def.percent).toFixed(2)}`;
+                        }
+                    } else if (def.fixed > 0) {
+                        breakdown = `${def.percent*100}% of $${amount.toFixed(2)} = $${(amount * def.percent).toFixed(2)} + $${def.fixed.toFixed(2)} fixed`;
+                    } else {
+                        breakdown = `${def.percent*100}% of $${amount.toFixed(2)} = $${(amount * def.percent).toFixed(2)}`;
+                    }
+                    
+                    totalLabel.textContent = 'You receive';
+                }
+                
+                feeAmountEl.textContent = `$${fee.toFixed(2)}`;
+                effectiveRateEl.textContent = effectiveRate.toFixed(2) + '%';
+                feeBreakdownEl.innerHTML = breakdown;
+                totalAmountEl.textContent = `$${total.toFixed(2)}`;
+                
+                updateTip();
+            }
+            
+            function updateTip() {
+                if (currentFeeType === 'instant') {
+                    tipMessageEl.textContent = '💡 Instant transfer: 1.75% (min $0.25, max $25). Standard transfer (1-3 days) is always free!';
+                } else if (currentFeeType === 'credit') {
+                    tipMessageEl.textContent = '💡 Credit card fee (3%) is paid by the sender. Use bank account to avoid this fee.';
+                } else if (currentFeeType.includes('business')) {
+                    tipMessageEl.textContent = '💡 Business fees are deducted from your payout. Tap to Pay is 2.29% + $0.10 for in-person.';
+                } else if (currentTab === 'reverse') {
+                    tipMessageEl.textContent = '💡 Reverse calculator helps you request exact amount including fees. Perfect for invoices!';
+                } else {
+                    tipMessageEl.textContent = '💡 Standard bank transfer (1-3 days) is free. Save money by avoiding instant transfer fees.';
+                }
+            }
+            
+            function copyTotalToClipboard() {
+                const textToCopy = totalAmountEl.textContent;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    const originalText = copyBtn.textContent;
+                    copyBtn.textContent = '✅ Copied!';
+                    copyBtn.classList.add('copied');
+                    setTimeout(() => {
+                        copyBtn.textContent = originalText;
+                        copyBtn.classList.remove('copied');
+                    }, 1500);
+                }).catch(() => {
+                    alert('Press Ctrl+C to copy: ' + textToCopy);
+                });
+            }
+            
+            init();
+        })();
+
+        // ===== ARTICLE FAQ JAVASCRIPT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+            
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
