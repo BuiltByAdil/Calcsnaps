@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | CalcSnaps</title>
+    <meta name="description" content="CalcSnaps provides free online calculators for unique needs. No signup, no tracking, 100% free. Learn about our mission and values.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/about-us">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us | CalcSnaps">
+    <meta property="og:description" content="CalcSnaps provides free online calculators for unique needs. No signup, no tracking, 100% free. Learn about our mission and values.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/about-us">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Us",
+        "description": "CalcSnaps provides free online calculators for unique needs. No signup, no tracking, 100% free.",
+        "url": "https://calcsnaps.com/about-us"
+    }
+    </script>
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Header + Container) */
+        /* ============================================ */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px 24px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* ===== ABOUT US PAGE CSS ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 0px;
+            line-height: 1.7;
+            color: #1e293b;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-container {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            padding: 48px;
+            border: 1px solid #e2e8f0;
+            margin: 24px 0;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 3px solid #8b5cf6;
+        }
+        
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+        
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #334155;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #334155;
+        }
+        
+        a {
+            color: #8b5cf6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .value-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-4px);
+            border-color: #8b5cf6;
+        }
+        
+        .value-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .value-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #0f172a;
+            font-size: 18px;
+        }
+        
+        .value-card p {
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+        
+        .contact-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 24px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        hr {
+            margin: 32px 0;
+            border: none;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .about-container {
+                padding: 28px 20px;
+                margin: 16px 0;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            h2 {
+                font-size: 22px;
+            }
+            .value-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-container {
+                padding: 20px 16px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== HEADER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us" class="active">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER ===== -->
+    <div class="container">
+        
+        <div class="about-container">
+            <h1>About CalcSnaps</h1>
+            
+            <!-- ========== WHO WE ARE ========== -->
+            <h2>Who We Are</h2>
+            <p>CalcSnaps was created by <strong>CalcSnap</strong>, a web developer and calculator enthusiast with a passion for building simple, useful online tools. Frustrated by complicated calculator sites filled with ads, signup requirements, and outdated designs, I decided to build something better.</p>
+            
+            <p>What started as a personal project to create a few niche calculators (like Pain & Suffering and Dog Heat Cycle) quickly grew into a full platform. Today, CalcSnaps offers a growing collection of calculators covering legal, financial, pet care, construction, productivity, and sports categories — all completely free, with no signup required.</p>
+            
+            <!-- ========== OUR MISSION ========== -->
+            <h2>Our Mission</h2>
+            <p>Our mission is simple: <strong>"Calculations in a Snap."</strong></p>
+            <p>We believe that finding the right calculator shouldn't be a headache. Whether you're estimating a legal settlement, calculating gravel for a driveway, tracking your dog's heat cycle, or measuring your productivity, you should be able to get an accurate result instantly — without creating an account, without sharing personal information, and without hidden fees.</p>
+            
+            <!-- ========== OUR VALUES ========== -->
+            <h2>Our Values</h2>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Instant calculations. No waiting, no reloads, no page refreshes. Get your results immediately.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎯</div>
+                    <h3>100% Free</h3>
+                    <p>No premium tiers, no paywalls, no subscription fees. Every calculator on CalcSnaps is completely free to use.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>We don't track your personal information. No signup, no email collection, no user accounts. Your data stays yours.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📐</div>
+                    <h3>Accurate & Reliable</h3>
+                    <p>Our calculators are built using industry-standard formulas and reviewed for accuracy. Results are estimates — always verify with professionals for critical decisions.</p>
+                </div>
+            </div>
+            
+            <!-- ========== OUR CALCULATORS ========== -->
+            <h2>What We Offer</h2>
+            <p>Currently, CalcSnaps offers calculators in the following categories:</p>
+            <ul>
+                <li><strong>⚖️ Legal Calculators:</strong> Pain & Suffering Calculator (personal injury estimates)</li>
+                <li><strong>🏗️ Construction Calculators:</strong> UK Aggregate Calculator (MOT Type 1, gravel, topsoil, sand)</li>
+                <li><strong>🏥 Pet Care Calculators:</strong> Dog Heat Cycle Calculator (estrus tracking and prediction)</li>
+                <li><strong>📊 Productivity Calculators:</strong> Productivity Calculator (efficiency and time management)</li>
+                <li><strong>🏌️ Sports Calculators:</strong> Golf Club Length Calculator (club fitting estimates)</li>
+                <li><strong>💰 Financial Calculators:</strong> Venmo Fee Calculator (transaction fee estimates)</li>
+            </ul>
+            <p>We're constantly adding new calculators based on user requests and emerging needs. If there's a calculator you'd like to see on CalcSnaps, <a href="/contact">let us know</a>.</p>
+            
+            <!-- ========== HOW WE CREATE CONTENT ========== -->
+            <h2>How We Create Content</h2>
+            <p>All calculators on CalcSnaps are custom-built by our team. Each calculator is developed using:</p>
+            <ul>
+                <li>Industry-standard formulas and algorithms</li>
+                <li>Peer-reviewed research and official guidelines where applicable</li>
+                <li>Real-world testing and validation</li>
+            </ul>
+            <p>Our articles and guides are written to complement the calculators — providing context, step-by-step instructions, and practical tips. All content is reviewed for accuracy and updated as needed to reflect new information or user feedback.</p>
+            
+            <!-- ========== WHY TRUST CALCSNAPS ========== -->
+            <h2>Why Trust CalcSnaps?</h2>
+            <ul>
+                <li><strong>No Signup Required:</strong> We don't collect your email, name, or personal information. Use calculators instantly.</li>
+                <li><strong>No Tracking:</strong> We don't track your activity across the web. Your privacy is respected.</li>
+                <li><strong>100% Free:</strong> Every calculator, article, and guide on CalcSnaps is completely free. No premium tiers, no hidden fees.</li>
+                <li><strong>Transparency:</strong> We clearly state when results are estimates. We don't overpromise accuracy.</li>
+                <li><strong>Regular Updates:</strong> We actively maintain and improve our calculators based on user feedback and new information.</li>
+            </ul>
+            
+            <!-- ========== LOCATION ========== -->
+            <h2>Location</h2>
+            <p>CalcSnaps is operated from <strong>[Your City, Your Country]</strong>. We serve users worldwide with tools designed to be useful regardless of location.</p>
+            
+            <!-- ========== CONTACT ========== -->
+            <h2>Get in Touch</h2>
+            <p>Have questions, suggestions, or feedback? We'd love to hear from you.</p>
+            
+            <div class="contact-box">
+                <p><strong>📧 Email:</strong> <a href="mailto:hello@calcsnaps.com">hello@calcsnaps.com</a><br>
+                <strong>🌐 Website:</strong> <a href="https://calcsnaps.com/contact">https://calcsnaps.com/contact</a></p>
+                <p><em>We aim to respond to all inquiries within 1-2 business days.</em></p>
+            </div>
+            
+            <hr>
+            
+            <p style="font-size: 14px; color: #64748b; text-align: center;">
+                Thank you for visiting CalcSnaps. We're here to make calculations simple — one snap at a time.
+            </p>
+        </div>
+        
+    </div>
+    
+    <!-- ===== FOOTER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/productivity-calculator">Productivity</a>
+                <a href="/uk-aggregate-calculator">Aggregate</a>
+                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</body>
+</html>
