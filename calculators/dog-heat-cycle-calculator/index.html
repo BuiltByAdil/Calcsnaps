@@ -73,7 +73,7 @@
     
     <!-- ===== CALCULATOR + ARTICLE CSS (MERGE) ===== -->
     <style>
-        /* ===== CALCULATOR CSS ===== */
+        /* ===== CALCSNAPS BRAND COLORS ===== */
         :root {
             --primary: #8b5cf6;
             --primary-dark: #7c3aed;
@@ -129,9 +129,11 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        /* ===== MAIN CONTAINER - 900px (Calculator Best) ===== */
         .container {
             max-width: 900px;
             margin: 0 auto;
+            padding: 0 24px;
             width: 100%;
         }
 
@@ -150,11 +152,12 @@
             top: 0;
         }
 
-        /* Header - CALCSNAPS DARK NAVY */
+        /* ===== CALCULATOR HEADER - CALCSNAPS DARK NAVY ===== */
         .calc-main-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 20px auto 40px auto;
             padding: 30px;
+            max-width: 900px;
             background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-md);
@@ -178,7 +181,7 @@
             margin: 0 auto;
         }
 
-        /* Cards */
+        /* ===== CALCULATOR CARDS ===== */
         .calculator-box, .result-box, .symptoms-box {
             background: var(--bg-primary);
             border-radius: var(--radius-lg);
@@ -189,7 +192,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Result box hidden by default */
         .result-box {
             display: none;
         }
@@ -265,7 +267,6 @@
             min-height: 20px;
         }
 
-        /* Button - PURPLE GRADIENT */
         .btn {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
@@ -306,7 +307,6 @@
             cursor: not-allowed;
         }
 
-        /* Result Box */
         .result-header {
             display: flex;
             justify-content: space-between;
@@ -357,7 +357,6 @@
             border-left: 4px solid var(--primary);
         }
 
-        /* Timeline */
         .timeline-item {
             background: var(--bg-secondary);
             padding: 20px;
@@ -384,7 +383,6 @@
             margin-bottom: 5px;
         }
 
-        /* Symptoms Checklist */
         .symptoms-checklist {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -448,7 +446,6 @@
             animation: fadeIn 0.3s;
         }
 
-        /* Calculator Disclaimer */
         .calculator-disclaimer {
             background: rgba(251, 191, 36, 0.1);
             border-left: 5px solid var(--secondary);
@@ -467,7 +464,7 @@
         /* ===== ARTICLE CSS ===== */
         .article-container {
             max-width: 900px;
-            margin: 0 auto;
+            margin: 30px auto;
             padding: 30px 20px;
             background: white;
             border-radius: 32px;
@@ -475,7 +472,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* Article Header Styles */
         .article-header {
             text-align: center;
             margin-bottom: 40px;
@@ -759,40 +755,33 @@
             color: var(--dark) !important;
         }
 
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
             }
+            
+            .calc-main-header {
+                margin: 16px auto 30px auto;
+                padding: 24px 20px;
+            }
+            
             .calc-main-header h1 {
-                white-space: normal;
                 font-size: 1.6rem;
             }
             
-            .symptoms-checklist {
-                grid-template-columns: 1fr;
+            .calculator-box, .result-box, .symptoms-box {
+                padding: 20px;
             }
             
-            .result-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .calculator-disclaimer {
+                padding: 12px 16px;
+                margin: 16px 0 24px;
             }
             
-            .action-buttons {
-                align-self: stretch;
-                justify-content: stretch;
-            }
-            
-            .action-btn {
-                flex: 1;
-                justify-content: center;
-            }
-            
-            .timeline-item:hover {
-                transform: none;
-            }
-
             .article-container {
                 padding: 20px 15px;
+                margin: 20px 10px;
             }
             
             .article-content h2 {
@@ -820,11 +809,35 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .result-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .action-buttons {
+                align-self: stretch;
+                justify-content: stretch;
+            }
+            
+            .action-btn {
+                flex: 1;
+                justify-content: center;
+            }
+            
+            .symptoms-checklist {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
             .calculator-box, .result-box, .symptoms-box {
-                padding: 20px;
+                padding: 16px;
+            }
+            
+            .calc-main-header {
+                padding: 20px 16px;
+                margin: 12px auto 24px auto;
             }
             
             .calc-main-header h1 {
@@ -844,7 +857,6 @@
             }
         }
 
-        /* Print styles */
         @media print {
             .btn, .action-buttons, .symptoms-box {
                 display: none !important;
@@ -860,7 +872,7 @@
                 border: 1px solid #ddd;
                 break-inside: avoid;
             }
-
+            
             .article-container {
                 box-shadow: none;
                 margin: 0;
@@ -890,113 +902,111 @@
         
         <!-- ===== CALCULATOR ===== -->
         <div id="calculator-section">
-            <div class="container" id="main-content">
-                <header class="calc-main-header" role="banner">
-                    <h1>
-                        <i class="fas fa-dog" aria-hidden="true"></i>
-                        Dog Heat Cycle Calculator
-                    </h1>
-                    <p>Track your dog's heat cycles with confidence</p>
-                </header>
+            <header class="calc-main-header" role="banner">
+                <h1>
+                    <i class="fas fa-dog" aria-hidden="true"></i>
+                    Dog Heat Cycle Calculator
+                </h1>
+                <p>Track your dog's heat cycles with confidence</p>
+            </header>
 
-                <main role="main">
-                    <section class="calculator-box" aria-labelledby="calculator-title">
-                        <h2 class="section-title" id="calculator-title">
-                            <i class="fas fa-calculator" aria-hidden="true"></i> Enter Your Dog's Details
-                        </h2>
-                        
-                        <div class="input-group">
-                            <label for="lastHeat">
-                                <i class="far fa-calendar-alt" aria-hidden="true"></i> Last Heat Start Date
-                            </label>
-                            <input type="date" id="lastHeat" aria-required="true" aria-describedby="dateError">
-                            <div id="dateError" class="error-message" role="alert"></div>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="breedSize">
-                                <i class="fas fa-dog" aria-hidden="true"></i> Dog Breed Size
-                            </label>
-                            <select id="breedSize" aria-describedby="breedHelp">
-                                <option value="small">Small Breed (e.g., Chihuahua, Pomeranian)</option>
-                                <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
-                                <option value="large">Large Breed (e.g., German Shepherd, Labrador)</option>
-                                <option value="giant">Giant Breed (e.g., Great Dane, Mastiff)</option>
-                            </select>
-                            <div id="breedHelp" class="error-message"></div>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="cycleLength">
-                                <i class="fas fa-history" aria-hidden="true"></i> Cycle Length
-                            </label>
-                            <select id="cycleLength">
-                                <option value="auto">Auto-Calculate (Recommended)</option>
-                                <option value="5">5 months</option>
-                                <option value="6">6 months</option>
-                                <option value="7">7 months</option>
-                                <option value="8">8 months</option>
-                                <option value="9">9 months</option>
-                                <option value="12">12 months</option>
-                            </select>
-                        </div>
-                        
-                        <button class="btn" id="calculateBtn" aria-label="Calculate heat cycles">
-                            <i class="fas fa-bolt" aria-hidden="true"></i> 
-                            <span>Calculate Heat Cycles</span>
-                        </button>
-                    </section>
-
-                    <!-- Calculator Disclaimer -->
-                    <div class="calculator-disclaimer">
-                        <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
+            <main role="main">
+                <section class="calculator-box" aria-labelledby="calculator-title">
+                    <h2 class="section-title" id="calculator-title">
+                        <i class="fas fa-calculator" aria-hidden="true"></i> Enter Your Dog's Details
+                    </h2>
+                    
+                    <div class="input-group">
+                        <label for="lastHeat">
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i> Last Heat Start Date
+                        </label>
+                        <input type="date" id="lastHeat" aria-required="true" aria-describedby="dateError">
+                        <div id="dateError" class="error-message" role="alert"></div>
                     </div>
+                    
+                    <div class="input-group">
+                        <label for="breedSize">
+                            <i class="fas fa-dog" aria-hidden="true"></i> Dog Breed Size
+                        </label>
+                        <select id="breedSize" aria-describedby="breedHelp">
+                            <option value="small">Small Breed (e.g., Chihuahua, Pomeranian)</option>
+                            <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
+                            <option value="large">Large Breed (e.g., German Shepherd, Labrador)</option>
+                            <option value="giant">Giant Breed (e.g., Great Dane, Mastiff)</option>
+                        </select>
+                        <div id="breedHelp" class="error-message"></div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="cycleLength">
+                            <i class="fas fa-history" aria-hidden="true"></i> Cycle Length
+                        </label>
+                        <select id="cycleLength">
+                            <option value="auto">Auto-Calculate (Recommended)</option>
+                            <option value="5">5 months</option>
+                            <option value="6">6 months</option>
+                            <option value="7">7 months</option>
+                            <option value="8">8 months</option>
+                            <option value="9">9 months</option>
+                            <option value="12">12 months</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn" id="calculateBtn" aria-label="Calculate heat cycles">
+                        <i class="fas fa-bolt" aria-hidden="true"></i> 
+                        <span>Calculate Heat Cycles</span>
+                    </button>
+                </section>
 
-                    <section class="result-box" id="resultBox" aria-labelledby="result-title" aria-live="polite">
-                        <div class="result-header">
-                            <h2 class="result-title" id="result-title">Heat Cycle Schedule</h2>
-                            <div class="action-buttons" role="group" aria-label="Result actions">
-                                <button class="action-btn" id="saveBtn" aria-label="Save results">
-                                    <i class="far fa-save" aria-hidden="true"></i> Save
-                                </button>
-                                <button class="action-btn" id="printBtn" aria-label="Print results">
-                                    <i class="fas fa-print" aria-hidden="true"></i> Print
-                                </button>
-                                <button class="action-btn" id="exportBtn" aria-label="Export results as JSON">
-                                    <i class="fas fa-download" aria-hidden="true"></i> Export
-                                </button>
-                                <button class="action-btn" id="resetBtn" aria-label="Reset calculator">
-                                    <i class="fas fa-redo" aria-hidden="true"></i> Reset
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="result-details">
-                            <p><strong>Breed Size:</strong> <span id="resultBreedSize">Medium Breed</span></p>
-                            <p><strong>Cycle Length:</strong> <span id="resultCycleLength">6 months</span></p>
-                            <p><strong>Next 3 Heat Cycles:</strong></p>
-                        </div>
-                        
-                        <div class="timeline" id="timeline" role="list" aria-label="Heat cycle timeline">
-                            <!-- Results will appear here -->
-                        </div>
-                    </section>
+                <!-- Calculator Disclaimer -->
+                <div class="calculator-disclaimer">
+                    <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
+                </div>
 
-                    <section class="symptoms-box" aria-labelledby="symptoms-title">
-                        <h2 class="section-title" id="symptoms-title">
-                            <i class="fas fa-clipboard-check" aria-hidden="true"></i> Symptoms Checklist
-                        </h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 15px;">
-                            Click on symptoms you observe to get personalized advice.
-                        </p>
-                        <div class="symptoms-checklist" id="symptomsChecklist" role="group" aria-label="Heat symptoms"></div>
-                        <div class="advice-box" id="adviceBox" role="status" aria-live="polite">
-                            <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Professional Advice</h4>
-                            <p id="adviceText"></p>
+                <section class="result-box" id="resultBox" aria-labelledby="result-title" aria-live="polite">
+                    <div class="result-header">
+                        <h2 class="result-title" id="result-title">Heat Cycle Schedule</h2>
+                        <div class="action-buttons" role="group" aria-label="Result actions">
+                            <button class="action-btn" id="saveBtn" aria-label="Save results">
+                                <i class="far fa-save" aria-hidden="true"></i> Save
+                            </button>
+                            <button class="action-btn" id="printBtn" aria-label="Print results">
+                                <i class="fas fa-print" aria-hidden="true"></i> Print
+                            </button>
+                            <button class="action-btn" id="exportBtn" aria-label="Export results as JSON">
+                                <i class="fas fa-download" aria-hidden="true"></i> Export
+                            </button>
+                            <button class="action-btn" id="resetBtn" aria-label="Reset calculator">
+                                <i class="fas fa-redo" aria-hidden="true"></i> Reset
+                            </button>
                         </div>
-                    </section>
-                </main>
-            </div>
+                    </div>
+                    
+                    <div class="result-details">
+                        <p><strong>Breed Size:</strong> <span id="resultBreedSize">Medium Breed</span></p>
+                        <p><strong>Cycle Length:</strong> <span id="resultCycleLength">6 months</span></p>
+                        <p><strong>Next 3 Heat Cycles:</strong></p>
+                    </div>
+                    
+                    <div class="timeline" id="timeline" role="list" aria-label="Heat cycle timeline">
+                        <!-- Results will appear here -->
+                    </div>
+                </section>
+
+                <section class="symptoms-box" aria-labelledby="symptoms-title">
+                    <h2 class="section-title" id="symptoms-title">
+                        <i class="fas fa-clipboard-check" aria-hidden="true"></i> Symptoms Checklist
+                    </h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 15px;">
+                        Click on symptoms you observe to get personalized advice.
+                    </p>
+                    <div class="symptoms-checklist" id="symptomsChecklist" role="group" aria-label="Heat symptoms"></div>
+                    <div class="advice-box" id="adviceBox" role="status" aria-live="polite">
+                        <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Professional Advice</h4>
+                        <p id="adviceText"></p>
+                    </div>
+                </section>
+            </main>
         </div>
         
         <!-- ===== ARTICLE ===== -->
@@ -1006,7 +1016,7 @@
             </header>
 
             <article class="article-content">
-                <!-- Full article content (same as yours - all sections) -->
+                <!-- ===== FULL ARTICLE CONTENT (ALL SECTIONS) ===== -->
                 <p>As a veterinary reproductive specialist and dog breeder with over 15 years of hands-on experience, I've helped thousands of dog owners navigate the sometimes confusing world of canine reproduction. One question I hear constantly is, "When will my dog go into heat again?" That's exactly why I developed our <strong>Dog Heat Cycle Calculator</strong> – to take the guesswork out of tracking your female dog's reproductive cycle.</p>
                 
                 <p>Understanding your dog's heat cycle isn't just for breeders. Whether you're planning a litter, trying to prevent an unplanned pregnancy, or simply want to be prepared for the behavioral changes that come with your dog's season, knowing when to expect her next cycle makes a world of difference.</p>
@@ -1065,7 +1075,6 @@
                 
                 <p>I've worked with dogs who cycle like clockwork every five months, and others who reliably go eight or nine months between seasons. The variation depends on breed, age, individual biology, and even environmental factors like daylight exposure and nutrition.</p>
 
-                <!-- Continue with all remaining article sections -->
                 <h2 id="heat-cycle-chart">Female Dog Heat Cycle Chart & Timeline</h2>
                 <p>Let me share a quick reference based on my clinical experience. Remember, these are guidelines, not guarantees.</p>
                 
@@ -1569,7 +1578,6 @@
         (function() {
             'use strict';
 
-            // ========== CONSTANTS ==========
             const BREED_CYCLES = {
                 'small': 5,
                 'medium': 6,
@@ -1593,7 +1601,6 @@
                 endDay: 15
             };
 
-            // ========== STATE MANAGEMENT ==========
             const state = {
                 lastHeatDate: null,
                 breedSize: 'medium',
@@ -1602,7 +1609,6 @@
                 results: null
             };
 
-            // ========== DOM ELEMENTS ==========
             const elements = {
                 lastHeat: document.getElementById('lastHeat'),
                 breedSize: document.getElementById('breedSize'),
@@ -1622,7 +1628,6 @@
                 dateError: document.getElementById('dateError')
             };
 
-            // ========== UTILITY FUNCTIONS ==========
             const formatDate = (date) => {
                 return date.toLocaleDateString('en-US', { 
                     weekday: 'long', 
@@ -1649,7 +1654,6 @@
                 return '';
             };
 
-            // ========== CALCULATION FUNCTIONS ==========
             const calculateCycleLength = (breedSize, selectedLength) => {
                 if (selectedLength === 'auto') {
                     return BREED_CYCLES[breedSize] || 6;
@@ -1688,7 +1692,6 @@
                 return cycles;
             };
 
-            // ========== UI UPDATE FUNCTIONS ==========
             const updateResultDisplay = (cycles, breedSize, cycleLength) => {
                 const breedSizeText = breedSize.charAt(0).toUpperCase() + breedSize.slice(1) + ' Breed';
                 elements.resultBreedSize.textContent = breedSizeText;
@@ -1740,7 +1743,6 @@
                 elements.adviceBox.classList.add('active');
             };
 
-            // ========== EVENT HANDLERS ==========
             const handleCalculate = () => {
                 const dateError = validateDate(elements.lastHeat.value);
                 if (dateError) {
@@ -1885,7 +1887,6 @@
                 updateAdvice();
             };
 
-            // ========== INITIALIZATION ==========
             const initializeSymptoms = () => {
                 elements.symptomsChecklist.innerHTML = '';
                 
@@ -1942,7 +1943,6 @@
                 }
             };
 
-            // ========== EVENT LISTENERS ==========
             const attachEventListeners = () => {
                 elements.calculateBtn.addEventListener('click', handleCalculate);
                 elements.saveBtn.addEventListener('click', handleSave);
@@ -1965,13 +1965,11 @@
                 });
             };
 
-            // ========== INITIALIZE ==========
             const init = () => {
                 initializeDateInput();
                 initializeSymptoms();
                 loadSavedData();
                 attachEventListeners();
-                // Result box initially hidden — no auto calculation
             };
 
             if (document.readyState === 'loading') {
@@ -1992,7 +1990,6 @@
                 });
             });
             
-            // Open first FAQ by default
             if (faqItems.length > 0) {
                 faqItems[0].classList.add('active');
             }
