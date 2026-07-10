@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Home Page -->
+  <url>
+    <loc>https://calcsnaps.com/</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- All Calculators Index Page -->
+  <url>
+    <loc>https://calcsnaps.com/all-calculators</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- Legal Pages -->
+  <url><loc>https://calcsnaps.com/about-us</loc></url>
+  <url><loc>https://calcsnaps.com/contact-us</loc></url>
+  <url><loc>https://calcsnaps.com/privacy-policy</loc></url>
+  <url><loc>https://calcsnaps.com/disclaimer</loc></url>
+  <url><loc>https://calcsnaps.com/Terms-and-Conditions</loc></url>
+
+  <!-- Calculators (Yahan apne calculators ke specific links add karte jao) -->
+  <url>
+    <loc>https://calcsnaps.com/calculators/dog-heat-cycle-calculator</loc>
+  </url>
+  <url>
+    <loc>https://calcsnaps.com/calculators/golf-club-length-calculator</loc>
+  </url>
+  <url>
+    <loc>https://calcsnaps.com/calculators/pain-and-suffering-calculator</loc>
+  </url>
+  <url>
+    <loc>https://calcsnaps.com/calculators/productivity-calculator</loc>
+  </url>
+  <url>
+    <loc>https://calcsnaps.com/calculators/uk-aggregate-calculator</loc>
+  </url>
+  <url>
+    <loc>https://calcsnaps.com/calculators/venmo-fee-calculator</loc>
+  </url>
+</urlset>
