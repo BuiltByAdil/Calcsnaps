@@ -389,6 +389,75 @@
                 font-size: 14px;
             }
         }
+        @media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav {
+        gap: 12px;
+    }
+    .nav a {
+        font-size: 14px;
+    }
+}
+
+/* ===== NEW SECTION: WHY CALCSNAPS ===== */
+.why-calc-snaps {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.why-calc-snaps h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.why-calc-snaps p {
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.why-calc-snaps ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.why-calc-snaps ul li {
+    background: #f8fafc;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #1e293b;
+}
+
+.why-calc-snaps ul li strong {
+    color: #8b5cf6;
+}
+
+@media (max-width: 768px) {
+    .why-calc-snaps {
+        padding: 24px 20px;
+    }
+    .why-calc-snaps h2 {
+        font-size: 24px;
+    }
+    .why-calc-snaps ul {
+        grid-template-columns: 1fr;
+    }
+}
     </style>
 </head>
 <body>
@@ -472,6 +541,19 @@
             </div>
         </section>
         
+        <section class="why-calc-snaps">
+            <h2>Why CalcSnaps?</h2>
+            <p>CalcSnaps provides <strong>free, accurate, and instant calculators</strong> for your everyday needs...</p>
+            <ul>
+                <li><strong>Legal:</strong> Pain & Suffering Calculator</li>
+                <li><strong>Construction:</strong> UK Aggregate Calculator</li>
+                <li><strong>Pet Care:</strong> Dog Heat Cycle Calculator</li>
+                <li><strong>Productivity:</strong> Productivity Calculator</li>
+                <li><strong>Sports:</strong> Golf Club Length Calculator</li>
+                <li><strong>Finance:</strong> Venmo Fee Calculator</li>
+            </ul>
+        </section>
+
         <!-- ===== VALUE PROPOSITION ===== -->
         <section class="value-prop">
             <div class="value-card">
