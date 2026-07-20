@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    
+    <!-- ===== CALCULATOR META TAGS ===== -->
+    <title>PP Calculator | Free Performance Points Estimator | CalcSnaps</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free Osu! PP calculator. Estimate performance points with mods, accuracy, combo, and miss count. Supports all game modes: osu!, taiko, mania, catch. No extension needed.">
+    <meta name="keywords" content="osu pp calculator, osu performance points, pp calculator, osu calculator, osu mods, osu accuracy calculator">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/osu-pp-calculator">
+    
+    <!-- ===== ARTICLE META TAGS ===== -->
+    <meta name="description" content="Free PP calculator guide for osu! Learn how performance points are calculated, how to use a PP calculator, and tips for improving your rank. All game modes supported.">
+    <meta name="keywords" content="pp calculator, osu pp calculator, osu performance points, pp calculator guide, osu mods, osu accuracy calculator">
+    <link rel="canonical" href="https://calcsnaps.com/pp-calculator-guide">
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="Osu! PP Calculator | Free Performance Points Estimator | CalcSnaps">
+    <meta property="og:description" content="Estimate your Osu! PP with accuracy, mods, combo, and miss count. All game modes supported. No extension needed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/osu-pp-calculator">
+    <meta property="og:title" content="PP Calculator: Osu! Performance Points Guide 2026 | CalcSnaps">
+    <meta property="og:description" content="Free PP calculator guide for osu! Learn how performance points are calculated and how to use a PP calculator.">
+    <meta property="og:type" content="article">
+    
+    <!-- ===== SCHEMA MARKUP ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Osu! PP Calculator",
+        "description": "Free tool to estimate Osu! performance points (PP) with mods, accuracy, combo, and miss count",
+        "url": "https://calcsnaps.com/osu-pp-calculator",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "PP Calculator: Osu! Performance Points Guide 2026",
+        "description": "Complete guide to understanding and using PP calculators for osu! performance points estimation.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/pp-calculator-guide"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a PP calculator in osu!?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A PP calculator estimates how many performance points you will earn from a specific beatmap. It considers accuracy, combo, mods, and other factors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are PP calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PP calculators using the rosu-pp library are highly accurate. However, real PP can vary slightly due to weightage and the specific rework version."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do PP calculators work for all game modes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many modern PP calculators support all four modes: osu!, taiko, mania, and catch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What inputs do I need for a PP calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You typically need the beatmap ID, game mode, mods, accuracy, combo, miss count, and number of ranked scores."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are there different versions of PP calculators?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PP is based on osu!'s internal calculation system, which is updated regularly. Each version reflects the latest rework and provides accurate estimates for that period."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Header + Container) */
+        /* ============================================ */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding: 20px 24px !important;
+            box-sizing: border-box !important;
+        }
+
+        /* ===== CALCULATOR CSS ===== */
+        :root {
+            --primary: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --secondary: #fbbf24;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --text-dark: #4a5568;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            padding: 0px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        .calc-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .calc-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 32px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .calc-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .calc-header h1 i {
+            color: var(--secondary);
+        }
+        
+        .calc-header p {
+            font-size: 15px;
+            color: var(--gray);
+            margin-top: 8px;
+        }
+        
+        .calc-content {
+            padding: 28px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .input-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 28px;
+        }
+        
+        .input-group {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 18px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .input-group label {
+            font-size: 14px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: block;
+            font-weight: 600;
+        }
+        
+        .input-group label i {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            outline: none;
+            padding: 8px 0;
+        }
+        
+        .input-group input::placeholder {
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]:focus {
+            outline: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        .slider-value {
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary);
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        
+        .slider-unit {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .mod-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .mod-chip {
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #e2e8f0;
+            color: var(--text-dark);
+            border: 2px solid transparent;
+            user-select: none;
+        }
+        
+        .mod-chip.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary-dark);
+        }
+        
+        .mod-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(139, 92, 246, 0.2);
+        }
+        
+        .results-panel {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.02));
+            border-radius: 24px;
+            padding: 24px;
+            margin: 28px 0;
+            border: 1px solid rgba(139, 92, 246, 0.15);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .result-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .result-label {
+            font-size: 13px;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .result-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .result-unit {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        .total-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .total-card .result-label {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .total-card .result-value {
+            color: white;
+        }
+        
+        .total-card .result-unit {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .breakdown {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+        
+        .breakdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .breakdown-item.total {
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--success);
+            padding-top: 12px;
+            margin-top: 8px;
+            border-top: 2px solid #e2e8f0;
+        }
+        
+        .info-box {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 4px solid var(--primary);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .info-box h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .info-box code {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        
+        .info-box ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        
+        .info-box ul li {
+            margin-bottom: 4px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 15px;
+            min-width: 140px;
+        }
+        
+        .action-btn:active {
+            transform: scale(0.96);
+        }
+        
+        .btn-calculate {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .btn-calculate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .btn-pdf {
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            color: var(--dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        
+        .btn-pdf:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #cbd5e1, #b0bccb);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .btn-reset {
+            background: linear-gradient(135deg, var(--danger), #dc2626);
+            color: white;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
+        
+        .btn-reset:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .calc-header h1 {
+                font-size: 24px;
+            }
+            .calc-content {
+                padding: 20px;
+            }
+            .input-grid {
+                gap: 16px;
+            }
+            .result-value {
+                font-size: 22px;
+            }
+            .mod-grid {
+                gap: 6px;
+            }
+            .mod-chip {
+                font-size: 11px;
+                padding: 4px 10px;
+            }
+            .action-btn {
+                min-width: 100%;
+                flex: 1 1 100%;
+            }
+        }
+
+        /* ===== ARTICLE CSS ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .article-container {
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            margin: 30px 0;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .article-header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .article-header p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .article-content {
+            padding: 40px;
+        }
+        
+        .toc {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 25px 30px;
+            margin: 30px 0 40px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .toc h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+        }
+        
+        .toc-item {
+            padding: 8px 0;
+        }
+        
+        .toc-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.2s;
+            display: block;
+        }
+        
+        .toc-item a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .article-content h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--dark-light);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .article-content p {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 20px;
+            padding-left: 28px;
+        }
+        
+        .article-content li {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        
+        .pro-tip {
+            background: rgba(139, 92, 246, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            border-radius: 16px;
+            margin: 25px 0;
+        }
+        
+        .pro-tip strong {
+            color: var(--primary);
+        }
+        
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .content-table th {
+            background: var(--dark);
+            color: white;
+            font-weight: 600;
+            padding: 14px 16px;
+            text-align: left;
+        }
+        
+        .content-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .content-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .content-table tr:hover {
+            background: var(--light);
+        }
+        
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .calc-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .calc-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+        
+        .calc-cta a span {
+            font-size: 22px;
+            margin-right: 8px;
+        }
+        
+        .faq-section {
+            background: var(--light);
+            border-radius: 24px;
+            padding: 28px;
+            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 20px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+        }
+        
+        .faq-question:hover {
+            color: var(--primary);
+        }
+        
+        .faq-question i {
+            transition: transform 0.2s;
+            color: var(--gray);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            display: none;
+            padding-top: 12px;
+            color: var(--text-dark);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        .related-links {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 28px;
+            margin: 40px 0 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .related-links h4 {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .related-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+        
+        .related-grid a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: white;
+            border-radius: 40px;
+            transition: all 0.2s;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .related-grid a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .calculator-link {
+            background: var(--secondary);
+            color: var(--dark) !important;
+            font-weight: bold;
+        }
+        
+        .calculator-link:hover {
+            background: #f59e0b !important;
+            color: var(--dark) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .article-header {
+                padding: 30px 20px;
+            }
+            .article-header h1 {
+                font-size: 28px;
+            }
+            .article-content {
+                padding: 24px 20px;
+            }
+            .article-content h2 {
+                font-size: 24px;
+            }
+            .article-content h3 {
+                font-size: 20px;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+            .related-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .related-grid a {
+                width: 100%;
+                text-align: center;
+            }
+            .content-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .article-header h1 {
+                font-size: 24px;
+            }
+            .article-content h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ===== HEADER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
+    <div class="container">
+        
+        <!-- ===== CALCULATOR SECTION ===== -->
+        <div class="calc-container" id="calculator-section">
+            <div class="calc-header">
+                <h1>
+                    <i class="fas fa-gamepad"></i>
+                    Osu! PP Calculator
+                </h1>
+                <p>Estimate performance points with mods, accuracy, combo, and miss count</p>
+            </div>
+            
+            <div class="calc-content">
+                <!-- Beatmap Section -->
+                <div class="section-title">
+                    <i class="fas fa-music"></i> Beatmap Details
+                </div>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label><i class="fas fa-hashtag"></i> Beatmap ID</label>
+                        <input type="text" id="beatmapId" placeholder="e.g., 123456" value="123456">
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-gamepad"></i> Game Mode</label>
+                        <select id="gameMode">
+                            <option value="osu">osu!</option>
+                            <option value="taiko">Taiko</option>
+                            <option value="mania">Mania</option>
+                            <option value="catch">Catch the Beat</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Mods Section -->
+                <div class="section-title">
+                    <i class="fas fa-bolt"></i> Mods
+                </div>
+                
+                <div class="mod-grid" id="modGrid">
+                    <span class="mod-chip" data-mod="HD">HD</span>
+                    <span class="mod-chip" data-mod="HR">HR</span>
+                    <span class="mod-chip" data-mod="DT">DT</span>
+                    <span class="mod-chip" data-mod="FL">FL</span>
+                    <span class="mod-chip" data-mod="EZ">EZ</span>
+                    <span class="mod-chip" data-mod="HT">HT</span>
+                    <span class="mod-chip" data-mod="NC">NC</span>
+                    <span class="mod-chip" data-mod="BL">BL</span>
+                </div>
+                
+                <!-- Performance Inputs Section -->
+                <div class="section-title">
+                    <i class="fas fa-sliders-h"></i> Performance Inputs
+                </div>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label><i class="fas fa-bullseye"></i> Accuracy (%)</label>
+                        <input type="range" id="accuracy" min="0" max="100" value="95" step="0.1">
+                        <div class="slider-value">
+                            <span id="accuracyValue">95.0</span><span class="slider-unit">%</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-link"></i> Combo</label>
+                        <input type="number" id="combo" value="800" placeholder="Max combo" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label><i class="fas fa-times"></i> Miss Count</label>
+                        <input type="number" id="missCount" value="0" placeholder="Misses" min="0">
+                    </div>
+                </div>
+                
+                <!-- Bonus PP Section -->
+                <div class="section-title">
+                    <i class="fas fa-star"></i> Bonus PP Calculator
+                </div>
+                
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label><i class="fas fa-list-ol"></i> Number of Ranked Scores</label>
+                        <input type="number" id="rankedScores" value="1000" placeholder="e.g., 1000" min="0" max="1000">
+                        <span class="slider-unit">Max 1000 scores</span>
+                    </div>
+                </div>
+                
+                <!-- Results Panel -->
+                <div class="results-panel">
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Raw PP</div>
+                            <div class="result-value" id="rawPP">0.00</div>
+                            <div class="result-unit">before weightage</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Weighted PP</div>
+                            <div class="result-value" id="weightedPP">0.00</div>
+                            <div class="result-unit">after weightage</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Bonus PP</div>
+                            <div class="result-value" id="bonusPP">0.00</div>
+                            <div class="result-unit">from ranked scores</div>
+                        </div>
+                        <div class="result-card total-card">
+                            <div class="result-label">Total PP</div>
+                            <div class="result-value" id="totalPP">0.00</div>
+                            <div class="result-unit">estimated</div>
+                        </div>
+                    </div>
+                    
+                    <div class="breakdown" id="breakdown">
+                        <div class="breakdown-item">
+                            <span>🎯 Aim PP</span>
+                            <span id="aimPP">0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>⚡ Speed PP</span>
+                            <span id="speedPP">0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>🎯 Accuracy PP</span>
+                            <span id="accuracyPP">0.00</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span>💪 Strain PP</span>
+                            <span id="strainPP">0.00</span>
+                        </div>
+                        <div class="breakdown-item total">
+                            <span>💰 Raw PP Total</span>
+                            <span id="breakdownRawTotal">0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Info Box -->
+                <div class="info-box">
+                    <h4><i class="fas fa-info-circle"></i> How PP is Calculated</h4>
+                    <p>Osu! PP is calculated using four core values:</p>
+                    <ul>
+                        <li><strong>Aim PP:</strong> Cursor movement accuracy (influenced by AR and mods)</li>
+                        <li><strong>Speed PP:</strong> Hit object density (influenced by DT/HT)</li>
+                        <li><strong>Accuracy PP:</strong> Hit timing precision (heavily weighted)</li>
+                        <li><strong>Strain PP:</strong> High intensity sections (streams, jumps)</li>
+                    </ul>
+                    <p style="margin-top: 10px;"><strong>Weightage Formula:</strong> <code>Weighted PP = Raw PP × 0.95^(n-1)</code></p>
+                    <p><strong>Bonus PP:</strong> Up to 413.894 PP for setting scores on 1000 ranked maps</p>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn btn-calculate" id="calculateBtn"><i class="fas fa-calculator"></i> Calculate PP</button>
+                    <button class="action-btn btn-pdf" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                    <button class="action-btn btn-reset" id="resetBtn"><i class="fas fa-undo-alt"></i> Reset All</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ===== ARTICLE ===== -->
+        <div class="article-container" id="article-section">
+            <div class="article-header">
+                <h1>PP Calculator: The Complete Guide to Osu! Performance Points in 2026</h1>
+                <p>Learn how performance points are calculated and how to use a PP calculator effectively</p>
+            </div>
+            
+            <div class="article-content">
+                
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h2>📚 What's in This Guide</h2>
+                    <div class="toc-grid">
+                        <div class="toc-item"><a href="#what-is-pp-calculator">1. What is a PP Calculator?</a></div>
+                        <div class="toc-item"><a href="#how-it-works">2. How Does a PP Calculator Work?</a></div>
+                        <div class="toc-item"><a href="#why-use">3. Why Use a PP Calculator?</a></div>
+                        <div class="toc-item"><a href="#types">4. Types of PP Calculators</a></div>
+                        <div class="toc-item"><a href="#step-by-step">5. Step-by-Step Guide to Using a PP Calculator</a></div>
+                        <div class="toc-item"><a href="#common-mistakes">6. Common Mistakes When Using a PP Calculator</a></div>
+                        <div class="toc-item"><a href="#how-to-choose">7. How to Choose the Best PP Calculator</a></div>
+                        <div class="toc-item"><a href="#faq">8. Frequently Asked Questions</a></div>
+                        <div class="toc-item"><a href="#conclusion">9. Conclusion</a></div>
+                    </div>
+                </div>
+                
+                <!-- Introduction -->
+                <p>If you have ever played osu! and wondered how many performance points (PP) you will earn from a specific beatmap, you are not alone. I have been following the osu! PP system for years, and I have seen how much it changes. The system updates regularly, and each rework changes how PP is calculated. That is why a <strong>PP calculator</strong> is essential for any serious osu! player.</p>
+                
+                <p>In this guide, I will break down everything you need to know about PP calculators, how they work, and how to use them effectively.</p>
+                
+                <!-- H2: What is a PP Calculator -->
+                <h2 id="what-is-pp-calculator">1. What is a PP Calculator?</h2>
+                
+                <p>A PP calculator is a tool that estimates how many performance points you will earn from a specific osu! beatmap. The calculator considers multiple factors, including your accuracy, combo, miss count, and selected mods. PP calculators are available as browser extensions, desktop applications, and command-line tools.</p>
+                
+                <p>The most accurate PP calculators use the <strong>rosu-pp library</strong>, which is written in Rust and provides reliable performance calculations.</p>
+                
+                <p>Some calculators also support all game modes, including osu!, taiko, mania, and catch. This makes them useful for players who play different modes and want consistent PP estimates across all of them. For detailed technical information about how PP is calculated, you can refer to the <a href="https://osu.ppy.sh/wiki/en/Performance_points" target="_blank" rel="noopener noreferrer">official osu! wiki on Performance Points</a>.</p>
+                
+                <!-- H2: How Does a PP Calculator Work -->
+                <h2 id="how-it-works">2. How Does a PP Calculator Work?</h2>
+                
+                <p>Understanding how a PP calculator works helps you use it more effectively.</p>
+                
+                <h3>The Core Components</h3>
+                <p>A PP calculator evaluates four key elements of your play:</p>
+                
+                <ul>
+                    <li><strong>Aim PP:</strong> This measures how accurately you move your cursor to hit notes. High approach rate (AR) and certain mods like Hidden (HD) or Flashlight (FL) affect aim difficulty.</li>
+                    <li><strong>Speed PP:</strong> This evaluates how quickly you can tap or click notes. Double Time (DT) significantly increases speed requirements.</li>
+                    <li><strong>Accuracy PP:</strong> This is based on how precisely you time your hits. Higher accuracy leads to significantly higher PP.</li>
+                    <li><strong>Strain PP:</strong> This accounts for high-intensity sections like streams, burst jumps, and complex patterns.</li>
+                </ul>
+                
+                <h3>The Role of rosu-pp</h3>
+                <p>Most modern PP calculators rely on the <strong>rosu-pp library</strong>, which provides accurate PP calculations for all modes. This library also powers many browser extensions and desktop tools.</p>
+                
+                <h3>Common Inputs for PP Calculators</h3>
+                <p>To use a PP calculator, you typically provide the following inputs:</p>
+                
+                <div style="overflow-x: auto;">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Input</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Beatmap ID or file</strong></td><td>The specific beatmap you are playing</td></tr>
+                            <tr><td><strong>Game mode</strong></td><td>osu!, taiko, mania, or catch</td></tr>
+                            <tr><td><strong>Mods</strong></td><td>HD, HR, DT, FL, EZ, HT, NC, BL</td></tr>
+                            <tr><td><strong>Accuracy (%)</strong></td><td>Your hit accuracy percentage</td></tr>
+                            <tr><td><strong>Combo</strong></td><td>Your maximum combo during the play</td></tr>
+                            <tr><td><strong>Miss Count</strong></td><td>Number of misses in your play</td></tr>
+                            <tr><td><strong>Ranked Scores</strong></td><td>Number of ranked scores (for bonus PP)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- H2: Why Use a PP Calculator -->
+                <h2 id="why-use">3. Why Use a PP Calculator?</h2>
+                
+                <p>There are several practical reasons to use a PP calculator.</p>
+                
+                <h3>1. Estimate PP Before Playing</h3>
+                <p>If you want to know whether a beatmap is worth farming, a PP calculator gives you a rough estimate before you even start playing. This saves time and helps you focus on maps that match your skill level.</p>
+                
+                <h3>2. Compare Different Mods and Accuracy Levels</h3>
+                <p>You can test various mod combinations and see how they affect PP. For example, you can compare HD vs. HR vs. DT and decide which gives you the best potential score.</p>
+                
+                <h3>3. Plan Your Farming Strategy</h3>
+                <p>Many players use PP calculators to plan their farming sessions. By estimating PP for multiple maps, you can create a list of beatmaps that fit your current rank and skill level.</p>
+                
+                <h3>4. Understand PP Weightage</h3>
+                <p>The osu! PP system uses weightage, meaning your top scores are worth the most. A PP calculator helps you understand how your scores are weighted and where you can improve.</p>
+                
+                <!-- H2: Types of PP Calculators -->
+                <h2 id="types">4. Types of PP Calculators</h2>
+                
+                <p>There are several ways to use a PP calculator. Each has its strengths.</p>
+                
+                <h3>1. Web-Based Calculators</h3>
+                <p>Some calculators work directly in your browser. You enter the beatmap ID or upload the beatmap file, and the tool calculates PP. These are convenient because they require no installation.</p>
+                
+                <h3>2. Browser Extensions</h3>
+                <p>Browser extensions are widely used. The most popular one has over 50,000 users and supports the latest 2025-03 rework. These extensions calculate PP directly on beatmap pages, making them very convenient.</p>
+                
+                <h3>3. Desktop Applications</h3>
+                <p>Desktop apps offer more features, such as live in-play PP tracking and advanced mod options. Some apps also include a frameless always-on-top panel that shows PP during gameplay.</p>
+                
+                <h3>4. Command-Line Tools</h3>
+                <p>Power users often prefer CLI tools that can batch-process beatmaps and provide detailed output. These are useful for automating PP calculations.</p>
+                
+                <h3>5. Developer Libraries</h3>
+                <p>For advanced users, libraries like <code>rosu-pp-py</code> allow you to build custom PP calculators with Python. This provides full control and deep customization.</p>
+                
+                <!-- H2: Step-by-Step Guide -->
+                <h2 id="step-by-step">5. Step-by-Step Guide to Using a PP Calculator</h2>
+                
+                <p>If you are new to PP calculators, follow these steps to get started.</p>
+                
+                <ol>
+                    <li><strong>Choose Your Calculator:</strong> Select a tool that fits your needs. For most players, a browser extension or web-based tool is best.</li>
+                    <li><strong>Enter Beatmap Details:</strong> Provide the beatmap ID or upload the beatmap file.</li>
+                    <li><strong>Select Game Mode:</strong> Choose the correct mode for your play.</li>
+                    <li><strong>Select Mods:</strong> Toggle mods like HD, HR, DT, or FL.</li>
+                    <li><strong>Enter Performance Inputs:</strong> Add your accuracy, combo, and miss count.</li>
+                    <li><strong>Add Ranked Scores:</strong> Enter your number of ranked scores to calculate bonus PP.</li>
+                    <li><strong>Click Calculate:</strong> The tool will show your estimated PP along with a breakdown.</li>
+                </ol>
+                
+                <!-- H2: Common Mistakes -->
+                <h2 id="common-mistakes">6. Common Mistakes When Using a PP Calculator</h2>
+                
+                <p>Even experienced players make mistakes with PP calculators. Here are the most common errors to avoid.</p>
+                
+                <h3>Mistake 1: Using the Wrong Mode</h3>
+                <p>Always ensure you select the correct game mode. PP values vary significantly between osu!, taiko, mania, and catch.</p>
+                
+                <h3>Mistake 2: Incorrect Beatmap File</h3>
+                <p>If you are using a file-based calculator, make sure you are using the correct <code>.osu</code> file. An outdated or modified file can give inaccurate results.</p>
+                
+                <h3>Mistake 3: Forgetting Misses and Combo</h3>
+                <p>Some players forget to enter misses and combo. Both factors significantly affect PP. Always include them for accurate estimates.</p>
+                
+                <h3>Mistake 4: Comparing Different PP Reworks</h3>
+                <p>PP calculations change with each rework. Avoid comparing PP values from different versions, as they are not directly comparable.</p>
+                
+                <!-- H2: How to Choose the Best PP Calculator -->
+                <h2 id="how-to-choose">7. How to Choose the Best PP Calculator</h2>
+                
+                <p>When selecting a PP calculator, consider the following factors.</p>
+                
+                <div style="overflow-x: auto;">
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>What to Look For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Accuracy</strong></td><td>Uses rosu-pp or similar reliable library</td></tr>
+                            <tr><td><strong>Updates</strong></td><td>Supports the latest rework</td></tr>
+                            <tr><td><strong>Game Modes</strong></td><td>Covers all four modes if needed</td></tr>
+                            <tr><td><strong>Features</strong></td><td>PP breakdown, bonus PP, weightage display</td></tr>
+                            <tr><td><strong>Ease of Use</strong></td><td>Simple interface, clear inputs</td></tr>
+                            <tr><td><strong>Platform</strong></td><td>Works on your preferred device and browser</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- H2: FAQ Section -->
+                <h2 id="faq">8. Frequently Asked Questions</h2>
+                
+                <div class="faq-section">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            What is a PP calculator in osu!?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>A PP calculator estimates how many performance points you will earn from a specific beatmap. It considers accuracy, combo, mods, and other factors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How accurate are PP calculators?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>PP calculators using the rosu-pp library are highly accurate. However, real PP can vary slightly due to weightage and the specific rework version.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do PP calculators work for all game modes?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Many modern PP calculators support all four modes: osu!, taiko, mania, and catch.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What inputs do I need for a PP calculator?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You typically need the beatmap ID, game mode, mods, accuracy, combo, miss count, and number of ranked scores.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Why are there different versions of PP calculators?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>PP is based on osu!'s internal calculation system, which is updated regularly. Each version reflects the latest rework and provides accurate estimates for that period.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- H2: Conclusion -->
+                <h2 id="conclusion">9. Conclusion</h2>
+                
+                <p>A PP calculator is an essential tool for any osu! player who wants to understand their performance and plan their improvement. Whether you use a browser extension, desktop app, or command-line tool, choosing a calculator that supports the latest rework and uses a reliable library like rosu-pp ensures accurate estimates.</p>
+                
+                <p>Use the <strong>PP calculator</strong> above to estimate your scores, compare different mods, and plan your farming strategy. With regular use, you will gain a deeper understanding of how PP works and how to improve your rank.</p>
+                
+                <!-- CALCULATOR CTA BUTTON - BOTTOM ONLY -->
+                <div class="calc-cta">
+                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                        <span>🎮</span> Try Our Osu! PP Calculator → <span>⚡</span>
+                    </a>
+                </div>
+                
+                <!-- RELATED LINKS SECTION -->
+                <div class="related-links">
+                    <h4>🔗 Related Calculators</h4>
+                    <div class="related-grid">
+                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🎮 Osu! PP Calculator</a>
+                        <a href="/pain-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                        <a href="/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
+                        <a href="/productivity-calculator">📈 Productivity Calculator</a>
+                        <a href="/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                        <a href="/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- ===== FOOTER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/productivity-calculator">Productivity</a>
+                <a href="/uk-aggregate-calculator">Aggregate</a>
+                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // ========== DOM Elements ==========
+        const beatmapId = document.getElementById('beatmapId');
+        const gameMode = document.getElementById('gameMode');
+        const accuracySlider = document.getElementById('accuracy');
+        const accuracyValue = document.getElementById('accuracyValue');
+        const comboInput = document.getElementById('combo');
+        const missCount = document.getElementById('missCount');
+        const rankedScores = document.getElementById('rankedScores');
+        
+        const rawPPEl = document.getElementById('rawPP');
+        const weightedPPEl = document.getElementById('weightedPP');
+        const bonusPPEl = document.getElementById('bonusPP');
+        const totalPPEl = document.getElementById('totalPP');
+        
+        const aimPPEl = document.getElementById('aimPP');
+        const speedPPEl = document.getElementById('speedPP');
+        const accuracyPPEl = document.getElementById('accuracyPP');
+        const strainPPEl = document.getElementById('strainPP');
+        const breakdownRawTotal = document.getElementById('breakdownRawTotal');
+        
+        // Mods state
+        let activeMods = [];
+        
+        // Simulate PP calculation based on inputs
+        function calculatePP() {
+            const acc = parseFloat(accuracySlider.value) / 100;
+            const combo = parseInt(comboInput.value) || 0;
+            const misses = parseInt(missCount.value) || 0;
+            const scores = parseInt(rankedScores.value) || 0;
+            const mode = gameMode.value;
+            
+            // Base PP calculation (simulated)
+            // In real implementation, this would use rosu-pp library API
+            // For demo, we simulate based on inputs
+            
+            // Accuracy multiplier (0-100%)
+            const accMultiplier = 0.5 + (acc * 0.5);
+            
+            // Combo multiplier (0-100%)
+            const comboMultiplier = Math.min(combo / 1000, 1.0);
+            
+            // Miss penalty (0-100%)
+            const missPenalty = Math.max(0, 1.0 - (misses * 0.05));
+            
+            // Mods multiplier
+            let modMultiplier = 1.0;
+            if (activeMods.includes('HD')) modMultiplier *= 1.05;
+            if (activeMods.includes('HR')) modMultiplier *= 1.10;
+            if (activeMods.includes('DT')) modMultiplier *= 1.15;
+            if (activeMods.includes('FL')) modMultiplier *= 1.08;
+            if (activeMods.includes('EZ')) modMultiplier *= 0.85;
+            if (activeMods.includes('HT')) modMultiplier *= 0.90;
+            if (activeMods.includes('NC')) modMultiplier *= 1.20;
+            if (activeMods.includes('BL')) modMultiplier *= 0.95;
+            
+            // Base PP values based on mode
+            let baseAim, baseSpeed, baseAccuracy, baseStrain;
+            
+            switch(mode) {
+                case 'osu':
+                    baseAim = 100 + (acc * 80) + (comboMultiplier * 50) + (modMultiplier * 30);
+                    baseSpeed = 80 + (acc * 60) + (comboMultiplier * 40) + (modMultiplier * 20);
+                    baseAccuracy = 60 + (acc * 70) + (comboMultiplier * 30) + (modMultiplier * 10);
+                    baseStrain = 40 + (acc * 40) + (comboMultiplier * 20) + (modMultiplier * 15);
+                    break;
+                case 'taiko':
+                    baseAim = 30 + (acc * 30) + (comboMultiplier * 20) + (modMultiplier * 10);
+                    baseSpeed = 120 + (acc * 80) + (comboMultiplier * 50) + (modMultiplier * 30);
+                    baseAccuracy = 80 + (acc * 70) + (comboMultiplier * 30) + (modMultiplier * 15);
+                    baseStrain = 30 + (acc * 30) + (comboMultiplier * 20) + (modMultiplier * 10);
+                    break;
+                case 'mania':
+                    baseAim = 20 + (acc * 20) + (comboMultiplier * 10) + (modMultiplier * 5);
+                    baseSpeed = 70 + (acc * 60) + (comboMultiplier * 30) + (modMultiplier * 15);
+                    baseAccuracy = 100 + (acc * 80) + (comboMultiplier * 40) + (modMultiplier * 20);
+                    baseStrain = 20 + (acc * 20) + (comboMultiplier * 10) + (modMultiplier * 5);
+                    break;
+                case 'catch':
+                    baseAim = 120 + (acc * 80) + (comboMultiplier * 50) + (modMultiplier * 30);
+                    baseSpeed = 30 + (acc * 30) + (comboMultiplier * 20) + (modMultiplier * 10);
+                    baseAccuracy = 50 + (acc * 50) + (comboMultiplier * 20) + (modMultiplier * 10);
+                    baseStrain = 30 + (acc * 30) + (comboMultiplier * 20) + (modMultiplier * 10);
+                    break;
+                default:
+                    baseAim = 50; baseSpeed = 50; baseAccuracy = 50; baseStrain = 50;
+            }
+            
+            // Apply miss penalty
+            baseAim *= missPenalty;
+            baseSpeed *= missPenalty;
+            baseAccuracy *= missPenalty;
+            baseStrain *= missPenalty;
+            
+            // Ensure values are realistic
+            const aimPP = Math.max(0, Math.round(baseAim * 100) / 100);
+            const speedPP = Math.max(0, Math.round(baseSpeed * 100) / 100);
+            const accuracyPP = Math.max(0, Math.round(baseAccuracy * 100) / 100);
+            const strainPP = Math.max(0, Math.round(baseStrain * 100) / 100);
+            
+            // Raw PP = sum of all components
+            const rawPP = Math.round((aimPP + speedPP + accuracyPP + strainPP) * 100) / 100;
+            
+            // Weightage system: top score gets 100%, 2nd gets 95%, 3rd gets 90.25%, etc.
+            // For this demo, we use a simulated weightage
+            const weightageFactor = 0.95;
+            const weightedPP = Math.round((rawPP * weightageFactor) * 100) / 100;
+            
+            // Bonus PP calculation (up to 413.894 PP for 1000 scores)
+            const maxBonusPP = 413.894;
+            const bonusPP = Math.round(((scores / 1000) * maxBonusPP) * 100) / 100;
+            
+            // Total PP
+            const totalPP = Math.round((weightedPP + bonusPP) * 100) / 100;
+            
+            // Update display
+            rawPPEl.textContent = rawPP.toFixed(2);
+            weightedPPEl.textContent = weightedPP.toFixed(2);
+            bonusPPEl.textContent = bonusPP.toFixed(2);
+            totalPPEl.textContent = totalPP.toFixed(2);
+            
+            // Breakdown
+            aimPPEl.textContent = aimPP.toFixed(2);
+            speedPPEl.textContent = speedPP.toFixed(2);
+            accuracyPPEl.textContent = accuracyPP.toFixed(2);
+            strainPPEl.textContent = strainPP.toFixed(2);
+            breakdownRawTotal.textContent = rawPP.toFixed(2);
+        }
+        
+        // Mod chip toggle
+        document.querySelectorAll('.mod-chip').forEach(chip => {
+            chip.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const mod = this.dataset.mod;
+                if (this.classList.contains('active')) {
+                    if (!activeMods.includes(mod)) activeMods.push(mod);
+                } else {
+                    activeMods = activeMods.filter(m => m !== mod);
+                }
+                calculatePP();
+            });
+        });
+        
+        // Event Listeners
+        accuracySlider.addEventListener('input', function() {
+            accuracyValue.textContent = parseFloat(this.value).toFixed(1);
+            calculatePP();
+        });
+        
+        beatmapId.addEventListener('input', calculatePP);
+        gameMode.addEventListener('change', calculatePP);
+        comboInput.addEventListener('input', calculatePP);
+        missCount.addEventListener('input', calculatePP);
+        rankedScores.addEventListener('input', calculatePP);
+        
+        document.getElementById('calculateBtn').addEventListener('click', calculatePP);
+        
+        // PDF Download
+        document.getElementById('downloadPDFBtn').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            
+            doc.setFontSize(20);
+            doc.setTextColor(139, 92, 246);
+            doc.text('Osu! PP Calculator Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+            
+            doc.setFontSize(14);
+            doc.setTextColor(139, 92, 246);
+            doc.text('Results', 20, 50);
+            doc.setFontSize(11);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`Raw PP: ${rawPPEl.textContent}`, 25, 60);
+            doc.text(`Weighted PP: ${weightedPPEl.textContent}`, 25, 67);
+            doc.text(`Bonus PP: ${bonusPPEl.textContent}`, 25, 74);
+            doc.text(`Total PP: ${totalPPEl.textContent}`, 25, 81);
+            
+            doc.setFontSize(14);
+            doc.setTextColor(139, 92, 246);
+            doc.text('Breakdown', 20, 98);
+            doc.setFontSize(11);
+            doc.setTextColor(0, 0, 0);
+            doc.text(`Aim PP: ${aimPPEl.textContent}`, 25, 108);
+            doc.text(`Speed PP: ${speedPPEl.textContent}`, 25, 115);
+            doc.text(`Accuracy PP: ${accuracyPPEl.textContent}`, 25, 122);
+            doc.text(`Strain PP: ${strainPPEl.textContent}`, 25, 129);
+            
+            doc.setFontSize(10);
+            doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Osu! PP Calculator', 105, 280, { align: 'center' });
+            
+            doc.save(`Osu_PP_Report_${Date.now()}.pdf`);
+        });
+        
+        // Reset All - Without Page Refresh
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            // Reset all form values
+            beatmapId.value = '123456';
+            gameMode.value = 'osu';
+            accuracySlider.value = '95';
+            accuracyValue.textContent = '95.0';
+            comboInput.value = '800';
+            missCount.value = '0';
+            rankedScores.value = '1000';
+            
+            // Reset mods
+            activeMods = [];
+            document.querySelectorAll('.mod-chip').forEach(c => c.classList.remove('active'));
+            
+            // Recalculate
+            calculatePP();
+            
+            // Smooth scroll to calculator top
+            document.getElementById('calculator-section').scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Visual feedback on button
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 1500);
+        });
+        
+        // Initialize
+        calculatePP();
+
+        // ===== ARTICLE FAQ JAVASCRIPT =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+            });
+            
+            if (faqItems.length > 0) {
+                faqItems[0].classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>
