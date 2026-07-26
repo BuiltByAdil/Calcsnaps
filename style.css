@@ -1,40 +1,73 @@
 /* ============================================
    CALCSNAPS — GLOBAL STYLESHEET
-   Version: 1.0
+   Version: 1.1 (FIXED)
    Colors: Purple (#8b5cf6) + Dark Navy (#0f172a)
    Website: calcsnaps.com
+
+   CHANGELOG (v1.0 -> v1.1):
+   - FIX: --gray (#94a3b8) failed WCAG AA contrast (~2.45:1) on light
+     backgrounds when used as default <p> color. Added --gray-text
+     (#64748b, ~4.6:1 on --light) for body copy on light backgrounds.
+     --gray is now reserved for text on DARK backgrounds only
+     (e.g. .hero .tagline).
+   - FIX: nav links / badges using --primary (#8b5cf6) on white were
+     borderline (~4.0:1) for normal-size text. Added --primary-text
+     (#7c3aed / --primary-dark) for small text use-cases; --primary
+     stays for buttons/large UI where contrast requirement is lower.
+   - IMPROVEMENT: h1 now uses clamp() for smoother fluid scaling
+     instead of one hard jump at the 768px breakpoint.
+   - IMPROVEMENT: --secondary is now actually wired into a couple of
+     utility classes so it isn't a dead/unused token.
+   - NOTE: No dark-mode toggle logic existed in v1.0 despite the
+     Privacy Policy mentioning a dark-mode preference cookie. Added a
+     minimal, safe [data-theme="dark"] scaffold below (Section 14) so
+     that claim can either be made real or removed from the policy —
+     wire it up to a toggle button + localStorage/your storage layer
+     when ready. It does nothing until [data-theme="dark"] is applied
+     to <html> or <body>, so it's non-breaking as shipped.
    ============================================ */
 
-/* ===== 1. GOOGLE FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap');
+/* ===== 1. GOOGLE FONTS =====
+   FIX (v1.2): @import removed. Fonts are now loaded via <link> +
+   preconnect in each page's <head> — faster and non-render-blocking
+   compared to @import, and avoids loading Inter twice (this file +
+   the old inline <style> block in index.html, which has been removed).
+   Make sure every page template includes in <head>:
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+*/
 
 /* ===== 2. CSS VARIABLES (BRAND COLORS) ===== */
 :root {
     /* Primary Colors */
-    --primary: #8b5cf6;
+    --primary: #8b5cf6;        /* use for buttons, large text, backgrounds, icons */
     --primary-dark: #7c3aed;
     --primary-light: #a78bfa;
-    
+    --primary-text: #7c3aed;   /* use for --primary as NORMAL-SIZE text on light bg (AA-safer) */
+
     /* Secondary Colors */
     --secondary: #fbbf24;
-    
+    --secondary-dark: #b45309; /* AA-safe version of secondary for small text on light bg */
+
     /* Neutral Colors */
     --dark: #0f172a;
     --dark-light: #1e293b;
     --light: #f8fafc;
-    --gray: #94a3b8;
+    --gray: #94a3b8;           /* DARK-background text only (e.g. hero tagline). Fails AA on light bg. */
+    --gray-text: #64748b;      /* LIGHT-background body text (~4.6:1 on --light). Use this for <p>. */
     --text-dark: #1e293b;
     --text-light: #ffffff;
     --border: #e2e8f0;
-    
+
     /* Status Colors */
     --success: #10b981;
     --danger: #ef4444;
     --warning: #f59e0b;
-    
+
     /* Font */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    
+
     /* Spacing & Layout */
     --container-max: 1280px;
     --radius: 24px;
@@ -100,15 +133,47 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-h1 { font-size: 56px; }
-h2 { font-size: 32px; }
-h3 { font-size: 22px; }
+/* FIX: fluid scaling instead of one hard jump at 768px */
+h1 { font-size: clamp(32px, 5vw + 1rem, 56px); }
+h2 { font-size: clamp(24px, 3vw + 1rem, 32px); }
+h3 { font-size: clamp(19px, 1.5vw + 1rem, 22px); }
 h4 { font-size: 18px; }
 
 p {
-    color: var(--gray);
+    /* FIX: was var(--gray) which fails WCAG AA (~2.45:1) on --light background */
+    color: var(--gray-text);
     font-size: 16px;
     line-height: 1.7;
+}
+
+/* ===== 5b. ACCESSIBILITY UTILITIES (NEW in v1.2) ===== */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: var(--primary-dark);
+    color: white;
+    padding: 12px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    z-index: 1000;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* ===== 6. HEADER ===== */
@@ -147,7 +212,8 @@ p {
 
 .nav a:hover,
 .nav a.active {
-    color: var(--primary);
+    /* FIX: --primary-text (#7c3aed) instead of --primary for AA-safer small text */
+    color: var(--primary-text);
 }
 
 .nav a.active::after,
@@ -169,6 +235,37 @@ p {
     margin: 24px 0 48px;
     padding: 64px 48px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* v2: subtle dot-grid texture + soft purple glow — replaces the
+   completely flat gradient with a bit of depth, a pattern most
+   competitor calculator hubs use somewhere on their homepage. */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%);
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-badge {
@@ -184,7 +281,7 @@ p {
 
 .hero h1 {
     color: var(--text-light);
-    font-size: 56px;
+    font-size: clamp(32px, 5vw + 1rem, 56px);
     margin-bottom: 20px;
 }
 
@@ -196,6 +293,8 @@ p {
 }
 
 .hero .tagline {
+    /* OK as-is: --gray on the DARK hero background has good contrast.
+       Do not change this one to --gray-text (that's for light backgrounds). */
     color: var(--gray);
     font-size: 20px;
     max-width: 600px;
@@ -208,7 +307,7 @@ p {
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: clamp(24px, 3vw + 1rem, 32px);
     font-weight: 700;
     color: var(--dark);
     margin-bottom: 12px;
@@ -216,7 +315,8 @@ p {
 }
 
 .section-subtitle {
-    color: var(--gray);
+    /* FIX: was --gray (fails AA on light bg) */
+    color: var(--gray-text);
     margin-bottom: 40px;
     font-size: 18px;
     text-align: center;
@@ -256,7 +356,9 @@ p {
 }
 
 .calc-card p {
-    color: var(--gray);
+    /* FIX: was --gray (fails AA); p{} default now already fixed above,
+       this override existed to force a smaller size — keep the fixed color */
+    color: var(--gray-text);
     font-size: 14px;
     margin-bottom: 16px;
     line-height: 1.5;
@@ -269,7 +371,138 @@ p {
     border-radius: 50px;
     font-size: 12px;
     font-weight: 500;
-    color: var(--primary);
+    /* FIX: --primary-text instead of --primary for small-text AA safety */
+    color: var(--primary-text);
+}
+
+/* Optional: category accent badges so users can visually tell calculator
+   categories apart at a glance (site spans 6+ unrelated niches).
+   Add class="calc-badge calc-badge--legal" etc. in markup as needed. */
+.calc-badge--legal      { background: #ede9fe; color: var(--primary-text); }
+.calc-badge--finance    { background: #dcfce7; color: #15803d; }
+.calc-badge--construction { background: #fef3c7; color: var(--secondary-dark); }
+.calc-badge--petcare    { background: #fee2e2; color: #b91c1c; }
+.calc-badge--sports     { background: #dbeafe; color: #1d4ed8; }
+.calc-badge--productivity { background: #e0f2fe; color: #0369a1; }
+.calc-badge--gaming     { background: #f3e8ff; color: #7e22ce; }
+
+/* ===== 8b. ICON CIRCLES (v2 — replaces flat emoji icons) ===== */
+.icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.icon-circle svg {
+    width: 26px;
+    height: 26px;
+    stroke-width: 1.8;
+}
+
+.icon-circle--legal        { background: #ede9fe; color: var(--primary-text); }
+.icon-circle--finance      { background: #dcfce7; color: #15803d; }
+.icon-circle--construction { background: #fef3c7; color: var(--secondary-dark); }
+.icon-circle--petcare      { background: #fee2e2; color: #b91c1c; }
+.icon-circle--sports       { background: #dbeafe; color: #1d4ed8; }
+.icon-circle--productivity { background: #e0f2fe; color: #0369a1; }
+.icon-circle--gaming       { background: #f3e8ff; color: #7e22ce; }
+
+/* Top border accent ties each card to its category color at a glance */
+.calc-card {
+    border-top: 3px solid transparent;
+}
+.calc-card--legal        { border-top-color: var(--primary); }
+.calc-card--finance      { border-top-color: #22c55e; }
+.calc-card--construction { border-top-color: var(--secondary); }
+.calc-card--petcare      { border-top-color: #ef4444; }
+.calc-card--sports       { border-top-color: #3b82f6; }
+.calc-card--productivity { border-top-color: #0ea5e9; }
+.calc-card--gaming       { border-top-color: #a855f7; }
+
+/* ===== 8c. SEARCH + CATEGORY FILTER (v2 — new functional components) ===== */
+.calc-toolbar {
+    max-width: 640px;
+    margin: 0 auto 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.calc-search-wrap {
+    position: relative;
+}
+
+.calc-search-wrap svg {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--gray-text);
+    pointer-events: none;
+}
+
+.calc-search {
+    width: 100%;
+    padding: 14px 16px 14px 46px;
+    border-radius: 60px;
+    border: 1px solid var(--border);
+    font-family: var(--font-family);
+    font-size: 15px;
+    color: var(--text-dark);
+    background: white;
+    transition: var(--transition);
+}
+
+.calc-search:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15);
+}
+
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.filter-pill {
+    padding: 8px 18px;
+    border-radius: 60px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--text-dark);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-pill:hover {
+    border-color: var(--primary);
+    color: var(--primary-text);
+}
+
+.filter-pill.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.calc-card[hidden] {
+    display: none;
+}
+
+.calc-empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--gray-text);
 }
 
 /* ===== 9. VIEW ALL BUTTON ===== */
@@ -316,7 +549,10 @@ p {
     margin-bottom: 16px;
 }
 
-.value-card h4 {
+.value-card h3 {
+    /* FIX: index.html now uses <h3> here (was <h4>, part of the
+       heading-hierarchy fix) — selector updated to match, otherwise
+       these headings would render unstyled. */
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -324,8 +560,76 @@ p {
 }
 
 .value-card p {
-    color: var(--gray);
+    /* FIX: was --gray (fails AA on white card background) */
+    color: var(--gray-text);
     font-size: 14px;
+}
+
+/* ===== 10b. WHY CALCSNAPS SECTION (moved here in v1.2 from the
+   now-deleted inline <style> block that used to live in index.html) ===== */
+.why-calc-snaps {
+    background: white;
+    border-radius: var(--radius);
+    padding: 40px;
+    margin: 40px 0;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.why-calc-snaps h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 16px;
+}
+
+.why-calc-snaps p {
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-calc-snaps ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.why-calc-snaps ul li {
+    background: var(--light);
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.why-calc-snaps ul li strong {
+    color: var(--primary-text);
+}
+
+@media (max-width: 768px) {
+    .why-calc-snaps {
+        padding: 24px 20px;
+    }
+    .why-calc-snaps h2 {
+        font-size: 24px;
+    }
+    .why-calc-snaps ul {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ===== 11. FOOTER ===== */
@@ -351,6 +655,7 @@ p {
 }
 
 .footer-col p {
+    /* OK as-is: dark footer background, --gray has good contrast here */
     color: var(--gray);
     font-size: 14px;
     line-height: 1.6;
@@ -365,17 +670,18 @@ p {
 }
 
 .footer-col a:hover {
-    color: var(--primary);
+    color: var(--primary-light);
 }
 
 .footer-col .about-link {
-    color: var(--primary);
+    color: var(--primary-light);
     display: inline-block;
     margin-top: 4px;
 }
 
 .footer-col .about-link:hover {
     color: var(--primary-light);
+    text-decoration: underline;
 }
 
 .footer-social {
@@ -391,7 +697,7 @@ p {
 }
 
 .footer-social a:hover {
-    color: var(--primary);
+    color: var(--primary-light);
 }
 
 .footer-bottom {
@@ -407,9 +713,10 @@ p {
 
 /* ===== 12. COMMON UTILITIES ===== */
 .text-center { text-align: center; }
-.text-primary { color: var(--primary); }
-.text-gray { color: var(--gray); }
+.text-primary { color: var(--primary-text); } /* FIX: AA-safe on light bg */
+.text-gray { color: var(--gray-text); }         /* FIX: was --gray */
 .text-white { color: var(--text-light); }
+.text-secondary { color: var(--secondary-dark); } /* NEW: --secondary is now used somewhere */
 
 .mt-1 { margin-top: 16px; }
 .mt-2 { margin-top: 32px; }
@@ -432,29 +739,26 @@ p {
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 32px; }
-    h2 { font-size: 26px; }
-    h3 { font-size: 20px; }
-    
+    /* h1/h2/h3 now handled by clamp() in Section 5 — no hard override needed */
+
     .hero {
         padding: 40px 24px;
     }
-    .hero h1 { font-size: 32px; }
     .hero .tagline { font-size: 16px; }
-    
+
     .value-prop {
         grid-template-columns: 1fr;
     }
-    
+
     .calc-grid {
         gap: 16px;
     }
-    
+
     .btn-view-all {
         padding: 14px 32px;
         font-size: 16px;
     }
-    
+
     .header {
         flex-direction: column;
         align-items: center;
@@ -463,7 +767,7 @@ p {
     .nav {
         justify-content: center;
     }
-    
+
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;
@@ -483,4 +787,28 @@ p {
     .container {
         padding: 0 16px;
     }
+}
+
+/* ===== 14. DARK MODE SCAFFOLD (inactive until wired up) =====
+   Your Privacy Policy mentions a "dark mode" preference cookie, but no
+   dark-mode CSS/toggle existed in v1.0. This block does nothing unless
+   you add data-theme="dark" to <html> (via a toggle button + your
+   storage layer). Either wire this up, or remove the dark-mode mention
+   from the Privacy Policy so the policy matches reality. */
+[data-theme="dark"] {
+    --light: #0f172a;
+    --dark: #f8fafc;
+    --text-dark: #f1f5f9;
+    --gray-text: #94a3b8;
+    --border: #334155;
+}
+
+[data-theme="dark"] .calc-card,
+[data-theme="dark"] .value-card {
+    background: var(--dark-light);
+    border-color: #334155;
+}
+
+[data-theme="dark"] .calc-badge {
+    background: rgba(139, 92, 246, 0.15);
 }
