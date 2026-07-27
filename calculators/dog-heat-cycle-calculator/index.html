@@ -127,12 +127,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
     
-    <!-- ===== GLOBAL CSS (ABSOLUTE PATH - FIXED) ===== -->
+    <!-- ===== FONT AWESOME (MOVED TO HEAD) ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ===== GLOBAL CSS (ABSOLUTE PATH) ===== -->
     <link rel="stylesheet" href="/style.css">
     
-    <!-- ===== PAGE-SPECIFIC CSS (NO DUPLICATE :root) ===== -->
+    <!-- ===== PAGE-SPECIFIC CSS ===== -->
     <style>
-        /* ===== CALCULATOR-SPECIFIC STYLES ===== */
+        /* ===== CALCULATOR HEADER ===== */
         .calc-main-header {
             text-align: center;
             margin: 20px auto 40px auto;
@@ -161,13 +164,14 @@
             margin: 0 auto;
         }
 
+        /* ===== CALCULATOR BOXES (FIXED: max-width + center) ===== */
         .calculator-box, .result-box, .symptoms-box {
-             background: white;
-             border-radius: 24px;
+            background: white;
+            border-radius: 24px;
             padding: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-             margin: 0 auto 30px auto;  /* ✅ center */
-             max-width: 900px;          /* ✅ explicit */
+            margin: 0 auto 30px auto;
+            max-width: 900px;
             border: 1px solid #e2e8f0;
         }
 
@@ -423,7 +427,7 @@
             margin-right: 10px;
         }
 
-        /* ===== ARTICLE CONTAINER ===== */
+        /* ===== ARTICLE ===== */
         .article-container {
             max-width: 900px;
             margin: 30px auto;
@@ -817,6 +821,9 @@
 </head>
 <body>
     
+    <!-- ===== SKIP LINK (ACCESSIBILITY) ===== -->
+    <a href="#calculator-section" class="skip-link">Skip to calculator</a>
+
     <!-- ===== HEADER ===== -->
     <div class="container">
         <header class="header">
@@ -830,8 +837,8 @@
         </header>
     </div>
     
-    <!-- ===== MAIN CONTAINER ===== -->
-    <div class="container">
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main-content" class="container">
         
         <!-- ===== CALCULATOR ===== -->
         <div id="calculator-section">
@@ -843,103 +850,101 @@
                 <p>Track your dog's heat cycles with confidence</p>
             </header>
 
-            <main role="main">
-                <section class="calculator-box" aria-labelledby="calculator-title">
-                    <h2 class="section-title" id="calculator-title">
-                        <i class="fas fa-calculator" aria-hidden="true"></i> Enter Your Dog's Details
-                    </h2>
-                    
-                    <div class="input-group">
-                        <label for="lastHeat">
-                            <i class="far fa-calendar-alt" aria-hidden="true"></i> Last Heat Start Date
-                        </label>
-                        <input type="date" id="lastHeat" aria-required="true" aria-describedby="dateError">
-                        <div id="dateError" class="error-message" role="alert"></div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="breedSize">
-                            <i class="fas fa-dog" aria-hidden="true"></i> Dog Breed Size
-                        </label>
-                        <select id="breedSize" aria-describedby="breedHelp">
-                            <option value="small">Small Breed (e.g., Chihuahua, Pomeranian)</option>
-                            <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
-                            <option value="large">Large Breed (e.g., German Shepherd, Labrador)</option>
-                            <option value="giant">Giant Breed (e.g., Great Dane, Mastiff)</option>
-                        </select>
-                        <div id="breedHelp" class="error-message"></div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="cycleLength">
-                            <i class="fas fa-history" aria-hidden="true"></i> Cycle Length
-                        </label>
-                        <select id="cycleLength">
-                            <option value="auto">Auto-Calculate (Recommended)</option>
-                            <option value="5">5 months</option>
-                            <option value="6">6 months</option>
-                            <option value="7">7 months</option>
-                            <option value="8">8 months</option>
-                            <option value="9">9 months</option>
-                            <option value="12">12 months</option>
-                        </select>
-                    </div>
-                    
-                    <button class="btn" id="calculateBtn" aria-label="Calculate heat cycles">
-                        <i class="fas fa-bolt" aria-hidden="true"></i> 
-                        <span>Calculate Heat Cycles</span>
-                    </button>
-                </section>
-
-                <!-- Calculator Disclaimer -->
-                <div class="calculator-disclaimer">
-                    <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
+            <section class="calculator-box" aria-labelledby="calculator-title">
+                <h2 class="section-title" id="calculator-title">
+                    <i class="fas fa-calculator" aria-hidden="true"></i> Enter Your Dog's Details
+                </h2>
+                
+                <div class="input-group">
+                    <label for="lastHeat">
+                        <i class="far fa-calendar-alt" aria-hidden="true"></i> Last Heat Start Date
+                    </label>
+                    <input type="date" id="lastHeat" aria-required="true" aria-describedby="dateError">
+                    <div id="dateError" class="error-message" role="alert"></div>
                 </div>
+                
+                <div class="input-group">
+                    <label for="breedSize">
+                        <i class="fas fa-dog" aria-hidden="true"></i> Dog Breed Size
+                    </label>
+                    <select id="breedSize" aria-describedby="breedHelp">
+                        <option value="small">Small Breed (e.g., Chihuahua, Pomeranian)</option>
+                        <option value="medium" selected>Medium Breed (e.g., Beagle, Bulldog)</option>
+                        <option value="large">Large Breed (e.g., German Shepherd, Labrador)</option>
+                        <option value="giant">Giant Breed (e.g., Great Dane, Mastiff)</option>
+                    </select>
+                    <div id="breedHelp" class="error-message"></div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="cycleLength">
+                        <i class="fas fa-history" aria-hidden="true"></i> Cycle Length
+                    </label>
+                    <select id="cycleLength">
+                        <option value="auto">Auto-Calculate (Recommended)</option>
+                        <option value="5">5 months</option>
+                        <option value="6">6 months</option>
+                        <option value="7">7 months</option>
+                        <option value="8">8 months</option>
+                        <option value="9">9 months</option>
+                        <option value="12">12 months</option>
+                    </select>
+                </div>
+                
+                <button class="btn" id="calculateBtn" aria-label="Calculate heat cycles">
+                    <i class="fas fa-bolt" aria-hidden="true"></i> 
+                    <span>Calculate Heat Cycles</span>
+                </button>
+            </section>
 
-                <section class="result-box" id="resultBox" aria-labelledby="result-title" aria-live="polite">
-                    <div class="result-header">
-                        <h2 class="result-title" id="result-title">Heat Cycle Schedule</h2>
-                        <div class="action-buttons" role="group" aria-label="Result actions">
-                            <button class="action-btn" id="saveBtn" aria-label="Save results">
-                                <i class="far fa-save" aria-hidden="true"></i> Save
-                            </button>
-                            <button class="action-btn" id="printBtn" aria-label="Print results">
-                                <i class="fas fa-print" aria-hidden="true"></i> Print
-                            </button>
-                            <button class="action-btn" id="exportBtn" aria-label="Export results as JSON">
-                                <i class="fas fa-download" aria-hidden="true"></i> Export
-                            </button>
-                            <button class="action-btn" id="resetBtn" aria-label="Reset calculator">
-                                <i class="fas fa-redo" aria-hidden="true"></i> Reset
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="result-details">
-                        <p><strong>Breed Size:</strong> <span id="resultBreedSize">Medium Breed</span></p>
-                        <p><strong>Cycle Length:</strong> <span id="resultCycleLength">6 months</span></p>
-                        <p><strong>Next 3 Heat Cycles:</strong></p>
-                    </div>
-                    
-                    <div class="timeline" id="timeline" role="list" aria-label="Heat cycle timeline">
-                        <!-- Results will appear here -->
-                    </div>
-                </section>
+            <!-- Calculator Disclaimer -->
+            <div class="calculator-disclaimer">
+                <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
+            </div>
 
-                <section class="symptoms-box" aria-labelledby="symptoms-title">
-                    <h2 class="section-title" id="symptoms-title">
-                        <i class="fas fa-clipboard-check" aria-hidden="true"></i> Symptoms Checklist
-                    </h2>
-                    <p style="color: #475569; margin-bottom: 15px;">
-                        Click on symptoms you observe to get personalized advice.
-                    </p>
-                    <div class="symptoms-checklist" id="symptomsChecklist" role="group" aria-label="Heat symptoms"></div>
-                    <div class="advice-box" id="adviceBox" role="status" aria-live="polite">
-                        <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Professional Advice</h4>
-                        <p id="adviceText"></p>
+            <section class="result-box" id="resultBox" aria-labelledby="result-title" aria-live="polite">
+                <div class="result-header">
+                    <h2 class="result-title" id="result-title">Heat Cycle Schedule</h2>
+                    <div class="action-buttons" role="group" aria-label="Result actions">
+                        <button class="action-btn" id="saveBtn" aria-label="Save results">
+                            <i class="far fa-save" aria-hidden="true"></i> Save
+                        </button>
+                        <button class="action-btn" id="printBtn" aria-label="Print results">
+                            <i class="fas fa-print" aria-hidden="true"></i> Print
+                        </button>
+                        <button class="action-btn" id="exportBtn" aria-label="Export results as JSON">
+                            <i class="fas fa-download" aria-hidden="true"></i> Export
+                        </button>
+                        <button class="action-btn" id="resetBtn" aria-label="Reset calculator">
+                            <i class="fas fa-redo" aria-hidden="true"></i> Reset
+                        </button>
                     </div>
-                </section>
-            </main>
+                </div>
+                
+                <div class="result-details">
+                    <p><strong>Breed Size:</strong> <span id="resultBreedSize">Medium Breed</span></p>
+                    <p><strong>Cycle Length:</strong> <span id="resultCycleLength">6 months</span></p>
+                    <p><strong>Next 3 Heat Cycles:</strong></p>
+                </div>
+                
+                <div class="timeline" id="timeline" role="list" aria-label="Heat cycle timeline">
+                    <!-- Results will appear here -->
+                </div>
+            </section>
+
+            <section class="symptoms-box" aria-labelledby="symptoms-title">
+                <h2 class="section-title" id="symptoms-title">
+                    <i class="fas fa-clipboard-check" aria-hidden="true"></i> Symptoms Checklist
+                </h2>
+                <p style="color: #475569; margin-bottom: 15px;">
+                    Click on symptoms you observe to get personalized advice.
+                </p>
+                <div class="symptoms-checklist" id="symptomsChecklist" role="group" aria-label="Heat symptoms"></div>
+                <div class="advice-box" id="adviceBox" role="status" aria-live="polite">
+                    <h4><i class="fas fa-lightbulb" aria-hidden="true"></i> Professional Advice</h4>
+                    <p id="adviceText"></p>
+                </div>
+            </section>
         </div>
         
         <!-- ===== ARTICLE ===== -->
@@ -949,6 +954,7 @@
             </header>
 
             <article class="article-content">
+                <!-- ===== FULL ARTICLE CONTENT ===== -->
                 <p>As a veterinary reproductive specialist and dog breeder with over 15 years of hands-on experience, I've helped thousands of dog owners navigate the sometimes confusing world of canine reproduction. One question I hear constantly is, "When will my dog go into heat again?" That's exactly why I developed our <strong>Dog Heat Cycle Calculator</strong> – to take the guesswork out of tracking your female dog's reproductive cycle.</p>
                 
                 <p>Understanding your dog's heat cycle isn't just for breeders. Whether you're planning a litter, trying to prevent an unplanned pregnancy, or simply want to be prepared for the behavioral changes that come with your dog's season, knowing when to expect her next cycle makes a world of difference.</p>
@@ -1021,30 +1027,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><strong>Small</strong></td>
-                                <td>Chihuahua, Pomeranian</td>
-                                <td>5-6 months</td>
-                                <td>6-12 months</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Medium</strong></td>
-                                <td>Beagle, Bulldog</td>
-                                <td>6-7 months</td>
-                                <td>7-13 months</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Large</strong></td>
-                                <td>Labrador, German Shepherd</td>
-                                <td>8-9 months</td>
-                                <td>10-16 months</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Giant</strong></td>
-                                <td>Great Dane, Mastiff</td>
-                                <td>10-12 months</td>
-                                <td>18-24 months</td>
-                            </tr>
+                            <tr><td><strong>Small</strong></td><td>Chihuahua, Pomeranian</td><td>5-6 months</td><td>6-12 months</td></tr>
+                            <tr><td><strong>Medium</strong></td><td>Beagle, Bulldog</td><td>6-7 months</td><td>7-13 months</td></tr>
+                            <tr><td><strong>Large</strong></td><td>Labrador, German Shepherd</td><td>8-9 months</td><td>10-16 months</td></tr>
+                            <tr><td><strong>Giant</strong></td><td>Great Dane, Mastiff</td><td>10-12 months</td><td>18-24 months</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -1426,7 +1412,7 @@
             </article>
         </div>
         
-    </div>
+    </main>
     
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
@@ -1435,7 +1421,6 @@
                 <h4>🧮 CalcSnaps</h4>
                 <p>Calculations in a Snap — fast, accurate, free.</p>
                 <a href="/about-us" class="about-link">About Us →</a>
-                <!-- Social icons removed (dead links) — add back with real URLs when ready -->
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
@@ -1462,9 +1447,6 @@
             <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
         </div>
     </footer>
-    
-    <!-- ===== Font Awesome (Page Needs Icons) ===== -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
         // ===== CALCULATOR JAVASCRIPT =====
