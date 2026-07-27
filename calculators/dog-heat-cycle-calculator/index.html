@@ -14,13 +14,13 @@
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
 
-    <!-- ===== OPEN GRAPH (SINGLE, CONSISTENT) ===== -->
+    <!-- ===== OPEN GRAPH ===== -->
     <meta property="og:title" content="Dog Heat Cycle Calculator | Breed-Specific Estrus Predictor | CalcSnaps">
     <meta property="og:description" content="Free dog heat cycle calculator with breed-specific predictions. Track estrus cycles, symptoms, and fertile windows for your dog.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://calcsnaps.com/dog-heat-cycle-calculator">
     
-    <!-- ===== CANONICAL (SINGLE) ===== -->
+    <!-- ===== CANONICAL ===== -->
     <link rel="canonical" href="https://calcsnaps.com/dog-heat-cycle-calculator">
 
     <!-- ===== SCHEMA MARKUP ===== -->
@@ -64,7 +64,7 @@
     }
     </script>
 
-    <!-- ===== FAQ SCHEMA (MATCHES VISIBLE FAQ) ===== -->
+    <!-- ===== FAQ SCHEMA ===== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -122,7 +122,7 @@
     }
     </script>
     
-    <!-- ===== FONTS: preconnect + link ===== -->
+    <!-- ===== FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
@@ -130,12 +130,25 @@
     <!-- ===== FONT AWESOME (MOVED TO HEAD) ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- ===== GLOBAL CSS (ABSOLUTE PATH) ===== -->
+    <!-- ===== GLOBAL CSS ===== -->
     <link rel="stylesheet" href="/style.css">
     
     <!-- ===== PAGE-SPECIFIC CSS ===== -->
     <style>
-        /* ===== CALCULATOR HEADER ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8b5cf6;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
+        }
+
         .calc-main-header {
             text-align: center;
             margin: 20px auto 40px auto;
@@ -164,7 +177,6 @@
             margin: 0 auto;
         }
 
-        /* ===== CALCULATOR BOXES (FIXED: max-width + center) ===== */
         .calculator-box, .result-box, .symptoms-box {
             background: white;
             border-radius: 24px;
@@ -420,6 +432,7 @@
             margin: 20px 0 30px;
             font-size: 0.95rem;
             color: #475569;
+            max-width: 900px;
         }
         
         .calculator-disclaimer i {
@@ -427,7 +440,6 @@
             margin-right: 10px;
         }
 
-        /* ===== ARTICLE ===== */
         .article-container {
             max-width: 900px;
             margin: 30px auto;
@@ -549,6 +561,15 @@
             padding: 20px 25px;
             border-radius: 12px;
             margin: 30px 0;
+        }
+
+        .expert-tip a {
+            color: #8b5cf6;
+            text-decoration: none;
+        }
+
+        .expert-tip a:hover {
+            text-decoration: underline;
         }
 
         .warning-box {
@@ -721,7 +742,6 @@
             color: #0f172a !important;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 0 15px;
@@ -821,7 +841,7 @@
 </head>
 <body>
     
-    <!-- ===== SKIP LINK (ACCESSIBILITY) ===== -->
+    <!-- ===== SKIP LINK ===== -->
     <a href="#calculator-section" class="skip-link">Skip to calculator</a>
 
     <!-- ===== HEADER ===== -->
@@ -897,6 +917,11 @@
                 </button>
             </section>
 
+            <!-- ===== DISCLAIMER (FIXED: max-width + centered) ===== -->
+            <div class="calculator-disclaimer" style="margin: 0 auto 30px auto; max-width: 900px;">
+                <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
+            </div>
+
             <section class="result-box" id="resultBox" aria-labelledby="result-title" aria-live="polite">
                 <div class="result-header">
                     <h2 class="result-title" id="result-title">Heat Cycle Schedule</h2>
@@ -949,7 +974,6 @@
             </header>
 
             <article class="article-content">
-                <!-- ===== FULL ARTICLE CONTENT ===== -->
                 <p>As a veterinary reproductive specialist and dog breeder with over 15 years of hands-on experience, I've helped thousands of dog owners navigate the sometimes confusing world of canine reproduction. One question I hear constantly is, "When will my dog go into heat again?" That's exactly why I developed our <strong>Dog Heat Cycle Calculator</strong> – to take the guesswork out of tracking your female dog's reproductive cycle.</p>
                 
                 <p>Understanding your dog's heat cycle isn't just for breeders. Whether you're planning a litter, trying to prevent an unplanned pregnancy, or simply want to be prepared for the behavioral changes that come with your dog's season, knowing when to expect her next cycle makes a world of difference.</p>
@@ -1236,6 +1260,7 @@
                     <li>Provide quiet spaces where she can retreat</li>
                 </ul>
 
+                <!-- ===== FIRST HEAT SECTION (WITH AKC LINK) ===== -->
                 <h2 id="first-heat">When Do Dogs Have Their First Heat?</h2>
                 <p>This is one of the most common questions I hear from new puppy owners.</p>
                 
@@ -1253,9 +1278,7 @@
                 <p>Let's get specific with popular breeds I see regularly:</p>
                 
                 <p><strong>Labrador heat cycle:</strong> Most Labs have their first heat between 9-12 months. Their cycles typically last 7-8 months, with obvious physical signs.</p>
-                
                 <p><strong>Chihuahua heat cycle:</strong> These tiny dogs often cycle early (6-9 months) and frequently (every 5-6 months). Their signs can be subtle, so many owners miss the first heat entirely.</p>
-                
                 <p><strong>Great Dane heat cycle:</strong> Giants develop slowly. First heat at 18-24 months is normal, and cycles may be 10-12 months apart.</p>
                 
                 <h3>Why Young Dogs Often Have Irregular Cycles</h3>
