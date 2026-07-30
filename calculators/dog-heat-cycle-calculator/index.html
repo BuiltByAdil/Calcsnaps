@@ -18,10 +18,12 @@
     <meta property="og:title" content="Dog Heat Cycle Calculator | Breed-Specific Estrus Predictor | CalcSnaps">
     <meta property="og:description" content="Free dog heat cycle calculator with breed-specific predictions. Track estrus cycles, symptoms, and fertile windows for your dog.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://calcsnaps.com/dog-heat-cycle-calculator">
+    <!-- 🔧 FIX: Added /calculators/ prefix -->
+    <meta property="og:url" content="https://calcsnaps.com/calculators/dog-heat-cycle-calculator">
     
     <!-- ===== CANONICAL ===== -->
-    <link rel="canonical" href="https://calcsnaps.com/dog-heat-cycle-calculator">
+    <!-- 🔧 FIX: Added /calculators/ prefix -->
+    <link rel="canonical" href="https://calcsnaps.com/calculators/dog-heat-cycle-calculator">
 
     <!-- ===== SCHEMA MARKUP ===== -->
     <script type="application/ld+json">
@@ -30,7 +32,7 @@
         "@type": "WebApplication",
         "name": "Dog Heat Cycle Calculator",
         "description": "Free tool to predict dog heat cycles with breed-specific accuracy",
-        "url": "https://calcsnaps.com/dog-heat-cycle-calculator",
+        "url": "https://calcsnaps.com/calculators/dog-heat-cycle-calculator",
         "applicationCategory": "PetCareApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -57,10 +59,11 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://calcsnaps.com/dog-heat-cycle-calculator"
+            "@id": "https://calcsnaps.com/calculators/dog-heat-cycle-calculator"
         },
         "datePublished": "2024-01-15",
-        "dateModified": "2024-01-15"
+        <!-- 🔧 FIX: Updated dateModified to 2026 -->
+        "dateModified": "2026-07-30"
     }
     </script>
 
@@ -127,7 +130,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
     
-    <!-- ===== FONT AWESOME (MOVED TO HEAD) ===== -->
+    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- ===== GLOBAL CSS ===== -->
@@ -135,6 +138,14 @@
     
     <!-- ===== PAGE-SPECIFIC CSS ===== -->
     <style>
+        /* ============================================ */
+        /* ZOOM-OUT FIX (Clean) */
+        /* ============================================ */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
         .skip-link {
             position: absolute;
             top: -40px;
@@ -429,7 +440,7 @@
             border-left: 5px solid #fbbf24;
             padding: 15px 20px;
             border-radius: 12px;
-            margin: 20px 0 30px;
+            margin: 0 auto 30px auto;
             font-size: 0.95rem;
             color: #475569;
             max-width: 900px;
@@ -917,8 +928,8 @@
                 </button>
             </section>
 
-            <!-- ===== DISCLAIMER (FIXED: max-width + centered) ===== -->
-            <div class="calculator-disclaimer" style="margin: 0 auto 30px auto; max-width: 900px;">
+            <!-- ===== DISCLAIMER ===== -->
+            <div class="calculator-disclaimer">
                 <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This calculator provides estimates based on breed averages and general veterinary guidelines. Every dog is unique, and individual cycles may vary. Always consult with a veterinarian for medical decisions or breeding plans.
             </div>
 
@@ -1260,7 +1271,7 @@
                     <li>Provide quiet spaces where she can retreat</li>
                 </ul>
 
-                <!-- ===== FIRST HEAT SECTION (WITH AKC LINK) ===== -->
+                <!-- ===== FIRST HEAT SECTION ===== -->
                 <h2 id="first-heat">When Do Dogs Have Their First Heat?</h2>
                 <p>This is one of the most common questions I hear from new puppy owners.</p>
                 
@@ -1416,6 +1427,7 @@
                     </a>
                 </div>
 
+                <!-- ===== RELATED LINKS ===== -->
                 <div class="related-links">
                     <h4>🔗 Related Calculators</h4>
                     <div class="related-grid">
@@ -1423,7 +1435,8 @@
                         <a href="/calculators/pain-and-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
                         <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
                         <a href="/calculators/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
-                        <a href="/calculators/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
+                        <!-- 🔧 FIX: Changed from 🔢 Aggregate Calculator to 🧱 UK Aggregate Calculator -->
+                        <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
                         <a href="/calculators/venmo-fee-calculator">💸 Venmo Fee Calculator</a>
                     </div>
                 </div>
