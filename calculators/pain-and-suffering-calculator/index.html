@@ -4,32 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- ===== CALCULATOR META TAGS ===== -->
+    <!-- ===== PRIMARY META TAGS ===== -->
     <title>Pain & Suffering Calculator | Free Injury Settlement Estimate | CalcSnaps</title>
-
+    
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
 
+    <!-- ===== SINGLE META DESCRIPTION ===== -->
     <meta name="description" content="Free pain and suffering calculator for personal injury claims. Get instant settlement estimates based on medical costs, state multipliers, and fault percentage. No signup required.">
     <meta name="keywords" content="pain and suffering calculator, injury settlement calculator, personal injury claim, accident compensation, settlement estimate, car accident settlement">
     <meta name="author" content="CalcSnaps">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://calcsnaps.com/pain-suffering-calculator">
     
-    <!-- ===== CALCULATOR OPEN GRAPH ===== -->
+    <!-- ===== CANONICAL WITH "AND" ===== -->
+    <link rel="canonical" href="https://calcsnaps.com/calculators/pain-and-suffering-calculator">
+    
+    <!-- ===== OPEN GRAPH ===== -->
     <meta property="og:title" content="Pain & Suffering Calculator | Free Injury Settlement Estimate | CalcSnaps">
-    <meta property="og:description" content="Free pain and suffering calculator for personal injury claims. Get instant settlement estimates.">
+    <meta property="og:description" content="Free pain and suffering calculator for personal injury claims. Get instant settlement estimates based on medical costs, state multipliers, and fault percentage.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calcsnaps.com/pain-suffering-calculator">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/pain-and-suffering-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
     
-    <!-- ===== CALCULATOR SCHEMA ===== -->
+    <!-- ===== SCHEMA MARKUP ===== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Pain & Suffering Calculator",
         "description": "Free personal injury settlement estimator",
-        "url": "https://calcsnaps.com/pain-suffering-calculator",
+        "url": "https://calcsnaps.com/calculators/pain-and-suffering-calculator",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -40,15 +44,30 @@
     }
     </script>
     
-    <!-- ===== ARTICLE META TAGS ===== -->
-    <meta name="description" content="Complete guide to pain and suffering calculation with formulas, state multipliers, and settlement strategies. Learn how to calculate your injury claim value.">
-    <meta name="keywords" content="pain and suffering calculator, injury settlement, personal injury claim, pain and suffering formula, non-economic damages, compensation calculation">
-    <meta property="og:title" content="Complete Guide to Pain and Suffering Calculation | CalcSnaps">
-    <meta property="og:description" content="Learn how pain and suffering is calculated with state multipliers, formulas, and settlement strategies.">
-    <meta property="og:type" content="article">
-    <link rel="canonical" href="https://calcsnaps.com/pain-suffering-guide">
-    
-    <!-- ===== ARTICLE FAQ SCHEMA ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Guide to Pain and Suffering Calculation",
+        "description": "Complete guide to pain and suffering calculation with formulas, state multipliers, and settlement strategies.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/calculators/pain-and-suffering-calculator"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2026-07-30"
+    }
+    </script>
+
+    <!-- ===== FAQ SCHEMA ===== -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -98,24 +117,38 @@
     }
     </script>
     
-    <!-- ===== GLOBAL CSS ===== -->
-    <link rel="stylesheet" href="../../style.css">
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
     
-    <!-- ===== CALCULATOR + ARTICLE CSS (MERGE) ===== -->
+    <!-- ===== FONT AWESOME ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="/style.css">
+    
     <style>
         /* ============================================ */
-        /* ZOOM-OUT FIX (Header + Container) */
+        /* ZOOM-OUT FIX (Clean) */
         /* ============================================ */
         html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
-        .header {
-            max-width: 100% !important;
-            margin: 0 auto !important;
-            padding: 20px 24px !important;
-            box-sizing: border-box !important;
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8b5cf6;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
         }
 
         /* ===== CALCULATOR CSS ===== */
@@ -164,7 +197,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         
-        .calc-header h1 {
+        .calc-header h2 {
             font-size: 28px;
             margin-bottom: 12px;
             font-weight: 700;
@@ -343,11 +376,17 @@
             cursor: pointer;
             transition: all 0.2s;
             border: 2px solid #e2e8f0;
+            user-select: none;
         }
         
         .emoji:hover {
             transform: translateY(-2px);
             border-color: var(--primary);
+        }
+        
+        .emoji:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .emoji.selected {
@@ -382,10 +421,16 @@
             transition: all 0.2s;
             font-size: 14px;
             font-weight: 500;
+            user-select: none;
         }
         
         .state-card:hover {
             border-color: var(--primary);
+        }
+        
+        .state-card:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .state-card.selected {
@@ -479,6 +524,9 @@
             font-size: 13px;
             margin-top: 8px;
             border-left: 3px solid var(--primary);
+            overflow-x: auto;
+            word-wrap: break-word;
+            white-space: normal;
         }
         
         .breakdown {
@@ -516,12 +564,14 @@
             margin: 5px 0;
         }
         
-        .breakdown-item.state-multiplier {
-            color: #2563eb;
-            background: #dbeafe;
+        .breakdown-item.multiplier-note {
+            background: #f8fafc;
             border-radius: 6px;
             padding: 8px 12px;
             margin: 5px 0;
+            font-size: 12px;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
         }
         
         .disclaimer {
@@ -555,7 +605,7 @@
             .calc-header {
                 padding: 24px 20px;
             }
-            .calc-header h1 {
+            .calc-header h2 {
                 font-size: 24px;
             }
             .calc-content {
@@ -1029,645 +1079,679 @@
 </head>
 <body>
     
-    <!-- ===== HEADER (HOMEPAGE WALA - FIXED) ===== -->
-    <header class="header">
-        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
-        <nav class="nav">
-            <a href="/" class="active">Home</a>
-            <a href="/all-calculators">All Calculators</a>
-            <a href="/about-us">About</a>
-            <a href="/contact-us">Contact</a>
-        </nav>
-    </header>
-    
-    <!-- ===== CONTAINER (max-width: 900px) ===== -->
+    <!-- ===== SKIP LINK ===== -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== CONTAINER ===== -->
     <div class="container">
         
-        <!-- ===== CALCULATOR ===== -->
-        <div id="calculator-section">
-            <div class="calc-page">
-                <div class="calculator-card">
-                    <div class="calc-header">
-                        <div class="calc-badge">⚡ Free • No Signup • Instant</div>
-                        <h1>Pain & Suffering Calculator</h1>
-                        <p class="subtitle">Estimate your personal injury claim value in 2 minutes</p>
-                        <div class="calc-features">
-                            <span>✓ State-Specific</span>
-                            <span>✓ Fault Adjustment</span>
-                            <span>✓ Industry Formula</span>
-                        </div>
-                    </div>
-                    
-                    <div class="calc-content">
-                        <div class="step-indicator" id="stepIndicator">
-                            <div class="step-dot" data-step="1">1</div>
-                            <div class="step-dot" data-step="2">2</div>
-                            <div class="step-dot" data-step="3">3</div>
-                            <div class="step-dot" data-step="4">4</div>
-                            <div class="step-dot" data-step="5">5</div>
-                        </div>
-                        
-                        <!-- Step 1 -->
-                        <div class="step active" id="step1">
-                            <h2 class="step-title">Accident Details</h2>
-                            <div class="form-group">
-                                <label>Accident Type</label>
-                                <select id="accidentType">
-                                    <option value="">Select accident type</option>
-                                    <option value="car">Car Accident</option>
-                                    <option value="truck">Truck Accident</option>
-                                    <option value="motorcycle">Motorcycle Accident</option>
-                                    <option value="slip">Slip & Fall</option>
-                                    <option value="work">Workplace Injury</option>
-                                    <option value="medical">Medical Malpractice</option>
-                                </select>
-                                <span class="hint-text">Different accident types may have different settlement ranges</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Your State</label>
-                                <div class="state-grid" id="stateGrid">
-                                    <div class="state-card" data-state="california">California</div>
-                                    <div class="state-card" data-state="texas">Texas</div>
-                                    <div class="state-card" data-state="florida">Florida</div>
-                                    <div class="state-card" data-state="newyork">New York</div>
-                                    <div class="state-card" data-state="illinois">Illinois</div>
-                                    <div class="state-card" data-state="pennsylvania">Pennsylvania</div>
-                                    <div class="state-card" data-state="ohio">Ohio</div>
-                                    <div class="state-card" data-state="georgia">Georgia</div>
-                                    <div class="state-card" data-state="other">Other State</div>
-                                </div>
-                                <span class="hint-text">State laws affect settlement values due to different liability rules</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Fault Status</label>
-                                <select id="fault">
-                                    <option value="">Select fault status</option>
-                                    <option value="other">Other Party 100% at Fault</option>
-                                    <option value="shared">Shared Fault</option>
-                                    <option value="myself">I was at Fault</option>
-                                </select>
-                                <span class="hint-text">Fault percentage directly impacts your final settlement amount</span>
-                            </div>
-                            <div class="fault-container" id="faultContainer">
-                                <label>Your Fault Percentage</label>
-                                <input type="range" id="faultSlider" min="0" max="100" value="0">
-                                <div class="slider-value" id="faultValue">0%</div>
-                                <span class="hint-text">In most states, if you're more than 50% at fault, you may not recover damages</span>
-                            </div>
-                            <button class="btn" id="nextToStep2">Continue →</button>
-                        </div>
-                        
-                        <!-- Step 2 -->
-                        <div class="step" id="step2">
-                            <h2 class="step-title">Financial Losses</h2>
-                            <div class="form-group">
-                                <label>Medical Bills ($)</label>
-                                <input type="number" id="medicalBills" placeholder="Total medical expenses">
-                                <span class="hint-text">Include hospital bills, medication, physical therapy, future medical costs</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Lost Income ($)</label>
-                                <input type="number" id="lostIncome" placeholder="Lost wages, salary">
-                                <span class="hint-text">Salary, bonuses, missed work days, lost earning capacity</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Other Expenses ($)</label>
-                                <input type="number" id="otherExpenses" placeholder="Travel, care, property damage">
-                                <span class="hint-text">Transportation to appointments, home care, damaged property</span>
-                            </div>
-                            <div class="navigation">
-                                <button class="btn btn-secondary" id="backToStep1">← Back</button>
-                                <button class="btn" id="nextToStep3">Continue →</button>
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+        
+        <main id="main-content">
+            
+            <!-- ===== CALCULATOR ===== -->
+            <div id="calculator-section">
+                <div class="calc-page">
+                    <div class="calculator-card">
+                        <div class="calc-header">
+                            <div class="calc-badge">⚡ Free • No Signup • Instant</div>
+                            <h2>Pain & Suffering Calculator</h2>
+                            <p class="subtitle">Estimate your personal injury claim value in 2 minutes</p>
+                            <div class="calc-features">
+                                <span>✓ State-Specific</span>
+                                <span>✓ Fault Adjustment</span>
+                                <span>✓ Industry Formula</span>
                             </div>
                         </div>
                         
-                        <!-- Step 3 -->
-                        <div class="step" id="step3">
-                            <h2 class="step-title">Injury Severity</h2>
-                            <div class="form-group">
-                                <label>Injury Type</label>
-                                <select id="injurySeverity">
-                                    <option value="minor">Minor - Bruises, small cuts</option>
-                                    <option value="moderate">Moderate - Sprains, fractures</option>
-                                    <option value="serious">Serious - Broken bones, surgery</option>
-                                    <option value="severe">Severe - Head trauma, back injury</option>
-                                    <option value="catastrophic">Catastrophic - Permanent disability</option>
-                                </select>
-                                <span class="hint-text">More severe injuries typically result in higher multipliers</span>
+                        <div class="calc-content">
+                            <div class="step-indicator" id="stepIndicator">
+                                <div class="step-dot" data-step="1">1</div>
+                                <div class="step-dot" data-step="2">2</div>
+                                <div class="step-dot" data-step="3">3</div>
+                                <div class="step-dot" data-step="4">4</div>
+                                <div class="step-dot" data-step="5">5</div>
                             </div>
-                            <div class="form-group">
-                                <label>Recovery Time (months)</label>
-                                <input type="number" id="recoveryTime" placeholder="Estimated recovery duration">
-                                <span class="hint-text">Longer recovery times increase pain and suffering compensation</span>
+                            
+                            <!-- Step 1 -->
+                            <div class="step active" id="step1">
+                                <h2 class="step-title">Accident Details</h2>
+                                <div class="form-group">
+                                    <label for="accidentType">Accident Type</label>
+                                    <select id="accidentType">
+                                        <option value="">Select accident type</option>
+                                        <option value="car">Car Accident</option>
+                                        <option value="truck">Truck Accident</option>
+                                        <option value="motorcycle">Motorcycle Accident</option>
+                                        <option value="slip">Slip & Fall</option>
+                                        <option value="work">Workplace Injury</option>
+                                        <option value="medical">Medical Malpractice</option>
+                                    </select>
+                                    <span class="hint-text">Different accident types may have different settlement ranges</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Your State</label>
+                                    <div class="state-grid" id="stateGrid" role="radiogroup" aria-label="Select your state">
+                                        <div class="state-card" data-state="california" role="radio" aria-checked="false" tabindex="0">California</div>
+                                        <div class="state-card" data-state="texas" role="radio" aria-checked="false" tabindex="0">Texas</div>
+                                        <div class="state-card" data-state="florida" role="radio" aria-checked="false" tabindex="0">Florida</div>
+                                        <div class="state-card" data-state="newyork" role="radio" aria-checked="false" tabindex="0">New York</div>
+                                        <div class="state-card" data-state="illinois" role="radio" aria-checked="false" tabindex="0">Illinois</div>
+                                        <div class="state-card" data-state="pennsylvania" role="radio" aria-checked="false" tabindex="0">Pennsylvania</div>
+                                        <div class="state-card" data-state="ohio" role="radio" aria-checked="false" tabindex="0">Ohio</div>
+                                        <div class="state-card" data-state="georgia" role="radio" aria-checked="false" tabindex="0">Georgia</div>
+                                        <div class="state-card" data-state="other" role="radio" aria-checked="false" tabindex="0">Other State</div>
+                                    </div>
+                                    <span class="hint-text">State laws affect settlement values due to different liability rules</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="fault">Fault Status</label>
+                                    <select id="fault">
+                                        <option value="">Select fault status</option>
+                                        <option value="other">Other Party 100% at Fault</option>
+                                        <option value="shared">Shared Fault</option>
+                                        <option value="myself">I was at Fault</option>
+                                    </select>
+                                    <span class="hint-text">Fault percentage directly impacts your final settlement amount</span>
+                                </div>
+                                <div class="fault-container" id="faultContainer">
+                                    <label for="faultSlider">Your Fault Percentage</label>
+                                    <input type="range" id="faultSlider" min="0" max="100" value="0" aria-label="Your fault percentage">
+                                    <div class="slider-value" id="faultValue">0%</div>
+                                    <span class="hint-text">In most states, if you're more than 50% at fault, you may not recover damages</span>
+                                    <div id="pureFaultNote" style="display:none; background:#dbeafe; padding:12px; border-radius:8px; margin-top:12px; font-size:13px; color:#1e40af;">
+                                        <strong>Note:</strong> Your state uses <strong>pure comparative negligence</strong> — you can recover even if 99% at fault. Your recovery is reduced by your fault percentage.
+                                    </div>
+                                    <div id="modifiedFaultNote" style="display:none; background:#fef3c7; padding:12px; border-radius:8px; margin-top:12px; font-size:13px; color:#92400e;">
+                                        <strong>Note:</strong> Your state uses <strong>modified comparative negligence (50% bar)</strong> — you can recover only if 50% or less at fault.
+                                    </div>
+                                </div>
+                                <button class="btn" id="nextToStep2">Continue →</button>
                             </div>
-                            <div class="form-group">
-                                <label>Permanent Effects</label>
-                                <select id="permanentEffects">
-                                    <option value="none">No permanent effects</option>
-                                    <option value="minor">Minor scarring</option>
-                                    <option value="moderate">Moderate permanent limitation</option>
-                                    <option value="severe">Severe permanent disability</option>
-                                </select>
-                                <span class="hint-text">Permanent injuries significantly increase claim value</span>
+                            
+                            <!-- Step 2 -->
+                            <div class="step" id="step2">
+                                <h2 class="step-title">Financial Losses</h2>
+                                <div class="form-group">
+                                    <label for="medicalBills">Medical Bills ($)</label>
+                                    <input type="number" id="medicalBills" placeholder="Total medical expenses">
+                                    <span class="hint-text">Include hospital bills, medication, physical therapy, future medical costs</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lostIncome">Lost Income ($)</label>
+                                    <input type="number" id="lostIncome" placeholder="Lost wages, salary">
+                                    <span class="hint-text">Salary, bonuses, missed work days, lost earning capacity</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="otherExpenses">Other Expenses ($)</label>
+                                    <input type="number" id="otherExpenses" placeholder="Travel, care, property damage">
+                                    <span class="hint-text">Transportation to appointments, home care, damaged property</span>
+                                </div>
+                                <div class="navigation">
+                                    <button class="btn btn-secondary" id="backToStep1">← Back</button>
+                                    <button class="btn" id="nextToStep3">Continue →</button>
+                                </div>
                             </div>
-                            <div class="navigation">
-                                <button class="btn btn-secondary" id="backToStep2">← Back</button>
-                                <button class="btn" id="nextToStep4">Continue →</button>
+                            
+                            <!-- Step 3 -->
+                            <div class="step" id="step3">
+                                <h2 class="step-title">Injury Severity</h2>
+                                <div class="form-group">
+                                    <label for="injurySeverity">Injury Type</label>
+                                    <select id="injurySeverity">
+                                        <option value="minor">Minor - Bruises, small cuts</option>
+                                        <option value="moderate">Moderate - Sprains, fractures</option>
+                                        <option value="serious">Serious - Broken bones, surgery</option>
+                                        <option value="severe">Severe - Head trauma, back injury</option>
+                                        <option value="catastrophic">Catastrophic - Permanent disability</option>
+                                    </select>
+                                    <span class="hint-text">More severe injuries typically result in higher multipliers</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="recoveryTime">Recovery Time (months)</label>
+                                    <input type="number" id="recoveryTime" placeholder="Estimated recovery duration">
+                                    <span class="hint-text">Longer recovery times increase pain and suffering compensation</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="permanentEffects">Permanent Effects</label>
+                                    <select id="permanentEffects">
+                                        <option value="none">No permanent effects</option>
+                                        <option value="minor">Minor scarring</option>
+                                        <option value="moderate">Moderate permanent limitation</option>
+                                        <option value="severe">Severe permanent disability</option>
+                                    </select>
+                                    <span class="hint-text">Permanent injuries significantly increase claim value</span>
+                                </div>
+                                <div class="navigation">
+                                    <button class="btn btn-secondary" id="backToStep2">← Back</button>
+                                    <button class="btn" id="nextToStep4">Continue →</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 4 -->
+                            <div class="step" id="step4">
+                                <h2 class="step-title">Pain Assessment</h2>
+                                <div class="form-group">
+                                    <label for="physicalPain">Physical Pain Level (1-10)</label>
+                                    <input type="range" id="physicalPain" min="1" max="10" value="5" aria-label="Physical pain level from 1 to 10">
+                                    <div class="slider-value" id="physicalPainValue">5/10 - Moderate</div>
+                                    <span class="hint-text">1 = no pain, 10 = worst pain imaginable</span>
+                                </div>
+                                <div class="form-group">
+                                    <label>Emotional & Mental Impact</label>
+                                    <div class="emoji-scale" id="mentalStress" role="radiogroup" aria-label="Emotional and mental impact level">
+                                        <div class="emoji" data-value="1" role="radio" aria-checked="false" tabindex="0">😊<br><small>Minimal</small></div>
+                                        <div class="emoji" data-value="3" role="radio" aria-checked="false" tabindex="0">😐<br><small>Mild</small></div>
+                                        <div class="emoji" data-value="5" role="radio" aria-checked="true" tabindex="0">😢<br><small>Moderate</small></div>
+                                        <div class="emoji" data-value="8" role="radio" aria-checked="false" tabindex="0">😫<br><small>Severe</small></div>
+                                        <div class="emoji" data-value="10" role="radio" aria-checked="false" tabindex="0">🤕<br><small>Extreme</small></div>
+                                    </div>
+                                    <span class="hint-text">Anxiety, depression, PTSD, and emotional distress affect compensation</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lifeImpact">Impact on Daily Life</label>
+                                    <select id="lifeImpact">
+                                        <option value="1">Mild - Minor inconvenience</option>
+                                        <option value="2">Moderate - Affects daily activities</option>
+                                        <option value="3">Severe - Cannot perform daily tasks</option>
+                                        <option value="4">Extreme - Complete lifestyle change</option>
+                                    </select>
+                                    <span class="hint-text">How has the injury affected your ability to live normally?</span>
+                                </div>
+                                <div class="navigation">
+                                    <button class="btn btn-secondary" id="backToStep3">← Back</button>
+                                    <button class="btn" id="nextToStep5">Calculate Claim →</button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 5 -->
+                            <div class="step" id="step5">
+                                <h2 class="step-title">Your Estimate</h2>
+                                <div class="result-container" id="resultContainer">
+                                    <div class="result-amount" id="finalAmount">$0</div>
+                                    <div class="calculation-explanation" id="calculationExplanation">
+                                        <h4>📊 How Your Claim Was Calculated:</h4>
+                                        <div class="calculation-formula" id="formulaDisplay">Loading calculation formula...</div>
+                                        <div style="background:#f8fafc; padding:12px; border-radius:8px; margin-top:10px; font-size:12px; color:#64748b; border-left:3px solid #8b5cf6;">
+                                            <strong>How multipliers are determined:</strong><br>
+                                            • <strong>Severity Multiplier:</strong> Based on injury type (1.5x–5x)<br>
+                                            • <strong>Pain Factor:</strong> Based on physical pain, emotional distress, and life impact (0.2x–1.4x)<br>
+                                            • <strong>State Factor:</strong> Based on your state's legal environment (0.9x–1.3x)
+                                        </div>
+                                        <small>This calculation follows the industry-standard multiplier method for pain & suffering claims.</small>
+                                    </div>
+                                    <div class="breakdown" id="breakdown">
+                                        <h4 style="margin-bottom: 16px; color: #1e293b;">Claim Breakdown:</h4>
+                                        <div class="breakdown-item"><span>Medical Expenses:</span><span id="medicalBreakdown">$0</span></div>
+                                        <div class="breakdown-item"><span>Lost Income:</span><span id="incomeBreakdown">$0</span></div>
+                                        <div class="breakdown-item"><span>Other Damages:</span><span id="otherBreakdown">$0</span></div>
+                                        <!-- 🔧 FIX: State Factor removed from breakdown — now merged into Pain & Suffering -->
+                                        <div class="breakdown-item" id="painSufferingItem"><span>Pain & Suffering (<span id="painMultiplierText">1.0x</span>):</span><span id="painBreakdown">$0</span></div>
+                                        <div class="breakdown-item multiplier-note" id="multiplierNote" style="display:none;">
+                                            <span>Includes state factor adjustment</span>
+                                        </div>
+                                        <div class="breakdown-item reduction" id="faultReductionItem" style="display: none;"><span>Fault Reduction (<span id="faultPercentageDisplay">0%</span>):</span><span id="faultReductionAmount">- $0</span></div>
+                                        <div class="breakdown-item total"><span>Total Estimated Claim:</span><span id="totalBreakdown">$0</span></div>
+                                    </div>
+                                    <div class="catastrophic-warning" id="catastrophicWarning">
+                                        <strong>⚠️ Catastrophic Injury</strong><br>Your injury is classified as catastrophic. Consult a qualified attorney for accurate assessment.
+                                    </div>
+                                    <div style="background: #fef3c7; padding: 16px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #fbbf24;">
+                                        <strong style="color: #92400e;">💡 Important Legal Notice</strong><br>
+                                        <small style="color: #92400e;">This estimate is based on your inputs and typical settlement ranges. Actual amounts may vary. Consult with a qualified attorney for precise case evaluation.</small>
+                                    </div>
+                                    <button class="btn" id="resetBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">🔄 Calculate Another Claim</button>
+                                </div>
+                                <div class="navigation">
+                                    <button class="btn btn-secondary" id="backToStep4">← Back</button>
+                                    <button class="btn" id="calculateBtn">Calculate Now</button>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Step 4 -->
-                        <div class="step" id="step4">
-                            <h2 class="step-title">Pain Assessment</h2>
-                            <div class="form-group">
-                                <label>Physical Pain Level (1-10)</label>
-                                <input type="range" id="physicalPain" min="1" max="10" value="5">
-                                <div class="slider-value" id="physicalPainValue">5/10 - Moderate</div>
-                                <span class="hint-text">1 = no pain, 10 = worst pain imaginable</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Emotional & Mental Impact</label>
-                                <div class="emoji-scale" id="mentalStress">
-                                    <div class="emoji" data-value="1" data-desc="Minimal">😊<br><small>Minimal</small></div>
-                                    <div class="emoji" data-value="3" data-desc="Mild">😐<br><small>Mild</small></div>
-                                    <div class="emoji" data-value="5" data-desc="Moderate">😢<br><small>Moderate</small></div>
-                                    <div class="emoji" data-value="8" data-desc="Severe">😫<br><small>Severe</small></div>
-                                    <div class="emoji" data-value="10" data-desc="Extreme">🤕<br><small>Extreme</small></div>
-                                </div>
-                                <span class="hint-text">Anxiety, depression, PTSD, and emotional distress affect compensation</span>
-                            </div>
-                            <div class="form-group">
-                                <label>Impact on Daily Life</label>
-                                <select id="lifeImpact">
-                                    <option value="1">Mild - Minor inconvenience</option>
-                                    <option value="2">Moderate - Affects daily activities</option>
-                                    <option value="3">Severe - Cannot perform daily tasks</option>
-                                    <option value="4">Extreme - Complete lifestyle change</option>
-                                </select>
-                                <span class="hint-text">How has the injury affected your ability to live normally?</span>
-                            </div>
-                            <div class="navigation">
-                                <button class="btn btn-secondary" id="backToStep3">← Back</button>
-                                <button class="btn" id="nextToStep5">Calculate Claim →</button>
-                            </div>
+                        <div class="disclaimer">
+                            <strong>⚠️ Disclaimer:</strong> This tool provides estimates only. Not legal advice. Consult with a qualified attorney for your specific case.
                         </div>
-                        
-                        <!-- Step 5 -->
-                        <div class="step" id="step5">
-                            <h2 class="step-title">Your Estimate</h2>
-                            <div class="result-container" id="resultContainer">
-                                <div class="result-amount" id="finalAmount">$0</div>
-                                <div class="calculation-explanation" id="calculationExplanation">
-                                    <h4>📊 How Your Claim Was Calculated:</h4>
-                                    <div class="calculation-formula" id="formulaDisplay">Loading calculation formula...</div>
-                                    <small>This calculation follows the industry-standard multiplier method for pain & suffering claims.</small>
-                                </div>
-                                <div class="breakdown" id="breakdown">
-                                    <h4 style="margin-bottom: 16px; color: #1e293b;">Claim Breakdown:</h4>
-                                    <div class="breakdown-item"><span>Medical Expenses:</span><span id="medicalBreakdown">$0</span></div>
-                                    <div class="breakdown-item"><span>Lost Income:</span><span id="incomeBreakdown">$0</span></div>
-                                    <div class="breakdown-item"><span>Other Damages:</span><span id="otherBreakdown">$0</span></div>
-                                    <div class="breakdown-item" id="painSufferingItem"><span>Pain & Suffering (<span id="painMultiplierText">1.0x</span>):</span><span id="painBreakdown">$0</span></div>
-                                    <div class="breakdown-item state-multiplier" id="stateMultiplierItem" style="display: none;"><span>State Factor (<span id="stateMultiplierText">1.0x</span>):</span><span id="stateMultiplierAmount">+ $0</span></div>
-                                    <div class="breakdown-item reduction" id="faultReductionItem" style="display: none;"><span>Fault Reduction (<span id="faultPercentageDisplay">0%</span>):</span><span id="faultReductionAmount">- $0</span></div>
-                                    <div class="breakdown-item total"><span>Total Estimated Claim:</span><span id="totalBreakdown">$0</span></div>
-                                </div>
-                                <div class="catastrophic-warning" id="catastrophicWarning">
-                                    <strong>⚠️ Catastrophic Injury</strong><br>Your injury is classified as catastrophic. Consult a qualified attorney for accurate assessment.
-                                </div>
-                                <div style="background: #fef3c7; padding: 16px; border-radius: 12px; margin: 20px 0; border-left: 4px solid #fbbf24;">
-                                    <strong style="color: #92400e;">💡 Important Legal Notice</strong><br>
-                                    <small style="color: #92400e;">This estimate is based on your inputs and typical settlement ranges. Actual amounts may vary. Consult with a qualified attorney for precise case evaluation.</small>
-                                </div>
-                                <button class="btn" id="resetBtn" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">🔄 Calculate Another Claim</button>
-                            </div>
-                            <div class="navigation">
-                                <button class="btn btn-secondary" id="backToStep4">← Back</button>
-                                <button class="btn" id="calculateBtn">Calculate Now</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="disclaimer">
-                        <strong>⚠️ Disclaimer:</strong> This tool provides estimates only. Not legal advice. Consult with a qualified attorney for your specific case.
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- ===== ARTICLE ===== -->
-        <div class="article-container">
-            <header class="article-header">
-                <h1 class="article-title">Complete Guide to Pain and Suffering Calculation</h1>
-                <div class="highlight-box">
-                    <p><strong>Key Takeaway:</strong> Pain and suffering compensation can be 3-5 times your medical bills. Understanding how it's calculated helps you avoid accepting low settlement offers from insurance companies.</p>
-                </div>
-            </header>
             
-            <article class="article-content">
-                <section class="content-section">
-                    <h2>What is Pain and Suffering?</h2>
-                    <p>Pain and suffering refers to the physical pain a person experiences after an injury. A Pain and Suffering Calculator helps estimate the value of these non-economic damages. It also includes emotional distress, mental anguish, and loss of enjoyment of life.</p>
-                    <p>Pain and suffering goes beyond medical bills and visible injuries. It covers long-term discomfort, anxiety, depression, and lifestyle changes caused by the accident. These damages are real, even though they are harder to measure in money.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Why Estimating Your Pain and Suffering is Crucial?</h2>
-                    <p>Estimating pain and suffering is crucial because insurance companies often undervalue these damages. Without an estimate, injured victims may accept low settlement offers too quickly. Knowing your value helps protect your financial future.</p>
-                    <p>A proper estimate gives you confidence during settlement negotiations. It helps you decide whether an offer is fair or needs to be challenged. This knowledge also prepares you before speaking with a lawyer or insurance adjuster.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Understanding Pain and Suffering Damages</h2>
-                    <p>Pain and suffering damages represent the non-economic damages in a personal injury case. Pain and suffering damages respond to how an injury impacts an individual's comfort, mental health, and life.</p>
-                    <p>From a legal perspective, suffering damages are recognized under tort law. Courts and insurance companies acknowledge that injuries cause more than just medical costs - they also cause emotional pain, distress, and loss of enjoyment of life.</p>
-                    <h3>Economic Damages (Medical Bills, Lost Income, Property Damage)</h3>
-                    <p>Also called special damages, these are the tangible, out-of-pocket financial losses with clear documentation. They form the foundation of your claim.</p>
-                    <ul>
-                        <li><strong>Medical Bills:</strong> Past, present, and estimated future costs for hospitals, surgery, medication, therapy, and medical devices.</li>
-                        <li><strong>Lost Wages:</strong> Income you did not earn because you were recovering, including lost vacation/sick time and proven loss of earning capacity.</li>
-                        <li><strong>Property Damage:</strong> The cost to repair or replace your vehicle, clothing, or other damaged property.</li>
-                        <li><strong>Other Expenses:</strong> Mileage to medical appointments, costs for home care, or home modifications for a disability.</li>
-                    </ul>
-                    <h3>Non-Economic Damages (Pain, Emotional Distress, Loss of Enjoyment)</h3>
-                    <p>These are the non-economic damages - the pain and suffering we've been discussing. They compensate for the intangible, subjective losses that profoundly affect your quality of life. This category includes physical pain, mental anguish, emotional distress, loss of consortium, and diminished quality of life.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>What Qualifies as Pain & Suffering?</h2>
-                    <p>Pain and suffering can take many forms, depending on the severity of the injury and the circumstances of the accident.</p>
-                    <ul>
-                        <li>Physical pain caused by injuries or medical treatment</li>
-                        <li>Emotional distress such as anxiety, depression, or fear</li>
-                        <li>Mental trauma following serious injury or medical malpractice</li>
-                        <li>Loss of enjoyment of life, including limited mobility or inability to work</li>
-                    </ul>
-                    <p>These factors are often central to personal injury cases and suffering settlements.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Factors That Increase Value of Pain and Suffering</h2>
-                    <p>Several elements influence the value of pain and suffering damages:</p>
-                    <ul>
-                        <li><strong>Injury severity</strong>, including serious injury or permanent disability</li>
-                        <li><strong>Recovery time</strong>, especially when long-term medical treatment is required</li>
-                        <li><strong>Emotional impact</strong>, such as ongoing distress or emotional pain</li>
-                        <li><strong>Life disruption</strong>, including inability to earn wages or enjoy daily activities</li>
-                    </ul>
-                    <p>Insurance companies and attorneys closely examine these factors when calculating compensation.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How Is Pain and Suffering Calculated?</h2>
-                    <p>Pain and suffering damages are not calculated randomly. In most personal injury cases, there are two widely accepted methods used to estimate pain and suffering. Each method focuses on different aspects of an injury and recovery.</p>
-                    <h3>1. The Multiplier Method (The One Most People Use)</h3>
-                    <p>This is the most common way to calculate pain and suffering, and it's pretty straightforward.</p>
-                    <div class="formula">Pain and Suffering = (Medical Bills + Lost Wages) × Injury Multiplier</div>
-                    <p>Let's break it down:</p>
-                    <ul>
-                        <li><strong>Medical Bills:</strong> This is everything - hospital visits, prescriptions, physical therapy, even travel to and from appointments.</li>
-                        <li><strong>Injury Multiplier:</strong> This is a number, usually between 1.5 and 5, that represents how serious your injury is.</li>
-                    </ul>
-                    <p>For example:</p>
-                    <ul>
-                        <li>Minor scrapes or short-term pain: multiplier around 1.5–2x</li>
-                        <li>Broken bones or injuries needing surgery: 2.5–4x</li>
-                        <li>Severe or life changing injuries (like long-term disability): 4–5x</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Real Example Calculation:</strong><br>
-                        Medical bills: $20,000<br>
-                        Lost wages: $5,000<br>
-                        Injury severity: moderate, so let's use a 3x multiplier<br><br>
-                        <strong>Pain and suffering = ($20,000 + $5,000) × 3 = $75,000</strong><br><br>
-                        That $75,000 is on top of your actual medical bills and lost income.
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <header class="article-header">
+                    <h1 class="article-title">Complete Guide to Pain and Suffering Calculation</h1>
+                    <div class="highlight-box">
+                        <p><strong>Key Takeaway:</strong> Pain and suffering compensation can be 3-5 times your medical bills. Understanding how it's calculated helps you avoid accepting low settlement offers from insurance companies.</p>
                     </div>
-                    <h3>2. The Per Diem (Daily Rate) Method</h3>
-                    <p>Some lawyers prefer this approach, especially if your recovery is expected to take a long time or if there's a lot of emotional distress involved.</p>
-                    <div class="formula">Pain and Suffering = Daily Rate × Number of Recovery Days</div>
-                    <ul>
-                        <li><strong>Daily rate:</strong> Often based on what you earn in a day, or a set amount like $100–$300.</li>
-                        <li><strong>Recovery days:</strong> This includes both physical healing time and emotional recovery.</li>
-                    </ul>
-                    <p>This method can be helpful if your suffering isn't directly tied to high medical bills, but it's used less often than the multiplier method.</p>
-                </section>
+                </header>
                 
-                <section class="content-section">
-                    <h2>The Role of the State Factor (Very Important)</h2>
-                    <p>Many people overlook this, but state laws have a major impact on pain and suffering compensation. Each state handles damages differently. Some states favor injured victims, while others impose strict limits.</p>
-                    <p>This adjustment is known as the <strong>state factor</strong>.</p>
-                    <h3>A Quick Look at State Factors:</h3>
-                    <table class="state-table">
-                        <thead>
-                            <tr><th>State</th><th>State Factor</th><th>Why It Matters</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>California</td><td>1.2x</td><td>No caps on pain and suffering payouts; courts tend to favor plaintiffs</td></tr>
-                            <tr><td>Texas</td><td>0.9x</td><td>Damage caps exist; conservative courts often award less</td></tr>
-                            <tr><td>New York</td><td>1.3x</td><td>High jury awards are common, especially in cities</td></tr>
-                            <tr><td>Florida</td><td>1.1x</td><td>"No-fault" state, but you can still sue for serious injuries</td></tr>
-                            <tr><td>Illinois</td><td>1.15x</td><td>No caps, moderate jury tendencies</td></tr>
-                            <tr><td>Pennsylvania</td><td>1.1x</td><td>Follows modified comparative negligence rules</td></tr>
-                            <tr><td>Ohio</td><td>0.95x</td><td>Some damage caps apply in certain cases</td></tr>
-                            <tr><td>Georgia</td><td>1.0x</td><td>Middle-of-the-road, balanced system</td></tr>
-                        </tbody>
-                    </table>
-                    <h3>Example with State Factor Applied</h3>
-                    <div class="calculation-example">
-                        <strong>Base Calculation:</strong><br>
-                        Medical bills: $15,000<br>
-                        Multiplier: 2.5x (moderate injury)<br><br>
-                        <strong>In California:</strong><br>
-                        $15,000 × 2.5 × 1.2 = <strong>$45,000</strong><br><br>
-                        <strong>In Texas:</strong><br>
-                        $15,000 × 2.5 × 0.9 = <strong>$33,750</strong><br><br>
-                        That's a <strong>$11,250 difference</strong> just because of your location. Insurance companies know this and they often use it to their advantage.
-                    </div>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Fault Adjustment (Comparative Negligence)</h2>
-                    <p>Most accidents involve shared responsibility. That's why fault adjustment is applied after calculating pain and suffering.</p>
-                    <div class="formula">Adjusted Settlement = Pain and Suffering × (1 – Fault Percentage)</div>
-                    <div class="calculation-example">
-                        <strong>Example:</strong><br>
-                        Pain and suffering: $50,000<br>
-                        Fault percentage: 20%<br><br>
-                        <strong>Adjusted settlement = $50,000 × 0.8 = $40,000</strong>
-                    </div>
-                    <p>This adjustment is essential for accuracy and is automatically handled by advanced calculators.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How Our Pain and Suffering Calculator Works</h2>
-                    <h3>Step-by-Step Guide to Using Our Tool</h3>
-                    <div class="steps-container">
-                        <div class="article-step"><h4>Step 1: Enter Basic Information</h4><p>Select your state (crucial for accurate calculations) and choose your accident type (car, slip and fall, etc.)</p></div>
-                        <div class="article-step"><h4>Step 2: Input Financial Details</h4><p>Total medical expenses, lost wages and income, and other related costs.</p></div>
-                        <div class="article-step"><h4>Step 3: Describe Your Injuries</h4><p>Injury severity level, recovery time estimate, and any permanent effects.</p></div>
-                        <div class="article-step"><h4>Step 4: Evaluate Your Pain</h4><p>Physical pain level (1-10 scale), emotional distress impact, and how it affects your daily life.</p></div>
-                        <div class="article-step"><h4>Step 5: Get Your Results</h4><p>Instant estimate of your settlement with detailed breakdown and state-specific adjustments included.</p></div>
-                    </div>
-                    <h3>How It Calculates Your Settlement</h3>
-                    <p>Behind the scenes, our calculator does several important things:</p>
-                    <ol>
-                        <li><strong>Applies the Correct Multiplier</strong> - Based on your injury severity and impact on life.</li>
-                        <li><strong>Incorporates State-Specific Factors</strong> - Automatically adjusts for state damage caps and laws.</li>
-                        <li><strong>Accounts for Shared Fault</strong> - Reduces compensation according to state negligence rules.</li>
-                        <li><strong>Considers Emotional Components</strong> - Properly values psychological impacts.</li>
-                    </ol>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Benefits of Using Our Calculator</h2>
-                    <div class="success-box"><h4>Accuracy Without Complexity</h4><p>You get insurance-level calculations without needing to understand all the nuances yourself.</p></div>
-                    <div class="success-box"><h4>Pre-Negotiation Power</h4><p>Walking into discussions with an insurance adjuster with a number in hand changes the dynamic completely.</p></div>
-                    <div class="success-box"><h4>Free and Unlimited</h4><p>Unlike some settlement calculators that charge or limit use, ours is completely free pain and suffering analysis.</p></div>
-                    <div class="success-box"><h4>Educational Value</h4><p>Seeing how different factors affect your claim value helps you understand what really matters in your case.</p></div>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How State Factor Works in Our Calculator</h2>
-                    <div class="calculation-example">
-                        <strong>Example Comparison:</strong><br>
-                        Same injury, same medical expenses ($20,000), same multiplier (3x)<br><br>
-                        <strong>California (Plaintiff-Friendly):</strong><br>
-                        State factor: 1.2x<br>
-                        Calculation: $20,000 × 3 × 1.2 = <strong>$72,000</strong><br><br>
-                        <strong>Texas (Conservative Laws):</strong><br>
-                        State factor: 0.9x<br>
-                        Calculation: $20,000 × 3 × 0.9 = <strong>$54,000</strong><br><br>
-                        <strong>Difference: $18,000</strong> - just because of location!
-                    </div>
-                    <h3>State-Specific Considerations Our Calculator Handles</h3>
-                    <ul>
-                        <li><strong>Damage Caps:</strong> Some states limit how much you can receive for non-economic damages.</li>
-                        <li><strong>Comparative Negligence Rules:</strong> Different rules for fault allocation across states.</li>
-                        <li><strong>Statute of Limitations:</strong> Different filing deadlines by state.</li>
-                        <li><strong>Insurance Minimums:</strong> Different minimum insurance requirements by state.</li>
-                    </ul>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Factors That Affect Pain and Suffering Values</h2>
-                    <div class="factors-box">
-                        <h4>Factors That Increase Your Settlement Value</h4>
-                        <div class="factor-item"><strong>Medical Documentation Quality</strong><br>Detailed medical records are gold in personal injury claims.</div>
-                        <div class="factor-item"><strong>Visible Injuries and Scars</strong><br>Visible injuries often receive higher compensation.</div>
-                        <div class="factor-item"><strong>Impact on Daily Activities</strong><br>The more your life is disrupted, the higher your pain and suffering value.</div>
-                        <div class="factor-item"><strong>Emotional Trauma Evidence</strong><br>Documented emotional distress adds substantial value.</div>
-                        <div class="factor-item"><strong>Permanent Effects</strong><br>Any lasting disability increases your settlement significantly.</div>
-                    </div>
-                    <div class="factors-box">
-                        <h4>Factors That Decrease Your Settlement Value</h4>
-                        <div class="factor-item"><strong>Pre-existing Injuries</strong><br>Insurers will claim your current pain isn't from the new accident.</div>
-                        <div class="factor-item"><strong>Social Media Evidence</strong><br>Photos showing you active after the accident can destroy your claim.</div>
-                        <div class="factor-item"><strong>Gaps in Medical Treatment</strong><br>Missing appointments makes injuries seem less serious.</div>
-                        <div class="factor-item"><strong>Contributory Negligence</strong><br>Being even partially at fault can reduce your settlement.</div>
-                        <div class="factor-item"><strong>Minor Vehicle Damage</strong><br>Insurers argue: "If the car wasn't badly damaged, how could you be seriously injured?"</div>
-                    </div>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Common Injury Types and Average Pain & Suffering Awards</h2>
-                    <p>While every case is unique, here are some general ranges:</p>
-                    <div class="injury-grid">
-                        <div class="injury-card"><h4>Whiplash and Soft Tissue Injuries</h4><p>Medical expenses: $5,000 - $15,000</p><p>Typical multiplier: 1.5x - 2.5x</p><div class="injury-range">Pain & suffering: $7,500 - $37,500</div></div>
-                        <div class="injury-card"><h4>Broken Bones</h4><p>Medical expenses: $10,000 - $50,000</p><p>Typical multiplier: 2.5x - 4x</p><div class="injury-range">Pain & suffering: $25,000 - $200,000</div></div>
-                        <div class="injury-card"><h4>Back Injuries (Herniated Discs)</h4><p>Medical expenses: $20,000 - $100,000+</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $60,000 - $500,000+</div></div>
-                        <div class="injury-card"><h4>Head Trauma (Concussions)</h4><p>Medical expenses: $15,000 - $75,000</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $45,000 - $375,000</div></div>
-                    </div>
-                    <p><em>Remember: These are rough estimates. Your specific case could be higher or lower based on all the factors we've discussed.</em></p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How Insurance Companies Calculate Pain and Suffering</h2>
-                    <p>Let's be honest: insurance companies aren't in the business of giving away money. Their approach to pain and suffering calculations is fundamentally different from what's fair to the injured person.</p>
-                    <div class="warning-box">
-                        <h4>The Insurance Adjuster's Mindset:</h4>
-                        <ul>
-                            <li>Start low (often 30-50% of actual value)</li>
-                            <li>Negotiate slowly upward</li>
-                            <li>Use delay tactics hoping you'll settle for less</li>
-                            <li>Focus on minimizing their payout, not your suffering</li>
+                <article class="article-content">
+                    <div style="background: #f0f9ff; border-left: 4px solid #8b5cf6; padding: 20px; margin-bottom: 30px; border-radius: 0 12px 12px 0;">
+                        <strong>📌 How This Calculator Works:</strong>
+                        <p style="margin-top: 8px; font-size: 14px;">Our calculator uses a <strong>three-factor multiplier method</strong>:</p>
+                        <ul style="font-size: 14px; margin-top: 8px;">
+                            <li><strong>1. Severity Factor:</strong> Based on injury type (1.5x–5x)</li>
+                            <li><strong>2. Pain Factor:</strong> Based on your physical pain, emotional distress, and life impact (0.2x–1.4x)</li>
+                            <li><strong>3. State Factor:</strong> Based on your state's legal environment (0.9x–1.3x)</li>
                         </ul>
+                        <p style="margin-top: 8px; font-size: 13px; color: #475569;">This approach provides a more nuanced estimate than using severity alone — your pain and suffering compensation is personalized to your specific experience.</p>
                     </div>
-                    <h3>Their Secret Formulas and Adjustments</h3>
-                    <p>Insurance companies use proprietary software with names like Colossus or Claims Outcome Advisor. These tools:</p>
-                    <ul>
-                        <li>Automatically reduce multipliers</li>
-                        <li>Question medical expenses</li>
-                        <li>Apply aggressive state factors</li>
-                        <li>Generate low initial offers</li>
-                    </ul>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How to Counter Low Insurance Offers?</h2>
-                    <div class="steps-container">
-                        <div class="article-step"><h4>Strategy 1: Come Prepared</h4><p>Use our calculator before negotiations.</p></div>
-                        <div class="article-step"><h4>Strategy 2: Document Everything</h4><p>The more evidence of suffering you have, the harder it is for them to lowball you.</p></div>
-                        <div class="article-step"><h4>Strategy 3: Understand Their Game</h4><p>Their first offer is just the opening move.</p></div>
-                        <div class="article-step"><h4>Strategy 4: Know When to Escalate</h4><p>If they won't move to a reasonable number, mention "speaking with a personal injury attorney".</p></div>
-                    </div>
-                </section>
-                
-                <section class="content-section">
-                    <h2>How to Document Your Pain and Suffering?</h2>
-                    <h3>Evidence That Increases Your Settlement</h3>
-                    <ul>
-                        <li><strong>Pain Journals:</strong> Daily entries about pain levels, activities you can't do, emotional state</li>
-                        <li><strong>Photographic Evidence:</strong> Injuries at their worst, progress over time, assistive devices</li>
-                        <li><strong>Witness Statements:</strong> Family members, friends, colleagues who see your daily struggle</li>
-                    </ul>
-                    <h3>Medical Records and Doctor Statements</h3>
-                    <ul>
-                        <li>Comprehensive medical records including all treatments</li>
-                        <li>Doctor statements on diagnosis, prognosis, and recovery time</li>
-                        <li>Specialist evaluations for specific injuries</li>
-                    </ul>
-                </section>
-                
-                <section class="content-section">
-                    <h2>When to Hire an Attorney for Pain and Suffering Claims</h2>
-                    <div class="warning-box">
-                        <h4>You Definitely Need a Lawyer When:</h4>
+                    
+                    <section class="content-section">
+                        <h2>What is Pain and Suffering?</h2>
+                        <p>Pain and suffering refers to the physical pain a person experiences after an injury. A Pain and Suffering Calculator helps estimate the value of these non-economic damages. It also includes emotional distress, mental anguish, and loss of enjoyment of life.</p>
+                        <p>Pain and suffering goes beyond medical bills and visible injuries. It covers long-term discomfort, anxiety, depression, and lifestyle changes caused by the accident. These damages are real, even though they are harder to measure in money.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Why Estimating Your Pain and Suffering is Crucial?</h2>
+                        <p>Estimating pain and suffering is crucial because insurance companies often undervalue these damages. Without an estimate, injured victims may accept low settlement offers too quickly. Knowing your value helps protect your financial future.</p>
+                        <p>A proper estimate gives you confidence during settlement negotiations. It helps you decide whether an offer is fair or needs to be challenged. This knowledge also prepares you before speaking with a lawyer or insurance adjuster.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Understanding Pain and Suffering Damages</h2>
+                        <p>Pain and suffering damages represent the non-economic damages in a personal injury case. Pain and suffering damages respond to how an injury impacts an individual's comfort, mental health, and life.</p>
+                        <p>From a legal perspective, suffering damages are recognized under tort law. Courts and insurance companies acknowledge that injuries cause more than just medical costs - they also cause emotional pain, distress, and loss of enjoyment of life.</p>
+                        <h3>Economic Damages (Medical Bills, Lost Income, Property Damage)</h3>
+                        <p>Also called special damages, these are the tangible, out-of-pocket financial losses with clear documentation. They form the foundation of your claim.</p>
                         <ul>
-                            <li>Medical expenses exceed $10,000 or surgery was required</li>
-                            <li>There is permanent disability or lasting effects</li>
-                            <li>Fault is disputed or unclear</li>
-                            <li>Multiple parties are involved</li>
-                            <li>Insurance company is acting in bad faith</li>
-                            <li>Injuries are complex (brain injuries, spinal cord damage)</li>
+                            <li><strong>Medical Bills:</strong> Past, present, and estimated future costs for hospitals, surgery, medication, therapy, and medical devices.</li>
+                            <li><strong>Lost Wages:</strong> Income you did not earn because you were recovering, including lost vacation/sick time and proven loss of earning capacity.</li>
+                            <li><strong>Property Damage:</strong> The cost to repair or replace your vehicle, clothing, or other damaged property.</li>
+                            <li><strong>Other Expenses:</strong> Mileage to medical appointments, costs for home care, or home modifications for a disability.</li>
                         </ul>
-                    </div>
-                    <p>Studies show that people with attorneys typically receive <strong>3-4 times more compensation</strong> than those without, even after legal fees.</p>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Common Pitfalls and Mistakes to Avoid</h2>
-                    <div class="warning-box">
-                        <h4>What Not to Do During Your Claim:</h4>
+                        <h3>Non-Economic Damages (Pain, Emotional Distress, Loss of Enjoyment)</h3>
+                        <p>These are the non-economic damages - the pain and suffering we've been discussing. They compensate for the intangible, subjective losses that profoundly affect your quality of life. This category includes physical pain, mental anguish, emotional distress, loss of consortium, and diminished quality of life.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>What Qualifies as Pain & Suffering?</h2>
+                        <p>Pain and suffering can take many forms, depending on the severity of the injury and the circumstances of the accident.</p>
                         <ul>
-                            <li>Don't give recorded statements without consulting a lawyer</li>
-                            <li>Avoid posting on social media about your injury or recovery</li>
-                            <li>Don't settle too quickly - the first offer is usually the worst</li>
-                            <li>Never miss medical appointments</li>
-                            <li>Always follow doctor's orders</li>
+                            <li>Physical pain caused by injuries or medical treatment</li>
+                            <li>Emotional distress such as anxiety, depression, or fear</li>
+                            <li>Mental trauma following serious injury or medical malpractice</li>
+                            <li>Loss of enjoyment of life, including limited mobility or inability to work</li>
                         </ul>
-                    </div>
-                    <h3>Common Calculation Errors</h3>
-                    <ul>
-                        <li>Undervaluing non-economic damages</li>
-                        <li>Choosing wrong multiplier based on misunderstanding injury severity</li>
-                        <li>Forgetting future costs and ongoing expenses</li>
-                        <li>Ignoring state-specific adjustments</li>
-                        <li>Poor documentation of pain and suffering</li>
-                    </ul>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Frequently Asked Questions (FAQs)</h2>
-                    <div class="faq-item active">
-                        <div class="faq-question">Q1: How do they figure out pain and suffering?</div>
-                        <div class="faq-answer"><p>They typically use the multiplier method (medical expenses × severity multiplier) or per diem method (daily rate × recovery days), adjusted for state laws and specific circumstances of your case.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q2: How is compensation calculated for pain and suffering?</div>
-                        <div class="faq-answer"><p>Compensation calculation combines your economic damages (medical bills, lost wages) with a multiplier based on injury severity, then adjusts for factors like state laws, shared fault, and future suffering.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q3: What is the formula for pain and suffering?</div>
-                        <div class="faq-answer"><p>Pain and suffering is usually calculated using the multiplier method (medical expenses × 1.5–5) or the per diem method (daily pain value × recovery days).</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q4: How does one calculate pain and suffering?</div>
-                        <div class="faq-answer"><p>It is calculated by evaluating medical costs, injury severity, recovery time, and emotional distress using accepted legal methods.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-question">Q5: Is pain and suffering hard to prove?</div>
-                        <div class="faq-answer"><p>Yes, because it is subjective, but strong medical records, pain journals, and therapy notes make it easier to prove.</p></div>
-                    </div>
-                </section>
-                
-                <section class="content-section">
-                    <h2>Conclusion: Know Your True Pain and Suffering Claim Value</h2>
-                    <p>A pain and suffering calculator helps injured victims understand potential compensation by analyzing damages, expenses, and emotional distress. While calculators are useful tools, they do not replace legal advice.</p>
-                    <p>For accurate evaluation and fair compensation, consulting a personal injury attorney is always recommended.</p>
-                </section>
-                
-                <!-- CALCULATOR CTA BUTTON -->
-                <div class="calc-cta">
-                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
-                        <span>📊</span> Try Our Pain & Suffering Calculator → <span>⚡</span>
-                    </a>
-                </div>
-                
-                <!-- RELATED LINKS SECTION -->
-                <div class="related-links">
-                    <h4>🔗 Related Calculators</h4>
-                    <div class="related-grid">
-                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📊 Pain & Suffering Calculator</a>
-                        <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
-                        <a href="/calculators/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
-                        <a href="/calculators/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
-                        <a href="/calculators/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
-                        <a href="/calculators/venmo-fee-calculator">💸 Venmo Fee Calculator</a>
-                    </div>
-                </div>
-                
-                <section class="content-section">
-                    <div class="disclaimer-box">
-                        <h4>⚠️ Important Disclaimer</h4>
-                        <p>This calculator provides estimates only and should not be considered legal advice. Actual compensation depends on many factors including:</p>
+                        <p>These factors are often central to personal injury cases and suffering settlements.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Factors That Increase Value of Pain and Suffering</h2>
+                        <p>Several elements influence the value of pain and suffering damages:</p>
                         <ul>
-                            <li>Strength of liability evidence</li>
-                            <li>Insurance policy limits</li>
-                            <li>Jury sympathy and jurisdiction</li>
-                            <li>Quality of legal representation</li>
-                            <li>Defendant's ability to pay</li>
-                            <li>Comparative or contributory negligence</li>
+                            <li><strong>Injury severity</strong>, including serious injury or permanent disability</li>
+                            <li><strong>Recovery time</strong>, especially when long-term medical treatment is required</li>
+                            <li><strong>Emotional impact</strong>, such as ongoing distress or emotional pain</li>
+                            <li><strong>Life disruption</strong>, including inability to earn wages or enjoy daily activities</li>
                         </ul>
-                        <p><strong>Every case is unique. For an accurate evaluation of your claim, consult with an experienced personal injury attorney.</strong></p>
+                        <p>Insurance companies and attorneys closely examine these factors when calculating compensation.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How Is Pain and Suffering Calculated?</h2>
+                        <p>Pain and suffering damages are not calculated randomly. In most personal injury cases, there are two widely accepted methods used to estimate pain and suffering. Each method focuses on different aspects of an injury and recovery.</p>
+                        <h3>1. The Multiplier Method (The One Most People Use)</h3>
+                        <p>This is the most common way to calculate pain and suffering, and it's pretty straightforward.</p>
+                        <div class="formula">Pain and Suffering = Economic Damages × Combined Multiplier</div>
+                        <p>Where the <strong>Combined Multiplier</strong> includes:</p>
+                        <ul>
+                            <li><strong>Severity Multiplier:</strong> Based on injury type (1.5x–5x)</li>
+                            <li><strong>Pain Factor:</strong> Based on physical pain, emotional distress, and life impact</li>
+                            <li><strong>State Factor:</strong> Based on your state's legal environment</li>
+                        </ul>
+                        <div class="calculation-example">
+                            <strong>Real Example Calculation:</strong><br>
+                            Medical bills: $20,000<br>
+                            Lost wages: $5,000<br>
+                            Economic Damages: $25,000<br>
+                            Severity Multiplier: 2.5x (moderate)<br>
+                            Pain Factor: 0.6x (moderate pain)<br>
+                            State Factor: 1.0x<br>
+                            Combined Multiplier: 2.5 × 0.6 × 1.0 = 1.50x<br><br>
+                            <strong>Pain and Suffering = $25,000 × 1.50 = $37,500</strong><br><br>
+                            Total Claim = $25,000 + $37,500 = <strong>$62,500</strong>
+                        </div>
+                        <h3>2. The Per Diem (Daily Rate) Method</h3>
+                        <p>Some lawyers prefer this approach, especially if your recovery is expected to take a long time or if there's a lot of emotional distress involved.</p>
+                        <div class="formula">Pain and Suffering = Daily Rate × Number of Recovery Days</div>
+                        <ul>
+                            <li><strong>Daily rate:</strong> Often based on what you earn in a day, or a set amount like $100–$300.</li>
+                            <li><strong>Recovery days:</strong> This includes both physical healing time and emotional recovery.</li>
+                        </ul>
+                        <p>This method can be helpful if your suffering isn't directly tied to high medical bills, but it's used less often than the multiplier method.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>The Role of the State Factor (Very Important)</h2>
+                        <p>Many people overlook this, but state laws have a major impact on pain and suffering compensation. Each state handles damages differently. Some states favor injured victims, while others impose strict limits.</p>
+                        <p>This adjustment is known as the <strong>state factor</strong>.</p>
+                        <h3>A Quick Look at State Factors:</h3>
+                        <table class="state-table">
+                            <thead>
+                                <tr><th>State</th><th>State Factor</th><th>Why It Matters</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>California</td><td>1.2x</td><td>No caps on pain and suffering payouts; courts tend to favor plaintiffs</td></tr>
+                                <tr><td>Texas</td><td>0.9x</td><td>Damage caps exist; conservative courts often award less</td></tr>
+                                <tr><td>Florida</td><td>1.1x</td><td>"No-fault" state, but you can still sue for serious injuries</td></tr>
+                                <tr><td>New York</td><td>1.3x</td><td>High jury awards are common, especially in cities</td></tr>
+                                <tr><td>Illinois</td><td>1.15x</td><td>No caps, moderate jury tendencies</td></tr>
+                                <tr><td>Pennsylvania</td><td>1.1x</td><td>Follows modified comparative negligence rules</td></tr>
+                                <tr><td>Ohio</td><td>0.95x</td><td>Some damage caps apply in certain cases</td></tr>
+                                <tr><td>Georgia</td><td>1.0x</td><td>Middle-of-the-road, balanced system</td></tr>
+                            </tbody>
+                        </table>
+                        <h3>Example with State Factor Applied</h3>
+                        <div class="calculation-example">
+                            <strong>Base Calculation:</strong><br>
+                            Medical bills: $15,000<br>
+                            Multiplier: 2.5x (moderate injury)<br><br>
+                            <strong>In California:</strong><br>
+                            $15,000 × 2.5 × 1.2 = <strong>$45,000</strong><br><br>
+                            <strong>In Texas:</strong><br>
+                            $15,000 × 2.5 × 0.9 = <strong>$33,750</strong><br><br>
+                            That's a <strong>$11,250 difference</strong> just because of your location. Insurance companies know this and they often use it to their advantage.
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Fault Adjustment (Comparative Negligence)</h2>
+                        <p>Most accidents involve shared responsibility. That's why fault adjustment is applied after calculating pain and suffering.</p>
+                        <div class="formula">Adjusted Settlement = Pain and Suffering × (1 – Fault Percentage)</div>
+                        <div class="calculation-example">
+                            <strong>Example:</strong><br>
+                            Pain and suffering: $50,000<br>
+                            Fault percentage: 20%<br><br>
+                            <strong>Adjusted settlement = $50,000 × 0.8 = $40,000</strong>
+                        </div>
+                        <p>This adjustment is essential for accuracy and is automatically handled by advanced calculators.</p>
+                        <div style="background: #f0f9ff; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 3px solid #0ea5e9;">
+                            <strong style="font-size: 13px; color: #0369a1;">State-Specific Fault Rules:</strong>
+                            <ul style="font-size: 13px; color: #475569; margin-top: 5px;">
+                                <li><strong>Pure Comparative Negligence:</strong> (CA, NY) — You can recover even if 99% at fault, reduced by your percentage.</li>
+                                <li><strong>Modified Comparative Negligence (50% bar):</strong> (TX, FL, IL, PA, OH, GA) — You can recover only if 50% or less at fault.</li>
+                            </ul>
+                            <p style="font-size: 12px; color: #64748b; margin-top: 8px;">Our calculator automatically applies your state's rules.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How Our Pain and Suffering Calculator Works</h2>
+                        <h3>Step-by-Step Guide to Using Our Tool</h3>
+                        <div class="steps-container">
+                            <div class="article-step"><h4>Step 1: Enter Basic Information</h4><p>Select your state (crucial for accurate calculations) and choose your accident type (car, slip and fall, etc.)</p></div>
+                            <div class="article-step"><h4>Step 2: Input Financial Details</h4><p>Total medical expenses, lost wages and income, and other related costs.</p></div>
+                            <div class="article-step"><h4>Step 3: Describe Your Injuries</h4><p>Injury severity level, recovery time estimate, and any permanent effects.</p></div>
+                            <div class="article-step"><h4>Step 4: Evaluate Your Pain</h4><p>Physical pain level (1-10 scale), emotional distress impact, and how it affects your daily life.</p></div>
+                            <div class="article-step"><h4>Step 5: Get Your Results</h4><p>Instant estimate of your settlement with detailed breakdown and state-specific adjustments included.</p></div>
+                        </div>
+                        <h3>How It Calculates Your Settlement</h3>
+                        <p>Behind the scenes, our calculator does several important things:</p>
+                        <ol>
+                            <li><strong>Applies the Correct Multiplier</strong> - Based on your injury severity and impact on life.</li>
+                            <li><strong>Incorporates State-Specific Factors</strong> - Automatically adjusts for state damage caps and laws.</li>
+                            <li><strong>Accounts for Shared Fault</strong> - Reduces compensation according to state negligence rules.</li>
+                            <li><strong>Considers Emotional Components</strong> - Properly values psychological impacts.</li>
+                        </ol>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Benefits of Using Our Calculator</h2>
+                        <div class="success-box"><h4>Accuracy Without Complexity</h4><p>You get insurance-level calculations without needing to understand all the nuances yourself.</p></div>
+                        <div class="success-box"><h4>Pre-Negotiation Power</h4><p>Walking into discussions with an insurance adjuster with a number in hand changes the dynamic completely.</p></div>
+                        <div class="success-box"><h4>Free and Unlimited</h4><p>Unlike some settlement calculators that charge or limit use, ours is completely free pain and suffering analysis.</p></div>
+                        <div class="success-box"><h4>Educational Value</h4><p>Seeing how different factors affect your claim value helps you understand what really matters in your case.</p></div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How State Factor Works in Our Calculator</h2>
+                        <div class="calculation-example">
+                            <strong>Example Comparison:</strong><br>
+                            Same injury, same medical expenses ($20,000), same multiplier (3x)<br><br>
+                            <strong>California (Plaintiff-Friendly):</strong><br>
+                            State factor: 1.2x<br>
+                            Calculation: $20,000 × 3 × 1.2 = <strong>$72,000</strong><br><br>
+                            <strong>Texas (Conservative Laws):</strong><br>
+                            State factor: 0.9x<br>
+                            Calculation: $20,000 × 3 × 0.9 = <strong>$54,000</strong><br><br>
+                            <strong>Difference: $18,000</strong> - just because of location!
+                        </div>
+                        <h3>State-Specific Considerations Our Calculator Handles</h3>
+                        <ul>
+                            <li><strong>Damage Caps:</strong> Some states limit how much you can receive for non-economic damages.</li>
+                            <li><strong>Comparative Negligence Rules:</strong> Different rules for fault allocation across states.</li>
+                            <li><strong>Statute of Limitations:</strong> Different filing deadlines by state.</li>
+                            <li><strong>Insurance Minimums:</strong> Different minimum insurance requirements by state.</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Factors That Affect Pain and Suffering Values</h2>
+                        <div class="factors-box">
+                            <h4>Factors That Increase Your Settlement Value</h4>
+                            <div class="factor-item"><strong>Medical Documentation Quality</strong><br>Detailed medical records are gold in personal injury claims.</div>
+                            <div class="factor-item"><strong>Visible Injuries and Scars</strong><br>Visible injuries often receive higher compensation.</div>
+                            <div class="factor-item"><strong>Impact on Daily Activities</strong><br>The more your life is disrupted, the higher your pain and suffering value.</div>
+                            <div class="factor-item"><strong>Emotional Trauma Evidence</strong><br>Documented emotional distress adds substantial value.</div>
+                            <div class="factor-item"><strong>Permanent Effects</strong><br>Any lasting disability increases your settlement significantly.</div>
+                        </div>
+                        <div class="factors-box">
+                            <h4>Factors That Decrease Your Settlement Value</h4>
+                            <div class="factor-item"><strong>Pre-existing Injuries</strong><br>Insurers will claim your current pain isn't from the new accident.</div>
+                            <div class="factor-item"><strong>Social Media Evidence</strong><br>Photos showing you active after the accident can destroy your claim.</div>
+                            <div class="factor-item"><strong>Gaps in Medical Treatment</strong><br>Missing appointments makes injuries seem less serious.</div>
+                            <div class="factor-item"><strong>Contributory Negligence</strong><br>Being even partially at fault can reduce your settlement.</div>
+                            <div class="factor-item"><strong>Minor Vehicle Damage</strong><br>Insurers argue: "If the car wasn't badly damaged, how could you be seriously injured?"</div>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Common Injury Types and Average Pain & Suffering Awards</h2>
+                        <p>While every case is unique, here are some general ranges:</p>
+                        <div class="injury-grid">
+                            <div class="injury-card"><h4>Whiplash and Soft Tissue Injuries</h4><p>Medical expenses: $5,000 - $15,000</p><p>Typical multiplier: 1.5x - 2.5x</p><div class="injury-range">Pain & suffering: $7,500 - $37,500</div></div>
+                            <div class="injury-card"><h4>Broken Bones</h4><p>Medical expenses: $10,000 - $50,000</p><p>Typical multiplier: 2.5x - 4x</p><div class="injury-range">Pain & suffering: $25,000 - $200,000</div></div>
+                            <div class="injury-card"><h4>Back Injuries (Herniated Discs)</h4><p>Medical expenses: $20,000 - $100,000+</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $60,000 - $500,000+</div></div>
+                            <div class="injury-card"><h4>Head Trauma (Concussions)</h4><p>Medical expenses: $15,000 - $75,000</p><p>Typical multiplier: 3x - 5x</p><div class="injury-range">Pain & suffering: $45,000 - $375,000</div></div>
+                        </div>
+                        <p><em>Remember: These are rough estimates. Your specific case could be higher or lower based on all the factors we've discussed.</em></p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How Insurance Companies Calculate Pain and Suffering</h2>
+                        <p>Let's be honest: insurance companies aren't in the business of giving away money. Their approach to pain and suffering calculations is fundamentally different from what's fair to the injured person.</p>
+                        <div class="warning-box">
+                            <h4>The Insurance Adjuster's Mindset:</h4>
+                            <ul>
+                                <li>Start low (often 30-50% of actual value)</li>
+                                <li>Negotiate slowly upward</li>
+                                <li>Use delay tactics hoping you'll settle for less</li>
+                                <li>Focus on minimizing their payout, not your suffering</li>
+                            </ul>
+                        </div>
+                        <h3>Their Secret Formulas and Adjustments</h3>
+                        <p>Insurance companies use proprietary software with names like Colossus or Claims Outcome Advisor. These tools:</p>
+                        <ul>
+                            <li>Automatically reduce multipliers</li>
+                            <li>Question medical expenses</li>
+                            <li>Apply aggressive state factors</li>
+                            <li>Generate low initial offers</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How to Counter Low Insurance Offers?</h2>
+                        <div class="steps-container">
+                            <div class="article-step"><h4>Strategy 1: Come Prepared</h4><p>Use our calculator before negotiations.</p></div>
+                            <div class="article-step"><h4>Strategy 2: Document Everything</h4><p>The more evidence of suffering you have, the harder it is for them to lowball you.</p></div>
+                            <div class="article-step"><h4>Strategy 3: Understand Their Game</h4><p>Their first offer is just the opening move.</p></div>
+                            <div class="article-step"><h4>Strategy 4: Know When to Escalate</h4><p>If they won't move to a reasonable number, mention "speaking with a personal injury attorney".</p></div>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>How to Document Your Pain and Suffering?</h2>
+                        <h3>Evidence That Increases Your Settlement</h3>
+                        <ul>
+                            <li><strong>Pain Journals:</strong> Daily entries about pain levels, activities you can't do, emotional state</li>
+                            <li><strong>Photographic Evidence:</strong> Injuries at their worst, progress over time, assistive devices</li>
+                            <li><strong>Witness Statements:</strong> Family members, friends, colleagues who see your daily struggle</li>
+                        </ul>
+                        <h3>Medical Records and Doctor Statements</h3>
+                        <ul>
+                            <li>Comprehensive medical records including all treatments</li>
+                            <li>Doctor statements on diagnosis, prognosis, and recovery time</li>
+                            <li>Specialist evaluations for specific injuries</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>When to Hire an Attorney for Pain and Suffering Claims</h2>
+                        <div class="warning-box">
+                            <h4>You Definitely Need a Lawyer When:</h4>
+                            <ul>
+                                <li>Medical expenses exceed $10,000 or surgery was required</li>
+                                <li>There is permanent disability or lasting effects</li>
+                                <li>Fault is disputed or unclear</li>
+                                <li>Multiple parties are involved</li>
+                                <li>Insurance company is acting in bad faith</li>
+                                <li>Injuries are complex (brain injuries, spinal cord damage)</li>
+                            </ul>
+                        </div>
+                        <p>Studies show that people with attorneys typically receive <strong>3-4 times more compensation</strong> than those without, even after legal fees.</p>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Common Pitfalls and Mistakes to Avoid</h2>
+                        <div class="warning-box">
+                            <h4>What Not to Do During Your Claim:</h4>
+                            <ul>
+                                <li>Don't give recorded statements without consulting a lawyer</li>
+                                <li>Avoid posting on social media about your injury or recovery</li>
+                                <li>Don't settle too quickly - the first offer is usually the worst</li>
+                                <li>Never miss medical appointments</li>
+                                <li>Always follow doctor's orders</li>
+                            </ul>
+                        </div>
+                        <h3>Common Calculation Errors</h3>
+                        <ul>
+                            <li>Undervaluing non-economic damages</li>
+                            <li>Choosing wrong multiplier based on misunderstanding injury severity</li>
+                            <li>Forgetting future costs and ongoing expenses</li>
+                            <li>Ignoring state-specific adjustments</li>
+                            <li>Poor documentation of pain and suffering</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Frequently Asked Questions (FAQs)</h2>
+                        <div class="faq-item active">
+                            <div class="faq-question">Q1: How do they figure out pain and suffering? <i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>They typically use the multiplier method (medical expenses × severity multiplier) or per diem method (daily rate × recovery days), adjusted for state laws and specific circumstances of your case.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q2: How is compensation calculated for pain and suffering? <i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Compensation calculation combines your economic damages (medical bills, lost wages) with a multiplier based on injury severity, then adjusts for factors like state laws, shared fault, and future suffering.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q3: What is the formula for pain and suffering? <i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Pain and suffering is usually calculated using the multiplier method (medical expenses × 1.5–5) or the per diem method (daily pain value × recovery days).</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q4: How does one calculate pain and suffering? <i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>It is calculated by evaluating medical costs, injury severity, recovery time, and emotional distress using accepted legal methods.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q5: Is pain and suffering hard to prove? <i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Yes, because it is subjective, but strong medical records, pain journals, and therapy notes make it easier to prove.</p></div>
+                        </div>
+                    </section>
+                    
+                    <section class="content-section">
+                        <h2>Conclusion: Know Your True Pain and Suffering Claim Value</h2>
+                        <p>A pain and suffering calculator helps injured victims understand potential compensation by analyzing damages, expenses, and emotional distress. While calculators are useful tools, they do not replace legal advice.</p>
+                        <p>For accurate evaluation and fair compensation, consulting a personal injury attorney is always recommended.</p>
+                    </section>
+                    
+                    <!-- CALCULATOR CTA BUTTON -->
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📊</span> Try Our Pain & Suffering Calculator → <span>⚡</span>
+                        </a>
                     </div>
-                </section>
-            </article>
-        </div>
+                    
+                    <!-- RELATED LINKS SECTION -->
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📊 Pain & Suffering Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                            <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
+                            <a href="/calculators/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
+                            <a href="/calculators/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                            <a href="/calculators/venmo-fee-calculator">💸 Venmo Fee Calculator</a>
+                        </div>
+                    </div>
+                    
+                    <section class="content-section">
+                        <div class="disclaimer-box">
+                            <h4>⚠️ Important Disclaimer</h4>
+                            <p>This calculator provides estimates only and should not be considered legal advice. Actual compensation depends on many factors including:</p>
+                            <ul>
+                                <li>Strength of liability evidence</li>
+                                <li>Insurance policy limits</li>
+                                <li>Jury sympathy and jurisdiction</li>
+                                <li>Quality of legal representation</li>
+                                <li>Defendant's ability to pay</li>
+                                <li>Comparative or contributory negligence</li>
+                            </ul>
+                            <p><strong>Every case is unique. For an accurate evaluation of your claim, consult with an experienced personal injury attorney.</strong></p>
+                        </div>
+                    </section>
+                </article>
+            </div>
+            
+        </main>
         
     </div>
     
-    <!-- ===== FOOTER (HOMEPAGE WALA) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>🧮 CalcSnaps</h4>
                 <p>Calculations in a Snap — fast, accurate, free.</p>
                 <a href="/about-us" class="about-link">About Us →</a>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <a href="/">Home</a>
                 <a href="/all-calculators">All Calculators</a>
-                <a href="/blog">Blog</a>
                 <a href="/contact-us">Contact</a>
             </div>
             <div class="footer-col">
                 <h4>Popular</h4>
-                <a href="calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
                 <a href="/calculators/productivity-calculator">Productivity</a>
-                <a href="/calculators/uk-aggregate-calculator">Aggregate</a>
+                <a href="/calculators/uk-aggregate-calculator">UK Aggregate</a>
                 <a href="/calculators/dog-heat-cycle-calculator">Dog Heat Cycle</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
                 <a href="/about-us">About Us</a>
                 <a href="/privacy-policy">Privacy Policy</a>
-                <a href="/Terms-and-Conditions">Terms &amp; Conditions</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
                 <a href="/disclaimer">Disclaimer</a>
             </div>
         </div>
@@ -1676,14 +1760,25 @@
         </div>
     </footer>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <script>
         // ===== CALCULATOR JAVASCRIPT =====
         let currentStep = 1;
         let selectedState = '';
         let mentalStressValue = 5;
         let faultPercentage = 0;
+        
+        // 🔧 FIX: Florida changed to 'modified' (March 2023 tort reform)
+        const STATE_FAULT_RULES = {
+            california: 'pure',
+            newyork: 'pure',
+            texas: 'modified',
+            florida: 'modified',
+            illinois: 'modified',
+            pennsylvania: 'modified',
+            ohio: 'modified',
+            georgia: 'modified',
+            other: 'modified'
+        };
         
         function showStep(step) {
             document.querySelectorAll('.step').forEach(el => el.classList.remove('active'));
@@ -1697,23 +1792,77 @@
             document.querySelector('.calc-content').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         
-        document.getElementById('nextToStep2')?.addEventListener('click', () => showStep(2));
-        document.getElementById('backToStep1')?.addEventListener('click', () => showStep(1));
-        document.getElementById('nextToStep3')?.addEventListener('click', () => showStep(3));
-        document.getElementById('backToStep2')?.addEventListener('click', () => showStep(2));
-        document.getElementById('nextToStep4')?.addEventListener('click', () => showStep(4));
-        document.getElementById('backToStep3')?.addEventListener('click', () => showStep(3));
-        document.getElementById('nextToStep5')?.addEventListener('click', () => showStep(5));
-        document.getElementById('backToStep4')?.addEventListener('click', () => showStep(4));
-        
+        // ===== STATE CARD KEYBOARD ACCESSIBILITY =====
         document.querySelectorAll('.state-card').forEach(card => {
             card.addEventListener('click', function() {
-                document.querySelectorAll('.state-card').forEach(c => c.classList.remove('selected'));
-                this.classList.add('selected');
-                selectedState = this.dataset.state;
+                selectState(this);
+            });
+            
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectState(this);
+                }
             });
         });
         
+        function updateFaultNotes(state) {
+            const pureNote = document.getElementById('pureFaultNote');
+            const modifiedNote = document.getElementById('modifiedFaultNote');
+            
+            if (!state) {
+                pureNote.style.display = 'none';
+                modifiedNote.style.display = 'none';
+                return;
+            }
+            
+            const rule = STATE_FAULT_RULES[state] || 'modified';
+            
+            if (rule === 'pure') {
+                pureNote.style.display = 'block';
+                modifiedNote.style.display = 'none';
+            } else {
+                pureNote.style.display = 'none';
+                modifiedNote.style.display = 'block';
+            }
+        }
+        
+        function selectState(card) {
+            document.querySelectorAll('.state-card').forEach(c => {
+                c.classList.remove('selected');
+                c.setAttribute('aria-checked', 'false');
+            });
+            card.classList.add('selected');
+            card.setAttribute('aria-checked', 'true');
+            selectedState = card.dataset.state;
+            updateFaultNotes(selectedState);
+        }
+        
+        // ===== EMOJI KEYBOARD ACCESSIBILITY =====
+        document.querySelectorAll('#mentalStress .emoji').forEach(emoji => {
+            emoji.addEventListener('click', function() {
+                selectEmoji(this);
+            });
+            
+            emoji.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectEmoji(this);
+                }
+            });
+        });
+        
+        function selectEmoji(emoji) {
+            document.querySelectorAll('#mentalStress .emoji').forEach(e => {
+                e.classList.remove('selected');
+                e.setAttribute('aria-checked', 'false');
+            });
+            emoji.classList.add('selected');
+            emoji.setAttribute('aria-checked', 'true');
+            mentalStressValue = parseInt(emoji.dataset.value);
+        }
+        
+        // ===== FAULT HANDLING =====
         document.getElementById('fault')?.addEventListener('change', function() {
             const container = document.getElementById('faultContainer');
             faultPercentage = 0;
@@ -1721,6 +1870,9 @@
             document.getElementById('faultValue').textContent = '0%';
             if (this.value === 'shared') {
                 container.classList.add('show');
+                if (selectedState) {
+                    updateFaultNotes(selectedState);
+                }
             } else {
                 container.classList.remove('show');
                 if (this.value === 'myself') {
@@ -1745,15 +1897,6 @@
             else text += 'Extreme';
             document.getElementById('physicalPainValue').textContent = text;
         });
-        
-        document.querySelectorAll('#mentalStress .emoji').forEach(emoji => {
-            emoji.addEventListener('click', function() {
-                document.querySelectorAll('#mentalStress .emoji').forEach(e => e.classList.remove('selected'));
-                this.classList.add('selected');
-                mentalStressValue = parseInt(this.dataset.value);
-            });
-        });
-        document.querySelector('#mentalStress .emoji[data-value="5"]')?.classList.add('selected');
         
         function formatCurrency(amount) {
             return '$' + Math.round(amount).toLocaleString();
@@ -1781,6 +1924,7 @@
             const physical = parseInt(document.getElementById('physicalPain')?.value) || 5;
             const lifeImpact = parseInt(document.getElementById('lifeImpact')?.value) || 1;
             const severity = document.getElementById('injurySeverity')?.value || 'moderate';
+            
             let severityMultiplier = 1.5;
             let severityName = 'Moderate';
             switch(severity) {
@@ -1790,8 +1934,10 @@
                 case 'severe': severityMultiplier = 4.5; severityName = 'Severe'; break;
                 case 'catastrophic': severityMultiplier = 5; severityName = 'Catastrophic'; break;
             }
+            
             const economicDamages = medical + income + other;
             const painMultiplierValue = (physical + mentalStressValue + lifeImpact * 2) / 20;
+            
             let stateMultiplier = 1;
             let stateName = getStateName(selectedState);
             switch(selectedState) {
@@ -1805,43 +1951,61 @@
                 case 'georgia': stateMultiplier = 1.0; break;
                 default: stateMultiplier = 1; stateName = 'Your State';
             }
+            
             const painSufferingBase = economicDamages * severityMultiplier * painMultiplierValue;
             const painSufferingWithState = painSufferingBase * stateMultiplier;
             const stateEffect = painSufferingWithState - painSufferingBase;
             const originalTotal = economicDamages + painSufferingWithState;
+            
             let total = originalTotal;
             let reductionAmount = 0;
             let appliedPercentage = faultPercentage;
             const faultStatus = document.getElementById('fault')?.value;
+            
             if (faultStatus === 'myself') {
                 appliedPercentage = 100;
             }
-            if (appliedPercentage > 0 && appliedPercentage <= 50) {
+            
+            const faultRule = STATE_FAULT_RULES[selectedState] || 'modified';
+            
+            if (faultRule === 'pure') {
                 reductionAmount = originalTotal * (appliedPercentage / 100);
                 total = originalTotal - reductionAmount;
-            } else if (appliedPercentage > 50) {
-                reductionAmount = originalTotal;
-                total = 0;
+            } else {
+                if (appliedPercentage > 0 && appliedPercentage <= 50) {
+                    reductionAmount = originalTotal * (appliedPercentage / 100);
+                    total = originalTotal - reductionAmount;
+                } else if (appliedPercentage > 50) {
+                    reductionAmount = originalTotal;
+                    total = 0;
+                }
             }
-            const combinedMultiplier = (severityMultiplier * painMultiplierValue * stateMultiplier).toFixed(2);
+            
+            // 🔧 FIX: Show 3 decimal places for multiplier (to avoid rounding confusion)
+            const combinedMultiplier = (severityMultiplier * painMultiplierValue * stateMultiplier).toFixed(3);
+            
+            // 🔧 FIX: Removed extra $ signs from formula display (no double $$)
             document.getElementById('formulaDisplay').innerHTML = 
-                `Pain & Suffering = (Medical + Lost Income + Other) × ${severityMultiplier.toFixed(1)}x (${severityName}) × ${stateMultiplier.toFixed(1)}x (${stateName})<br>` +
-                `= $${formatCurrency(economicDamages)} × ${(severityMultiplier * stateMultiplier).toFixed(2)}x = $${formatCurrency(painSufferingWithState)}`;
+                `Pain & Suffering = Economic Damages × Severity × Pain Factor × State Factor<br>` +
+                `= ${formatCurrency(economicDamages)} × ${severityMultiplier.toFixed(1)}x (${severityName}) × ${painMultiplierValue.toFixed(2)}x (Pain) × ${stateMultiplier.toFixed(1)}x (${stateName})<br>` +
+                `= ${formatCurrency(economicDamages)} × ${combinedMultiplier}x = ${formatCurrency(painSufferingWithState)}`;
+            
             document.getElementById('medicalBreakdown').textContent = formatCurrency(medical);
             document.getElementById('incomeBreakdown').textContent = formatCurrency(income);
             document.getElementById('otherBreakdown').textContent = formatCurrency(other);
             document.getElementById('painBreakdown').textContent = formatCurrency(painSufferingWithState);
-            document.getElementById('painMultiplierText').textContent = `${combinedMultiplier}x (${stateMultiplier.toFixed(1)}x State)`;
+            document.getElementById('painMultiplierText').textContent = `${combinedMultiplier}x (${severityMultiplier.toFixed(1)}x × ${painMultiplierValue.toFixed(2)}x × ${stateMultiplier.toFixed(1)}x)`;
             document.getElementById('totalBreakdown').textContent = formatCurrency(total);
             document.getElementById('finalAmount').textContent = formatCurrency(total);
-            const stateMultiplierItem = document.getElementById('stateMultiplierItem');
+            
+            // 🔧 FIX: Show "Includes state factor adjustment" note when state factor is applied
+            const multiplierNote = document.getElementById('multiplierNote');
             if (stateMultiplier !== 1 && selectedState !== '') {
-                document.getElementById('stateMultiplierText').textContent = `${stateMultiplier.toFixed(2)}x (${stateName})`;
-                document.getElementById('stateMultiplierAmount').textContent = stateEffect >= 0 ? '+ ' + formatCurrency(stateEffect) : '- ' + formatCurrency(Math.abs(stateEffect));
-                stateMultiplierItem.style.display = 'flex';
+                multiplierNote.style.display = 'flex';
             } else {
-                stateMultiplierItem.style.display = 'none';
+                multiplierNote.style.display = 'none';
             }
+            
             const faultReductionItem = document.getElementById('faultReductionItem');
             if (appliedPercentage > 0 && appliedPercentage <= 100) {
                 document.getElementById('faultPercentageDisplay').textContent = appliedPercentage + '%';
@@ -1850,15 +2014,33 @@
             } else {
                 faultReductionItem.style.display = 'none';
             }
+            
             const warning = document.getElementById('catastrophicWarning');
             if (severity === 'catastrophic') {
                 warning.classList.add('show');
             } else {
                 warning.classList.remove('show');
             }
+            
             document.getElementById('resultContainer').style.display = 'block';
             document.getElementById('calculateBtn').style.display = 'none';
         }
+        
+        // ===== NAVIGATION =====
+        document.getElementById('nextToStep2')?.addEventListener('click', () => {
+            if (!selectedState) {
+                alert('Please select your state before continuing.');
+                return;
+            }
+            showStep(2);
+        });
+        document.getElementById('backToStep1')?.addEventListener('click', () => showStep(1));
+        document.getElementById('nextToStep3')?.addEventListener('click', () => showStep(3));
+        document.getElementById('backToStep2')?.addEventListener('click', () => showStep(2));
+        document.getElementById('nextToStep4')?.addEventListener('click', () => showStep(4));
+        document.getElementById('backToStep3')?.addEventListener('click', () => showStep(3));
+        document.getElementById('nextToStep5')?.addEventListener('click', () => showStep(5));
+        document.getElementById('backToStep4')?.addEventListener('click', () => showStep(4));
         
         document.getElementById('calculateBtn')?.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1870,9 +2052,7 @@
             location.reload();
         });
         
-        document.querySelector('#mentalStress .emoji[data-value="5"]')?.classList.add('selected');
-        
-        // ===== ARTICLE FAQ JAVASCRIPT =====
+        // ===== ARTICLE FAQ =====
         document.addEventListener('DOMContentLoaded', function() {
             const faqQuestions = document.querySelectorAll('.faq-question');
             faqQuestions.forEach(question => {
