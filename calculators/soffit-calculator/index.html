@@ -864,7 +864,7 @@
                             </select>
                         </div>
                         <div class="input-group">
-                            <!-- Dynamic price label -->
+                            <!-- 🔧 FIX: Dynamic price label with proper conversion -->
                             <label for="pricePerSqFt" id="priceLabel">Price per sq ft ($)</label>
                             <input type="number" id="pricePerSqFt" value="1.25" step="0.25" aria-label="Price per square foot">
                         </div>
@@ -1478,7 +1478,8 @@
             if (currentUnit === 'metric') {
                 length = length * TO_FT;
                 width = width * TO_FT;
-                price = price / 10.7639; // convert $/sq m to $/sq ft
+                // 🔧 FIX: Convert price from $/sq m to $/sq ft for internal calculation
+                price = price / 10.7639;
             }
             
             let area = length * width;
