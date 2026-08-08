@@ -4,31 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
-    <!-- ===== CALCULATOR META TAGS ===== -->
+    <!-- ===== PRIMARY META TAGS ===== -->
     <title>Soffit & Ventilation Calculator | Material + Attic Ventilation | CalcSnaps</title>
 
     <!-- ===== FAVICON ===== -->
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
 
+    <!-- ===== SINGLE META DESCRIPTION ===== -->
     <meta name="description" content="Free soffit and ventilation calculator. Calculate material quantity, NFA (Net Free Area), and attic ventilation based on 1/300 rule. Supports metric and imperial units.">
     <meta name="keywords" content="soffit calculator, ventilation calculator, attic ventilation, NFA calculator, 1/300 rule, soffit material calculator">
     <meta name="author" content="CalcSnaps">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://calcsnaps.com/soffit-calculator">
     
-    <!-- ===== ARTICLE META TAGS ===== -->
-    <meta name="description" content="Free soffit calculator guide for material estimation and attic ventilation. Learn 1/150 rule, NFA calculation, and how many vents your home needs. 2026 building codes.">
-    <meta name="keywords" content="soffit calculator, attic ventilation calculator, how many soffit vents, NFA calculator, 1/150 rule, soffit material calculator">
-    <link rel="canonical" href="https://calcsnaps.com/soffit-calculator-guide">
+    <!-- ===== SINGLE CANONICAL (/calculators/ prefix) ===== -->
+    <link rel="canonical" href="https://calcsnaps.com/calculators/soffit-calculator">
     
-    <!-- ===== OPEN GRAPH ===== -->
+    <!-- ===== OPEN GRAPH (SINGLE SET) ===== -->
     <meta property="og:title" content="Soffit & Ventilation Calculator | Material + Attic Ventilation | CalcSnaps">
     <meta property="og:description" content="Free soffit calculator with material estimation and attic ventilation based on 1/300 rule. Perfect for DIY and contractors.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calcsnaps.com/soffit-calculator">
-    <meta property="og:title" content="Soffit Calculator: How to Calculate Material + Attic Ventilation | CalcSnaps">
-    <meta property="og:description" content="Free soffit calculator guide for material estimation and attic ventilation. Learn 1/150 rule, NFA calculation, and how many vents your home needs.">
-    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/soffit-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
     
     <!-- ===== SCHEMA MARKUP ===== -->
     <script type="application/ld+json">
@@ -37,7 +33,7 @@
         "@type": "WebApplication",
         "name": "Soffit & Ventilation Calculator",
         "description": "Calculate soffit material and attic ventilation requirements",
-        "url": "https://calcsnaps.com/soffit-calculator",
+        "url": "https://calcsnaps.com/calculators/soffit-calculator",
         "applicationCategory": "ConstructionApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -64,8 +60,10 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://calcsnaps.com/soffit-calculator-guide"
-        }
+            "@id": "https://calcsnaps.com/calculators/soffit-calculator"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2026-08-08"
     }
     </script>
     
@@ -118,24 +116,41 @@
     }
     </script>
     
-    <!-- ===== GLOBAL CSS ===== -->
-    <link rel="stylesheet" href="../../style.css">
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    
+    <!-- ===== FONT AWESOME ===== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ===== GLOBAL CSS ===== -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- jsPDF for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     
     <style>
         /* ============================================ */
-        /* ZOOM-OUT FIX (Header + Container) */
+        /* ZOOM-OUT FIX (Clean) */
         /* ============================================ */
         html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
-        .header {
-            max-width: 100% !important;
-            margin: 0 auto !important;
-            padding: 20px 24px !important;
-            box-sizing: border-box !important;
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #8b5cf6;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            top: 0;
         }
 
         /* ===== CALCULATOR CSS ===== */
@@ -157,10 +172,12 @@
         }
         
         body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             min-height: 100vh;
             padding: 0px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
         }
         
         .calc-container {
@@ -181,7 +198,7 @@
             border-bottom: 3px solid var(--secondary);
         }
         
-        .calc-header h1 {
+        .calc-header h2 {
             font-size: 32px;
             font-weight: 700;
             color: white;
@@ -191,7 +208,7 @@
             gap: 12px;
         }
         
-        .calc-header h1 i {
+        .calc-header h2 i {
             color: var(--secondary);
         }
         
@@ -216,6 +233,12 @@
             background: white;
             color: #1e293b;
             transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .unit-btn:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .unit-btn.active {
@@ -244,6 +267,12 @@
             font-weight: 600;
             border-bottom: 3px solid transparent;
             transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .tab:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: -3px;
         }
         
         .tab.active {
@@ -310,6 +339,20 @@
             color: var(--dark);
             outline: none;
             padding: 4px 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .input-group input:focus, .input-group select:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        .input-group .result-unit {
+            font-size: 12px;
+            color: var(--gray);
+            display: inline-block;
+            margin-top: 4px;
         }
         
         .results-grid {
@@ -353,6 +396,21 @@
             margin: 20px 0;
         }
         
+        .code-warning {
+            display: none;
+            background: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 13px;
+            color: #92400e;
+        }
+        
+        .code-warning.show {
+            display: block;
+        }
+        
         .diagram-box {
             background: var(--light);
             border-radius: 20px;
@@ -379,6 +437,12 @@
             background: var(--primary);
             color: white;
             transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .action-btn:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .action-btn:hover {
@@ -396,7 +460,7 @@
         }
         
         @media (max-width: 768px) {
-            .calc-header h1 { font-size: 24px; }
+            .calc-header h2 { font-size: 24px; }
             .tab { padding: 12px; font-size: 14px; }
             .tab-content { padding: 20px; }
             .result-value { font-size: 22px; }
@@ -601,6 +665,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .faq-question:focus-visible {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .faq-question:hover {
@@ -722,177 +792,188 @@
 </head>
 <body>
     
-    <!-- ===== HEADER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
-    <header class="header">
-        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/all-calculators">All Calculators</a>
-            <a href="/about-us">About</a>
-            <a href="/contact-us">Contact</a>
-        </nav>
-    </header>
-    
-    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
+    <!-- ===== SKIP LINK ===== -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ===== CONTAINER ===== -->
     <div class="container">
         
-        <!-- ===== CALCULATOR SECTION ===== -->
-        <div class="calc-container" id="calculator-section">
-            <div class="calc-header">
-                <h1><i class="fas fa-home"></i> Soffit & Ventilation Calculator</h1>
-                <p>Calculate soffit material + attic ventilation (1/300 rule) | IRC compliant</p>
-            </div>
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+        
+        <main id="main-content">
             
-            <div class="unit-toggle">
-                <button class="unit-btn active" data-unit="imperial">📏 Imperial (ft/in)</button>
-                <button class="unit-btn" data-unit="metric">📐 Metric (m/cm)</button>
-            </div>
-            
-            <div class="tab-container">
-                <div class="tab active" data-tab="material">🧱 Material Calculator</div>
-                <div class="tab" data-tab="ventilation">🌬️ Ventilation Calculator</div>
-                <div class="tab" data-tab="visual">🏠 Visual Preview</div>
-            </div>
-            
-            <!-- Material Tab -->
-            <div class="tab-content active" id="tab-material">
-                <div class="section-title"><i class="fas fa-ruler-combined"></i> Dimensions</div>
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label>Eaves Length</label>
-                        <input type="number" id="length" value="150" step="1">
-                        <span class="result-unit" id="lengthUnit">ft</span>
+            <!-- ===== CALCULATOR SECTION ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-home"></i> Soffit & Ventilation Calculator</h2>
+                    <p>Calculate soffit material + attic ventilation (1/300 rule) | IRC compliant</p>
+                </div>
+                
+                <div class="unit-toggle" role="radiogroup" aria-label="Unit selection">
+                    <button class="unit-btn active" data-unit="imperial" role="radio" aria-checked="true" tabindex="0">📏 Imperial (ft/in)</button>
+                    <button class="unit-btn" data-unit="metric" role="radio" aria-checked="false" tabindex="0">📐 Metric (m/cm)</button>
+                </div>
+                
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="material" role="tab" aria-selected="true" tabindex="0">🧱 Material Calculator</button>
+                    <button class="tab" data-tab="ventilation" role="tab" aria-selected="false" tabindex="0">🌬️ Ventilation Calculator</button>
+                    <button class="tab" data-tab="visual" role="tab" aria-selected="false" tabindex="0">🏠 Visual Preview</button>
+                </div>
+                
+                <!-- Material Tab -->
+                <div class="tab-content active" id="tab-material" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Dimensions</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="length">Eaves Length</label>
+                            <input type="number" id="length" value="150" step="1" aria-label="Eaves length">
+                            <span class="result-unit" id="lengthUnit">ft</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="width">Eaves Width (Overhang)</label>
+                            <input type="number" id="width" value="1.5" step="0.1" aria-label="Eaves width">
+                            <span class="result-unit" id="widthUnit">ft</span>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label>Eaves Width (Overhang)</label>
-                        <input type="number" id="width" value="1.5" step="0.1">
-                        <span class="result-unit" id="widthUnit">ft</span>
+                    
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Material Settings</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="materialType">Material Type</label>
+                            <select id="materialType" aria-label="Material type">
+                                <option value="vinyl">Vinyl Soffit</option>
+                                <option value="aluminum">Aluminum Soffit</option>
+                                <option value="wood">Wood Soffit</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="wasteFactor">Waste Factor</label>
+                            <select id="wasteFactor" aria-label="Waste factor">
+                                <option value="1.1">+10% (Recommended)</option>
+                                <option value="1.05">+5% (Simple)</option>
+                                <option value="1.15">+15% (Complex)</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <!-- Dynamic price label -->
+                            <label for="pricePerSqFt" id="priceLabel">Price per sq ft ($)</label>
+                            <input type="number" id="pricePerSqFt" value="1.25" step="0.25" aria-label="Price per square foot">
+                        </div>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Total Soffit Area</div>
+                            <div class="result-value" id="totalArea">225.0</div>
+                            <div class="result-unit" id="areaUnit">sq ft</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Panels Needed (12ft)</div>
+                            <div class="result-value" id="panelsNeeded">21</div>
+                            <div class="result-unit">pcs</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Estimated Cost</div>
+                            <div class="result-value" id="totalCost">309.38</div>
+                            <div class="result-unit">USD</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="section-title"><i class="fas fa-layer-group"></i> Material Settings</div>
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label>Material Type</label>
-                        <select id="materialType">
-                            <option value="vinyl">Vinyl Soffit</option>
-                            <option value="aluminum">Aluminum Soffit</option>
-                            <option value="wood">Wood Soffit</option>
-                        </select>
+                <!-- Ventilation Tab -->
+                <div class="tab-content" id="tab-ventilation" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-building"></i> Attic Dimensions</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="atticLength">Attic Length</label>
+                            <input type="number" id="atticLength" value="40" step="1" aria-label="Attic length">
+                            <span class="result-unit" id="atticLengthUnit">ft</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="atticWidth">Attic Width</label>
+                            <input type="number" id="atticWidth" value="25" step="1" aria-label="Attic width">
+                            <span class="result-unit" id="atticWidthUnit">ft</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="buildingCode">Building Code</label>
+                            <select id="buildingCode" aria-label="Building code">
+                                <option value="300">USA (IRC) - 1/300 rule</option>
+                                <option value="150">USA (IRC) - 1/150 rule</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label>Waste Factor</label>
-                        <select id="wasteFactor">
-                            <option value="1.1">+10% (Recommended)</option>
-                            <option value="1.05">+5% (Simple)</option>
-                            <option value="1.15">+15% (Complex)</option>
-                        </select>
+                    
+                    <div class="code-warning" id="codeWarning">
+                        <i class="fas fa-exclamation-triangle" style="margin-right:8px;"></i>
+                        <strong>Note:</strong> The 1/300 rule requires either a vapor barrier installed in the attic OR at least 50% of ventilation near the ridge. Confirm your attic meets these conditions before using 1/300.
                     </div>
-                    <div class="input-group">
-                        <label>Price per sq ft ($)</label>
-                        <input type="number" id="pricePerSqFt" value="1.25" step="0.25">
+                    
+                    <div class="section-title"><i class="fas fa-fan"></i> Vent Selection</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="ventType">Vent Type</label>
+                            <select id="ventType" aria-label="Vent type">
+                                <option value="round">Round Vent (NFA ~12.5 sq in)</option>
+                                <option value="continuous">Continuous Soffit Vent</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="nfaPerVent">NFA per Vent / ft (sq in)</label>
+                            <input type="number" id="nfaPerVent" value="12.5" step="0.5" aria-label="NFA per vent or per foot">
+                        </div>
                     </div>
-                </div>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-label">Total Soffit Area</div>
-                        <div class="result-value" id="totalArea">225.0</div>
-                        <div class="result-unit" id="areaUnit">sq ft</div>
+                    
+                    <div class="nfa-box">
+                        <h4><i class="fas fa-info-circle"></i> What is NFA?</h4>
+                        <p>NFA (Net Free Area) is the <strong>actual open space</strong> in a vent that allows air to pass through. Example: A 12"x12" vent with 50% mesh blockage has only 72 sq in NFA.</p>
                     </div>
-                    <div class="result-card">
-                        <div class="result-label">Panels Needed (12ft)</div>
-                        <div class="result-value" id="panelsNeeded">21</div>
-                        <div class="result-unit">pcs</div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Attic Area</div>
+                            <div class="result-value" id="atticAreaValue">1000</div>
+                            <div class="result-unit" id="atticAreaUnit">sq ft</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Total Vent Area Needed</div>
+                            <div class="result-value" id="totalVentArea">3.33</div>
+                            <div class="result-unit" id="totalVentUnit">sq ft</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Soffit Intake NFA</div>
+                            <div class="result-value" id="intakeNFA">240</div>
+                            <div class="result-unit">sq in</div>
+                        </div>
                     </div>
-                    <div class="result-card">
-                        <div class="result-label">Estimated Cost</div>
-                        <div class="result-value" id="totalCost">281.25</div>
-                        <div class="result-unit">USD</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Ventilation Tab -->
-            <div class="tab-content" id="tab-ventilation">
-                <div class="section-title"><i class="fas fa-building"></i> Attic Dimensions</div>
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label>Attic Length</label>
-                        <input type="number" id="atticLength" value="40" step="1">
-                        <span class="result-unit" id="atticLengthUnit">ft</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Attic Width</label>
-                        <input type="number" id="atticWidth" value="25" step="1">
-                        <span class="result-unit" id="atticWidthUnit">ft</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Building Code</label>
-                        <select id="buildingCode">
-                            <option value="300">USA (IRC) - 1/300 rule</option>
-                            <option value="150">USA (IRC) - 1/150 rule</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="section-title"><i class="fas fa-fan"></i> Vent Selection</div>
-                <div class="input-grid">
-                    <div class="input-group">
-                        <label>Vent Type</label>
-                        <select id="ventType">
-                            <option value="round">Round Vent (NFA ~12.5 sq in)</option>
-                            <option value="continuous">Continuous Soffit Vent</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>NFA per Vent (sq in)</label>
-                        <input type="number" id="nfaPerVent" value="12.5" step="0.5">
-                    </div>
-                </div>
-                
-                <div class="nfa-box">
-                    <h4><i class="fas fa-info-circle"></i> What is NFA?</h4>
-                    <p>NFA (Net Free Area) is the <strong>actual open space</strong> in a vent that allows air to pass through. Example: A 12"x12" vent with 50% mesh blockage has only 72 sq in NFA.</p>
-                </div>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-label">Attic Area</div>
-                        <div class="result-value" id="atticAreaValue">1000</div>
-                        <div class="result-unit" id="atticAreaUnit">sq ft</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-label">Total Vent Area Needed</div>
-                        <div class="result-value" id="totalVentArea">3.33</div>
-                        <div class="result-unit" id="totalVentUnit">sq ft</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-label">Soffit Intake NFA</div>
-                        <div class="result-value" id="intakeNFA">240</div>
-                        <div class="result-unit">sq in</div>
+                    
+                    <div class="results-grid" id="ventResultsGrid">
+                        <div class="result-card">
+                            <div class="result-label" id="ventsNeededLabel">Vents Needed</div>
+                            <div class="result-value" id="ventsNeeded">20</div>
+                            <div class="result-unit" id="ventsNeededUnit">pcs</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label" id="ventsRecommendedLabel">Recommended (+20%)</div>
+                            <div class="result-value" id="ventsRecommended">24</div>
+                            <div class="result-unit" id="ventsRecommendedUnit">pcs</div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="results-grid">
-                    <div class="result-card">
-                        <div class="result-label">Vents Needed</div>
-                        <div class="result-value" id="ventsNeeded">20</div>
-                        <div class="result-unit">pcs</div>
-                    </div>
-                    <div class="result-card">
-                        <div class="result-label">Recommended (+20%)</div>
-                        <div class="result-value" id="ventsRecommended">24</div>
-                        <div class="result-unit">pcs</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Visual Tab -->
-            <div class="tab-content" id="tab-visual">
-                <div class="diagram-box">
-                    <h4>🏠 Attic Airflow Diagram</h4>
-                    <pre style="background: #f1f5f9; padding: 20px; border-radius: 12px; font-size: 12px; overflow-x: auto; color: #1e293b;">
+                <!-- Visual Tab -->
+                <div class="tab-content" id="tab-visual" role="tabpanel">
+                    <div class="diagram-box">
+                        <h4>🏠 Attic Airflow Diagram</h4>
+                        <pre style="background: #f1f5f9; padding: 20px; border-radius: 12px; font-size: 12px; overflow-x: auto; color: #1e293b; font-family: 'Inter', monospace;">
         ┌─────────────────────────────────────────────────────────┐
         │                      🏠                               │
         │                     ╱ ╲                              │
@@ -910,319 +991,315 @@
         
         🔵 BLUE = Cool air intake (Soffit vents)
         🔴 RED = Hot air exhaust (Ridge/Gable vents)
-                    </pre>
-                    <p style="margin-top: 16px;">Proper airflow requires <strong>balanced intake and exhaust</strong>. Soffit vents (intake) should be 50% of total vent area.</p>
-                </div>
-            </div>
-            
-            <!-- Footer Buttons -->
-            <div style="padding: 0 28px 28px 28px;">
-                <div class="action-buttons">
-                    <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
-                    <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- ===== ARTICLE ===== -->
-        <div class="article-container">
-            <div class="article-header">
-                <h1>Soffit Calculator: How to Calculate Material + Attic Ventilation</h1>
-                <p>Learn to calculate exactly what you need for your soffit installation project</p>
-            </div>
-            
-            <div class="article-content">
-                <div class="toc">
-                    <h2>📚 What's in This Guide</h2>
-                    <div class="toc-grid">
-                        <div class="toc-item"><a href="#what-is-soffit">1. What is a Soffit and Why Does it Matter?</a></div>
-                        <div class="toc-item"><a href="#how-to-calculate">2. How to Calculate Soffit Material Using a Soffit Calculator</a></div>
-                        <div class="toc-item"><a href="#attic-ventilation">3. Attic Ventilation Calculator: The 1/150 and 1/300 Rules</a></div>
-                        <div class="toc-item"><a href="#featured-snippet">4. Featured Snippet: How to Calculate Soffit Material in 4 Simple Steps</a></div>
-                        <div class="toc-item"><a href="#common-mistakes">5. Common Mistakes When Measuring Soffit</a></div>
-                        <div class="toc-item"><a href="#cost-estimation">6. Cost Estimation for Soffit Projects</a></div>
-                        <div class="toc-item"><a href="#faq">7. Frequently Asked Questions</a></div>
-                        <div class="toc-item"><a href="#conclusion">8. Conclusion</a></div>
+                        </pre>
+                        <p style="margin-top: 16px;">Proper airflow requires <strong>balanced intake and exhaust</strong>. Soffit vents (intake) should be 50% of total vent area.</p>
                     </div>
                 </div>
                 
-                <p>When I first started working on residential exteriors, I made a mistake that cost me time and money. I ordered the wrong amount of soffit material. Since then, I have helped hundreds of homeowners and contractors calculate soffit accurately. In this guide, I will share everything I have learned about using a <strong>soffit calculator</strong> for both material estimation and attic ventilation.</p>
-                
-                <p>Whether you are planning a DIY installation or hiring a professional, getting your numbers right saves you from emergency hardware store runs. It also protects your attic from moisture damage, mold, and ice dams. Let me walk you through the exact process I use.</p>
-                
-                <h2 id="what-is-soffit">1. What is a Soffit and Why Does it Matter?</h2>
-                
-                <p>A soffit is the material that covers the underside of your roof's overhang, also known as the eaves. When you stand outside and look up at your roofline, you are looking at the soffit. It serves two critical purposes that many homeowners overlook.</p>
-                
-                <h3>1.1 The Aesthetic Purpose</h3>
-                <p>A finished soffit gives your home a clean, professional look. It hides the rafters, wires, and insulation that would otherwise be visible. Without soffit, your roofline looks unfinished and exposed.</p>
-                
-                <h3>1.2 The Ventilation Purpose</h3>
-                <p>This is where most people get confused. Soffit is not just decorative. It plays a vital role in your home's attic ventilation system.</p>
-                <p>When you install vented soffit panels, fresh air enters through the soffit vents. That air travels up through the attic and exits through ridge vents or gable vents. This continuous airflow prevents heat buildup in summer and moisture condensation in winter.</p>
-                
-                <div class="pro-tip">
-                    <strong>🔧 Pro Tip from Experience:</strong> I cannot tell you how many attics I have inspected with mold problems caused by blocked soffit vents. Always keep your soffit vents clear of insulation and debris.
+                <!-- Footer Buttons -->
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>Soffit Calculator: How to Calculate Material + Attic Ventilation</h1>
+                    <p>Learn to calculate exactly what you need for your soffit installation project</p>
                 </div>
                 
-                <h2 id="how-to-calculate">2. How to Calculate Soffit Material Using a Soffit Calculator</h2>
-                
-                <p>After fifteen years of measuring and installing soffit, I have developed a simple, reliable method. The formula is straightforward, but several small details can throw off your entire calculation.</p>
-                
-                <h3>2.1 The Basic Formula</h3>
-                <p>Here is the core formula for calculating soffit material:</p>
-                <div class="value-box">
-                    <p style="font-size: 20px; font-weight: 700; text-align: center; margin: 0; color: var(--primary);">Total Soffit Area = Length of Eaves × Width of Overhang</p>
-                </div>
-                <p>That is the starting point. But in real life, you never get a perfect rectangle. You have corners, angles, and waste from cuts.</p>
-                
-                <h3>2.2 Step-by-Step Measurement Guide</h3>
-                <p>Let me walk you through how I measure soffit on a typical home.</p>
-                <ul>
-                    <li><strong>Step 1:</strong> Walk around your house and measure the length of each eave section. Add all sections together for total eave length.</li>
-                    <li><strong>Step 2:</strong> Measure the soffit width from the exterior wall to the underside of the roof sheathing. Do not measure to the fascia lip. That gives you an incorrect measurement.</li>
-                    <li><strong>Step 3:</strong> Multiply total eave length by soffit width. This gives you your raw square footage.</li>
-                    <li><strong>Step 4:</strong> Add a waste factor of 10% for cuts, corners, and mistakes. Complex rooflines may need 15%.</li>
-                </ul>
-                
-                <h3>2.3 Real Example Calculation</h3>
-                <p>Let me give you a real example from a recent project.</p>
-                <p>A house had 150 linear feet of eaves. The soffit width was 1.5 feet (18 inches).</p>
-                <p>Raw area = 150 × 1.5 = 225 square feet.<br>
-                With 10% waste = 225 × 1.1 = 247.5 square feet.</p>
-                <p>Soffit panels typically come in 12-foot lengths. One panel covers 12 square feet (12ft × 1ft). So you would need 247.5 ÷ 12 = 21 panels.</p>
-                
-                <h3>2.4 Waste Factor Guidelines</h3>
-                <p>Here is how I choose the waste factor based on the project:</p>
-                <ul>
-                    <li><strong>Simple rectangular overhangs:</strong> 5% waste is usually enough.</li>
-                    <li><strong>Standard homes with a few corners:</strong> Add 8% to 10% waste.</li>
-                    <li><strong>Complex rooflines with dormers and gables:</strong> Add 12% to 15% waste.</li>
-                </ul>
-                
-                <h3>2.5 Material Cost Comparison</h3>
-                <p>Over the years, I have installed all types of soffit. Here is what each material costs and how long it lasts.</p>
-                <ul>
-                    <li><strong>Vinyl soffit:</strong> $1.00 to $3.00 per square foot. Lasts 20 to 40 years. Best for most homeowners and DIY-friendly.</li>
-                    <li><strong>Aluminum soffit:</strong> $2.00 to $5.00 per square foot. Lasts 40 to 50 years. Best for coastal areas and moisture-prone regions.</li>
-                    <li><strong>Wood soffit:</strong> $3.00 to $7.00 per square foot. Lasts 10 to 20 years. Best for historic homes but requires regular maintenance.</li>
-                    <li><strong>Fiber cement soffit:</strong> $4.00 to $8.00 per square foot. Lasts 30 to 50 years. Best for high-humidity areas but heavier to install.</li>
-                </ul>
-                
-                <h2 id="attic-ventilation">3. Attic Ventilation Calculator: The 1/150 and 1/300 Rules</h2>
-                
-                <p>This is where most soffit calculators stop, but the best ones continue. Proper attic ventilation is just as important as the material itself. According to the <a href="https://codes.iccsafe.org/content/IRC2021P1/chapter-8-roof-ceiling-construction" target="_blank" rel="noopener noreferrer">International Residential Code (IRC)</a>, attic ventilation requirements are based on the 1/150 rule for most homes.</p>
-                
-                <h3>3.1 Why Attic Ventilation Matters</h3>
-                <p>Here is what happens when your attic does not get enough airflow:</p>
-                <ul>
-                    <li>Heat builds up in summer, making your cooling bills higher.</li>
-                    <li>Moisture gets trapped in winter, leading to mold and wood rot.</li>
-                    <li>Ice dams form on your roof, damaging shingles and gutters.</li>
-                    <li>Your roof warranty may become void due to poor ventilation.</li>
-                </ul>
-                
-                <h3>3.2 The 1/150 Rule</h3>
-                <p>The International Residential Code (IRC) recommends the 1/150 rule for most homes. The formula is simple:</p>
-                <div class="value-box">
-                    <p style="font-size: 18px; font-weight: 700; text-align: center; margin: 0; color: var(--primary);">Total vent area needed = Attic floor area ÷ 150</p>
-                </div>
-                <p>For example, a 1,000 square foot attic needs 1,000 ÷ 150 = 6.67 square feet of total vent area.</p>
-                
-                <h3>3.3 The 1/300 Rule</h3>
-                <p>The 1/300 rule is allowed under specific conditions. You can use it if:</p>
-                <ul>
-                    <li>Your attic has a vapor barrier installed, OR</li>
-                    <li>At least 50% of the ventilation is near the ridge (like ridge vents).</li>
-                </ul>
-                <p><strong>Total vent area needed = Attic floor area ÷ 300</strong></p>
-                <p>For a 1,000 square foot attic, that is 1,000 ÷ 300 = 3.33 square feet of total vent area.</p>
-                
-                <h3>3.4 The 50/50 Split Between Intake and Exhaust</h3>
-                <p>Here is something many homeowners get wrong. Your ventilation system needs balance. Half of your total vent area should be intake (soffit vents). The other half should be exhaust (ridge vents or gable vents).</p>
-                <p>Using the 1/150 rule example:</p>
-                <p>Total vent area needed = 6.67 square feet.<br>
-                Intake (soffit) = 6.67 ÷ 2 = 3.33 square feet.<br>
-                Exhaust (ridge) = 6.67 ÷ 2 = 3.33 square feet.</p>
-                
-                <h3>3.5 Converting Square Feet to Net Free Area (NFA)</h3>
-                <p>Soffit vents are rated in Net Free Area, which is the actual open space that allows air to pass through. A vent might be 12 inches by 12 inches, but if it has a mesh screen that blocks half the area, its NFA is only 72 square inches.</p>
-                <p>To convert square feet to square inches, multiply by 144.</p>
-                <p>3.33 square feet × 144 = 480 square inches of NFA needed at the soffit.</p>
-                
-                <h3>3.6 How Many Soffit Vents Do You Need?</h3>
-                <p>This depends on the NFA rating of the vents you choose.</p>
-                <ul>
-                    <li>A standard 4-inch round vent has about 12.5 square inches of NFA.</li>
-                    <li>A 16-inch by 4-inch rectangular vent has about 32 square inches of NFA.</li>
-                    <li>A 16-inch by 8-inch rectangular vent has about 128 square inches of NFA.</li>
-                    <li>Continuous soffit vents provide 9 to 13 square inches of NFA per linear foot.</li>
-                </ul>
-                <p>Using the 480 square inches NFA example with 16×8 vents: 480 ÷ 128 = 4 vents needed. I always recommend adding 20% extra, so 5 vents.</p>
-                
-                <h2 id="featured-snippet">4. Featured Snippet: How to Calculate Soffit Material in 4 Simple Steps</h2>
-                
-                <p>Here is the quick answer for anyone who just needs the formula:</p>
-                <div class="value-box">
-                    <ul style="margin-bottom: 0;">
-                        <li><strong>Step 1:</strong> Measure total eave length in feet.</li>
-                        <li><strong>Step 2:</strong> Measure soffit width in feet.</li>
-                        <li><strong>Step 3:</strong> Multiply length × width to get raw square feet.</li>
-                        <li><strong>Step 4:</strong> Multiply by 1.1 to add 10% waste.</li>
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#what-is-soffit">1. What is a Soffit and Why Does it Matter?</a></div>
+                            <div class="toc-item"><a href="#how-to-calculate">2. How to Calculate Soffit Material Using a Soffit Calculator</a></div>
+                            <div class="toc-item"><a href="#attic-ventilation">3. Attic Ventilation Calculator: The 1/150 and 1/300 Rules</a></div>
+                            <div class="toc-item"><a href="#featured-snippet">4. Featured Snippet: How to Calculate Soffit Material in 4 Simple Steps</a></div>
+                            <div class="toc-item"><a href="#common-mistakes">5. Common Mistakes When Measuring Soffit</a></div>
+                            <div class="toc-item"><a href="#cost-estimation">6. Cost Estimation for Soffit Projects</a></div>
+                            <div class="toc-item"><a href="#faq">7. Frequently Asked Questions</a></div>
+                            <div class="toc-item"><a href="#conclusion">8. Conclusion</a></div>
+                        </div>
+                    </div>
+                    
+                    <p>When I first started working on residential exteriors, I made a mistake that cost me time and money. I ordered the wrong amount of soffit material. Since then, I have helped hundreds of homeowners and contractors calculate soffit accurately. In this guide, I will share everything I have learned about using a <strong>soffit calculator</strong> for both material estimation and attic ventilation.</p>
+                    
+                    <p>Whether you are planning a DIY installation or hiring a professional, getting your numbers right saves you from emergency hardware store runs. It also protects your attic from moisture damage, mold, and ice dams. Let me walk you through the exact process I use.</p>
+                    
+                    <h2 id="what-is-soffit">1. What is a Soffit and Why Does it Matter?</h2>
+                    
+                    <p>A soffit is the material that covers the underside of your roof's overhang, also known as the eaves. When you stand outside and look up at your roofline, you are looking at the soffit. It serves two critical purposes that many homeowners overlook.</p>
+                    
+                    <h3>1.1 The Aesthetic Purpose</h3>
+                    <p>A finished soffit gives your home a clean, professional look. It hides the rafters, wires, and insulation that would otherwise be visible. Without soffit, your roofline looks unfinished and exposed.</p>
+                    
+                    <h3>1.2 The Ventilation Purpose</h3>
+                    <p>This is where most people get confused. Soffit is not just decorative. It plays a vital role in your home's attic ventilation system.</p>
+                    <p>When you install vented soffit panels, fresh air enters through the soffit vents. That air travels up through the attic and exits through ridge vents or gable vents. This continuous airflow prevents heat buildup in summer and moisture condensation in winter.</p>
+                    
+                    <div class="pro-tip">
+                        <strong>🔧 Pro Tip from Experience:</strong> I cannot tell you how many attics I have inspected with mold problems caused by blocked soffit vents. Always keep your soffit vents clear of insulation and debris.
+                    </div>
+                    
+                    <h2 id="how-to-calculate">2. How to Calculate Soffit Material Using a Soffit Calculator</h2>
+                    
+                    <p>After fifteen years of measuring and installing soffit, I have developed a simple, reliable method. The formula is straightforward, but several small details can throw off your entire calculation.</p>
+                    
+                    <h3>2.1 The Basic Formula</h3>
+                    <p>Here is the core formula for calculating soffit material:</p>
+                    <div class="value-box">
+                        <p style="font-size: 20px; font-weight: 700; text-align: center; margin: 0; color: var(--primary);">Total Soffit Area = Length of Eaves × Width of Overhang</p>
+                    </div>
+                    <p>That is the starting point. But in real life, you never get a perfect rectangle. You have corners, angles, and waste from cuts.</p>
+                    
+                    <h3>2.2 Step-by-Step Measurement Guide</h3>
+                    <p>Let me walk you through how I measure soffit on a typical home.</p>
+                    <ul>
+                        <li><strong>Step 1:</strong> Walk around your house and measure the length of each eave section. Add all sections together for total eave length.</li>
+                        <li><strong>Step 2:</strong> Measure the soffit width from the exterior wall to the underside of the roof sheathing. Do not measure to the fascia lip. That gives you an incorrect measurement.</li>
+                        <li><strong>Step 3:</strong> Multiply total eave length by soffit width. This gives you your raw square footage.</li>
+                        <li><strong>Step 4:</strong> Add a waste factor of 10% for cuts, corners, and mistakes. Complex rooflines may need 15%.</li>
                     </ul>
-                </div>
-                <p>That is your total soffit material needed in square feet. Divide by 12 to get the number of 12-foot panels required.</p>
-                
-                <h2 id="common-mistakes">5. Common Mistakes When Measuring Soffit</h2>
-                
-                <p>After fixing countless soffit installations gone wrong, I have seen the same mistakes over and over.</p>
-                
-                <h3>5.1 Measuring to the Fascia Lip</h3>
-                <p>This is the most common error. People measure from the wall to the edge of the fascia board, but that includes the fascia itself. The correct measurement is from the wall to the underside of the roof sheathing.</p>
-                
-                <h3>5.2 Forgetting the Waste Factor</h3>
-                <p>I have seen DIYers order exactly the raw square footage and then run out of material halfway through the installation. Always add waste. Trust me on this.</p>
-                
-                <h3>5.3 Ignoring Roof Angles</h3>
-                <p>Every corner and change in roofline can affect your soffit depth. Measure each section separately instead of assuming the entire eave is the same width.</p>
-                
-                <h3>5.4 Confusing Gross Vent Size with NFA</h3>
-                <p>A vent might look big, but its Net Free Area is often much smaller. Check the manufacturer's NFA rating before calculating how many vents you need.</p>
-                
-                <h2 id="cost-estimation">6. Cost Estimation for Soffit Projects</h2>
-                
-                <p>Here is what you can expect to pay for a soffit project on an average 2,500 square foot home.</p>
-                
-                <h3>6.1 Material Costs Only</h3>
-                <ul>
-                    <li>Vinyl soffit: $250 to $750 for a typical home.</li>
-                    <li>Aluminum soffit: $500 to $1,250.</li>
-                    <li>Professional installation adds $1.50 to $4.00 per linear foot.</li>
-                </ul>
-                
-                <h3>6.2 Total Project Cost Range</h3>
-                <p>Based on projects I have quoted, most homeowners spend between $1,600 and $3,500 for vinyl soffit replacement. Aluminum projects run $2,500 to $5,500.</p>
-                
-                <h3>6.3 Money-Saving Tips</h3>
-                <p>Here is how I help my clients save money on soffit projects:</p>
-                <ul>
-                    <li>Buy in bulk. Suppliers often give price breaks at 100, 250, and 500 square foot thresholds.</li>
-                    <li>Choose vented panels. They cost about the same as solid panels but add ventilation value.</li>
-                    <li>Install during the off-season. Contractors are busiest in spring and summer. Fall and winter rates can be 10% to 20% lower.</li>
-                </ul>
-                
-                <h2 id="faq">7. Frequently Asked Questions</h2>
-                
-                <div class="faq-section">
-                    <div class="faq-item active">
-                        <div class="faq-question">
-                            How do I calculate how much soffit I need?
-                            <i class="fas fa-chevron-down"></i>
+                    
+                    <h3>2.3 Real Example Calculation</h3>
+                    <p>Let me give you a real example from a recent project.</p>
+                    <p>A house had 150 linear feet of eaves. The soffit width was 1.5 feet (18 inches).</p>
+                    <p>Raw area = 150 × 1.5 = 225 square feet.<br>
+                    With 10% waste = 225 × 1.1 = 247.5 square feet.</p>
+                    <p>Soffit panels typically come in 12-foot lengths. One panel covers 12 square feet (12ft × 1ft). So you would need 247.5 ÷ 12 = 21 panels.</p>
+                    
+                    <h3>2.4 Waste Factor Guidelines</h3>
+                    <p>Here is how I choose the waste factor based on the project:</p>
+                    <ul>
+                        <li><strong>Simple rectangular overhangs:</strong> 5% waste is usually enough.</li>
+                        <li><strong>Standard homes with a few corners:</strong> Add 8% to 10% waste.</li>
+                        <li><strong>Complex rooflines with dormers and gables:</strong> Add 12% to 15% waste.</li>
+                    </ul>
+                    
+                    <h3>2.5 Material Cost Comparison</h3>
+                    <p>Over the years, I have installed all types of soffit. Here is what each material costs and how long it lasts.</p>
+                    <ul>
+                        <li><strong>Vinyl soffit:</strong> $1.00 to $3.00 per square foot. Lasts 20 to 40 years. Best for most homeowners and DIY-friendly.</li>
+                        <li><strong>Aluminum soffit:</strong> $2.00 to $5.00 per square foot. Lasts 40 to 50 years. Best for coastal areas and moisture-prone regions.</li>
+                        <li><strong>Wood soffit:</strong> $3.00 to $7.00 per square foot. Lasts 10 to 20 years. Best for historic homes but requires regular maintenance.</li>
+                        <li><strong>Fiber cement soffit:</strong> $4.00 to $8.00 per square foot. Lasts 30 to 50 years. Best for high-humidity areas but heavier to install.</li>
+                    </ul>
+                    
+                    <h2 id="attic-ventilation">3. Attic Ventilation Calculator: The 1/150 and 1/300 Rules</h2>
+                    
+                    <p>This is where most soffit calculators stop, but the best ones continue. Proper attic ventilation is just as important as the material itself. According to the <a href="https://codes.iccsafe.org/content/IRC2021P1/chapter-8-roof-ceiling-construction" target="_blank" rel="noopener noreferrer">International Residential Code (IRC)</a>, attic ventilation requirements are based on the 1/150 rule for most homes.</p>
+                    
+                    <h3>3.1 Why Attic Ventilation Matters</h3>
+                    <p>Here is what happens when your attic does not get enough airflow:</p>
+                    <ul>
+                        <li>Heat builds up in summer, making your cooling bills higher.</li>
+                        <li>Moisture gets trapped in winter, leading to mold and wood rot.</li>
+                        <li>Ice dams form on your roof, damaging shingles and gutters.</li>
+                        <li>Your roof warranty may become void due to poor ventilation.</li>
+                    </ul>
+                    
+                    <h3>3.2 The 1/150 Rule</h3>
+                    <p>The International Residential Code (IRC) recommends the 1/150 rule for most homes. The formula is simple:</p>
+                    <div class="value-box">
+                        <p style="font-size: 18px; font-weight: 700; text-align: center; margin: 0; color: var(--primary);">Total vent area needed = Attic floor area ÷ 150</p>
+                    </div>
+                    <p>For example, a 1,000 square foot attic needs 1,000 ÷ 150 = 6.67 square feet of total vent area.</p>
+                    
+                    <h3>3.3 The 1/300 Rule</h3>
+                    <p>The 1/300 rule is allowed under specific conditions. You can use it if:</p>
+                    <ul>
+                        <li>Your attic has a vapor barrier installed, OR</li>
+                        <li>At least 50% of the ventilation is near the ridge (like ridge vents).</li>
+                    </ul>
+                    <p><strong>Total vent area needed = Attic floor area ÷ 300</strong></p>
+                    <p>For a 1,000 square foot attic, that is 1,000 ÷ 300 = 3.33 square feet of total vent area.</p>
+                    
+                    <h3>3.4 The 50/50 Split Between Intake and Exhaust</h3>
+                    <p>Here is something many homeowners get wrong. Your ventilation system needs balance. Half of your total vent area should be intake (soffit vents). The other half should be exhaust (ridge vents or gable vents).</p>
+                    <p>Using the 1/150 rule example:</p>
+                    <p>Total vent area needed = 6.67 square feet.<br>
+                    Intake (soffit) = 6.67 ÷ 2 = 3.33 square feet.<br>
+                    Exhaust (ridge) = 6.67 ÷ 2 = 3.33 square feet.</p>
+                    
+                    <h3>3.5 Converting Square Feet to Net Free Area (NFA)</h3>
+                    <p>Soffit vents are rated in Net Free Area, which is the actual open space that allows air to pass through. A vent might be 12 inches by 12 inches, but if it has a mesh screen that blocks half the area, its NFA is only 72 square inches.</p>
+                    <p>To convert square feet to square inches, multiply by 144.</p>
+                    <p>3.33 square feet × 144 = 480 square inches of NFA needed at the soffit.</p>
+                    
+                    <h3>3.6 How Many Soffit Vents Do You Need?</h3>
+                    <p>This depends on the NFA rating of the vents you choose.</p>
+                    <ul>
+                        <li>A standard 4-inch round vent has about 12.5 square inches of NFA.</li>
+                        <li>A 16-inch by 4-inch rectangular vent has about 32 square inches of NFA.</li>
+                        <li>A 16-inch by 8-inch rectangular vent has about 128 square inches of NFA.</li>
+                        <li>Continuous soffit vents provide 9 to 13 square inches of NFA per linear foot.</li>
+                    </ul>
+                    <p>Using the 480 square inches NFA example with 16×8 vents: 480 ÷ 128 = 4 vents needed. I always recommend adding 20% extra, so 5 vents.</p>
+                    
+                    <h2 id="featured-snippet">4. Featured Snippet: How to Calculate Soffit Material in 4 Simple Steps</h2>
+                    
+                    <p>Here is the quick answer for anyone who just needs the formula:</p>
+                    <div class="value-box">
+                        <ul style="margin-bottom: 0;">
+                            <li><strong>Step 1:</strong> Measure total eave length in feet.</li>
+                            <li><strong>Step 2:</strong> Measure soffit width in feet.</li>
+                            <li><strong>Step 3:</strong> Multiply length × width to get raw square feet.</li>
+                            <li><strong>Step 4:</strong> Multiply by 1.1 to add 10% waste.</li>
+                        </ul>
+                    </div>
+                    <p>That is your total soffit material needed in square feet. Divide by 12 to get the number of 12-foot panels required.</p>
+                    
+                    <h2 id="common-mistakes">5. Common Mistakes When Measuring Soffit</h2>
+                    
+                    <p>After fixing countless soffit installations gone wrong, I have seen the same mistakes over and over.</p>
+                    
+                    <h3>5.1 Measuring to the Fascia Lip</h3>
+                    <p>This is the most common error. People measure from the wall to the edge of the fascia board, but that includes the fascia itself. The correct measurement is from the wall to the underside of the roof sheathing.</p>
+                    
+                    <h3>5.2 Forgetting the Waste Factor</h3>
+                    <p>I have seen DIYers order exactly the raw square footage and then run out of material halfway through the installation. Always add waste. Trust me on this.</p>
+                    
+                    <h3>5.3 Ignoring Roof Angles</h3>
+                    <p>Every corner and change in roofline can affect your soffit depth. Measure each section separately instead of assuming the entire eave is the same width.</p>
+                    
+                    <h3>5.4 Confusing Gross Vent Size with NFA</h3>
+                    <p>A vent might look big, but its Net Free Area is often much smaller. Check the manufacturer's NFA rating before calculating how many vents you need.</p>
+                    
+                    <h2 id="cost-estimation">6. Cost Estimation for Soffit Projects</h2>
+                    
+                    <p>Here is what you can expect to pay for a soffit project on an average 2,500 square foot home.</p>
+                    
+                    <h3>6.1 Material Costs Only</h3>
+                    <ul>
+                        <li>Vinyl soffit: $250 to $750 for a typical home.</li>
+                        <li>Aluminum soffit: $500 to $1,250.</li>
+                        <li>Professional installation adds $1.50 to $4.00 per linear foot.</li>
+                    </ul>
+                    
+                    <h3>6.2 Total Project Cost Range</h3>
+                    <p>Based on projects I have quoted, most homeowners spend between $1,600 and $3,500 for vinyl soffit replacement. Aluminum projects run $2,500 to $5,500.</p>
+                    
+                    <h3>6.3 Money-Saving Tips</h3>
+                    <p>Here is how I help my clients save money on soffit projects:</p>
+                    <ul>
+                        <li>Buy in bulk. Suppliers often give price breaks at 100, 250, and 500 square foot thresholds.</li>
+                        <li>Choose vented panels. They cost about the same as solid panels but add ventilation value.</li>
+                        <li>Install during the off-season. Contractors are busiest in spring and summer. Fall and winter rates can be 10% to 20% lower.</li>
+                    </ul>
+                    
+                    <h2 id="faq">7. Frequently Asked Questions</h2>
+                    
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <div class="faq-question" tabindex="0" role="button">
+                                How do I calculate how much soffit I need?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To calculate how much soffit you need, measure the total length of all eaves around your house. Then measure the width of the overhang from the exterior wall to the underside of the roof sheathing. Multiply length by width to get raw square footage. Then add 10% for waste. That is your total soffit material needed.</p>
+                            </div>
                         </div>
-                        <div class="faq-answer">
-                            <p>To calculate how much soffit you need, measure the total length of all eaves around your house. Then measure the width of the overhang from the exterior wall to the underside of the roof sheathing. Multiply length by width to get raw square footage. Then add 10% for waste. That is your total soffit material needed.</p>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">
+                                How much is 1 square of soffit?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>In construction terms, one "square" equals 100 square feet. So 1 square of soffit covers 100 square feet of eaves area. If your total soffit area is 225 square feet, you need 2.25 squares. Most suppliers price soffit by the square or by the linear foot.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">
+                                What is the normal soffit size?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>The normal soffit width is typically 12 to 24 inches, depending on the roof overhang. Standard soffit panels come in 12-foot lengths and 12-inch widths. But you can find wider panels up to 24 inches for larger overhangs. The most common residential soffit width is 18 inches.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">
+                                How many square feet of soffit do I need?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Total eave length (ft) × soffit width (ft) = total square feet. For example, 150 linear feet of eaves with an 18-inch (1.5 foot) overhang gives you 225 square feet. Add 10% waste to get your final order quantity.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">
+                                How to price soffit?
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>To price soffit, first calculate your total square footage including waste. Then multiply by the material cost per square foot. Vinyl runs $1 to $3 per square foot. Aluminum runs $2 to $5 per square foot. Then add labor if hiring a contractor. Professional installation adds $1.50 to $4.00 per linear foot. For a typical home, total project cost ranges from $1,600 to $5,500.</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How much is 1 square of soffit?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>In construction terms, one "square" equals 100 square feet. So 1 square of soffit covers 100 square feet of eaves area. If your total soffit area is 225 square feet, you need 2.25 squares. Most suppliers price soffit by the square or by the linear foot.</p>
-                        </div>
+                    <h2 id="conclusion">8. Conclusion</h2>
+                    
+                    <p>After fifteen years of measuring, installing, and repairing soffit across hundreds of homes, I can tell you one thing for certain: accurate calculation saves you time, money, and frustration.</p>
+                    
+                    <p>Use a <strong>soffit calculator</strong> to get your material quantities right. Apply the 1/150 rule for attic ventilation. Split your vent area 50/50 between intake and exhaust. And always add a waste factor.</p>
+                    
+                    <p>Now you have the knowledge to calculate soffit like a professional. Use the calculator above, double-check your measurements, and order with confidence.</p>
+                    
+                    <!-- CALCULATOR CTA BUTTON -->
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🏠</span> Try Our Soffit & Ventilation Calculator → <span>⚡</span>
+                        </a>
                     </div>
                     
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What is the normal soffit size?
-                            <i class="fas fa-chevron-down"></i>
+                    <!-- RELATED LINKS SECTION -->
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🏠 Soffit & Ventilation Calculator</a>
+                            <a href="/calculators/pain-and-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                            <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                            <a href="/calculators/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
+                            <a href="/calculators/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
                         </div>
-                        <div class="faq-answer">
-                            <p>The normal soffit width is typically 12 to 24 inches, depending on the roof overhang. Standard soffit panels come in 12-foot lengths and 12-inch widths. But you can find wider panels up to 24 inches for larger overhangs. The most common residential soffit width is 18 inches.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How many square feet of soffit do I need?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Total eave length (ft) × soffit width (ft) = total square feet. For example, 150 linear feet of eaves with an 18-inch (1.5 foot) overhang gives you 225 square feet. Add 10% waste to get your final order quantity.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How to price soffit?
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>To price soffit, first calculate your total square footage including waste. Then multiply by the material cost per square foot. Vinyl runs $1 to $3 per square foot. Aluminum runs $2 to $5 per square foot. Then add labor if hiring a contractor. Professional installation adds $1.50 to $4.00 per linear foot. For a typical home, total project cost ranges from $1,600 to $5,500.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <h2 id="conclusion">8. Conclusion</h2>
-                
-                <p>After fifteen years of measuring, installing, and repairing soffit across hundreds of homes, I can tell you one thing for certain: accurate calculation saves you time, money, and frustration.</p>
-                
-                <p>Use a <strong>soffit calculator</strong> to get your material quantities right. Apply the 1/150 rule for attic ventilation. Split your vent area 50/50 between intake and exhaust. And always add a waste factor.</p>
-                
-                <p>Now you have the knowledge to calculate soffit like a professional. Use the calculator above, double-check your measurements, and order with confidence.</p>
-                
-                <!-- CALCULATOR CTA BUTTON - FIXED -->
-                <div class="calc-cta">
-                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
-                        <span>🏠</span> Try Our Soffit & Ventilation Calculator → <span>⚡</span>
-                    </a>
-                </div>
-                
-                <!-- RELATED LINKS SECTION -->
-                <div class="related-links">
-                    <h4>🔗 Related Calculators</h4>
-                    <div class="related-grid">
-                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🏠 Soffit & Ventilation Calculator</a>
-                        <a href="/pain-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
-                        <a href="/uk-aggregate-calculator">🔢 Aggregate Calculator</a>
-                        <a href="/productivity-calculator">📈 Productivity Calculator</a>
-                        <a href="/dog-heat-cycle-calculator">🐕 Dog Heat Cycle Calculator</a>
-                        <a href="/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
                     </div>
                 </div>
             </div>
-        </div>
+            
+        </main>
         
     </div>
     
-    <!-- ===== FOOTER (CONTAINER KE BAHAR - FULL WIDTH) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>🧮 CalcSnaps</h4>
                 <p>Calculations in a Snap — fast, accurate, free.</p>
                 <a href="/about-us" class="about-link">About Us →</a>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <a href="/">Home</a>
                 <a href="/all-calculators">All Calculators</a>
-                <a href="/blog">Blog</a>
                 <a href="/contact-us">Contact</a>
             </div>
             <div class="footer-col">
                 <h4>Popular</h4>
-                <a href="/pain-suffering-calculator">Pain &amp; Suffering</a>
-                <a href="/productivity-calculator">Productivity</a>
-                <a href="/uk-aggregate-calculator">Aggregate</a>
-                <a href="/dog-heat-cycle-calculator">Dog Heat Cycle</a>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+                <a href="/calculators/uk-aggregate-calculator">UK Aggregate</a>
+                <a href="/calculators/dog-heat-cycle-calculator">Dog Heat Cycle</a>
             </div>
             <div class="footer-col">
                 <h4>Legal</h4>
@@ -1237,10 +1314,11 @@
         </div>
     </footer>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         // ========== DOM Elements ==========
         let currentUnit = 'imperial';
+        const TO_FT = 3.28084;
+        const TO_M = 0.3048;
         
         const lengthUnitSpan = document.getElementById('lengthUnit');
         const widthUnitSpan = document.getElementById('widthUnit');
@@ -1249,6 +1327,8 @@
         const areaUnitSpan = document.getElementById('areaUnit');
         const atticAreaUnitSpan = document.getElementById('atticAreaUnit');
         const totalVentUnitSpan = document.getElementById('totalVentUnit');
+        const priceLabel = document.getElementById('priceLabel');
+        const codeWarning = document.getElementById('codeWarning');
         
         const lengthInput = document.getElementById('length');
         const widthInput = document.getElementById('width');
@@ -1258,6 +1338,8 @@
         const atticWidth = document.getElementById('atticWidth');
         const buildingCode = document.getElementById('buildingCode');
         const nfaPerVentInput = document.getElementById('nfaPerVent');
+        const ventType = document.getElementById('ventType');
+        const materialType = document.getElementById('materialType');
         
         const totalAreaEl = document.getElementById('totalArea');
         const panelsNeededEl = document.getElementById('panelsNeeded');
@@ -1267,7 +1349,112 @@
         const intakeNFAEl = document.getElementById('intakeNFA');
         const ventsNeededEl = document.getElementById('ventsNeeded');
         const ventsRecommendedEl = document.getElementById('ventsRecommended');
+        const ventsNeededLabel = document.getElementById('ventsNeededLabel');
+        const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
+        const ventsNeededUnit = document.getElementById('ventsNeededUnit');
+        const ventsRecommendedUnit = document.getElementById('ventsRecommendedUnit');
         
+        // ===== Material price mapping =====
+        const materialPrices = {
+            vinyl: 1.25,
+            aluminum: 3.50,
+            wood: 5.00
+        };
+        
+        // ===== Tabs with keyboard support =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                switchTab(this);
+            });
+            tab.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    switchTab(this);
+                }
+            });
+        });
+        
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            document.getElementById(`tab-${tab.dataset.tab}`).classList.add('active');
+        }
+        
+        // ===== Unit buttons with keyboard support and conversion =====
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                selectUnit(this);
+            });
+            btn.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    selectUnit(this);
+                }
+            });
+        });
+        
+        function selectUnit(btn) {
+            const newUnit = btn.dataset.unit;
+            if (newUnit === currentUnit) return;
+            
+            // Convert values
+            const lengthVal = parseFloat(lengthInput.value) || 0;
+            const widthVal = parseFloat(widthInput.value) || 0;
+            const atticLenVal = parseFloat(atticLength.value) || 0;
+            const atticWidVal = parseFloat(atticWidth.value) || 0;
+            
+            if (currentUnit === 'imperial' && newUnit === 'metric') {
+                // ft → m
+                lengthInput.value = (lengthVal * TO_M).toFixed(2);
+                widthInput.value = (widthVal * TO_M).toFixed(3);
+                atticLength.value = (atticLenVal * TO_M).toFixed(2);
+                atticWidth.value = (atticWidVal * TO_M).toFixed(2);
+            } else if (currentUnit === 'metric' && newUnit === 'imperial') {
+                // m → ft
+                lengthInput.value = (lengthVal * TO_FT).toFixed(1);
+                widthInput.value = (widthVal * TO_FT).toFixed(2);
+                atticLength.value = (atticLenVal * TO_FT).toFixed(1);
+                atticWidth.value = (atticWidVal * TO_FT).toFixed(1);
+            }
+            
+            // Update UI
+            document.querySelectorAll('.unit-btn').forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-checked', 'false');
+            });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            currentUnit = newUnit;
+            
+            updateUnitDisplay();
+            calculateMaterial();
+            calculateVentilation();
+        }
+        
+        // ===== FAQ with keyboard support =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', function() {
+                    item.classList.toggle('active');
+                });
+                question.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                });
+            });
+            if (faqItems.length > 0) faqItems[0].classList.add('active');
+        });
+        
+        // ===== Update Unit Display =====
         function updateUnitDisplay() {
             const suffix = currentUnit === 'imperial' ? 'ft' : 'm';
             const areaSuffix = currentUnit === 'imperial' ? 'sq ft' : 'sq m';
@@ -1278,17 +1465,20 @@
             areaUnitSpan.textContent = areaSuffix;
             atticAreaUnitSpan.textContent = areaSuffix;
             totalVentUnitSpan.textContent = areaSuffix;
+            priceLabel.textContent = currentUnit === 'imperial' ? 'Price per sq ft ($)' : 'Price per sq m ($)';
         }
         
+        // ===== Calculate Material =====
         function calculateMaterial() {
             let length = parseFloat(lengthInput.value) || 0;
             let width = parseFloat(widthInput.value) || 0;
             const waste = parseFloat(wasteFactor.value);
-            const price = parseFloat(priceInput.value) || 0;
+            let price = parseFloat(priceInput.value) || 0;
             
             if (currentUnit === 'metric') {
-                length = length * 3.28084;
-                width = width * 3.28084;
+                length = length * TO_FT;
+                width = width * TO_FT;
+                price = price / 10.7639; // convert $/sq m to $/sq ft
             }
             
             let area = length * width;
@@ -1306,13 +1496,14 @@
             totalCostEl.textContent = cost.toFixed(2);
         }
         
+        // ===== Calculate Ventilation =====
         function calculateVentilation() {
             let length = parseFloat(atticLength.value) || 0;
             let width = parseFloat(atticWidth.value) || 0;
             
             if (currentUnit === 'metric') {
-                length = length * 3.28084;
-                width = width * 3.28084;
+                length = length * TO_FT;
+                width = width * TO_FT;
             }
             
             const atticArea = length * width;
@@ -1322,8 +1513,23 @@
             const intakeNFA = Math.ceil(intakeVentArea * 144);
             
             const nfaPerVent = parseFloat(nfaPerVentInput.value) || 12.5;
-            let vents = Math.ceil(intakeNFA / nfaPerVent);
-            let ventsRecommended = vents + Math.ceil(vents * 0.2);
+            const isContinuous = ventType.value === 'continuous';
+            
+            let needed, recommended;
+            let unitLabel, unitPlural;
+            
+            if (isContinuous) {
+                // For continuous vents, NFA is per linear foot → result in linear feet
+                needed = Math.ceil(intakeNFA / nfaPerVent);
+                recommended = needed + Math.ceil(needed * 0.2);
+                unitLabel = 'ft';
+                unitPlural = 'linear ft';
+            } else {
+                needed = Math.ceil(intakeNFA / nfaPerVent);
+                recommended = needed + Math.ceil(needed * 0.2);
+                unitLabel = 'pcs';
+                unitPlural = 'pcs';
+            }
             
             let displayAtticArea = atticArea;
             let displayTotalVent = totalVent;
@@ -1335,31 +1541,69 @@
             atticAreaValueEl.textContent = Math.round(displayAtticArea);
             totalVentAreaEl.textContent = displayTotalVent.toFixed(2);
             intakeNFAEl.textContent = intakeNFA;
-            ventsNeededEl.textContent = vents;
-            ventsRecommendedEl.textContent = ventsRecommended;
+            
+            // Update labels and units dynamically
+            ventsNeededLabel.textContent = isContinuous ? 'Linear Feet Needed' : 'Vents Needed';
+            ventsRecommendedLabel.textContent = isContinuous ? 'Recommended (+20%)' : 'Recommended (+20%)';
+            ventsNeededUnit.textContent = unitPlural;
+            ventsRecommendedUnit.textContent = unitPlural;
+            
+            ventsNeededEl.textContent = needed;
+            ventsRecommendedEl.textContent = recommended;
+            
+            // 1/300 rule warning
+            if (rule === 300) {
+                codeWarning.classList.add('show');
+            } else {
+                codeWarning.classList.remove('show');
+            }
         }
         
+        // ===== Material Type Dropdown =====
+        materialType.addEventListener('change', function() {
+            const mat = this.value;
+            const price = materialPrices[mat] || 1.25;
+            priceInput.value = price;
+            calculateMaterial();
+        });
+        
+        // ===== Reset All =====
         function resetAll() {
             if (currentUnit === 'imperial') {
                 lengthInput.value = '150';
                 widthInput.value = '1.5';
                 atticLength.value = '40';
                 atticWidth.value = '25';
+                priceInput.value = '1.25';
             } else {
                 lengthInput.value = '45.7';
                 widthInput.value = '0.46';
                 atticLength.value = '12.2';
                 atticWidth.value = '7.6';
+                priceInput.value = '1.25';
             }
             wasteFactor.value = '1.1';
-            priceInput.value = '1.25';
             buildingCode.value = '300';
             nfaPerVentInput.value = '12.5';
+            ventType.value = 'round';
+            materialType.value = 'vinyl';
             
             calculateMaterial();
             calculateVentilation();
+            
+            const btn = document.getElementById('resetAllBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.style.color = '';
+            }, 1500);
         }
         
+        // ===== PDF Export =====
         function downloadPDF() {
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
@@ -1375,6 +1619,7 @@
             doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
             doc.line(20, 38, 190, 38);
             
+            // Material Section
             doc.setFontSize(14);
             doc.setTextColor(139, 92, 246);
             doc.text('Material Summary', 20, 50);
@@ -1386,14 +1631,19 @@
             doc.text(`Panels Needed: ${panelsNeededEl.textContent} pcs`, 25, 81);
             doc.text(`Estimated Cost: $${totalCostEl.textContent}`, 25, 88);
             
+            // Ventilation Section
             doc.setFontSize(14);
             doc.setTextColor(139, 92, 246);
             doc.text('Ventilation Summary', 20, 105);
             doc.setFontSize(11);
             doc.setTextColor(0, 0, 0);
             doc.text(`Attic Area: ${atticAreaValueEl.textContent} ${areaSuffix}`, 25, 115);
-            doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 122);
-            doc.text(`Vents Needed: ${ventsNeededEl.textContent} pcs (${ventsRecommendedEl.textContent} recommended)`, 25, 129);
+            doc.text(`Total Vent Area Needed: ${totalVentAreaEl.textContent} ${areaSuffix}`, 25, 122);
+            doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 129);
+            const isContinuous = ventType.value === 'continuous';
+            const unitLabel = isContinuous ? 'linear ft' : 'pcs';
+            doc.text(`${ventsNeededLabel.textContent}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
+            doc.text(`${ventsRecommendedLabel.textContent}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
             
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
@@ -1402,26 +1652,7 @@
             doc.save(`Soffit_Report_${Date.now()}.pdf`);
         }
         
-        document.querySelectorAll('.unit-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                currentUnit = this.dataset.unit;
-                updateUnitDisplay();
-                calculateMaterial();
-                calculateVentilation();
-            });
-        });
-        
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', function() {
-                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-                document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
-                this.classList.add('active');
-                document.getElementById(`tab-${this.dataset.tab}`).classList.add('active');
-            });
-        });
-        
+        // ===== Event Listeners =====
         lengthInput.addEventListener('input', calculateMaterial);
         widthInput.addEventListener('input', calculateMaterial);
         wasteFactor.addEventListener('change', calculateMaterial);
@@ -1430,29 +1661,22 @@
         atticWidth.addEventListener('input', calculateVentilation);
         buildingCode.addEventListener('change', calculateVentilation);
         nfaPerVentInput.addEventListener('input', calculateVentilation);
+        ventType.addEventListener('change', function() {
+            if (this.value === 'round') {
+                nfaPerVentInput.value = '12.5';
+            } else if (this.value === 'continuous') {
+                nfaPerVentInput.value = '11.0';
+            }
+            calculateVentilation();
+        });
         
         document.getElementById('downloadPDFBtn').addEventListener('click', downloadPDF);
         document.getElementById('resetAllBtn').addEventListener('click', resetAll);
         
+        // ===== Initialize =====
         updateUnitDisplay();
         calculateMaterial();
         calculateVentilation();
-
-        // ===== ARTICLE FAQ JAVASCRIPT =====
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', function() {
-                    item.classList.toggle('active');
-                });
-            });
-            
-            if (faqItems.length > 0) {
-                faqItems[0].classList.add('active');
-            }
-        });
     </script>
 </body>
 </html>
