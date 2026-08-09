@@ -795,7 +795,7 @@
     <!-- ===== SKIP LINK ===== -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ===== HEADER (CONTAINER KE BAHAR — FULL WIDTH, VENMO WALA PATTERN) ===== -->
+    <!-- ===== HEADER (CONTAINER KE BAHAR — VENMO WALA PATTERN) ===== -->
     <header class="header">
         <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
         <nav class="nav">
@@ -956,14 +956,14 @@
                     
                     <div class="results-grid">
                         <div class="result-card">
-                            <div class="result-label">Vents Needed</div>
+                            <div class="result-label" id="ventsNeededLabel">Vents Needed</div>
                             <div class="result-value" id="ventsNeeded">20</div>
-                            <div class="result-unit">pcs</div>
+                            <div class="result-unit" id="ventsNeededUnit">pcs</div>
                         </div>
                         <div class="result-card">
-                            <div class="result-label">Recommended (+20%)</div>
+                            <div class="result-label" id="ventsRecommendedLabel">Recommended (+20%)</div>
                             <div class="result-value" id="ventsRecommended">24</div>
-                            <div class="result-unit">pcs</div>
+                            <div class="result-unit" id="ventsRecommendedUnit">pcs</div>
                         </div>
                     </div>
                 </div>
@@ -1350,6 +1350,10 @@
         const intakeNFAEl = document.getElementById('intakeNFA');
         const ventsNeededEl = document.getElementById('ventsNeeded');
         const ventsRecommendedEl = document.getElementById('ventsRecommended');
+        const ventsNeededLabel = document.getElementById('ventsNeededLabel');
+        const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
+        const ventsNeededUnit = document.getElementById('ventsNeededUnit');
+        const ventsRecommendedUnit = document.getElementById('ventsRecommendedUnit');
         
         // ===== Material price mapping ($/sq ft) =====
         const materialPrices = {
@@ -1549,11 +1553,6 @@
             totalVentAreaEl.textContent = displayTotalVent.toFixed(2);
             intakeNFAEl.textContent = intakeNFA;
             
-            const ventsNeededLabel = document.getElementById('ventsNeededLabel');
-            const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
-            const ventsNeededUnit = document.getElementById('ventsNeededUnit');
-            const ventsRecommendedUnit = document.getElementById('ventsRecommendedUnit');
-            
             if (ventsNeededLabel) {
                 ventsNeededLabel.textContent = isContinuous ? 'Linear Feet Needed' : 'Vents Needed';
                 ventsRecommendedLabel.textContent = isContinuous ? 'Recommended (+20%)' : 'Recommended (+20%)';
@@ -1657,8 +1656,6 @@
             doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 129);
             const isContinuous = ventType.value === 'continuous';
             const unitLabel = isContinuous ? 'linear ft' : 'pcs';
-            const ventsNeededLabel = document.getElementById('ventsNeededLabel');
-            const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
             doc.text(`${ventsNeededLabel ? ventsNeededLabel.textContent : 'Vents Needed'}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
             doc.text(`${ventsRecommendedLabel ? ventsRecommendedLabel.textContent : 'Recommended (+20%)'}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
             
