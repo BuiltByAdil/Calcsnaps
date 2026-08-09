@@ -16,7 +16,7 @@
     <meta name="author" content="CalcSnaps">
     <meta name="robots" content="index, follow">
     
-    <!-- ===== SINGLE CANONICAL ===== -->
+    <!-- ===== SINGLE CANONICAL (FIXED) ===== -->
     <link rel="canonical" href="https://calcsnaps.com/calculators/osu-pp-calculator">
     
     <!-- ===== OPEN GRAPH (SINGLE SET) ===== -->
@@ -63,7 +63,7 @@
             "@id": "https://calcsnaps.com/calculators/osu-pp-calculator"
         },
         "datePublished": "2024-01-15",
-        "dateModified": "2026-07-30"
+        "dateModified": "2026-08-09"
     }
     </script>
     
@@ -152,6 +152,17 @@
         }
         .skip-link:focus {
             top: 0;
+        }
+
+        /* 🔧 FIX: Header — Explicit padding to ensure side spacing (matches other pages) */
+        .header {
+            max-width: 100% !important;
+            margin: 0 auto !important;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+            padding-left: 24px !important;
+            padding-right: 24px !important;
+            box-sizing: border-box !important;
         }
 
         /* ===== CALCULATOR CSS ===== */
@@ -532,6 +543,12 @@
             box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
         }
         
+        .btn-reset:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
         @media (max-width: 768px) {
             .calc-header h2 {
                 font-size: 24px;
@@ -555,6 +572,10 @@
             .action-btn {
                 min-width: 100%;
                 flex: 1 1 100%;
+            }
+            .header {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
             }
         }
 
@@ -740,8 +761,8 @@
         }
         
         .calc-cta a {
-            color: white;
-            text-decoration: none;
+            color: white !important;
+            text-decoration: none !important;
             font-weight: bold;
             font-size: 18px;
             display: block;
@@ -906,19 +927,19 @@
     <!-- ===== SKIP LINK ===== -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ===== CONTAINER ===== -->
+    <!-- ===== HEADER (CONTAINER KE BAHAR — FULL WIDTH — FIXED) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
     <div class="container">
-        
-        <!-- ===== HEADER ===== -->
-        <header class="header">
-            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
-            <nav class="nav">
-                <a href="/">Home</a>
-                <a href="/all-calculators">All Calculators</a>
-                <a href="/about-us">About</a>
-                <a href="/contact-us">Contact</a>
-            </nav>
-        </header>
         
         <main id="main-content">
             
@@ -933,8 +954,6 @@
                 </div>
                 
                 <div class="calc-content">
-                    
-                    <!-- 🔧 FIX: Disclaimer REMOVED (as requested) -->
                     
                     <!-- Game Mode -->
                     <div class="section-title">
@@ -1064,7 +1083,6 @@
                             <li><strong>Accuracy PP:</strong> Hit timing precision (heavily weighted)</li>
                             <li><strong>Strain PP:</strong> High intensity sections (streams, jumps)</li>
                         </ul>
-                        <!-- 🔧 FIX: Simplified weightage formula to match code -->
                         <p style="margin-top: 10px;"><strong>Weightage Formula:</strong> <code>Weighted PP = Raw PP × 0.95</code> (single play estimate)</p>
                         <p><strong>Bonus PP:</strong> Up to 413.894 PP for setting scores on 1000 ranked maps (asymptotic)</p>
                     </div>
@@ -1545,49 +1563,63 @@
         
         // ===== PDF Download =====
         document.getElementById('downloadPDFBtn').addEventListener('click', function() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const date = new Date().toLocaleString();
+            const btn = this;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            btn.disabled = true;
             
-            doc.setFontSize(20);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Osu! PP Calculator Report', 105, 20, { align: 'center' });
-            doc.setFontSize(10);
-            doc.setTextColor(100, 100, 100);
-            doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
-            doc.line(20, 38, 190, 38);
-            
-            doc.setFontSize(14);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Results', 20, 50);
-            doc.setFontSize(11);
-            doc.setTextColor(0, 0, 0);
-            doc.text(`Game Mode: ${gameMode.value}`, 25, 60);
-            doc.text(`Mods: ${activeMods.length > 0 ? activeMods.join('+') : 'None'}`, 25, 67);
-            doc.text(`Accuracy: ${parseFloat(accuracySlider.value).toFixed(1)}%`, 25, 74);
-            doc.text(`Combo: ${comboInput.value || 0}`, 25, 81);
-            doc.text(`Misses: ${missCount.value || 0}`, 25, 88);
-            doc.text(`Ranked Scores: ${rankedScores.value || 0}`, 25, 95);
-            doc.text(`Raw PP: ${rawPPEl.textContent}`, 25, 105);
-            doc.text(`Weighted PP: ${weightedPPEl.textContent}`, 25, 112);
-            doc.text(`Bonus PP: ${bonusPPEl.textContent}`, 25, 119);
-            doc.text(`Combined PP: ${totalPPEl.textContent}`, 25, 126);
-            
-            doc.setFontSize(14);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Breakdown', 20, 143);
-            doc.setFontSize(11);
-            doc.setTextColor(0, 0, 0);
-            doc.text(`Aim PP: ${aimPPEl.textContent}`, 25, 153);
-            doc.text(`Speed PP: ${speedPPEl.textContent}`, 25, 160);
-            doc.text(`Accuracy PP: ${accuracyPPEl.textContent}`, 25, 167);
-            doc.text(`Strain PP: ${strainPPEl.textContent}`, 25, 174);
-            
-            doc.setFontSize(10);
-            doc.setTextColor(100, 100, 100);
-            doc.text('Generated by CalcSnaps - Osu! PP Calculator', 105, 280, { align: 'center' });
-            
-            doc.save(`Osu_PP_Report_${Date.now()}.pdf`);
+            setTimeout(() => {
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    const date = new Date().toLocaleString();
+                    
+                    doc.setFontSize(20);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Osu! PP Calculator Report', 105, 20, { align: 'center' });
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
+                    doc.line(20, 38, 190, 38);
+                    
+                    doc.setFontSize(14);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Results', 20, 50);
+                    doc.setFontSize(11);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text(`Game Mode: ${gameMode.value}`, 25, 60);
+                    doc.text(`Mods: ${activeMods.length > 0 ? activeMods.join('+') : 'None'}`, 25, 67);
+                    doc.text(`Accuracy: ${parseFloat(accuracySlider.value).toFixed(1)}%`, 25, 74);
+                    doc.text(`Combo: ${comboInput.value || 0}`, 25, 81);
+                    doc.text(`Misses: ${missCount.value || 0}`, 25, 88);
+                    doc.text(`Ranked Scores: ${rankedScores.value || 0}`, 25, 95);
+                    doc.text(`Raw PP: ${rawPPEl.textContent}`, 25, 105);
+                    doc.text(`Weighted PP: ${weightedPPEl.textContent}`, 25, 112);
+                    doc.text(`Bonus PP: ${bonusPPEl.textContent}`, 25, 119);
+                    doc.text(`Combined PP: ${totalPPEl.textContent}`, 25, 126);
+                    
+                    doc.setFontSize(14);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Breakdown', 20, 143);
+                    doc.setFontSize(11);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text(`Aim PP: ${aimPPEl.textContent}`, 25, 153);
+                    doc.text(`Speed PP: ${speedPPEl.textContent}`, 25, 160);
+                    doc.text(`Accuracy PP: ${accuracyPPEl.textContent}`, 25, 167);
+                    doc.text(`Strain PP: ${strainPPEl.textContent}`, 25, 174);
+                    
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text('Generated by CalcSnaps - Osu! PP Calculator', 105, 280, { align: 'center' });
+                    
+                    doc.save(`Osu_PP_Report_${Date.now()}.pdf`);
+                } catch (error) {
+                    alert('Error generating PDF. Please try again.');
+                }
+                
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 100);
         });
         
         // ===== Reset All =====
