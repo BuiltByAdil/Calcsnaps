@@ -63,7 +63,7 @@
             "@id": "https://calcsnaps.com/calculators/soffit-calculator"
         },
         "datePublished": "2024-01-15",
-        "dateModified": "2026-08-08"
+        "dateModified": "2026-08-09"
     }
     </script>
     
@@ -798,7 +798,7 @@
     <!-- ===== CONTAINER ===== -->
     <div class="container">
         
-        <!-- ===== HEADER ===== -->
+        <!-- ===== HEADER (UNTOUCHED — AS ORIGINAL) ===== -->
         <header class="header">
             <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
             <nav class="nav">
@@ -864,7 +864,6 @@
                             </select>
                         </div>
                         <div class="input-group">
-                            <!-- 🔧 FIX: Dynamic price label with proper conversion -->
                             <label for="pricePerSqFt" id="priceLabel">Price per sq ft ($)</label>
                             <input type="number" id="pricePerSqFt" value="1.25" step="0.25" aria-label="Price per square foot">
                         </div>
@@ -883,7 +882,7 @@
                         </div>
                         <div class="result-card">
                             <div class="result-label">Estimated Cost</div>
-                            <div class="result-value" id="totalCost">309.38</div>
+                            <div class="result-value" id="totalCost">281.25</div>
                             <div class="result-unit">USD</div>
                         </div>
                     </div>
@@ -927,8 +926,8 @@
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="nfaPerVent">NFA per Vent / ft (sq in)</label>
-                            <input type="number" id="nfaPerVent" value="12.5" step="0.5" aria-label="NFA per vent or per foot">
+                            <label for="nfaPerVent">NFA per Vent (sq in)</label>
+                            <input type="number" id="nfaPerVent" value="12.5" step="0.5" aria-label="NFA per vent">
                         </div>
                     </div>
                     
@@ -955,16 +954,16 @@
                         </div>
                     </div>
                     
-                    <div class="results-grid" id="ventResultsGrid">
+                    <div class="results-grid">
                         <div class="result-card">
-                            <div class="result-label" id="ventsNeededLabel">Vents Needed</div>
+                            <div class="result-label">Vents Needed</div>
                             <div class="result-value" id="ventsNeeded">20</div>
-                            <div class="result-unit" id="ventsNeededUnit">pcs</div>
+                            <div class="result-unit">pcs</div>
                         </div>
                         <div class="result-card">
-                            <div class="result-label" id="ventsRecommendedLabel">Recommended (+20%)</div>
+                            <div class="result-label">Recommended (+20%)</div>
                             <div class="result-value" id="ventsRecommended">24</div>
-                            <div class="result-unit" id="ventsRecommendedUnit">pcs</div>
+                            <div class="result-unit">pcs</div>
                         </div>
                     </div>
                 </div>
@@ -1317,8 +1316,10 @@
     <script>
         // ========== DOM Elements ==========
         let currentUnit = 'imperial';
+        let priceManuallySet = false;
         const TO_FT = 3.28084;
         const TO_M = 0.3048;
+        const SQFT_PER_SQM = 10.7639;
         
         const lengthUnitSpan = document.getElementById('lengthUnit');
         const widthUnitSpan = document.getElementById('widthUnit');
@@ -1349,12 +1350,8 @@
         const intakeNFAEl = document.getElementById('intakeNFA');
         const ventsNeededEl = document.getElementById('ventsNeeded');
         const ventsRecommendedEl = document.getElementById('ventsRecommended');
-        const ventsNeededLabel = document.getElementById('ventsNeededLabel');
-        const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
-        const ventsNeededUnit = document.getElementById('ventsNeededUnit');
-        const ventsRecommendedUnit = document.getElementById('ventsRecommendedUnit');
         
-        // ===== Material price mapping =====
+        // ===== Material price mapping ($/sq ft) =====
         const materialPrices = {
             vinyl: 1.25,
             aluminum: 3.50,
@@ -1398,6 +1395,17 @@
             });
         });
         
+        // ===== Update price based on material type and current unit =====
+        function updatePriceFromMaterial() {
+            const mat = materialType.value;
+            let price = materialPrices[mat] || 1.25;
+            if (currentUnit === 'metric') {
+                price = price * SQFT_PER_SQM;
+            }
+            priceInput.value = price.toFixed(2);
+            priceManuallySet = false;
+        }
+        
         function selectUnit(btn) {
             const newUnit = btn.dataset.unit;
             if (newUnit === currentUnit) return;
@@ -1409,13 +1417,11 @@
             const atticWidVal = parseFloat(atticWidth.value) || 0;
             
             if (currentUnit === 'imperial' && newUnit === 'metric') {
-                // ft → m
                 lengthInput.value = (lengthVal * TO_M).toFixed(2);
                 widthInput.value = (widthVal * TO_M).toFixed(3);
                 atticLength.value = (atticLenVal * TO_M).toFixed(2);
                 atticWidth.value = (atticWidVal * TO_M).toFixed(2);
             } else if (currentUnit === 'metric' && newUnit === 'imperial') {
-                // m → ft
                 lengthInput.value = (lengthVal * TO_FT).toFixed(1);
                 widthInput.value = (widthVal * TO_FT).toFixed(2);
                 atticLength.value = (atticLenVal * TO_FT).toFixed(1);
@@ -1432,6 +1438,12 @@
             currentUnit = newUnit;
             
             updateUnitDisplay();
+            
+            // If price hasn't been manually changed, update it based on material type
+            if (!priceManuallySet) {
+                updatePriceFromMaterial();
+            }
+            
             calculateMaterial();
             calculateVentilation();
         }
@@ -1478,8 +1490,7 @@
             if (currentUnit === 'metric') {
                 length = length * TO_FT;
                 width = width * TO_FT;
-                // 🔧 FIX: Convert price from $/sq m to $/sq ft for internal calculation
-                price = price / 10.7639;
+                price = price / SQFT_PER_SQM; // convert $/sq m to $/sq ft for internal calculation
             }
             
             let area = length * width;
@@ -1489,7 +1500,7 @@
             
             let displayArea = areaWithWaste;
             if (currentUnit === 'metric') {
-                displayArea = areaWithWaste / 10.7639;
+                displayArea = areaWithWaste / SQFT_PER_SQM;
             }
             
             totalAreaEl.textContent = displayArea.toFixed(1);
@@ -1520,7 +1531,6 @@
             let unitLabel, unitPlural;
             
             if (isContinuous) {
-                // For continuous vents, NFA is per linear foot → result in linear feet
                 needed = Math.ceil(intakeNFA / nfaPerVent);
                 recommended = needed + Math.ceil(needed * 0.2);
                 unitLabel = 'ft';
@@ -1535,8 +1545,8 @@
             let displayAtticArea = atticArea;
             let displayTotalVent = totalVent;
             if (currentUnit === 'metric') {
-                displayAtticArea = atticArea / 10.7639;
-                displayTotalVent = totalVent / 10.7639;
+                displayAtticArea = atticArea / SQFT_PER_SQM;
+                displayTotalVent = totalVent / SQFT_PER_SQM;
             }
             
             atticAreaValueEl.textContent = Math.round(displayAtticArea);
@@ -1544,15 +1554,21 @@
             intakeNFAEl.textContent = intakeNFA;
             
             // Update labels and units dynamically
-            ventsNeededLabel.textContent = isContinuous ? 'Linear Feet Needed' : 'Vents Needed';
-            ventsRecommendedLabel.textContent = isContinuous ? 'Recommended (+20%)' : 'Recommended (+20%)';
-            ventsNeededUnit.textContent = unitPlural;
-            ventsRecommendedUnit.textContent = unitPlural;
+            const ventsNeededLabel = document.getElementById('ventsNeededLabel');
+            const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
+            const ventsNeededUnit = document.getElementById('ventsNeededUnit');
+            const ventsRecommendedUnit = document.getElementById('ventsRecommendedUnit');
+            
+            if (ventsNeededLabel) {
+                ventsNeededLabel.textContent = isContinuous ? 'Linear Feet Needed' : 'Vents Needed';
+                ventsRecommendedLabel.textContent = isContinuous ? 'Recommended (+20%)' : 'Recommended (+20%)';
+                ventsNeededUnit.textContent = unitPlural;
+                ventsRecommendedUnit.textContent = unitPlural;
+            }
             
             ventsNeededEl.textContent = needed;
             ventsRecommendedEl.textContent = recommended;
             
-            // 1/300 rule warning
             if (rule === 300) {
                 codeWarning.classList.add('show');
             } else {
@@ -1562,10 +1578,13 @@
         
         // ===== Material Type Dropdown =====
         materialType.addEventListener('change', function() {
-            const mat = this.value;
-            const price = materialPrices[mat] || 1.25;
-            priceInput.value = price;
+            updatePriceFromMaterial();
             calculateMaterial();
+        });
+        
+        // ===== Price Input Manual Override Detection =====
+        priceInput.addEventListener('input', function() {
+            priceManuallySet = true;
         });
         
         // ===== Reset All =====
@@ -1581,13 +1600,14 @@
                 widthInput.value = '0.46';
                 atticLength.value = '12.2';
                 atticWidth.value = '7.6';
-                priceInput.value = '1.25';
+                priceInput.value = (1.25 * SQFT_PER_SQM).toFixed(2);
             }
             wasteFactor.value = '1.1';
             buildingCode.value = '300';
             nfaPerVentInput.value = '12.5';
             ventType.value = 'round';
             materialType.value = 'vinyl';
+            priceManuallySet = false;
             
             calculateMaterial();
             calculateVentilation();
@@ -1620,7 +1640,6 @@
             doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
             doc.line(20, 38, 190, 38);
             
-            // Material Section
             doc.setFontSize(14);
             doc.setTextColor(139, 92, 246);
             doc.text('Material Summary', 20, 50);
@@ -1632,7 +1651,6 @@
             doc.text(`Panels Needed: ${panelsNeededEl.textContent} pcs`, 25, 81);
             doc.text(`Estimated Cost: $${totalCostEl.textContent}`, 25, 88);
             
-            // Ventilation Section
             doc.setFontSize(14);
             doc.setTextColor(139, 92, 246);
             doc.text('Ventilation Summary', 20, 105);
@@ -1643,8 +1661,10 @@
             doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 129);
             const isContinuous = ventType.value === 'continuous';
             const unitLabel = isContinuous ? 'linear ft' : 'pcs';
-            doc.text(`${ventsNeededLabel.textContent}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
-            doc.text(`${ventsRecommendedLabel.textContent}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
+            const ventsNeededLabel = document.getElementById('ventsNeededLabel');
+            const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
+            doc.text(`${ventsNeededLabel ? ventsNeededLabel.textContent : 'Vents Needed'}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
+            doc.text(`${ventsRecommendedLabel ? ventsRecommendedLabel.textContent : 'Recommended (+20%)'}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
             
             doc.setFontSize(10);
             doc.setTextColor(100, 100, 100);
@@ -1657,11 +1677,15 @@
         lengthInput.addEventListener('input', calculateMaterial);
         widthInput.addEventListener('input', calculateMaterial);
         wasteFactor.addEventListener('change', calculateMaterial);
-        priceInput.addEventListener('input', calculateMaterial);
+        priceInput.addEventListener('input', function() {
+            priceManuallySet = true;
+            calculateMaterial();
+        });
         atticLength.addEventListener('input', calculateVentilation);
         atticWidth.addEventListener('input', calculateVentilation);
         buildingCode.addEventListener('change', calculateVentilation);
         nfaPerVentInput.addEventListener('input', calculateVentilation);
+        
         ventType.addEventListener('change', function() {
             if (this.value === 'round') {
                 nfaPerVentInput.value = '12.5';
@@ -1676,6 +1700,7 @@
         
         // ===== Initialize =====
         updateUnitDisplay();
+        updatePriceFromMaterial();
         calculateMaterial();
         calculateVentilation();
     </script>
