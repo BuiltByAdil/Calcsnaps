@@ -795,19 +795,19 @@
     <!-- ===== SKIP LINK ===== -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- ===== CONTAINER ===== -->
+    <!-- ===== HEADER (CONTAINER KE BAHAR — FULL WIDTH, VENMO WALA PATTERN) ===== -->
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+    
+    <!-- ===== CONTAINER (SIRF CALCULATOR + ARTICLE) ===== -->
     <div class="container">
-        
-        <!-- ===== HEADER (UNTOUCHED — AS ORIGINAL) ===== -->
-        <header class="header">
-            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
-            <nav class="nav">
-                <a href="/">Home</a>
-                <a href="/all-calculators">All Calculators</a>
-                <a href="/about-us">About</a>
-                <a href="/contact-us">Contact</a>
-            </nav>
-        </header>
         
         <main id="main-content">
             
@@ -1395,7 +1395,6 @@
             });
         });
         
-        // ===== Update price based on material type and current unit =====
         function updatePriceFromMaterial() {
             const mat = materialType.value;
             let price = materialPrices[mat] || 1.25;
@@ -1410,7 +1409,6 @@
             const newUnit = btn.dataset.unit;
             if (newUnit === currentUnit) return;
             
-            // Convert values
             const lengthVal = parseFloat(lengthInput.value) || 0;
             const widthVal = parseFloat(widthInput.value) || 0;
             const atticLenVal = parseFloat(atticLength.value) || 0;
@@ -1428,7 +1426,6 @@
                 atticWidth.value = (atticWidVal * TO_FT).toFixed(1);
             }
             
-            // Update UI
             document.querySelectorAll('.unit-btn').forEach(b => {
                 b.classList.remove('active');
                 b.setAttribute('aria-checked', 'false');
@@ -1439,7 +1436,6 @@
             
             updateUnitDisplay();
             
-            // If price hasn't been manually changed, update it based on material type
             if (!priceManuallySet) {
                 updatePriceFromMaterial();
             }
@@ -1490,7 +1486,7 @@
             if (currentUnit === 'metric') {
                 length = length * TO_FT;
                 width = width * TO_FT;
-                price = price / SQFT_PER_SQM; // convert $/sq m to $/sq ft for internal calculation
+                price = price / SQFT_PER_SQM;
             }
             
             let area = length * width;
@@ -1553,7 +1549,6 @@
             totalVentAreaEl.textContent = displayTotalVent.toFixed(2);
             intakeNFAEl.textContent = intakeNFA;
             
-            // Update labels and units dynamically
             const ventsNeededLabel = document.getElementById('ventsNeededLabel');
             const ventsRecommendedLabel = document.getElementById('ventsRecommendedLabel');
             const ventsNeededUnit = document.getElementById('ventsNeededUnit');
@@ -1585,6 +1580,7 @@
         // ===== Price Input Manual Override Detection =====
         priceInput.addEventListener('input', function() {
             priceManuallySet = true;
+            calculateMaterial();
         });
         
         // ===== Reset All =====
