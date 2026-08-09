@@ -534,6 +534,7 @@
             margin-bottom: 8px;
         }
         
+        /* Action buttons with WHITE text */
         .action-buttons {
             display: flex;
             gap: 12px;
@@ -553,6 +554,7 @@
             gap: 8px;
             border: none;
             font-family: 'Inter', sans-serif;
+            color: #ffffff !important;
         }
         
         .action-btn:focus-visible {
@@ -560,24 +562,27 @@
             outline-offset: 2px;
         }
         
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+        
         .print-btn {
-            background: #e2e8f0;
-            color: var(--dark);
+            background: var(--primary);
+            color: #ffffff !important;
         }
         
         .print-btn:hover {
-            background: #cbd5e1;
-            transform: translateY(-2px);
+            background: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
         }
         
         .reset-btn {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #ffffff !important;
         }
         
         .reset-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
         }
         
         @media (max-width: 600px) {
@@ -673,6 +678,35 @@
             color: #8b5cf6 !important;
         }
         
+        /* 🔧 FIX: CTA Button — White text with !important */
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 30px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        
+        .calc-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+        
+        .calc-cta a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+        
+        .calc-cta a span {
+            font-size: 22px;
+            margin-right: 8px;
+        }
+        
         .article-content h2 {
             font-size: 28px;
             font-weight: 700;
@@ -755,34 +789,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-        
-        .calc-cta {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 60px;
-            padding: 18px 32px;
-            text-align: center;
-            margin: 40px 0 30px;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-        }
-        
-        .calc-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
-        }
-        
-        .calc-cta a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            display: block;
-        }
-        
-        .calc-cta a span {
-            font-size: 22px;
-            margin-right: 8px;
         }
         
         .faq-section {
@@ -1357,7 +1363,7 @@
                     <p>Our <strong>UK aggregate calculator</strong> does all the heavy lifting for you. It accounts for material density, compaction, waste allowance, and even calculates cost, vehicles, and bulk bags. Whether you are a homeowner planning a driveway, a builder ordering materials for a foundation, or a landscaper preparing garden beds, this tool will give you accurate results in seconds.</p>
                     <p>Now you know exactly how to calculate your requirements. Use the calculator at the top of this page, double-check your measurements, and order with confidence.</p>
                     
-                    <!-- CALCULATOR CTA BUTTON -->
+                    <!-- CALCULATOR CTA BUTTON — White text -->
                     <div class="calc-cta">
                         <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
                             <span>🧮</span> Try Our UK Aggregate Calculator → <span>⚡</span>
@@ -1453,7 +1459,7 @@
             const volumeUnitLabel = document.getElementById('volumeUnitLabel');
             const weightUnitLabel = document.getElementById('weightUnitLabel');
             
-            // 🔧 FIX: Unit button keyboard support
+            // Unit button keyboard support
             document.querySelectorAll('.unit-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     selectUnit(this);
@@ -1466,28 +1472,25 @@
                 });
             });
             
-            // 🔧 FIX: Unit toggle with proper value conversion
+            // Unit toggle with proper value conversion
             function selectUnit(btn) {
                 const newUnit = btn.dataset.unit;
                 if (newUnit === currentUnit) return;
                 
-                // Get current values
                 let l = parseFloat(lengthInput.value) || 0;
                 let w = parseFloat(widthInput.value) || 0;
                 let d = parseFloat(depthInput.value) || 0;
                 
-                // Convert values
                 if (currentUnit === 'metric' && newUnit === 'imperial') {
-                    lengthInput.value = (l * 3.28084).toFixed(2);    // m → ft
-                    widthInput.value = (w * 3.28084).toFixed(2);      // m → ft
-                    depthInput.value = (d * 39.3701).toFixed(2);      // m → in
+                    lengthInput.value = (l * 3.28084).toFixed(2);
+                    widthInput.value = (w * 3.28084).toFixed(2);
+                    depthInput.value = (d * 39.3701).toFixed(2);
                 } else if (currentUnit === 'imperial' && newUnit === 'metric') {
-                    lengthInput.value = (l * 0.3048).toFixed(2);      // ft → m
-                    widthInput.value = (w * 0.3048).toFixed(2);        // ft → m
-                    depthInput.value = (d * 0.0254).toFixed(3);        // in → m
+                    lengthInput.value = (l * 0.3048).toFixed(2);
+                    widthInput.value = (w * 0.3048).toFixed(2);
+                    depthInput.value = (d * 0.0254).toFixed(3);
                 }
                 
-                // Update UI
                 document.querySelectorAll('.unit-btn').forEach(b => {
                     b.classList.remove('active');
                     b.setAttribute('aria-checked', 'false');
@@ -1499,7 +1502,7 @@
                 calculate();
             }
             
-            // 🔧 FIX: Toggle keyboard support
+            // Toggle keyboard support
             document.querySelectorAll('.toggle-option').forEach(btn => {
                 btn.addEventListener('click', function() {
                     toggleOption(this);
