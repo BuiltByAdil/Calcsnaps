@@ -16,15 +16,16 @@
     <meta name="author" content="CalcSnaps">
     <meta name="robots" content="index, follow">
     
-    <!-- ===== SINGLE CANONICAL (/calculators/ prefix) ===== -->
-    <link rel="canonical" href="https://calcsnaps.com/calculators/soffit-calculator">
+    <!-- ===== SINGLE CANONICAL (FIXED - consistent with others) ===== -->
+    <link rel="canonical" href="https://calcsnaps.com/soffit-calculator">
     
     <!-- ===== OPEN GRAPH (SINGLE SET) ===== -->
     <meta property="og:title" content="Soffit & Ventilation Calculator | Material + Attic Ventilation | CalcSnaps">
     <meta property="og:description" content="Free soffit calculator with material estimation and attic ventilation based on 1/300 rule. Perfect for DIY and contractors.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calcsnaps.com/calculators/soffit-calculator">
+    <meta property="og:url" content="https://calcsnaps.com/soffit-calculator">
     <meta property="og:site_name" content="CalcSnaps">
+    <meta property="og:image" content="https://calcsnaps.com/og-soffit-calculator.jpg">
     
     <!-- ===== SCHEMA MARKUP ===== -->
     <script type="application/ld+json">
@@ -33,7 +34,7 @@
         "@type": "WebApplication",
         "name": "Soffit & Ventilation Calculator",
         "description": "Calculate soffit material and attic ventilation requirements",
-        "url": "https://calcsnaps.com/calculators/soffit-calculator",
+        "url": "https://calcsnaps.com/soffit-calculator",
         "applicationCategory": "ConstructionApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -60,7 +61,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://calcsnaps.com/calculators/soffit-calculator"
+            "@id": "https://calcsnaps.com/soffit-calculator"
         },
         "datePublished": "2024-01-15",
         "dateModified": "2026-08-09"
@@ -486,6 +487,12 @@
             background: #cbd5e1;
         }
         
+        .action-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
         @media (max-width: 768px) {
             .calc-header h2 { font-size: 24px; }
             .tab { padding: 12px; font-size: 14px; }
@@ -650,8 +657,8 @@
         }
         
         .calc-cta a {
-            color: white;
-            text-decoration: none;
+            color: white !important;
+            text-decoration: none !important;
             font-weight: bold;
             font-size: 18px;
             display: block;
@@ -660,6 +667,15 @@
         .calc-cta a span {
             font-size: 22px;
             margin-right: 8px;
+        }
+        
+        /* 🔧 FIX: CTA link text color - force white */
+        .calc-cta a,
+        .calc-cta a:visited,
+        .calc-cta a:hover,
+        .calc-cta a:active {
+            color: white !important;
+            text-decoration: none !important;
         }
         
         .value-box {
@@ -1003,7 +1019,8 @@
                 <div class="tab-content" id="tab-visual" role="tabpanel">
                     <div class="diagram-box">
                         <h4>🏠 Attic Airflow Diagram</h4>
-                        <pre style="background: #f1f5f9; padding: 20px; border-radius: 12px; font-size: 12px; overflow-x: auto; color: #1e293b; font-family: 'Inter', monospace;">
+                        <!-- 🔧 FIX: Added aria-label for accessibility -->
+                        <pre aria-label="Attic airflow diagram showing cool air entering through soffit vents and hot air exiting through ridge vents" style="background: #e2e8f0; padding: 20px; border-radius: 12px; font-size: 12px; overflow-x: auto; color: #0f172a; font-family: 'Inter', monospace; font-weight: 500; line-height: 1.6;">
         ┌─────────────────────────────────────────────────────────┐
         │                      🏠                               │
         │                     ╱ ╲                              │
@@ -1284,7 +1301,7 @@
                     
                     <p>Now you have the knowledge to calculate soffit like a professional. Use the calculator above, double-check your measurements, and order with confidence.</p>
                     
-                    <!-- CALCULATOR CTA BUTTON -->
+                    <!-- 🔧 FIXED: CALCULATOR CTA BUTTON — Text color white (already fixed in CSS) -->
                     <div class="calc-cta">
                         <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
                             <span>🏠</span> Try Our Soffit & Ventilation Calculator → <span>⚡</span>
@@ -1650,51 +1667,70 @@
             }, 1500);
         }
         
-        // ===== PDF Export =====
+        // ===== PDF Export (with loading state) 🔧 FIXED =====
         function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const date = new Date().toLocaleString();
-            const unitSuffix = currentUnit === 'imperial' ? 'ft' : 'm';
-            const areaSuffix = currentUnit === 'imperial' ? 'sq ft' : 'sq m';
+            const btn = document.getElementById('downloadPDFBtn');
+            const originalText = btn.innerHTML;
             
-            doc.setFontSize(20);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Soffit & Ventilation Calculator Report', 105, 20, { align: 'center' });
-            doc.setFontSize(10);
-            doc.setTextColor(100, 100, 100);
-            doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
-            doc.line(20, 38, 190, 38);
+            // Show loading state
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating PDF...';
+            btn.disabled = true;
             
-            doc.setFontSize(14);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Material Summary', 20, 50);
-            doc.setFontSize(11);
-            doc.setTextColor(0, 0, 0);
-            doc.text(`Eaves Length: ${lengthInput.value} ${unitSuffix}`, 25, 60);
-            doc.text(`Eaves Width: ${widthInput.value} ${unitSuffix}`, 25, 67);
-            doc.text(`Total Area: ${totalAreaEl.textContent} ${areaSuffix}`, 25, 74);
-            doc.text(`Panels Needed: ${panelsNeededEl.textContent} pcs`, 25, 81);
-            doc.text(`Estimated Cost: $${totalCostEl.textContent}`, 25, 88);
-            
-            doc.setFontSize(14);
-            doc.setTextColor(139, 92, 246);
-            doc.text('Ventilation Summary', 20, 105);
-            doc.setFontSize(11);
-            doc.setTextColor(0, 0, 0);
-            doc.text(`Attic Area: ${atticAreaValueEl.textContent} ${areaSuffix}`, 25, 115);
-            doc.text(`Total Vent Area Needed: ${totalVentAreaEl.textContent} ${areaSuffix}`, 25, 122);
-            doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 129);
-            const isContinuous = ventType.value === 'continuous';
-            const unitLabel = isContinuous ? 'linear ft' : 'pcs';
-            doc.text(`${ventsNeededLabel ? ventsNeededLabel.textContent : 'Vents Needed'}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
-            doc.text(`${ventsRecommendedLabel ? ventsRecommendedLabel.textContent : 'Recommended (+20%)'}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
-            
-            doc.setFontSize(10);
-            doc.setTextColor(100, 100, 100);
-            doc.text('Generated by CalcSnaps - Soffit & Ventilation Calculator', 105, 280, { align: 'center' });
-            
-            doc.save(`Soffit_Report_${Date.now()}.pdf`);
+            // Use setTimeout to allow UI to update before heavy processing
+            setTimeout(() => {
+                try {
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    const date = new Date().toLocaleString();
+                    const unitSuffix = currentUnit === 'imperial' ? 'ft' : 'm';
+                    const areaSuffix = currentUnit === 'imperial' ? 'sq ft' : 'sq m';
+                    
+                    doc.setFontSize(20);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Soffit & Ventilation Calculator Report', 105, 20, { align: 'center' });
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text(`Generated: ${date}`, 105, 30, { align: 'center' });
+                    doc.line(20, 38, 190, 38);
+                    
+                    doc.setFontSize(14);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Material Summary', 20, 50);
+                    doc.setFontSize(11);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text(`Eaves Length: ${lengthInput.value} ${unitSuffix}`, 25, 60);
+                    doc.text(`Eaves Width: ${widthInput.value} ${unitSuffix}`, 25, 67);
+                    doc.text(`Total Area: ${totalAreaEl.textContent} ${areaSuffix}`, 25, 74);
+                    doc.text(`Panels Needed: ${panelsNeededEl.textContent} pcs`, 25, 81);
+                    doc.text(`Estimated Cost: $${totalCostEl.textContent}`, 25, 88);
+                    
+                    doc.setFontSize(14);
+                    doc.setTextColor(139, 92, 246);
+                    doc.text('Ventilation Summary', 20, 105);
+                    doc.setFontSize(11);
+                    doc.setTextColor(0, 0, 0);
+                    doc.text(`Attic Area: ${atticAreaValueEl.textContent} ${areaSuffix}`, 25, 115);
+                    doc.text(`Total Vent Area Needed: ${totalVentAreaEl.textContent} ${areaSuffix}`, 25, 122);
+                    doc.text(`Intake NFA Required: ${intakeNFAEl.textContent} sq in`, 25, 129);
+                    const isContinuous = ventType.value === 'continuous';
+                    const unitLabel = isContinuous ? 'linear ft' : 'pcs';
+                    doc.text(`${ventsNeededLabel ? ventsNeededLabel.textContent : 'Vents Needed'}: ${ventsNeededEl.textContent} ${unitLabel}`, 25, 136);
+                    doc.text(`${ventsRecommendedLabel ? ventsRecommendedLabel.textContent : 'Recommended (+20%)'}: ${ventsRecommendedEl.textContent} ${unitLabel}`, 25, 143);
+                    
+                    doc.setFontSize(10);
+                    doc.setTextColor(100, 100, 100);
+                    doc.text('Generated by CalcSnaps - Soffit & Ventilation Calculator', 105, 280, { align: 'center' });
+                    
+                    doc.save(`Soffit_Report_${Date.now()}.pdf`);
+                } catch (error) {
+                    console.error('PDF generation error:', error);
+                    alert('Error generating PDF. Please try again.');
+                }
+                
+                // Restore button
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }, 100);
         }
         
         // ===== Event Listeners =====
