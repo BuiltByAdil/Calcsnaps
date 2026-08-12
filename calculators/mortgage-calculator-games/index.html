@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- ===== PRIMARY META TAGS ===== -->
+    <title>Mortgage Calculator | Monthly Payment, PMI/MIP, Extra Payments & Amortization | CalcSnaps</title>
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free mortgage calculator with PMI/MIP, FHA/VA/USDA fees, property tax, insurance, HOA, extra-payment payoff simulator, and a full monthly or annual amortization schedule. 100% private — runs in your browser, no sign-up, no lender ads.">
+    <meta name="keywords" content="mortgage calculator, mortgage payment calculator, amortization schedule, PMI calculator, extra payment calculator, home loan calculator">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/mortgage-calculator">
+
+    <meta property="og:title" content="Mortgage Calculator | Monthly Payment, PMI/MIP, Extra Payments & Amortization | CalcSnaps">
+    <meta property="og:description" content="Free, private mortgage calculator covering Conventional, FHA, VA and USDA loans. PITI breakdown, automatic PMI/MIP tracking, extra-payment savings, and a full amortization schedule — all in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/mortgage-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mortgage Calculator",
+        "description": "Calculate monthly mortgage payments including principal, interest, taxes, insurance, PMI/MIP and HOA across Conventional, FHA, VA and USDA loans, plus extra-payment payoff savings and a full amortization schedule",
+        "url": "https://calcsnaps.com/calculators/mortgage-calculator",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Mortgage Calculator Guide: Monthly Payments, PMI/MIP, Extra Payments & Amortization Explained",
+        "description": "Complete guide to calculating your mortgage payment, understanding PMI/MIP removal across loan types, saving on interest with extra payments, and reading an amortization schedule.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/mortgage-calculator" },
+        "datePublished": "2026-08-10",
+        "dateModified": "2026-08-11"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is a monthly mortgage payment calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Monthly principal and interest is calculated with the amortization formula M = P[r(1+r)^n] / [(1+r)^n-1], where P is the loan amount, r is the monthly interest rate (annual rate divided by 12), and n is the total number of monthly payments. Property tax, homeowners insurance, mortgage insurance, and HOA fees are then added on top to get your total monthly payment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When does PMI automatically fall off a conventional loan?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Under the federal Homeowners Protection Act, lenders must automatically cancel PMI on a conventional loan once your loan balance drops to 78% of the original home value, as long as payments are current. You can also request cancellation earlier once you reach 80% loan-to-value. The Homeowners Protection Act does not apply to FHA, VA or USDA loans, which follow their own mortgage-insurance rules."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can extra payments actually save?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "On a typical $320,000 loan at 6.75% over 30 years, paying an extra $200 per month can cut several years off the loan and save a meaningful amount in interest, because every extra dollar goes straight to principal instead of interest. The exact figures depend on your rate, balance and how early you start."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What percentage of income should go to a mortgage payment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A common guideline is the 28/36 rule: your total housing payment (principal, interest, taxes, insurance, HOA) should stay under 28% of gross monthly income, and total debt payments under 36%. Lenders may allow higher ratios depending on credit and loan program."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this mortgage calculator sell my data to lenders?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no lender ads or lead-generation forms."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+
+        .skip-link {
+            position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white;
+            padding: 8px; z-index: 100; text-decoration: none;
+        }
+        .skip-link:focus { top: 0; }
+
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa;
+            --secondary: #fbbf24; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh; color: var(--dark); line-height: 1.6;
+        }
+
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container {
+            max-width: 1000px; width: 100%; margin: 0 auto; background: white;
+            border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            overflow: hidden; border: 1px solid #e2e8f0;
+        }
+
+        .calc-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary);
+        }
+        .calc-header h2 {
+            font-size: 30px; font-weight: 700; color: white; display: flex;
+            align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;
+        }
+        .calc-header h2 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge {
+            display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7;
+            padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px;
+            border: 1px solid rgba(16,185,129,0.3);
+        }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab {
+            flex: 1; padding: 16px 12px; text-align: center; cursor: pointer; font-weight: 600;
+            border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif;
+            font-size: 14px; background: none; border-top: none; border-left: none; border-right: none;
+        }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title {
+            font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px;
+            padding-bottom: 8px; border-bottom: 2px solid var(--primary);
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select {
+            width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700;
+            color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif;
+        }
+        .input-group input:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray); flex-shrink: 0; }
+        .input-group.field-clamped { border-color: var(--warning); background: #fffbeb; }
+        .clamp-msg { font-size: 11px; color: #b45309; margin-top: 4px; display: none; }
+        .input-group.field-clamped .clamp-msg { display: block; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option {
+            padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500;
+            transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568;
+            font-family: 'Inter', sans-serif;
+        }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip {
+            background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a;
+            display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6;
+        }
+        .info-tip i {
+            font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px;
+            border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 14px; flex-shrink: 0;
+        }
+        .pmi-note {
+            background: rgba(139,92,246,0.06); border-left: 4px solid var(--primary); border-radius: 12px;
+            padding: 12px 16px; font-size: 13.5px; color: var(--text-dark); margin: 14px 0; display: none;
+        }
+        .pmi-note.show { display: block; }
+
+        .mi-field { display: none; }
+        .mi-field.mi-visible { display: block; }
+
+        .results-panel {
+            background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02));
+            border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15);
+        }
+        .payment-breakdown { margin-bottom: 18px; }
+        .breakdown-row {
+            display: flex; justify-content: space-between; align-items: center; padding: 8px 0;
+            border-bottom: 1px dashed #e2e8f0; font-size: 14px;
+        }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 8px; }
+        .breakdown-row .label { display: flex; align-items: center; color: var(--text-dark); }
+        .breakdown-row .value { font-weight: 700; color: var(--dark); }
+
+        .stacked-bar { display: flex; width: 100%; height: 16px; border-radius: 10px; overflow: hidden; margin-bottom: 18px; background: #e2e8f0; }
+        .stacked-bar div { height: 100%; transition: width 0.3s ease; }
+
+        .total-payment-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+            box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4);
+        }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .savings-highlight {
+            background: linear-gradient(135deg, #10b981, #059669); color: white; border-radius: 22px;
+            padding: 20px 22px; margin: 18px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 14px;
+        }
+        .savings-highlight .item { text-align: center; }
+        .savings-highlight .item .num { font-size: 22px; font-weight: 700; }
+        .savings-highlight .item .lbl { font-size: 12px; opacity: 0.9; margin-top: 2px; }
+
+        table.schedule-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+        table.schedule-table th {
+            background: var(--dark); color: white; padding: 10px 8px; text-align: right; font-weight: 600;
+            position: sticky; top: 0;
+        }
+        table.schedule-table th:first-child, table.schedule-table td:first-child { text-align: left; }
+        table.schedule-table td { padding: 9px 8px; text-align: right; border-bottom: 1px solid #eef2f7; }
+        table.schedule-table tr:nth-child(even) { background: #f8fafc; }
+        .schedule-wrap { max-height: 420px; overflow-y: auto; border: 1px solid #e2e8f0; border-radius: 14px; }
+        .pmi-drop-row { background: rgba(16,185,129,0.08) !important; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn {
+            flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer;
+            border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif;
+        }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h2 { font-size: 22px; }
+            .tab { padding: 12px 8px; font-size: 12.5px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 24px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container {
+            background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0;
+        }
+        .article-header {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary);
+        }
+        .article-header h1 { font-size: 32px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 {
+            font-size: 26px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px;
+            padding-bottom: 10px; border-bottom: 2px solid var(--primary);
+        }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 20px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--text-dark); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--text-dark); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary); }
+
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+        .compare-table td.no { color: var(--gray); }
+
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px;
+            text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3);
+        }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question {
+            font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex;
+            justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif;
+        }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--text-dark); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h1 { font-size: 26px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 22px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-house-chimney"></i> Mortgage Calculator</h2>
+                    <p>Monthly payment · Conventional/FHA/VA/USDA · Extra Payments · Full Amortization Schedule</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no lender ads, no sign-up</div>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="payment" role="tab" aria-selected="true" tabindex="0">💵 Payment Summary</button>
+                    <button class="tab" data-tab="extra" role="tab" aria-selected="false" tabindex="0">🚀 Extra Payments</button>
+                    <button class="tab" data-tab="schedule" role="tab" aria-selected="false" tabindex="0">📅 Amortization Schedule</button>
+                </div>
+
+                <!-- TAB 1: PAYMENT SUMMARY -->
+                <div class="tab-content active" id="tab-payment" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-house"></i> Loan Details</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="homePrice">Home Price</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="homePrice" value="400000" step="1000" min="0" aria-label="Home price"></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="downPaymentPercent">Down Payment</label>
+                            <div class="row"><input type="number" id="downPaymentPercent" value="20" step="1" min="0" max="100" aria-label="Down payment percent"><span class="unit">%</span></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="downPaymentAmount">Down Payment ($)</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="downPaymentAmount" value="80000" step="1000" min="0" aria-label="Down payment amount"></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="interestRate">Interest Rate</label>
+                            <div class="row"><input type="number" id="interestRate" value="6.75" step="0.01" min="0" max="25" aria-label="Interest rate"><span class="unit">%/yr</span></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="loanStartDate">Loan Start Date</label>
+                            <div class="row"><input type="date" id="loanStartDate" aria-label="Loan start date"></div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-calendar"></i> Loan Term</span>
+                        <div class="toggle-switch" id="termToggle" role="radiogroup" aria-label="Loan term">
+                            <button class="toggle-option" data-term="15" role="radio" aria-checked="false" tabindex="0">15 years</button>
+                            <button class="toggle-option" data-term="20" role="radio" aria-checked="false" tabindex="0">20 years</button>
+                            <button class="toggle-option active" data-term="30" role="radio" aria-checked="true" tabindex="0">30 years</button>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-landmark"></i> Loan Type</span>
+                        <div class="toggle-switch" id="loanTypeToggle" role="radiogroup" aria-label="Loan type">
+                            <button class="toggle-option active" data-loantype="conventional" role="radio" aria-checked="true" tabindex="0">Conventional</button>
+                            <button class="toggle-option" data-loantype="fha" role="radio" aria-checked="false" tabindex="0">FHA</button>
+                            <button class="toggle-option" data-loantype="va" role="radio" aria-checked="false" tabindex="0">VA</button>
+                            <button class="toggle-option" data-loantype="usda" role="radio" aria-checked="false" tabindex="0">USDA</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-receipt"></i> Taxes, Insurance & Loan Fees</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="propertyTax">Property Tax</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="propertyTax" value="4800" step="100" min="0" aria-label="Annual property tax"></div>
+                            <span class="unit">/year</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="homeInsurance">Home Insurance</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="homeInsurance" value="1600" step="50" min="0" aria-label="Annual home insurance"></div>
+                            <span class="unit">/year</span>
+                        </div>
+                        <div class="input-group mi-field mi-conventional mi-visible">
+                            <label for="pmiRate">PMI Rate</label>
+                            <div class="row"><input type="number" id="pmiRate" value="0.5" step="0.05" min="0" max="5" aria-label="PMI annual rate"><span class="unit">%/yr</span></div>
+                        </div>
+                        <div class="input-group mi-field mi-fha">
+                            <label for="fhaUpfrontMip">FHA Upfront MIP</label>
+                            <div class="row"><input type="number" id="fhaUpfrontMip" value="1.75" step="0.05" min="0" max="5" aria-label="FHA upfront MIP rate"><span class="unit">% (financed)</span></div>
+                        </div>
+                        <div class="input-group mi-field mi-fha">
+                            <label for="fhaAnnualMip">FHA Annual MIP</label>
+                            <div class="row"><input type="number" id="fhaAnnualMip" value="0.55" step="0.05" min="0" max="5" aria-label="FHA annual MIP rate"><span class="unit">%/yr</span></div>
+                        </div>
+                        <div class="input-group mi-field mi-va">
+                            <label for="vaFundingFee">VA Funding Fee</label>
+                            <div class="row"><input type="number" id="vaFundingFee" value="2.15" step="0.05" min="0" max="5" aria-label="VA funding fee rate"><span class="unit">% (financed)</span></div>
+                        </div>
+                        <div class="input-group mi-field mi-usda">
+                            <label for="usdaUpfrontFee">USDA Upfront Guarantee Fee</label>
+                            <div class="row"><input type="number" id="usdaUpfrontFee" value="1.0" step="0.05" min="0" max="5" aria-label="USDA upfront guarantee fee rate"><span class="unit">% (financed)</span></div>
+                        </div>
+                        <div class="input-group mi-field mi-usda">
+                            <label for="usdaAnnualFee">USDA Annual Fee</label>
+                            <div class="row"><input type="number" id="usdaAnnualFee" value="0.35" step="0.05" min="0" max="5" aria-label="USDA annual fee rate"><span class="unit">%/yr</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="hoaFee">HOA Fee</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="hoaFee" value="0" step="10" min="0" aria-label="Monthly HOA fee"></div>
+                            <span class="unit">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="pmi-note" id="pmiNote"></div>
+
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>💡 Rule of thumb: lenders like your total housing payment (shown below) to stay under 28% of your gross monthly income.</span>
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Total Monthly Payment</span>
+                            <span class="amount" id="totalMonthlyPayment">$0</span>
+                        </div>
+
+                        <div class="stacked-bar" id="stackedBar"></div>
+
+                        <div class="payment-breakdown" id="paymentBreakdown"></div>
+
+                        <div class="results-grid" style="margin-top:18px;">
+                            <div class="result-card">
+                                <div class="result-label">Loan Amount (incl. financed fees)</div>
+                                <div class="result-value small" id="loanAmountResult">$0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Total Interest (Life of Loan)</div>
+                                <div class="result-value small" id="totalInterestResult">$0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Total Cost of Loan</div>
+                                <div class="result-value small" id="totalCostResult">$0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Payoff Date</div>
+                                <div class="result-value small" id="payoffDateResult">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: EXTRA PAYMENTS -->
+                <div class="tab-content" id="tab-extra" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-bolt"></i> Add Extra Payments</div>
+                    <p style="font-size:14px;color:var(--text-dark);margin-bottom:18px;">Every extra dollar goes straight to your principal — see how much time and interest it saves you.</p>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="extraMonthly">Extra Monthly Payment</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="extraMonthly" value="200" step="25" min="0" aria-label="Extra monthly payment"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="extraOneTime">One-Time Extra Payment</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="extraOneTime" value="0" step="500" min="0" aria-label="One-time extra payment"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="oneTimeMonth">Applied in Month #</label>
+                            <div class="row"><input type="number" id="oneTimeMonth" value="1" step="1" min="1" aria-label="Month the one-time payment is applied"></div>
+                        </div>
+                    </div>
+
+                    <div class="savings-highlight" id="savingsHighlight">
+                        <div class="item"><div class="num" id="interestSaved">$0</div><div class="lbl">Interest saved</div></div>
+                        <div class="item"><div class="num" id="timeSaved">0</div><div class="lbl">Time saved</div></div>
+                        <div class="item"><div class="num" id="newPayoffDate">-</div><div class="lbl">New payoff date</div></div>
+                    </div>
+
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Original Payoff Time</div>
+                            <div class="result-value small" id="originalPayoffTime">-</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">New Payoff Time</div>
+                            <div class="result-value small" id="newPayoffTime">-</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">Original Total Interest</div>
+                            <div class="result-value small" id="originalTotalInterest">$0</div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-label">New Total Interest</div>
+                            <div class="result-value small" id="newTotalInterest">$0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: AMORTIZATION SCHEDULE -->
+                <div class="tab-content" id="tab-schedule" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-table"></i> Amortization Schedule</div>
+                    <p style="font-size:14px;color:var(--text-dark);margin-bottom:14px;">Reflects any extra payments entered in the previous tab. The green row marks the period your mortgage insurance is projected to drop off (if applicable).</p>
+
+                    <div class="toggle-row" style="margin-bottom:14px;">
+                        <span class="toggle-label">View</span>
+                        <div class="toggle-switch" id="scheduleViewToggle" role="radiogroup" aria-label="Schedule view">
+                            <button class="toggle-option active" data-view="annual" role="radio" aria-checked="true" tabindex="0">Annual</button>
+                            <button class="toggle-option" data-view="monthly" role="radio" aria-checked="false" tabindex="0">Monthly</button>
+                        </div>
+                    </div>
+
+                    <div class="schedule-wrap">
+                        <table class="schedule-table">
+                            <thead>
+                                <tr><th id="periodHeader">Year</th><th>Principal Paid</th><th>Interest Paid</th><th>Extra Paid</th><th>Ending Balance</th></tr>
+                            </thead>
+                            <tbody id="scheduleBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>Mortgage Calculator: How to Calculate Your Real Monthly Payment (Not Just P&I)</h1>
+                    <p>PMI/MIP across Conventional, FHA, VA and USDA loans, property tax, insurance, extra payments, and a full amortization schedule</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-calculated">1. How Your Mortgage Payment Is Actually Calculated</a></div>
+                            <div class="toc-item"><a href="#piti">2. PITI: The Four Parts of a Real Payment</a></div>
+                            <div class="toc-item"><a href="#pmi">3. Mortgage Insurance: PMI, MIP, Funding Fees & Guarantee Fees</a></div>
+                            <div class="toc-item"><a href="#loan-types">4. Conventional vs. FHA vs. VA vs. USDA</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">5. What to Look for in a Mortgage Calculator</a></div>
+                            <div class="toc-item"><a href="#extra-payments">6. How Extra Payments Save You Years and Thousands</a></div>
+                            <div class="toc-item"><a href="#amortization">7. Reading an Amortization Schedule</a></div>
+                            <div class="toc-item"><a href="#affordability">8. How Much Mortgage Can You Actually Afford?</a></div>
+                            <div class="toc-item"><a href="#methodology">9. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Most "mortgage calculators" only tell you half the story: the principal and interest payment. But that number is rarely what actually leaves your bank account every month. Property taxes, homeowners insurance, mortgage insurance, and HOA dues get added on top — and on many homes, that "on top" amount is hundreds of dollars a month that a bare-bones calculator never shows you.</p>
+
+                    <p>This <strong>mortgage calculator</strong> covers Conventional, FHA, VA, and USDA loans, calculates your complete monthly payment, estimates when mortgage insurance is projected to end for each loan type, shows how much extra payments save you, and gives you a full monthly or annual amortization schedule — all without an account, a lead form, or a call from a loan officer.</p>
+
+                    <h2 id="how-calculated">1. How Your Mortgage Payment Is Actually Calculated</h2>
+                    <p>The core of every fixed-rate mortgage payment is the standard amortization formula:</p>
+                    <div class="pro-tip">
+                        <strong>M = P [ r(1+r)ⁿ ] / [ (1+r)ⁿ − 1 ]</strong>
+                        <p style="margin: 10px 0 0;">Where <strong>M</strong> is your monthly principal &amp; interest payment, <strong>P</strong> is the loan amount, <strong>r</strong> is your monthly interest rate (annual rate ÷ 12), and <strong>n</strong> is the total number of monthly payments (loan term in years × 12).</p>
+                    </div>
+                    <p><strong>Example:</strong> Borrow $320,000 (a $400,000 home with 20% down) at 6.75% for 30 years. r = 0.0675 ÷ 12 = 0.005625, and n = 360. Plugging into the formula gives a principal &amp; interest payment of roughly <strong>$2,076/month</strong> — before taxes, insurance, or anything else.</p>
+
+                    <h2 id="piti">2. PITI: The Four Parts of a Real Payment</h2>
+                    <p>Lenders call your full monthly payment <strong>PITI</strong>:</p>
+                    <ul>
+                        <li><strong>Principal</strong> — the portion that pays down what you borrowed.</li>
+                        <li><strong>Interest</strong> — the lender's charge for the loan, calculated on your remaining balance.</li>
+                        <li><strong>Taxes</strong> — your annual property tax bill, divided by 12 and usually collected into an escrow account.</li>
+                        <li><strong>Insurance</strong> — homeowners insurance, also usually escrowed monthly.</li>
+                    </ul>
+                    <p>On top of PITI, two more line items often apply: <strong>mortgage insurance</strong> (PMI, MIP, or a guarantee/funding fee, depending on loan type) and <strong>HOA dues</strong> (if the property has a homeowners association). This calculator includes all of these, because leaving any of them out gives you a payment number that simply won't match your real bill.</p>
+
+                    <h2 id="pmi">3. Mortgage Insurance: PMI, MIP, Funding Fees & Guarantee Fees</h2>
+                    <p><strong>Conventional loans — PMI.</strong> Private Mortgage Insurance protects the <em>lender</em>, not you, if you default with less than 20% equity. Under the federal Homeowners Protection Act, a lender must automatically cancel PMI on a conventional loan once your balance falls to 78% of the home's original value, and you can request cancellation yourself at 80%. Full details are on the <a href="https://www.consumerfinance.gov/ask-cfpb/when-can-i-remove-private-mortgage-insurance-pmi-from-my-loan-en-202/" target="_blank" rel="noopener">Consumer Financial Protection Bureau's PMI page</a>. Note that the Homeowners Protection Act does <em>not</em> apply to FHA, VA, or USDA loans — each of those programs sets its own rules.</p>
+                    <p><strong>FHA loans — MIP.</strong> FHA charges an upfront Mortgage Insurance Premium (financed into the loan) plus an annual MIP paid monthly. Under current rules, if your down payment was 10% or more, annual MIP cancels automatically after 11 years; if your down payment was under 10%, MIP generally stays for the life of the loan. See <a href="https://www.hud.gov/hud-partners/housing-mip" target="_blank" rel="noopener">HUD's MIP guidance</a> for details.</p>
+                    <p><strong>VA loans — funding fee.</strong> VA loans don't charge monthly mortgage insurance at all. Instead, most borrowers pay a one-time funding fee (commonly financed into the loan) that varies by down payment and whether it's a first or subsequent use of the benefit; some veterans are exempt. See the <a href="https://news.va.gov/147050/funding-fee-who-pays-who-is-exempt/" target="_blank" rel="noopener">VA's funding fee explainer</a>.</p>
+                    <p><strong>USDA loans — guarantee fee.</strong> USDA guaranteed loans charge an upfront guarantee fee (financed into the loan) plus a smaller annual fee that continues for the life of the loan rather than dropping off at a set equity threshold. See <a href="https://www.rd.usda.gov/onerdguarantee" target="_blank" rel="noopener">USDA Rural Development's fee notice</a>.</p>
+                    <p>Select a loan type in the calculator above and the relevant fee fields, disclosures, and cancellation logic update automatically.</p>
+
+                    <h2 id="loan-types">4. Conventional vs. FHA vs. VA vs. USDA</h2>
+                    <table class="compare-table">
+                        <thead>
+                            <tr><th>Loan Type</th><th>Typical Down Payment</th><th>Mortgage Insurance</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Conventional</strong></td>
+                                <td>As low as 3%, no PMI required at 20%+</td>
+                                <td>PMI, cancels at 78–80% loan-to-value</td>
+                            </tr>
+                            <tr>
+                                <td><strong>FHA</strong></td>
+                                <td>As low as 3.5%</td>
+                                <td>Upfront + annual MIP; often lasts the life of the loan if down payment was under 10%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VA</strong></td>
+                                <td>Often 0% for eligible veterans/service members</td>
+                                <td>No monthly premium; one-time funding fee instead (some exemptions apply)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>USDA</strong></td>
+                                <td>Often 0% in eligible rural areas</td>
+                                <td>Upfront + annual guarantee fee, continues for the life of the loan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>This is a general overview, not eligibility guidance — program rules, income and location limits, and rates change over time, so confirm current details with a lender or the official program pages linked above before making decisions.</p>
+
+                    <h2 id="what-to-look-for">5. What to Look for in a Mortgage Calculator</h2>
+                    <p>The core amortization math is identical across every calculator, since it's a fixed, well-known formula — what differs between tools is completeness and how the site is built. Here's what a genuinely useful mortgage calculator should offer:</p>
+                    <table class="compare-table">
+                        <thead>
+                            <tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Full PITI + mortgage insurance</td>
+                                <td>A payment estimate without taxes, insurance, and PMI/MIP won't match your real bill</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Support for FHA/VA/USDA, not just conventional</td>
+                                <td>Government-backed loans use different mortgage-insurance rules</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Automatic mortgage-insurance drop-off tracking</td>
+                                <td>Tells you when your payment is projected to drop, not just what it starts at</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Extra-payment savings simulator</td>
+                                <td>Shows the real payoff-time and interest impact of paying more than the minimum</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly (not just annual) amortization detail</td>
+                                <td>Lets you see exactly what a specific month's payment looks like</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Runs entirely in your browser, no lead-gen forms</td>
+                                <td>Your numbers stay private and you aren't funneled toward lender ads</td>
+                                <td class="yes">Included</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="extra-payments">6. How Extra Payments Save You Years and Thousands</h2>
+                    <p>Because interest is charged on your remaining balance, any extra amount you pay toward principal reduces the interest charged on every single payment that follows — not just that one month. That compounding effect is why relatively small extra payments produce outsized savings.</p>
+                    <div class="pro-tip">
+                        <strong>Example:</strong> On a $320,000 loan at 6.75% over 30 years, an extra <strong>$200/month</strong> can meaningfully shorten the loan and save a substantial amount in interest — because every extra dollar skips straight past interest and reduces principal. Use the calculator above with your own numbers for an exact figure.
+                    </div>
+                    <p>Use the <strong>Extra Payments</strong> tab above to test your own numbers — you can add a recurring monthly amount, a one-time lump sum (like a bonus or tax refund), or both, and see the exact new payoff date and total interest saved.</p>
+
+                    <h2 id="amortization">7. Reading an Amortization Schedule</h2>
+                    <p>An amortization schedule breaks every payment into how much went to interest versus principal. Early in the loan, most of each payment is interest, because the balance is still high. As the balance shrinks, more of each payment shifts toward principal — which is exactly why extra payments made <em>early</em> in a loan save far more than the same extra payment made later.</p>
+                    <p>The <strong>Amortization Schedule</strong> tab shows this month by month or year by year — use the view toggle to switch — including any extra payments you've entered, and highlights the period your mortgage insurance is projected to drop off.</p>
+
+                    <h2 id="affordability">8. How Much Mortgage Can You Actually Afford?</h2>
+                    <p>Beyond what a lender will approve you for, a useful sanity check is the <strong>28/36 rule</strong>:</p>
+                    <ul>
+                        <li><strong>28% front-end ratio:</strong> your total housing payment (PITI + HOA) should generally stay under 28% of your gross monthly income.</li>
+                        <li><strong>36% back-end ratio:</strong> all of your debt payments combined (mortgage, car loans, credit cards, student loans) should stay under 36% of gross monthly income.</li>
+                    </ul>
+                    <p>Lenders sometimes approve higher ratios depending on credit score and loan program, but staying near 28/36 leaves more breathing room in your monthly budget.</p>
+
+                    <h2 id="methodology">9. Methodology &amp; Limitations</h2>
+                    <p>This calculator uses the standard fixed-rate amortization formula shown in Section 1 to compute principal and interest, then adds property tax, homeowners insurance, HOA dues, and a mortgage-insurance estimate on top. A few simplifications are worth knowing about:</p>
+                    <ul>
+                        <li><strong>Mortgage insurance is modeled as a constant monthly amount</strong> based on your original loan amount and the rate you enter, until the estimated drop-off point. Some lenders and programs recalculate premiums against the declining balance instead — actual bills can differ slightly from this estimate.</li>
+                        <li><strong>FHA/VA/USDA fee defaults are general-case figures</strong> (e.g., FHA's 0.55% annual MIP, VA's 2.15% first-time funding fee, USDA's 1%/0.35% guarantee fee) as published by HUD, the VA, and USDA at the time of writing. Your actual rate can vary by loan amount, term, LTV, credit profile, service history, or program updates — all fee fields are editable so you can enter your own quoted numbers.</li>
+                        <li><strong>Property tax, insurance, and HOA fees are assumed flat</strong> for the life of the loan. In reality these typically rise over time.</li>
+                        <li><strong>This tool assumes a fixed interest rate</strong> for the full term. It does not model adjustable-rate mortgages (ARMs), rate buydowns, or refinancing.</li>
+                        <li><strong>PMI/MIP cancellation dates are projections</strong> based on your entered numbers, not a guarantee — actual servicer timelines depend on your specific loan documents, payment history, and any required appraisal.</li>
+                        <li>This tool is for estimation and educational purposes only and is not financial, tax, or lending advice. For a binding number, get a Loan Estimate from a licensed lender.</li>
+                    </ul>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <div class="faq-question" tabindex="0" role="button">How is a monthly mortgage payment calculated?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Monthly principal and interest is calculated with the amortization formula M = P[r(1+r)ⁿ] / [(1+r)ⁿ−1], where P is the loan amount, r is the monthly interest rate, and n is the total number of payments. Property tax, insurance, mortgage insurance, and HOA are then added on top for your total monthly payment.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">When does PMI automatically fall off a conventional loan?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Under the federal Homeowners Protection Act, lenders must automatically cancel PMI on a conventional loan once your loan balance drops to 78% of the original home value, as long as payments are current. You can also request cancellation earlier once you reach 80% loan-to-value. FHA, VA, and USDA loans are not covered by this law and follow their own mortgage-insurance rules — see Section 3 above.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">How much can extra payments actually save?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>It depends on your balance, rate, and how early you start, but because extra payments skip interest entirely and reduce principal directly, even a modest recurring extra payment can cut years off a 30-year loan and save a significant amount in interest. Use the Extra Payments tab above with your own numbers for an exact estimate.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">What percentage of income should go to a mortgage payment?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>A common guideline is the 28/36 rule: your total housing payment should stay under 28% of gross monthly income, and total debt payments under 36%. Lenders may allow higher ratios depending on credit and loan program.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">Does this mortgage calculator sell my data to lenders?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no lender ads or lead-generation forms.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">Rates and fee figures cited above reflect national program averages as of early August 2026 and change over time — always use your own quoted rate and confirm current fee schedules with your lender or the official program pages linked in Section 3. This calculator is for estimation only and is not financial or lending advice.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🏠</span> Try Our Mortgage Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
+                            <a href="/calculators/soffit-calculator">🏠 Soffit & Ventilation Calculator</a>
+                            <a href="/calculators/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
+                            <a href="/calculators/pain-and-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+                <a href="/calculators/uk-aggregate-calculator">UK Aggregate</a>
+                <a href="/calculators/soffit-calculator">Soffit &amp; Ventilation</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // ===== DOM =====
+        const homePriceEl = document.getElementById('homePrice');
+        const downPercentEl = document.getElementById('downPaymentPercent');
+        const downAmountEl = document.getElementById('downPaymentAmount');
+        const rateEl = document.getElementById('interestRate');
+        const loanStartDateEl = document.getElementById('loanStartDate');
+        const taxEl = document.getElementById('propertyTax');
+        const insuranceEl = document.getElementById('homeInsurance');
+        const pmiRateEl = document.getElementById('pmiRate');
+        const fhaUpfrontMipEl = document.getElementById('fhaUpfrontMip');
+        const fhaAnnualMipEl = document.getElementById('fhaAnnualMip');
+        const vaFundingFeeEl = document.getElementById('vaFundingFee');
+        const usdaUpfrontFeeEl = document.getElementById('usdaUpfrontFee');
+        const usdaAnnualFeeEl = document.getElementById('usdaAnnualFee');
+        const hoaEl = document.getElementById('hoaFee');
+        const pmiNote = document.getElementById('pmiNote');
+
+        const extraMonthlyEl = document.getElementById('extraMonthly');
+        const extraOneTimeEl = document.getElementById('extraOneTime');
+        const oneTimeMonthEl = document.getElementById('oneTimeMonth');
+
+        let termYears = 30;
+        let loanType = 'conventional';
+        let scheduleView = 'annual';
+        let syncingDown = false;
+        let lastWithExtra = null;
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== TERM TOGGLE =====
+        document.querySelectorAll('#termToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectTerm(btn));
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectTerm(btn); }
+            });
+        });
+        function selectTerm(btn) {
+            document.querySelectorAll('#termToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            termYears = parseInt(btn.dataset.term, 10);
+            calculateAll();
+        }
+
+        // ===== LOAN TYPE TOGGLE =====
+        document.querySelectorAll('#loanTypeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectLoanType(btn));
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectLoanType(btn); }
+            });
+        });
+        function selectLoanType(btn) {
+            document.querySelectorAll('#loanTypeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            loanType = btn.dataset.loantype;
+            document.querySelectorAll('.mi-field').forEach(f => f.classList.remove('mi-visible'));
+            document.querySelectorAll('.mi-field.mi-' + loanType).forEach(f => f.classList.add('mi-visible'));
+            calculateAll();
+        }
+
+        // ===== SCHEDULE VIEW TOGGLE =====
+        document.querySelectorAll('#scheduleViewToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectScheduleView(btn));
+            btn.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectScheduleView(btn); }
+            });
+        });
+        function selectScheduleView(btn) {
+            document.querySelectorAll('#scheduleViewToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            scheduleView = btn.dataset.view;
+            document.getElementById('periodHeader').textContent = scheduleView === 'monthly' ? 'Month' : 'Year';
+            renderSchedule();
+        }
+
+        // ===== DOWN PAYMENT SYNC (% <-> $) =====
+        downPercentEl.addEventListener('input', () => {
+            if (syncingDown) return;
+            syncingDown = true;
+            const price = parseFloat(homePriceEl.value) || 0;
+            const pct = parseFloat(downPercentEl.value) || 0;
+            downAmountEl.value = Math.round(price * pct / 100);
+            syncingDown = false;
+            calculateAll();
+        });
+        downAmountEl.addEventListener('input', () => {
+            if (syncingDown) return;
+            syncingDown = true;
+            const price = parseFloat(homePriceEl.value) || 0;
+            const amt = parseFloat(downAmountEl.value) || 0;
+            downPercentEl.value = price > 0 ? +(amt / price * 100).toFixed(2) : 0;
+            syncingDown = false;
+            calculateAll();
+        });
+        homePriceEl.addEventListener('input', () => {
+            const price = parseFloat(homePriceEl.value) || 0;
+            const pct = parseFloat(downPercentEl.value) || 0;
+            syncingDown = true;
+            downAmountEl.value = Math.round(price * pct / 100);
+            syncingDown = false;
+            calculateAll();
+        });
+
+        [rateEl, loanStartDateEl, taxEl, insuranceEl, pmiRateEl, fhaUpfrontMipEl, fhaAnnualMipEl,
+         vaFundingFeeEl, usdaUpfrontFeeEl, usdaAnnualFeeEl, hoaEl, extraMonthlyEl, extraOneTimeEl, oneTimeMonthEl
+        ].forEach(el => { el.addEventListener('input', calculateAll); });
+
+        // ===== INPUT VALIDATION / CLAMPING =====
+        function attachClamp(el, min, max) {
+            el.addEventListener('change', () => {
+                let v = parseFloat(el.value);
+                const group = el.closest('.input-group');
+                let clamped = false;
+                if (isNaN(v)) { v = min; clamped = true; }
+                if (min !== null && v < min) { v = min; clamped = true; }
+                if (max !== null && v > max) { v = max; clamped = true; }
+                if (clamped) {
+                    el.value = v;
+                    if (group) {
+                        group.classList.add('field-clamped');
+                        setTimeout(() => group.classList.remove('field-clamped'), 2500);
+                    }
+                    calculateAll();
+                }
+            });
+        }
+        attachClamp(homePriceEl, 0, null);
+        attachClamp(downPercentEl, 0, 100);
+        attachClamp(downAmountEl, 0, null);
+        attachClamp(rateEl, 0, 25);
+        attachClamp(taxEl, 0, null);
+        attachClamp(insuranceEl, 0, null);
+        attachClamp(pmiRateEl, 0, 5);
+        attachClamp(fhaUpfrontMipEl, 0, 5);
+        attachClamp(fhaAnnualMipEl, 0, 5);
+        attachClamp(vaFundingFeeEl, 0, 5);
+        attachClamp(usdaUpfrontFeeEl, 0, 5);
+        attachClamp(usdaAnnualFeeEl, 0, 5);
+        attachClamp(hoaEl, 0, null);
+        attachClamp(extraMonthlyEl, 0, null);
+        attachClamp(extraOneTimeEl, 0, null);
+        attachClamp(oneTimeMonthEl, 1, null);
+
+        // ===== FORMAT HELPERS =====
+        function fmt$(n) {
+            n = isFinite(n) ? n : 0;
+            return '$' + Math.round(n).toLocaleString('en-US');
+        }
+        function fmt$2(n) {
+            n = isFinite(n) ? n : 0;
+            return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // ===== CORE MATH =====
+        function monthlyPI(P, r, n) {
+            if (P <= 0 || n <= 0) return 0;
+            if (r === 0) return P / n;
+            const f = Math.pow(1 + r, n);
+            return P * r * f / (f - 1);
+        }
+
+        // Full amortization run. extraMonthly/extraOneTime/oneTimeMonth optional.
+        // miDropRule: {type:'balance', threshold}, {type:'month', month}, {type:'never'}, {type:'none'}
+        function amortize(P, r, n, miDropRule, extraMonthly, extraOneTime, oneTimeMonth) {
+            extraMonthly = extraMonthly || 0;
+            extraOneTime = extraOneTime || 0;
+            oneTimeMonth = oneTimeMonth || 0;
+
+            let balance = P;
+            const basePayment = monthlyPI(P, r, n);
+            let totalInterest = 0;
+            let month = 0;
+            let pmiDropMonth = (miDropRule && miDropRule.type === 'month') ? miDropRule.month : null;
+            const schedule = [];
+            const monthlySchedule = [];
+            let yearPrincipal = 0, yearInterest = 0, yearExtra = 0;
+            const safetyCap = n + 1200; // safety against infinite loop
+
+            while (balance > 0.5 && month < safetyCap) {
+                month++;
+                const interestPortion = balance * r;
+                let principalPortion = basePayment - interestPortion;
+                if (principalPortion < 0) principalPortion = 0;
+
+                let extra = extraMonthly;
+                if (oneTimeMonth > 0 && month === oneTimeMonth) extra += extraOneTime;
+
+                if (principalPortion + extra >= balance) {
+                    extra = Math.max(0, balance - principalPortion);
+                    if (principalPortion > balance) principalPortion = balance;
+                }
+
+                balance -= (principalPortion + extra);
+                if (balance < 0) balance = 0;
+
+                totalInterest += interestPortion;
+                yearPrincipal += principalPortion;
+                yearInterest += interestPortion;
+                yearExtra += extra;
+
+                if (miDropRule && miDropRule.type === 'balance' && pmiDropMonth === null && balance <= miDropRule.threshold) {
+                    pmiDropMonth = month;
+                }
+
+                const miDropsThisMonth = pmiDropMonth !== null && pmiDropMonth === month;
+                monthlySchedule.push({
+                    month: month,
+                    principal: principalPortion,
+                    interest: interestPortion,
+                    extra: extra,
+                    balance: balance,
+                    miDropsThisMonth: miDropsThisMonth
+                });
+
+                if (month % 12 === 0 || balance <= 0) {
+                    schedule.push({
+                        year: Math.ceil(month / 12),
+                        principal: yearPrincipal,
+                        interest: yearInterest,
+                        extra: yearExtra,
+                        balance: balance,
+                        pmiDropsThisYear: pmiDropMonth !== null && pmiDropMonth > month - 12 && pmiDropMonth <= month
+                    });
+                    yearPrincipal = 0; yearInterest = 0; yearExtra = 0;
+                }
+            }
+
+            if (pmiDropMonth !== null && pmiDropMonth > month) pmiDropMonth = null;
+
+            return { schedule, monthlySchedule, totalInterest, payoffMonths: month, pmiDropMonth, basePayment };
+        }
+
+        function monthsToText(months) {
+            const y = Math.floor(months / 12);
+            const m = months % 12;
+            let parts = [];
+            if (y > 0) parts.push(y + (y === 1 ? ' yr' : ' yrs'));
+            if (m > 0) parts.push(m + (m === 1 ? ' mo' : ' mos'));
+            return parts.length ? parts.join(' ') : '0 mos';
+        }
+
+        function addMonths(date, months) {
+            const d = new Date(date.getTime());
+            d.setMonth(d.getMonth() + months);
+            return d;
+        }
+
+        function formatDate(d) {
+            return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        }
+
+        function getLoanStartDate() {
+            const v = loanStartDateEl.value;
+            if (v) {
+                const parts = v.split('-').map(Number);
+                if (parts.length === 3) return new Date(parts[0], parts[1] - 1, parts[2]);
+            }
+            return new Date();
+        }
+
+        // ===== MAIN CALCULATE =====
+        function calculateAll() {
+            const homePrice = parseFloat(homePriceEl.value) || 0;
+            const downAmount = parseFloat(downAmountEl.value) || 0;
+            const baseLoanAmount = Math.max(0, homePrice - downAmount);
+            const annualRate = parseFloat(rateEl.value) || 0;
+            const r = annualRate / 100 / 12;
+            const n = termYears * 12;
+
+            const annualTax = parseFloat(taxEl.value) || 0;
+            const annualInsurance = parseFloat(insuranceEl.value) || 0;
+            const monthlyHoa = parseFloat(hoaEl.value) || 0;
+
+            const downPct = homePrice > 0 ? (downAmount / homePrice * 100) : 0;
+
+            // ---- Mortgage insurance / financed fees by loan type ----
+            let upfrontFeeFinanced = 0;
+            let miMonthly = 0;
+            let miDropRule = { type: 'none' };
+            let miLabel = 'PMI';
+            let noteHtml = '';
+
+            if (loanType === 'conventional') {
+                const pmiRatePct = parseFloat(pmiRateEl.value) || 0;
+                const pmiApplies = downPct < 20 && baseLoanAmount > 0;
+                miLabel = 'PMI';
+                if (pmiApplies) {
+                    miMonthly = (pmiRatePct / 100 * baseLoanAmount) / 12;
+                    miDropRule = { type: 'balance', threshold: homePrice * 0.78 };
+                    noteHtml = '<i class="fas fa-info-circle"></i> Your down payment is under 20%, so PMI applies. It is estimated to <strong>automatically drop off</strong> once your balance reaches 78% of the home\u2019s original value, per the federal Homeowners Protection Act — see exactly which period in the Amortization tab.';
+                } else {
+                    miDropRule = { type: 'none' };
+                    noteHtml = '<i class="fas fa-info-circle"></i> Your down payment is 20% or more, so PMI does not apply on a conventional loan.';
+                }
+            } else if (loanType === 'fha') {
+                const upfrontPct = parseFloat(fhaUpfrontMipEl.value) || 0;
+                const annualPct = parseFloat(fhaAnnualMipEl.value) || 0;
+                miLabel = 'FHA MIP';
+                upfrontFeeFinanced = upfrontPct / 100 * baseLoanAmount;
+                miMonthly = (annualPct / 100 * baseLoanAmount) / 12;
+                if (downPct >= 10) {
+                    miDropRule = { type: 'month', month: 132 };
+                    noteHtml = '<i class="fas fa-info-circle"></i> FHA loans charge an upfront MIP (financed into your loan) plus annual MIP paid monthly. Because your down payment is 10% or more, annual MIP is estimated to <strong>cancel automatically after 11 years (132 payments)</strong> under current FHA rules.';
+                } else {
+                    miDropRule = { type: 'never' };
+                    noteHtml = '<i class="fas fa-info-circle"></i> FHA loans charge an upfront MIP (financed into your loan) plus annual MIP paid monthly. Because your down payment is under 10%, annual MIP is estimated to <strong>continue for the life of the loan</strong> under current FHA rules — refinancing out of FHA is the usual way to remove it.';
+                }
+            } else if (loanType === 'va') {
+                const fundingPct = parseFloat(vaFundingFeeEl.value) || 0;
+                miLabel = 'Funding Fee';
+                upfrontFeeFinanced = fundingPct / 100 * baseLoanAmount;
+                miMonthly = 0;
+                miDropRule = { type: 'none' };
+                noteHtml = '<i class="fas fa-info-circle"></i> VA loans do not charge monthly mortgage insurance. Instead, most borrowers pay a one-time funding fee, shown here financed into the loan amount. Some veterans (e.g., those with service-connected disability ratings) are exempt.';
+            } else if (loanType === 'usda') {
+                const upfrontPct = parseFloat(usdaUpfrontFeeEl.value) || 0;
+                const annualPct = parseFloat(usdaAnnualFeeEl.value) || 0;
+                miLabel = 'USDA Fee';
+                upfrontFeeFinanced = upfrontPct / 100 * baseLoanAmount;
+                miMonthly = (annualPct / 100 * baseLoanAmount) / 12;
+                miDropRule = { type: 'never' };
+                noteHtml = '<i class="fas fa-info-circle"></i> USDA guaranteed loans charge an upfront guarantee fee (financed into your loan) plus a smaller annual fee. Unlike conventional PMI, the annual fee is estimated to <strong>continue for the life of the loan</strong> rather than dropping off at a set equity level.';
+            }
+
+            const loanAmount = baseLoanAmount + upfrontFeeFinanced;
+            pmiNote.innerHTML = noteHtml;
+            pmiNote.classList.toggle('show', !!noteHtml);
+
+            const monthlyTax = annualTax / 12;
+            const monthlyInsurance = annualInsurance / 12;
+
+            const piPayment = monthlyPI(loanAmount, r, n);
+
+            // Baseline amortization (no extra payments) for headline totals + MI drop
+            const baseline = amortize(loanAmount, r, n, miDropRule, 0, 0, 0);
+
+            // ---- TAB 1: Payment summary ----
+            const totalMonthly = piPayment + monthlyTax + monthlyInsurance + miMonthly + monthlyHoa;
+            document.getElementById('totalMonthlyPayment').textContent = fmt$2(totalMonthly);
+            document.getElementById('loanAmountResult').textContent = fmt$(loanAmount);
+            document.getElementById('totalInterestResult').textContent = fmt$(baseline.totalInterest);
+            document.getElementById('totalCostResult').textContent = fmt$(loanAmount + baseline.totalInterest);
+
+            const startDate = getLoanStartDate();
+            const payoffDate = addMonths(startDate, baseline.payoffMonths);
+            document.getElementById('payoffDateResult').textContent = formatDate(payoffDate);
+
+            // Breakdown rows + stacked bar
+            const segments = [
+                { label: 'Principal & Interest', value: piPayment, color: '#8b5cf6' },
+                { label: 'Property Tax', value: monthlyTax, color: '#fbbf24' },
+                { label: 'Home Insurance', value: monthlyInsurance, color: '#3b82f6' },
+                { label: miLabel, value: miMonthly, color: '#ef4444' },
+                { label: 'HOA', value: monthlyHoa, color: '#10b981' }
+            ];
+            const bar = document.getElementById('stackedBar');
+            bar.innerHTML = '';
+            const breakdownEl = document.getElementById('paymentBreakdown');
+            breakdownEl.innerHTML = '';
+            segments.forEach(seg => {
+                const pct = totalMonthly > 0 ? (seg.value / totalMonthly * 100) : 0;
+                if (seg.value > 0) {
+                    const segDiv = document.createElement('div');
+                    segDiv.style.width = pct + '%';
+                    segDiv.style.background = seg.color;
+                    bar.appendChild(segDiv);
+                }
+                const row = document.createElement('div');
+                row.className = 'breakdown-row';
+                row.innerHTML = '<span class="label"><span class="swatch" style="background:' + seg.color + '"></span>' + seg.label + '</span><span class="value">' + fmt$2(seg.value) + '/mo</span>';
+                breakdownEl.appendChild(row);
+            });
+            if (upfrontFeeFinanced > 0) {
+                const row = document.createElement('div');
+                row.className = 'breakdown-row';
+                row.innerHTML = '<span class="label"><span class="swatch" style="background:#94a3b8"></span>Upfront fee (financed into loan)</span><span class="value">' + fmt$(upfrontFeeFinanced) + '</span>';
+                breakdownEl.appendChild(row);
+            }
+
+            // ---- TAB 2: Extra payments ----
+            const extraMonthly = parseFloat(extraMonthlyEl.value) || 0;
+            const extraOneTime = parseFloat(extraOneTimeEl.value) || 0;
+            const oneTimeMonth = parseInt(oneTimeMonthEl.value, 10) || 1;
+
+            const withExtra = amortize(loanAmount, r, n, miDropRule, extraMonthly, extraOneTime, oneTimeMonth);
+            lastWithExtra = withExtra;
+
+            const interestSaved = baseline.totalInterest - withExtra.totalInterest;
+            const monthsSaved = baseline.payoffMonths - withExtra.payoffMonths;
+
+            document.getElementById('interestSaved').textContent = fmt$(Math.max(0, interestSaved));
+            document.getElementById('timeSaved').textContent = monthsToText(Math.max(0, monthsSaved));
+            document.getElementById('newPayoffDate').textContent = formatDate(addMonths(startDate, withExtra.payoffMonths));
+            document.getElementById('originalPayoffTime').textContent = monthsToText(baseline.payoffMonths);
+            document.getElementById('newPayoffTime').textContent = monthsToText(withExtra.payoffMonths);
+            document.getElementById('originalTotalInterest').textContent = fmt$(baseline.totalInterest);
+            document.getElementById('newTotalInterest').textContent = fmt$(withExtra.totalInterest);
+
+            // ---- TAB 3: Schedule ----
+            renderSchedule();
+        }
+
+        function renderSchedule() {
+            if (!lastWithExtra) return;
+            const scheduleBody = document.getElementById('scheduleBody');
+            scheduleBody.innerHTML = '';
+            const startDate = getLoanStartDate();
+
+            if (scheduleView === 'annual') {
+                lastWithExtra.schedule.forEach(row => {
+                    const tr = document.createElement('tr');
+                    if (row.pmiDropsThisYear) tr.classList.add('pmi-drop-row');
+                    tr.innerHTML =
+                        '<td>Year ' + row.year + (row.pmiDropsThisYear ? ' <i class="fas fa-shield-halved" title="Mortgage insurance drops off this year" style="color:#10b981;"></i>' : '') + '</td>' +
+                        '<td>' + fmt$(row.principal) + '</td>' +
+                        '<td>' + fmt$(row.interest) + '</td>' +
+                        '<td>' + fmt$(row.extra) + '</td>' +
+                        '<td>' + fmt$(row.balance) + '</td>';
+                    scheduleBody.appendChild(tr);
+                });
+            } else {
+                lastWithExtra.monthlySchedule.forEach(row => {
+                    const tr = document.createElement('tr');
+                    if (row.miDropsThisMonth) tr.classList.add('pmi-drop-row');
+                    const label = formatDate(addMonths(startDate, row.month - 1));
+                    tr.innerHTML =
+                        '<td>Mo ' + row.month + ' (' + label + ')' + (row.miDropsThisMonth ? ' <i class="fas fa-shield-halved" title="Mortgage insurance drops off this month" style="color:#10b981;"></i>' : '') + '</td>' +
+                        '<td>' + fmt$2(row.principal) + '</td>' +
+                        '<td>' + fmt$2(row.interest) + '</td>' +
+                        '<td>' + fmt$(row.extra) + '</td>' +
+                        '<td>' + fmt$(row.balance) + '</td>';
+                    scheduleBody.appendChild(tr);
+                });
+            }
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            homePriceEl.value = '400000';
+            downPercentEl.value = '20';
+            downAmountEl.value = '80000';
+            rateEl.value = '6.75';
+            loanStartDateEl.value = new Date().toISOString().split('T')[0];
+            taxEl.value = '4800';
+            insuranceEl.value = '1600';
+            pmiRateEl.value = '0.5';
+            fhaUpfrontMipEl.value = '1.75';
+            fhaAnnualMipEl.value = '0.55';
+            vaFundingFeeEl.value = '2.15';
+            usdaUpfrontFeeEl.value = '1.0';
+            usdaAnnualFeeEl.value = '0.35';
+            hoaEl.value = '0';
+            extraMonthlyEl.value = '200';
+            extraOneTimeEl.value = '0';
+            oneTimeMonthEl.value = '1';
+
+            document.querySelectorAll('#termToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.term === '30') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            termYears = 30;
+
+            document.querySelectorAll('#loanTypeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.loantype === 'conventional') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            loanType = 'conventional';
+            document.querySelectorAll('.mi-field').forEach(f => f.classList.remove('mi-visible'));
+            document.querySelectorAll('.mi-field.mi-conventional').forEach(f => f.classList.add('mi-visible'));
+
+            document.querySelectorAll('#scheduleViewToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.view === 'annual') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            scheduleView = 'annual';
+            document.getElementById('periodHeader').textContent = 'Year';
+
+            calculateAll();
+
+            const btn = document.getElementById('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        document.getElementById('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Mortgage Calculator Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Loan Summary', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Loan Type: ' + loanType.toUpperCase(), 25, 60);
+            doc.text('Home Price: ' + homePriceEl.value, 25, 67);
+            doc.text('Down Payment: ' + downAmountEl.value + ' (' + downPercentEl.value + '%)', 25, 74);
+            doc.text('Interest Rate: ' + rateEl.value + '%', 25, 81);
+            doc.text('Loan Term: ' + termYears + ' years', 25, 88);
+            doc.text('Loan Start Date: ' + (loanStartDateEl.value || '-'), 25, 95);
+            doc.text('Total Monthly Payment: ' + document.getElementById('totalMonthlyPayment').textContent, 25, 102);
+            doc.text('Total Interest (Life of Loan): ' + document.getElementById('totalInterestResult').textContent, 25, 109);
+            doc.text('Payoff Date: ' + document.getElementById('payoffDateResult').textContent, 25, 116);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Extra Payment Scenario', 20, 132);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Extra Monthly: $' + extraMonthlyEl.value, 25, 142);
+            doc.text('Interest Saved: ' + document.getElementById('interestSaved').textContent, 25, 149);
+            doc.text('Time Saved: ' + document.getElementById('timeSaved').textContent, 25, 156);
+            doc.text('New Payoff Date: ' + document.getElementById('newPayoffDate').textContent, 25, 163);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Estimate only. Mortgage insurance modeled as a constant monthly amount; actual servicer figures may vary.', 105, 270, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Mortgage Calculator | Estimate only, not financial advice.', 105, 280, { align: 'center' });
+
+            doc.save('Mortgage_Report_' + Date.now() + '.pdf');
+        }
+        document.getElementById('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+                q.addEventListener('keydown', e => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.parentElement.classList.toggle('active'); }
+                });
+            });
+        });
+
+        // ===== INIT =====
+        if (!loanStartDateEl.value) {
+            loanStartDateEl.value = new Date().toISOString().split('T')[0];
+        }
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
