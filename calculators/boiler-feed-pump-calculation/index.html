@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Boiler Feed Pump Calculator | Flow, TDH, NPSH & Motor Sizing | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free boiler feed pump calculator: required flow (with blowdown & margin), Total Dynamic Head, NPSH available with vapor-pressure-corrected suction check, hydraulic/shaft power, and IEC motor sizing. Metric & US units, duty/standby arrangements, 100% private in-browser.">
+    <meta name="keywords" content="boiler feed pump calculator, boiler feed pump calculation, NPSH calculator, TDH calculator, feedwater pump sizing, pump motor sizing, boiler feed pump head calculation">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/boiler-feed-pump-calculator">
+
+    <meta property="og:title" content="Boiler Feed Pump Calculator | Flow, TDH, NPSH & Motor Sizing | CalcSnaps">
+    <meta property="og:description" content="Free, private boiler feed pump calculator with temperature-corrected NPSH (IAPWS-IF97 vapor pressure), duty/standby pump arrangements, and standard IEC motor sizing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/boiler-feed-pump-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Boiler Feed Pump Calculator",
+        "description": "Calculate boiler feed pump required flow, Total Dynamic Head, NPSH available with vapor-pressure-corrected suction check, hydraulic/shaft power, and motor sizing across duty/standby pump arrangements",
+        "url": "https://calcsnaps.com/calculators/boiler-feed-pump-calculator",
+        "applicationCategory": "EngineeringApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Boiler Feed Pump Calculation Guide: Flow, TDH, NPSH & Motor Sizing",
+        "description": "Complete guide to sizing a boiler feed pump: required flow with blowdown and margin, Total Dynamic Head, NPSH available using temperature-corrected vapor pressure, power, and motor selection.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/boiler-feed-pump-calculator" },
+        "datePublished": "2026-08-12",
+        "dateModified": "2026-08-12"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate the required boiler feed pump flow rate?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Required feedwater flow equals the boiler's maximum continuous steam rating, increased for continuous blowdown (typically 2-5%) and a design margin (typically 10-20%), then converted to volumetric flow using the feedwater density at its actual temperature." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Total Dynamic Head (TDH) for a boiler feed pump?",
+                "acceptedAnswer": { "@type": "Answer", "text": "TDH is the total resistance the pump must overcome: the boiler operating pressure converted to head, plus any feedwater control valve pressure drop, plus static discharge elevation and discharge piping friction, minus any credit from a pressurized or elevated suction source." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does feedwater temperature matter for NPSH?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Boiler feedwater is often near its boiling point (for example, leaving a deaerator). As temperature rises, the water's vapor pressure rises sharply, which reduces the Net Positive Suction Head Available (NPSHa) and increases the risk of pump cavitation if the margin against NPSH required is too small." }
+            },
+            {
+                "@type": "Question",
+                "name": "What NPSH margin should a boiler feed pump have?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A commonly cited minimum is an NPSH margin of about 1 meter (3.3 ft) or a margin ratio of 1.1 (NPSHa divided by NPSHr), whichever is greater, per general guidance aligned with the Hydraulic Institute's ANSI/HI 9.6.1 standard. High-energy or critical services often warrant a larger margin." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator send my data anywhere?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no ads or lead-generation forms." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Boiler Feed Pump Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h2 { font-size: 28px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .calc-header h2 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+        .input-group.field-clamped { border-color: var(--warning); background: #fffbeb; }
+        .clamp-msg { font-size: 11px; color: #b45309; margin-top: 4px; display: none; }
+        .input-group.field-clamped .clamp-msg { display: block; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #0a6b4d; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #a11f1f; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .payment-breakdown { margin-bottom: 18px; }
+        .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 8px; }
+        .breakdown-row .label { display: flex; align-items: center; color: var(--text-dark); }
+        .breakdown-row .value { font-weight: 700; color: var(--dark); }
+        .stacked-bar { display: flex; width: 100%; height: 16px; border-radius: 10px; overflow: hidden; margin-bottom: 18px; background: #e2e8f0; }
+        .stacked-bar div { height: 100%; transition: width 0.3s ease; }
+
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h2 { font-size: 20px; }
+            .tab { padding: 12px 6px; font-size: 11.5px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h1 { font-size: 30px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 25px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; color: var(--dark); }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+        .compare-table td.no { color: var(--gray-text); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h1 { font-size: 24px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-gauge-high"></i> Boiler Feed Pump Calculator</h2>
+                    <p>Flow (w/ blowdown &amp; margin) · TDH · NPSH check · Hydraulic/Shaft Power · Motor Sizing</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up</div>
+                </div>
+
+                <div class="toggle-row" style="padding:20px 28px 0;">
+                    <span class="toggle-label"><i class="fas fa-ruler"></i> Units</span>
+                    <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Unit system">
+                        <button class="toggle-option active" data-units="metric" role="radio" aria-checked="true" tabindex="0">Metric (kg/hr, bar, m, °C)</button>
+                        <button class="toggle-option" data-units="us" role="radio" aria-checked="false" tabindex="0">US (lb/hr, psi, ft, °F)</button>
+                    </div>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="flow" role="tab" aria-selected="true" tabindex="0">💧 Flow & Head</button>
+                    <button class="tab" data-tab="npsh" role="tab" aria-selected="false" tabindex="0">🌡️ NPSH Check</button>
+                    <button class="tab" data-tab="power" role="tab" aria-selected="false" tabindex="0">⚡ Power & Motor</button>
+                </div>
+
+                <!-- TAB 1: FLOW & HEAD -->
+                <div class="tab-content active" id="tab-flow" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-fire-burner"></i> Boiler & Feed Demand</div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-calculator"></i> Calculate Flow From</span>
+                        <div class="toggle-switch" id="flowModeToggle" role="radiogroup" aria-label="Flow calculation mode">
+                            <button class="toggle-option active" data-mode="steam" role="radio" aria-checked="true" tabindex="0">Steam Capacity (+ blowdown/margin)</button>
+                            <button class="toggle-option" data-mode="feedwater" role="radio" aria-checked="false" tabindex="0">Known Feedwater Flow</button>
+                        </div>
+                    </div>
+
+                    <div class="input-grid" id="steamModeFields">
+                        <div class="input-group">
+                            <label for="boilerCapacity">Boiler Capacity (steam output)</label>
+                            <div class="row"><input type="number" id="boilerCapacity" value="20000" step="100" min="0" aria-label="Boiler capacity"><span class="unit" id="unitBoilerCap">kg/hr</span></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="blowdownPct">Continuous Blowdown (% of feedwater)</label>
+                            <div class="row"><input type="number" id="blowdownPct" value="3" step="0.5" min="0" max="15" aria-label="Blowdown percent of feedwater flow"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="designMarginPct">Design Margin</label>
+                            <div class="row"><input type="number" id="designMarginPct" value="15" step="1" min="0" max="100" aria-label="Design margin percent"><span class="unit">%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="input-grid" id="feedwaterModeFields" style="display:none;">
+                        <div class="input-group">
+                            <label for="knownFeedwaterFlow">Known Required Feedwater Flow</label>
+                            <div class="row"><input type="number" id="knownFeedwaterFlow" value="23690" step="100" min="0" aria-label="Known feedwater flow"><span class="unit" id="unitKnownFeedwater">kg/hr</span></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                    </div>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="feedTempFlow">Feedwater Temperature</label>
+                            <div class="row"><input type="number" id="feedTempFlow" value="105" step="1" aria-label="Feedwater temperature"><span class="unit" id="unitTempFlow">°C</span></div>
+                        </div>
+                    </div>
+                    <div class="status-note status-danger" id="tempRangeWarning" style="margin-top:-8px;"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-layer-group"></i> Pump Arrangement</span>
+                        <div class="toggle-switch" id="arrangementToggle" role="radiogroup" aria-label="Pump arrangement">
+                            <button class="toggle-option active" data-arr="1x100" role="radio" aria-checked="true" tabindex="0">1 × 100% (no standby)</button>
+                            <button class="toggle-option" data-arr="2x100" role="radio" aria-checked="false" tabindex="0">2 × 100% (full standby)</button>
+                            <button class="toggle-option" data-arr="3x50" role="radio" aria-checked="false" tabindex="0">3 × 50% (2 duty + 1 standby)</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-arrows-up-to-line"></i> Discharge Side (Pump → Boiler)</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="boilerPressure">Boiler Operating Pressure (gauge)</label>
+                            <div class="row"><input type="number" id="boilerPressure" value="12" step="0.5" min="0" aria-label="Boiler operating pressure, gauge"><span class="unit" id="unitBoilerPressure">barg</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="cvDrop">Control Valve Differential Pressure</label>
+                            <div class="row"><input type="number" id="cvDrop" value="1.5" step="0.1" min="0" aria-label="Control valve differential pressure"><span class="unit" id="unitCvDrop">bar</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="staticDischarge">Static Discharge Head</label>
+                            <div class="row"><input type="number" id="staticDischarge" value="2" step="0.5" aria-label="Static discharge head"><span class="unit" id="unitStaticDischarge">m</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="dischargeFriction">Discharge Piping Friction Loss</label>
+                            <div class="row"><input type="number" id="dischargeFriction" value="3" step="0.5" min="0" aria-label="Discharge friction loss"><span class="unit" id="unitDischargeFriction">m</span></div>
+                        </div>
+                    </div>
+
+                    <div class="status-note status-neutral show" id="flowNote"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Required Total Feedwater Flow</span>
+                            <span class="amount" id="totalFlowResult">0</span>
+                        </div>
+
+                        <div class="status-note status-good show" id="dutyPointBanner" style="font-size:15px;font-weight:600;"></div>
+
+                        <div class="stacked-bar" id="headStackedBar"></div>
+                        <div class="payment-breakdown" id="headBreakdown"></div>
+                        <div class="results-grid" style="margin-top:18px;">
+                            <div class="result-card"><div class="result-label">Per-Pump Duty Flow</div><div class="result-value small" id="perPumpFlowResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Total Dynamic Head (TDH)</div><div class="result-value small" id="tdhResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Feedwater Density Used</div><div class="result-value small" id="densityResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Number of Pumps</div><div class="result-value small" id="pumpCountResult">-</div></div>
+                        </div>
+
+                        <div class="status-note status-neutral show" id="pumpCurveWarning" style="margin-top:16px;margin-bottom:0;">
+                            <i class="fas fa-triangle-exclamation"></i> Verify the selected pump's published curve can actually deliver this flow at this head, and confirm its NPSH required (NPSHr) figure is quoted at this same duty flow — NPSHr rises with flow, so a value quoted at a different flow isn't directly comparable.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: NPSH CHECK -->
+                <div class="tab-content" id="tab-npsh" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-triangle-exclamation"></i> Suction Conditions</div>
+                    <p style="font-size:13.5px;color:var(--gray-text);margin-bottom:16px;">Hot feedwater sits close to its boiling point, so vapor pressure — not just elevation — often drives whether a boiler feed pump cavitates.</p>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="suctionTankPressure">Suction Vessel Pressure (gauge)</label>
+                            <div class="row"><input type="number" id="suctionTankPressure" value="0.3" step="0.05" aria-label="Suction vessel gauge pressure"><span class="unit" id="unitSuctionTankPressure">barg</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="staticSuction">Static Suction Head</label>
+                            <div class="row"><input type="number" id="staticSuction" value="4" step="0.5" aria-label="Static suction head (negative if pump above tank)"><span class="unit" id="unitStaticSuction">m</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="suctionFriction">Suction Piping Friction Loss</label>
+                            <div class="row"><input type="number" id="suctionFriction" value="0.4" step="0.1" min="0" aria-label="Suction friction loss"><span class="unit" id="unitSuctionFriction">m</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="npshRequired">Pump NPSH Required (from datasheet)</label>
+                            <div class="row"><input type="number" id="npshRequired" value="3" step="0.1" min="0" aria-label="NPSH required"><span class="unit" id="unitNpshRequired">m</span></div>
+                        </div>
+                    </div>
+
+                    <div class="status-note status-neutral show" id="npshVaporNote"></div>
+                    <div class="status-note" id="npshWarning"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">NPSH Available (NPSHa)</span>
+                            <span class="amount" id="npshaResult">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Vapor Pressure at Feed Temp</div><div class="result-value small" id="vaporPressureResult">-</div></div>
+                            <div class="result-card"><div class="result-label">NPSH Required</div><div class="result-value small" id="npshrDisplay">-</div></div>
+                            <div class="result-card"><div class="result-label">NPSH Margin</div><div class="result-value small" id="npshMarginResult">-</div></div>
+                            <div class="result-card"><div class="result-label">NPSH Ratio (a/r)</div><div class="result-value small" id="npshRatioResult">-</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: POWER & MOTOR -->
+                <div class="tab-content" id="tab-power" role="tabpanel">
+                    <div class="section-title"><i class="fas fa-bolt"></i> Efficiency & Motor Margin</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="pumpEfficiency">Pump Hydraulic Efficiency</label>
+                            <div class="row"><input type="number" id="pumpEfficiency" value="72" step="1" min="10" max="95" aria-label="Pump efficiency percent"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="motorMargin">Motor Sizing Margin</label>
+                            <div class="row"><input type="number" id="motorMargin" value="15" step="1" min="0" max="50" aria-label="Motor margin percent"><span class="unit">%</span></div>
+                        </div>
+                    </div>
+
+                    <div class="status-note status-neutral show" id="powerNote">
+                        <i class="fas fa-info-circle"></i> Power is calculated per pump at its individual duty flow (not the total system flow) — each duty pump in your arrangement needs its own correctly sized motor.
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Recommended Motor Rating (per pump)</span>
+                            <span class="amount" id="motorRatingResult">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Hydraulic Power (per pump)</div><div class="result-value small" id="hydraulicPowerResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Shaft Power (per pump)</div><div class="result-value small" id="shaftPowerResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Calculated Motor Requirement</div><div class="result-value small" id="motorCalcResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Total Installed Motor Power</div><div class="result-value small" id="totalMotorResult">-</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>Boiler Feed Pump Calculation: Flow, TDH, NPSH & Motor Sizing Explained</h1>
+                    <p>Why a temperature-corrected NPSH check matters as much as flow and head — and how to size the motor that actually goes with it</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#flow-calc">1. Calculating Required Feedwater Flow</a></div>
+                            <div class="toc-item"><a href="#tdh-calc">2. Total Dynamic Head (TDH)</a></div>
+                            <div class="toc-item"><a href="#npsh-calc">3. NPSH: Why Feedwater Temperature Is the Real Driver</a></div>
+                            <div class="toc-item"><a href="#power-calc">4. Hydraulic Power, Shaft Power & Motor Sizing</a></div>
+                            <div class="toc-item"><a href="#arrangements">5. Duty/Standby Pump Arrangements</a></div>
+                            <div class="toc-item"><a href="#worked-example">6. Worked Example: Sizing a 20 t/hr Boiler Feed Pump</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">7. What to Look for in a Boiler Feed Pump Calculator</a></div>
+                            <div class="toc-item"><a href="#methodology">8. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Most online boiler feed pump calculators reduce sizing to four numbers — boiler capacity, pressure, a rough safety factor, and an efficiency guess — then multiply. That gets you in the right neighborhood, but it skips the two things that actually cause boiler feed pump failures in the field: an <strong>NPSH check that accounts for how hot the water really is</strong>, and a <strong>motor sized for what one pump actually does</strong>, not the whole system's flow.</p>
+
+                    <p>This calculator works through the full duty point — required flow (with blowdown and design margin), Total Dynamic Head broken into its real components, an NPSH available calculation that uses the actual vapor pressure of water at your feedwater temperature, and per-pump power and motor sizing across common duty/standby arrangements.</p>
+
+                    <h2 id="flow-calc">1. Calculating Required Feedwater Flow</h2>
+                    <p>The starting point is the boiler's maximum continuous steam rating. But the pump has to deliver more than that number, because water leaves the system two ways the steam meter doesn't count:</p>
+                    <div class="pro-tip">
+                        <strong>Feedwater Flow = [Boiler Capacity ÷ (1 − Blowdown%)] × (1 + Design Margin%)</strong>
+                        <p style="margin: 10px 0 0;"><strong>Continuous blowdown</strong> (typically 2–5% of feedwater flow — not of steam output) removes dissolved solids that concentrate in the boiler as it evaporates pure steam; because blowdown is drawn off as a share of the water entering the boiler, dividing by (1 − blowdown%) is the correct relationship, not simply adding blowdown% on top of the steam rate. <strong>Design margin</strong> (typically 10–20%) covers control-system response time, load swings, and future capacity headroom, and is applied on top. If you already know your required feedwater flow, you can enter it directly and skip this derivation entirely — see the "Known Feedwater Flow" mode in the calculator above.</p>
+                    </div>
+                    <p>That mass flow (kg/hr or lb/hr) then has to become a volumetric flow (m³/hr or gpm) for pump selection — and that conversion depends on density, which changes meaningfully with temperature. This calculator looks up feedwater density at your actual entered temperature (from a saturated-liquid-water reference table) instead of assuming cold-water density, which typically overstates the required volumetric flow by several percent for hot feedwater.</p>
+
+                    <h2 id="tdh-calc">2. Total Dynamic Head (TDH)</h2>
+                    <p>TDH is everything the pump has to push against, converted to a single head figure in meters or feet:</p>
+                    <div class="pro-tip">
+                        <strong>TDH = Pressure Head + Control Valve Drop + Static Discharge Head + Discharge Friction − Suction Credit</strong>
+                        <p style="margin: 10px 0 0;">where <strong>Suction Credit</strong> = Suction Vessel Pressure Head + Static Suction Head − Suction Friction Loss.</p>
+                    </div>
+                    <ul>
+                        <li><strong>Pressure head</strong> — the boiler's operating pressure, converted to a head using the feedwater's actual density (not the textbook "1 bar ≈ 10.2 m" shortcut, which assumes cold water).</li>
+                        <li><strong>Feedwater control valve drop</strong> — a major, frequently-omitted term in modulating-control systems; the pump has to develop enough head to still push water through a partially-closed valve at load.</li>
+                        <li><strong>Static discharge head &amp; friction</strong> — elevation and piping losses between the pump and the boiler drum/economizer inlet.</li>
+                        <li><strong>Suction credit</strong> — if the pump draws from a pressurized or elevated deaerator/feed tank, that head reduces the pump's job. Ignoring it (as several calculators do) oversizes the pump.</li>
+                    </ul>
+
+                    <h2 id="npsh-calc">3. NPSH: Why Feedwater Temperature Is the Real Driver</h2>
+                    <p>Boiler feedwater is frequently drawn from a deaerator running close to its boiling point — that's the point of deaeration. As temperature rises, water's vapor pressure rises sharply and non-linearly, eating directly into the margin between available suction pressure and the point where the pump starts flashing water to vapor at the impeller eye (cavitation).</p>
+                    <div class="pro-tip">
+                        <strong>NPSHa = Suction Vessel Pressure (absolute) + Static Suction Head − Vapor Pressure Head − Suction Friction Loss</strong>
+                        <p style="margin: 10px 0 0;">This calculator computes the vapor pressure term from your entered feedwater temperature using the <a href="https://www.iapws.org/relguide/IF97-Rev.html" target="_blank" rel="noopener">IAPWS-IF97 saturation-pressure equation</a> — the same industry-standard correlation behind modern steam tables, valid continuously from 0°C to the critical point (~374°C) with no accuracy gaps at any single temperature — rather than a rough approximation. A small NPSH miscalculation is exactly what causes an otherwise correctly-flow-and-head-sized pump to cavitate in service.</p>
+                    </div>
+                    <p>The result is compared against your pump's NPSH required (from the manufacturer's curve) with a margin check. Commonly cited guidance — consistent with the Hydraulic Institute's <a href="https://blog.ansi.org/ansi/ansi-hi-96-1-2017-rotodynamic-pumps-npsh/" target="_blank" rel="noopener">ANSI/HI 9.6.1 NPSH margin guideline</a> — calls for a minimum margin of roughly 1 m (3.3 ft) or a margin ratio (NPSHa ÷ NPSHr) of about 1.1, whichever is larger, with higher-energy or critical services often warranting more.</p>
+
+                    <h2 id="power-calc">4. Hydraulic Power, Shaft Power & Motor Sizing</h2>
+                    <p>Hydraulic power is the useful work done lifting and pressurizing the fluid; shaft power is what the motor actually has to deliver once pump inefficiency is factored in:</p>
+                    <div class="pro-tip">
+                        <strong>Hydraulic Power (kW) = Q (m³/hr) × TDH (m) × ρ (kg/m³) × 9.81 / 3,600,000</strong>
+                        <p style="margin: 10px 0;"><strong>Shaft Power = Hydraulic Power ÷ Pump Efficiency</strong></p>
+                        <p style="margin: 0;"><strong>Motor Rating = Shaft Power × (1 + Motor Margin%)</strong>, then rounded up to the next rating on the common IEC 60034-1 preferred power series (kW). This is a preliminary selection aid, not a guarantee of availability — actual motor <em>frame size</em> (a separate IEC 60072 mounting/dimension standard) and which exact ratings a given manufacturer stocks still depend on speed, poles, and the specific vendor's range.</p>
+                    </div>
+                    <p>The power calculation uses the same temperature-corrected density as the flow calculation — hot feedwater is measurably less dense than cold water, which affects both mass flow conversion and power. Critically, this calculator sizes the motor against <strong>one pump's individual duty flow</strong>, not the total system flow — a common shortcut in simpler tools that quietly oversizes every motor in a multi-pump arrangement.</p>
+
+                    <h2 id="arrangements">5. Duty/Standby Pump Arrangements</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Arrangement</th><th>Each Pump Sized For</th><th>Typical Use</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>1 × 100%</strong></td><td>Full required flow</td><td>Small/simple systems where downtime for pump maintenance is acceptable</td></tr>
+                            <tr><td><strong>2 × 100%</strong></td><td>Full required flow (each)</td><td>Full standby redundancy — one pump runs, one is spare</td></tr>
+                            <tr><td><strong>3 × 50%</strong></td><td>Half the required flow (each)</td><td>Two pumps run together to meet 100% duty, third is spare — common on larger industrial boilers</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Select an arrangement above and the calculator shows both the per-pump duty flow and the per-pump motor rating, since that's what actually gets ordered from a pump vendor — not the system total.</p>
+
+                    <h2 id="worked-example">6. Worked Example: Sizing a 20 t/hr Boiler Feed Pump</h2>
+                    <p>Here's the full calculation, start to finish, for a boiler running at 20,000 kg/hr steam capacity — the default values loaded in the calculator above, so you can follow along and cross-check every number.</p>
+                    <p><strong>Inputs:</strong> Boiler capacity 20,000 kg/hr · Blowdown 3% (of feedwater) · Design margin 15% · Feedwater temperature 105°C · Boiler pressure 12 barg · Control valve differential 1.5 bar · Static discharge head 2 m · Discharge friction 3 m · Suction vessel 0.3 barg · Static suction head +4 m · Suction friction 0.4 m · NPSHr 3 m · Pump efficiency 72% · Motor margin 15%.</p>
+                    <p><strong>Step 1 — Flow:</strong> Feedwater before margin = 20,000 ÷ (1 − 0.03) ≈ 20,619 kg/hr. Add 15% design margin: 20,619 × 1.15 ≈ <strong>23,711 kg/hr</strong>. At 105°C, feedwater density is about 954.6 kg/m³ (not 1,000), giving a volumetric flow of 23,711 ÷ 954.6 ≈ <strong>24.84 m³/hr</strong>.</p>
+                    <p><strong>Step 2 — Head:</strong> 12 barg converts to roughly 128.1 m of head at this density; the 1.5 bar control valve differential adds about 16.0 m; static discharge and friction add 2 m and 3 m. On the suction side, the 0.3 barg vessel plus 4 m static head minus 0.4 m friction gives a suction credit of about 6.8 m. TDH = 128.1 + 16.0 + 2 + 3 − 6.8 ≈ <strong>142.4 m</strong>.</p>
+                    <p><strong>Step 3 — NPSH:</strong> At 105°C, water's vapor pressure is about 1.209 bar absolute (computed via IAPWS-IF97, not assumed). Working through the suction-side pressures gives NPSHa ≈ <strong>4.71 m</strong>. Against the entered NPSHr of 3 m, that's a margin of 1.71 m and a ratio of 1.57× — comfortably above the ~1 m / 1.1× minimum, so the calculator shows a "good" status.</p>
+                    <p><strong>Step 4 — Power & motor, single pump (1×100%):</strong> Hydraulic power = 24.84 m³/hr × 142.4 m × 954.6 kg/m³ × 9.81 ÷ 3,600,000 ≈ 9.2 kW. Shaft power = 9.2 ÷ 0.72 ≈ 12.8 kW. With a 15% motor margin: 12.8 × 1.15 ≈ 14.7 kW, rounded up to the next standard rating: <strong>15 kW</strong>.</p>
+                    <p><strong>Step 5 — Same job, split 3×50%:</strong> Switching the arrangement toggle to "3 × 50%" doesn't change the flow or TDH totals — it changes how they're divided. Each duty pump now handles half the flow (≈12.42 m³/hr) at the same 142.4 m TDH, dropping shaft power to roughly 6.4 kW per pump and the motor selection to <strong>7.5 kW</strong> each — with a third pump on standby.</p>
+                    <p>That's the complete duty point: <strong>24.84 m³/hr @ 142.4 m TDH</strong> for a single pump, or <strong>12.42 m³/hr @ 142.4 m TDH</strong> per pump for a 3×50% arrangement — the exact numbers you'd hand to a pump vendor or check against a manufacturer's curve.</p>
+
+                    <h2 id="what-to-look-for">7. What to Look for in a Boiler Feed Pump Calculator</h2>
+                    <p>The underlying hydraulic formulas are standard engineering — the differences between tools come down to completeness and whether real-world details are modeled or assumed away:</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr></thead>
+                        <tbody>
+                            <tr><td>Blowdown &amp; design margin as separate inputs</td><td>A single arbitrary "safety factor" hides how much margin is actually being applied</td><td class="yes">Included</td></tr>
+                            <tr><td>Temperature-corrected density &amp; vapor pressure</td><td>Hot feedwater has meaningfully different density and much higher vapor pressure than cold water</td><td class="yes">Included</td></tr>
+                            <tr><td>NPSH available vs. required, with a margin check</td><td>The most common real-world cause of feed pump cavitation and premature failure</td><td class="yes">Included</td></tr>
+                            <tr><td>Suction credit from a pressurized/elevated tank</td><td>Ignoring available suction pressure oversizes the pump</td><td class="yes">Included</td></tr>
+                            <tr><td>Feedwater control valve pressure drop as a TDH term</td><td>Often the single largest head component in modulating systems, frequently omitted</td><td class="yes">Included</td></tr>
+                            <tr><td>Motor sized per-pump for the selected arrangement</td><td>A motor sized on total system flow is wrong for every multi-pump layout</td><td class="yes">Included</td></tr>
+                            <tr><td>Single duty-point summary (flow @ TDH)</td><td>The one line a pump vendor actually needs to select or verify a curve against</td><td class="yes">Included</td></tr>
+                            <tr><td>Option to enter a known feedwater flow directly</td><td>Skips the blowdown/margin derivation when you already have a fixed design flow</td><td class="yes">Included</td></tr>
+                            <tr class="highlight-row"><td>Runs entirely in your browser, no lead-gen forms</td><td>Your numbers stay private</td><td class="yes">Included</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="methodology">8. Methodology &amp; Limitations</h2>
+                    <p>This calculator uses standard centrifugal pump sizing formulas (flow, TDH, hydraulic/shaft power) with feedwater density and vapor pressure both computed from your entered temperature rather than assumed constant. A few things worth knowing:</p>
+                    <ul>
+                        <li><strong>Feedwater density</strong> is read from a saturated-liquid-water reference table (0–300°C) with linear interpolation between points — accurate to a fraction of a percent for sizing purposes, not a full IAPWS-95 steam-table implementation.</li>
+                        <li><strong>Vapor pressure</strong> uses the IAPWS-IF97 Region 4 saturation-pressure equation (the industry-standard steam-table correlation), accurate to within about 0.1% of reference steam tables continuously from 0°C up to the critical point (~374°C) — suitable for engineering NPSH screening, though final verification should still use your pump vendor's own data for marginal cases.</li>
+                        <li><strong>TDH and NPSH models use simplified, single-value head terms</strong> for friction and control valve losses that you supply — this tool does not perform pipe-by-pipe Darcy-Weisbach hydraulic calculations, so friction inputs should come from your own piping takeoff or a separate line-loss calculation.</li>
+                        <li><strong>Pump and motor efficiency are user-supplied estimates.</strong> Final selection should always be checked against the actual manufacturer pump curve and motor datasheet — this tool is a preliminary sizing and cross-check aid, not a replacement for vendor selection software.</li>
+                        <li><strong>NPSH required (NPSHr)</strong> must come from a specific pump's published curve at your duty flow — it is not something this calculator can determine on its own, and NPSHr changes with flow rate.</li>
+                        <li>This tool is for preliminary engineering estimation and education only and is not a substitute for a qualified engineer's review, detailed hydraulic study, or manufacturer pump/motor selection data.</li>
+                    </ul>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question">How do you calculate the required boiler feed pump flow rate?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>Required feedwater flow equals the boiler's maximum continuous steam rating, increased for continuous blowdown (typically 2-5%) and a design margin (typically 10-20%), then converted to volumetric flow using the feedwater density at its actual temperature.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">What is Total Dynamic Head (TDH) for a boiler feed pump?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>TDH is the total resistance the pump must overcome: the boiler operating pressure converted to head, plus any feedwater control valve pressure drop, plus static discharge elevation and discharge piping friction, minus any credit from a pressurized or elevated suction source.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">Why does feedwater temperature matter for NPSH?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>Boiler feedwater is often near its boiling point (for example, leaving a deaerator). As temperature rises, the water's vapor pressure rises sharply, which reduces NPSH available and increases the risk of pump cavitation if the margin against NPSH required is too small.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">What NPSH margin should a boiler feed pump have?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>A commonly cited minimum is an NPSH margin of about 1 meter (3.3 ft) or a margin ratio of 1.1, whichever is greater, broadly consistent with the Hydraulic Institute's ANSI/HI 9.6.1 guideline. High-energy or critical services often warrant a larger margin — always confirm against your specific pump's published curve.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">Does this calculator send my data anywhere?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no ads or lead-generation forms.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for preliminary engineering estimation only and is not a substitute for a qualified engineer's review or manufacturer pump/motor selection data. See Section 7 for methodology details and references.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>⚙️</span> Try the Boiler Feed Pump Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div style="text-align:center; margin: 0 0 30px;">
+                        <p style="font-size:13px; color:var(--gray-text); margin-bottom:10px;">Found this useful? Share it with your team.</p>
+                        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://calcsnaps.com/calculators/boiler-feed-pump-calculator" target="_blank" rel="noopener" aria-label="Share on LinkedIn" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f1f5f9;border-radius:40px;color:var(--dark);font-size:13px;font-weight:500;text-decoration:none !important;"><i class="fab fa-linkedin" style="color:#0a66c2;"></i> LinkedIn</a>
+                            <a href="https://twitter.com/intent/tweet?url=https://calcsnaps.com/calculators/boiler-feed-pump-calculator&text=Boiler%20feed%20pump%20calculator%20(flow%2C%20TDH%2C%20NPSH%2C%20motor%20sizing)" target="_blank" rel="noopener" aria-label="Share on X" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f1f5f9;border-radius:40px;color:var(--dark);font-size:13px;font-weight:500;text-decoration:none !important;"><i class="fab fa-x-twitter"></i> X</a>
+                            <button type="button" id="copyLinkBtn" aria-label="Copy link" style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:#f1f5f9;border-radius:40px;color:var(--dark);font-size:13px;font-weight:500;border:none;cursor:pointer;font-family:'Inter',sans-serif;"><i class="fas fa-link"></i> Copy Link</button>
+                        </div>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">⚙️ Boiler Feed Pump Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
+                            <a href="/calculators/soffit-calculator">🏠 Soffit & Ventilation Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/mortgage-calculator">Mortgage Calculator</a>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+                <a href="/calculators/uk-aggregate-calculator">UK Aggregate</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        // ===== DENSITY TABLE (saturated liquid water, kg/m3) =====
+        const DENSITY_TABLE = [
+            [0,999.8],[20,998.2],[40,992.2],[60,983.2],[80,971.8],[100,958.4],
+            [120,943.1],[140,926.1],[160,907.4],[180,887.0],[200,864.7],
+            [220,840.3],[240,813.5],[260,783.6],[280,750.3],[300,712.2]
+        ];
+        function densityAt(tC) {
+            tC = Math.max(0, Math.min(300, tC));
+            for (let i = 0; i < DENSITY_TABLE.length - 1; i++) {
+                const [t0, d0] = DENSITY_TABLE[i], [t1, d1] = DENSITY_TABLE[i + 1];
+                if (tC >= t0 && tC <= t1) {
+                    const f = (tC - t0) / (t1 - t0);
+                    return d0 + f * (d1 - d0);
+                }
+            }
+            return DENSITY_TABLE[DENSITY_TABLE.length - 1][1];
+        }
+
+        // ===== SATURATION VAPOR PRESSURE OF WATER (IAPWS-IF97 Region 4 backward equation) =====
+        // Single continuous formula valid 0-373.9C (up to the critical point) - no range-switching,
+        // so no discontinuities. Matches published steam-table values within ~0.1%.
+        function vaporPressureBar(tC) {
+            const T = Math.max(0.01, Math.min(373.9, tC)) + 273.15;
+            const n1 = 0.11670521452767e4, n2 = -0.72421316703206e6, n3 = -0.17073846940092e2,
+                  n4 = 0.12020824702470e5, n5 = -0.32325550322333e7, n6 = 0.14915108613530e2,
+                  n7 = -0.48232657361591e4, n8 = 0.40511340542057e6, n9 = -0.23855557567849,
+                  n10 = 0.65017534844798e3;
+            const theta = T + n9 / (T - n10);
+            const A = theta * theta + n1 * theta + n2;
+            const B = n3 * theta * theta + n4 * theta + n5;
+            const C = n6 * theta * theta + n7 * theta + n8;
+            const psatMPa = Math.pow((2 * C) / (-B + Math.sqrt(B * B - 4 * A * C)), 4);
+            return psatMPa * 10; // MPa -> bar
+        }
+
+        // ===== COMMON STANDARD MOTOR POWER RATINGS (kW) =====
+        // IEC 60034-1's preferred R20-based power-rating series, used widely across manufacturers
+        // for preliminary selection. Actual available ratings can still vary by speed/pole count
+        // and manufacturer range — always confirm the final selection against a vendor's catalog.
+        const MOTOR_SIZES = [0.37,0.55,0.75,1.1,1.5,2.2,3,4,5.5,7.5,11,15,18.5,22,30,37,45,55,75,90,110,132,150,185,220,250,315];
+        function roundToMotorSize(kw) {
+            for (const s of MOTOR_SIZES) { if (s >= kw) return s; }
+            return Math.ceil(kw / 50) * 50;
+        }
+
+        // ===== UNIT CONVERSION =====
+        // types: 'flow' (kg/hr<->lb/hr), 'pressure' (bar<->psi), 'length' (m<->ft), 'temp' (C<->F), 'gaugePressure' (barg<->psig)
+        function convert(v, type, toSystem) {
+            if (isNaN(v)) return v;
+            switch (type) {
+                case 'flow': return toSystem === 'us' ? v * 2.20462 : v / 2.20462;
+                case 'pressure':
+                case 'gaugePressure': return toSystem === 'us' ? v * 14.5038 : v / 14.5038;
+                case 'length': return toSystem === 'us' ? v * 3.28084 : v / 3.28084;
+                case 'temp': return toSystem === 'us' ? (v * 9 / 5 + 32) : ((v - 32) * 5 / 9);
+                default: return v;
+            }
+        }
+        function toMetricValue(v, type, fromSystem) {
+            if (fromSystem === 'metric') return v;
+            return convert(v, type, 'metric');
+        }
+
+        const FIELD_TYPES = {
+            boilerCapacity: 'flow',
+            knownFeedwaterFlow: 'flow',
+            feedTempFlow: 'temp',
+            boilerPressure: 'gaugePressure',
+            cvDrop: 'pressure',
+            staticDischarge: 'length',
+            dischargeFriction: 'length',
+            suctionTankPressure: 'gaugePressure',
+            staticSuction: 'length',
+            suctionFriction: 'length',
+            npshRequired: 'length'
+        };
+        const UNIT_LABELS = {
+            metric: { flow: 'kg/hr', pressure: 'bar', length: 'm', temp: '°C', gaugePressure: 'barg' },
+            us: { flow: 'lb/hr', pressure: 'psi', length: 'ft', temp: '°F', gaugePressure: 'psig' }
+        };
+        const UNIT_LABEL_ELS = {
+            boilerCapacity: 'unitBoilerCap', knownFeedwaterFlow: 'unitKnownFeedwater', feedTempFlow: 'unitTempFlow', boilerPressure: 'unitBoilerPressure',
+            cvDrop: 'unitCvDrop', staticDischarge: 'unitStaticDischarge', dischargeFriction: 'unitDischargeFriction',
+            suctionTankPressure: 'unitSuctionTankPressure', staticSuction: 'unitStaticSuction',
+            suctionFriction: 'unitSuctionFriction', npshRequired: 'unitNpshRequired'
+        };
+
+        let unitSystem = 'metric';
+        let arrangement = '1x100';
+        let flowMode = 'steam';
+        const g = 9.81;
+        const ATM_BAR = 1.01325;
+
+        // ===== DOM refs =====
+        function $(id) { return document.getElementById(id); }
+        const allNumericFields = Object.keys(FIELD_TYPES).concat(['blowdownPct','designMarginPct','pumpEfficiency','motorMargin']);
+
+        function getMetricVal(id) {
+            const raw = parseFloat($(id).value);
+            if (isNaN(raw)) return 0;
+            const type = FIELD_TYPES[id];
+            if (!type) return raw;
+            return toMetricValue(raw, type, unitSystem);
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); } });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== ARRANGEMENT TOGGLE =====
+        document.querySelectorAll('#arrangementToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectArrangement(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectArrangement(btn); } });
+        });
+        function selectArrangement(btn) {
+            document.querySelectorAll('#arrangementToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            arrangement = btn.dataset.arr;
+            calculateAll();
+        }
+        function arrangementInfo() {
+            if (arrangement === '1x100') return { dutyPumps: 1, totalPumps: 1, label: '1 duty (no standby)' };
+            if (arrangement === '2x100') return { dutyPumps: 1, totalPumps: 2, label: '1 duty + 1 standby (each 100%)' };
+            return { dutyPumps: 2, totalPumps: 3, label: '2 duty + 1 standby (each 50%)' };
+        }
+
+        // ===== FLOW MODE TOGGLE (steam capacity vs. known feedwater flow) =====
+        document.querySelectorAll('#flowModeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectFlowMode(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectFlowMode(btn); } });
+        });
+        function selectFlowMode(btn) {
+            document.querySelectorAll('#flowModeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+            flowMode = btn.dataset.mode;
+            $('steamModeFields').style.display = flowMode === 'steam' ? '' : 'none';
+            $('feedwaterModeFields').style.display = flowMode === 'feedwater' ? '' : 'none';
+            calculateAll();
+        }
+
+        // ===== UNIT TOGGLE =====
+        document.querySelectorAll('#unitToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectUnits(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectUnits(btn); } });
+        });
+        function selectUnits(btn) {
+            const newSystem = btn.dataset.units;
+            if (newSystem === unitSystem) return;
+            document.querySelectorAll('#unitToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active');
+            btn.setAttribute('aria-checked', 'true');
+
+            // Convert every tracked field's displayed value to the new system
+            Object.keys(FIELD_TYPES).forEach(id => {
+                const el = $(id);
+                const raw = parseFloat(el.value);
+                if (!isNaN(raw)) {
+                    const converted = convert(raw, FIELD_TYPES[id], newSystem);
+                    el.value = roundDisplay(converted, FIELD_TYPES[id]);
+                }
+            });
+            unitSystem = newSystem;
+            updateUnitLabels();
+            calculateAll();
+        }
+        function roundDisplay(v, type) {
+            if (type === 'flow') return Math.round(v);
+            if (type === 'temp') return Math.round(v * 10) / 10;
+            return Math.round(v * 100) / 100;
+        }
+        function updateUnitLabels() {
+            Object.keys(UNIT_LABEL_ELS).forEach(id => {
+                const type = FIELD_TYPES[id];
+                const labelEl = $(UNIT_LABEL_ELS[id]);
+                if (labelEl) labelEl.textContent = UNIT_LABELS[unitSystem][type];
+            });
+        }
+
+        // ===== INPUT VALIDATION / CLAMPING (unitless % fields) =====
+        function attachClamp(el, min, max) {
+            el.addEventListener('change', () => {
+                let v = parseFloat(el.value);
+                const group = el.closest('.input-group');
+                let clamped = false;
+                if (isNaN(v)) { v = min; clamped = true; }
+                if (min !== null && v < min) { v = min; clamped = true; }
+                if (max !== null && v > max) { v = max; clamped = true; }
+                if (clamped) {
+                    el.value = v;
+                    if (group) { group.classList.add('field-clamped'); setTimeout(() => group.classList.remove('field-clamped'), 2500); }
+                    calculateAll();
+                }
+            });
+        }
+        attachClamp($('blowdownPct'), 0, 15);
+        attachClamp($('designMarginPct'), 0, 100);
+        attachClamp($('boilerCapacity'), 0, null);
+        attachClamp($('knownFeedwaterFlow'), 0, null);
+        attachClamp($('cvDrop'), 0, null);
+        attachClamp($('dischargeFriction'), 0, null);
+        attachClamp($('suctionFriction'), 0, null);
+        attachClamp($('npshRequired'), 0, null);
+        attachClamp($('pumpEfficiency'), 10, 95);
+        attachClamp($('motorMargin'), 0, 50);
+
+        allNumericFields.forEach(id => { $(id).addEventListener('input', calculateAll); });
+
+        // ===== FORMAT HELPERS =====
+        function fmtFlow(kgHr) {
+            if (unitSystem === 'us') { return Math.round(convert(kgHr, 'flow', 'us')).toLocaleString('en-US') + ' lb/hr'; }
+            return Math.round(kgHr).toLocaleString('en-US') + ' kg/hr';
+        }
+        function fmtVolFlow(m3hr) {
+            if (unitSystem === 'us') { return (m3hr * 4.40287).toFixed(1) + ' gpm'; } // m3/hr to US gpm
+            return m3hr.toFixed(2) + ' m³/hr';
+        }
+        function fmtLength(m) {
+            if (unitSystem === 'us') { return (m * 3.28084).toFixed(1) + ' ft'; }
+            return m.toFixed(1) + ' m';
+        }
+        function fmtPressure(bar) {
+            if (unitSystem === 'us') { return (bar * 14.5038).toFixed(1) + ' psi'; }
+            return bar.toFixed(3) + ' bar';
+        }
+        function fmtDensity(rho) {
+            if (unitSystem === 'us') { return (rho * 0.062428).toFixed(1) + ' lb/ft³'; }
+            return rho.toFixed(1) + ' kg/m³';
+        }
+        function fmtPower(kw) {
+            if (unitSystem === 'us') { return (kw * 1.34102).toFixed(2) + ' hp'; }
+            return kw.toFixed(2) + ' kW';
+        }
+
+        // ===== MAIN CALCULATE =====
+        function calculateAll() {
+            // ---- Inputs (converted to metric internally) ----
+            const boilerCapacityKgHr = getMetricVal('boilerCapacity');
+            const knownFeedwaterKgHr = getMetricVal('knownFeedwaterFlow');
+            const blowdownPct = parseFloat($('blowdownPct').value) || 0;
+            const marginPct = parseFloat($('designMarginPct').value) || 0;
+            const feedTempC = getMetricVal('feedTempFlow');
+
+            // Density table only covers 0-300C; vapor pressure formula covers up to ~373.9C.
+            // Density is the binding constraint, so warn explicitly rather than silently
+            // clamping and returning results computed at the wrong temperature.
+            const tempWarningEl = $('tempRangeWarning');
+            if (feedTempC < 0 || feedTempC > 300) {
+                tempWarningEl.classList.add('show');
+                tempWarningEl.innerHTML = '<i class="fas fa-triangle-exclamation"></i> <strong>Feedwater temperature is outside the supported range (0-300°C).</strong> Density (and therefore flow, TDH, and power) is being calculated at the nearest supported boundary value, not your entered temperature — results below are not valid until you correct this.';
+            } else {
+                tempWarningEl.classList.remove('show');
+                tempWarningEl.innerHTML = '';
+            }
+            const boilerPressureBar = getMetricVal('boilerPressure');
+            const cvDropBar = getMetricVal('cvDrop');
+            const staticDischargeM = getMetricVal('staticDischarge');
+            const dischargeFrictionM = getMetricVal('dischargeFriction');
+            const suctionTankGaugeBar = getMetricVal('suctionTankPressure');
+            const staticSuctionM = getMetricVal('staticSuction');
+            const suctionFrictionM = getMetricVal('suctionFriction');
+            const npshRequiredM = getMetricVal('npshRequired');
+            const pumpEfficiency = (parseFloat($('pumpEfficiency').value) || 70) / 100;
+            const motorMarginPct = parseFloat($('motorMargin').value) || 0;
+
+            const rho = densityAt(feedTempC);
+
+            // ---- TAB 1: Flow & Head ----
+            // Blowdown is % of feedwater flow (not steam): Feedwater = Steam / (1 - blowdown%)
+            const blowdownFraction = Math.min(0.95, blowdownPct / 100);
+            const feedwaterBeforeMargin = flowMode === 'feedwater' ? knownFeedwaterKgHr : (boilerCapacityKgHr / (1 - blowdownFraction));
+            const totalFlowKgHr = flowMode === 'feedwater' ? knownFeedwaterKgHr : feedwaterBeforeMargin * (1 + marginPct / 100);
+            const totalFlowM3Hr = totalFlowKgHr / rho;
+
+            const arr = arrangementInfo();
+            const perPumpM3Hr = totalFlowM3Hr / arr.dutyPumps;
+
+            function barToHead(bar) { return bar * 1e5 / (rho * g); }
+            const pressureHeadM = barToHead(boilerPressureBar);
+            const cvHeadM = barToHead(cvDropBar);
+            const suctionCreditM = barToHead(suctionTankGaugeBar) + staticSuctionM - suctionFrictionM;
+            const tdhM = pressureHeadM + cvHeadM + staticDischargeM + dischargeFrictionM - suctionCreditM;
+
+            $('totalFlowResult').textContent = fmtFlow(totalFlowKgHr) + ' (' + fmtVolFlow(totalFlowM3Hr) + ')';
+            $('perPumpFlowResult').textContent = fmtVolFlow(perPumpM3Hr);
+            $('tdhResult').textContent = fmtLength(tdhM);
+            $('densityResult').textContent = fmtDensity(rho);
+            $('pumpCountResult').textContent = arr.totalPumps + ' total — ' + arr.label;
+
+            $('flowNote').innerHTML = flowMode === 'feedwater'
+                ? '<i class="fas fa-info-circle"></i> Using your entered feedwater flow directly (no blowdown/margin uplift applied — add your own margin before entering this value if it is not already included).'
+                : '<i class="fas fa-info-circle"></i> Feedwater = Boiler capacity ÷ (1 − blowdown%), then × (1 + design margin%) — blowdown is treated as a percentage of feedwater flow, not of steam. Converted to volume using feedwater density at the temperature you entered, not a fixed 1,000 kg/m³ assumption.';
+
+            $('dutyPointBanner').innerHTML = '<i class="fas fa-crosshairs"></i> Required duty point (per pump): <strong>' + fmtVolFlow(perPumpM3Hr) + ' @ ' + fmtLength(tdhM) + ' TDH</strong>';
+
+            // Head breakdown bar
+            const segments = [
+                { label: 'Boiler Pressure Head', value: Math.max(0, pressureHeadM), color: '#8b5cf6' },
+                { label: 'Control Valve Drop', value: Math.max(0, cvHeadM), color: '#3b82f6' },
+                { label: 'Static Discharge Head', value: Math.max(0, staticDischargeM), color: '#fbbf24' },
+                { label: 'Discharge Friction', value: Math.max(0, dischargeFrictionM), color: '#f97316' },
+                { label: 'Suction Credit (subtracted)', value: Math.max(0, suctionCreditM), color: '#10b981' }
+            ];
+            const barTotal = segments.reduce((s, x) => s + x.value, 0) || 1;
+            const bar = $('headStackedBar'); bar.innerHTML = '';
+            const breakdownEl = $('headBreakdown'); breakdownEl.innerHTML = '';
+            segments.forEach(seg => {
+                if (seg.value > 0) {
+                    const segDiv = document.createElement('div');
+                    segDiv.style.width = (seg.value / barTotal * 100) + '%';
+                    segDiv.style.background = seg.color;
+                    bar.appendChild(segDiv);
+                }
+                const row = document.createElement('div');
+                row.className = 'breakdown-row';
+                const sign = seg.label.indexOf('Suction Credit') === 0 ? '−' : '';
+                row.innerHTML = '<span class="label"><span class="swatch" style="background:' + seg.color + '"></span>' + seg.label + '</span><span class="value">' + sign + fmtLength(seg.value) + '</span>';
+                breakdownEl.appendChild(row);
+            });
+            const tdhRow = document.createElement('div');
+            tdhRow.className = 'breakdown-row';
+            tdhRow.style.borderTop = '2px solid #e2e8f0';
+            tdhRow.style.marginTop = '4px';
+            tdhRow.innerHTML = '<span class="label" style="font-weight:700;color:var(--dark);">Total Dynamic Head (TDH)</span><span class="value">' + fmtLength(tdhM) + '</span>';
+            breakdownEl.appendChild(tdhRow);
+
+            // ---- TAB 2: NPSH ----
+            const vaporBar = vaporPressureBar(feedTempC);
+            const absTankBar = suctionTankGaugeBar + ATM_BAR;
+            const tankHeadM = barToHead(absTankBar);
+            const vaporHeadM = barToHead(vaporBar);
+            const npshaM = tankHeadM + staticSuctionM - vaporHeadM - suctionFrictionM;
+            const npshMarginM = npshaM - npshRequiredM;
+            const npshRatio = npshRequiredM > 0 ? (npshaM / npshRequiredM) : null;
+
+            $('vaporPressureResult').textContent = fmtPressure(vaporBar) + ' abs';
+            $('npshaResult').textContent = fmtLength(npshaM);
+            $('npshrDisplay').textContent = fmtLength(npshRequiredM);
+            $('npshMarginResult').textContent = fmtLength(npshMarginM);
+            $('npshRatioResult').textContent = npshRatio !== null ? npshRatio.toFixed(2) + '×' : '-';
+
+            $('npshVaporNote').innerHTML = '<i class="fas fa-info-circle"></i> At ' + feedTempC.toFixed(1) + '°C, water’s vapor pressure is ' + fmtPressure(vaporBar) + ' (absolute) — computed from the IAPWS-IF97 saturation-pressure equation for water, not a rough estimate.';
+
+            const npshWarningEl = $('npshWarning');
+            let npshStatus, npshMsg;
+            const marginThresholdM = 1.0;
+            if (npshRequiredM <= 0) {
+                npshStatus = 'neutral';
+                npshMsg = '<i class="fas fa-info-circle"></i> Enter your pump’s NPSH Required (from its performance curve at the duty flow) to get a margin check.';
+            } else if (npshMarginM < marginThresholdM || (npshRatio !== null && npshRatio < 1.1)) {
+                npshStatus = 'danger';
+                npshMsg = '<i class="fas fa-triangle-exclamation"></i> <strong>Insufficient NPSH margin</strong> — margin is below the commonly cited minimum of ~1 m (3.3 ft) or a 1.1× ratio. Risk of cavitation. Consider raising the suction vessel, reducing suction friction loss, or selecting a pump with lower NPSHr.';
+            } else if (npshMarginM < 1.5) {
+                npshStatus = 'caution';
+                npshMsg = '<i class="fas fa-circle-exclamation"></i> <strong>Marginal NPSH margin</strong> — above the bare minimum but with little cushion. Review against ANSI/HI 9.6.1 guidance for your pump’s suction energy before finalizing.';
+            } else {
+                npshStatus = 'good';
+                npshMsg = '<i class="fas fa-circle-check"></i> <strong>Adequate NPSH margin</strong> for typical service. Still confirm against the manufacturer’s published NPSHr curve at your actual duty flow.';
+            }
+            npshWarningEl.className = 'status-note show status-' + npshStatus;
+            npshWarningEl.innerHTML = npshMsg;
+
+            // ---- TAB 3: Power & Motor ----
+            const hydraulicKW = perPumpM3Hr * tdhM * rho * g / 3.6e6;
+            const shaftKW = hydraulicKW / pumpEfficiency;
+            const motorReqKW = shaftKW * (1 + motorMarginPct / 100);
+            const motorSizeKW = roundToMotorSize(motorReqKW);
+            const totalMotorKW = motorSizeKW * arr.dutyPumps;
+
+            $('hydraulicPowerResult').textContent = fmtPower(hydraulicKW);
+            $('shaftPowerResult').textContent = fmtPower(shaftKW);
+            $('motorCalcResult').textContent = fmtPower(motorReqKW);
+            $('motorRatingResult').textContent = fmtPower(motorSizeKW);
+            $('totalMotorResult').textContent = fmtPower(totalMotorKW) + ' (' + arr.dutyPumps + ' duty pump' + (arr.dutyPumps > 1 ? 's' : '') + ')';
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            if (unitSystem !== 'metric') {
+                document.querySelectorAll('#unitToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                document.querySelector('#unitToggle .toggle-option[data-units="metric"]').classList.add('active');
+                document.querySelector('#unitToggle .toggle-option[data-units="metric"]').setAttribute('aria-checked', 'true');
+                unitSystem = 'metric';
+                updateUnitLabels();
+            }
+            $('boilerCapacity').value = '20000';
+            $('knownFeedwaterFlow').value = '23690';
+            $('blowdownPct').value = '3';
+            $('designMarginPct').value = '15';
+            $('feedTempFlow').value = '105';
+            $('boilerPressure').value = '12';
+            $('cvDrop').value = '1.5';
+            $('staticDischarge').value = '2';
+            $('dischargeFriction').value = '3';
+            $('suctionTankPressure').value = '0.3';
+            $('staticSuction').value = '4';
+            $('suctionFriction').value = '0.4';
+            $('npshRequired').value = '3';
+            $('pumpEfficiency').value = '72';
+            $('motorMargin').value = '15';
+
+            document.querySelectorAll('#arrangementToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.arr === '1x100') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            arrangement = '1x100';
+
+            document.querySelectorAll('#flowModeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.mode === 'steam') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            flowMode = 'steam';
+            $('steamModeFields').style.display = '';
+            $('feedwaterModeFields').style.display = 'none';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Boiler Feed Pump Sizing Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date + ' | Units: ' + (unitSystem === 'metric' ? 'Metric' : 'US'), 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Flow & Head', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Flow Mode: ' + (flowMode === 'feedwater' ? 'Known feedwater flow (entered directly)' : 'From steam capacity + blowdown/margin'), 25, 60);
+            doc.text('Boiler Capacity: ' + $('boilerCapacity').value + ' ' + $('unitBoilerCap').textContent, 25, 67);
+            doc.text('Blowdown (% of feedwater): ' + $('blowdownPct').value + '%   Design Margin: ' + $('designMarginPct').value + '%', 25, 74);
+            doc.text('Required Total Flow: ' + $('totalFlowResult').textContent, 25, 81);
+            doc.text('Per-Pump Duty Flow: ' + $('perPumpFlowResult').textContent, 25, 88);
+            doc.text('Total Dynamic Head: ' + $('tdhResult').textContent, 25, 95);
+            doc.text('Pump Arrangement: ' + $('pumpCountResult').textContent, 25, 102);
+            doc.setFontSize(11); doc.setTextColor(139, 92, 246);
+            doc.text('>> Duty Point (per pump): ' + $('perPumpFlowResult').textContent + ' @ ' + $('tdhResult').textContent + ' TDH', 25, 111);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('NPSH Check', 20, 127);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Feedwater Temp: ' + $('feedTempFlow').value + ' ' + $('unitTempFlow').textContent, 25, 137);
+            doc.text('NPSH Available: ' + $('npshaResult').textContent, 25, 144);
+            doc.text('NPSH Required: ' + $('npshrDisplay').textContent, 25, 151);
+            doc.text('NPSH Margin: ' + $('npshMarginResult').textContent + '  (Ratio: ' + $('npshRatioResult').textContent + ')', 25, 158);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Power & Motor (per duty pump)', 20, 174);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Hydraulic Power: ' + $('hydraulicPowerResult').textContent, 25, 184);
+            doc.text('Shaft Power: ' + $('shaftPowerResult').textContent, 25, 191);
+            doc.text('Recommended Motor: ' + $('motorRatingResult').textContent, 25, 198);
+            doc.text('Total Installed Motor Power: ' + $('totalMotorResult').textContent, 25, 205);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Verify the selected pump curve can deliver this duty point and that NPSHr is quoted at this flow.', 105, 260, { align: 'center' });
+            doc.text('Preliminary sizing estimate only. Confirm with manufacturer pump curves, NPSHr data, and a qualified engineer before procurement.', 105, 270, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Boiler Feed Pump Calculator', 105, 280, { align: 'center' });
+
+            doc.save('Boiler_Feed_Pump_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                // Native <button> already fires 'click' on Enter/Space, so only one listener is needed
+                q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+            });
+        });
+
+        // ===== COPY LINK (share) =====
+        const copyLinkBtn = document.getElementById('copyLinkBtn');
+        if (copyLinkBtn) {
+            copyLinkBtn.addEventListener('click', async () => {
+                const original = copyLinkBtn.innerHTML;
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    copyLinkBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                } catch (e) {
+                    copyLinkBtn.innerHTML = 'Copy failed — copy manually';
+                }
+                setTimeout(() => { copyLinkBtn.innerHTML = original; }, 1800);
+            });
+        }
+
+        // ===== INIT =====
+        updateUnitLabels();
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
