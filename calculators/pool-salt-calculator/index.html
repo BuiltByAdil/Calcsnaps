@@ -119,11 +119,6 @@
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f0fdff 0%, #e0f7fa 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
         .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
 
-        .breadcrumb-nav { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 13.5px; margin: 18px 0 16px; color: var(--text-dark); }
-        .breadcrumb-nav a { color: var(--primary-dark); text-decoration: none; font-weight: 500; }
-        .breadcrumb-nav a:hover { text-decoration: underline; }
-        .breadcrumb-nav .sep { color: var(--gray); }
-        .breadcrumb-nav .current { color: var(--text-dark); font-weight: 600; }
 
         .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.2); overflow: hidden; border: 1px solid #e2e8f0; }
         .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
@@ -345,7 +340,7 @@
                             <div class="row"><input type="number" id="targetPPM" value="3200" step="50" min="0" aria-label="Target salt ppm"><span class="unit">ppm</span></div>
                         </div>
                         <div class="input-group">
-                            <label for="pricePerBag">Price per 40 lb Bag</label>
+                            <label for="pricePerBag" id="priceLabelText">Price per 40 lb Bag</label>
                             <div class="row"><span class="unit">$</span><input type="number" id="pricePerBag" value="8" step="0.5" min="0" aria-label="Price per bag"></div>
                         </div>
                     </div>
@@ -353,14 +348,14 @@
                     <div class="toggle-row">
                         <span class="toggle-label"><i class="fas fa-microchip"></i> Salt Cell / Generator Brand</span>
                         <div class="toggle-switch" id="brandToggle" role="radiogroup" aria-label="Salt cell brand preset">
-                            <button class="toggle-option active" data-target="3200" data-name="Generic / Unbranded" role="radio" aria-checked="true" tabindex="0">Generic (3,200)</button>
-                            <button class="toggle-option" data-target="3400" data-name="Hayward" role="radio" aria-checked="false" tabindex="0">Hayward</button>
-                            <button class="toggle-option" data-target="3400" data-name="Pentair IntelliChlor" role="radio" aria-checked="false" tabindex="0">Pentair</button>
-                            <button class="toggle-option" data-target="3200" data-name="CircuPool" role="radio" aria-checked="false" tabindex="0">CircuPool</button>
-                            <button class="toggle-option" data-target="3000" data-name="Jandy AquaPure" role="radio" aria-checked="false" tabindex="0">Jandy</button>
+                            <button class="toggle-option active" data-brand="generic" role="radio" aria-checked="true" tabindex="0">Generic (3,200)</button>
+                            <button class="toggle-option" data-brand="hayward" role="radio" aria-checked="false" tabindex="0">Hayward</button>
+                            <button class="toggle-option" data-brand="pentair" role="radio" aria-checked="false" tabindex="0">Pentair</button>
+                            <button class="toggle-option" data-brand="circupool" role="radio" aria-checked="false" tabindex="0">CircuPool</button>
+                            <button class="toggle-option" data-brand="jandy" role="radio" aria-checked="false" tabindex="0">Jandy</button>
                         </div>
                     </div>
-                    <div class="brand-note" id="brandNote">Using a generic 3,200 ppm target — the commonly cited optimal level for most salt chlorine generators. Select your equipment brand above for a more precise target, and always confirm against your owner's manual.</div>
+                    <div class="brand-note" id="brandNote"></div>
 
                     <div class="no-action-banner" id="noActionBanner">✅ Your salt level is already at or above your target — no salt needed! If it's too high, switch to the "Lower Salt" tab.</div>
 
@@ -372,7 +367,7 @@
                         </div>
                         <div class="results-grid">
                             <div class="result-card">
-                                <div class="result-label">40 lb Bags Needed</div>
+                                <div class="result-label" id="bagsLabelText">40 lb Bags Needed</div>
                                 <div class="result-value" id="bagsNeeded">0</div>
                                 <div class="result-unit">round up — bags aren't sold partial</div>
                             </div>
@@ -385,6 +380,7 @@
                                 <div class="result-label">PPM Increase</div>
                                 <div class="result-value small" id="ppmIncrease">0 ppm</div>
                             </div>
+
                         </div>
                     </div>
 
@@ -766,12 +762,26 @@
             const label = currentUnit === 'imperial' ? 'gal' : 'L';
             document.getElementById('volUnit1').textContent = label;
             document.getElementById('volUnit2').textContent = label;
+            updateBagLabels();
 
             renderShapeInputs(dims); // rebuild with the CONVERTED values, not fresh defaults
             calculateAdd();
             calculateLower();
             calculateVolume();
         }
+
+        // FIX (P0 #3): brand presets now carry a realistic RANGE + suggested target instead of
+        // a single hardcoded number, matching the same ranges already published in the
+        // article's brand table below (so the calculator and the article never disagree).
+        // The target field stays a normal editable number input either way — this preset
+        // is a starting point, not a locked value.
+        const brandData = {
+            generic:   { name: 'Generic / Unbranded', target: 3200, range: '2,700–3,400' },
+            hayward:   { name: 'Hayward AquaRite / TurboCell', target: 3200, range: '3,200–3,400' },
+            pentair:   { name: 'Pentair IntelliChlor', target: 3200, range: '3,200–3,400' },
+            circupool: { name: 'CircuPool', target: 3200, range: '3,000–3,400' },
+            jandy:     { name: 'Jandy AquaPure', target: 3000, range: '2,700–3,400' }
+        };
 
         // ===== BRAND TOGGLE =====
         document.querySelectorAll('#brandToggle .toggle-option').forEach(btn => {
@@ -781,14 +791,38 @@
         function selectBrand(btn) {
             document.querySelectorAll('#brandToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
             btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
-            targetPPMEl.value = btn.dataset.target;
-            brandNote.innerHTML = '<strong>' + btn.dataset.name + ':</strong> typical target around ' + btn.dataset.target + ' ppm. Always confirm against your specific unit\'s manual — targets can vary by model.';
+            const data = brandData[btn.dataset.brand];
+            targetPPMEl.value = data.target;
+            brandNote.innerHTML = '<strong>' + data.name + ':</strong> typical operating range <strong>' + data.range + ' ppm</strong>, suggested target <strong>' + data.target + ' ppm</strong> (pre-filled below — feel free to adjust it). Always confirm against your specific unit\'s manual, since exact specs can vary by model.';
             calculateAdd();
         }
+
+        // FIX (P0 #1 - PDF stale-result bug): single source of truth for the Add-Salt result,
+        // updated on every calculateAdd() call — including the "no salt needed" branch, which
+        // previously returned early and left old DOM text (e.g. "367 lbs") sitting in the
+        // hidden result panel. downloadPDF() now reads from this object instead of the DOM,
+        // so it can never print a contradictory number.
+        let addResultState = { needed: false, saltLbs: 0, saltKg: 0, bags: 0, cost: 0, ppmIncrease: 0 };
 
         // ===== FORMAT HELPERS =====
         function fmt(n) { return isFinite(n) ? Math.round(n).toLocaleString('en-US') : '0'; }
         function fmt2(n) { return isFinite(n) ? n.toFixed(1) : '0'; }
+
+        // FIX (P0 #2 - metric bag label): 40 lb is a fixed physical bag size (the actual
+        // packaged product doesn't change), so the underlying math always uses 40 lb — but the
+        // LABEL now shows the kg-equivalent (~18.1 kg) when the calculator is in metric mode,
+        // instead of permanently reading "40 lb" even for a user who has switched to Liters/kg.
+        function updateBagLabels() {
+            const priceLabel = document.getElementById('priceLabelText');
+            const bagsLabel = document.getElementById('bagsLabelText');
+            if (currentUnit === 'imperial') {
+                priceLabel.textContent = 'Price per 40 lb Bag';
+                bagsLabel.textContent = '40 lb Bags Needed';
+            } else {
+                priceLabel.textContent = 'Price per 18.1 kg Bag';
+                bagsLabel.textContent = '18.1 kg Bags Needed';
+            }
+        }
 
         // ===== ADD SALT CALC =====
         function calculateAdd() {
@@ -806,6 +840,8 @@
             if (saltLbs <= 0) {
                 noActionBanner.classList.add('show');
                 addResultsPanel.style.display = 'none';
+                // FIX (P0 #1): reset the shared state instead of leaving it (and the DOM) stale
+                addResultState = { needed: false, saltLbs: 0, saltKg: 0, bags: 0, cost: 0, ppmIncrease: Math.max(0, target - current) };
                 return;
             } else {
                 noActionBanner.classList.remove('show');
@@ -815,6 +851,8 @@
             const saltKg = saltLbs * 0.453592;
             const bags = Math.ceil(saltLbs / 40);
             const cost = bags * price;
+
+            addResultState = { needed: true, saltLbs, saltKg, bags, cost, ppmIncrease: target - current };
 
             if (currentUnit === 'imperial') {
                 document.getElementById('saltNeededLbs').textContent = fmt(saltLbs) + ' lbs';
@@ -946,7 +984,8 @@
                 b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
                 if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
             });
-            brandNote.innerHTML = 'Using a generic 3,200 ppm target — the commonly cited optimal level for most salt chlorine generators. Select your equipment brand above for a more precise target, and always confirm against your owner\'s manual.';
+            brandNote.innerHTML = '<strong>Generic / Unbranded:</strong> typical operating range <strong>2,700–3,400 ppm</strong>, suggested target <strong>3,200 ppm</strong>. Select your equipment brand above for a more precise range, and always confirm against your owner\'s manual.';
+            updateBagLabels();
 
             document.querySelectorAll('#shapeToggle .toggle-option').forEach((b, i) => {
                 b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
@@ -983,9 +1022,20 @@
             doc.text('Pool Volume: ' + poolVolumeEl.value + ' ' + (currentUnit === 'imperial' ? 'gal' : 'L'), 25, 60);
             doc.text('Current PPM: ' + currentPPMEl.value, 25, 67);
             doc.text('Target PPM: ' + targetPPMEl.value, 25, 74);
-            doc.text('Salt to Add: ' + document.getElementById('saltNeededLbs').textContent, 25, 81);
-            doc.text('Bags Needed (40 lb): ' + document.getElementById('bagsNeeded').textContent, 25, 88);
-            doc.text('Estimated Cost: ' + document.getElementById('estCost').textContent, 25, 95);
+            // FIX (P0 #1): read from addResultState (always fresh) instead of DOM textContent
+            // (which could still hold a stale number from a previous calculation once the
+            // result panel was hidden by the "no salt needed" branch).
+            const bagUnitLabel = currentUnit === 'imperial' ? '40 lb' : '18.1 kg';
+            if (!addResultState.needed) {
+                doc.text('Salt to Add: None — current level is already at or above target', 25, 81);
+            } else {
+                const saltText = currentUnit === 'imperial'
+                    ? Math.round(addResultState.saltLbs).toLocaleString('en-US') + ' lbs'
+                    : Math.round(addResultState.saltKg).toLocaleString('en-US') + ' kg';
+                doc.text('Salt to Add: ' + saltText, 25, 81);
+                doc.text('Bags Needed (' + bagUnitLabel + '): ' + addResultState.bags, 25, 88);
+                doc.text('Estimated Cost: $' + addResultState.cost.toFixed(2), 25, 95);
+            }
 
             doc.setFontSize(14); doc.setTextColor(6, 182, 212);
             doc.text('Lower Salt Summary', 20, 111);
@@ -1017,6 +1067,7 @@
         });
 
         // ===== INIT =====
+        updateBagLabels();
         renderShapeInputs();
         calculateAdd();
         calculateLower();
