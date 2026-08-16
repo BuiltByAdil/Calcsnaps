@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>River Rock Calculator | Tons, Yards & Cost | CalcSnaps</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free river rock calculator that adjusts for rock size — pea gravel through riprap. Get tons, cubic yards, bags & cost in seconds.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/calculators/river-rock-calculator">
+
+    <meta property="og:title" content="River Rock Calculator | Tons, Yards & Cost | CalcSnaps">
+    <meta property="og:description" content="Find exactly how much river rock you need — adjusted for rock size, with tons, cubic yards, bags and cost. Includes a built-in area calculator for any shape bed.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/river-rock-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "River Rock Calculator",
+        "description": "Calculate how much river rock you need in tons, cubic yards and bags, adjusted for rock size, plus a built-in area calculator for rectangular, circular and triangular beds",
+        "url": "https://calcsnaps.com/calculators/river-rock-calculator",
+        "applicationCategory": "ConstructionApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "River Rock Calculator Guide: How Much River Rock You Need by Size, Volume & Coverage",
+        "description": "Complete guide to calculating river rock for landscaping — volume-based math for small rock, coverage-based math for large rock and riprap, plus area formulas for any bed shape.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/river-rock-calculator" },
+        "datePublished": "2026-08-14",
+        "dateModified": "2026-08-14"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much river rock do I need?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Multiply the length and width of your area in feet to get square footage, multiply by your desired depth in feet, then multiply by the rock's density to get weight. For example, a 6x4 ft area at 10 inches deep with standard river rock (89 lb/cu ft) needs about 1,780 lbs, or 0.89 tons." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many square feet does a ton of river rock cover?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on rock size and depth. Small river rock at a standard 2-3 inch depth covers roughly 80-100 sq ft per ton. Larger river rock (3-6 inches), placed as a single layer, covers roughly 50 sq ft per ton, and extra-large rock or riprap (6+ inches) covers roughly 25 sq ft per ton." }
+            },
+            {
+                "@type": "Question",
+                "name": "How deep should river rock be?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Depth depends on rock size: pea gravel is typically laid 2 inches deep, small to medium river rock 3-4 inches deep. Larger river rock (3 inches and up) is placed as a single layer rather than measured by depth, since the stones themselves are the depth." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a cubic yard of river rock weigh?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Standard river rock weighs roughly 2,400 lbs (1.2 tons) per cubic yard, though this varies by rock size and moisture content — larger rocks have more air gaps between them, which changes the effective weight per volume. Always confirm with your supplier for their specific material." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is river rock sold by the ton or by the yard?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Most landscape suppliers sell river rock by the ton for larger orders, though smaller quantities are often sold by the cubic yard or in 0.5-cubic-foot bags for small projects." }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa;
+            --secondary: #fbbf24; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h2 { font-size: 28px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .calc-header h2 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+
+        .unit-toggle { display: flex; gap: 12px; padding: 20px 28px 0 28px; }
+        .unit-btn { padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: 500; border: 1px solid #cbd5e1; background: white; color: #1e293b; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .unit-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .unit-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .unit-btn:hover:not(.active) { background: #f1f5f9; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; margin-top: 16px; flex-wrap: wrap; }
+        .tab { flex: 1; min-width: 120px; padding: 15px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 26px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 18px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 13px 15px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12px; color: var(--text-dark); margin-bottom: 5px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 16px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:disabled { color: var(--text-dark); font-weight: 600; opacity: 0.85; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 12.5px; color: var(--gray); flex-shrink: 0; }
+        .input-group .hint { font-size: 10.5px; color: var(--gray); margin-top: 2px; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 13.5px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 13px; border-radius: 40px; cursor: pointer; font-size: 12px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 13px 17px; font-size: 13px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 14px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .size-note { background: rgba(139,92,246,0.06); border-left: 4px solid var(--primary); border-radius: 12px; padding: 12px 16px; font-size: 13px; color: var(--text-dark); margin: 14px 0; }
+        .size-note strong { color: var(--primary-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 20px; margin-top: 20px; border: 1px solid rgba(139,92,246,0.15); }
+        .headline-result { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 16px; text-align: center; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .headline-result .label { font-size: 13.5px; opacity: 0.92; margin-bottom: 6px; }
+        .headline-result .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+        .headline-result .sub { font-size: 12.5px; opacity: 0.9; margin-top: 6px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+        .result-card { background: white; border-radius: 16px; padding: 14px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 11.5px; color: var(--text-dark); margin-bottom: 5px; font-weight: 500; }
+        .result-value { font-size: 18px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 14px; }
+
+        .ref-table, .brand-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 14px; }
+        .ref-table th, .brand-table th { background: var(--dark); color: white; padding: 9px 8px; text-align: center; font-weight: 600; }
+        .ref-table td, .brand-table td { padding: 8px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .ref-table tr:nth-child(even), .brand-table tr:nth-child(even) { background: #f8fafc; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn.tertiary { background: #ede9fe; color: var(--primary-dark); border: 1px solid #ddd6fe; }
+        .action-btn.tertiary:hover { background: #ddd6fe; }
+
+        @media (max-width: 768px) {
+            .calc-header h2 { font-size: 20px; }
+            .tab { padding: 11px 6px; font-size: 12px; }
+            .tab-content { padding: 18px; }
+            .headline-result .amount { font-size: 22px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h1 { font-size: 30px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+
+        .article-content a { color: var(--primary) !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: var(--primary-dark) !important; }
+        .article-content .calc-cta a { color: #ffffff !important; text-decoration: none !important; font-weight: bold !important; }
+        .article-content .related-grid a { color: var(--primary) !important; text-decoration: none !important; font-weight: 500 !important; }
+        .article-content .related-grid a:hover { color: #ffffff !important; }
+        .article-content .related-grid a.calculator-link { color: var(--dark) !important; }
+        .article-content .toc-item a { color: var(--primary) !important; text-decoration: none !important; }
+
+        .quick-answer { background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.02)); border: 2px solid var(--primary); border-radius: 20px; padding: 22px 26px; margin: 24px 0; }
+        .quick-answer h2 { border: none !important; margin: 0 0 10px !important; padding: 0 !important; font-size: 19px !important; color: var(--primary-dark) !important; }
+        .quick-answer p { margin-bottom: 0 !important; font-size: 16px; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { font-size: 15px; font-weight: 500; display: block; }
+
+        .article-content h2 { font-size: 25px; font-weight: 700; color: var(--dark); margin-top: 38px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 26px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--text-dark); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--text-dark); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-dark); }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 11px 10px; text-align: center; }
+        .compare-table th:first-child { text-align: left; }
+        .compare-table td { padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+        .compare-table td:first-child { text-align: left; font-weight: 600; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.08); font-weight: 600; }
+        .yes { color: #059669; font-weight: 700; } .no { color: var(--gray); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--text-dark); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; }
+        .related-grid a:hover { background: var(--primary); }
+        .related-grid a.calculator-link { background: var(--secondary); font-weight: bold; }
+        .related-grid a.calculator-link:hover { background: #f59e0b; }
+
+        .disclaimer-note { font-size: 12.5px; color: var(--gray); margin-top: -6px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h1 { font-size: 24px; }
+            .article-content { padding: 22px 18px; }
+            .article-content h2 { font-size: 21px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-mound"></i> River Rock Calculator</h2>
+                    <p>Tons · Cubic Yards · Bags · Cost — adjusted for rock size</p>
+                </div>
+
+                <div class="unit-toggle" role="radiogroup" aria-label="Unit selection">
+                    <button class="unit-btn active" data-unit="imperial" role="radio" aria-checked="true" tabindex="0">🇺🇸 Feet / lbs</button>
+                    <button class="unit-btn" data-unit="metric" role="radio" aria-checked="false" tabindex="0">🌍 Meters / kg</button>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" id="tabBtnCalc" data-tab="calc" role="tab" aria-selected="true" aria-controls="tab-calc" tabindex="0">🪨 Rock Needed</button>
+                    <button class="tab" id="tabBtnShape" data-tab="shape" role="tab" aria-selected="false" aria-controls="tab-shape" tabindex="0">📐 Area Shape Helper</button>
+                </div>
+
+                <!-- TAB 1: CALCULATOR -->
+                <div class="tab-content active" id="tab-calc" role="tabpanel" aria-labelledby="tabBtnCalc">
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Enter Dimensions As</span>
+                        <div class="toggle-switch" id="areaModeToggle" role="radiogroup" aria-label="Area entry mode">
+                            <button class="toggle-option active" data-mode="lw" role="radio" aria-checked="true" tabindex="0">Length × Width</button>
+                            <button class="toggle-option" data-mode="area" role="radio" aria-checked="false" tabindex="0">Total Area</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Area to Cover</div>
+                    <div class="input-grid" id="dimensionsContainer"></div>
+
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Rock Size &amp; Depth</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Rock Size</span>
+                        <div class="toggle-switch" id="rockSizeToggle" role="radiogroup" aria-label="Rock size">
+                            <button class="toggle-option active" data-size="pea" role="radio" aria-checked="true" tabindex="0">Pea Gravel (&lt;3/8")</button>
+                            <button class="toggle-option" data-size="small" role="radio" aria-checked="false" tabindex="0">Small (3/8–1.5")</button>
+                            <button class="toggle-option" data-size="medium" role="radio" aria-checked="false" tabindex="0">Medium (1.5–3")</button>
+                            <button class="toggle-option" data-size="large" role="radio" aria-checked="false" tabindex="0">Large (3–6")</button>
+                            <button class="toggle-option" data-size="xlarge" role="radio" aria-checked="false" tabindex="0">X-Large / Riprap (6"+)</button>
+                        </div>
+                    </div>
+                    <div class="size-note" id="sizeNote"></div>
+
+                    <div class="input-grid" id="depthContainer"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-shield-halved"></i> Waste / Overage Allowance</span>
+                        <div class="toggle-switch" id="wasteToggle" role="radiogroup" aria-label="Waste allowance">
+                            <button class="toggle-option active" data-waste="10" role="radio" aria-checked="true" tabindex="0">+10% (Recommended)</button>
+                            <button class="toggle-option" data-waste="5" role="radio" aria-checked="false" tabindex="0">+5%</button>
+                            <button class="toggle-option" data-waste="0" role="radio" aria-checked="false" tabindex="0">No Waste</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-tag"></i> Cost &amp; Bags</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="pricePerTon" id="priceLabelText">Price per US Ton (2,000 lb)</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="pricePerTon" value="60" step="5" min="0" aria-label="Price per US ton"></div>
+                            <span class="hint">"Ton" here always means the 2,000 lb US short ton, not the 1,000 kg metric tonne.</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="bagSize" id="bagSizeLabelText">Bag Size (by weight)</label>
+                            <div class="row"><input type="number" id="bagSize" value="50" step="5" min="0.001" aria-label="Bag size"><span class="unit" id="bagUnit">lb</span></div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Bags Sold By</span>
+                        <div class="toggle-switch" id="bagModeToggle" role="radiogroup" aria-label="Bag sold by weight or volume">
+                            <button class="toggle-option active" data-bagmode="weight" role="radio" aria-checked="true" tabindex="0">Weight (lb/kg)</button>
+                            <button class="toggle-option" data-bagmode="volume" role="radio" aria-checked="false" tabindex="0">Volume (cu ft)</button>
+                        </div>
+                    </div>
+
+                    <div class="info-tip" id="densityInfo"></div>
+
+                    <div class="results-panel">
+                        <div class="headline-result">
+                            <div class="label">River Rock Needed</div>
+                            <div class="amount" id="tonsNeeded">0 tons</div>
+                            <div class="sub" id="cuydNeeded">(0 cu yd)</div>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-label">Estimated Cost</div>
+                                <div class="result-value" id="estCost">$0</div>
+                            </div>
+                            <div class="result-card" id="bagsCard">
+                                <div class="result-label">Bags Needed</div>
+                                <div class="result-value" id="bagsNeeded">0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Project Area</div>
+                                <div class="result-value small" id="projectArea">0 sq ft</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Order Amount (incl. waste)</div>
+                                <div class="result-value small" id="areaCovered">0 sq ft</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: AREA SHAPE HELPER -->
+                <div class="tab-content" id="tab-shape" role="tabpanel" aria-labelledby="tabBtnShape">
+                    <div class="section-title"><i class="fas fa-draw-polygon"></i> Not a Simple Rectangle? Calculate the Area Here</div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Bed Shape</span>
+                        <div class="toggle-switch" id="shapeToggle" role="radiogroup" aria-label="Bed shape">
+                            <button class="toggle-option active" data-shape="rect" role="radio" aria-checked="true" tabindex="0">Rectangular</button>
+                            <button class="toggle-option" data-shape="circle" role="radio" aria-checked="false" tabindex="0">Circular</button>
+                            <button class="toggle-option" data-shape="triangle" role="radio" aria-checked="false" tabindex="0">Triangular</button>
+                        </div>
+                    </div>
+
+                    <div class="input-grid" id="shapeInputsContainer"></div>
+
+                    <div class="results-panel">
+                        <div class="headline-result">
+                            <div class="label">Calculated Area</div>
+                            <div class="amount" id="calculatedArea">0 sq ft</div>
+                        </div>
+                        <div class="action-buttons" style="margin-top:0;">
+                            <button class="action-btn tertiary" id="useAreaBtn"><i class="fas fa-arrow-right"></i> Use This Area in "Rock Needed"</button>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>📏 For dry creek beds or L-shaped areas, break the bed into simple rectangles/circles/triangles, calculate each separately, and add the areas together manually before switching to the Rock Needed tab.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 26px 26px 26px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>River Rock Calculator: How Much You Need, By Size — From Pea Gravel to Riprap</h1>
+                    <p>Why the math changes for bigger rock, and how to get an accurate order the first time</p>
+                </div>
+
+                <div class="article-content">
+
+                    <div class="quick-answer">
+                        <h2>📌 Quick Answer</h2>
+                        <p>For small-to-medium river rock: <strong>Weight = Length(ft) × Width(ft) × Depth(ft) × Density</strong> (standard river rock ≈ 89 lb/cu ft, or ~1.2 tons/cu yd). A 6×4 ft bed at 10 inches deep needs about <strong>1,780 lbs (0.89 tons)</strong>. For large rock (3"+) and riprap, skip the depth math entirely — it's placed as a single layer, so use a coverage rate instead: roughly <strong>50 sq ft per ton</strong> for 3-6" rock, or <strong>25 sq ft per ton</strong> for 6"+ rock. Use the calculator above, which switches models automatically based on the rock size you pick.</p>
+                    </div>
+
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#why-size-matters">1. Why Rock Size Changes the Math</a></div>
+                            <div class="toc-item"><a href="#formula">2. The Volume Formula (Pea Gravel to Medium Rock)</a></div>
+                            <div class="toc-item"><a href="#coverage-formula">3. The Coverage Formula (Large Rock &amp; Riprap)</a></div>
+                            <div class="toc-item"><a href="#size-chart">4. River Rock Size &amp; Depth Reference Chart</a></div>
+                            <div class="toc-item"><a href="#area-shapes">5. Calculating Area for Any Bed Shape</a></div>
+                            <div class="toc-item"><a href="#buying">6. Buying River Rock: Ton, Yard, or Bag?</a></div>
+                            <div class="toc-item"><a href="#mistakes">7. Common Estimating Mistakes</a></div>
+                            <div class="toc-item"><a href="#compare">8. Feature Comparison: River Rock Calculators</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Order too little river rock, and you're back at the supplier for a second delivery — often with another delivery fee attached. Order too much, and you've paid for stone sitting in a pile in your driveway. Getting the number right the first time matters, and most calculators only give you half the picture.</p>
+
+                    <p>This <strong>river rock calculator</strong> does something most others skip: it changes its own formula depending on the rock size you select. That's not a gimmick — it's how the material actually behaves.</p>
+
+                    <h2 id="why-size-matters">1. Why Rock Size Changes the Math</h2>
+                    <p>Small stone (pea gravel through medium river rock) settles and fills a measured depth fairly predictably — you can calculate a volume, multiply by density, and get a reliable weight. Large river rock and riprap don't work that way. Big stones are placed as a <strong>single layer</strong>, with irregular gaps between them, so calculating "volume × depth" for a 5-inch stone doesn't reflect how it's actually installed or sold. That's why professional suppliers quote large rock in <strong>coverage area per ton</strong> instead of a depth-based volume — this single-layer placement approach is also how riprap is specified in official engineering guidance, such as the <a href="https://www.nrcs.usda.gov/sites/default/files/2022-12/Construction%20Specification%20461%20Rock%20Riprap.pdf" target="_blank" rel="noopener noreferrer">USDA Natural Resources Conservation Service's Rock Riprap construction specification</a> — and why this calculator automatically switches models when you pick a larger rock size.</p>
+
+                    <h2 id="formula">2. The Volume Formula (Pea Gravel to Medium Rock)</h2>
+                    <div class="pro-tip">
+                        <strong>Weight (lbs) = Length (ft) × Width (ft) × Depth (ft) × Density (lb/cu ft)</strong>
+                        <p style="margin:10px 0 0;">Divide by 2,000 for tons, or divide the volume (before multiplying by density) by 27 for cubic yards.</p>
+                    </div>
+                    <p><strong>Worked example:</strong> A 6 ft × 4 ft bed, 10 inches (0.833 ft) deep, filled with standard river rock (89 lb/cu ft):</p>
+                    <p>Area = 6 × 4 = 24 sq ft. Volume = 24 × 0.833 = 20 cu ft. Weight = 20 × 89 = <strong>1,780 lbs (0.89 tons)</strong>. Cubic yards = 20 ÷ 27 ≈ <strong>0.74 cu yd</strong>.</p>
+
+                    <h2 id="coverage-formula">3. The Coverage Formula (Large Rock &amp; Riprap)</h2>
+                    <div class="pro-tip">
+                        <strong>Tons = Area (sq ft) ÷ Coverage Rate (sq ft per ton)</strong>
+                        <p style="margin:10px 0 0;">Typical coverage: 3-6" rock ≈ 50 sq ft/ton (single layer). 6"+ rock or riprap ≈ 25 sq ft/ton (single layer).</p>
+                    </div>
+                    <p><strong>Worked example:</strong> A 10 ft × 10 ft area (100 sq ft) covered with 3-6" river rock: 100 ÷ 50 = <strong>2 tons</strong>. No depth entry needed — the rock itself sets the depth.</p>
+
+                    <h2 id="size-chart">4. River Rock Size &amp; Depth Reference Chart</h2>
+                    <table class="ref-table" style="margin: 20px 0;">
+                        <thead><tr><th>Rock Size</th><th>Recommended Depth</th><th>Typical Density / Coverage</th></tr></thead>
+                        <tbody>
+                            <tr><td>Pea Gravel (&lt;3/8")</td><td>2 in</td><td>~96 lb/cu ft (volume-based)</td></tr>
+                            <tr><td>Small (3/8"–1.5")</td><td>3 in</td><td>~89 lb/cu ft (volume-based)</td></tr>
+                            <tr><td>Medium (1.5"–3")</td><td>4 in</td><td>~93 lb/cu ft (volume-based)</td></tr>
+                            <tr><td>Large (3"–6")</td><td>Single layer</td><td>~50 sq ft per ton (coverage-based)</td></tr>
+                            <tr><td>X-Large / Riprap (6"+)</td><td>Single layer</td><td>~25 sq ft per ton (coverage-based)</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="disclaimer-note">These are typical industry planning figures, not a substitute for your supplier's product-specific spec sheet — density and coverage vary by moisture content, exact stone shape, and quarry source. All values in this calculator are editable so you can plug in your supplier's exact numbers.</p>
+
+                    <h2 id="area-shapes">5. Calculating Area for Any Bed Shape</h2>
+                    <p>Most river rock beds aren't perfect rectangles. Use these standard formulas (all measurements in feet):</p>
+                    <ul>
+                        <li><strong>Rectangular:</strong> Length × Width</li>
+                        <li><strong>Circular:</strong> π × (Diameter ÷ 2)²</li>
+                        <li><strong>Triangular:</strong> (Base × Height) ÷ 2</li>
+                    </ul>
+                    <p>The <strong>Area Shape Helper</strong> tab above calculates this for you and sends the result straight into the Rock Needed tab with one click. For irregular or dry-creek-bed shapes, break the area into a few simple rectangles/circles/triangles, calculate each, and add them together.</p>
+
+                    <h2 id="buying">6. Buying River Rock: Ton, Yard, or Bag?</h2>
+                    <ul>
+                        <li><strong>By the ton:</strong> Standard for larger orders (most driveways, large beds) and how big rock/riprap is almost always sold.</li>
+                        <li><strong>By the cubic yard:</strong> Common for mid-size orders of small-to-medium rock, especially bulk delivery.</li>
+                        <li><strong>By the bag:</strong> Practical for small projects — typically sold in 0.5 cu ft bags (roughly 40-50 lbs depending on rock type).</li>
+                    </ul>
+
+                    <h2 id="mistakes">7. Common Estimating Mistakes</h2>
+                    <ul>
+                        <li><strong>Using one density number for every rock size:</strong> a pea-gravel density figure will under-order large rock, and vice versa — see the size chart above.</li>
+                        <li><strong>Applying depth math to large rock or riprap:</strong> big stone is a single layer, not a "3-inch-deep fill" — use the coverage formula instead.</li>
+                        <li><strong>Skipping the waste allowance:</strong> uneven ground, edge overfill, and settling typically eat up 5-10% extra material.</li>
+                        <li><strong>Forgetting depth conversion:</strong> depth is usually specified in inches but the formula needs feet — divide by 12 before multiplying.</li>
+                    </ul>
+
+                    <h2 id="compare">8. Feature Comparison: River Rock Calculators</h2>
+                    <p>Every river rock calculator uses the same basic volume math — the real difference is whether it accounts for how rock size changes that math, and how much manual conversion is left to you.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Typical calculators</th><th>CalcSnaps (this tool)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Volume-based tons &amp; cubic yards</td><td class="yes">✓ Standard</td><td class="yes">✓ Standard</td></tr>
+                            <tr><td>Adjusts density by rock size</td><td class="no">Rare</td><td class="yes">✓ 5 size tiers</td></tr>
+                            <tr><td>Switches to coverage-rate model for large rock/riprap</td><td class="no">Very rare</td><td class="yes">✓ Automatic</td></tr>
+                            <tr><td>Auto-suggested depth by rock size</td><td class="no">Rare</td><td class="yes">✓ Included</td></tr>
+                            <tr><td>Integrated area calculator (rect/circle/triangle)</td><td class="partial">Some tools</td><td class="yes">✓ Built-in, auto-fills</td></tr>
+                            <tr><td>Bag count &amp; cost estimate</td><td class="partial">Some tools</td><td class="yes">✓ Included</td></tr>
+                            <tr><td>Editable density/coverage rate</td><td class="no">Rare</td><td class="yes">✓ Fully editable</td></tr>
+                            <tr class="highlight-row"><td>Metric (meters/kg) support</td><td class="no">Rare</td><td class="yes">✓ Included</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="disclaimer-note">This comparison reflects general, publicly observable feature patterns across popular river rock calculators as of August 2026, not a claim about any single named company's practices. Features change over time.</p>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <div class="faq-question" tabindex="0" role="button">How much river rock do I need?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Multiply length and width in feet to get square footage, multiply by desired depth in feet, then multiply by the rock's density to get weight. For example, a 6x4 ft area at 10 inches deep with standard river rock (89 lb/cu ft) needs about 1,780 lbs, or 0.89 tons.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">How many square feet does a ton of river rock cover?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>It depends on rock size and depth. Small river rock at a standard 2-3 inch depth covers roughly 80-100 sq ft per ton. Larger river rock (3-6 inches), placed as a single layer, covers roughly 50 sq ft per ton, and extra-large rock or riprap (6+ inches) covers roughly 25 sq ft per ton.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">How deep should river rock be?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Depth depends on rock size: pea gravel is typically laid 2 inches deep, small to medium river rock 3-4 inches deep. Larger river rock (3 inches and up) is placed as a single layer rather than measured by depth, since the stones themselves are the depth.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">How much does a cubic yard of river rock weigh?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Standard river rock weighs roughly 2,400 lbs (1.2 tons) per cubic yard, though this varies by rock size and moisture content — larger rocks have more air gaps between them, which changes the effective weight per volume. Always confirm with your supplier for their specific material.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question" tabindex="0" role="button">Is river rock sold by the ton or by the yard?<i class="fas fa-chevron-down"></i></div>
+                            <div class="faq-answer"><p>Most landscape suppliers sell river rock by the ton for larger orders, though smaller quantities are often sold by the cubic yard or in 0.5-cubic-foot bags for small projects.</p></div>
+                        </div>
+                    </div>
+
+                    <p class="disclaimer-note">This calculator provides planning estimates only. Density and coverage rates vary by supplier, moisture content, and exact stone shape — always confirm final quantities with your material supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪨</span> Try Our River Rock Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪨 River Rock Calculator</a>
+                            <a href="/calculators/uk-aggregate-calculator">🧱 UK Aggregate Calculator</a>
+                            <a href="/calculators/soffit-calculator">🏠 Soffit &amp; Ventilation Calculator</a>
+                            <a href="/calculators/pool-salt-calculator">🧂 Pool Salt Calculator</a>
+                            <a href="/calculators/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+                <a href="/calculators/uk-aggregate-calculator">UK Aggregate</a>
+                <a href="/calculators/pool-salt-calculator">Pool Salt</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "River Rock Calculator", "item": "https://calcsnaps.com/calculators/river-rock-calculator" }
+        ]
+    }
+    </script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        let currentUnit = 'imperial';
+        let currentShape = 'rect';
+        let currentRockSize = 'pea';
+        let areaMode = 'lw';
+        let wastePercent = 10;
+        let bagMode = 'weight'; // 'weight' | 'volume' — Fix #1: bags aren't always sold by weight
+
+        const rockSizes = {
+            pea:    { name: 'Pea Gravel (under 3/8")', mode: 'volume', densityLbFt3: 96, recDepthIn: 2, note: 'Fine, rounded gravel. Fills tightly with minimal air gaps — great for paths and mulch replacement.' },
+            small:  { name: 'Small River Rock (3/8"–1.5")', mode: 'volume', densityLbFt3: 89, recDepthIn: 3, note: 'The most common "standard" river rock — matches the classic 1,425 kg/m³ (89 lb/cu ft) density figure.' },
+            medium: { name: 'Medium River Rock (1.5"–3")', mode: 'volume', densityLbFt3: 93, recDepthIn: 4, note: 'Larger stones with slightly more air gaps than small rock, but still measured by depth and volume.' },
+            large:  { name: 'Large River Rock (3"–6")', mode: 'coverage', coverageSqFtPerTon: 50, note: 'Placed as a single layer, not measured by depth — coverage is estimated per ton instead of by volume.' },
+            xlarge: { name: 'X-Large / Riprap (6"+)', mode: 'coverage', coverageSqFtPerTon: 25, note: 'Placed as a single layer of large stones/boulders — used for erosion control and drainage, priced and covered per ton.' }
+        };
+
+        const dimensionsContainer = document.getElementById('dimensionsContainer');
+        const depthContainer = document.getElementById('depthContainer');
+        const sizeNote = document.getElementById('sizeNote');
+        const densityInfo = document.getElementById('densityInfo');
+        const pricePerTonEl = document.getElementById('pricePerTon');
+        const bagSizeEl = document.getElementById('bagSize');
+        const bagsCard = document.getElementById('bagsCard');
+        const shapeInputsContainer = document.getElementById('shapeInputsContainer');
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); } });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== UNIT TOGGLE (with proper value conversion, not just labels) =====
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.addEventListener('click', () => selectUnit(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectUnit(btn); } });
+        });
+        function selectUnit(btn) {
+            const newUnit = btn.dataset.unit;
+            if (newUnit === currentUnit) return;
+
+            const FT_TO_M = 0.3048, M_TO_FT = 3.28084;
+            const LB_TO_KG = 0.453592, KG_TO_LB = 2.20462;
+
+            // Capture + convert dimension/depth values before rebuilding those inputs
+            const dims = captureDimensionValues();
+            const depthVal = getDepthValue();
+            const shapeDims = captureShapeValues();
+            let bagSize = Math.max(0, parseFloat(bagSizeEl.value) || 0);
+
+            const convertLen = v => currentUnit === 'imperial' ? +(v * FT_TO_M).toFixed(2) : +(v * M_TO_FT).toFixed(2);
+            // FIX: area needs the SQUARED conversion factor, not the linear one — previously
+            // "Total Area" mode reused convertLen() on the area value, which converted
+            // 24 sq ft into 7.32 "sq m" instead of the correct 2.23 sq m (a 3.3x error).
+            const convertArea = v => currentUnit === 'imperial' ? +(v * FT_TO_M * FT_TO_M).toFixed(3) : +(v * M_TO_FT * M_TO_FT).toFixed(3);
+            const convertDepth = v => currentUnit === 'imperial' ? +(v * 2.54).toFixed(2) : +(v / 2.54).toFixed(2); // in <-> cm
+
+            Object.keys(dims).forEach(k => {
+                if (dims[k] === undefined) return;
+                dims[k] = (k === 'area') ? convertArea(dims[k]) : convertLen(dims[k]);
+            });
+            Object.keys(shapeDims).forEach(k => { if (shapeDims[k] !== undefined) shapeDims[k] = convertLen(shapeDims[k]); });
+            const newDepth = depthVal !== undefined ? convertDepth(depthVal) : undefined;
+            if (bagMode === 'weight') {
+                bagSize = currentUnit === 'imperial' ? +(bagSize * LB_TO_KG).toFixed(1) : +(bagSize * KG_TO_LB).toFixed(1);
+            } else {
+                const CUFT_TO_CUM = 0.0283168, CUM_TO_CUFT = 35.3147;
+                bagSize = currentUnit === 'imperial' ? +(bagSize * CUFT_TO_CUM).toFixed(4) : +(bagSize * CUM_TO_CUFT).toFixed(3);
+            }
+
+            document.querySelectorAll('.unit-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            currentUnit = newUnit;
+
+            bagSizeEl.value = bagSize;
+            updateBagLabels();
+
+            renderDimensionInputs(dims);
+            renderDepthInput(newDepth);
+            renderShapeInputs(shapeDims);
+            calculateAll();
+            calculateShapeArea();
+        }
+
+        // ===== AREA MODE (Length x Width  vs  Total Area) =====
+        document.querySelectorAll('#areaModeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectAreaMode(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectAreaMode(btn); } });
+        });
+        function selectAreaMode(btn) {
+            document.querySelectorAll('#areaModeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            areaMode = btn.dataset.mode;
+            renderDimensionInputs();
+            calculateAll();
+        }
+
+        function captureDimensionValues() {
+            const l = document.getElementById('dimLength');
+            const w = document.getElementById('dimWidth');
+            const a = document.getElementById('dimArea');
+            let vals = {};
+            if (l) vals.length = Math.max(0, parseFloat(l.value) || 0);
+            if (w) vals.width = Math.max(0, parseFloat(w.value) || 0);
+            if (a) vals.area = Math.max(0, parseFloat(a.value) || 0);
+            return vals;
+        }
+
+        function renderDimensionInputs(preset) {
+            preset = preset || {};
+            const lenUnit = currentUnit === 'imperial' ? 'ft' : 'm';
+            const areaUnit = currentUnit === 'imperial' ? 'sq ft' : 'sq m';
+            let html = '';
+            if (areaMode === 'lw') {
+                const defL = currentUnit === 'imperial' ? 6 : 1.8;
+                const defW = currentUnit === 'imperial' ? 4 : 1.2;
+                html = '<div class="input-group"><label for="dimLength">Length</label><div class="row"><input type="number" id="dimLength" value="' + (preset.length !== undefined ? preset.length : defL) + '" step="0.5" min="0.1" aria-label="Length"><span class="unit">' + lenUnit + '</span></div></div>' +
+                       '<div class="input-group"><label for="dimWidth">Width</label><div class="row"><input type="number" id="dimWidth" value="' + (preset.width !== undefined ? preset.width : defW) + '" step="0.5" min="0.1" aria-label="Width"><span class="unit">' + lenUnit + '</span></div></div>';
+            } else {
+                const defA = currentUnit === 'imperial' ? 24 : 2.2;
+                html = '<div class="input-group"><label for="dimArea">Total Area</label><div class="row"><input type="number" id="dimArea" value="' + (preset.area !== undefined ? preset.area : defA) + '" step="1" min="0.1" aria-label="Total area"><span class="unit">' + areaUnit + '</span></div></div>';
+            }
+            dimensionsContainer.innerHTML = html;
+            dimensionsContainer.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateAll));
+        }
+
+        function getDepthValue() {
+            const d = document.getElementById('dimDepth');
+            return d ? Math.max(0, parseFloat(d.value) || 0) : undefined;
+        }
+
+        function renderDepthInput(presetVal) {
+            const cfg = rockSizes[currentRockSize];
+            const depthUnit = currentUnit === 'imperial' ? 'in' : 'cm';
+            if (cfg.mode === 'coverage') {
+                depthContainer.innerHTML = '<div class="input-group" style="grid-column: 1 / -1;"><label>Depth</label><div class="row"><input type="text" value="Single layer — no depth needed for this size" disabled></div></div>';
+                return;
+            }
+            const recDepth = currentUnit === 'imperial' ? cfg.recDepthIn : +(cfg.recDepthIn * 2.54).toFixed(1);
+            const val = presetVal !== undefined ? presetVal : recDepth;
+            depthContainer.innerHTML = '<div class="input-group"><label for="dimDepth">Depth</label><div class="row"><input type="number" id="dimDepth" value="' + val + '" step="0.5" min="0.1" aria-label="Depth"><span class="unit">' + depthUnit + '</span></div><span class="hint">Suggested for this size: ' + recDepth + ' ' + depthUnit + '</span></div>';
+            document.getElementById('dimDepth').addEventListener('input', calculateAll);
+        }
+
+        // ===== ROCK SIZE TOGGLE =====
+        document.querySelectorAll('#rockSizeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectRockSize(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectRockSize(btn); } });
+        });
+        function selectRockSize(btn) {
+            document.querySelectorAll('#rockSizeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            currentRockSize = btn.dataset.size;
+            renderDepthInput();
+            updateSizeNote();
+            calculateAll();
+        }
+        function updateSizeNote() {
+            const cfg = rockSizes[currentRockSize];
+            sizeNote.innerHTML = '<strong>' + cfg.name + ':</strong> ' + cfg.note;
+        }
+
+        // ===== WASTE TOGGLE =====
+        document.querySelectorAll('#wasteToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectWaste(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectWaste(btn); } });
+        });
+        function selectWaste(btn) {
+            document.querySelectorAll('#wasteToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            wastePercent = parseInt(btn.dataset.waste, 10);
+            calculateAll();
+        }
+
+        [pricePerTonEl, bagSizeEl].forEach(el => el.addEventListener('input', calculateAll));
+
+        // ===== BAG MODE TOGGLE (Fix #1: bags aren't always sold by weight) =====
+        document.querySelectorAll('#bagModeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectBagMode(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectBagMode(btn); } });
+        });
+        function selectBagMode(btn) {
+            document.querySelectorAll('#bagModeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            bagMode = btn.dataset.bagmode;
+            // Swap the default bag size + unit to something sensible for the new mode
+            bagSizeEl.value = bagMode === 'weight' ? (currentUnit === 'imperial' ? 50 : 22.7) : (currentUnit === 'imperial' ? 0.5 : 0.014);
+            updateBagLabels();
+            calculateAll();
+        }
+
+        // Keeps the bag-size label + unit text honest about what's being entered
+        // (weight in lb/kg, or volume in cu ft/cu m) for the current unit system.
+        function updateBagLabels() {
+            const label = document.getElementById('bagSizeLabelText');
+            const unitSpan = document.getElementById('bagUnit');
+            if (bagMode === 'weight') {
+                label.textContent = 'Bag Size (by weight)';
+                unitSpan.textContent = currentUnit === 'imperial' ? 'lb' : 'kg';
+            } else {
+                label.textContent = 'Bag Size (by volume)';
+                unitSpan.textContent = currentUnit === 'imperial' ? 'cu ft' : 'cu m';
+            }
+        }
+
+        // ===== FORMAT HELPERS =====
+        function fmt(n) { return isFinite(n) ? Math.round(n).toLocaleString('en-US') : '0'; }
+        function fmt2(n) { return isFinite(n) ? n.toFixed(2) : '0'; }
+
+        // ===== MAIN CALCULATION =====
+        function calculateAll() {
+            const cfg = rockSizes[currentRockSize];
+            const FT_PER_M = 3.28084;
+            const toFeet = v => currentUnit === 'imperial' ? v : v * FT_PER_M;
+
+            // Get area in sq ft (internal calc always in imperial, like other CalcSnaps tools)
+            let areaSqFt = 0;
+            if (areaMode === 'lw') {
+                const l = toFeet(Math.max(0, parseFloat((document.getElementById('dimLength') || {}).value) || 0));
+                const w = toFeet(Math.max(0, parseFloat((document.getElementById('dimWidth') || {}).value) || 0));
+                areaSqFt = l * w;
+            } else {
+                const a = Math.max(0, parseFloat((document.getElementById('dimArea') || {}).value) || 0);
+                areaSqFt = currentUnit === 'imperial' ? a : a * FT_PER_M * FT_PER_M; // sq m -> sq ft
+            }
+            const areaWithWaste = areaSqFt * (1 + wastePercent / 100);
+
+            const price = Math.max(0, parseFloat(pricePerTonEl.value) || 0);
+            const bagSizeRaw = Math.max(0.01, parseFloat(bagSizeEl.value) || 0.01);
+
+            let tons = 0, cuYd = 0, weightLb = 0, volCuFt = 0;
+
+            if (cfg.mode === 'volume') {
+                const depthRaw = Math.max(0, parseFloat((document.getElementById('dimDepth') || {}).value) || 0);
+                const depthFt = currentUnit === 'imperial' ? depthRaw / 12 : (depthRaw / 2.54) / 12; // cm -> in -> ft
+                volCuFt = areaWithWaste * depthFt;
+                weightLb = volCuFt * cfg.densityLbFt3;
+                tons = weightLb / 2000;
+                cuYd = volCuFt / 27;
+                densityInfo.innerHTML = '<i>i</i><span>💡 Using <strong>' + cfg.densityLbFt3 + ' lb/cu ft</strong> density for ' + cfg.name.toLowerCase() + '. This is a typical planning figure — your supplier\'s exact material may vary by 10-20%.</span>';
+            } else {
+                tons = areaWithWaste / cfg.coverageSqFtPerTon;
+                weightLb = tons * 2000;
+                cuYd = null; // not meaningful for single-layer coverage model
+                densityInfo.innerHTML = '<i>i</i><span>💡 Using <strong>' + cfg.coverageSqFtPerTon + ' sq ft per ton</strong> single-layer coverage for ' + cfg.name.toLowerCase() + ' — this size isn\'t measured by depth/volume.</span>';
+            }
+
+            const cost = tons * price;
+            // FIX (bag calculation): bags can now be sold by weight (lb/kg, as before) OR by
+            // volume (cu ft) — river rock is commonly bagged in ~0.5 cu ft units, which the old
+            // weight-only math couldn't represent. Volume-mode bag count only applies when the
+            // rock itself uses the volume model (coverage-mode large/riprap already hides the
+            // bags card entirely, since that size isn't sold in small bags either way).
+            let bags;
+            if (bagMode === 'volume' && cfg.mode === 'volume') {
+                const bagSizeCuFt = currentUnit === 'imperial' ? bagSizeRaw : bagSizeRaw * 35.3147; // cu m -> cu ft
+                bags = Math.ceil(volCuFt / bagSizeCuFt);
+            } else {
+                const bagSizeLb = currentUnit === 'imperial' ? bagSizeRaw : bagSizeRaw * 2.20462;
+                bags = Math.ceil(weightLb / bagSizeLb);
+            }
+
+            document.getElementById('tonsNeeded').textContent = fmt2(tons) + ' tons';
+            document.getElementById('cuydNeeded').textContent = cuYd !== null ? '(' + fmt2(cuYd) + ' cu yd)' : '(single layer — cu yd not applicable)';
+            document.getElementById('estCost').textContent = '$' + cost.toFixed(2);
+            document.getElementById('bagsNeeded').textContent = bags;
+            // FIX (Project Area vs Order Area): previously a single "Area Covered" field showed
+            // the waste-adjusted number, which read as if the project itself were bigger than it
+            // is. Now the raw project area and the waste-inflated order amount are shown
+            // separately and labeled accordingly.
+            const projectAreaDisplay = currentUnit === 'imperial' ? fmt(areaSqFt) + ' sq ft' : fmt(areaSqFt / (FT_PER_M * FT_PER_M)) + ' sq m';
+            const orderAreaDisplay = currentUnit === 'imperial' ? fmt(areaWithWaste) + ' sq ft' : fmt(areaWithWaste / (FT_PER_M * FT_PER_M)) + ' sq m';
+            document.getElementById('projectArea').textContent = projectAreaDisplay;
+            document.getElementById('areaCovered').textContent = orderAreaDisplay;
+
+            bagsCard.style.display = cfg.mode === 'coverage' ? 'none' : 'block';
+        }
+
+        // ===== SHAPE HELPER TAB =====
+        document.querySelectorAll('#shapeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectShape(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectShape(btn); } });
+        });
+        function selectShape(btn) {
+            document.querySelectorAll('#shapeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            currentShape = btn.dataset.shape;
+            renderShapeInputs();
+            calculateShapeArea();
+        }
+
+        function captureShapeValues() {
+            const b = document.getElementById('shapeBase');
+            const h = document.getElementById('shapeHeight');
+            const d = document.getElementById('shapeDiameter');
+            const l = document.getElementById('shapeLength');
+            const w = document.getElementById('shapeWidth');
+            let vals = {};
+            if (b) vals.base = Math.max(0, parseFloat(b.value) || 0);
+            if (h) vals.height = Math.max(0, parseFloat(h.value) || 0);
+            if (d) vals.diameter = Math.max(0, parseFloat(d.value) || 0);
+            if (l) vals.length = Math.max(0, parseFloat(l.value) || 0);
+            if (w) vals.width = Math.max(0, parseFloat(w.value) || 0);
+            return vals;
+        }
+
+        function renderShapeInputs(preset) {
+            preset = preset || {};
+            const lenUnit = currentUnit === 'imperial' ? 'ft' : 'm';
+            const def = currentUnit === 'imperial' ? { l: 10, w: 6, d: 8, b: 6, h: 4 } : { l: 3, w: 1.8, d: 2.4, b: 1.8, h: 1.2 };
+            let html = '';
+            if (currentShape === 'rect') {
+                html = '<div class="input-group"><label for="shapeLength">Length</label><div class="row"><input type="number" id="shapeLength" value="' + (preset.length !== undefined ? preset.length : def.l) + '" step="0.5" min="0.1" aria-label="Length"><span class="unit">' + lenUnit + '</span></div></div>' +
+                       '<div class="input-group"><label for="shapeWidth">Width</label><div class="row"><input type="number" id="shapeWidth" value="' + (preset.width !== undefined ? preset.width : def.w) + '" step="0.5" min="0.1" aria-label="Width"><span class="unit">' + lenUnit + '</span></div></div>';
+            } else if (currentShape === 'circle') {
+                html = '<div class="input-group"><label for="shapeDiameter">Diameter</label><div class="row"><input type="number" id="shapeDiameter" value="' + (preset.diameter !== undefined ? preset.diameter : def.d) + '" step="0.5" min="0.1" aria-label="Diameter"><span class="unit">' + lenUnit + '</span></div></div>';
+            } else if (currentShape === 'triangle') {
+                html = '<div class="input-group"><label for="shapeBase">Base</label><div class="row"><input type="number" id="shapeBase" value="' + (preset.base !== undefined ? preset.base : def.b) + '" step="0.5" min="0.1" aria-label="Base"><span class="unit">' + lenUnit + '</span></div></div>' +
+                       '<div class="input-group"><label for="shapeHeight">Height</label><div class="row"><input type="number" id="shapeHeight" value="' + (preset.height !== undefined ? preset.height : def.h) + '" step="0.5" min="0.1" aria-label="Height"><span class="unit">' + lenUnit + '</span></div></div>';
+            }
+            shapeInputsContainer.innerHTML = html;
+            shapeInputsContainer.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateShapeArea));
+        }
+
+        function calculateShapeArea() {
+            const FT_PER_M = 3.28084;
+            const toFeet = v => currentUnit === 'imperial' ? v : v * FT_PER_M;
+            let areaSqFt = 0;
+
+            if (currentShape === 'rect') {
+                const l = toFeet(Math.max(0, parseFloat((document.getElementById('shapeLength') || {}).value) || 0));
+                const w = toFeet(Math.max(0, parseFloat((document.getElementById('shapeWidth') || {}).value) || 0));
+                areaSqFt = l * w;
+            } else if (currentShape === 'circle') {
+                const d = toFeet(Math.max(0, parseFloat((document.getElementById('shapeDiameter') || {}).value) || 0));
+                areaSqFt = Math.PI * Math.pow(d / 2, 2);
+            } else if (currentShape === 'triangle') {
+                const b = toFeet(Math.max(0, parseFloat((document.getElementById('shapeBase') || {}).value) || 0));
+                const h = toFeet(Math.max(0, parseFloat((document.getElementById('shapeHeight') || {}).value) || 0));
+                areaSqFt = (b * h) / 2;
+            }
+
+            const displayArea = currentUnit === 'imperial' ? areaSqFt : areaSqFt / (FT_PER_M * FT_PER_M);
+            const unitLabel = currentUnit === 'imperial' ? 'sq ft' : 'sq m';
+            document.getElementById('calculatedArea').textContent = fmt2(displayArea) + ' ' + unitLabel;
+            window._lastCalculatedAreaSqFt = areaSqFt;
+        }
+
+        document.getElementById('useAreaBtn').addEventListener('click', () => {
+            // Switch Rock Needed tab into "Total Area" mode and populate it
+            document.querySelectorAll('#areaModeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.mode === 'area') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            areaMode = 'area';
+            const areaSqFt = window._lastCalculatedAreaSqFt || 0;
+            const FT_PER_M = 3.28084;
+            const displayArea = currentUnit === 'imperial' ? areaSqFt : areaSqFt / (FT_PER_M * FT_PER_M);
+            renderDimensionInputs({ area: +displayArea.toFixed(2) });
+            calculateAll();
+            document.querySelector('.tab[data-tab="calc"]').click();
+        });
+
+        // ===== RESET =====
+        function resetAll() {
+            currentUnit = 'imperial';
+            document.querySelectorAll('.unit-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            document.querySelector('.unit-btn[data-unit="imperial"]').classList.add('active');
+            document.querySelector('.unit-btn[data-unit="imperial"]').setAttribute('aria-checked', 'true');
+
+            bagMode = 'weight';
+            document.querySelectorAll('#bagModeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+            updateBagLabels();
+
+            areaMode = 'lw';
+            document.querySelectorAll('#areaModeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            currentRockSize = 'pea';
+            document.querySelectorAll('#rockSizeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            wastePercent = 10;
+            document.querySelectorAll('#wasteToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            currentShape = 'rect';
+            document.querySelectorAll('#shapeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            pricePerTonEl.value = '60';
+            bagSizeEl.value = '50';
+
+            renderDimensionInputs();
+            renderDepthInput();
+            updateSizeNote();
+            renderShapeInputs();
+            calculateAll();
+            calculateShapeArea();
+
+            const btn = document.getElementById('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        document.getElementById('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            const cfg = rockSizes[currentRockSize];
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('River Rock Calculator Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Project Summary', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Rock Size: ' + cfg.name, 25, 60);
+            doc.text('Project Area: ' + document.getElementById('projectArea').textContent, 25, 67);
+            doc.text('Order Amount (incl. waste): ' + document.getElementById('areaCovered').textContent, 25, 74);
+            doc.text('River Rock Needed: ' + document.getElementById('tonsNeeded').textContent + ' (US short tons) ' + document.getElementById('cuydNeeded').textContent, 25, 81);
+            let nextY = 88;
+            if (cfg.mode === 'volume') {
+                doc.text('Bags Needed (' + (bagMode === 'weight' ? 'by weight' : 'by volume') + '): ' + document.getElementById('bagsNeeded').textContent, 25, nextY);
+                nextY += 7;
+            }
+            doc.text('Estimated Cost: ' + document.getElementById('estCost').textContent, 25, nextY);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Estimate only — confirm final quantities with your supplier. Generated by CalcSnaps.', 105, 280, { align: 'center' });
+
+            doc.save('River_Rock_Report_' + Date.now() + '.pdf');
+        }
+        document.getElementById('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                const item = q.parentElement;
+                q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                const toggle = () => { item.classList.toggle('active'); q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false'); };
+                q.addEventListener('click', toggle);
+                q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+            });
+        });
+
+        // ===== INIT =====
+        updateBagLabels();
+        renderDimensionInputs();
+        renderDepthInput();
+        updateSizeNote();
+        renderShapeInputs();
+        calculateAll();
+        calculateShapeArea();
+    })();
+    </script>
+</body>
+</html>
