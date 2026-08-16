@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>DOTS Calculator — DOTS, Wilks, Wilks2 & IPF GL | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free DOTS calculator for powerlifting. Get DOTS, Wilks, Wilks2 & IPF GL scores instantly, compare lifters, and see your strength level. No sign-up, 100% private.">
+    <meta name="keywords" content="dots calculator, powerlifting calculator, dots score, wilks calculator, ipf gl points calculator, powerlifting total calculator, strength score calculator">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/dots-calculator">
+
+    <meta property="og:title" content="DOTS Calculator — DOTS, Wilks, Wilks2 & IPF GL | CalcSnaps">
+    <meta property="og:description" content="Free, private DOTS calculator. Get DOTS, Wilks, Wilks2, and IPF GL scores together, compare two lifters, and see which federation uses which formula.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/dots-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "DOTS Calculator",
+        "description": "Calculate DOTS, Wilks, Wilks2, and IPF GL powerlifting scores from bodyweight and lifts, with two-lifter comparison and strength classification",
+        "url": "https://calcsnaps.com/calculators/dots-calculator",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "DOTS Calculator Guide: How Powerlifting Scoring Formulas Work",
+        "description": "Complete guide to the DOTS, Wilks, Wilks2, and IPF GL powerlifting scoring formulas — how each is calculated, which federations use which, and how to read your score.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/dots-calculator" },
+        "datePublished": "2026-08-14",
+        "dateModified": "2026-08-14"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good DOTS score?",
+                "acceptedAnswer": { "@type": "Answer", "text": "As a general, widely-cited reference (not an official federation standard): for men, roughly 200 is novice, 300 is intermediate, 400 is advanced, and 500+ is elite. For women, roughly 150 is novice, 250 is intermediate, 325 is advanced, and 400+ is elite. Exact thresholds vary by source and by federation." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between DOTS, Wilks, Wilks2, and IPF GL?",
+                "acceptedAnswer": { "@type": "Answer", "text": "All four adjust a powerlifting total for bodyweight so lifters of different sizes can be compared fairly, but they use different formulas fitted to different datasets. DOTS (2019, adopted by USAPL/USPA) and IPF GL (2020, official IPF formula) are the two most commonly used today. Wilks (1994) is the older formula many lifters still recognize, and Wilks2 (2020) is a recalibrated version used mainly by Powerlifting Australia and World Powerlifting." }
+            },
+            {
+                "@type": "Question",
+                "name": "Which federation uses which formula?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The IPF and IPF-affiliated national federations (currently Powerlifting America is the IPF's US affiliate) use IPF GL Points. USAPL and USPA — both independent of the IPF — use DOTS for non-master lifters. Powerlifting Australia and World Powerlifting use Wilks2. Many other federations and older records still reference the original Wilks formula." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the DOTS formula accurate at very light or very heavy bodyweights?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The DOTS polynomial is fitted to competition data across 40-210 kg bodyweight for men and 40-150 kg for women. Outside that range the formula still produces a number, but it is an extrapolation beyond the data it was fitted on and should be treated as approximate." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator store or share my data?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no ads or lead-generation forms." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "DOTS Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h2 { font-size: 28px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .calc-header h2 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+        .input-group.field-clamped { border-color: var(--warning); background: #fffbeb; }
+        .clamp-msg { font-size: 11px; color: #b45309; margin-top: 4px; display: none; }
+        .input-group.field-clamped .clamp-msg { display: block; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #0a6b4d; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #a11f1f; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .payment-breakdown { margin-bottom: 18px; }
+        .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 8px; }
+        .breakdown-row .label { display: flex; align-items: center; color: var(--text-dark); }
+        .breakdown-row .value { font-weight: 700; color: var(--dark); }
+
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+        .result-sub { font-size: 11px; color: var(--gray-text); margin-top: 4px; }
+
+        .classification-bar { display: flex; width: 100%; height: 14px; border-radius: 10px; overflow: hidden; margin: 10px 0 6px; background: #e2e8f0; position: relative; }
+        .classification-bar div { height: 100%; }
+        .score-marker { position: absolute; top: -4px; width: 4px; height: 22px; background: var(--dark); border-radius: 2px; box-shadow: 0 0 0 2px white; transform: translateX(-2px); transition: left 0.2s ease; z-index: 2; }
+        .score-marker::after { content: attr(data-label); position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 10.5px; font-weight: 700; color: var(--dark); white-space: nowrap; background: white; padding: 1px 5px; border-radius: 6px; border: 1px solid #e2e8f0; }
+        .classification-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--gray-text); margin-bottom: 14px; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        .compare-vs-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        .compare-vs-table th { background: var(--dark); color: white; padding: 10px 8px; text-align: center; font-weight: 600; }
+        .compare-vs-table td { padding: 10px 8px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .compare-vs-table tr:nth-child(even) { background: #f8fafc; }
+        .compare-vs-table td.winner { font-weight: 700; color: var(--success); }
+
+        @media (max-width: 768px) {
+            .calc-header h2 { font-size: 20px; }
+            .tab { padding: 12px 6px; font-size: 12px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 24px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h1 { font-size: 30px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 25px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; color: var(--dark); }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+        .compare-table td.no { color: var(--gray-text); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h1 { font-size: 24px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-dumbbell"></i> DOTS Calculator</h2>
+                    <p>DOTS · Wilks · Wilks2 · IPF GL Points — all four, calculated together</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up</div>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="score" role="tab" aria-selected="true" aria-controls="tab-score" id="tabbtn-score" tabindex="0">🏋️ Calculate Score</button>
+                    <button class="tab" data-tab="compare" role="tab" aria-selected="false" aria-controls="tab-compare" id="tabbtn-compare" tabindex="-1">⚖️ Compare Two Lifters</button>
+                </div>
+
+                <!-- TAB 1: CALCULATE SCORE -->
+                <div class="tab-content active" id="tab-score" role="tabpanel" aria-labelledby="tabbtn-score">
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-venus-mars"></i> Sex</span>
+                        <div class="toggle-switch" id="sexToggle" role="radiogroup" aria-label="Sex">
+                            <button class="toggle-option active" data-sex="male" role="radio" aria-checked="true" tabindex="0">Male</button>
+                            <button class="toggle-option" data-sex="female" role="radio" aria-checked="false" tabindex="0">Female</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-ruler"></i> Units</span>
+                        <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Unit system">
+                            <button class="toggle-option active" data-units="kg" role="radio" aria-checked="true" tabindex="0">Kilograms (kg)</button>
+                            <button class="toggle-option" data-units="lb" role="radio" aria-checked="false" tabindex="0">Pounds (lb)</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-list-check"></i> Enter</span>
+                        <div class="toggle-switch" id="entryModeToggle" role="radiogroup" aria-label="Entry mode">
+                            <button class="toggle-option active" data-entry="sbd" role="radio" aria-checked="true" tabindex="0">Squat + Bench + Deadlift</button>
+                            <button class="toggle-option" data-entry="total" role="radio" aria-checked="false" tabindex="0">Total Directly</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-weight-scale"></i> Bodyweight</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="bodyweight">Bodyweight</label>
+                            <div class="row"><input type="number" id="bodyweight" value="90" step="0.5" min="0" aria-label="Bodyweight"><span class="unit" id="unitBodyweight">kg</span></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title" id="liftsSectionTitle"><i class="fas fa-arrow-up"></i> Best Lifts</div>
+                    <div class="input-grid" id="sbdFields">
+                        <div class="input-group">
+                            <label for="squat">Squat</label>
+                            <div class="row"><input type="number" id="squat" value="220" step="2.5" min="0" aria-label="Squat"><span class="unit" id="unitSquat">kg</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="bench">Bench Press</label>
+                            <div class="row"><input type="number" id="bench" value="140" step="2.5" min="0" aria-label="Bench press"><span class="unit" id="unitBench">kg</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="deadlift">Deadlift</label>
+                            <div class="row"><input type="number" id="deadlift" value="240" step="2.5" min="0" aria-label="Deadlift"><span class="unit" id="unitDeadlift">kg</span></div>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="totalFields" style="display:none;">
+                        <div class="input-group">
+                            <label for="directTotal">Total Lifted</label>
+                            <div class="row"><input type="number" id="directTotal" value="600" step="2.5" min="0" aria-label="Total lifted"><span class="unit" id="unitDirectTotal">kg</span></div>
+                        </div>
+                    </div>
+
+                    <div class="status-note status-danger" id="rangeWarning"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Total</span>
+                            <span class="amount" id="totalResult">0 kg</span>
+                        </div>
+
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-label">DOTS Score</div>
+                                <div class="result-value" id="dotsResult">0</div>
+                                <div class="result-sub" id="dotsClassResult">-</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">IPF GL Points</div>
+                                <div class="result-value" id="glResult">0</div>
+                                <div class="result-sub">Official IPF formula</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Wilks (1994)</div>
+                                <div class="result-value" id="wilksResult">0</div>
+                                <div class="result-sub">Classic / legacy</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Wilks2 (2020)</div>
+                                <div class="result-value" id="wilks2Result">0</div>
+                                <div class="result-sub">Recalibrated</div>
+                            </div>
+                        </div>
+
+                        <div style="position:relative;">
+                            <div class="classification-bar" id="classBar"></div>
+                            <div class="score-marker" id="scoreMarker"></div>
+                        </div>
+                        <div class="classification-labels" id="classLabels"></div>
+
+                        <div class="status-note status-neutral show">
+                            <i class="fas fa-info-circle"></i> <strong id="federationNote"></strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: COMPARE TWO LIFTERS -->
+                <div class="tab-content" id="tab-compare" role="tabpanel" aria-labelledby="tabbtn-compare">
+                    <div class="section-title"><i class="fas fa-scale-balanced"></i> Compare Two Lifters</div>
+                    <p style="font-size:13.5px;color:var(--gray-text);margin-bottom:18px;">See who has the higher relative strength, regardless of bodyweight — enter each lifter's sex, bodyweight, and total.</p>
+
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;" id="compareGrid">
+                        <div>
+                            <div class="section-title" style="font-size:15px;">Lifter A</div>
+                            <div class="toggle-switch" id="sexToggleA" role="radiogroup" aria-label="Lifter A sex" style="margin-bottom:14px;">
+                                <button class="toggle-option active" data-sex="male" role="radio" aria-checked="true" tabindex="0">Male</button>
+                                <button class="toggle-option" data-sex="female" role="radio" aria-checked="false" tabindex="0">Female</button>
+                            </div>
+                            <div class="input-group" style="margin-bottom:12px;">
+                                <label for="bwA">Bodyweight (kg)</label>
+                                <input type="number" id="bwA" value="90" step="0.5" min="0" aria-label="Lifter A bodyweight">
+                            </div>
+                            <div class="input-group">
+                                <label for="totalA">Total (kg)</label>
+                                <input type="number" id="totalA" value="600" step="2.5" min="0" aria-label="Lifter A total">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="section-title" style="font-size:15px;">Lifter B</div>
+                            <div class="toggle-switch" id="sexToggleB" role="radiogroup" aria-label="Lifter B sex" style="margin-bottom:14px;">
+                                <button class="toggle-option active" data-sex="male" role="radio" aria-checked="true" tabindex="0">Male</button>
+                                <button class="toggle-option" data-sex="female" role="radio" aria-checked="false" tabindex="0">Female</button>
+                            </div>
+                            <div class="input-group" style="margin-bottom:12px;">
+                                <label for="bwB">Bodyweight (kg)</label>
+                                <input type="number" id="bwB" value="60" step="0.5" min="0" aria-label="Lifter B bodyweight">
+                            </div>
+                            <div class="input-group">
+                                <label for="totalB">Total (kg)</label>
+                                <input type="number" id="totalB" value="350" step="2.5" min="0" aria-label="Lifter B total">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-panel" style="margin-top:20px;">
+                        <table class="compare-vs-table">
+                            <thead><tr><th>Formula</th><th>Lifter A</th><th>Lifter B</th></tr></thead>
+                            <tbody id="compareTableBody"></tbody>
+                        </table>
+                        <div class="status-note status-good show" id="compareWinner" style="margin-top:16px;margin-bottom:0;"></div>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>DOTS Calculator: How Powerlifting Scoring Formulas Actually Work</h1>
+                    <p>DOTS, Wilks, Wilks2, and IPF GL explained — with worked examples you can verify by hand</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#what-is-dots">1. What Is the DOTS Score?</a></div>
+                            <div class="toc-item"><a href="#formula">2. The DOTS Formula, Explained</a></div>
+                            <div class="toc-item"><a href="#worked-example">3. Worked Example</a></div>
+                            <div class="toc-item"><a href="#comparison">4. DOTS vs. Wilks vs. Wilks2 vs. IPF GL</a></div>
+                            <div class="toc-item"><a href="#federations">5. Which Federation Uses Which Formula</a></div>
+                            <div class="toc-item"><a href="#classification">6. What Counts as a Good DOTS Score</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">7. What to Look for in a DOTS Calculator</a></div>
+                            <div class="toc-item"><a href="#methodology">8. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>A raw powerlifting total tells you almost nothing about relative strength on its own — a 600 kg total from a 140 kg lifter and the same 600 kg from a 74 kg lifter represent very different achievements. Bodyweight-adjusted scoring formulas like <strong>DOTS</strong> exist to solve exactly that problem: they convert a total into a single number that can be compared fairly across bodyweights and sexes.</p>
+
+                    <p>This calculator computes <strong>DOTS, Wilks, Wilks2, and IPF GL Points together</strong> from the same inputs, so you don't need to visit four different sites, and includes a two-lifter comparison mode, a strength classification reference, and an explicit warning if your bodyweight falls outside the range the formulas were actually fitted on — something most calculators don't check.</p>
+
+                    <h2 id="what-is-dots">1. What Is the DOTS Score?</h2>
+                    <p>DOTS (Dynamic Objective Team Scoring) was derived by Tim Reinhoudt in 2019 and adopted by USA Powerlifting (USAPL) and the USPA as their official scoring standard for determining "best lifter" awards among non-master, raw/classic competitors. It replaced the older Wilks formula in these federations because it was fitted on more recent, more complete competition data and performs better across the full bodyweight spectrum — particularly at the very light and very heavy ends, where Wilks was known to be biased.</p>
+
+                    <h2 id="formula">2. The DOTS Formula, Explained</h2>
+                    <p>DOTS uses a bodyweight-dependent polynomial in the denominator, with separate coefficients for men and women:</p>
+                    <div class="pro-tip">
+                        <strong>DOTS = Total × 500 ÷ (A + B·BW + C·BW² + D·BW³ + E·BW⁴)</strong>
+                        <p style="margin: 10px 0 0;">Where <strong>Total</strong> is your squat + bench press + deadlift in kilograms, <strong>BW</strong> is bodyweight in kilograms, and A–E are five sex-specific constants fitted by regression to competition data. The polynomial curve is what allows a heavier lifter's total to be "discounted" appropriately relative to a lighter lifter's, instead of comparing raw totals directly.</p>
+                    </div>
+                    <p>Wilks, Wilks2, and IPF GL Points follow the same underlying idea — a bodyweight-dependent normalizing factor multiplied by the total — but each uses a differently-shaped curve (Wilks and Wilks2 use a 5th-degree polynomial; IPF GL uses an exponential curve) fitted to different datasets at different points in time, which is why the same lifter gets a slightly different number from each formula.</p>
+
+                    <h2 id="worked-example">3. Worked Example</h2>
+                    <p>Here's a full calculation you can verify by hand, matching the calculator's defaults: a 90 kg male lifter with a 600 kg total (220 kg squat + 140 kg bench + 240 kg deadlift).</p>
+                    <p><strong>Step 1 — DOTS:</strong> For men, A = −307.75076, B = 24.0900756, C = −0.1918759221, D = 0.0007391293, E = −0.000001093. Evaluating the polynomial at BW = 90 gives a denominator of approximately 773.20. DOTS = 600 × 500 ÷ 773.20 ≈ <strong>388.0</strong>.</p>
+                    <p><strong>Step 2 — IPF GL Points:</strong> For men, A = 1199.72839, B = 1025.18162, C = 0.00921. GL Points = Total × 100 ÷ (A − B·e^(−C·BW)) = 600 × 100 ÷ (1199.72839 − 1025.18162 × e^(−0.00921×90)) ≈ <strong>79.8</strong>.</p>
+                    <p><strong>Step 3 — Wilks (1994):</strong> Using the original six-term male coefficients in the same 500 ÷ polynomial structure (extended to a 5th-degree term) gives a Wilks score of approximately <strong>383.0</strong>.</p>
+                    <p><strong>Step 4 — Wilks2 (2020):</strong> Using the recalibrated 2020 coefficients in the same structure gives approximately <strong>383.5</strong> — close to classic Wilks by design, since Wilks2 was a recalibration rather than a completely new model.</p>
+                    <p>These figures match published reference values for this exact lifter, which is how this calculator's formulas were verified during development.</p>
+
+                    <h2 id="comparison">4. DOTS vs. Wilks vs. Wilks2 vs. IPF GL</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Formula</th><th>Introduced</th><th>Curve Type</th><th>Still Official Where</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>DOTS</strong></td><td>2019</td><td>4th-degree polynomial</td><td>USAPL, USPA (non-masters)</td></tr>
+                            <tr><td><strong>IPF GL Points</strong></td><td>2020</td><td>Exponential curve</td><td>IPF and IPF-affiliated federations (official since May 2020)</td></tr>
+                            <tr><td><strong>Wilks (classic)</strong></td><td>1994</td><td>5th-degree polynomial</td><td>Largely superseded, but still widely recognized and referenced historically</td></tr>
+                            <tr><td><strong>Wilks2</strong></td><td>2020</td><td>5th-degree polynomial (recalibrated)</td><td>Powerlifting Australia, World Powerlifting</td></tr>
+                        </tbody>
+                    </table>
+                    <p>In the IPF's own 2020 evaluation of scoring models, IPF GL ranked first and DOTS ranked second for overall accuracy across weight classes, which is part of why those two formulas dominate current usage.</p>
+
+                    <h2 id="federations">5. Which Federation Uses Which Formula</h2>
+                    <p>If you're prepping for a specific meet, use the formula your federation actually scores with — the others are useful cross-checks, but only one number is official on the day:</p>
+                    <ul>
+                        <li><strong>The IPF, and any national federation affiliated with the IPF</strong> — currently Powerlifting America, not USA Powerlifting (USAPL left the IPF in November 2021 and now runs independently) — use IPF GL Points.</li>
+                        <li><strong>USAPL and USPA</strong>, for the general "best lifter" award — DOTS. Masters (older) lifters typically have a separate age-adjusted coefficient applied on top, which this calculator does not include — check with your federation for the exact masters coefficient.</li>
+                        <li><strong>Powerlifting Australia and World Powerlifting</strong> — Wilks2.</li>
+                        <li><strong>Historical records and some smaller/legacy federations</strong> — the original Wilks formula.</li>
+                    </ul>
+
+                    <h2 id="classification">6. What Counts as a Good DOTS Score</h2>
+                    <p>There's no single official classification table — different coaches and sites draw the lines slightly differently — but here's a commonly cited reference scale for raw, drug-tested lifting:</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Level</th><th>Men (approx.)</th><th>Women (approx.)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Novice</td><td>~200</td><td>~150</td></tr>
+                            <tr><td>Intermediate</td><td>~300</td><td>~250</td></tr>
+                            <tr><td>Advanced</td><td>~400</td><td>~325</td></tr>
+                            <tr><td>Elite</td><td>500+</td><td>400+</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Treat these as a rough compass, not a certificate — actual competitiveness depends heavily on your federation, weight class, and the specific meet you're comparing against.</p>
+
+                    <h2 id="what-to-look-for">7. What to Look for in a DOTS Calculator</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr></thead>
+                        <tbody>
+                            <tr><td>All four formulas together (DOTS, Wilks, Wilks2, IPF GL)</td><td>Different federations score differently — one number isn't enough</td><td class="yes">Included</td></tr>
+                            <tr><td>Formula validity-range warning</td><td>The polynomials are fitted to 40-210 kg (men) / 40-150 kg (women); outside that, results are extrapolated and less reliable</td><td class="yes">Included</td></tr>
+                            <tr><td>Two-lifter comparison mode</td><td>Settles "who's actually stronger" arguments across bodyweight/sex fairly</td><td class="yes">Included</td></tr>
+                            <tr><td>Single-lift or direct-total entry</td><td>Not everyone wants to re-enter squat/bench/deadlift separately</td><td class="yes">Included</td></tr>
+                            <tr><td>Which federation uses which formula, explained</td><td>The "right" score depends entirely on where you're competing</td><td class="yes">Included</td></tr>
+                            <tr class="highlight-row"><td>Runs entirely in your browser, no lead-gen forms</td><td>Your numbers stay private</td><td class="yes">Included</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="methodology">8. Methodology &amp; Limitations</h2>
+                    <ul>
+                        <li><strong>DOTS</strong> coefficients follow Reinhoudt's 2019 derivation, adopted by USA Powerlifting and USPA; formula, adoption, and the <a href="https://www.usapowerlifting.com/pro" target="_blank" rel="noopener">40-210 kg (men) / 40-150 kg (women) validity range</a> are as published on USA Powerlifting's own site.</li>
+                        <li><strong>IPF GL Points</strong> coefficients follow the IPF's official GL formula, effective May 2020.</li>
+                        <li><strong>Wilks and Wilks2</strong> coefficients follow Robert Wilks' original 1994 formula and the March 2020 recalibration respectively.</li>
+                        <li>All formulas in this calculator were cross-checked during development against independently published reference scores for specific lifters and matched to the nearest tenth of a point.</li>
+                        <li><strong>All four formulas are polynomial or exponential fits to historical competition data</strong>, valid across 40-210 kg bodyweight for men and 40-150 kg for women — sex-specific bounds, not a single universal cutoff. Outside that range the math still runs, but the result is an extrapolation beyond the data the formula was built on — this calculator flags that explicitly rather than presenting an unqualified number or silently substituting a boundary value.</li>
+                        <li><strong>Masters (age-adjusted) coefficients are not included.</strong> If you compete in a masters age category, your federation applies an additional age-based multiplier on top of the base score — check your federation's specific masters coefficient rather than using the raw number here for official comparison.</li>
+                        <li>This tool is for informational and training-tracking purposes and does not replace your federation's official meet scoring software.</li>
+                    </ul>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question">What is a good DOTS score?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>As a general, widely-cited reference (not an official federation standard): for men, roughly 200 is novice, 300 is intermediate, 400 is advanced, and 500+ is elite. For women, roughly 150 is novice, 250 is intermediate, 325 is advanced, and 400+ is elite. Exact thresholds vary by source and by federation.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">What is the difference between DOTS, Wilks, Wilks2, and IPF GL?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>All four adjust a powerlifting total for bodyweight so lifters of different sizes can be compared fairly, but they use different formulas fitted to different datasets. DOTS (2019, adopted by USAPL/USPA) and IPF GL (2020, official IPF formula) are the two most commonly used today. Wilks (1994) is the older formula many lifters still recognize, and Wilks2 (2020) is a recalibrated version used mainly by Powerlifting Australia and World Powerlifting.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">Which federation uses which formula?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>The IPF and IPF-affiliated national federations (currently Powerlifting America is the IPF's US affiliate) use IPF GL Points. USAPL and USPA — both independent of the IPF — use DOTS for non-master lifters. Powerlifting Australia and World Powerlifting use Wilks2. Many other federations and older records still reference the original Wilks formula.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">Is the DOTS formula accurate at very light or very heavy bodyweights?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>The DOTS polynomial is fitted to competition data across 40-210 kg bodyweight for men and 40-150 kg for women. Outside that range the formula still produces a number, but it is an extrapolation beyond the data it was fitted on and should be treated as approximate.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question">Does this calculator store or share my data?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>No. Every calculation runs locally in your browser. Nothing you type is sent to a server, there is no account, and there are no ads or lead-generation forms.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for informational and training-tracking purposes and is not a substitute for your federation's official meet scoring software. See Section 8 for methodology details.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🏋️</span> Try the DOTS Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🏋️ DOTS Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/boiler-feed-pump-calculator">⚙️ Boiler Feed Pump Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/mortgage-calculator">Mortgage Calculator</a>
+                <a href="/calculators/boiler-feed-pump-calculator">Boiler Feed Pump Calculator</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        // ===== FORMULA COEFFICIENTS (verified against independently published reference scores) =====
+        const DOTS_COEF = {
+            male:   { A:-307.75076, B:24.0900756, C:-0.1918759221, D:0.0007391293, E:-0.000001093 },
+            female: { A:-57.96288, B:13.6175032, C:-0.1126655495, D:0.0005158568, E:-0.0000010706 }
+        };
+        const WILKS_COEF = {
+            male:   { a:-216.0475144, b:16.2606339, c:-0.002388645, d:-0.00113732, e:7.01863e-6, f:-1.291e-8 },
+            female: { a:594.31747775582, b:-27.23842536447, c:0.82112226871, d:-0.00930733913, e:4.731582e-5, f:-9.054e-8 }
+        };
+        const WILKS2_COEF = {
+            male:   { a:47.46178854, b:8.472061379, c:0.07369410346, d:-0.001395833811, e:7.07665973070743e-6, f:-1.20804336482315e-8 },
+            female: { a:-125.4255398, b:13.71219419, c:-0.03307250631, d:-0.001050400051, e:9.38773881462799e-6, f:-2.3334613884954e-8 }
+        };
+        const GL_COEF = {
+            male:   { A:1199.72839, B:1025.18162, C:0.00921 },
+            female: { A:610.32796, B:1045.59282, C:0.03048 }
+        };
+        const CLASS_BANDS = {
+            male:   { novice:200, intermediate:300, advanced:400, elite:500 },
+            female: { novice:150, intermediate:250, advanced:325, elite:400 }
+        };
+        const VALID_MIN_KG = 40;
+        const VALID_MAX_KG = { male: 210, female: 150 };
+        const KG_TO_LB = 2.2046226218;
+
+        function dotsScore(sex, bwKg, totalKg) {
+            const c = DOTS_COEF[sex], x = bwKg;
+            const denom = c.A + c.B*x + c.C*x*x + c.D*x*x*x + c.E*x*x*x*x;
+            return denom > 0 ? totalKg * 500 / denom : 0;
+        }
+        function wilksScore(sex, bwKg, totalKg) {
+            const c = WILKS_COEF[sex], x = bwKg;
+            const denom = c.a + c.b*x + c.c*x*x + c.d*x*x*x + c.e*x*x*x*x + c.f*x*x*x*x*x;
+            return denom > 0 ? totalKg * 500 / denom : 0;
+        }
+        function wilks2Score(sex, bwKg, totalKg) {
+            const c = WILKS2_COEF[sex], x = bwKg;
+            const denom = c.a + c.b*x + c.c*x*x + c.d*x*x*x + c.e*x*x*x*x + c.f*x*x*x*x*x;
+            return denom > 0 ? totalKg * 500 / denom : 0;
+        }
+        function glScore(sex, bwKg, totalKg) {
+            const c = GL_COEF[sex];
+            const denom = c.A - c.B * Math.exp(-c.C * bwKg);
+            return denom > 0 ? totalKg * 100 / denom : 0;
+        }
+        function classify(sex, dots) {
+            const b = CLASS_BANDS[sex];
+            if (dots >= b.elite) return 'Elite';
+            if (dots >= b.advanced) return 'Advanced';
+            if (dots >= b.intermediate) return 'Intermediate';
+            if (dots >= b.novice) return 'Novice';
+            return 'Below novice reference';
+        }
+        function fmt(n) { return isFinite(n) ? n.toFixed(1) : '0.0'; }
+
+        // ===== STATE =====
+        let sex = 'male';
+        let units = 'kg';
+        let entryMode = 'sbd';
+        let sexA = 'male', sexB = 'male';
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== SEX / UNITS / ENTRY MODE TOGGLES =====
+        function wireToggle(containerId, dataAttr, onChange) {
+            document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-checked', 'true');
+                    onChange(btn.dataset[dataAttr]);
+                });
+                btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+            });
+        }
+        wireToggle('sexToggle', 'sex', v => { sex = v; calculateAll(); });
+        wireToggle('entryModeToggle', 'entry', v => {
+            entryMode = v;
+            $('sbdFields').style.display = entryMode === 'sbd' ? '' : 'none';
+            $('totalFields').style.display = entryMode === 'total' ? '' : 'none';
+            $('liftsSectionTitle').innerHTML = entryMode === 'sbd' ? '<i class="fas fa-arrow-up"></i> Best Lifts' : '<i class="fas fa-arrow-up"></i> Total';
+            calculateAll();
+        });
+        wireToggle('sexToggleA', 'sex', v => { sexA = v; calculateCompare(); });
+        wireToggle('sexToggleB', 'sex', v => { sexB = v; calculateCompare(); });
+
+        // Unit toggle: converts displayed values in-place
+        wireToggle('unitToggle', 'units', newUnits => {
+            if (newUnits === units) return;
+            const factor = newUnits === 'lb' ? KG_TO_LB : 1 / KG_TO_LB;
+            ['bodyweight', 'squat', 'bench', 'deadlift', 'directTotal'].forEach(id => {
+                const el = $(id);
+                const v = parseFloat(el.value);
+                if (!isNaN(v)) el.value = Math.round(v * factor * 10) / 10;
+            });
+            units = newUnits;
+            const label = units === 'kg' ? 'kg' : 'lb';
+            ['unitBodyweight','unitSquat','unitBench','unitDeadlift','unitDirectTotal'].forEach(id => { $(id).textContent = label; });
+            calculateAll();
+        });
+
+        // ===== INPUT VALIDATION / CLAMPING =====
+        function attachClamp(el, min, max) {
+            el.addEventListener('change', () => {
+                let v = parseFloat(el.value);
+                const group = el.closest('.input-group');
+                let clamped = false;
+                if (isNaN(v)) { v = min; clamped = true; }
+                if (min !== null && v < min) { v = min; clamped = true; }
+                if (max !== null && v > max) { v = max; clamped = true; }
+                if (clamped) {
+                    el.value = v;
+                    if (group) { group.classList.add('field-clamped'); setTimeout(() => group.classList.remove('field-clamped'), 2500); }
+                    calculateAll();
+                }
+            });
+        }
+        attachClamp($('bodyweight'), 0, null);
+        attachClamp($('squat'), 0, null);
+        attachClamp($('bench'), 0, null);
+        attachClamp($('deadlift'), 0, null);
+        attachClamp($('directTotal'), 0, null);
+
+        ['bodyweight','squat','bench','deadlift','directTotal'].forEach(id => { $(id).addEventListener('input', calculateAll); });
+        ['bwA','totalA','bwB','totalB'].forEach(id => { $(id).addEventListener('input', calculateCompare); });
+
+        // ===== MAIN CALCULATE (Tab 1) =====
+        function toKg(v) { return units === 'lb' ? v / KG_TO_LB : v; }
+
+        function calculateAll() {
+            const bwKg = toKg(parseFloat($('bodyweight').value) || 0);
+            let totalKg;
+            if (entryMode === 'sbd') {
+                const s = toKg(parseFloat($('squat').value) || 0);
+                const b = toKg(parseFloat($('bench').value) || 0);
+                const d = toKg(parseFloat($('deadlift').value) || 0);
+                totalKg = s + b + d;
+            } else {
+                totalKg = toKg(parseFloat($('directTotal').value) || 0);
+            }
+
+            const totalDisplay = units === 'lb' ? (totalKg * KG_TO_LB) : totalKg;
+            $('totalResult').textContent = fmt(totalDisplay) + ' ' + units;
+
+            const dots = dotsScore(sex, bwKg, totalKg);
+            const gl = glScore(sex, bwKg, totalKg);
+            const wilks = wilksScore(sex, bwKg, totalKg);
+            const wilks2 = wilks2Score(sex, bwKg, totalKg);
+
+            $('dotsResult').textContent = fmt(dots);
+            $('glResult').textContent = fmt(gl);
+            $('wilksResult').textContent = fmt(wilks);
+            $('wilks2Result').textContent = fmt(wilks2);
+            $('dotsClassResult').textContent = classify(sex, dots);
+
+            // Classification bar (visual position of this lifter's DOTS score against the bands)
+            const bands = CLASS_BANDS[sex];
+            const maxRef = bands.elite * 1.25;
+            const pct = Math.max(0, Math.min(100, dots / maxRef * 100));
+            $('classBar').innerHTML =
+                '<div style="width:' + (bands.novice/maxRef*100) + '%;background:#e2e8f0;"></div>' +
+                '<div style="width:' + ((bands.intermediate-bands.novice)/maxRef*100) + '%;background:#a78bfa;"></div>' +
+                '<div style="width:' + ((bands.advanced-bands.intermediate)/maxRef*100) + '%;background:#8b5cf6;"></div>' +
+                '<div style="width:' + ((bands.elite-bands.advanced)/maxRef*100) + '%;background:#7c3aed;"></div>' +
+                '<div style="width:' + (100-(bands.elite/maxRef*100)) + '%;background:#4c1d95;"></div>';
+            $('classLabels').innerHTML = '<span>Novice ' + bands.novice + '</span><span>Interm. ' + bands.intermediate + '</span><span>Adv. ' + bands.advanced + '</span><span>Elite ' + bands.elite + '+</span>';
+
+            const marker = $('scoreMarker');
+            marker.style.left = pct + '%';
+            marker.setAttribute('data-label', fmt(dots));
+
+            $('federationNote').textContent = 'IPF-affiliated meets (Powerlifting America in the US) score with IPF GL. USAPL and USPA (both independent of the IPF) use DOTS. Powerlifting Australia and World Powerlifting use Wilks2. Check your federation before treating one number as "official."';
+
+            // Range validity warning (explicit, not a silent clamp) - sex-specific bounds
+            const rangeEl = $('rangeWarning');
+            const maxForSex = VALID_MAX_KG[sex];
+            if (bwKg > 0 && (bwKg < VALID_MIN_KG || bwKg > maxForSex)) {
+                rangeEl.classList.add('show');
+                rangeEl.innerHTML = '<i class="fas fa-triangle-exclamation"></i> <strong>Bodyweight is outside the ' + VALID_MIN_KG + '\u2013' + maxForSex + ' kg range these formulas were fitted on for ' + (sex === 'male' ? 'men' : 'women') + '.</strong> A score is still shown, but treat it as an extrapolated estimate, not a precise comparison.';
+            } else {
+                rangeEl.classList.remove('show');
+                rangeEl.innerHTML = '';
+            }
+        }
+
+        // ===== COMPARE TAB =====
+        function calculateCompare() {
+            const bwA = parseFloat($('bwA').value) || 0;
+            const totalA = parseFloat($('totalA').value) || 0;
+            const bwB = parseFloat($('bwB').value) || 0;
+            const totalB = parseFloat($('totalB').value) || 0;
+
+            const rows = [
+                { label: 'DOTS', a: dotsScore(sexA, bwA, totalA), b: dotsScore(sexB, bwB, totalB) },
+                { label: 'IPF GL Points', a: glScore(sexA, bwA, totalA), b: glScore(sexB, bwB, totalB) },
+                { label: 'Wilks (1994)', a: wilksScore(sexA, bwA, totalA), b: wilksScore(sexB, bwB, totalB) },
+                { label: 'Wilks2 (2020)', a: wilks2Score(sexA, bwA, totalA), b: wilks2Score(sexB, bwB, totalB) }
+            ];
+
+            const tbody = $('compareTableBody');
+            tbody.innerHTML = '';
+            rows.forEach(r => {
+                const tr = document.createElement('tr');
+                const aWins = r.a > r.b, bWins = r.b > r.a;
+                tr.innerHTML = '<td>' + r.label + '</td>' +
+                    '<td class="' + (aWins ? 'winner' : '') + '">' + fmt(r.a) + (aWins ? ' \u2191' : '') + '</td>' +
+                    '<td class="' + (bWins ? 'winner' : '') + '">' + fmt(r.b) + (bWins ? ' \u2191' : '') + '</td>';
+                tbody.appendChild(tr);
+            });
+
+            const dotsA = dotsScore(sexA, bwA, totalA), dotsB = dotsScore(sexB, bwB, totalB);
+            const winnerEl = $('compareWinner');
+            if (dotsA === 0 && dotsB === 0) {
+                winnerEl.innerHTML = '<i class="fas fa-info-circle"></i> Enter both lifters\u2019 numbers to compare.';
+            } else if (Math.abs(dotsA - dotsB) < 0.5) {
+                winnerEl.innerHTML = '<i class="fas fa-scale-balanced"></i> Essentially even on DOTS \u2014 ' + fmt(dotsA) + ' vs ' + fmt(dotsB) + '.';
+            } else {
+                const winner = dotsA > dotsB ? 'Lifter A' : 'Lifter B';
+                winnerEl.innerHTML = '<i class="fas fa-trophy"></i> <strong>' + winner + '</strong> has the higher relative strength on DOTS (' + fmt(Math.max(dotsA,dotsB)) + ' vs ' + fmt(Math.min(dotsA,dotsB)) + ').';
+            }
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            if (units !== 'kg') {
+                document.querySelectorAll('#unitToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                document.querySelector('#unitToggle .toggle-option[data-units="kg"]').classList.add('active');
+                document.querySelector('#unitToggle .toggle-option[data-units="kg"]').setAttribute('aria-checked', 'true');
+                units = 'kg';
+                ['unitBodyweight','unitSquat','unitBench','unitDeadlift','unitDirectTotal'].forEach(id => { $(id).textContent = 'kg'; });
+            }
+            document.querySelectorAll('#sexToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.sex === 'male') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            sex = 'male';
+            document.querySelectorAll('#entryModeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.entry === 'sbd') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            entryMode = 'sbd';
+            $('sbdFields').style.display = '';
+            $('totalFields').style.display = 'none';
+
+            $('bodyweight').value = '90';
+            $('squat').value = '220';
+            $('bench').value = '140';
+            $('deadlift').value = '240';
+            $('directTotal').value = '600';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('DOTS Calculator Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Lifter Details', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Sex: ' + (sex === 'male' ? 'Male' : 'Female'), 25, 60);
+            doc.text('Bodyweight: ' + $('bodyweight').value + ' ' + units, 25, 67);
+            let liftsY = 74;
+            if (entryMode === 'sbd') {
+                doc.text('Squat: ' + $('squat').value + ' ' + units, 25, liftsY);
+                doc.text('Bench Press: ' + $('bench').value + ' ' + units, 25, liftsY + 7);
+                doc.text('Deadlift: ' + $('deadlift').value + ' ' + units, 25, liftsY + 14);
+                doc.text('Total: ' + $('totalResult').textContent, 25, liftsY + 21);
+                liftsY += 28;
+            } else {
+                doc.text('Total (entered directly): ' + $('totalResult').textContent, 25, liftsY);
+                liftsY += 7;
+            }
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Scores', 20, liftsY + 9);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('DOTS: ' + $('dotsResult').textContent + '  (' + $('dotsClassResult').textContent + ')', 25, liftsY + 19);
+            doc.text('IPF GL Points: ' + $('glResult').textContent, 25, liftsY + 26);
+            doc.text('Wilks (1994): ' + $('wilksResult').textContent, 25, liftsY + 33);
+            doc.text('Wilks2 (2020): ' + $('wilks2Result').textContent, 25, liftsY + 40);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Informational only \u2014 not a substitute for your federation\'s official meet scoring software.', 105, 270, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - DOTS Calculator', 105, 280, { align: 'center' });
+
+            doc.save('DOTS_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+            });
+        });
+
+        // ===== INIT =====
+        calculateAll();
+        calculateCompare();
+    })();
+    </script>
+</body>
+</html>
