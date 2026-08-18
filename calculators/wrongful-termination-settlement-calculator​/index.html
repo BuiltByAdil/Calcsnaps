@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Wrongful Termination Settlement Calculator | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free wrongful termination settlement calculator: back pay, front pay, damages & a federal Title VII/ADA cap check. No sign-up, 100% private.">
+    <meta name="keywords" content="wrongful termination settlement calculator, wrongful termination calculator, back pay calculator, front pay calculator, employment discrimination settlement calculator, title vii damages cap">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/wrongful-termination-settlement-calculator">
+
+    <meta property="og:title" content="Wrongful Termination Settlement Calculator | CalcSnaps">
+    <meta property="og:description" content="Free, private wrongful termination settlement estimator with back pay, front pay, benefits, damages, and a federal Title VII/ADA/GINA damages cap check.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/wrongful-termination-settlement-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Wrongful Termination Settlement Calculator",
+        "description": "Estimate a wrongful termination settlement planning range using back pay, front pay, lost benefits, emotional distress, and punitive damages, with a federal Title VII/ADA/GINA damages cap check by employer size",
+        "url": "https://calcsnaps.com/calculators/wrongful-termination-settlement-calculator",
+        "applicationCategory": "LegalService",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Wrongful Termination Settlement Calculator Guide: Back Pay, Front Pay, Damages & Federal Caps",
+        "description": "How wrongful termination settlements are estimated in the US \u2014 back pay, front pay, lost benefits, emotional distress, punitive damages, the federal Title VII/ADA/GINA damages cap, and how settlements are typically taxed.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/wrongful-termination-settlement-calculator" },
+        "datePublished": "2026-08-16",
+        "dateModified": "2026-08-16"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the average wrongful termination settlement?",
+                "acceptedAnswer": { "@type": "Answer", "text": "There is no single reliable national average \u2014 outcomes vary enormously by wage level, time out of work, strength of evidence, and jurisdiction. Rather than relying on a headline average, this calculator builds an estimate from your own salary, time to resolution, and case specifics." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a cap on wrongful termination damages?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Under federal law, Title VII, the ADA, and GINA cap combined compensatory and punitive damages (not back pay, front pay, or attorney fees) based on employer size: $50,000 for 15-100 employees, $100,000 for 101-200, $200,000 for 201-500, and $300,000 for 500+ employees. This cap applies specifically to discrimination claims under those statutes \u2014 many other wrongful termination claims (breach of contract, whistleblower retaliation, violation of public policy, and most state-law claims) are not subject to this federal cap." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is a wrongful termination settlement taxable?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Generally yes. Back pay and front pay are treated as wages and are typically taxable, often reported on a W-2 with withholding. Emotional distress damages are taxable unless they arise from a physical injury or physical sickness. Punitive damages are always taxable. Consult a tax professional for your specific situation." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does replacement income (mitigation) reduce a settlement?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Employees generally have a duty to mitigate damages by seeking comparable employment, and income earned during the back-pay period is typically credited against back pay owed." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator give legal advice?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. This tool produces a planning-range estimate for educational purposes only. It does not evaluate liability, does not know your jurisdiction's specific laws, and is not a substitute for advice from a licensed employment attorney." }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 26px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+        .input-group.field-clamped { border-color: var(--warning); background: #fffbeb; }
+        .clamp-msg { font-size: 11px; color: #b45309; margin-top: 4px; display: none; }
+        .input-group.field-clamped .clamp-msg { display: block; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #0a6b4d; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #a11f1f; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .payment-breakdown { margin-bottom: 18px; }
+        .breakdown-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #e2e8f0; font-size: 14px; }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 8px; }
+        .breakdown-row .label { display: flex; align-items: center; color: var(--text-dark); }
+        .breakdown-row .value { font-weight: 700; color: var(--dark); }
+        .breakdown-row.total-row { border-top: 2px solid #e2e8f0; margin-top: 4px; padding-top: 12px; }
+        .breakdown-row.total-row .label { font-weight: 700; color: var(--dark); }
+        .stacked-bar { display: flex; width: 100%; height: 16px; border-radius: 10px; overflow: hidden; margin-bottom: 18px; background: #e2e8f0; }
+        .stacked-bar div { height: 100%; }
+
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .range-card { border-width: 2px; position: relative; }
+        .range-card.current { border-color: var(--primary); background: rgba(139,92,246,0.04); }
+        .range-card .range-tag { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .tab { padding: 12px 6px; font-size: 12px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 29px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; color: var(--dark); }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+        .compare-table td.no { color: var(--gray-text); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 23px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-scale-balanced"></i> Wrongful Termination Settlement Calculator</h1>
+                    <p>Back pay · Front pay · Benefits · Damages · Federal Title VII/ADA/GINA cap check</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up, no email required</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> Educational estimate only — not legal advice. This tool cannot evaluate liability or your jurisdiction's specific laws. Consult a licensed employment attorney.</div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="estimate" role="tab" aria-selected="true" aria-controls="tab-estimate" id="tabbtn-estimate" tabindex="0">💵 Estimate Settlement</button>
+                    <button class="tab" data-tab="cap" role="tab" aria-selected="false" aria-controls="tab-cap" id="tabbtn-cap" tabindex="-1">⚖️ Federal Damages Cap Check</button>
+                </div>
+
+                <!-- TAB 1: ESTIMATE SETTLEMENT -->
+                <div class="tab-content active" id="tab-estimate" role="tabpanel" aria-labelledby="tabbtn-estimate">
+                    <div class="section-title"><i class="fas fa-briefcase"></i> Wages & Timeline</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="salary">Annual Base Salary</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="salary" value="96000" step="1000" min="0" aria-label="Annual base salary"></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="months">Months: Termination → Resolution</label>
+                            <div class="row"><input type="number" id="months" value="8" step="0.5" min="0" aria-label="Months from termination to resolution"><span class="unit">months</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="replacementIncome">Replacement Income (mitigation)</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="replacementIncome" value="3000" step="100" min="0" aria-label="Monthly replacement income"></div>
+                            <span class="unit">/month</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="frontPayMonths">Expected Front-Pay Months</label>
+                            <div class="row"><input type="number" id="frontPayMonths" value="6" step="0.5" min="0" aria-label="Front pay months"><span class="unit">months</span></div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-clock-rotate-left"></i> Discount Front Pay to Present Value</span>
+                        <div class="toggle-switch" id="pvToggle" role="radiogroup" aria-label="Present value discounting">
+                            <button class="toggle-option active" data-pv="off" role="radio" aria-checked="true" tabindex="0">Off (straight-line)</button>
+                            <button class="toggle-option" data-pv="on" role="radio" aria-checked="false" tabindex="-1">On (annuity discount)</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="discountRateField" style="display:none;">
+                        <div class="input-group">
+                            <label for="discountRate">Annual Discount Rate</label>
+                            <div class="row"><input type="number" id="discountRate" value="4" step="0.25" min="0" max="20" aria-label="Annual discount rate"><span class="unit">%/yr</span></div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-gift"></i> Benefits & Non-Economic Damages</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="benefitsPct">Lost Benefits</label>
+                            <div class="row"><input type="number" id="benefitsPct" value="20" step="1" min="0" max="100" aria-label="Lost benefits percent of salary"><span class="unit">% of salary</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="edMultiplier">Emotional Distress Multiplier</label>
+                            <div class="row"><input type="number" id="edMultiplier" value="0.5" step="0.1" min="0" max="3" aria-label="Emotional distress multiplier"><span class="unit">×</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="punitive">Punitive / Statutory Damages</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="punitive" value="0" step="1000" min="0" aria-label="Punitive or statutory damages"></div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-sliders"></i> Quick Scenario (sets the distress multiplier)</span>
+                        <div class="toggle-switch" id="scenarioToggle" role="radiogroup" aria-label="Quick scenario preset">
+                            <button class="toggle-option" data-scenario="conservative" role="radio" aria-checked="false" tabindex="-1">Conservative (0.25×)</button>
+                            <button class="toggle-option active" data-scenario="baseline" role="radio" aria-checked="true" tabindex="0">Baseline (0.5×)</button>
+                            <button class="toggle-option" data-scenario="aggressive" role="radio" aria-checked="false" tabindex="-1">Aggressive (1.5×)</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-gavel"></i> Attorney Fees</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Fee Type</span>
+                        <div class="toggle-switch" id="feeModeToggle" role="radiogroup" aria-label="Attorney fee type">
+                            <button class="toggle-option active" data-feemode="contingency" role="radio" aria-checked="true" tabindex="0">% Contingency</button>
+                            <button class="toggle-option" data-feemode="flat" role="radio" aria-checked="false" tabindex="-1">Flat $ Amount</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="contingencyField">
+                        <div class="input-group">
+                            <label for="contingencyPct">Contingency Fee</label>
+                            <div class="row"><input type="number" id="contingencyPct" value="33" step="1" min="0" max="50" aria-label="Contingency fee percent"><span class="unit">% of gross</span></div>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="flatFeeField" style="display:none;">
+                        <div class="input-group">
+                            <label for="flatFee">Attorney Fees & Costs</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="flatFee" value="0" step="500" min="0" aria-label="Flat attorney fees and costs"></div>
+                        </div>
+                    </div>
+
+                    <div class="status-note status-neutral show" id="mitigationNote"></div>
+
+                    <div class="section-title" style="margin-top:8px;"><i class="fas fa-chart-simple"></i> Estimated Range</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-top:-10px;margin-bottom:14px;">Same wages, timeline, and fee settings across all three — only the emotional-distress assumption changes. This is a planning spread, not a prediction.</p>
+                    <div class="results-grid" id="rangeGrid" style="margin-bottom:22px;"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Estimated Gross Settlement</span>
+                            <span class="amount" id="grossTotalResult">$0</span>
+                        </div>
+                        <div class="stacked-bar" id="breakdownBar"></div>
+                        <div class="payment-breakdown" id="breakdownList"></div>
+                        <div class="results-grid" style="margin-top:18px;">
+                            <div class="result-card"><div class="result-label">Economic Damages</div><div class="result-value small" id="economicResult">$0</div></div>
+                            <div class="result-card"><div class="result-label">Attorney Fees</div><div class="result-value small" id="feesResult">$0</div></div>
+                            <div class="result-card"><div class="result-label">Estimated Net to You</div><div class="result-value small" id="netResult">$0</div></div>
+                            <div class="result-card"><div class="result-label">Non-Economic + Punitive</div><div class="result-value small" id="nonEconomicResult">$0</div></div>
+                        </div>
+                        <div class="status-note status-danger" id="feeWarning" style="margin-top:16px;margin-bottom:0;"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: FEDERAL DAMAGES CAP CHECK -->
+                <div class="tab-content" id="tab-cap" role="tabpanel" aria-labelledby="tabbtn-cap">
+                    <div class="section-title"><i class="fas fa-shield-halved"></i> Federal Title VII / ADA / GINA Damages Cap</div>
+                    <p style="font-size:13.5px;color:var(--gray-text);margin-bottom:18px;">Under 42 U.S.C. § 1981a(b)(3), federal law caps <strong>compensatory damages for future pecuniary loss, emotional distress, and other non-pecuniary harm, combined with punitive damages</strong> — based on employer size. Back pay, front pay, interest on back pay, and attorney fees are excluded from this cap. This tool models the cap-subject figure as your Emotional Distress + Punitive/Statutory Damages entry, which covers the typical case; if your claim also includes other separately-identified non-pecuniary future losses, add those in manually below.</p>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-list-check"></i> Claim Type</span>
+                        <div class="toggle-switch" id="claimTypeToggle" role="radiogroup" aria-label="Claim type">
+                            <button class="toggle-option active" data-claim="title7" role="radio" aria-checked="true" tabindex="0">Title VII / ADA / GINA discrimination</button>
+                            <button class="toggle-option" data-claim="other" role="radio" aria-checked="false" tabindex="-1">Other (contract, whistleblower, public policy, etc.)</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-building"></i> Employer Size</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="employerSize">Number of Employees</label>
+                            <select id="employerSize" aria-label="Employer size">
+                                <option value="under15">Fewer than 15 (below Title VII's employer-size threshold)</option>
+                                <option value="tier1" selected>15 – 100 employees</option>
+                                <option value="tier2">101 – 200 employees</option>
+                                <option value="tier3">201 – 500 employees</option>
+                                <option value="tier4">More than 500 employees</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="capCheckAmount">Cap-Subject Amount (Non-Pecuniary + Punitive)</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="capCheckAmount" value="0" step="1000" min="0" aria-label="Modeled compensatory plus punitive amount"></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>💡 This auto-fills from your Emotional Distress + Punitive/Statutory Damages figures in the Estimate tab, but you can override it here.</span>
+                    </div>
+
+                    <div class="status-note" id="capResult"></div>
+
+                    <div class="results-grid">
+                        <div class="result-card"><div class="result-label">Applicable Federal Cap</div><div class="result-value small" id="capAmountResult">-</div></div>
+                        <div class="result-card"><div class="result-label">Your Modeled Amount</div><div class="result-value small" id="capModeledResult">-</div></div>
+                        <div class="result-card"><div class="result-label">Amount Above Cap</div><div class="result-value small" id="capExcessResult">-</div></div>
+                    </div>
+
+                    <div class="info-tip" style="margin-top:18px;">
+                        <i>i</i>
+                        <span>This cap does not apply to back pay, front pay, or attorney fees — those remain uncapped under Title VII. It also does not apply to claims under 42 U.S.C. § 1981 (race discrimination), most state anti-discrimination laws (e.g., California's FEHA has no cap), or non-discrimination claims like breach of contract, whistleblower retaliation, or wrongful discharge in violation of public policy.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Wrongful Termination Settlement Calculator: How Estimates Are Actually Built</h2>
+                    <p>Back pay, front pay, benefits, damages, federal caps, and taxes — explained with sources, not just a number</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-calculated">1. How a Settlement Estimate Is Built</a></div>
+                            <div class="toc-item"><a href="#worked-example">2. Worked Example</a></div>
+                            <div class="toc-item"><a href="#federal-cap">3. The Federal Title VII/ADA/GINA Damages Cap</a></div>
+                            <div class="toc-item"><a href="#taxes">4. How Settlements Are Typically Taxed</a></div>
+                            <div class="toc-item"><a href="#what-drives-value">5. What Actually Drives Settlement Value</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">6. What to Look for in a Settlement Calculator</a></div>
+                            <div class="toc-item"><a href="#methodology">7. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">8. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Every wrongful termination settlement discussion eventually comes down to a number, but that number is rarely one thing — it's several categories of damages added together, each with its own logic and its own limits. This calculator breaks that process into its component parts: <strong>back pay, front pay, lost benefits, emotional distress, punitive or statutory damages, and attorney fees</strong> — and adds a feature most calculators skip entirely: a check against the actual federal statutory cap on compensatory and punitive damages.</p>
+
+                    <p>Nothing here evaluates whether your termination was actually unlawful, and nothing here replaces advice from a licensed employment attorney familiar with your state and your facts. What it does is turn "what might this be worth" into a structured, adjustable estimate you can reason about before or during that conversation.</p>
+
+                    <h2 id="how-calculated">1. How a Settlement Estimate Is Built</h2>
+                    <p>The core economic model follows the same logic courts and negotiators generally use for wage-loss claims:</p>
+                    <div class="pro-tip">
+                        <strong>Back Pay</strong> = (Monthly Salary × Months to Resolution) − (Replacement Income × Months to Resolution), floored at $0
+                        <p style="margin: 10px 0 0;">Back pay covers wages lost between termination and resolution. Employees generally have a duty to <strong>mitigate</strong> damages by seeking comparable work, so income earned during that period is typically credited against back pay owed — this calculator applies that credit automatically and never lets back pay go negative.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <strong>Front Pay</strong> = Monthly Salary × Front-Pay Months (optionally discounted to present value)
+                        <p style="margin: 10px 0 0;">Front pay compensates for future lost income when reinstatement isn't realistic. Some models treat it as a simple straight-line total; a more rigorous approach discounts it to present value using an annuity formula, since a dollar received later is worth less than a dollar today. This calculator offers both — most online calculators only offer the straight-line version.</p>
+                    </div>
+                    <div class="pro-tip">
+                        <strong>Lost Benefits</strong> = Monthly Salary × (Months to Resolution + Front-Pay Months) × Benefits %
+                        <p style="margin: 10px 0 0;">A percentage-of-salary proxy for employer-paid benefits like health insurance and retirement matching. Most workers fall somewhere in the 10-30% range, though richer or leaner benefit packages exist.</p>
+                    </div>
+                    <p>Economic damages (back pay + front pay + lost benefits) form the base. <strong>Emotional distress</strong> is modeled as a multiplier (0-3×) applied to economic damages — a common scenario-modeling shortcut, not a formula any court applies automatically. <strong>Punitive or statutory damages</strong> are a separate, directly-entered figure, since they depend entirely on the specific law and facts involved. Attorney fees are then applied either as a percentage contingency (commonly 30-40% in employment cases) or a flat dollar figure, giving you both a gross settlement estimate and an estimated net-to-you figure.</p>
+
+                    <h2 id="worked-example">2. Worked Example</h2>
+                    <p>Using the calculator's defaults: a $96,000/year employee, 8 months to resolution, $3,000/month in replacement income, 6 months of expected front pay, 20% benefits, a 0.5× emotional distress multiplier, no punitive damages, and a 33% contingency fee.</p>
+                    <p><strong>Step 1:</strong> Monthly salary = 96,000 ÷ 12 = $8,000. Gross back pay = 8,000 × 8 = $64,000. Mitigation = 3,000 × 8 = $24,000. Back pay after mitigation = $40,000.</p>
+                    <p><strong>Step 2:</strong> Front pay (straight-line) = 8,000 × 6 = $48,000.</p>
+                    <p><strong>Step 3:</strong> Lost benefits = 8,000 × (8 + 6) × 0.20 = $22,400.</p>
+                    <p><strong>Step 4:</strong> Economic damages = 40,000 + 48,000 + 22,400 = $110,400. Emotional distress = 110,400 × 0.5 = $55,200.</p>
+                    <p><strong>Step 5:</strong> Gross total (no punitive) = 110,400 + 55,200 = $165,600. Attorney fees at 33% = $54,648. Estimated net to you ≈ $110,952.</p>
+
+                    <h2 id="federal-cap">3. The Federal Title VII/ADA/GINA Damages Cap</h2>
+                    <p>This is the part almost every online wrongful-termination calculator skips — and it can materially change what a discrimination claim is actually worth. Under <strong>42 U.S.C. § 1981a(b)(3)</strong>, when a claim is brought under Title VII, the Americans with Disabilities Act (ADA), or the Genetic Information Nondiscrimination Act (GINA), the <em>combined total</em> of compensatory damages (things like emotional distress) and punitive damages is capped based on the employer's size:</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Employer Size</th><th>Combined Cap (Compensatory + Punitive)</th></tr></thead>
+                        <tbody>
+                            <tr><td>15 – 100 employees</td><td>$50,000</td></tr>
+                            <tr><td>101 – 200 employees</td><td>$100,000</td></tr>
+                            <tr><td>201 – 500 employees</td><td>$200,000</td></tr>
+                            <tr><td>More than 500 employees</td><td>$300,000</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Three details matter here. First, the cap does <strong>not</strong> include back pay, front pay, or attorney fees — those are recoverable in addition to the capped amount. Second, the cap applies <strong>per complaining party</strong>, not per claim. Third — and this is where a lot of online calculators quietly get it wrong by ignoring it entirely — this cap is specific to Title VII, ADA, and GINA claims. It does <strong>not</strong> apply to claims under 42 U.S.C. § 1981 (race discrimination), which has no federal damages cap, nor to most state-law claims (California's FEHA, for example, has no equivalent cap), nor to non-discrimination claims like breach of contract, whistleblower retaliation, or wrongful discharge in violation of public policy. Use the <strong>Federal Damages Cap Check</strong> tab above to see whether your modeled compensatory-and-punitive figure would actually be capped.</p>
+
+                    <h2 id="taxes">4. How Settlements Are Typically Taxed</h2>
+                    <p>This calculator does not compute taxes, but the general framework is worth knowing before you negotiate allocation language in a settlement agreement:</p>
+                    <ul>
+                        <li><strong>Back pay and front pay</strong> are treated as wages and are generally taxable, often reported on a Form W-2 with income tax and payroll tax withholding.</li>
+                        <li><strong>Emotional distress damages</strong> are generally taxable <em>unless</em> they arise from a physical injury or physical sickness — a 1996 amendment to IRC § 104(a)(2) added the word "physical," which is why a standalone emotional distress claim (the typical case in wrongful termination) is usually taxable.</li>
+                        <li><strong>Punitive damages</strong> are always taxable, with no exception for physical injury.</li>
+                        <li><strong>Attorney fees</strong> are often includible in your gross income even when paid directly to your attorney out of the settlement, which is a frequent source of surprise at tax time.</li>
+                    </ul>
+                    <p>How a settlement agreement allocates dollars across these categories can meaningfully affect the tax outcome — this is a conversation to have with your attorney and a tax professional before signing, not after.</p>
+
+                    <h2 id="what-drives-value">5. What Actually Drives Settlement Value</h2>
+                    <p>This calculator only models the damages side of the conversation. In practice, settlement value is also driven by:</p>
+                    <ul>
+                        <li><strong>Strength of evidence</strong> — emails, performance reviews, comparator evidence, contemporaneous complaints, and witness support all affect perceived liability.</li>
+                        <li><strong>Liability risk to the employer</strong> — a legally strong claim with modest damages can settle differently than a legally uncertain claim with large damages.</li>
+                        <li><strong>Negotiation leverage and venue</strong> — jury trial exposure, fee-shifting statutes, and litigation cost all factor into what an employer is willing to pay to avoid trial.</li>
+                    </ul>
+                    <p>A clean numerical model is still useful because it gives you a disciplined starting point and shows which assumptions are actually driving the number — but it is a planning tool, not a valuation of your legal claim.</p>
+
+                    <h2 id="what-to-look-for">6. What to Look for in a Settlement Calculator</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr></thead>
+                        <tbody>
+                            <tr><td>Full damages breakdown (back pay, front pay, benefits, ED, punitive)</td><td>A single lump-sum guess hides which assumptions matter</td><td class="yes">Included</td></tr>
+                            <tr><td>Federal Title VII/ADA/GINA damages cap check</td><td>Can materially cap compensatory + punitive damages depending on employer size and claim type</td><td class="yes">Included</td></tr>
+                            <tr><td>Present-value discounting option for front pay</td><td>A straight-line total overstates future wage loss</td><td class="yes">Included</td></tr>
+                            <tr><td>Attorney fees as % contingency or flat fee, with a net-to-you figure</td><td>Gross settlement and take-home amount are very different numbers</td><td class="yes">Included</td></tr>
+                            <tr><td>No email required to see results</td><td>Several competing calculators gate results behind a lead-capture form</td><td class="yes">Included</td></tr>
+                            <tr class="highlight-row"><td>Runs entirely in your browser, no lead-gen forms</td><td>Your numbers stay private</td><td class="yes">Included</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="methodology">7. Methodology &amp; Limitations</h2>
+                    <ul>
+                        <li><strong>Back pay, front pay, and mitigation</strong> follow well-established remedies concepts under U.S. employment law; see the <a href="https://www.eeoc.gov/remedies-employment-discrimination" target="_blank" rel="noopener">EEOC's overview of remedies for employment discrimination</a>.</li>
+                        <li><strong>The federal damages cap</strong> follows 42 U.S.C. § 1981a(b)(3), as summarized in the EEOC's own enforcement guidance on compensatory and punitive damages.</li>
+                        <li><strong>Tax treatment notes</strong> follow the general framework published on the <a href="https://www.irs.gov/government-entities/tax-implications-of-settlements-and-judgments" target="_blank" rel="noopener">IRS's own guidance on tax implications of settlements and judgments</a>.</li>
+                        <li><strong>Emotional distress is modeled as a multiplier</strong> on economic damages — a scenario-planning convention, not a legal formula any court or statute requires.</li>
+                        <li><strong>This calculator does not determine liability</strong>, does not know which state or claim type applies to your situation beyond what you tell it, and does not model state-specific caps, statutory penalties, or fee-shifting rules beyond the one federal cap it explicitly checks.</li>
+                        <li><strong>Taxes are not calculated.</strong> The tax section above is educational only — consult a tax professional for your specific settlement allocation.</li>
+                        <li>This tool is for informational and negotiation-preparation purposes only and is not legal advice. Consult a licensed employment attorney in your state before relying on any figure here.</li>
+                    </ul>
+
+                    <h2 id="faq">8. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="faq1-answer">What is the average wrongful termination settlement?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="faq1-answer"><p>There is no single reliable national average — outcomes vary enormously by wage level, time out of work, strength of evidence, and jurisdiction. Rather than relying on a headline average, this calculator builds an estimate from your own salary, time to resolution, and case specifics.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq2-answer">Is there a cap on wrongful termination damages?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="faq2-answer"><p>Under federal law, Title VII, the ADA, and GINA cap combined compensatory and punitive damages (not back pay, front pay, or attorney fees) based on employer size: $50,000 for 15-100 employees, $100,000 for 101-200, $200,000 for 201-500, and $300,000 for 500+ employees. This cap applies specifically to discrimination claims under those statutes — many other wrongful termination claims (breach of contract, whistleblower retaliation, violation of public policy, and most state-law claims) are not subject to this federal cap.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq3-answer">Is a wrongful termination settlement taxable?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="faq3-answer"><p>Generally yes. Back pay and front pay are treated as wages and are typically taxable, often reported on a W-2 with withholding. Emotional distress damages are taxable unless they arise from a physical injury or physical sickness. Punitive damages are always taxable. Consult a tax professional for your specific situation.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq4-answer">Does replacement income (mitigation) reduce a settlement?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="faq4-answer"><p>Yes. Employees generally have a duty to mitigate damages by seeking comparable employment, and income earned during the back-pay period is typically credited against back pay owed.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq5-answer">Does this calculator give legal advice?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="faq5-answer"><p>No. This tool produces a planning-range estimate for educational purposes only. It does not evaluate liability, does not know your jurisdiction's specific laws, and is not a substitute for advice from a licensed employment attorney.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for informational and negotiation-preparation purposes only and does not constitute legal or tax advice. See Section 7 for methodology details and sources.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>⚖️</span> Try the Settlement Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">⚖️ Settlement Calculator</a>
+                            <a href="/calculators/pain-and-suffering-calculator">🩹 Pain & Suffering Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/dots-calculator">🏋️ DOTS Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/mortgage-calculator">Mortgage Calculator</a>
+                <a href="/calculators/pain-and-suffering-calculator">Pain & Suffering</a>
+                <a href="/calculators/dots-calculator">DOTS Calculator</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        const CAP_TABLE = {
+            under15: null,
+            tier1: 50000,
+            tier2: 100000,
+            tier3: 200000,
+            tier4: 300000
+        };
+        const CAP_LABELS = {
+            under15: 'Not applicable (fewer than 15 employees)',
+            tier1: '15-100 employees',
+            tier2: '101-200 employees',
+            tier3: '201-500 employees',
+            tier4: '500+ employees'
+        };
+
+        let pvOn = false;
+        let feeMode = 'contingency';
+        let claimType = 'title7';
+        let capAmountManuallySet = false;
+
+        function fmt$(n) {
+            n = isFinite(n) ? n : 0;
+            return '$' + Math.round(n).toLocaleString('en-US');
+        }
+        function fmt$2(n) {
+            n = isFinite(n) ? n : 0;
+            return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== GENERIC TOGGLE WIRING =====
+        function wireToggle(containerId, dataAttr, onChange) {
+            document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(b => {
+                        b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-checked', 'true');
+                    btn.setAttribute('tabindex', '0');
+                    onChange(btn.dataset[dataAttr]);
+                });
+                btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+            });
+        }
+
+        wireToggle('pvToggle', 'pv', v => {
+            pvOn = v === 'on';
+            $('discountRateField').style.display = pvOn ? '' : 'none';
+            calculateAll();
+        });
+        wireToggle('feeModeToggle', 'feemode', v => {
+            feeMode = v;
+            $('contingencyField').style.display = feeMode === 'contingency' ? '' : 'none';
+            $('flatFeeField').style.display = feeMode === 'flat' ? '' : 'none';
+            calculateAll();
+        });
+        wireToggle('scenarioToggle', 'scenario', v => {
+            const presets = { conservative: 0.25, baseline: 0.5, aggressive: 1.5 };
+            $('edMultiplier').value = presets[v];
+            calculateAll();
+        });
+        wireToggle('claimTypeToggle', 'claim', v => { claimType = v; calculateAll(); });
+
+        $('employerSize').addEventListener('change', calculateAll);
+        $('capCheckAmount').addEventListener('input', () => { capAmountManuallySet = true; calculateAll(); });
+
+        // ===== INPUT VALIDATION / CLAMPING =====
+        function attachClamp(el, min, max) {
+            el.addEventListener('change', () => {
+                let v = parseFloat(el.value);
+                const group = el.closest('.input-group');
+                let clamped = false;
+                if (isNaN(v)) { v = min; clamped = true; }
+                if (min !== null && v < min) { v = min; clamped = true; }
+                if (max !== null && v > max) { v = max; clamped = true; }
+                if (clamped) {
+                    el.value = v;
+                    if (group) { group.classList.add('field-clamped'); setTimeout(() => group.classList.remove('field-clamped'), 2500); }
+                    calculateAll();
+                }
+            });
+        }
+        attachClamp($('salary'), 0, null);
+        attachClamp($('months'), 0, null);
+        attachClamp($('replacementIncome'), 0, null);
+        attachClamp($('frontPayMonths'), 0, null);
+        attachClamp($('discountRate'), 0, 20);
+        attachClamp($('benefitsPct'), 0, 100);
+        attachClamp($('edMultiplier'), 0, 3);
+        attachClamp($('punitive'), 0, null);
+        attachClamp($('contingencyPct'), 0, 50);
+        attachClamp($('flatFee'), 0, null);
+        attachClamp($('capCheckAmount'), 0, null);
+
+        [
+            'salary','months','replacementIncome','frontPayMonths','discountRate',
+            'benefitsPct','edMultiplier','punitive','contingencyPct','flatFee'
+        ].forEach(id => { $(id).addEventListener('input', calculateAll); });
+
+        // ===== CORE MATH =====
+        function pvFrontPay(monthlySalary, frontPayMonths, annualDiscountRate) {
+            if (frontPayMonths <= 0) return 0;
+            if (!pvOn || annualDiscountRate <= 0) return monthlySalary * frontPayMonths;
+            const r = annualDiscountRate / 100 / 12;
+            const n = frontPayMonths;
+            return monthlySalary * (1 - Math.pow(1 + r, -n)) / r;
+        }
+
+        function feesFor(grossTotal) {
+            if (feeMode === 'contingency') {
+                let pct = parseFloat($('contingencyPct').value);
+                if (isNaN(pct)) pct = 0;
+                pct = Math.max(0, Math.min(50, pct));
+                return grossTotal * (pct / 100);
+            }
+            let flat = parseFloat($('flatFee').value);
+            if (isNaN(flat)) flat = 0;
+            return Math.max(0, flat);
+        }
+
+        function renderRange(economicDamages, punitive, currentEdMultiplier) {
+            const presets = [
+                { key: 'conservative', label: 'Conservative', mult: 0.25 },
+                { key: 'baseline', label: 'Baseline', mult: 0.5 },
+                { key: 'aggressive', label: 'Aggressive', mult: 1.5 }
+            ];
+            const grid = $('rangeGrid');
+            grid.innerHTML = '';
+            presets.forEach(p => {
+                const nonEcon = economicDamages * p.mult + punitive;
+                const gross = economicDamages + nonEcon;
+                const fees = feesFor(gross);
+                const net = Math.max(0, gross - fees);
+                const isCurrent = Math.abs(p.mult - currentEdMultiplier) < 0.001;
+                const card = document.createElement('div');
+                card.className = 'result-card range-card' + (isCurrent ? ' current' : '');
+                card.innerHTML =
+                    (isCurrent ? '<span class="range-tag">Selected</span>' : '') +
+                    '<div class="result-label">' + p.label + ' (' + p.mult + '\u00d7 ED)</div>' +
+                    '<div class="result-value small">' + fmt$(gross) + ' gross</div>' +
+                    '<div class="result-sub" style="font-size:11px;color:var(--gray-text);margin-top:4px;">' + fmt$(net) + ' net to you</div>';
+                grid.appendChild(card);
+            });
+        }
+
+        function calculateAll() {
+            const num = (id, min, max) => {
+                let v = parseFloat($(id).value);
+                if (isNaN(v)) v = 0;
+                if (min !== null) v = Math.max(min, v);
+                if (max !== null) v = Math.min(max, v);
+                return v;
+            };
+            const salary = num('salary', 0, null);
+            const months = num('months', 0, null);
+            const replacementIncome = num('replacementIncome', 0, null);
+            const frontPayMonths = num('frontPayMonths', 0, null);
+            const discountRate = num('discountRate', 0, 20);
+            const benefitsPct = num('benefitsPct', 0, 100);
+            const edMultiplier = num('edMultiplier', 0, 3);
+            const punitive = num('punitive', 0, null);
+
+            const monthlySalary = salary / 12;
+            const grossBackPay = monthlySalary * months;
+            const mitigationTotal = replacementIncome * months;
+            const backPay = Math.max(0, grossBackPay - mitigationTotal);
+            const frontPay = pvFrontPay(monthlySalary, frontPayMonths, discountRate);
+            const lostBenefits = monthlySalary * (months + frontPayMonths) * (benefitsPct / 100);
+            const economicDamages = backPay + frontPay + lostBenefits;
+            const emotionalDistress = economicDamages * edMultiplier;
+            const nonEconomic = emotionalDistress + punitive;
+            const grossTotal = economicDamages + nonEconomic;
+
+            renderRange(economicDamages, punitive, edMultiplier);
+
+            const fees = feesFor(grossTotal);
+            const netToYou = grossTotal - fees;
+
+            $('grossTotalResult').textContent = fmt$(grossTotal);
+            $('economicResult').textContent = fmt$(economicDamages);
+            $('feesResult').textContent = fmt$(fees);
+            $('netResult').textContent = fmt$(Math.max(0, netToYou));
+            $('nonEconomicResult').textContent = fmt$(nonEconomic);
+
+            const feeWarnEl = $('feeWarning');
+            if (netToYou < 0) {
+                feeWarnEl.classList.add('show');
+                feeWarnEl.innerHTML = '<i class="fas fa-triangle-exclamation"></i> <strong>Entered attorney fees (' + fmt$(fees) + ') exceed the modeled gross settlement (' + fmt$(grossTotal) + ') by ' + fmt$(Math.abs(netToYou)) + '.</strong> "Net to You" is shown as $0 rather than a negative number \u2014 double-check your flat-fee entry, or switch to % contingency, which scales with the settlement automatically.';
+            } else {
+                feeWarnEl.classList.remove('show');
+                feeWarnEl.innerHTML = '';
+            }
+
+            const mitEl = $('mitigationNote');
+            if (mitigationTotal >= grossBackPay && grossBackPay > 0) {
+                mitEl.className = 'status-note status-caution show';
+                mitEl.innerHTML = '<i class="fas fa-circle-info"></i> Replacement income fully offsets gross back pay for this period, so back pay is floored at $0 rather than going negative.';
+            } else {
+                mitEl.className = 'status-note status-neutral show';
+                mitEl.innerHTML = '<i class="fas fa-info-circle"></i> Replacement income (mitigation) is credited against back pay for the same months, consistent with the general duty to mitigate in U.S. employment law.' + (pvOn ? ' Front pay is being discounted to present value at ' + discountRate + '%/yr.' : '');
+            }
+
+            // Breakdown bar + list
+            const segments = [
+                { label: 'Back Pay (after mitigation)', value: backPay, color: '#8b5cf6' },
+                { label: 'Front Pay' + (pvOn ? ' (present value)' : ''), value: frontPay, color: '#3b82f6' },
+                { label: 'Lost Benefits', value: lostBenefits, color: '#fbbf24' },
+                { label: 'Emotional Distress', value: emotionalDistress, color: '#f97316' },
+                { label: 'Punitive / Statutory Damages', value: punitive, color: '#ef4444' }
+            ];
+            const barTotal = segments.reduce((s, x) => s + x.value, 0) || 1;
+            const bar = $('breakdownBar'); bar.innerHTML = '';
+            const list = $('breakdownList'); list.innerHTML = '';
+            segments.forEach(seg => {
+                if (seg.value > 0) {
+                    const segDiv = document.createElement('div');
+                    segDiv.style.width = (seg.value / barTotal * 100) + '%';
+                    segDiv.style.background = seg.color;
+                    bar.appendChild(segDiv);
+                }
+                const row = document.createElement('div');
+                row.className = 'breakdown-row';
+                row.innerHTML = '<span class="label"><span class="swatch" style="background:' + seg.color + '"></span>' + seg.label + '</span><span class="value">' + fmt$(seg.value) + '</span>';
+                list.appendChild(row);
+            });
+            const feeRow = document.createElement('div');
+            feeRow.className = 'breakdown-row';
+            feeRow.innerHTML = '<span class="label"><span class="swatch" style="background:#94a3b8"></span>Attorney Fees (' + (feeMode === 'contingency' ? ($('contingencyPct').value + '% contingency') : 'flat fee') + ')</span><span class="value">\u2212' + fmt$(fees) + '</span>';
+            list.appendChild(feeRow);
+            const totalRow = document.createElement('div');
+            totalRow.className = 'breakdown-row total-row';
+            totalRow.innerHTML = '<span class="label">Estimated Net to You</span><span class="value">' + fmt$(Math.max(0, netToYou)) + '</span>';
+            list.appendChild(totalRow);
+
+            // Auto-fill cap-check amount unless the user has manually overridden it
+            if (!capAmountManuallySet) {
+                $('capCheckAmount').value = Math.round(nonEconomic);
+            }
+
+            calculateCap();
+        }
+
+        function calculateCap() {
+            const employerSize = $('employerSize').value;
+            const modeled = parseFloat($('capCheckAmount').value) || 0;
+            const cap = CAP_TABLE[employerSize];
+
+            $('capModeledResult').textContent = fmt$(modeled);
+
+            const capResultEl = $('capResult');
+
+            if (claimType === 'other') {
+                $('capAmountResult').textContent = 'Not applicable';
+                $('capExcessResult').textContent = '-';
+                capResultEl.className = 'status-note status-neutral show';
+                capResultEl.innerHTML = '<i class="fas fa-info-circle"></i> This federal cap only applies to Title VII, ADA, and GINA discrimination claims. For other claim types (breach of contract, whistleblower retaliation, wrongful discharge in violation of public policy, most state-law claims), this specific federal cap does not apply — though other jurisdiction-specific rules might.';
+                return;
+            }
+
+            if (cap === null) {
+                $('capAmountResult').textContent = 'Not applicable';
+                $('capExcessResult').textContent = '-';
+                capResultEl.className = 'status-note status-neutral show';
+                capResultEl.innerHTML = '<i class="fas fa-info-circle"></i> This federal Title VII/ADA/GINA damages-cap framework does not apply because the employer-size threshold for these statutes is generally 15 employees. Note that "wrongful termination" is broader than Title VII \u2014 you may still have claims under other federal or state laws with different (or no) damages caps at this employer size.';
+                return;
+            }
+
+            $('capAmountResult').textContent = fmt$(cap);
+            const excess = Math.max(0, modeled - cap);
+            $('capExcessResult').textContent = fmt$(excess);
+
+            if (modeled > cap) {
+                capResultEl.className = 'status-note status-danger show';
+                capResultEl.innerHTML = '<i class="fas fa-triangle-exclamation"></i> <strong>Your modeled compensatory + punitive amount exceeds the federal cap</strong> for ' + CAP_LABELS[employerSize] + ' (' + fmt$(cap) + '). Under 42 U.S.C. § 1981a(b)(3), a court would generally reduce this portion to the cap on a Title VII/ADA/GINA claim \u2014 back pay, front pay, and attorney fees are unaffected. State-law claims filed alongside a federal claim (e.g., California\'s FEHA) often have no equivalent cap.';
+            } else {
+                capResultEl.className = 'status-note status-good show';
+                capResultEl.innerHTML = '<i class="fas fa-circle-check"></i> Your modeled compensatory + punitive amount is within the federal cap for ' + CAP_LABELS[employerSize] + ' (' + fmt$(cap) + ').';
+            }
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            $('salary').value = '96000';
+            $('months').value = '8';
+            $('replacementIncome').value = '3000';
+            $('frontPayMonths').value = '6';
+            $('discountRate').value = '4';
+            $('benefitsPct').value = '20';
+            $('edMultiplier').value = '0.5';
+            $('punitive').value = '0';
+            $('contingencyPct').value = '33';
+            $('flatFee').value = '0';
+            $('capCheckAmount').value = '0';
+            capAmountManuallySet = false;
+
+            document.querySelectorAll('#pvToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.pv === 'off') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            pvOn = false;
+            $('discountRateField').style.display = 'none';
+
+            document.querySelectorAll('#feeModeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.feemode === 'contingency') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            feeMode = 'contingency';
+            $('contingencyField').style.display = '';
+            $('flatFeeField').style.display = 'none';
+
+            document.querySelectorAll('#scenarioToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.scenario === 'baseline') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+
+            document.querySelectorAll('#claimTypeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.claim === 'title7') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            claimType = 'title7';
+            $('employerSize').value = 'tier1';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Wrongful Termination Settlement Estimate', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Inputs', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Annual Salary: $' + $('salary').value, 25, 60);
+            doc.text('Months to Resolution: ' + $('months').value, 25, 67);
+            doc.text('Replacement Income: $' + $('replacementIncome').value + '/mo', 25, 74);
+            doc.text('Front-Pay Months: ' + $('frontPayMonths').value + (pvOn ? ' (PV discounted @ ' + $('discountRate').value + '%/yr)' : ' (straight-line)'), 25, 81);
+            doc.text('Benefits: ' + $('benefitsPct').value + '% | Emotional Distress Multiplier: ' + $('edMultiplier').value + 'x', 25, 88);
+            doc.text('Punitive / Statutory Damages: $' + $('punitive').value, 25, 95);
+            doc.text('Attorney Fee Basis: ' + (feeMode === 'contingency' ? $('contingencyPct').value + '% contingency' : '$' + $('flatFee').value + ' flat fee'), 25, 102);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Estimate', 20, 118);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Economic Damages: ' + $('economicResult').textContent, 25, 128);
+            doc.text('Non-Economic + Punitive: ' + $('nonEconomicResult').textContent, 25, 135);
+            doc.text('Gross Settlement Estimate: ' + $('grossTotalResult').textContent, 25, 142);
+            doc.text('Attorney Fees: ' + $('feesResult').textContent, 25, 149);
+            doc.text('Estimated Net to You: ' + $('netResult').textContent, 25, 156);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Federal Damages Cap Check', 20, 172);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Claim Type: ' + (claimType === 'title7' ? 'Title VII / ADA / GINA' : 'Other (cap not applicable)'), 25, 182);
+            doc.text('Employer Size: ' + $('employerSize').options[$('employerSize').selectedIndex].text, 25, 189);
+            doc.text('Applicable Cap: ' + $('capAmountResult').textContent, 25, 196);
+            doc.text('Modeled (Cap-Subject) Amount: ' + $('capModeledResult').textContent, 25, 203);
+            doc.text('Amount Above Cap: ' + $('capExcessResult').textContent, 25, 210);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('This estimate does not account for state-specific law, liability determination, taxes, or damages not modeled above.', 105, 258, { align: 'center' });
+            doc.text('Educational estimate only \u2014 not legal or tax advice. Consult a licensed employment attorney.', 105, 265, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Wrongful Termination Settlement Calculator', 105, 280, { align: 'center' });
+
+            doc.save('Settlement_Estimate_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
