@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Therapy Productivity Calculator | PT/OT/SLP | CalcSnaps</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free calculator for PT/OT/SLP: productivity %, clock-out time, CMS 8-minute rule billing units & weekly revenue — with benchmarks by setting.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calcsnaps.com/calculators/therapy-productivity-calculator">
+
+    <meta property="og:title" content="Therapy Productivity Calculator | PT/OT/SLP | CalcSnaps">
+    <meta property="og:description" content="Calculate therapy productivity %, clock-out time, CMS 8-minute rule billing units, and weekly revenue — with benchmarks by practice setting. Free, private, no sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/therapy-productivity-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Therapy Productivity Calculator",
+        "description": "Calculate clinical productivity percentage, required clock-out time, CMS 8-minute rule billing units (with AMA Rule of Eights comparison), and weekly revenue for PT, OT and SLP clinicians, with benchmarks by practice setting",
+        "url": "https://calcsnaps.com/calculators/therapy-productivity-calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Therapy Productivity Calculator Guide: Productivity %, 8-Minute Rule Billing Units & Benchmarks by Setting",
+        "description": "Complete guide to calculating clinical productivity percentage, the CMS 8-minute rule vs AMA Rule of Eights, and industry benchmarks by practice setting for PT, OT and SLP clinicians.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/therapy-productivity-calculator" },
+        "datePublished": "2026-08-15",
+        "dateModified": "2026-08-15"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is therapy productivity percentage calculated?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Productivity % = Billable minutes divided by total worked minutes, multiplied by 100. Worked minutes typically excludes unpaid breaks. For example, 360 billable minutes out of a 480-minute shift (8 hours) with no unpaid break equals 75% productivity." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good productivity percentage for therapists?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends heavily on the practice setting. Skilled nursing facilities typically target 85-92%, outpatient clinics 80-88%, home health 70-80%, schools 50-75%, private practice 60-75%, group practice 65-80%, and community mental health centers 50-65%. There is no single universal benchmark." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the Medicare 8-minute rule?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The Medicare 8-minute rule is a CMS billing policy for timed therapy CPT codes. A provider must deliver at least 8 minutes of a timed service to bill one unit. Units are calculated in 15-minute increments: 8-22 minutes equals 1 unit, 23-37 minutes equals 2 units, 38-52 minutes equals 3 units, and so on, based on the total combined timed minutes for the day." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between the 8-minute rule and the AMA Rule of Eights?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The CMS 8-minute rule (used by Medicare) totals all timed CPT code minutes together for the day, then applies the 15-minute increment chart once to that combined total. The AMA Rule of Eights, used by some commercial payers, instead applies the same 8-minute threshold separately to each individual CPT code before summing the units, which can produce a different total." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator store or transmit patient information?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. This calculator only works with minutes, percentages, and dollar amounts you enter yourself — it never asks for patient names or protected health information, and every calculation runs locally in your browser." }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa;
+            --secondary: #fbbf24; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h2 { font-size: 27px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .calc-header h2 i { color: var(--secondary); }
+        .calc-header p { font-size: 14.5px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 11.5px; margin-top: 12px; border: 1px solid rgba(16,185,129,0.3); }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; }
+        .tab { flex: 1; min-width: 130px; padding: 15px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 26px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 16.5px; font-weight: 700; color: var(--dark); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 18px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 13px 15px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 11.5px; color: var(--text-dark); margin-bottom: 5px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 15.5px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 12px; color: var(--gray); flex-shrink: 0; }
+        .input-group .hint { font-size: 10px; color: var(--gray); margin-top: 2px; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 13px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 13px; border-radius: 40px; cursor: pointer; font-size: 11.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 13px 17px; font-size: 12.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 14px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+        .validation-banner { background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; border-radius: 14px; padding: 12px 16px; font-size: 12.5px; margin-bottom: 4px; display: none; }
+        .validation-banner.show { display: block; }
+        .validation-banner ul { margin: 6px 0 0 18px; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 20px; margin-top: 20px; border: 1px solid rgba(139,92,246,0.15); }
+        .headline-result { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 16px; text-align: center; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .headline-result .label { font-size: 13px; opacity: 0.92; margin-bottom: 6px; }
+        .headline-result .amount { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; }
+        .headline-result .sub { font-size: 12px; opacity: 0.9; margin-top: 6px; }
+
+        .gauge-bar { position: relative; width: 100%; height: 22px; border-radius: 12px; overflow: hidden; margin: 14px 0 8px; background: #e2e8f0; display: flex; }
+        .gauge-bar div { height: 100%; }
+        .gauge-marker { position: relative; height: 0; }
+        .gauge-marker .pin { position: absolute; top: -30px; transform: translateX(-50%); background: var(--dark); color: white; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 8px; white-space: nowrap; }
+        .gauge-marker .pin::after { content: ''; position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--dark); }
+        .gauge-legend { display: flex; justify-content: space-between; font-size: 10px; color: var(--gray); margin-top: 4px; }
+        .benchmark-note { background: rgba(139,92,246,0.06); border-left: 4px solid var(--primary); border-radius: 12px; padding: 12px 16px; font-size: 12.5px; color: var(--text-dark); margin: 14px 0; }
+        .benchmark-note strong { color: var(--primary-dark); }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 12px; }
+        .result-card { background: white; border-radius: 16px; padding: 14px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 11px; color: var(--text-dark); margin-bottom: 5px; font-weight: 500; }
+        .result-value { font-size: 18px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 14px; }
+
+        .code-row { display: grid; grid-template-columns: 1fr 100px auto; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .code-row input[type="text"] { padding: 10px 12px; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 13px; font-family: 'Inter', sans-serif; }
+        .code-row input[type="number"] { padding: 10px 12px; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 13px; font-family: 'Inter', sans-serif; }
+        .code-row .unit-inline { font-size: 11.5px; color: var(--gray); }
+
+        .ref-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 12px; }
+        .ref-table th { background: var(--dark); color: white; padding: 8px 7px; text-align: center; font-weight: 600; }
+        .ref-table td { padding: 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .ref-table tr:nth-child(even) { background: #f8fafc; }
+
+        .compare-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 16px 0; }
+        .compare-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; text-align: center; }
+        .compare-card.winner { border-color: var(--primary); background: rgba(139,92,246,0.04); }
+        .compare-card .method-name { font-size: 12.5px; color: var(--text-dark); font-weight: 600; margin-bottom: 8px; }
+        .compare-card .method-units { font-size: 26px; font-weight: 700; color: var(--primary); }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h2 { font-size: 19px; }
+            .tab { padding: 11px 6px; font-size: 11.5px; }
+            .tab-content { padding: 18px; }
+            .headline-result .amount { font-size: 24px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+            .code-row { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h1 { font-size: 29px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; }
+        .article-header p { font-size: 15.5px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+
+        .article-content a { color: var(--primary) !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: var(--primary-dark) !important; }
+        .article-content .calc-cta a { color: #ffffff !important; text-decoration: none !important; font-weight: bold !important; }
+        .article-content .related-grid a { color: var(--primary) !important; text-decoration: none !important; font-weight: 500 !important; }
+        .article-content .related-grid a:hover { color: #ffffff !important; }
+        .article-content .related-grid a.calculator-link { color: var(--dark) !important; }
+        .article-content .toc-item a { color: var(--primary) !important; text-decoration: none !important; }
+
+        .quick-answer { background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(139,92,246,0.02)); border: 2px solid var(--primary); border-radius: 20px; padding: 22px 26px; margin: 24px 0; }
+        .quick-answer h2 { border: none !important; margin: 0 0 10px !important; padding: 0 !important; font-size: 19px !important; color: var(--primary-dark) !important; }
+        .quick-answer p { margin-bottom: 0 !important; font-size: 16px; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { font-size: 15px; font-weight: 500; display: block; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 38px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 26px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--text-dark); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--text-dark); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-dark); }
+
+        .compare-table, .benchmark-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13.5px; }
+        .compare-table th, .benchmark-table th { background: var(--dark); color: white; font-weight: 600; padding: 11px 10px; text-align: center; }
+        .compare-table th:first-child, .benchmark-table th:first-child { text-align: left; }
+        .compare-table td, .benchmark-table td { padding: 10px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+        .compare-table td:first-child, .benchmark-table td:first-child { text-align: left; font-weight: 600; }
+        .compare-table tr:last-child td, .benchmark-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.08); font-weight: 600; }
+        .yes { color: #059669; font-weight: 700; } .no { color: var(--gray); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; text-align: left; border: none; background: none; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--text-dark); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; }
+        .related-grid a:hover { background: var(--primary); }
+        .related-grid a.calculator-link { background: var(--secondary); font-weight: bold; }
+        .related-grid a.calculator-link:hover { background: #f59e0b; }
+
+        .disclaimer-note { font-size: 12.5px; color: var(--gray); margin-top: -6px; line-height: 1.6; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h1 { font-size: 23px; }
+            .article-content { padding: 22px 18px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table, .benchmark-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h2><i class="fas fa-user-doctor"></i> Therapy Productivity Calculator</h2>
+                    <p>Productivity % · CMS 8-Minute Rule Billing Units · Weekly Revenue — with setting benchmarks</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> No patient data — runs entirely in your browser</div>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" id="tabBtnProd" data-tab="prod" role="tab" aria-selected="true" aria-controls="tab-prod" tabindex="0">📊 Productivity %</button>
+                    <button class="tab" id="tabBtnUnits" data-tab="units" role="tab" aria-selected="false" aria-controls="tab-units" tabindex="-1">⏱️ Billing Units</button>
+                    <button class="tab" id="tabBtnRevenue" data-tab="revenue" role="tab" aria-selected="false" aria-controls="tab-revenue" tabindex="-1">💵 Revenue Planner</button>
+                </div>
+
+                <!-- TAB 1: PRODUCTIVITY % -->
+                <div class="tab-content active" id="tab-prod" role="tabpanel" aria-labelledby="tabBtnProd">
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">What do you want to find?</span>
+                        <div class="toggle-switch" id="modeToggle" role="radiogroup" aria-label="Calculation mode">
+                            <button class="toggle-option active" data-mode="pct" role="radio" aria-checked="true" tabindex="0">My Productivity %</button>
+                            <button class="toggle-option" data-mode="billable" role="radio" aria-checked="false" tabindex="0">Billable Time Needed</button>
+                            <button class="toggle-option" data-mode="clockout" role="radio" aria-checked="false" tabindex="0">Clock-Out Time</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-clock"></i> Shift Details</div>
+                    <div class="validation-banner" id="prodValidationBanner"></div>
+                    <div class="input-grid" id="prodInputsContainer"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-building"></i> Practice Setting (for benchmark comparison)</span>
+                    </div>
+                    <div class="toggle-switch" id="settingToggle" role="radiogroup" aria-label="Practice setting" style="margin-bottom:16px; flex-wrap:wrap;">
+                        <button class="toggle-option active" data-setting="snf" role="radio" aria-checked="true" tabindex="0">SNF</button>
+                        <button class="toggle-option" data-setting="outpatient" role="radio" aria-checked="false" tabindex="0">Outpatient</button>
+                        <button class="toggle-option" data-setting="homehealth" role="radio" aria-checked="false" tabindex="0">Home Health</button>
+                        <button class="toggle-option" data-setting="school" role="radio" aria-checked="false" tabindex="0">School-Based</button>
+                        <button class="toggle-option" data-setting="private" role="radio" aria-checked="false" tabindex="0">Private Practice</button>
+                        <button class="toggle-option" data-setting="group" role="radio" aria-checked="false" tabindex="0">Group Practice</button>
+                        <button class="toggle-option" data-setting="cmhc" role="radio" aria-checked="false" tabindex="0">CMHC</button>
+                    </div>
+                    <div class="benchmark-note" id="benchmarkNote"></div>
+
+                    <div class="results-panel">
+                        <div class="headline-result" id="prodHeadline">
+                            <div class="label" id="prodResultLabel">Your Productivity</div>
+                            <div class="amount" id="prodResultAmount">0%</div>
+                            <div class="sub" id="prodResultSub"></div>
+                        </div>
+
+                        <div class="gauge-bar">
+                            <div style="width:50%; background:#94a3b8;"></div>
+                            <div style="width:35%; background:#10b981;"></div>
+                            <div style="width:10%; background:#f59e0b;"></div>
+                            <div style="width:5%; background:#ef4444;"></div>
+                        </div>
+                        <div class="gauge-legend"><span>0%</span><span>50%</span><span>85%</span><span>95%</span><span>100%</span></div>
+                        <div class="info-tip" id="sustainabilityNote" style="margin-top:14px;">
+                            <i>i</i>
+                            <span id="sustainabilityText"></span>
+                        </div>
+
+                        <div class="results-grid" style="margin-top:16px;" id="prodResultsGrid"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: BILLING UNITS -->
+                <div class="tab-content" id="tab-units" role="tabpanel" aria-labelledby="tabBtnUnits">
+                    <div class="section-title"><i class="fas fa-stopwatch"></i> Timed CPT Code Minutes</div>
+                    <p style="font-size:13px;color:var(--text-dark);margin-bottom:14px;">Enter each timed service and how many minutes you spent on it. Leave the code label blank if you'd rather just total the minutes.</p>
+
+                    <div id="codeRowsContainer"></div>
+                    <button class="action-btn secondary" id="addCodeRowBtn" style="max-width:200px; margin-bottom:16px;" type="button"><i class="fas fa-plus"></i> Add Another Code</button>
+
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>💡 Only include <strong>timed</strong> CPT codes here (e.g. therapeutic exercise, manual therapy, gait training). Untimed/service-based codes are billed once per session regardless of minutes and don't belong in this total.</span>
+                    </div>
+
+                    <div class="compare-cards">
+                        <div class="compare-card" id="cmsCard">
+                            <div class="method-name">CMS 8-Minute Rule<br>(Medicare — combined total)</div>
+                            <div class="method-units" id="cmsUnits">0</div>
+                            <div style="font-size:11.5px;color:var(--gray);margin-top:4px;">units</div>
+                        </div>
+                        <div class="compare-card" id="amaCard">
+                            <div class="method-name">AMA Rule of Eights<br>(some commercial payers — per code)</div>
+                            <div class="method-units" id="amaUnits">0</div>
+                            <div style="font-size:11.5px;color:var(--gray);margin-top:4px;">units</div>
+                        </div>
+                    </div>
+                    <div class="info-tip" id="methodDiffNote" style="display:none;">
+                        <i>!</i>
+                        <span id="methodDiffText"></span>
+                    </div>
+
+                    <div class="section-title" style="margin-top:22px;"><i class="fas fa-table"></i> Reference Chart (CMS 8-Minute Rule)</div>
+                    <table class="ref-table">
+                        <thead><tr><th>Total Minutes</th><th>Units</th><th>Total Minutes</th><th>Units</th></tr></thead>
+                        <tbody>
+                            <tr><td>8 – 22</td><td>1</td><td>68 – 82</td><td>5</td></tr>
+                            <tr><td>23 – 37</td><td>2</td><td>83 – 97</td><td>6</td></tr>
+                            <tr><td>38 – 52</td><td>3</td><td>98 – 112</td><td>7</td></tr>
+                            <tr><td>53 – 67</td><td>4</td><td>113 – 127</td><td>8</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- TAB 3: REVENUE PLANNER -->
+                <div class="tab-content" id="tab-revenue" role="tabpanel" aria-labelledby="tabBtnRevenue">
+                    <div class="section-title"><i class="fas fa-calendar-week"></i> Weekly Caseload</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="sessionsPerWeek">Sessions per Week</label>
+                            <div class="row"><input type="number" id="sessionsPerWeek" value="30" step="1" min="0" aria-label="Sessions per week"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="ratePerSession">Rate per Session</label>
+                            <div class="row"><span class="unit">$</span><input type="number" id="ratePerSession" value="120" step="5" min="0" aria-label="Rate per session"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="noShowRate">No-Show / Cancellation Rate</label>
+                            <div class="row"><input type="number" id="noShowRate" value="10" step="1" min="0" max="100" aria-label="No-show rate"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="weeksPerYear">Weeks Worked per Year</label>
+                            <div class="row"><input type="number" id="weeksPerYear" value="48" step="1" min="1" max="52" aria-label="Weeks worked per year"></div>
+                            <span class="hint">52 minus vacation/holiday weeks</span>
+                        </div>
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="headline-result">
+                            <div class="label">Estimated Annual Revenue (after no-shows)</div>
+                            <div class="amount" id="annualRevenue">$0</div>
+                            <div class="sub" id="weeklyRevenueSub"></div>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <div class="result-label">Scheduled Weekly Revenue</div>
+                                <div class="result-value small" id="scheduledWeekly">$0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Lost to No-Shows / Week</div>
+                                <div class="result-value small" id="lostWeekly">$0</div>
+                            </div>
+                            <div class="result-card">
+                                <div class="result-label">Lost to No-Shows / Year</div>
+                                <div class="result-value small" id="lostAnnual">$0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>💡 This is a planning estimate based on the numbers you enter — it doesn't account for payer mix, denials, or sliding-scale adjustments.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 26px 26px 26px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Report</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h1>Therapy Productivity Calculator: Productivity %, 8-Minute Rule Billing Units &amp; Benchmarks by Setting</h1>
+                    <p>One tool for the three numbers PT, OT and SLP clinicians actually need to track</p>
+                </div>
+
+                <div class="article-content">
+
+                    <div class="quick-answer">
+                        <h2>📌 Quick Answer</h2>
+                        <p><strong>Productivity % = Billable minutes ÷ Total worked minutes × 100</strong> (worked minutes usually excludes unpaid breaks). A therapist billing 360 minutes in an 8-hour (480-minute) shift with no unpaid break is at <strong>75% productivity</strong>. What counts as "good" depends entirely on setting — SNFs typically target 85-92%, outpatient clinics 80-88%, home health 70-80%, schools 50-75%. For Medicare billing, the <strong>8-minute rule</strong> converts total timed treatment minutes into billable units in 15-minute increments (8-22 min = 1 unit, 23-37 min = 2 units, and so on). Use the calculator above for your exact numbers, including a side-by-side comparison against the AMA Rule of Eights used by some commercial payers.</p>
+                    </div>
+
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#formula">1. The Productivity Formula, Explained</a></div>
+                            <div class="toc-item"><a href="#benchmarks">2. Productivity Benchmarks by Practice Setting</a></div>
+                            <div class="toc-item"><a href="#sustainability">3. When a Target Gets Hard to Sustain</a></div>
+                            <div class="toc-item"><a href="#8-minute-rule">4. The CMS 8-Minute Rule, Explained</a></div>
+                            <div class="toc-item"><a href="#ama-vs-cms">5. CMS 8-Minute Rule vs AMA Rule of Eights</a></div>
+                            <div class="toc-item"><a href="#pta-rule">6. The PTA/COTA 85% Payment Differential</a></div>
+                            <div class="toc-item"><a href="#revenue">7. Turning Sessions Into Revenue</a></div>
+                            <div class="toc-item"><a href="#compare">8. Feature Comparison: Therapy Productivity Calculators</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>"Productivity" means something very specific in outpatient and rehab therapy: the percentage of your paid time that's actually billable. It drives scheduling, staffing targets, and — in a lot of clinics — performance reviews. But most online calculators only answer one narrow version of this question, and none of them connect it to the Medicare billing math that actually determines how those billable minutes turn into units and revenue.</p>
+
+                    <p>This <strong>therapy productivity calculator</strong> was built to close that gap: productivity percentage (in three directions — find your %, find the billable time you need, or find your clock-out time), CMS 8-minute rule billing units with a built-in comparison against the AMA Rule of Eights, and a weekly revenue planner — all with no patient data ever leaving your browser.</p>
+
+                    <h2 id="formula">1. The Productivity Formula, Explained</h2>
+                    <div class="pro-tip">
+                        <strong>Productivity % = (Billable Minutes ÷ Worked Minutes) × 100</strong>
+                        <p style="margin:10px 0 0;">Worked minutes = total shift length minus any <em>unpaid</em> break. A paid break stays in the denominator; an unpaid lunch does not.</p>
+                    </div>
+                    <p><strong>Worked example:</strong> An 8-hour shift (480 minutes) with no unpaid break, and 360 minutes billed to patients: 360 ÷ 480 × 100 = <strong>75%</strong>.</p>
+                    <p>The same formula runs in reverse two useful ways: given a target %, you can solve for how many billable minutes you need to hit it, or — if you already know your billable minutes and target — solve for what time you can clock out, starting from your shift start time.</p>
+
+                    <h2 id="benchmarks">2. Productivity Benchmarks by Practice Setting</h2>
+                    <p>There is no single "correct" productivity number. A target that's completely normal in a skilled nursing facility would be unsustainable in a community mental health center, because the underlying job — session length, documentation burden, no-show rates — is completely different.</p>
+                    <table class="benchmark-table">
+                        <thead><tr><th>Setting</th><th>Typical Target Range</th></tr></thead>
+                        <tbody>
+                            <tr><td>Skilled Nursing Facility (SNF)</td><td>85% – 92%</td></tr>
+                            <tr><td>Outpatient Clinic</td><td>80% – 88%</td></tr>
+                            <tr><td>Home Health</td><td>70% – 80%</td></tr>
+                            <tr><td>School-Based</td><td>50% – 75%</td></tr>
+                            <tr><td>Private Practice (Solo)</td><td>60% – 75%</td></tr>
+                            <tr><td>Group Practice</td><td>65% – 80%</td></tr>
+                            <tr><td>Community Mental Health Center (CMHC)</td><td>50% – 65%</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="disclaimer-note">These are general planning ranges synthesized from commonly cited industry figures, not a formal published standard — individual employers set their own targets based on payer mix, documentation requirements, and local factors.</p>
+
+                    <h2 id="sustainability">3. When a Target Gets Hard to Sustain</h2>
+                    <p>Productivity targets above roughly 90-95% leave very little unscheduled time in a shift for documentation, care coordination, or the inevitable no-show and late cancellation. Many clinicians and workforce researchers note that sustained targets in this range are difficult to maintain long-term without either documentation slipping to unpaid time or burnout risk climbing. This calculator flags very high targets for that reason — it's operational context, not a clinical or medical judgment about you or your workplace.</p>
+
+                    <h2 id="8-minute-rule">4. The CMS 8-Minute Rule, Explained</h2>
+                    <p>The 8-minute rule is a Medicare billing policy for <strong>timed</strong> therapy CPT codes (untimed, service-based codes are billed once per session regardless of duration and are not part of this calculation). To bill one unit of a timed service, you must provide at least 8 minutes of it. Units are calculated in 15-minute increments against the <strong>combined total</strong> of all timed minutes delivered that day:</p>
+                    <table class="benchmark-table">
+                        <thead><tr><th>Total Minutes</th><th>Billable Units</th></tr></thead>
+                        <tbody>
+                            <tr><td>8 – 22</td><td>1</td></tr>
+                            <tr><td>23 – 37</td><td>2</td></tr>
+                            <tr><td>38 – 52</td><td>3</td></tr>
+                            <tr><td>53 – 67</td><td>4</td></tr>
+                            <tr><td>68 – 82</td><td>5</td></tr>
+                            <tr><td>83 – 97</td><td>6</td></tr>
+                        </tbody>
+                    </table>
+                    <p>This billing methodology is published directly by <a href="https://www.cms.gov/medicare/coding-billing/therapy-services" target="_blank" rel="noopener noreferrer">CMS on its official Therapy Services page</a>, which every Medicare-participating provider bills against.</p>
+
+                    <h2 id="ama-vs-cms">5. CMS 8-Minute Rule vs AMA Rule of Eights</h2>
+                    <p>This is where a lot of billing confusion — and real revenue differences — come from. CMS totals every timed code's minutes together first, then applies the chart once. The AMA's Rule of Eights, which some commercial (non-Medicare) payers use instead, applies the same 8-minute threshold separately to <em>each individual code</em> before adding the unit counts together.</p>
+                    <div class="pro-tip">
+                        <strong>Example:</strong> You bill 10 minutes of therapeutic exercise (97110) and 10 minutes of manual therapy (97140) — 20 minutes total.
+                        <p style="margin:10px 0 0;"><strong>CMS (combined):</strong> 20 minutes falls in the 8-22 minute bracket → <strong>1 unit</strong> total.<br><strong>AMA Rule of Eights (per code):</strong> each 10-minute code independently clears the 8-minute threshold → <strong>2 units</strong> total.</p>
+                    </div>
+                    <p>Same minutes, different payer rule, different bill. The <strong>Billing Units</strong> tab above calculates both automatically and flags when they diverge, so you know which total applies before you submit a claim — always confirm the specific rule your payer uses.</p>
+
+                    <h2 id="pta-rule">6. The PTA/COTA 85% Payment Differential</h2>
+                    <p>Since 2022, Medicare reimburses services furnished "in whole or in part" by a Physical Therapist Assistant (PTA) or Occupational Therapy Assistant (COTA) — billed with the CQ/CO modifier — at <strong>85% of the normal Part B payment rate</strong>. Many clinics account for this by setting slightly different productivity expectations for assistant-delivered visits versus therapist-delivered visits, since the same billable minute is worth less in reimbursement when an assistant modifier applies. This calculator's productivity math itself doesn't change (minutes are minutes), but it's worth factoring into how your clinic interprets the resulting revenue number.</p>
+
+                    <h2 id="revenue">7. Turning Sessions Into Revenue</h2>
+                    <p>Productivity percentage tells you how your time is being used; it doesn't tell you what that time is worth. The <strong>Revenue Planner</strong> tab converts a weekly caseload (sessions, rate, and a realistic no-show rate) into an estimated annual number — useful for private practice owners or clinicians negotiating caseload expectations, since a small no-show rate compounds into a large annual gap.</p>
+
+                    <h2 id="compare">8. Feature Comparison: Therapy Productivity Calculators</h2>
+                    <p>Most therapy productivity tools online cover one piece of this well. The differences are mainly in how much of the full workflow — productivity, billing units, and revenue — is combined into a single tool.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Typical calculators</th><th>CalcSnaps (this tool)</th></tr></thead>
+                        <tbody>
+                            <tr><td>Basic productivity % calculation</td><td class="yes">✓ Standard</td><td class="yes">✓ Standard</td></tr>
+                            <tr><td>Reverse-solve for billable minutes or clock-out time</td><td class="no">Some tools</td><td class="yes">✓ All 3 modes in one tab</td></tr>
+                            <tr><td>Benchmarks by practice setting</td><td class="no">Rare</td><td class="yes">✓ 7 settings</td></tr>
+                            <tr><td>CMS 8-minute rule billing units</td><td class="no">Usually a separate tool</td><td class="yes">✓ Integrated</td></tr>
+                            <tr><td>AMA Rule of Eights side-by-side comparison</td><td class="no">Very rare</td><td class="yes">✓ Included</td></tr>
+                            <tr><td>Weekly/annual revenue + no-show impact</td><td class="no">Rare</td><td class="yes">✓ Included</td></tr>
+                            <tr class="highlight-row"><td>No patient data collected or transmitted</td><td class="no">Varies by tool</td><td class="yes">✓ Always local</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="disclaimer-note">This comparison reflects general, publicly observable feature patterns across popular therapy productivity calculators as of August 2026, not a claim about any single named company's practices. Features change over time.</p>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="false">How is therapy productivity percentage calculated?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>Productivity % = Billable minutes divided by total worked minutes, multiplied by 100. Worked minutes typically excludes unpaid breaks. For example, 360 billable minutes out of a 480-minute shift with no unpaid break equals 75% productivity.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false">What is a good productivity percentage for therapists?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>It depends heavily on the practice setting. SNFs typically target 85-92%, outpatient clinics 80-88%, home health 70-80%, schools 50-75%, private practice 60-75%, group practice 65-80%, and CMHCs 50-65%. There is no single universal benchmark.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false">What is the Medicare 8-minute rule?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>The Medicare 8-minute rule is a CMS billing policy for timed therapy CPT codes. A provider must deliver at least 8 minutes of a timed service to bill one unit. Units are calculated in 15-minute increments based on the total combined timed minutes for the day.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false">What is the difference between the 8-minute rule and the AMA Rule of Eights?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>The CMS 8-minute rule totals all timed CPT code minutes together for the day, then applies the 15-minute increment chart once. The AMA Rule of Eights, used by some commercial payers, applies the same threshold separately to each individual code before summing the units — which can produce a different total from the same minutes.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false">Does this calculator store or transmit patient information?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p>No. This calculator only works with minutes, percentages, and dollar amounts you enter yourself — it never asks for patient names or protected health information, and every calculation runs locally in your browser.</p></div>
+                        </div>
+                    </div>
+
+                    <p class="disclaimer-note">This calculator provides general planning estimates only. It is not billing, compliance, legal, or medical advice — always confirm payer-specific billing rules with your compliance team or the payer directly before submitting claims.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📊</span> Try Our Therapy Productivity Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📊 Therapy Productivity Calculator</a>
+                            <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/venmo-fee-calculator">💰 Venmo Fee Calculator</a>
+                            <a href="/calculators/pool-salt-calculator">🧂 Pool Salt Calculator</a>
+                            <a href="/calculators/river-rock-calculator">🪨 River Rock Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                <a href="/calculators/productivity-calculator">Productivity</a>
+                <a href="/calculators/mortgage-calculator">Mortgage</a>
+                <a href="/calculators/pool-salt-calculator">Pool Salt</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Therapy Productivity Calculator", "item": "https://calcsnaps.com/calculators/therapy-productivity-calculator" }
+        ]
+    }
+    </script>
+
+    <script>
+    (function () {
+        'use strict';
+
+        let mode = 'pct';
+        let currentSetting = 'snf';
+        let codeRowCount = 0;
+
+        const benchmarks = {
+            snf:        { name: 'Skilled Nursing Facility (SNF)', low: 85, high: 92 },
+            outpatient: { name: 'Outpatient Clinic', low: 80, high: 88 },
+            homehealth: { name: 'Home Health', low: 70, high: 80 },
+            school:     { name: 'School-Based', low: 50, high: 75 },
+            private:    { name: 'Private Practice (Solo)', low: 60, high: 75 },
+            group:      { name: 'Group Practice', low: 65, high: 80 },
+            cmhc:       { name: 'Community Mental Health Center (CMHC)', low: 50, high: 65 }
+        };
+
+        const prodInputsContainer = document.getElementById('prodInputsContainer');
+        const benchmarkNote = document.getElementById('benchmarkNote');
+        const codeRowsContainer = document.getElementById('codeRowsContainer');
+
+        // ===== TABS =====
+        // FIX: implement the standard WAI-ARIA tab keyboard pattern (Left/Right arrows move
+        // and activate, Home/End jump to first/last) with roving tabindex, in addition to the
+        // existing Enter/Space activation. Previously only Enter/Space worked, which is valid
+        // but incomplete for role="tab" per the ARIA Authoring Practices tab pattern.
+        const tabList = Array.from(document.querySelectorAll('.tab'));
+        tabList.forEach((tab, i) => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); return; }
+                let targetIndex = null;
+                if (e.key === 'ArrowRight') targetIndex = (i + 1) % tabList.length;
+                else if (e.key === 'ArrowLeft') targetIndex = (i - 1 + tabList.length) % tabList.length;
+                else if (e.key === 'Home') targetIndex = 0;
+                else if (e.key === 'End') targetIndex = tabList.length - 1;
+                if (targetIndex !== null) {
+                    e.preventDefault();
+                    const targetTab = tabList[targetIndex];
+                    switchTab(targetTab);
+                    targetTab.focus();
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== FORMAT HELPERS =====
+        function fmt(n) { return isFinite(n) ? Math.round(n).toLocaleString('en-US') : '0'; }
+        function fmtMoney(n) { return isFinite(n) ? '$' + n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) : '$0'; }
+        function minutesToHM(mins) {
+            mins = Math.max(0, Math.round(mins));
+            const h = Math.floor(mins / 60), m = mins % 60;
+            return (h > 0 ? h + 'h ' : '') + m + 'm';
+        }
+
+        // ===== MODE TOGGLE (Productivity tab) =====
+        document.querySelectorAll('#modeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectMode(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectMode(btn); } });
+        });
+        function selectMode(btn) {
+            document.querySelectorAll('#modeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            mode = btn.dataset.mode;
+            renderProdInputs();
+            calculateProd();
+        }
+
+        function renderProdInputs() {
+            let html = '';
+            if (mode === 'pct') {
+                html = '<div class="input-group"><label for="shiftLength">Shift Length</label><div class="row"><input type="number" id="shiftLength" value="8" step="0.25" min="0" aria-label="Shift length"><span class="unit">hrs</span></div></div>' +
+                       '<div class="input-group"><label for="unpaidBreak">Unpaid Break</label><div class="row"><input type="number" id="unpaidBreak" value="0" step="5" min="0" aria-label="Unpaid break"><span class="unit">min</span></div></div>' +
+                       '<div class="input-group"><label for="billableMinutes">Billable Time</label><div class="row"><input type="number" id="billableMinutes" value="360" step="5" min="0" aria-label="Billable minutes"><span class="unit">min</span></div></div>';
+            } else if (mode === 'billable') {
+                html = '<div class="input-group"><label for="shiftLength">Shift Length</label><div class="row"><input type="number" id="shiftLength" value="8" step="0.25" min="0" aria-label="Shift length"><span class="unit">hrs</span></div></div>' +
+                       '<div class="input-group"><label for="unpaidBreak">Unpaid Break</label><div class="row"><input type="number" id="unpaidBreak" value="0" step="5" min="0" aria-label="Unpaid break"><span class="unit">min</span></div></div>' +
+                       '<div class="input-group"><label for="targetPct">Target Productivity</label><div class="row"><input type="number" id="targetPct" value="80" step="1" min="1" max="150" aria-label="Target productivity percent"><span class="unit">%</span></div></div>';
+            } else {
+                html = '<div class="input-group"><label for="startTime">Shift Start Time</label><div class="row"><input type="time" id="startTime" value="08:00" aria-label="Shift start time"></div></div>' +
+                       '<div class="input-group"><label for="unpaidBreak">Unpaid Break</label><div class="row"><input type="number" id="unpaidBreak" value="0" step="5" min="0" aria-label="Unpaid break"><span class="unit">min</span></div></div>' +
+                       '<div class="input-group"><label for="billableMinutes">Billable Time (planned)</label><div class="row"><input type="number" id="billableMinutes" value="360" step="5" min="0" aria-label="Billable minutes"><span class="unit">min</span></div></div>' +
+                       '<div class="input-group"><label for="targetPct">Target Productivity</label><div class="row"><input type="number" id="targetPct" value="80" step="1" min="1" max="150" aria-label="Target productivity percent"><span class="unit">%</span></div></div>';
+            }
+            prodInputsContainer.innerHTML = html;
+            prodInputsContainer.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateProd));
+        }
+
+        // ===== SETTING TOGGLE =====
+        document.querySelectorAll('#settingToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => selectSetting(btn));
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectSetting(btn); } });
+        });
+        function selectSetting(btn) {
+            document.querySelectorAll('#settingToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+            btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+            currentSetting = btn.dataset.setting;
+            calculateProd();
+        }
+
+        function sustainabilityMessage(pct) {
+            if (pct >= 95) return { text: '🔴 This is a very high target. Many clinicians and workforce researchers flag targets at or above 95% as difficult to sustain — it leaves little unscheduled time for documentation or unexpected no-shows.', color: '#fee2e2', textColor: '#991b1b' };
+            if (pct >= 85) return { text: '🟠 This is a high target. There\'s limited buffer time for documentation and last-minute schedule changes at this level.', color: '#fef3c7', textColor: '#92400e' };
+            if (pct >= 50) return { text: '🟢 This falls in a commonly sustainable range for most clinical settings.', color: '#d1fae5', textColor: '#065f46' };
+            return { text: 'ℹ️ This is a relatively low productivity level — worth checking whether it reflects intentional non-clinical duties (supervision, admin time) or a scheduling gap.', color: '#e0f2fe', textColor: '#075985' };
+        }
+
+        // ===== CORE PRODUCTIVITY CALC =====
+        function calculateProd() {
+            const bm = benchmarks[currentSetting];
+            benchmarkNote.innerHTML = '<strong>' + bm.name + ':</strong> typical productivity target range is <strong>' + bm.low + '%–' + bm.high + '%</strong>. Individual employer targets vary.';
+
+            const banner = document.getElementById('prodValidationBanner');
+            const sustainBox = document.getElementById('sustainabilityNote');
+            const warnings = [];
+
+            const unpaidBreak = Math.max(0, parseFloat((document.getElementById('unpaidBreak') || {}).value) || 0);
+            let resultPct = 0, resultLabel = '', resultAmount = '', resultSub = '', gridHtml = '';
+
+            // FIX (Priority #2): "My Productivity %" and "Billable Time Needed" modes both derive
+            // worked minutes as shiftMin - unpaidBreak. Previously, entering a break equal to or
+            // longer than the shift silently produced "0%" with no explanation. Now it's blocked
+            // with a clear message instead of showing a misleading number.
+            if (mode === 'pct' || mode === 'billable') {
+                const shiftHrs = Math.max(0, parseFloat((document.getElementById('shiftLength') || {}).value) || 0);
+                const shiftMin = shiftHrs * 60;
+                if (shiftMin > 0 && unpaidBreak >= shiftMin) {
+                    banner.innerHTML = '<strong><i class="fas fa-triangle-exclamation"></i> Check your inputs:</strong><ul><li>Unpaid break (' + fmt(unpaidBreak) + ' min) can\'t equal or exceed your shift length (' + fmt(shiftMin) + ' min). Reduce the break or increase the shift length.</li></ul>';
+                    banner.classList.add('show');
+                    document.getElementById('prodResultLabel').textContent = mode === 'pct' ? 'Your Productivity' : 'Billable Time You Need';
+                    document.getElementById('prodResultAmount').textContent = '—';
+                    document.getElementById('prodResultSub').textContent = 'Fix the unpaid break above to see a result';
+                    document.getElementById('prodResultsGrid').innerHTML = '';
+                    sustainBox.style.display = 'none';
+                    return;
+                }
+            }
+            sustainBox.style.display = 'flex';
+
+            if (mode === 'pct') {
+                const shiftHrs = Math.max(0, parseFloat((document.getElementById('shiftLength') || {}).value) || 0);
+                const billable = Math.max(0, parseFloat((document.getElementById('billableMinutes') || {}).value) || 0);
+                const shiftMin = shiftHrs * 60;
+                const workedMin = Math.max(0, shiftMin - unpaidBreak);
+                resultPct = workedMin > 0 ? (billable / workedMin) * 100 : 0;
+
+                resultLabel = 'Your Productivity';
+                resultAmount = resultPct.toFixed(1) + '%';
+                resultSub = fmt(billable) + ' billable min ÷ ' + fmt(workedMin) + ' worked min';
+                gridHtml = resultCard('Worked Minutes', fmt(workedMin) + ' min') + resultCard('Billable Minutes', fmt(billable) + ' min') + resultCard('Non-Billable Minutes', fmt(Math.max(0, workedMin - billable)) + ' min');
+
+                // FIX (Priority #3): warn instead of silently displaying e.g. "125%" with no context.
+                if (workedMin > 0 && billable > workedMin) {
+                    warnings.push('Billable time (' + fmt(billable) + ' min) is more than your worked time (' + fmt(workedMin) + ' min), which puts productivity over 100%. Double-check your numbers, or confirm this matches how your organization defines productivity.');
+                }
+
+            } else if (mode === 'billable') {
+                const shiftHrs = Math.max(0, parseFloat((document.getElementById('shiftLength') || {}).value) || 0);
+                const target = Math.max(0.01, parseFloat((document.getElementById('targetPct') || {}).value) || 0.01);
+                const shiftMin = shiftHrs * 60;
+                const workedMin = Math.max(0, shiftMin - unpaidBreak);
+                const requiredBillable = workedMin * (target / 100);
+                resultPct = target;
+
+                resultLabel = 'Billable Time You Need';
+                resultAmount = minutesToHM(requiredBillable);
+                resultSub = 'to hit ' + target + '% out of ' + fmt(workedMin) + ' worked min';
+                gridHtml = resultCard('Required Billable Minutes', fmt(requiredBillable) + ' min') + resultCard('Worked Minutes', fmt(workedMin) + ' min') + resultCard('Max Non-Billable Time', fmt(Math.max(0, workedMin - requiredBillable)) + ' min');
+
+                if (target > 100) {
+                    warnings.push('A target above 100% means more billable minutes than you\'re actually working — confirm this is intentional (e.g. a policy that counts some overtime toward the total).');
+                }
+
+            } else {
+                const startVal = (document.getElementById('startTime') || {}).value || '08:00';
+                const billable = Math.max(0, parseFloat((document.getElementById('billableMinutes') || {}).value) || 0);
+                const target = Math.max(0.01, parseFloat((document.getElementById('targetPct') || {}).value) || 0.01);
+                const workedNeeded = billable / (target / 100);
+                const totalElapsed = workedNeeded + unpaidBreak;
+                resultPct = target;
+
+                const [sh, sm] = startVal.split(':').map(Number);
+                const startDate = new Date(2000, 0, 1, sh || 0, sm || 0);
+                const endDate = new Date(startDate.getTime() + totalElapsed * 60000);
+                const endTimeStr = endDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                const rolledToNextDay = endDate.getDate() !== startDate.getDate();
+
+                resultLabel = 'You Can Clock Out At';
+                resultAmount = endTimeStr + (rolledToNextDay ? ' (next day)' : '');
+                resultSub = minutesToHM(totalElapsed) + ' total shift time (incl. break)';
+                gridHtml = resultCard('Worked Minutes Needed', fmt(workedNeeded) + ' min') + resultCard('Total Shift Length', minutesToHM(totalElapsed)) + resultCard('Billable Minutes', fmt(billable) + ' min');
+
+                if (target > 100) {
+                    warnings.push('A target above 100% means more billable minutes than total worked time — confirm this is intentional.');
+                }
+            }
+
+            document.getElementById('prodResultLabel').textContent = resultLabel;
+            document.getElementById('prodResultAmount').textContent = resultAmount;
+            document.getElementById('prodResultSub').textContent = resultSub;
+            document.getElementById('prodResultsGrid').innerHTML = gridHtml;
+
+            if (warnings.length) {
+                banner.innerHTML = '<strong><i class="fas fa-triangle-exclamation"></i> Heads up:</strong><ul>' + warnings.map(w => '<li>' + w + '</li>').join('') + '</ul>';
+                banner.classList.add('show');
+            } else {
+                banner.classList.remove('show');
+                banner.innerHTML = '';
+            }
+
+            // Sustainability note + benchmark comparison, based on the relevant % (actual or target)
+            const sustain = sustainabilityMessage(resultPct);
+            const tip = document.getElementById('sustainabilityNote');
+            tip.style.background = sustain.color;
+            tip.style.borderColor = sustain.color;
+            document.getElementById('sustainabilityText').style.color = sustain.textColor;
+            document.getElementById('sustainabilityText').textContent = sustain.text;
+
+            let benchmarkCompare = '';
+            if (resultPct < bm.low) benchmarkCompare = ' This is below the typical ' + bm.name + ' range.';
+            else if (resultPct > bm.high) benchmarkCompare = ' This is above the typical ' + bm.name + ' range.';
+            else benchmarkCompare = ' This falls within the typical ' + bm.name + ' range.';
+            benchmarkNote.innerHTML += benchmarkCompare;
+        }
+
+        function resultCard(label, value) {
+            return '<div class="result-card"><div class="result-label">' + label + '</div><div class="result-value small">' + value + '</div></div>';
+        }
+
+        // ===== TAB 2: BILLING UNITS =====
+        function cmsUnitsFromMinutes(minutes) {
+            if (minutes < 8) return 0;
+            return Math.floor((minutes - 8) / 15) + 1;
+        }
+
+        function addCodeRow(label, minutes) {
+            codeRowCount++;
+            const id = 'code_' + codeRowCount;
+            const row = document.createElement('div');
+            row.className = 'code-row';
+            row.id = id;
+
+            // FIX (preventive): build inputs via safe DOM APIs instead of concatenating
+            // label/minutes into an innerHTML string. Every current call site passes a
+            // hardcoded literal, so this isn't exploitable today — but assigning .value
+            // directly (rather than string-building an HTML attribute) means this stays
+            // safe even if a future feature (e.g. a "share via URL" link) ever feeds
+            // user-supplied text into this function.
+            const labelInput = document.createElement('input');
+            labelInput.type = 'text';
+            labelInput.placeholder = 'CPT code / label (optional)';
+            labelInput.value = label || '';
+            labelInput.setAttribute('aria-label', 'CPT code label');
+            labelInput.className = 'codeLabel';
+
+            const minutesWrap = document.createElement('div');
+            minutesWrap.style.cssText = 'display:flex;align-items:center;gap:6px;';
+            const minutesInput = document.createElement('input');
+            minutesInput.type = 'number';
+            minutesInput.value = (minutes !== undefined && minutes !== '') ? minutes : '';
+            minutesInput.min = '0';
+            minutesInput.step = '1';
+            minutesInput.placeholder = '0';
+            minutesInput.setAttribute('aria-label', 'Minutes');
+            minutesInput.className = 'codeMinutes';
+            const unitSpan = document.createElement('span');
+            unitSpan.className = 'unit-inline';
+            unitSpan.textContent = 'min';
+            minutesWrap.appendChild(minutesInput);
+            minutesWrap.appendChild(unitSpan);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.type = 'button';
+            removeBtn.className = 'action-btn secondary removeCodeBtn';
+            removeBtn.style.cssText = 'padding:8px 14px;flex:none;min-width:auto;';
+            removeBtn.setAttribute('aria-label', 'Remove this code row');
+            removeBtn.innerHTML = '<i class="fas fa-trash"></i>'; // static markup only, no user data
+
+            row.appendChild(labelInput);
+            row.appendChild(minutesWrap);
+            row.appendChild(removeBtn);
+
+            codeRowsContainer.appendChild(row);
+            row.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateUnits));
+            removeBtn.addEventListener('click', () => { row.remove(); calculateUnits(); });
+        }
+
+        document.getElementById('addCodeRowBtn').addEventListener('click', () => { addCodeRow('', ''); });
+
+        function calculateUnits() {
+            const rows = codeRowsContainer.querySelectorAll('.code-row');
+            let codesMinutes = [];
+            rows.forEach(row => {
+                const m = Math.max(0, parseFloat(row.querySelector('.codeMinutes').value) || 0);
+                if (m > 0) codesMinutes.push(m);
+            });
+
+            const totalMinutes = codesMinutes.reduce((a, b) => a + b, 0);
+            const cmsResult = cmsUnitsFromMinutes(totalMinutes);
+            const amaResult = codesMinutes.reduce((sum, m) => sum + cmsUnitsFromMinutes(m), 0);
+
+            document.getElementById('cmsUnits').textContent = cmsResult;
+            document.getElementById('amaUnits').textContent = amaResult;
+
+            const cmsCard = document.getElementById('cmsCard');
+            const amaCard = document.getElementById('amaCard');
+            cmsCard.classList.remove('winner'); amaCard.classList.remove('winner');
+
+            const diffNote = document.getElementById('methodDiffNote');
+            if (cmsResult !== amaResult && codesMinutes.length > 0) {
+                diffNote.style.display = 'flex';
+                document.getElementById('methodDiffText').textContent = '⚠️ These two methods produce different totals for the same minutes (' + cmsResult + ' vs ' + amaResult + ' units). Confirm which rule your specific payer uses before billing.';
+                if (cmsResult > amaResult) cmsCard.classList.add('winner'); else amaCard.classList.add('winner');
+            } else {
+                diffNote.style.display = 'none';
+            }
+        }
+
+        // ===== TAB 3: REVENUE PLANNER =====
+        const sessionsPerWeekEl = document.getElementById('sessionsPerWeek');
+        const ratePerSessionEl = document.getElementById('ratePerSession');
+        const noShowRateEl = document.getElementById('noShowRate');
+        const weeksPerYearEl = document.getElementById('weeksPerYear');
+
+        function calculateRevenue() {
+            const sessions = Math.max(0, parseFloat(sessionsPerWeekEl.value) || 0);
+            const rate = Math.max(0, parseFloat(ratePerSessionEl.value) || 0);
+            const noShowPct = Math.min(100, Math.max(0, parseFloat(noShowRateEl.value) || 0));
+            const weeks = Math.min(52, Math.max(1, parseFloat(weeksPerYearEl.value) || 1));
+
+            const scheduledWeekly = sessions * rate;
+            const lostWeekly = scheduledWeekly * (noShowPct / 100);
+            const actualWeekly = scheduledWeekly - lostWeekly;
+            const actualAnnual = actualWeekly * weeks;
+            const lostAnnual = lostWeekly * weeks;
+
+            document.getElementById('annualRevenue').textContent = fmtMoney(actualAnnual);
+            document.getElementById('weeklyRevenueSub').textContent = fmtMoney(actualWeekly) + ' / week × ' + weeks + ' weeks';
+            document.getElementById('scheduledWeekly').textContent = fmtMoney(scheduledWeekly);
+            document.getElementById('lostWeekly').textContent = fmtMoney(lostWeekly);
+            document.getElementById('lostAnnual').textContent = fmtMoney(lostAnnual);
+        }
+        [sessionsPerWeekEl, ratePerSessionEl, noShowRateEl, weeksPerYearEl].forEach(el => el.addEventListener('input', calculateRevenue));
+
+        // ===== RESET =====
+        function resetAll() {
+            mode = 'pct';
+            document.querySelectorAll('#modeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+            renderProdInputs();
+
+            currentSetting = 'snf';
+            document.querySelectorAll('#settingToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            codeRowsContainer.innerHTML = '';
+            codeRowCount = 0;
+            addCodeRow('97110', 10);
+            addCodeRow('97140', 10);
+
+            sessionsPerWeekEl.value = '30';
+            ratePerSessionEl.value = '120';
+            noShowRateEl.value = '10';
+            weeksPerYearEl.value = '48';
+
+            calculateProd();
+            calculateUnits();
+            calculateRevenue();
+
+            const btn = document.getElementById('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        document.getElementById('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Therapy Productivity Report', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Productivity', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text(document.getElementById('prodResultLabel').textContent + ': ' + document.getElementById('prodResultAmount').textContent, 25, 60);
+            doc.text('(' + document.getElementById('prodResultSub').textContent + ')', 25, 67);
+            doc.text('Setting: ' + benchmarks[currentSetting].name + ' (' + benchmarks[currentSetting].low + '-' + benchmarks[currentSetting].high + '%)', 25, 74);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Billing Units', 20, 90);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('CMS 8-Minute Rule: ' + document.getElementById('cmsUnits').textContent + ' units', 25, 100);
+            doc.text('AMA Rule of Eights: ' + document.getElementById('amaUnits').textContent + ' units', 25, 107);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Revenue Planner', 20, 123);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Estimated Annual Revenue: ' + document.getElementById('annualRevenue').textContent, 25, 133);
+            doc.text('Lost to No-Shows/Year: ' + document.getElementById('lostAnnual').textContent, 25, 140);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Planning estimate only — not billing, compliance, or legal advice. Generated by CalcSnaps.', 105, 280, { align: 'center' });
+
+            doc.save('Therapy_Productivity_Report_' + Date.now() + '.pdf');
+        }
+        document.getElementById('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                const item = q.parentElement;
+                q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                // Real <button> elements already fire a native click on Enter/Space,
+                // so only a click listener is needed now (no separate keydown handler).
+                q.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        renderProdInputs();
+        addCodeRow('97110', 10);
+        addCodeRow('97140', 10);
+        calculateProd();
+        calculateUnits();
+        calculateRevenue();
+    })();
+    </script>
+</body>
+</html>
