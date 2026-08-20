@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Negative Marking Calculator | NEET, JEE, UPSC, SSC Score & Strategy Tool | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free negative marking calculator for NEET, JEE, UPSC, SSC & CAT. Calculate your exact score, subject-wise breakdown, and find the break-even guessing probability for any exam pattern.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/negative-marking-calculator">
+
+    <meta property="og:title" content="Negative Marking Calculator | NEET, JEE, UPSC, SSC | CalcSnaps">
+    <meta property="og:description" content="Calculate your exact exam score with negative marking, subject-wise breakdown, and the break-even guessing probability for NEET, JEE, UPSC, SSC & CAT.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/negative-marking-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+    <!-- TODO: upload a real 1200x630 image to this path -->
+    <meta property="og:image" content="https://calcsnaps.com/assets/og-negative-marking.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Negative Marking Calculator | NEET, JEE, UPSC, SSC | CalcSnaps">
+    <meta name="twitter:description" content="Calculate your exact exam score, subject-wise breakdown, and break-even guessing probability for NEET, JEE, UPSC, SSC & CAT.">
+    <meta name="twitter:image" content="https://calcsnaps.com/assets/og-negative-marking.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "@id": "https://calcsnaps.com/calculators/negative-marking-calculator#webapp",
+        "name": "Negative Marking Calculator",
+        "description": "Free tool to calculate exam scores under negative marking, with subject-wise breakdown and break-even guessing analysis",
+        "url": "https://calcsnaps.com/calculators/negative-marking-calculator",
+        "applicationCategory": "EducationApplication",
+        "operatingSystem": "Any",
+        "isPartOf": { "@id": "https://calcsnaps.com/calculators/negative-marking-calculator#article" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": "https://calcsnaps.com/calculators/negative-marking-calculator#article",
+        "headline": "Negative Marking Calculator: Calculate Your Exact Score for NEET, JEE, UPSC & SSC",
+        "description": "Guide to calculating exam scores under negative marking, including subject-wise breakdown and break-even guessing strategy.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "datePublished": "2026-08-18",
+        "dateModified": "2026-08-18",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/negative-marking-calculator" },
+        "keywords": "negative marking calculator, NEET score calculator, JEE negative marking, UPSC prelims marks, SSC CGL score"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "How is negative marking calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Final Score = (Correct Answers × Marks per Correct Answer) − (Wrong Answers × Marks per Correct Answer × Negative Ratio). Unattempted questions are not penalized in any major Indian competitive exam." } },
+            { "@type": "Question", "name": "What is the negative marking ratio in NEET, JEE, and UPSC?", "acceptedAnswer": { "@type": "Answer", "text": "NEET and JEE Main award +4 for a correct answer and deduct 1 mark for a wrong answer (a 1/4 ratio). UPSC Prelims deducts one-third (1/3) of the allotted marks for a wrong answer. SSC CGL typically deducts one-fourth (1/4). Always confirm the exact ratio from the current official notification, since it can change between exam cycles." } },
+            { "@type": "Question", "name": "Is negative marking applied to unattempted questions?", "acceptedAnswer": { "@type": "Answer", "text": "No. In NEET, JEE, UPSC, and SSC, only incorrectly answered questions attract a penalty. Leaving a question blank never reduces your score." } },
+            { "@type": "Question", "name": "What is break-even probability in negative marking?", "acceptedAnswer": { "@type": "Answer", "text": "Break-even probability is the minimum confidence level (as a percentage of eliminated wrong options) at which guessing an answer stops being a net loss on average. It's calculated as Negative Ratio ÷ (1 + Negative Ratio). For a 1/4 ratio, this works out to 20% — meaning if you can eliminate at least 1 of 4 options, an educated guess is mathematically worth attempting." } },
+            { "@type": "Question", "name": "Should I guess in an exam with negative marking?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on the exam's negative ratio and the number of answer options — there's no single universal answer. Compare your real odds of being correct (blind, or after eliminating options) to the break-even threshold for your exam's ratio: for NEET/JEE's 1/4 ratio with 4 options, even a blind guess (25% odds) clears the 20% break-even bar, while UPSC's 1/3 ratio needs at least a 25%+ chance to break even. This calculator's Break-Even tool shows the exact threshold for any ratio so you can compare it to your own confidence." } },
+            { "@type": "Question", "name": "Does attempting more questions always give a higher score?", "acceptedAnswer": { "@type": "Answer", "text": "No. Under negative marking, attempting more questions only helps if your accuracy on those extra attempts stays above the break-even threshold for that exam. Below that threshold, attempting more questions can lower your score compared to leaving them blank." } }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa;
+            --secondary: #fbbf24; --success: #10b981; --warning: #f59e0b; --danger: #ef4444;
+            --dark: #0f172a; --dark-light: #1e293b; --light: #f8fafc; --gray: #94a3b8;
+            --text-primary: #0f172a; --text-secondary: #475569;
+            --bg-primary: #ffffff; --bg-secondary: #f8fafc; --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12); --shadow-md: 0 4px 6px rgba(0,0,0,0.1); --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --radius-sm: 8px; --radius-md: 12px; --radius-lg: 24px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--text-primary); }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; width: 100%; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .calc-main-header { text-align: center; margin: 20px auto 40px auto; padding: 30px; max-width: 900px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-bottom: 3px solid var(--secondary); }
+        .calc-main-header h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .calc-main-header p { color: var(--gray); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
+        .preset-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 24px; }
+        .preset-chip { padding: 10px 18px; border-radius: 60px; border: 2px solid var(--border-color); background: white; color: var(--text-primary); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .preset-chip:hover { border-color: var(--primary-light); }
+        .preset-chip.active { background: var(--primary); border-color: var(--primary); color: white; }
+        .preset-chip:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .mode-tabs { display: flex; gap: 8px; margin-bottom: 24px; background: var(--bg-secondary); padding: 6px; border-radius: 60px; border: 1px solid var(--border-color); }
+        .mode-tab { flex: 1; padding: 12px; border: none; background: transparent; border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .mode-tab.active { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
+        .mode-tab:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .mode-panel { display: none; }
+        .mode-panel.active { display: block; }
+        .calculator-box, .result-box { background: var(--bg-primary); border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow-lg); margin-bottom: 30px; border: 1px solid var(--border-color); }
+        .result-box { display: none; }
+        .result-box.active { display: block; animation: fadeIn 0.4s; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px);} to { opacity:1; transform:translateY(0);} }
+        .section-title { color: var(--primary); font-size: 1.4rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
+        .section-row { display: grid; grid-template-columns: 1.2fr 0.8fr 0.8fr 0.8fr 0.9fr 0.9fr auto; gap: 8px; align-items: end; margin-bottom: 16px; padding: 16px; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .preset-note { text-align: center; font-size: 0.85rem; color: var(--text-secondary); margin: -12px 0 20px; }
+        .more-exams-select {
+            padding: 10px 16px; border-radius: 60px; border: 2px solid var(--border-color);
+            background: white; color: var(--text-primary); font-size: 0.9rem; font-weight: 600; cursor: pointer;
+        }
+        .more-exams-select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .mode-tabs { flex-wrap: wrap; }
+        .validation-banner {
+            background: rgba(239,68,68,0.1); border-left: 5px solid var(--danger);
+            padding: 14px 18px; border-radius: 12px; margin: 0 0 20px;
+            font-size: 0.9rem; color: #7f1d1d;
+        }
+        .validation-banner ul { margin: 8px 0 0 20px; }
+        .validation-banner li { margin-bottom: 4px; }
+        .result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .result-actions .action-btn {
+            flex: 1; min-width: 140px; padding: 12px; border-radius: 60px;
+            border: 1px solid var(--border-color); background: var(--bg-secondary);
+            color: var(--text-primary); font-weight: 600; font-size: 0.9rem; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;
+        }
+        .result-actions .action-btn:hover { background: var(--border-color); }
+        .result-actions .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .whatif-result, .target-result {
+            margin-top: 20px; padding: 24px; background: var(--bg-secondary);
+            border-radius: var(--radius-lg); border: 1px solid var(--border-color);
+        }
+        .whatif-arrow { display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+        .whatif-arrow .score-box { text-align: center; }
+        .whatif-arrow .score-box .num { font-size: 1.8rem; font-weight: 800; color: var(--dark); }
+        .whatif-arrow .score-box .lbl { font-size: 0.8rem; color: var(--text-secondary); }
+        .whatif-arrow i { font-size: 1.4rem; color: var(--primary); }
+        .whatif-note, .target-note {
+            padding: 14px 18px; border-radius: var(--radius-md); font-size: 0.9rem; text-align: left;
+        }
+        .whatif-note.positive, .target-note.positive { background: rgba(16,185,129,0.1); border-left: 4px solid var(--success); }
+        .whatif-note.negative, .target-note.negative { background: rgba(239,68,68,0.1); border-left: 4px solid var(--danger); }
+        .section-field label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+        .section-field input { width: 100%; padding: 10px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; background: white; color: var(--text-primary); }
+        .section-field input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .remove-section-btn { background: rgba(239,68,68,0.1); color: var(--danger); border: none; width: 38px; height: 38px; border-radius: var(--radius-sm); cursor: pointer; font-size: 1rem; }
+        .remove-section-btn:focus-visible { outline: 2px solid var(--danger); outline-offset: 2px; }
+        .remove-section-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+        .add-section-btn { width: 100%; padding: 12px; border: 2px dashed var(--border-color); background: transparent; border-radius: var(--radius-md); color: var(--primary); font-weight: 600; cursor: pointer; margin-bottom: 20px; transition: all 0.2s; }
+        .add-section-btn:hover { border-color: var(--primary); background: rgba(139,92,246,0.05); }
+        .add-section-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .btn { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; border: none; padding: 16px 30px; font-size: 1.1rem; font-weight: 600; border-radius: 50px; cursor: pointer; width: 100%; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(139,92,246,0.3); }
+        .result-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-lg); color: white; margin-bottom: 24px; }
+        .result-hero .score-value { font-size: 3rem; font-weight: 800; line-height: 1; }
+        .result-hero .score-label { font-size: 0.95rem; opacity: 0.9; margin-top: 6px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 14px; margin-bottom: 24px; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; text-align: center; }
+        .stat-card .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--dark); }
+        .stat-card .stat-label { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
+        .breakdown-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 10px 12px; text-align: left; font-size: 0.85rem; }
+        .breakdown-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
+        .breakdown-table tr:last-child td { font-weight: 700; background: var(--bg-secondary); }
+        .breakeven-result { text-align: center; padding: 30px; background: var(--bg-secondary); border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-top: 20px; }
+        .breakeven-result .be-value { font-size: 2.6rem; font-weight: 800; color: var(--primary); }
+        .breakeven-result .be-label { color: var(--text-secondary); margin-top: 6px; }
+        .breakeven-note { margin-top: 16px; padding: 14px 18px; border-radius: var(--radius-md); background: rgba(16,185,129,0.1); border-left: 4px solid var(--success); font-size: 0.92rem; text-align: left; }
+        .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .compare-col { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 20px; border: 2px solid var(--border-color); }
+        .compare-col h4 { margin-bottom: 14px; color: var(--dark); }
+        .compare-verdict { grid-column: 1 / -1; text-align: center; padding: 18px; border-radius: var(--radius-md); font-weight: 700; margin-top: 10px; }
+        .compare-verdict.win-a { background: rgba(16,185,129,0.15); color: #065f46; }
+        .compare-verdict.win-b { background: rgba(139,92,246,0.15); color: var(--primary-dark); }
+        .compare-verdict.tie { background: rgba(148,163,184,0.15); color: var(--text-secondary); }
+        .input-group { margin-bottom: 18px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .input-group input { width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem; background: var(--bg-secondary); }
+        .input-group input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .calculator-disclaimer { background: rgba(251,191,36,0.1); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 12px; margin: 20px 0 30px; font-size: 0.92rem; color: var(--text-secondary); }
+        .article-container { max-width: 900px; margin: 30px auto; padding: 30px 20px; background: var(--bg-primary); border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid var(--border-color); }
+        .article-header { text-align: center; margin-bottom: 40px; padding: 30px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 24px; color: white; }
+        .article-header h1 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); color: white; line-height: 1.3; }
+        .article-content h2 { font-size: 1.7rem; color: var(--dark); margin: 36px 0 18px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .article-content h3 { font-size: 1.25rem; color: var(--dark-light); margin: 26px 0 12px; }
+        .article-content p { margin-bottom: 18px; color: var(--text-secondary); line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-left: 26px; margin-bottom: 18px; }
+        .article-content li { margin-bottom: 8px; }
+        .exam-table { overflow-x: auto; margin: 26px 0; background: var(--bg-primary); border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+        .exam-table table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        .exam-table th { background: var(--dark); color: white; font-weight: 600; padding: 14px; text-align: left; }
+        .exam-table td { padding: 12px 14px; border-bottom: 1px solid var(--border-color); }
+        .exam-table tr:hover { background: var(--bg-secondary); }
+        .expert-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 12px; margin: 26px 0; }
+        .warning-box { background: rgba(239,68,68,0.1); border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 12px; margin: 26px 0; }
+        .toc { background: var(--bg-secondary); padding: 22px; border-radius: 20px; margin: 26px 0; border: 1px solid var(--border-color); }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; margin-top: 12px; }
+        .toc-item { padding: 10px; border-left: 3px solid var(--primary); background: var(--bg-primary); border-radius: 8px; }
+        .toc-item a { color: var(--dark); text-decoration: none; font-weight: 500; }
+        .toc-item a:hover { color: var(--primary); }
+        .faq-section { background: var(--bg-primary); border-radius: 20px; padding: 26px; margin: 40px 0; border: 1px solid var(--border-color); }
+        .faq-item { border-bottom: 1px solid var(--border-color); padding: 18px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question i { transition: transform 0.2s; color: var(--gray); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { color: var(--text-secondary); display: none; padding-top: 10px; }
+        .faq-item.active .faq-answer { display: block; }
+        .related-links { background: var(--bg-secondary); border-radius: 20px; padding: 26px; margin: 26px 0; text-align: center; border: 1px solid var(--border-color); }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 16px; }
+        .related-grid a { color: var(--primary); text-decoration: none; padding: 10px 20px; background: var(--bg-primary); border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .section-row { grid-template-columns: 1fr 1fr; }
+            .compare-grid { grid-template-columns: 1fr; }
+            .calculator-box, .result-box { padding: 20px; }
+        }
+        .stat-grid { grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); }
+        html { overflow-x: hidden; }
+    </style>
+</head>
+<body>
+    <a href="#calculator-section" class="skip-link">Skip to calculator</a>
+
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav" aria-label="Primary">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+
+        <div id="calculator-section">
+            <header class="calc-main-header">
+                <h2><i class="fas fa-square-check" aria-hidden="true"></i> Negative Marking Calculator</h2>
+                <p>Score, subject-wise breakdown, and break-even guessing strategy — for NEET, JEE, UPSC, SSC & CAT</p>
+            </header>
+
+            <main role="main">
+                <div class="preset-row" role="group" aria-label="Exam presets">
+                    <button type="button" class="preset-chip active" data-marks="4" data-ratio="0.25">NEET / JEE Main (+4, −1)</button>
+                    <button type="button" class="preset-chip" data-marks="2" data-ratio="0.3333">UPSC Prelims (1/3)</button>
+                    <button type="button" class="preset-chip" data-marks="2" data-ratio="0.25">SSC CGL (+2, −0.5)</button>
+                    <button type="button" class="preset-chip" data-marks="3" data-ratio="0.3333">CAT (+3, −1)</button>
+                    <button type="button" class="preset-chip" data-marks="1" data-ratio="0">Custom / No Preset</button>
+                </div>
+                <div style="text-align:center; margin-bottom: 12px;">
+                    <select id="moreExamsSelect" class="more-exams-select" aria-label="More exam presets">
+                        <option value="">More exams (SSC / Banking / Defense)...</option>
+                        <option value="3,0.3333">SSC CGL Tier II (+3, −1)</option>
+                        <option value="2,0.25">SSC CHSL (+2, −0.5)</option>
+                        <option value="1,0.25">SSC MTS (+1, −0.25)</option>
+                        <option value="1,0.25">IBPS PO (+1, −0.25)</option>
+                        <option value="1,0.25">IBPS Clerk (+1, −0.25)</option>
+                        <option value="1,0.25">SBI PO (+1, −0.25)</option>
+                        <option value="1,0.3333">RRB NTPC (+1, −0.33)</option>
+                        <option value="2.5,0.3333">NDA (approx. +2.5, −0.83 — varies by paper section)</option>
+                        <option value="2,0.3333">CDS (approx. +2, −0.66 — varies by paper section)</option>
+                    </select>
+                </div>
+                <p class="preset-note">Presets cover standard single-tier marking only. Values for NDA/CDS are approximate since marks vary by paper section. Exams with partial marking (e.g. JEE Advanced) or multiple mark tiers per section — use "Custom" and set each section's marks/ratio manually via "Add Section" below. Always verify against the current official notification.</p>
+
+                <div class="mode-tabs" role="tablist" aria-label="Calculator mode">
+                    <button type="button" id="tab-score" class="mode-tab active" role="tab" aria-selected="true" aria-controls="panel-score" data-mode="score">Score Calculator</button>
+                    <button type="button" id="tab-breakeven" class="mode-tab" role="tab" aria-selected="false" aria-controls="panel-breakeven" data-mode="breakeven">Break-Even Guessing</button>
+                    <button type="button" id="tab-compare" class="mode-tab" role="tab" aria-selected="false" aria-controls="panel-compare" data-mode="compare">Compare Strategies</button>
+                    <button type="button" id="tab-whatif" class="mode-tab" role="tab" aria-selected="false" aria-controls="panel-whatif" data-mode="whatif">What-If Simulator</button>
+                    <button type="button" id="tab-target" class="mode-tab" role="tab" aria-selected="false" aria-controls="panel-target" data-mode="target">Target Score</button>
+                </div>
+
+                <section class="mode-panel active" id="panel-score" role="tabpanel" aria-labelledby="tab-score">
+                    <div class="calculator-box">
+                        <h3 class="section-title"><i class="fas fa-calculator" aria-hidden="true"></i> Enter Your Answers</h3>
+                        <div id="sectionsWrap">
+                            <div class="section-row" data-section>
+                                <div class="section-field">
+                                    <label for="subj-0">Subject / Section</label>
+                                    <input type="text" id="subj-0" value="Overall" aria-label="Section name">
+                                </div>
+                                <div class="section-field">
+                                    <label for="correct-0">Correct</label>
+                                    <input type="number" id="correct-0" min="0" value="0" aria-label="Correct answers">
+                                </div>
+                                <div class="section-field">
+                                    <label for="wrong-0">Wrong</label>
+                                    <input type="number" id="wrong-0" min="0" value="0" aria-label="Wrong answers">
+                                </div>
+                                <div class="section-field">
+                                    <label for="total-0">Total Qs</label>
+                                    <input type="number" id="total-0" min="0" value="0" aria-label="Total questions in this section">
+                                </div>
+                                <div class="section-field">
+                                    <label for="marks-0">Marks/Q</label>
+                                    <input type="number" id="marks-0" min="0.1" step="0.1" value="4" aria-label="Marks per correct answer">
+                                </div>
+                                <div class="section-field">
+                                    <label for="ratio-0">Neg. Ratio</label>
+                                    <input type="number" id="ratio-0" min="0" max="1" step="0.01" value="0.25" aria-label="Negative marking ratio">
+                                </div>
+                                <button type="button" class="remove-section-btn" aria-label="Remove this section" disabled><i class="fas fa-trash" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <button type="button" class="add-section-btn" id="addSectionBtn">
+                            <i class="fas fa-plus" aria-hidden="true"></i> Add Subject / Section (e.g. Physics, Chemistry, Biology)
+                        </button>
+                        <div id="validationMessages" hidden></div>
+                        <button class="btn" id="calcScoreBtn">
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Calculate Score
+                        </button>
+                    </div>
+
+                    <div class="calculator-disclaimer">
+                        <i class="fas fa-info-circle"></i> <strong>Disclaimer:</strong> This tool applies the marking scheme you enter. Always verify the exact negative marking ratio and marks per question from your exam's official notification, as these can change between exam cycles.
+                    </div>
+
+                    <section class="result-box" id="scoreResultBox" aria-live="polite">
+                        <h3 class="section-title"><i class="fas fa-trophy" aria-hidden="true"></i> Your Result</h3>
+                        <div class="result-hero">
+                            <div class="score-value" id="finalScoreValue">0</div>
+                            <div class="score-label">Final Score</div>
+                        </div>
+                        <div class="stat-grid">
+                            <div class="stat-card"><div class="stat-value" id="statAttempted">0</div><div class="stat-label">Attempted</div></div>
+                            <div class="stat-card"><div class="stat-value" id="statUnattempted">0</div><div class="stat-label">Unattempted</div></div>
+                            <div class="stat-card"><div class="stat-value" id="statAccuracy">0%</div><div class="stat-label">Accuracy</div></div>
+                            <div class="stat-card"><div class="stat-value" id="statMaxPct">0%</div><div class="stat-label">% of Max Marks</div></div>
+                            <div class="stat-card"><div class="stat-value" id="statPositive">0</div><div class="stat-label">Marks Gained</div></div>
+                            <div class="stat-card"><div class="stat-value" id="statNegative">0</div><div class="stat-label">Marks Deducted</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table" id="breakdownTable" aria-label="Subject-wise breakdown">
+                                <thead><tr><th>Section</th><th>Correct</th><th>Wrong</th><th>Unattempted</th><th>Score</th></tr></thead>
+                                <tbody id="breakdownBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="result-actions">
+                            <button type="button" class="action-btn" id="copyResultBtn"><i class="far fa-copy" aria-hidden="true"></i> Copy Result</button>
+                            <button type="button" class="action-btn" id="shareResultBtn"><i class="fas fa-share-nodes" aria-hidden="true"></i> Share Result</button>
+                            <button type="button" class="action-btn" id="pdfResultBtn"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download PDF</button>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="mode-panel" id="panel-whatif" role="tabpanel" aria-labelledby="tab-whatif">
+                    <div class="calculator-box">
+                        <h3 class="section-title"><i class="fas fa-flask" aria-hidden="true"></i> What-If Simulator</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:18px;">See how your score would change if you attempted more questions at a given accuracy. Run the Score Calculator first to auto-fill your current score.</p>
+                        <div class="input-group">
+                            <label for="wiBaseScore">Current Score</label>
+                            <input type="number" id="wiBaseScore" step="0.1" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="wiMarks">Marks per Correct Answer</label>
+                            <input type="number" id="wiMarks" min="0.1" step="0.1" value="4">
+                        </div>
+                        <div class="input-group">
+                            <label for="wiRatio">Negative Marking Ratio</label>
+                            <input type="number" id="wiRatio" min="0" max="1" step="0.01" value="0.25">
+                        </div>
+                        <div class="input-group">
+                            <label for="wiAttempts">Additional Questions to Attempt</label>
+                            <input type="number" id="wiAttempts" min="0" value="5">
+                        </div>
+                        <div class="input-group">
+                            <label for="wiAccuracy">Expected Accuracy on These Questions (%)</label>
+                            <input type="number" id="wiAccuracy" min="0" max="100" value="70">
+                        </div>
+                        <button class="btn" id="calcWhatIfBtn">
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Simulate
+                        </button>
+                        <div class="whatif-result" id="whatifResult" hidden aria-live="polite">
+                            <div class="whatif-arrow">
+                                <div class="score-box"><div class="num" id="wiOldScore">0</div><div class="lbl">Current Score</div></div>
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                <div class="score-box"><div class="num" id="wiNewScore">0</div><div class="lbl">Projected Score</div></div>
+                            </div>
+                            <div class="whatif-note" id="wiNote"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mode-panel" id="panel-target" role="tabpanel" aria-labelledby="tab-target">
+                    <div class="calculator-box">
+                        <h3 class="section-title"><i class="fas fa-bullseye" aria-hidden="true"></i> Target Score Calculator</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:18px;">Find out roughly how many more correct answers you need, at your current accuracy, to reach a target score.</p>
+                        <div class="input-group">
+                            <label for="tsBaseScore">Current Score</label>
+                            <input type="number" id="tsBaseScore" step="0.1" value="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="tsTargetScore">Target Score</label>
+                            <input type="number" id="tsTargetScore" step="0.1" value="100">
+                        </div>
+                        <div class="input-group">
+                            <label for="tsMarks">Marks per Correct Answer</label>
+                            <input type="number" id="tsMarks" min="0.1" step="0.1" value="4">
+                        </div>
+                        <div class="input-group">
+                            <label for="tsRatio">Negative Marking Ratio</label>
+                            <input type="number" id="tsRatio" min="0" max="1" step="0.01" value="0.25">
+                        </div>
+                        <div class="input-group">
+                            <label for="tsAccuracy">Your Current Accuracy (%)</label>
+                            <input type="number" id="tsAccuracy" min="0" max="100" value="80">
+                        </div>
+                        <button class="btn" id="calcTargetBtn">
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Calculate What's Needed
+                        </button>
+                        <div class="target-result" id="targetResult" hidden aria-live="polite">
+                            <div class="target-note" id="targetNote"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mode-panel" id="panel-breakeven" role="tabpanel" aria-labelledby="tab-breakeven">
+                    <div class="calculator-box">
+                        <h3 class="section-title"><i class="fas fa-scale-balanced" aria-hidden="true"></i> Find Your Break-Even Point</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:18px;">Enter your exam's negative marking ratio to find the minimum confidence level at which guessing stops being a net loss.</p>
+                        <div class="input-group">
+                            <label for="beRatio">Negative Marking Ratio (e.g. 0.25 for 1/4, 0.333 for 1/3)</label>
+                            <input type="number" id="beRatio" min="0" max="1" step="0.01" value="0.25">
+                        </div>
+                        <button class="btn" id="calcBreakEvenBtn">
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Calculate Break-Even Probability
+                        </button>
+                        <div class="breakeven-result" id="beResult" hidden aria-live="polite">
+                            <div class="be-value" id="beValue">0%</div>
+                            <div class="be-label">Minimum confidence needed before guessing is worthwhile</div>
+                            <div class="breakeven-note" id="beNote"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mode-panel" id="panel-compare" role="tabpanel" aria-labelledby="tab-compare">
+                    <div class="calculator-box">
+                        <h3 class="section-title"><i class="fas fa-arrows-left-right" aria-hidden="true"></i> Compare Two Attempt Strategies</h3>
+                        <p style="color:var(--text-secondary); margin-bottom:18px;">See which strategy scores higher: attempting fewer questions with higher accuracy, or more questions with lower accuracy.</p>
+                        <div class="input-group">
+                            <label for="compMarks">Marks per Correct Answer</label>
+                            <input type="number" id="compMarks" min="0.1" step="0.1" value="4">
+                        </div>
+                        <div class="input-group">
+                            <label for="compRatio">Negative Marking Ratio</label>
+                            <input type="number" id="compRatio" min="0" max="1" step="0.01" value="0.25">
+                        </div>
+                        <div class="compare-grid">
+                            <div class="compare-col">
+                                <h4>Strategy A</h4>
+                                <div class="input-group"><label for="aCorrect">Correct</label><input type="number" id="aCorrect" min="0" value="60"></div>
+                                <div class="input-group"><label for="aWrong">Wrong</label><input type="number" id="aWrong" min="0" value="10"></div>
+                            </div>
+                            <div class="compare-col">
+                                <h4>Strategy B</h4>
+                                <div class="input-group"><label for="bCorrect">Correct</label><input type="number" id="bCorrect" min="0" value="75"></div>
+                                <div class="input-group"><label for="bWrong">Wrong</label><input type="number" id="bWrong" min="0" value="30"></div>
+                            </div>
+                        </div>
+                        <button class="btn" id="calcCompareBtn" style="margin-top:18px;">
+                            <i class="fas fa-bolt" aria-hidden="true"></i> Compare Strategies
+                        </button>
+                        <div id="compareResult" hidden>
+                            <div class="compare-grid" style="margin-top:20px;">
+                                <div class="compare-col"><h4>Strategy A Score</h4><div class="stat-value" id="scoreA" style="font-size:1.8rem;"></div></div>
+                                <div class="compare-col"><h4>Strategy B Score</h4><div class="stat-value" id="scoreB" style="font-size:1.8rem;"></div></div>
+                                <div class="compare-verdict" id="compareVerdict"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <div class="article-container">
+            <header class="article-header">
+                <h1>Negative Marking Calculator: Calculate Your Exact Score for NEET, JEE, UPSC & SSC</h1>
+            </header>
+
+            <article class="article-content">
+                <p>Negative marking is used across almost every major Indian competitive exam — NEET, JEE, UPSC Civil Services, SSC CGL, banking exams, and CAT — specifically to discourage random guessing. Every wrong answer costs you more than just the marks you missed out on: it costs a penalty on top. That makes accuracy, not just knowledge, one of the biggest factors in your final score.</p>
+
+                <p>This calculator does three things most negative-marking tools don't combine in one place: it calculates your <strong>subject-wise score</strong> (since exams like NEET have different sections with the same overall pattern), it works out your <strong>break-even guessing probability</strong> (the exact confidence level where guessing stops being a loss), and it lets you <strong>compare two attempt strategies</strong> side by side.</p>
+
+                <div class="toc">
+                    <h3><i class="fas fa-list"></i> What's in This Guide</h3>
+                    <div class="toc-grid">
+                        <div class="toc-item"><a href="#formula">The Negative Marking Formula</a></div>
+                        <div class="toc-item"><a href="#exam-patterns">Negative Marking by Exam</a></div>
+                        <div class="toc-item"><a href="#breakeven-explained">What Is Break-Even Probability?</a></div>
+                        <div class="toc-item"><a href="#strategy">Attempt Strategy: Fewer vs. More</a></div>
+                        <div class="toc-item"><a href="#faq">Frequently Asked Questions</a></div>
+                    </div>
+                </div>
+
+                <h2 id="formula">The Negative Marking Formula</h2>
+                <p>Every negative marking system, regardless of exam, follows the same underlying structure:</p>
+                <div class="expert-tip">
+                    <strong>Final Score = (Correct × Marks per Question) − (Wrong × Marks per Question × Negative Ratio)</strong>
+                </div>
+                <p>Unattempted questions are excluded entirely from both sides of this equation in every major Indian competitive exam — leaving a question blank never reduces your score, it simply doesn't add to it either.</p>
+
+                <h3>Worked Example (NEET-style, +4/−1)</h3>
+                <p>Suppose you answer 150 questions: 120 correct, 30 wrong, out of a total 180 questions.</p>
+                <ul>
+                    <li>Marks gained: 120 × 4 = 480</li>
+                    <li>Marks deducted: 30 × 1 = 30</li>
+                    <li>Final score: 480 − 30 = <strong>450</strong></li>
+                </ul>
+
+                <h2 id="exam-patterns">Negative Marking by Exam</h2>
+                <p>Marking schemes are set by each exam's conducting body and can change between exam cycles — always confirm the current ratio from the official notification for the year you're appearing. As of recent cycles, the commonly used patterns are:</p>
+
+                <div class="exam-table">
+                    <table>
+                        <thead><tr><th>Exam</th><th>Correct</th><th>Wrong</th><th>Ratio</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>NEET UG</strong></td><td>+4</td><td>−1</td><td>1/4</td></tr>
+                            <tr><td><strong>JEE Main</strong></td><td>+4</td><td>−1</td><td>1/4</td></tr>
+                            <tr><td><strong>UPSC Prelims</strong></td><td>Varies by paper</td><td>−1/3 of Q's marks</td><td>1/3</td></tr>
+                            <tr><td><strong>SSC CGL</strong></td><td>+2 (typical)</td><td>−0.5</td><td>1/4</td></tr>
+                            <tr><td><strong>CAT</strong></td><td>+3</td><td>−1</td><td>1/3</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="breakeven-explained">What Is Break-Even Probability?</h2>
+                <p>This is the single most useful piece of exam-strategy math that most students never calculate. Break-even probability is the minimum chance of being correct at which attempting a question stops being a net loss on average. Whether <em>blind</em> guessing (no elimination at all) clears that bar depends on both the negative ratio <em>and</em> the number of answer options — it is not the same answer for every exam, which is an important nuance most guides skip.</p>
+
+                <div class="expert-tip">
+                    <strong>Break-Even Probability = Negative Ratio ÷ (1 + Negative Ratio)</strong><br>
+                    Example (1/4 ratio, NEET/JEE): 0.25 ÷ 1.25 = 0.20 → you need at least a 20% chance of being correct before attempting is worth it on average.
+                </div>
+
+                <p>Here's the nuance: with 4 answer options and a 1/4 ratio, a completely blind random guess already has a 25% chance of being correct — which is <em>above</em> the 20% break-even threshold. So for this specific, very common combination, even fully random guessing has a slightly positive expected value on average. That changes as soon as either number shifts: at a 1/3 ratio (like UPSC Prelims), the break-even threshold rises to 25% — exactly equal to a blind 4-option guess — so blind guessing there is a wash at best, and a net loss if there are more than 4 options. The moment you can eliminate even one wrong option, your real odds go up and the comparison shifts further in your favor.</p>
+
+                <p>Use the <strong>Break-Even Guessing</strong> tab above to calculate the break-even threshold for any ratio, then compare it to your actual odds given how many options you can realistically rule out.</p>
+
+                <h2 id="strategy">Attempt Strategy: Fewer Questions vs. More Questions</h2>
+                <p>A common mistake is assuming that attempting more questions always helps. Under negative marking, that's only true if your accuracy on the extra attempts stays above the break-even threshold for your exam. Below that threshold, every additional attempt you make is expected to reduce your score, not increase it.</p>
+
+                <div class="warning-box">
+                    <i class="fas fa-triangle-exclamation"></i> <strong>Common trap:</strong> Attempting 10 extra questions where you're genuinely unsure (well below break-even confidence) to "not leave marks on the table" is one of the most common ways students lose score in negative-marking exams, even when their core knowledge is strong.
+                </div>
+
+                <p>Use the <strong>Compare Strategies</strong> tab above to test this directly — enter two different attempt counts and accuracy levels for your own numbers, and see which one actually scores higher.</p>
+
+                <h2 id="faq">Frequently Asked Questions</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question">How is negative marking calculated?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Final Score = (Correct Answers × Marks per Correct Answer) − (Wrong Answers × Marks per Correct Answer × Negative Ratio). Unattempted questions are not penalized in any major Indian competitive exam.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is the negative marking ratio in NEET, JEE, and UPSC?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">NEET and JEE Main award +4 for a correct answer and deduct 1 mark for a wrong answer (a 1/4 ratio). UPSC Prelims deducts one-third (1/3) of the allotted marks for a wrong answer. SSC CGL typically deducts one-fourth (1/4). Always confirm the exact ratio from the current official notification, since it can change between exam cycles.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is negative marking applied to unattempted questions?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">No. In NEET, JEE, UPSC, and SSC, only incorrectly answered questions attract a penalty. Leaving a question blank never reduces your score.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What is break-even probability in negative marking?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">Break-even probability is the minimum confidence level (as a percentage of eliminated wrong options) at which guessing an answer stops being a net loss on average. It's calculated as Negative Ratio ÷ (1 + Negative Ratio). For a 1/4 ratio, this works out to 20% — meaning if you can eliminate at least 1 of 4 options, an educated guess is mathematically worth attempting.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Should I guess in an exam with negative marking?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">It depends on the exam's negative ratio and the number of answer options — there's no single universal answer. Compare your real odds of being correct (blind, or after eliminating options) to the break-even threshold for your exam's ratio: for NEET/JEE's 1/4 ratio with 4 options, even a blind guess (25% odds) clears the 20% break-even bar, while UPSC's 1/3 ratio needs at least a 25%+ chance to break even. This calculator's Break-Even tool shows the exact threshold for any ratio so you can compare it to your own confidence.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Does attempting more questions always give a higher score?<i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">No. Under negative marking, attempting more questions only helps if your accuracy on those extra attempts stays above the break-even threshold for that exam. Below that threshold, attempting more questions can lower your score compared to leaving them blank.</div>
+                    </div>
+                </div>
+
+                <div class="related-links">
+                    <h4>🔗 Related Calculators</h4>
+                    <div class="related-grid">
+                        <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📝 Negative Marking Calculator</a>
+                        <a href="/calculators/pain-and-suffering-calculator">⚖️ Pain & Suffering Calculator</a>
+                        <a href="/calculators/productivity-calculator">📈 Productivity Calculator</a>
+                        <a href="/calculators/golf-club-length-calculator">🏌️ Golf Club Length Calculator</a>
+                        <a href="/calculators/venmo-fee-calculator">💸 Venmo Fee Calculator</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap — fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/calculators/pain-and-suffering-calculator">Pain &amp; Suffering</a>
+                    <a href="/calculators/productivity-calculator">Productivity</a>
+                    <a href="/calculators/negative-marking-calculator">Negative Marking</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 CalcSnaps. All rights reserved.</p></div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+    (function() {
+        'use strict';
+
+        let sectionCount = 1;
+        let lastCalculatedScore = 0;
+        const sectionsWrap = document.getElementById('sectionsWrap');
+
+        function applyMarksRatio(marks, ratio) {
+            document.querySelectorAll('[id^="marks-"]').forEach(el => el.value = marks);
+            document.querySelectorAll('[id^="ratio-"]').forEach(el => el.value = ratio);
+            document.getElementById('beRatio').value = ratio;
+            document.getElementById('compMarks').value = marks;
+            document.getElementById('compRatio').value = ratio;
+            document.getElementById('wiMarks').value = marks;
+            document.getElementById('wiRatio').value = ratio;
+            document.getElementById('tsMarks').value = marks;
+            document.getElementById('tsRatio').value = ratio;
+        }
+
+        document.querySelectorAll('.preset-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                document.getElementById('moreExamsSelect').value = '';
+                applyMarksRatio(chip.dataset.marks, chip.dataset.ratio);
+            });
+        });
+
+        document.getElementById('moreExamsSelect').addEventListener('change', function() {
+            if (!this.value) return;
+            const [marks, ratio] = this.value.split(',');
+            document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+            applyMarksRatio(marks, ratio);
+        });
+
+        document.querySelectorAll('.mode-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.mode-tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                    t.setAttribute('tabindex', '-1');
+                });
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                tab.setAttribute('tabindex', '0');
+                document.querySelectorAll('.mode-panel').forEach(p => p.classList.remove('active'));
+                document.getElementById('panel-' + tab.dataset.mode).classList.add('active');
+            });
+        });
+
+        function updateRemoveButtons() {
+            const rows = sectionsWrap.querySelectorAll('[data-section]');
+            rows.forEach(row => { row.querySelector('.remove-section-btn').disabled = rows.length <= 1; });
+        }
+
+        document.getElementById('addSectionBtn').addEventListener('click', () => {
+            const id = sectionCount++;
+            const row = document.createElement('div');
+            row.className = 'section-row';
+            row.setAttribute('data-section', '');
+            row.innerHTML = `
+                <div class="section-field"><label for="subj-${id}">Subject / Section</label><input type="text" id="subj-${id}" value="Section ${id+1}" aria-label="Section name"></div>
+                <div class="section-field"><label for="correct-${id}">Correct</label><input type="number" id="correct-${id}" min="0" value="0" aria-label="Correct answers"></div>
+                <div class="section-field"><label for="wrong-${id}">Wrong</label><input type="number" id="wrong-${id}" min="0" value="0" aria-label="Wrong answers"></div>
+                <div class="section-field"><label for="total-${id}">Total Qs</label><input type="number" id="total-${id}" min="0" value="0" aria-label="Total questions in this section"></div>
+                <div class="section-field"><label for="marks-${id}">Marks/Q</label><input type="number" id="marks-${id}" min="0.1" step="0.1" value="4" aria-label="Marks per correct answer"></div>
+                <div class="section-field"><label for="ratio-${id}">Neg. Ratio</label><input type="number" id="ratio-${id}" min="0" max="1" step="0.01" value="0.25" aria-label="Negative marking ratio"></div>
+                <button type="button" class="remove-section-btn" aria-label="Remove this section"><i class="fas fa-trash" aria-hidden="true"></i></button>
+            `;
+            sectionsWrap.appendChild(row);
+            row.querySelector('.remove-section-btn').addEventListener('click', () => { row.remove(); updateRemoveButtons(); });
+            updateRemoveButtons();
+        });
+
+        sectionsWrap.querySelector('.remove-section-btn').addEventListener('click', function() {
+            if (!this.disabled) { this.closest('[data-section]').remove(); updateRemoveButtons(); }
+        });
+
+        // FIX: escape user-typed text before it's ever placed inside
+        // innerHTML — the Section/Subject name field is free text, and
+        // was previously inserted unescaped (a real XSS vector: typing
+        // HTML/script into that field would have executed it).
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // FIX: clamp all numeric inputs to sane, non-negative ranges.
+        // Previously a manually-typed negative "wrong" count or a
+        // ratio outside 0–1 would silently flow into the calculation
+        // (e.g. a negative wrong-count could flip the penalty into a
+        // bonus). This does not touch the input fields themselves —
+        // only the values used in calculation — so users can still
+        // type freely, but the math is now always sane.
+        function clampNonNegative(value) {
+            const n = parseFloat(value);
+            return isNaN(n) || n < 0 ? 0 : n;
+        }
+        function clampRatio(value) {
+            const n = parseFloat(value);
+            if (isNaN(n)) return 0;
+            return Math.min(1, Math.max(0, n));
+        }
+
+        document.getElementById('calcScoreBtn').addEventListener('click', () => {
+            const rows = sectionsWrap.querySelectorAll('[data-section]');
+            let totalScore = 0, totalCorrect = 0, totalWrong = 0, totalQuestions = 0, totalPositive = 0, totalNegative = 0, totalMaxPossible = 0;
+            const breakdownBody = document.getElementById('breakdownBody');
+            breakdownBody.innerHTML = '';
+            const warnings = [];
+
+            rows.forEach((row, i) => {
+                const rawName = row.querySelector('[id^="subj-"]').value || `Section ${i+1}`;
+                const name = escapeHtml(rawName);
+                const rawCorrect = row.querySelector('[id^="correct-"]').value;
+                const rawWrong = row.querySelector('[id^="wrong-"]').value;
+                let correct = clampNonNegative(rawCorrect);
+                let wrong = clampNonNegative(rawWrong);
+                const totalQs = clampNonNegative(row.querySelector('[id^="total-"]').value);
+                const marks = clampNonNegative(row.querySelector('[id^="marks-"]').value);
+                const ratio = clampRatio(row.querySelector('[id^="ratio-"]').value);
+
+                // FIX: previously negative inputs were silently clamped
+                // to 0 with no visible feedback — the user had no way
+                // to know their input was rejected. Now every clamp is
+                // recorded as a warning shown in a visible banner.
+                if (parseFloat(rawCorrect) < 0) {
+                    warnings.push(`"${rawName}": Correct answers cannot be negative — treated as 0.`);
+                }
+                if (parseFloat(rawWrong) < 0) {
+                    warnings.push(`"${rawName}": Wrong answers cannot be negative — treated as 0.`);
+                }
+
+                if (totalQs > 0 && (correct + wrong) > totalQs) {
+                    const cappedWrong = Math.max(0, totalQs - correct);
+                    warnings.push(`"${rawName}": Correct + Wrong (${correct + wrong}) exceeded Total Questions (${totalQs}) — Wrong capped to ${cappedWrong}.`);
+                    wrong = cappedWrong;
+                }
+
+                const unattempted = totalQs > 0 ? Math.max(0, totalQs - correct - wrong) : 0;
+                const positive = correct * marks;
+                const negative = wrong * marks * ratio;
+                const sectionScore = positive - negative;
+                const maxPossible = totalQs > 0 ? totalQs * marks : (correct + wrong) * marks;
+
+                totalScore += sectionScore;
+                totalCorrect += correct;
+                totalWrong += wrong;
+                totalQuestions += totalQs;
+                totalPositive += positive;
+                totalNegative += negative;
+                totalMaxPossible += maxPossible;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${name}</td><td>${correct}</td><td>${wrong}</td><td>${unattempted}</td><td>${sectionScore.toFixed(2)}</td>`;
+                breakdownBody.appendChild(tr);
+            });
+
+            const validationBox = document.getElementById('validationMessages');
+            if (warnings.length > 0) {
+                validationBox.innerHTML = `<div class="validation-banner"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i> <strong>${warnings.length} input${warnings.length > 1 ? 's were' : ' was'} adjusted:</strong><ul>${warnings.map(w => `<li>${escapeHtml(w)}</li>`).join('')}</ul></div>`;
+                validationBox.hidden = false;
+            } else {
+                validationBox.hidden = true;
+                validationBox.innerHTML = '';
+            }
+
+            const totalTr = document.createElement('tr');
+            const totalUnattempted = totalQuestions > 0 ? Math.max(0, totalQuestions - totalCorrect - totalWrong) : 0;
+            totalTr.innerHTML = `<td>Total</td><td>${totalCorrect}</td><td>${totalWrong}</td><td>${totalUnattempted}</td><td>${totalScore.toFixed(2)}</td>`;
+            breakdownBody.appendChild(totalTr);
+
+            const attempted = totalCorrect + totalWrong;
+            const accuracy = attempted > 0 ? (totalCorrect / attempted) * 100 : 0;
+            const maxPct = totalMaxPossible > 0 ? (totalScore / totalMaxPossible) * 100 : 0;
+
+            document.getElementById('finalScoreValue').textContent = totalScore.toFixed(2);
+            document.getElementById('statAttempted').textContent = attempted;
+            document.getElementById('statUnattempted').textContent = totalUnattempted;
+            document.getElementById('statAccuracy').textContent = accuracy.toFixed(1) + '%';
+            document.getElementById('statMaxPct').textContent = maxPct.toFixed(1) + '%';
+            document.getElementById('statPositive').textContent = '+' + totalPositive.toFixed(1);
+            document.getElementById('statNegative').textContent = '−' + totalNegative.toFixed(1);
+
+            // Store for auto-fill in What-If / Target Score tools
+            lastCalculatedScore = totalScore;
+            document.getElementById('wiBaseScore').value = totalScore.toFixed(2);
+            document.getElementById('tsBaseScore').value = totalScore.toFixed(2);
+            document.getElementById('tsAccuracy').value = accuracy.toFixed(1);
+
+            const resultBox = document.getElementById('scoreResultBox');
+            resultBox.classList.add('active');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        document.getElementById('calcBreakEvenBtn').addEventListener('click', () => {
+            const ratio = clampRatio(document.getElementById('beRatio').value);
+            const breakEven = ratio / (1 + ratio);
+            const pct = (breakEven * 100).toFixed(1);
+
+            document.getElementById('beValue').textContent = pct + '%';
+
+            let note;
+            if (ratio === 0) {
+                note = 'With no negative marking, guessing is always safe — there is no penalty for a wrong answer.';
+            } else {
+                note = `In practical terms: if you can confidently eliminate enough wrong options to be at least ${pct}% sure of your answer, attempting the question has a positive expected value. Below that confidence level, leaving it blank scores better on average.`;
+            }
+            document.getElementById('beNote').textContent = note;
+            document.getElementById('beResult').hidden = false;
+        });
+
+        document.getElementById('calcCompareBtn').addEventListener('click', () => {
+            const marks = clampNonNegative(document.getElementById('compMarks').value);
+            const ratio = clampRatio(document.getElementById('compRatio').value);
+
+            const aCorrect = clampNonNegative(document.getElementById('aCorrect').value);
+            const aWrong = clampNonNegative(document.getElementById('aWrong').value);
+            const bCorrect = clampNonNegative(document.getElementById('bCorrect').value);
+            const bWrong = clampNonNegative(document.getElementById('bWrong').value);
+
+            const scoreA = (aCorrect * marks) - (aWrong * marks * ratio);
+            const scoreB = (bCorrect * marks) - (bWrong * marks * ratio);
+
+            document.getElementById('scoreA').textContent = scoreA.toFixed(2);
+            document.getElementById('scoreB').textContent = scoreB.toFixed(2);
+
+            const verdict = document.getElementById('compareVerdict');
+            const diff = Math.abs(scoreA - scoreB);
+            if (diff < 0.01) {
+                verdict.className = 'compare-verdict tie';
+                verdict.textContent = 'Both strategies score equally.';
+            } else if (scoreA > scoreB) {
+                verdict.className = 'compare-verdict win-a';
+                verdict.textContent = `Strategy A scores higher by ${diff.toFixed(2)} marks.`;
+            } else {
+                verdict.className = 'compare-verdict win-b';
+                verdict.textContent = `Strategy B scores higher by ${diff.toFixed(2)} marks.`;
+            }
+
+            document.getElementById('compareResult').hidden = false;
+        });
+
+        // ===== WHAT-IF SIMULATOR =====
+        document.getElementById('calcWhatIfBtn').addEventListener('click', () => {
+            const baseScore = parseFloat(document.getElementById('wiBaseScore').value) || 0;
+            const marks = clampNonNegative(document.getElementById('wiMarks').value);
+            const ratio = clampRatio(document.getElementById('wiRatio').value);
+            const attempts = clampNonNegative(document.getElementById('wiAttempts').value);
+            const accuracyPct = Math.min(100, Math.max(0, parseFloat(document.getElementById('wiAccuracy').value) || 0));
+            const accuracy = accuracyPct / 100;
+
+            const additionalCorrect = Math.round(attempts * accuracy);
+            const additionalWrong = attempts - additionalCorrect;
+            const additionalScore = (additionalCorrect * marks) - (additionalWrong * marks * ratio);
+            const newScore = baseScore + additionalScore;
+
+            document.getElementById('wiOldScore').textContent = baseScore.toFixed(2);
+            document.getElementById('wiNewScore').textContent = newScore.toFixed(2);
+
+            const breakEven = ratio / (1 + ratio);
+            const note = document.getElementById('wiNote');
+            if (additionalScore >= 0) {
+                note.className = 'whatif-note positive';
+                note.textContent = `At ${accuracyPct}% accuracy (above the ${(breakEven*100).toFixed(1)}% break-even for this ratio), attempting these ${attempts} extra questions is expected to add ${additionalScore.toFixed(2)} marks.`;
+            } else {
+                note.className = 'whatif-note negative';
+                note.textContent = `At ${accuracyPct}% accuracy (below the ${(breakEven*100).toFixed(1)}% break-even for this ratio), attempting these ${attempts} extra questions is expected to cost you ${Math.abs(additionalScore).toFixed(2)} marks on average — you may be better off leaving them blank.`;
+            }
+            document.getElementById('whatifResult').hidden = false;
+        });
+
+        // ===== TARGET SCORE CALCULATOR =====
+        document.getElementById('calcTargetBtn').addEventListener('click', () => {
+            const baseScore = parseFloat(document.getElementById('tsBaseScore').value) || 0;
+            const targetScore = parseFloat(document.getElementById('tsTargetScore').value) || 0;
+            const marks = clampNonNegative(document.getElementById('tsMarks').value);
+            const ratio = clampRatio(document.getElementById('tsRatio').value);
+            const accuracyPct = Math.min(100, Math.max(0, parseFloat(document.getElementById('tsAccuracy').value) || 0));
+            const accuracy = accuracyPct / 100;
+
+            const note = document.getElementById('targetNote');
+            const neededGain = targetScore - baseScore;
+
+            if (neededGain <= 0) {
+                note.className = 'target-note positive';
+                note.textContent = `You've already reached (or exceeded) your target score of ${targetScore}.`;
+            } else {
+                // Expected marks per additional attempt at this accuracy
+                const evPerAttempt = (accuracy * marks) - ((1 - accuracy) * marks * ratio);
+                if (evPerAttempt <= 0) {
+                    const breakEven = ratio / (1 + ratio);
+                    note.className = 'target-note negative';
+                    note.textContent = `At ${accuracyPct}% accuracy, each additional attempt has zero or negative expected value under this marking scheme (break-even is ${(breakEven*100).toFixed(1)}%). Attempting more questions alone won't reliably close a ${neededGain.toFixed(2)}-mark gap — improving accuracy above the break-even threshold first will help more than attempting more questions.`;
+                } else {
+                    const attemptsNeeded = Math.ceil(neededGain / evPerAttempt);
+                    const correctNeeded = Math.round(attemptsNeeded * accuracy);
+                    note.className = 'target-note positive';
+                    note.textContent = `To gain approximately ${neededGain.toFixed(2)} marks at ${accuracyPct}% accuracy, you'd need to attempt roughly ${attemptsNeeded} more questions — around ${correctNeeded} of which you'd expect to get correct. This is a statistical estimate based on your average accuracy, not a guarantee for any specific set of questions.`;
+                }
+            }
+            document.getElementById('targetResult').hidden = false;
+        });
+
+        // ===== COPY / SHARE / PDF EXPORT =====
+        function buildResultSummary() {
+            const rows = Array.from(document.querySelectorAll('#breakdownBody tr')).map(tr => {
+                const cells = Array.from(tr.querySelectorAll('td')).map(td => td.textContent);
+                return cells.join(' | ');
+            });
+            return [
+                'Negative Marking Calculator — Result (CalcSnaps)',
+                `Final Score: ${document.getElementById('finalScoreValue').textContent}`,
+                `Accuracy: ${document.getElementById('statAccuracy').textContent}`,
+                `% of Max Marks: ${document.getElementById('statMaxPct').textContent}`,
+                '',
+                'Section | Correct | Wrong | Unattempted | Score',
+                ...rows,
+                '',
+                'Calculated at https://calcsnaps.com/calculators/negative-marking-calculator'
+            ].join('\n');
+        }
+
+        document.getElementById('copyResultBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('copyResultBtn');
+            try {
+                await navigator.clipboard.writeText(buildResultSummary());
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check" aria-hidden="true"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            } catch (e) {
+                alert('Could not copy automatically — please select and copy the result manually.');
+            }
+        });
+
+        document.getElementById('shareResultBtn').addEventListener('click', async () => {
+            const text = buildResultSummary();
+            if (navigator.share) {
+                try {
+                    await navigator.share({ title: 'My Negative Marking Calculator Result', text: text });
+                } catch (e) {
+                    // user cancelled share — no action needed
+                }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    alert('Sharing is not supported on this browser — result copied to clipboard instead.');
+                } catch (e) {
+                    alert('Could not share or copy automatically — please copy the result manually.');
+                }
+            }
+        });
+
+        document.getElementById('pdfResultBtn').addEventListener('click', () => {
+            if (!window.jspdf) {
+                alert('PDF export library failed to load. Please check your connection and try again.');
+                return;
+            }
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+
+            doc.setFontSize(16);
+            doc.text('Negative Marking Calculator — Result', 14, y);
+            y += 10;
+            doc.setFontSize(11);
+            doc.text(`Final Score: ${document.getElementById('finalScoreValue').textContent}`, 14, y); y += 7;
+            doc.text(`Accuracy: ${document.getElementById('statAccuracy').textContent}`, 14, y); y += 7;
+            doc.text(`% of Max Marks: ${document.getElementById('statMaxPct').textContent}`, 14, y); y += 7;
+            doc.text(`Attempted: ${document.getElementById('statAttempted').textContent}  |  Unattempted: ${document.getElementById('statUnattempted').textContent}`, 14, y); y += 12;
+
+            doc.setFontSize(12);
+            doc.text('Section-wise Breakdown:', 14, y); y += 8;
+            doc.setFontSize(10);
+            document.querySelectorAll('#breakdownBody tr').forEach(tr => {
+                const cells = Array.from(tr.querySelectorAll('td')).map(td => td.textContent);
+                doc.text(`${cells[0]}  —  Correct: ${cells[1]}, Wrong: ${cells[2]}, Unattempted: ${cells[3]}, Score: ${cells[4]}`, 14, y);
+                y += 7;
+            });
+
+            y += 8;
+            doc.setFontSize(9);
+            doc.setTextColor(120);
+            doc.text('Generated by CalcSnaps Negative Marking Calculator — calcsnaps.com', 14, y);
+            doc.text('This is an estimate only. Verify official results with your exam authority.', 14, y + 5);
+
+            doc.save('negative-marking-result.pdf');
+        });
+
+        document.querySelectorAll('.faq-item').forEach((item, i) => {
+            item.querySelector('.faq-question').addEventListener('click', () => item.classList.toggle('active'));
+            if (i === 0) item.classList.add('active');
+        });
+    })();
+    </script>
+</body>
+</html>
