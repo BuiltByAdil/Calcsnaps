@@ -93,6 +93,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--text-primary); }
         .container { max-width: 900px; margin: 0 auto; padding: 0 24px; width: 100%; }
+        .site-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; width: 100%; }
         .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100; text-decoration: none; }
         .skip-link:focus { top: 0; }
         .calc-main-header { text-align: center; margin: 20px auto 40px auto; padding: 30px; max-width: 900px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-bottom: 3px solid var(--secondary); }
@@ -237,7 +238,7 @@
 <body>
     <a href="#calculator-section" class="skip-link">Skip to calculator</a>
 
-    <div class="container">
+    <div class="site-container">
         <header class="header">
             <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
             <nav class="nav" aria-label="Primary">
@@ -247,7 +248,9 @@
                 <a href="/contact-us">Contact</a>
             </nav>
         </header>
+    </div>
 
+    <div class="container">
         <div id="calculator-section">
             <header class="calc-main-header">
                 <h2><i class="fas fa-square-check" aria-hidden="true"></i> Negative Marking Calculator</h2>
@@ -601,7 +604,9 @@
                 </div>
             </article>
         </div>
+    </div>
 
+    <div class="site-container">
         <footer class="footer">
             <div class="footer-grid">
                 <div class="footer-col">
