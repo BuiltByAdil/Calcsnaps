@@ -140,5 +140,15 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <loc>https://calcsnaps.com/calculators/average-blood-pressure-calculator</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <loc>https://calcsnaps.com/calculators/negative-marking-calculator</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>
