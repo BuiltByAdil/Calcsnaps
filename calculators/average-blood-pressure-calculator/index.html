@@ -91,7 +91,7 @@
         html, body { max-width: 100% !important; overflow-x: hidden !important; }
         .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
         .skip-link:focus { top: 0; }
-        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
 
         :root {
             --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
@@ -101,7 +101,8 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
-        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
 
         .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
         .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
@@ -253,6 +254,7 @@
         .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
 
         @media (max-width: 768px) {
+            .site-container { padding: 0 15px; }
             .container { padding: 0 15px; }
             .article-header { padding: 30px 20px; }
             .article-header h2 { font-size: 21px; }
@@ -269,15 +271,17 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header">
-        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/all-calculators">All Calculators</a>
-            <a href="/about-us">About</a>
-            <a href="/contact-us">Contact</a>
-        </nav>
-    </header>
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
 
     <div class="container">
         <main id="main-content">
@@ -526,7 +530,8 @@
         </main>
     </div>
 
-    <footer class="footer">
+    <div class="site-container">
+        <footer class="footer">
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>🧮 CalcSnaps</h4>
@@ -557,6 +562,7 @@
             <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
         </div>
     </footer>
+    </div>
 
     <script>
     (function () {
