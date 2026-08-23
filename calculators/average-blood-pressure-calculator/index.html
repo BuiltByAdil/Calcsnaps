@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Average Blood Pressure Calculator (NICE NG136) | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free UK average blood pressure calculator: enter 7-day home readings, auto-excludes day 1 per NICE, and classifies by NICE NG136 stage. No sign-up, private.">
+    <meta name="keywords" content="average blood pressure calculator, blood pressure calculator uk, home blood pressure monitoring calculator, NICE NG136 hypertension calculator, 7 day blood pressure average, mean arterial pressure calculator">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/average-blood-pressure-calculator">
+
+    <meta property="og:title" content="Average Blood Pressure Calculator (NICE NG136) | CalcSnaps">
+    <meta property="og:description" content="Free, private UK average blood pressure calculator following the NICE-recommended 7-day home monitoring protocol, with NG136 stage classification.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/average-blood-pressure-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Average Blood Pressure Calculator",
+        "description": "Calculate your average blood pressure from 7 days of home readings following the NICE-recommended discard-first-day protocol, with mean arterial pressure, reading consistency, and NICE NG136 stage classification",
+        "url": "https://calcsnaps.com/calculators/average-blood-pressure-calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Average Blood Pressure Calculator Guide: The NICE 7-Day Home Monitoring Protocol Explained",
+        "description": "How to correctly average home blood pressure readings following NICE guidance, what the NG136 hypertension stages mean, and the difference between clinic and home diagnostic thresholds.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/average-blood-pressure-calculator" },
+        "datePublished": "2026-08-19",
+        "dateModified": "2026-08-19"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why does NICE say to exclude the first day of home blood pressure readings?",
+                "acceptedAnswer": { "@type": "Answer", "text": "First-day readings tend to run higher because people are less used to the monitor and the measurement routine, an effect sometimes described alongside white-coat hypertension. NICE's home blood pressure monitoring (HBPM) protocol asks you to take two readings, one minute apart, morning and evening, for at least 4 days (ideally 7), then average all the readings excluding the first day." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a normal blood pressure reading in the UK?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Under NICE NG136, a clinic reading below 140/90 mmHg, or a home/ABPM average below 135/85 mmHg, is below the diagnostic threshold for hypertension. Home and ambulatory readings are naturally about 5 mmHg lower than clinic readings, which is why the two thresholds differ." }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the NICE hypertension stages?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Stage 1 hypertension is a clinic reading of 140/90 to 159/99 mmHg (home/ABPM average 135/85 to 149/94). Stage 2 hypertension is a clinic reading of 160/100 to 179/119 mmHg (home/ABPM average 150/95 or higher). Severe hypertension is a clinic systolic of 180 mmHg or higher, or diastolic of 120 mmHg or higher, which needs same-day medical assessment." }
+            },
+            {
+                "@type": "Question",
+                "name": "What counts as low blood pressure?",
+                "acceptedAnswer": { "@type": "Answer", "text": "There is no single official diagnostic threshold for low blood pressure the way there is for high blood pressure, but a reading below roughly 90/60 mmHg is commonly used as a reference point. Low blood pressure is generally only a concern if it comes with symptoms such as dizziness, light-headedness, or fainting." }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this calculator diagnose high blood pressure?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. This tool averages the numbers you enter and shows where that average sits against published NICE NG136 reference ranges. It cannot diagnose hypertension, does not know your medical history, and is not a substitute for assessment by a GP or other healthcare professional." }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        .header { max-width: 100% !important; margin: 0 auto !important; padding: 20px 24px !important; box-sizing: border-box !important; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+        .container { max-width: 1000px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .calc-container { max-width: 1000px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #0a6b4d; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #a11f1f; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+        .status-note.status-severe { background: #fef2f2; border-color: #b91c1c; color: #7f1d1d; border-left-width: 6px; font-weight: 600; }
+
+        .readings-table-wrap { overflow-x: auto; border: 1px solid #e2e8f0; border-radius: 16px; margin-bottom: 16px; }
+        table.readings-table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 860px; }
+        table.readings-table th { background: var(--dark); color: white; padding: 10px 6px; text-align: center; font-weight: 600; font-size: 11.5px; }
+        table.readings-table td { padding: 6px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        table.readings-table tr:nth-child(even) { background: #f8fafc; }
+        table.readings-table tr.day1-excluded { opacity: 0.45; }
+        table.readings-table input { width: 100%; text-align: center; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 2px; font-size: 13px; font-weight: 600; font-family: 'Inter', sans-serif; }
+        table.readings-table input.field-clamped { border-color: var(--danger); background: #fef2f2; color: #b91c1c; }
+        table.readings-table input:focus { outline: 2px solid var(--primary); border-color: var(--primary); }
+        table.readings-table .day-label { font-weight: 700; color: var(--dark); text-align: left; padding-left: 10px; }
+        table.readings-table .excluded-tag { font-size: 9.5px; color: var(--danger); font-weight: 700; display: block; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .scale-bar { display: flex; width: 100%; height: 18px; border-radius: 10px; overflow: hidden; margin: 14px 0 6px; background: #e2e8f0; position: relative; }
+        .scale-bar div { height: 100%; }
+        .scale-labels { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--gray-text); margin-bottom: 10px; }
+        .scale-marker { position: absolute; top: -4px; width: 4px; height: 26px; background: var(--dark); border-radius: 2px; box-shadow: 0 0 0 2px white; transform: translateX(-2px); z-index: 2; }
+        .scale-marker::after { content: attr(data-label); position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 10.5px; font-weight: 700; color: var(--dark); white-space: nowrap; background: white; padding: 1px 5px; border-radius: 6px; border: 1px solid #e2e8f0; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .tab { padding: 12px 6px; font-size: 12px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 24px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; color: var(--dark); }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 15px; }
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/all-calculators">All Calculators</a>
+            <a href="/about-us">About</a>
+            <a href="/contact-us">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-heart-pulse"></i> Average Blood Pressure Calculator</h1>
+                    <p>7-day NICE home-monitoring protocol · NG136 stage classification · MAP · Consistency check</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up, no data stored</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This tool does not diagnose anything. It is not a substitute for a GP or other healthcare professional. If you have symptoms, call NHS 111 or, in an emergency, 999.</div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="average" role="tab" aria-selected="true" aria-controls="tab-average" id="tabbtn-average" tabindex="0">📋 Enter Readings</button>
+                    <button class="tab" data-tab="meaning" role="tab" aria-selected="false" aria-controls="tab-meaning" id="tabbtn-meaning" tabindex="-1">🩺 What It Means</button>
+                </div>
+
+                <!-- TAB 1: ENTER READINGS -->
+                <div class="tab-content active" id="tab-average" role="tabpanel" aria-labelledby="tabbtn-average">
+                    <div class="section-title"><i class="fas fa-calendar-days"></i> 7-Day Home Readings</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-bottom:14px;">Enter systolic/diastolic (mmHg) for each reading. NICE recommends 2 readings, 1 minute apart, morning and evening, for at least 4 days (ideally 7) — leave any you didn't take blank.</p>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-ban"></i> Exclude Day 1 (NICE protocol)</span>
+                        <div class="toggle-switch" id="excludeDay1Toggle" role="radiogroup" aria-label="Exclude day 1">
+                            <button class="toggle-option active" data-exclude="on" role="radio" aria-checked="true" tabindex="0">On (recommended)</button>
+                            <button class="toggle-option" data-exclude="off" role="radio" aria-checked="false" tabindex="-1">Off (average everything)</button>
+                        </div>
+                    </div>
+
+                    <div class="readings-table-wrap">
+                        <table class="readings-table" id="readingsTable">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Day</th>
+                                    <th colspan="4">Morning (2 consecutive readings, 1 min apart)</th>
+                                    <th colspan="4">Evening (2 consecutive readings, 1 min apart)</th>
+                                </tr>
+                                <tr>
+                                    <th>#1 Sys</th><th>#1 Dia</th><th>#2 Sys</th><th>#2 Dia</th>
+                                    <th>#1 Sys</th><th>#1 Dia</th><th>#2 Sys</th><th>#2 Dia</th>
+                                </tr>
+                            </thead>
+                            <tbody id="readingsTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="status-note" id="entryWarning"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Average Blood Pressure</span>
+                            <span class="amount" id="avgResult">0/0 mmHg</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Readings Used</div><div class="result-value small" id="countResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Mean Arterial Pressure</div><div class="result-value small" id="mapResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Systolic Consistency (SD)</div><div class="result-value small" id="sdResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Diastolic Consistency (SD)</div><div class="result-value small" id="sdDiaResult">-</div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: WHAT IT MEANS -->
+                <div class="tab-content" id="tab-meaning" role="tabpanel" aria-labelledby="tabbtn-meaning">
+                    <div class="section-title"><i class="fas fa-clipboard-list"></i> Reading Context</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-house-medical"></i> This average is from</span>
+                        <div class="toggle-switch" id="contextToggle" role="radiogroup" aria-label="Reading context">
+                            <button class="toggle-option active" data-context="home" role="radio" aria-checked="true" tabindex="0">Home / ABPM monitoring</button>
+                            <button class="toggle-option" data-context="clinic" role="radio" aria-checked="false" tabindex="-1">Clinic / GP readings</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-user"></i> Age Band (affects treatment target shown, not the stage)</span>
+                        <div class="toggle-switch" id="ageToggle" role="radiogroup" aria-label="Age band">
+                            <button class="toggle-option active" data-age="under80" role="radio" aria-checked="true" tabindex="0">Under 80</button>
+                            <button class="toggle-option" data-age="over80" role="radio" aria-checked="false" tabindex="-1">80 and over</button>
+                        </div>
+                    </div>
+
+                    <div class="status-note" id="severeAlert"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">NICE NG136 Classification</span>
+                            <span class="amount" id="stageResult" style="font-size:22px;">-</span>
+                        </div>
+
+                        <div class="scale-bar" id="scaleBar"></div>
+                        <div class="scale-labels" id="scaleLabels"></div>
+
+                        <div class="status-note status-neutral show" id="thresholdNote"></div>
+
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Diagnostic Threshold Used</div><div class="result-value small" id="thresholdResult">-</div></div>
+                            <div class="result-card"><div class="result-label">NICE Treatment Target</div><div class="result-value small" id="targetResult">-</div></div>
+                        </div>
+
+                        <div class="status-note" id="lowBpNote"></div>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Summary</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Average Blood Pressure Calculator: The NICE 7-Day Home Monitoring Protocol Explained</h2>
+                    <p>Why day 1 gets thrown out, what "Stage 1" actually means, and why home and clinic thresholds are different numbers</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#protocol">1. The NICE Home Monitoring Protocol</a></div>
+                            <div class="toc-item"><a href="#why-average">2. Why Averaging Matters More Than Any Single Reading</a></div>
+                            <div class="toc-item"><a href="#stages">3. The NICE NG136 Hypertension Stages</a></div>
+                            <div class="toc-item"><a href="#home-vs-clinic">4. Why Home and Clinic Thresholds Are Different</a></div>
+                            <div class="toc-item"><a href="#map-sd">5. Mean Arterial Pressure & Reading Consistency</a></div>
+                            <div class="toc-item"><a href="#low-bp">6. Low Blood Pressure</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">7. What to Look for in a BP Calculator</a></div>
+                            <div class="toc-item"><a href="#methodology">8. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>A single blood pressure reading can be misleading — nerves, caffeine, a full bladder, or simply the anxiety of being measured (so-called "white coat" effect) can all push a one-off number higher than your true baseline. That's why <a href="https://www.nice.org.uk/guidance/ng136" target="_blank" rel="noopener">NICE guideline NG136</a> builds its entire diagnostic approach in the UK around <strong>averages taken over several days</strong>, not single readings.</p>
+
+                    <p>This calculator follows that protocol properly: enter <strong>two consecutive readings, one minute apart</strong>, morning and evening, for up to 7 days — the same structure NICE specifies — and it automatically excludes day 1, calculates your true average, works out your Mean Arterial Pressure, checks how consistent your readings are, flags any invalid or incomplete data, and classifies the result against the actual NICE NG136 stages — separately for home/ABPM and clinic thresholds, since they aren't the same number.</p>
+
+                    <h2 id="protocol">1. The NICE Home Monitoring Protocol</h2>
+                    <p>For home blood pressure monitoring (HBPM), NICE recommends:</p>
+                    <ul>
+                        <li>Take <strong>two consecutive readings, at least 1 minute apart</strong>, each time you measure — not one.</li>
+                        <li>Measure <strong>morning and evening</strong>, ideally at the same times each day.</li>
+                        <li>Continue for <strong>at least 4 days, ideally for 7 days</strong>.</li>
+                        <li><strong>Discard the readings from day 1</strong> and average all the remaining readings.</li>
+                    </ul>
+                    <p>Followed exactly, that's 4 readings a day (2 morning + 2 evening) for 7 days — 28 readings in total, 24 of which count once day 1 is excluded. This calculator's input table matches that structure directly: two systolic/diastolic pairs for morning, two for evening, each day. Day 1 is excluded because early readings tend to run higher — you're still getting used to the cuff, the routine, and the act of measuring itself. Averaging it in would skew your result upward. The "Exclude Day 1" toggle applies that rule automatically to whatever you've entered, visually greying out day 1's row so you can see exactly which readings are being counted, and the calculator also tells you how many complete monitoring days (all 4 readings entered) it actually has before treating a result as protocol-complete.</p>
+
+                    <h2 id="why-average">2. Why Averaging Matters More Than Any Single Reading</h2>
+                    <p>Blood pressure naturally varies through the day and between days — with activity, stress, temperature, posture, and even the time since your last coffee. A single high reading is common and does not, on its own, mean you have hypertension. NICE's diagnostic approach exists specifically to filter out that noise: a clinic reading of 140/90 mmHg or higher triggers <em>further</em> monitoring (ABPM or HBPM), not an immediate diagnosis — the diagnosis is confirmed (or ruled out) by the averaged result.</p>
+
+                    <h2 id="stages">3. The NICE NG136 Hypertension Stages</h2>
+                    <p>Most calculators reduce this to a single "normal vs high" line. NICE actually defines four bands, and the numbers differ depending on whether you're looking at a clinic reading or a home/ABPM average:</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Stage</th><th>Clinic Reading</th><th>Home / ABPM Average</th></tr></thead>
+                        <tbody>
+                            <tr><td>Not hypertensive</td><td>Below 140/90 mmHg</td><td>Below 135/85 mmHg</td></tr>
+                            <tr><td>Stage 1 hypertension</td><td>140/90 – 159/99 mmHg</td><td>135/85 – 149/94 mmHg</td></tr>
+                            <tr><td>Stage 2 hypertension</td><td>160/100 – 179/119 mmHg</td><td>150/95 mmHg or higher</td></tr>
+                            <tr><td>Severe hypertension</td><td>180 systolic or 120 diastolic or higher</td><td>Same-day clinical assessment — not typically an HBPM finding alone</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Severe hypertension (clinic ≥180/120 mmHg) needs same-day medical assessment, especially with symptoms like new confusion, chest pain, or visual disturbance, or signs of organ damage — this calculator flags that range explicitly rather than just showing a number.</p>
+
+                    <h2 id="home-vs-clinic">4. Why Home and Clinic Thresholds Are Different</h2>
+                    <p>NICE is explicit that home and ambulatory (ABPM) readings run <strong>about 5 mmHg lower</strong> than clinic readings on average, largely because of the white-coat effect of being measured by a clinician. That's why the home/ABPM diagnostic threshold (135/85) is lower than the clinic threshold (140/90) — they're designed to represent the <em>same</em> underlying blood pressure level, measured two different ways. Using the clinic threshold on a home average (or vice versa) will systematically misclassify people, which is why this calculator asks which context your readings came from before classifying them.</p>
+
+                    <h2 id="map-sd">5. Mean Arterial Pressure & Reading Consistency</h2>
+                    <div class="pro-tip">
+                        <strong>MAP = Diastolic + ⅓ × (Systolic − Diastolic)</strong>
+                        <p style="margin: 10px 0 0;">Mean Arterial Pressure approximates the average pressure in your arteries across a full heart cycle, weighted toward diastole (since the heart spends more time relaxed than contracted). A MAP of roughly 70-100 mmHg is generally considered adequate to perfuse major organs; this is supplementary context, not a diagnostic figure in its own right.</p>
+                    </div>
+                    <p>This calculator also reports the <strong>standard deviation</strong> of your systolic and diastolic readings — a measure of how consistent your numbers are. A tight spread suggests a stable baseline; a wide spread can indicate white-coat effect, measurement technique issues, or genuine variability worth mentioning to your GP.</p>
+
+                    <h2 id="low-bp">6. Low Blood Pressure</h2>
+                    <p>There's no single official UK diagnostic threshold for low blood pressure the way there is for hypertension — unlike high blood pressure, low blood pressure is generally only considered clinically significant when it comes with symptoms such as dizziness, light-headedness, blurred vision, or fainting. A commonly used reference point is a reading below roughly 90/60 mmHg. This calculator flags readings in that range so you know to mention it to a healthcare professional if you're also experiencing symptoms.</p>
+
+                    <h2 id="what-to-look-for">7. What to Look for in a BP Calculator</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr></thead>
+                        <tbody>
+                            <tr><td>Actually implements the discard-day-1 rule</td><td>Most calculators just mention it in text without applying it to your data</td><td class="yes">Included</td></tr>
+                            <tr><td>Separate home/ABPM vs clinic thresholds</td><td>Using the wrong threshold systematically misclassifies results</td><td class="yes">Included</td></tr>
+                            <tr><td>Full NG136 staging (not just normal/high)</td><td>Stage 1 vs Stage 2 vs Severe carries different clinical urgency</td><td class="yes">Included</td></tr>
+                            <tr><td>Mean Arterial Pressure & reading consistency (SD)</td><td>Extra context beyond a single average number</td><td class="yes">Included</td></tr>
+                            <tr><td>Explicit low blood pressure flag</td><td>Most calculators only look for high readings</td><td class="yes">Included</td></tr>
+                            <tr class="highlight-row"><td>Runs entirely in your browser, nothing stored</td><td>Health data stays private</td><td class="yes">Included</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="methodology">8. Methodology &amp; Limitations</h2>
+                    <ul>
+                        <li><strong>The averaging protocol, staging thresholds, and treatment targets</strong> follow <a href="https://www.nice.org.uk/guidance/ng136" target="_blank" rel="noopener">NICE guideline NG136, "Hypertension in adults: diagnosis and management"</a> (2019, amended 2022).</li>
+                        <li><strong>This calculator does not diagnose hypertension or hypotension.</strong> A diagnosis requires clinical assessment, confirmation of technique and equipment, and consideration of your individual history — not just a number against a table.</li>
+                        <li><strong>Standard deviation</strong> is calculated as a sample standard deviation across whichever readings are currently included (i.e., after any day-1 exclusion).</li>
+                        <li><strong>Mean Arterial Pressure</strong> uses the standard simplified formula (DBP + ⅓ pulse pressure), which is an approximation most accurate at normal resting heart rates.</li>
+                        <li><strong>The age-band toggle changes only the displayed treatment target</strong>, not the diagnostic stage — NICE's staging thresholds themselves are not age-adjusted for standard adults; the 80+ treatment target is a management decision based on falls risk, not a different diagnostic cutoff.</li>
+                        <li>This tool is for informational purposes only and does not replace measurement with a validated monitor, correct technique, or assessment by a GP or other qualified healthcare professional.</li>
+                    </ul>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="bpfaq1-answer">Why does NICE say to exclude the first day of home blood pressure readings?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bpfaq1-answer"><p>First-day readings tend to run higher because people are less used to the monitor and the measurement routine, an effect sometimes described alongside white-coat hypertension. NICE's home blood pressure monitoring (HBPM) protocol asks you to take two readings, one minute apart, morning and evening, for at least 4 days (ideally 7), then average all the readings excluding the first day.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bpfaq2-answer">What is a normal blood pressure reading in the UK?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bpfaq2-answer"><p>Under NICE NG136, a clinic reading below 140/90 mmHg, or a home/ABPM average below 135/85 mmHg, is below the diagnostic threshold for hypertension. Home and ambulatory readings are naturally about 5 mmHg lower than clinic readings, which is why the two thresholds differ.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bpfaq3-answer">What are the NICE hypertension stages?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer"><p id="bpfaq3-answer">Stage 1 hypertension is a clinic reading of 140/90 to 159/99 mmHg (home/ABPM average 135/85 to 149/94). Stage 2 hypertension is a clinic reading of 160/100 to 179/119 mmHg (home/ABPM average 150/95 or higher). Severe hypertension is a clinic systolic of 180 mmHg or higher, or diastolic of 120 mmHg or higher, which needs same-day medical assessment.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bpfaq4-answer">What counts as low blood pressure?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bpfaq4-answer"><p>There is no single official diagnostic threshold for low blood pressure the way there is for high blood pressure, but a reading below roughly 90/60 mmHg is commonly used as a reference point. Low blood pressure is generally only a concern if it comes with symptoms such as dizziness, light-headedness, or fainting.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bpfaq5-answer">Does this calculator diagnose high blood pressure?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bpfaq5-answer"><p>No. This tool averages the numbers you enter and shows where that average sits against published NICE NG136 reference ranges. It cannot diagnose hypertension, does not know your medical history, and is not a substitute for assessment by a GP or other healthcare professional.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for informational purposes only and is not medical advice or a diagnosis. If you have symptoms, contact NHS 111 or, in an emergency, call 999. See Section 8 for methodology and sources.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🩺</span> Try the Average BP Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🩺 Average BP Calculator</a>
+                            <a href="/calculators/pain-and-suffering-calculator">🩹 Pain & Suffering Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/dots-calculator">🏋️ DOTS Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>🧮 CalcSnaps</h4>
+                <p>Calculations in a Snap — fast, accurate, free.</p>
+                <a href="/about-us" class="about-link">About Us →</a>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/contact-us">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Popular</h4>
+                <a href="/calculators/mortgage-calculator">Mortgage Calculator</a>
+                <a href="/calculators/pain-and-suffering-calculator">Pain & Suffering</a>
+                <a href="/calculators/dots-calculator">DOTS Calculator</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/about-us">About Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                <a href="/disclaimer">Disclaimer</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        const DEFAULT_DAYS = [
+            { am1Sys: 150, am1Dia: 95, am2Sys: 148, am2Dia: 94, pm1Sys: 148, pm1Dia: 92, pm2Sys: 146, pm2Dia: 91 },
+            { am1Sys: 138, am1Dia: 88, am2Sys: 136, am2Dia: 87, pm1Sys: 135, pm1Dia: 86, pm2Sys: 133, pm2Dia: 85 },
+            { am1Sys: 136, am1Dia: 87, am2Sys: 134, am2Dia: 86, pm1Sys: 134, pm1Dia: 85, pm2Sys: 132, pm2Dia: 84 },
+            { am1Sys: 140, am1Dia: 89, am2Sys: 138, am2Dia: 88, pm1Sys: 137, pm1Dia: 86, pm2Sys: 135, pm2Dia: 85 },
+            { am1Sys: 135, am1Dia: 84, am2Sys: 133, am2Dia: 83, pm1Sys: 133, pm1Dia: 83, pm2Sys: 131, pm2Dia: 82 },
+            { am1Sys: 139, am1Dia: 88, am2Sys: 137, am2Dia: 87, pm1Sys: 136, pm1Dia: 85, pm2Sys: 134, pm2Dia: 84 },
+            { am1Sys: 137, am1Dia: 86, am2Sys: 135, am2Dia: 85, pm1Sys: 134, pm1Dia: 84, pm2Sys: 132, pm2Dia: 83 }
+        ];
+        const READING_SLOTS = ['am1', 'am2', 'pm1', 'pm2'];
+
+        let excludeDay1 = true;
+        let context = 'home';
+        let ageBand = 'under80';
+        let lastAvg = null;
+
+        // ===== BUILD READINGS TABLE =====
+        function buildTable() {
+            const tbody = $('readingsTableBody');
+            tbody.innerHTML = '';
+            DEFAULT_DAYS.forEach((d, idx) => {
+                const tr = document.createElement('tr');
+                tr.dataset.day = idx;
+                let cells = '<td class="day-label">Day ' + (idx + 1) + (idx === 0 ? '<span class="excluded-tag" id="day1tag"> (excluded)</span>' : '') + '</td>';
+                READING_SLOTS.forEach(slot => {
+                    const period = slot.startsWith('am') ? 'AM' : 'PM';
+                    const num = slot.endsWith('1') ? '1' : '2';
+                    cells += '<td><input type="number" class="' + slot + 'Sys" min="40" max="300" value="' + d[slot + 'Sys'] + '" aria-label="Day ' + (idx + 1) + ' ' + period + ' reading ' + num + ' systolic"></td>';
+                    cells += '<td><input type="number" class="' + slot + 'Dia" min="20" max="200" value="' + d[slot + 'Dia'] + '" aria-label="Day ' + (idx + 1) + ' ' + period + ' reading ' + num + ' diastolic"></td>';
+                });
+                tr.innerHTML = cells;
+                tbody.appendChild(tr);
+            });
+            tbody.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateAll));
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== GENERIC TOGGLE WIRING =====
+        function wireToggle(containerId, dataAttr, onChange) {
+            document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('#' + containerId + ' .toggle-option').forEach(b => {
+                        b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-checked', 'true');
+                    btn.setAttribute('tabindex', '0');
+                    onChange(btn.dataset[dataAttr]);
+                });
+                btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+            });
+        }
+        wireToggle('excludeDay1Toggle', 'exclude', v => { excludeDay1 = v === 'on'; calculateAll(); });
+        wireToggle('contextToggle', 'context', v => { context = v; renderMeaning(); });
+        wireToggle('ageToggle', 'age', v => { ageBand = v; renderMeaning(); });
+
+        // ===== FORMAT HELPERS =====
+        function fmt1(n) { return isFinite(n) ? n.toFixed(1) : '-'; }
+        function fmt0(n) { return isFinite(n) ? Math.round(n) : '-'; }
+
+        // ===== CORE AVERAGING =====
+        function computeAverage() {
+            const rows = Array.from($('readingsTableBody').querySelectorAll('tr'));
+            let readings = [];
+            let excludedInvalidCount = 0;
+            let completeDayCount = 0;
+
+            rows.forEach((row, idx) => {
+                const isDay1 = idx === 0;
+                row.classList.toggle('day1-excluded', excludeDay1 && isDay1);
+                if (excludeDay1 && isDay1) return;
+
+                let slotsFilledValid = 0;
+                READING_SLOTS.forEach(slot => {
+                    const sysEl = row.querySelector('.' + slot + 'Sys');
+                    const diaEl = row.querySelector('.' + slot + 'Dia');
+                    const sys = parseFloat(sysEl.value);
+                    const dia = parseFloat(diaEl.value);
+                    sysEl.classList.remove('field-clamped');
+                    diaEl.classList.remove('field-clamped');
+                    if (isNaN(sys) || isNaN(dia) || sys === 0 || dia === 0) return; // left blank
+
+                    const inRange = sys >= 40 && sys <= 300 && dia >= 20 && dia <= 200;
+                    const notInverted = sys > dia;
+                    if (!inRange || !notInverted) {
+                        excludedInvalidCount++;
+                        sysEl.classList.add('field-clamped');
+                        diaEl.classList.add('field-clamped');
+                        return; // excluded from the average entirely
+                    }
+                    readings.push({ sys, dia });
+                    slotsFilledValid++;
+                });
+                if (slotsFilledValid === READING_SLOTS.length) completeDayCount++;
+            });
+
+            const day1tag = $('day1tag');
+            if (day1tag) day1tag.style.display = excludeDay1 ? '' : 'none';
+
+            const warnEl = $('entryWarning');
+            const notes = [];
+            if (excludedInvalidCount > 0) {
+                notes.push(excludedInvalidCount + ' reading' + (excludedInvalidCount > 1 ? 's were' : ' was') + ' outside the valid 40\u2013300/20\u2013200\u00a0mmHg range or had systolic \u2264 diastolic, and ' + (excludedInvalidCount > 1 ? 'have' : 'has') + ' been excluded from the average (highlighted below).');
+            }
+            if (completeDayCount < 4) {
+                notes.push('Only ' + completeDayCount + ' complete monitoring day' + (completeDayCount === 1 ? '' : 's') + ' (all 4 readings entered) ' + (completeDayCount === 1 ? 'is' : 'are') + ' counted after exclusions. NICE recommends at least 4 complete days, ideally 7, before treating an average as diagnostic \u2014 treat this result as provisional.');
+            }
+            if (notes.length > 0) {
+                warnEl.className = 'status-note ' + (excludedInvalidCount > 0 ? 'status-danger' : 'status-caution') + ' show';
+                warnEl.innerHTML = '<i class="fas fa-triangle-exclamation"></i> ' + notes.join(' ');
+            } else {
+                warnEl.className = 'status-note';
+                warnEl.innerHTML = '';
+            }
+
+            if (readings.length === 0) return null;
+
+            const avgSys = readings.reduce((s, r) => s + r.sys, 0) / readings.length;
+            const avgDia = readings.reduce((s, r) => s + r.dia, 0) / readings.length;
+            const map = avgDia + (avgSys - avgDia) / 3;
+            const n = readings.length;
+            const sdSys = n > 1 ? Math.sqrt(readings.reduce((s, r) => s + Math.pow(r.sys - avgSys, 2), 0) / (n - 1)) : 0;
+            const sdDia = n > 1 ? Math.sqrt(readings.reduce((s, r) => s + Math.pow(r.dia - avgDia, 2), 0) / (n - 1)) : 0;
+            const protocolComplete = completeDayCount >= 4;
+
+            return { avgSys, avgDia, map, sdSys, sdDia, n, protocolComplete, completeDayCount };
+        }
+
+        function calculateAll() {
+            const result = computeAverage();
+            lastAvg = result;
+
+            if (!result) {
+                $('avgResult').textContent = 'No readings yet';
+                $('countResult').textContent = '0';
+                $('mapResult').textContent = '-';
+                $('sdResult').textContent = '-';
+                $('sdDiaResult').textContent = '-';
+            } else {
+                $('avgResult').textContent = fmt0(result.avgSys) + '/' + fmt0(result.avgDia) + ' mmHg';
+                $('countResult').textContent = result.n;
+                $('mapResult').textContent = fmt1(result.map) + ' mmHg';
+                $('sdResult').textContent = '\u00b1' + fmt1(result.sdSys);
+                $('sdDiaResult').textContent = '\u00b1' + fmt1(result.sdDia);
+            }
+            renderMeaning();
+        }
+
+        // ===== NICE CLASSIFICATION =====
+        function classify(sys, dia, ctx) {
+            if (ctx === 'clinic') {
+                if (sys >= 180 || dia >= 120) return { stage: 'Severe hypertension', status: 'severe' };
+                if (sys >= 160 || dia >= 100) return { stage: 'Stage 2 hypertension', status: 'danger' };
+                if (sys >= 140 || dia >= 90) return { stage: 'Stage 1 hypertension', status: 'caution' };
+                if (sys < 90 || dia < 60) return { stage: 'Low blood pressure', status: 'caution' };
+                return { stage: 'Not hypertensive', status: 'good' };
+            }
+            if (sys >= 150 || dia >= 95) return { stage: 'Stage 2 hypertension (home/ABPM)', status: 'danger' };
+            if (sys >= 135 || dia >= 85) return { stage: 'Stage 1 hypertension (home/ABPM)', status: 'caution' };
+            if (sys < 90 || dia < 60) return { stage: 'Low blood pressure', status: 'caution' };
+            return { stage: 'Not hypertensive', status: 'good' };
+        }
+
+        function renderMeaning() {
+            const stageEl = $('stageResult');
+            const severeEl = $('severeAlert');
+            const thresholdNoteEl = $('thresholdNote');
+            const lowBpEl = $('lowBpNote');
+
+            if (!lastAvg) {
+                stageEl.textContent = 'Enter readings first';
+                severeEl.className = 'status-note';
+                thresholdNoteEl.innerHTML = '';
+                $('thresholdResult').textContent = '-';
+                $('targetResult').textContent = '-';
+                lowBpEl.className = 'status-note';
+                $('scaleBar').innerHTML = '';
+                $('scaleLabels').innerHTML = '';
+                return;
+            }
+
+            const c = classify(lastAvg.avgSys, lastAvg.avgDia, context);
+            stageEl.textContent = c.stage;
+
+            // Severe-range safety alert is context-independent: 180/120 is an urgent
+            // physiological signal whether it came from a clinic or home/ABPM average.
+            const isSevereRange = lastAvg.avgSys >= 180 || lastAvg.avgDia >= 120;
+            if (isSevereRange) {
+                severeEl.className = 'status-note status-severe show';
+                severeEl.innerHTML = '<i class="fas fa-truck-medical"></i> This average (' + fmt0(lastAvg.avgSys) + '/' + fmt0(lastAvg.avgDia) + ') is in the severe range (\u2265180 systolic or \u2265120 diastolic), regardless of whether it came from home or clinic readings. NICE guidance calls for same-day medical assessment, especially with symptoms like chest pain, new confusion, or visual disturbance. Contact your GP practice urgently, NHS 111, or 999 if you have symptoms.';
+            } else {
+                severeEl.className = 'status-note';
+                severeEl.innerHTML = '';
+            }
+
+            if (lastAvg.avgSys < 90 || lastAvg.avgDia < 60) {
+                lowBpEl.className = 'status-note status-caution show';
+                lowBpEl.innerHTML = '<i class="fas fa-circle-info"></i> This average is below the commonly used ~90/60 mmHg low blood pressure reference point. This is usually only significant if you\u2019re also getting symptoms like dizziness, light-headedness, or fainting \u2014 mention it to a healthcare professional if so.';
+            } else {
+                lowBpEl.className = 'status-note';
+                lowBpEl.innerHTML = '';
+            }
+
+            if (context === 'clinic') {
+                thresholdNoteEl.innerHTML = '<i class="fas fa-info-circle"></i> Using <strong>clinic</strong> diagnostic thresholds (140/90 Stage 1, 160/100 Stage 2, 180/120 severe).';
+                $('thresholdResult').textContent = 'Clinic';
+            } else {
+                thresholdNoteEl.innerHTML = '<i class="fas fa-info-circle"></i> Using <strong>home/ABPM</strong> diagnostic thresholds (135/85 Stage 1, 150/95 Stage 2) \u2014 about 5 mmHg lower than clinic, per NICE.';
+                $('thresholdResult').textContent = 'Home / ABPM';
+            }
+
+            if (ageBand === 'over80') {
+                $('targetResult').textContent = context === 'clinic' ? 'Below 150/90' : 'Below 145/85';
+            } else {
+                $('targetResult').textContent = context === 'clinic' ? 'Below 140/90' : 'Below 135/85';
+            }
+
+            // Visual scale bar (systolic-based, illustrative)
+            const bounds = context === 'clinic'
+                ? { good: 140, caution: 160, danger: 180, max: 200 }
+                : { good: 135, caution: 150, danger: 165, max: 185 };
+            const bar = $('scaleBar');
+            bar.innerHTML =
+                '<div style="width:' + (bounds.good / bounds.max * 100) + '%;background:#10b981;"></div>' +
+                '<div style="width:' + ((bounds.caution - bounds.good) / bounds.max * 100) + '%;background:#f59e0b;"></div>' +
+                '<div style="width:' + ((bounds.danger - bounds.caution) / bounds.max * 100) + '%;background:#ef4444;"></div>' +
+                '<div style="width:' + ((bounds.max - bounds.danger) / bounds.max * 100) + '%;background:#7f1d1d;"></div>';
+            const pct = Math.max(0, Math.min(100, lastAvg.avgSys / bounds.max * 100));
+            const markerWrap = document.createElement('div');
+            markerWrap.style.position = 'relative';
+            const marker = document.createElement('div');
+            marker.className = 'scale-marker';
+            marker.style.left = pct + '%';
+            marker.setAttribute('data-label', fmt0(lastAvg.avgSys));
+            bar.style.position = 'relative';
+            bar.appendChild(marker);
+            $('scaleLabels').innerHTML = '<span>Not hypertensive</span><span>Stage 1</span><span>Stage 2</span><span>Severe</span>';
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            buildTable();
+            document.querySelectorAll('#excludeDay1Toggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.exclude === 'on') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            excludeDay1 = true;
+            document.querySelectorAll('#contextToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.context === 'home') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            context = 'home';
+            document.querySelectorAll('#ageToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.age === 'under80') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            ageBand = 'under80';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Average Blood Pressure Summary', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Result', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Average Blood Pressure: ' + $('avgResult').textContent, 25, 60);
+            doc.text('Readings Used: ' + $('countResult').textContent + (excludeDay1 ? ' (Day 1 excluded, per NICE)' : ' (all days included)'), 25, 67);
+            doc.text('Mean Arterial Pressure: ' + $('mapResult').textContent, 25, 74);
+            doc.text('Systolic Consistency (SD): ' + $('sdResult').textContent + '  |  Diastolic: ' + $('sdDiaResult').textContent, 25, 81);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Classification', 20, 97);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Context: ' + (context === 'clinic' ? 'Clinic / GP readings' : 'Home / ABPM monitoring'), 25, 107);
+            doc.text('NICE NG136 Stage: ' + $('stageResult').textContent, 25, 114);
+            doc.text('Diagnostic Threshold Used: ' + $('thresholdResult').textContent, 25, 121);
+            doc.text('NICE Treatment Target: ' + $('targetResult').textContent, 25, 128);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('This is not a diagnosis. Not a substitute for assessment by a GP or other healthcare professional.', 105, 265, { align: 'center' });
+            doc.text('If you have symptoms, contact NHS 111 or, in an emergency, call 999.', 105, 272, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Average Blood Pressure Calculator', 105, 280, { align: 'center' });
+
+            doc.save('Average_BP_Summary_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        buildTable();
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
