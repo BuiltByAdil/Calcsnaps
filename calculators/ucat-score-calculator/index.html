@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>UCAT Score Calculator 2026 | Decile & Percentile | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free UCAT score calculator: enter VR, DM & QR scores for your total /2700, percentile and decile using official 2025 UCAT Consortium data. No sign-up, private.">
+    <meta name="keywords" content="ucat score calculator, ucat calculator, ucat decile calculator, ucat percentile calculator, ucat score converter, ucat raw to scaled score">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/calculators/ucat-score-calculator">
+
+    <meta property="og:title" content="UCAT Score Calculator 2026 | Decile & Percentile | CalcSnaps">
+    <meta property="og:description" content="Free, private UCAT score calculator using official 2025 UCAT Consortium decile data. Total /2700, percentile, decile, and a raw-mark estimator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/ucat-score-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "UCAT Score Calculator",
+        "description": "Calculate your UCAT total score out of 2700, percentile, and decile from Verbal Reasoning, Decision Making and Quantitative Reasoning scores, using official UCAT Consortium 2025 test statistics, plus a raw-mark practice-test estimator",
+        "url": "https://calcsnaps.com/calculators/ucat-score-calculator",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "UCAT Score Calculator Guide: Deciles, Percentiles & What Changed in 2025",
+        "description": "How UCAT scoring works after the 2025 format change (Abstract Reasoning removed), how to read your decile and percentile against official UCAT Consortium data, and what counts as a competitive score.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/calculators/ucat-score-calculator" },
+        "datePublished": "2026-08-23",
+        "dateModified": "2026-08-23"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a good UCAT score in 2026?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Based on official 2025 UCAT Consortium data (mean 1891, out of 2700), a score above roughly 2100 puts you in the 8th decile (top 20%), and above roughly 2220 puts you in the 9th decile (top 10%). What counts as competitive still depends heavily on which universities and courses you're applying to, since cut-offs and how UCAT is weighted vary by institution." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is the UCAT now out of 2700 instead of 3600?",
+                "acceptedAnswer": { "@type": "Answer", "text": "From 2025, the UCAT Consortium removed the Abstract Reasoning subtest, citing lower predictive validity than the other sections. This left three cognitive subtests — Verbal Reasoning, Decision Making, and Quantitative Reasoning — each still scaled 300-900, giving a new total range of 900-2700 instead of the old 1200-3600. Scores from 2024 and earlier are not directly comparable to 2025+ scores." }
+            },
+            {
+                "@type": "Question",
+                "name": "How is the UCAT Situational Judgement Test (SJT) scored?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The SJT is scored separately from the three cognitive subtests and is not included in your 900-2700 total. Instead of a numeric score, you receive a Band from 1 (highest) to 4 (lowest), based on how closely your judgements match the panel's model answers, with partial credit available for near-correct responses." }
+            },
+            {
+                "@type": "Question",
+                "name": "What were the official UCAT decile boundaries for 2025?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Based on the UCAT Consortium's final 2025 test statistics (41,354 candidates), the total-score decile boundaries were approximately 1580, 1680, 1760, 1820, 1880, 1950, 2010, 2100 and 2220, with a mean total of 1891. These are the most recent official figures available for 2026 entry planning until new statistics are published." }
+            },
+            {
+                "@type": "Question",
+                "name": "Can this calculator tell me my exact official UCAT score?",
+                "acceptedAnswer": { "@type": "Answer", "text": "No. If you've already sat the UCAT, use your official Pearson score report — that's the authoritative number. This tool is for planning: converting known scaled scores into a percentile/decile context, or turning practice-test raw marks into a rough estimated scaled score, since UCAT does not publish an exact raw-to-scaled conversion table." }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+        .tab-content { display: none; padding: 28px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+        .input-group.field-clamped { border-color: var(--warning); background: #fffbeb; }
+        .clamp-msg { font-size: 11px; color: #b45309; margin-top: 4px; display: none; }
+        .input-group.field-clamped .clamp-msg { display: block; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #0a6b4d; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #a11f1f; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .section-bars { margin-top: 18px; }
+        .section-bar-row { margin-bottom: 14px; }
+        .section-bar-label { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--text-dark); margin-bottom: 5px; font-weight: 600; }
+        .section-bar-track { position: relative; height: 12px; background: #e2e8f0; border-radius: 8px; overflow: visible; }
+        .section-bar-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--primary-light), var(--primary)); }
+        .section-bar-mean { position: absolute; top: -3px; width: 2px; height: 18px; background: var(--dark); opacity: 0.5; }
+
+        .decile-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; }
+        .decile-table th { background: var(--dark); color: white; padding: 9px 8px; text-align: center; font-weight: 600; }
+        .decile-table td { padding: 8px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .decile-table tr:nth-child(even) { background: #f8fafc; }
+        .decile-table tr.your-row { background: rgba(139,92,246,0.12) !important; font-weight: 700; }
+        .decile-table tr.your-row td:first-child { position: relative; }
+        .decile-table tr.your-row td:first-child::before { content: "\2192"; margin-right: 4px; color: var(--primary); }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .tab { padding: 12px 6px; font-size: 12px; }
+            .tab-content { padding: 18px; }
+            .total-payment-card .amount { font-size: 24px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .limits-box { background: #fef2f2; border-left: 4px solid var(--danger); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .limits-box strong { color: #b91c1c; }
+        .limits-box ul { margin-bottom: 0; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table tr.highlight-row td { background: rgba(139,92,246,0.06); font-weight: 600; color: var(--dark); }
+        .compare-table td.yes { color: #059669; font-weight: 700; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-graduation-cap"></i> UCAT Score Calculator</h1>
+                    <p>Total /2700 · Percentile · Decile — using official 2025 UCAT Consortium data</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> Uses official 2025 UCAT Consortium data — the latest published until 2026 statistics are released. Not affiliated with the UCAT Consortium or Pearson; your official Pearson score report is the authoritative result.</div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="score" role="tab" aria-selected="true" aria-controls="tab-score" id="tabbtn-score" tabindex="0">📊 Score Calculator</button>
+                    <button class="tab" data-tab="deciles" role="tab" aria-selected="false" aria-controls="tab-deciles" id="tabbtn-deciles" tabindex="-1">📋 Decile Table</button>
+                </div>
+
+                <!-- TAB 1: SCORE CALCULATOR -->
+                <div class="tab-content active" id="tab-score" role="tabpanel" aria-labelledby="tabbtn-score">
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-list-check"></i> Enter</span>
+                        <div class="toggle-switch" id="entryModeToggle" role="radiogroup" aria-label="Entry mode">
+                            <button class="toggle-option active" data-entry="scaled" role="radio" aria-checked="true" tabindex="0">Scaled Scores (300-900)</button>
+                            <button class="toggle-option" data-entry="raw" role="radio" aria-checked="false" tabindex="-1">Raw Marks (practice test)</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-pen-to-square"></i> Cognitive Subtests</div>
+
+                    <div class="input-grid" id="scaledFields">
+                        <div class="input-group">
+                            <label for="vrScaled">Verbal Reasoning</label>
+                            <div class="row"><input type="number" id="vrScaled" value="610" step="10" min="300" max="900" aria-label="Verbal Reasoning scaled score"></div>
+                            <span class="clamp-msg">Adjusted to a valid value</span>
+                        </div>
+                        <div class="input-group">
+                            <label for="dmScaled">Decision Making</label>
+                            <div class="row"><input type="number" id="dmScaled" value="650" step="10" min="300" max="900" aria-label="Decision Making scaled score"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="qrScaled">Quantitative Reasoning</label>
+                            <div class="row"><input type="number" id="qrScaled" value="680" step="10" min="300" max="900" aria-label="Quantitative Reasoning scaled score"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-grid" id="rawFields" style="display:none;">
+                        <div class="input-group">
+                            <label for="vrRaw">Verbal Reasoning (out of 44)</label>
+                            <div class="row"><input type="number" id="vrRaw" value="30" step="1" min="0" max="44" aria-label="Verbal Reasoning raw marks"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="dmRaw">Decision Making (out of ~45*)</label>
+                            <div class="row"><input type="number" id="dmRaw" value="26" step="1" min="0" max="45" aria-label="Decision Making raw marks"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="qrRaw">Quantitative Reasoning (out of 36)</label>
+                            <div class="row"><input type="number" id="qrRaw" value="27" step="1" min="0" max="36" aria-label="Quantitative Reasoning raw marks"></div>
+                        </div>
+                    </div>
+                    <div class="info-tip" id="rawInfoTip" style="display:none;">
+                        <i>i</i>
+                        <span>*Decision Making has some 2-mark questions, so its raw maximum can exceed 35. UCAT does not publish an official raw-to-scaled conversion table, so this estimate uses simple proportional scaling across the 300-900 range — treat it as a rough guide for practice tests, not a prediction of your real scaled score.</span>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-people-group"></i> Situational Judgement Test</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="sjtBand">SJT Band (optional)</label>
+                            <select id="sjtBand" aria-label="SJT Band">
+                                <option value="">Not entered</option>
+                                <option value="1">Band 1</option>
+                                <option value="2">Band 2</option>
+                                <option value="3">Band 3</option>
+                                <option value="4">Band 4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show">
+                        <i class="fas fa-info-circle"></i> The SJT is not part of your 900-2700 total — it's reported separately as a band and used differently by each university (some set a minimum band for interview, e.g. Band 3 or better).
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Total Cognitive Score</span>
+                            <span class="amount" id="totalResult">0 / 2700</span>
+                        </div>
+
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Estimated Percentile</div><div class="result-value small" id="percentileResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Decile</div><div class="result-value small" id="decileResult">-</div></div>
+                            <div class="result-card"><div class="result-label">vs 2025 Mean (1891)</div><div class="result-value small" id="vsMeanResult">-</div></div>
+                            <div class="result-card"><div class="result-label">SJT Band</div><div class="result-value small" id="sjtDisplayResult">-</div></div>
+                        </div>
+
+                        <div class="section-bars" id="sectionBars"></div>
+
+                        <div class="status-note" id="competitivenessNote"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: DECILE TABLE -->
+                <div class="tab-content" id="tab-deciles" role="tabpanel" aria-labelledby="tabbtn-deciles">
+                    <div class="section-title"><i class="fas fa-table-list"></i> Official 2025 UCAT Decile Boundaries</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-bottom:14px;">Based on the <a href="https://www.ucat.ac.uk/results/test-statistics" target="_blank" rel="noopener">UCAT Consortium's final 2025 test statistics</a> (41,354 candidates, valid to 26 September 2025) — the most recent official data available. <strong>2026 statistics aren't published yet</strong>, so 2025's are used here as the reference until they are. Your current score from the Score Calculator tab is highlighted below.</p>
+
+                    <div style="overflow-x:auto;">
+                        <table class="decile-table" id="decileTable">
+                            <thead><tr><th>Decile</th><th>Total Score (/2700)</th><th>Approx. Percentile</th></tr></thead>
+                            <tbody id="decileTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="info-tip" style="margin-top:16px;">
+                        <i>i</i>
+                        <span>2025 subtest means were: Verbal Reasoning 602, Decision Making 628, Quantitative Reasoning 661. Verbal Reasoning is consistently the lowest-scoring section nationally — if it's your weakest, you're in good company.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Summary</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>UCAT Score Calculator Guide: Deciles, Percentiles & What Changed in 2025</h2>
+                    <p>Why the max score dropped from 3600 to 2700, and how to actually read your decile</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#format-change">1. What Changed in 2025</a></div>
+                            <div class="toc-item"><a href="#how-scored">2. How UCAT Scoring Actually Works</a></div>
+                            <div class="toc-item"><a href="#deciles-explained">3. Deciles vs Percentiles</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#sjt">5. The Situational Judgement Test</a></div>
+                            <div class="toc-item"><a href="#good-score">6. What Counts as a Good Score</a></div>
+                            <div class="toc-item"><a href="#what-to-look-for">7. What to Look for in a UCAT Calculator</a></div>
+                            <div class="toc-item"><a href="#methodology">8. Methodology & Limitations</a></div>
+                            <div class="toc-item"><a href="#faq">9. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>If you're comparing UCAT calculators, the single most important thing to check is whether the tool has actually been updated for the <strong>2025 format change</strong> — a lot of older resources online are still built around a test that no longer exists. This calculator uses the current three-subtest, 900-2700 format and the <a href="https://www.ucat.ac.uk/results/test-statistics" target="_blank" rel="noopener">UCAT Consortium's own published 2025 test statistics</a>, not outdated pre-2025 numbers dressed up as current. <strong>2026 test statistics aren't published yet</strong> — until they are, 2025's are the most recent official dataset, and that's what this calculator uses throughout.</p>
+
+                    <h2 id="format-change">1. What Changed in 2025</h2>
+                    <p>From 2025, the UCAT Consortium withdrew the <strong>Abstract Reasoning</strong> subtest, stating it had lower predictive validity than the other sections. That leaves three cognitive subtests — Verbal Reasoning, Decision Making, and Quantitative Reasoning — plus the Situational Judgement Test (SJT), which was always scored separately anyway.</p>
+                    <table class="compare-table">
+                        <thead><tr><th></th><th>2024 and earlier</th><th>2025 onward</th></tr></thead>
+                        <tbody>
+                            <tr><td>Cognitive subtests</td><td>4 (VR, DM, QR, AR)</td><td>3 (VR, DM, QR)</td></tr>
+                            <tr><td>Total score range</td><td>1200 – 3600</td><td>900 – 2700</td></tr>
+                            <tr><td>Decision Making</td><td>29 questions, 31 min</td><td>35 questions, 37 min</td></tr>
+                            <tr><td>Quantitative Reasoning</td><td>36 questions, 24 min</td><td>36 questions, 26 min</td></tr>
+                        </tbody>
+                    </table>
+                    <p>This means scores from 2024 and earlier are <strong>not directly comparable</strong> to 2025+ scores without a proper statistical conversion — a flat proportional scaling (like multiplying an old score by 0.75) tends to run noticeably high, because score distributions aren't uniform across the range. If you need to compare an old score to the current scale, treat any simple multiplication-based conversion with caution and look for one built on the UCAT Consortium's own re-scored historical data.</p>
+
+                    <h2 id="how-scored">2. How UCAT Scoring Actually Works</h2>
+                    <p>Each cognitive subtest (VR, DM, QR) is marked on the number of correct answers, with <strong>no penalty for wrong answers</strong> — so it's always worth attempting every question. Decision Making includes some multi-response questions worth 2 marks, with partial credit available. Your raw marks are then converted to a <strong>scaled score between 300 and 900</strong> for each section using a statistical process the Consortium doesn't publish in exact table form — this is why practice-test "raw to scaled" calculators, including the one on this page, can only ever give an estimate.</p>
+                    <div class="pro-tip">
+                        <strong>Total Score = VR (300-900) + DM (300-900) + QR (300-900)</strong>
+                        <p style="margin: 10px 0 0;">Giving a possible range of <strong>900 to 2700</strong>. The SJT is reported separately as a Band (1-4) and is not added to this total.</p>
+                    </div>
+
+                    <h2 id="deciles-explained">3. Deciles vs Percentiles</h2>
+                    <p>A <strong>decile</strong> splits the entire cohort into ten equal-sized groups, ranked by score. UCAT Consortium data publishes nine <em>boundary</em> scores — the 1st decile boundary sits at the 10th percentile, the 9th decile boundary sits at the 90th percentile — and those nine boundaries mark the edges between ten numbered <em>bands</em>. So a score at or above the 9th decile boundary (2220) falls in decile <strong>band 10</strong> — the top 10% of the cohort — which is standard decile numbering, not an error: "decile boundary" (the cutoff score) and "decile band" (which of the ten groups you're in) are two different things that happen to share the word "decile."</p>
+                    <p>A <strong>percentile</strong> is more granular — it tells you the exact proportion of candidates you outscored. This calculator estimates your percentile by interpolating between the official published decile boundaries, since UCAT doesn't publish every single percentile value. Below the 1st decile boundary (1580), the published data only tells us a score is "below the 10th percentile" — not precisely which percentile — so this calculator reports "&lt;10th" rather than inventing false precision like "6th percentile."</p>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Using the calculator's defaults: VR 610, DM 650, QR 680.</p>
+                    <p><strong>Total</strong> = 610 + 650 + 680 = <strong>1940</strong>. Against the official 2025 boundaries (…1880 at the 5th decile, 1950 at the 6th…), 1940 sits just inside the 6th decile band — meaning this score beats roughly the middle of the cohort, modestly above the 2025 mean of 1891.</p>
+
+                    <h2 id="sjt">5. The Situational Judgement Test</h2>
+                    <p>The SJT presents scenarios relevant to healthcare professionalism and asks you to judge how appropriate or important different responses are. Your answers are compared to a panel of experts' model responses, with partial credit for close answers, and the result is reported as a <strong>Band</strong>:</p>
+                    <ul>
+                        <li><strong>Band 1</strong> — a high degree of concordance with the expert panel.</li>
+                        <li><strong>Band 2</strong> — good concordance.</li>
+                        <li><strong>Band 3</strong> — modest concordance.</li>
+                        <li><strong>Band 4</strong> — low concordance; some universities flag this band for closer review.</li>
+                    </ul>
+                    <p>Universities use SJT bands differently — some set a minimum band (commonly Band 3 or better) as an interview requirement rather than ranking candidates by band, so check each university's specific published policy rather than assuming a universal rule.</p>
+
+                    <h2 id="good-score">6. What Counts as a Good Score</h2>
+                    <p>There's no official pass mark. As a general, non-university-specific reference using the official 2025 data: scores above roughly <strong>2100</strong> (8th decile, top 20%) are generally considered strong, and above roughly <strong>2220</strong> (9th decile, top 10%) are excellent by most measures. But the honest answer is that "good" depends entirely on where you're applying — some universities use UCAT as a hard cut-off, others weight it alongside GCSEs, predicted grades, and the personal statement, and thresholds shift year to year based on that year's applicant pool. Always check each university's current published entry requirements directly.</p>
+
+                    <h2 id="what-to-look-for">7. What to Look for in a UCAT Calculator</h2>
+                    <table class="compare-table">
+                        <thead><tr><th>Feature</th><th>Why it matters</th><th>This calculator</th></tr></thead>
+                        <tbody>
+                            <tr><td>Updated for the 2025 three-subtest format</td><td>Older tools built around Abstract Reasoning and a /3600 scale are now out of date</td><td class="yes">Included</td></tr>
+                            <tr><td>Cites official UCAT Consortium 2025 statistics</td><td>Not every site sources its deciles from the actual Consortium data</td><td class="yes">Included</td></tr>
+                            <tr><td>Per-section comparison against the national mean</td><td>Shows exactly which subtest is dragging your total down</td><td class="yes">Included</td></tr>
+                            <tr><td>Honest about raw-to-scaled estimation limits</td><td>No official conversion table exists — tools that imply precision here are overclaiming</td><td class="yes">Included</td></tr>
+                            <tr><td>Full decile reference table with your score marked</td><td>Context beyond a single percentile number</td><td class="yes">Included</td></tr>
+                            <tr class="highlight-row"><td>Runs entirely in your browser, no lead-gen forms</td><td>No email required to see your result</td><td class="yes">Included</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="methodology">8. Methodology &amp; Limitations</h2>
+                    <ul>
+                        <li><strong>Decile boundaries, subtest means, and the overall mean</strong> are taken from the <a href="https://www.ucat.ac.uk/results/test-statistics" target="_blank" rel="noopener">UCAT Consortium's final 2025 UK test statistics</a> (41,354 candidates, data valid to 26 September 2025) — the most recent complete official dataset. 2026 statistics are not yet published; this page will be updated once they are.</li>
+                        <li><strong>The 95th (2310) and 99th (2460) percentile anchor points</strong> above the 9th decile boundary are drawn from the same 2025 UCAT Consortium dataset, as reported alongside the decile table by UCAT preparation providers citing the Consortium's figures.</li>
+                        <li><strong>Percentile estimates are interpolated</strong> between the nine published decile boundaries (plus the published 95th and 99th percentile anchor points above the 9th decile) — they are a reasonable estimate, not an official Consortium percentile lookup.</li>
+                        <li><strong>The raw-mark estimator uses simple proportional scaling</strong> across each section's raw mark range, mapped onto the 300-900 scaled range. UCAT does not publish an exact raw-to-scaled conversion table, so this is a rough guide for practice tests only — your real UCAT scaled score depends on the specific test form's statistical difficulty adjustment.</li>
+                        <li><strong>This tool does not predict admission outcomes.</strong> University decisions weigh UCAT alongside academic grades, personal statements, and interviews, using each institution's own (and frequently changing) policy.</li>
+                        <li>Not affiliated with, endorsed by, or sourced directly from the UCAT Consortium or Pearson. Always treat your official Pearson score report as authoritative.</li>
+                    </ul>
+
+                    <h2 id="faq">9. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="ucatfaq1-answer">What is a good UCAT score in 2026?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="ucatfaq1-answer"><p>Based on official 2025 UCAT Consortium data (mean 1891, out of 2700), a score above roughly 2100 puts you in the 8th decile (top 20%), and above roughly 2220 puts you in the 9th decile (top 10%). What counts as competitive still depends heavily on which universities and courses you're applying to, since cut-offs and how UCAT is weighted vary by institution.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="ucatfaq2-answer">Why is the UCAT now out of 2700 instead of 3600?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="ucatfaq2-answer"><p>From 2025, the UCAT Consortium removed the Abstract Reasoning subtest, citing lower predictive validity than the other sections. This left three cognitive subtests — Verbal Reasoning, Decision Making, and Quantitative Reasoning — each still scaled 300-900, giving a new total range of 900-2700 instead of the old 1200-3600. Scores from 2024 and earlier are not directly comparable to 2025+ scores.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="ucatfaq3-answer">How is the UCAT Situational Judgement Test (SJT) scored?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="ucatfaq3-answer"><p>The SJT is scored separately from the three cognitive subtests and is not included in your 900-2700 total. Instead of a numeric score, you receive a Band from 1 (highest) to 4 (lowest), based on how closely your judgements match the panel's model answers, with partial credit available for near-correct responses.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="ucatfaq4-answer">What were the official UCAT decile boundaries for 2025?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="ucatfaq4-answer"><p>Based on the UCAT Consortium's final 2025 test statistics (41,354 candidates), the total-score decile boundaries were approximately 1580, 1680, 1760, 1820, 1880, 1950, 2010, 2100 and 2220, with a mean total of 1891. These are the most recent official figures available for 2026 entry planning until new statistics are published.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="ucatfaq5-answer">Can this calculator tell me my exact official UCAT score?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="ucatfaq5-answer"><p>No. If you've already sat the UCAT, use your official Pearson score report — that's the authoritative number. This tool is for planning: converting known scaled scores into a percentile/decile context, or turning practice-test raw marks into a rough estimated scaled score, since UCAT does not publish an exact raw-to-scaled conversion table.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only and is not affiliated with the UCAT Consortium or Pearson. See Section 8 for methodology details and sources.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📊</span> Try the UCAT Score Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📊 UCAT Score Calculator</a>
+                            <a href="/calculators/average-blood-pressure-calculator">🩺 Average BP Calculator</a>
+                            <a href="/calculators/mortgage-calculator">🏠 Mortgage Calculator</a>
+                            <a href="/calculators/dots-calculator">🏋️ DOTS Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap — fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/calculators/mortgage-calculator">Mortgage Calculator</a>
+                    <a href="/calculators/average-blood-pressure-calculator">Average BP Calculator</a>
+                    <a href="/calculators/dots-calculator">DOTS Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        // ===== OFFICIAL 2025 UCAT CONSORTIUM DATA (verified) =====
+        const DECILES = [1580, 1680, 1760, 1820, 1880, 1950, 2010, 2100, 2220]; // 1st-9th decile boundaries
+        const MEAN_TOTAL = 1891;
+        const SUBTEST_MEANS = { vr: 602, dm: 628, qr: 661 };
+        const RAW_MAX = { vr: 44, dm: 45, qr: 36 }; // DM raw max is approximate: some questions carry 2 marks, so max marks can exceed the 35 question count
+
+        let entryMode = 'scaled';
+
+        function fmt0(n) { return isFinite(n) ? Math.round(n) : '-'; }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+        }
+
+        // ===== ENTRY MODE TOGGLE =====
+        document.querySelectorAll('#entryModeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#entryModeToggle .toggle-option').forEach(b => {
+                    b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                });
+                btn.classList.add('active');
+                btn.setAttribute('aria-checked', 'true');
+                btn.setAttribute('tabindex', '0');
+                entryMode = btn.dataset.entry;
+                $('scaledFields').style.display = entryMode === 'scaled' ? '' : 'none';
+                $('rawFields').style.display = entryMode === 'raw' ? '' : 'none';
+                $('rawInfoTip').style.display = entryMode === 'raw' ? 'flex' : 'none';
+                calculateAll();
+            });
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+        });
+
+        // ===== INPUT VALIDATION / CLAMPING =====
+        function attachClamp(el, min, max) {
+            el.addEventListener('change', () => {
+                let v = parseFloat(el.value);
+                const group = el.closest('.input-group');
+                let clamped = false;
+                if (isNaN(v)) { v = min; clamped = true; }
+                if (min !== null && v < min) { v = min; clamped = true; }
+                if (max !== null && v > max) { v = max; clamped = true; }
+                if (clamped) {
+                    el.value = v;
+                    if (group) { group.classList.add('field-clamped'); setTimeout(() => group.classList.remove('field-clamped'), 2500); }
+                    calculateAll();
+                }
+            });
+        }
+        attachClamp($('vrScaled'), 300, 900);
+        attachClamp($('dmScaled'), 300, 900);
+        attachClamp($('qrScaled'), 300, 900);
+        attachClamp($('vrRaw'), 0, RAW_MAX.vr);
+        attachClamp($('dmRaw'), 0, RAW_MAX.dm);
+        attachClamp($('qrRaw'), 0, RAW_MAX.qr);
+
+        ['vrScaled', 'dmScaled', 'qrScaled', 'vrRaw', 'dmRaw', 'qrRaw', 'sjtBand'].forEach(id => {
+            $(id).addEventListener('input', calculateAll);
+        });
+
+        // ===== SCALED-SCORE ESTIMATION FROM RAW MARKS (proportional, explicitly approximate) =====
+        function rawToScaled(raw, maxRaw) {
+            const r = Math.max(0, Math.min(maxRaw, raw));
+            return 300 + (r / maxRaw) * 600;
+        }
+
+        // ===== PERCENTILE / DECILE ESTIMATION =====
+        function estimatePercentile(score) {
+            if (score < DECILES[0]) return null; // below the lowest published boundary - only "<10th" is supportable, not an exact number
+            if (score >= DECILES[8]) {
+                if (score >= 2460) return 99;
+                if (score >= 2310) return 95;
+                const frac = (score - DECILES[8]) / (2310 - DECILES[8]);
+                return Math.round(90 + frac * 5);
+            }
+            for (let i = 0; i < DECILES.length - 1; i++) {
+                if (score >= DECILES[i] && score < DECILES[i + 1]) {
+                    const frac = (score - DECILES[i]) / (DECILES[i + 1] - DECILES[i]);
+                    return Math.round((i + 1) * 10 + frac * 10);
+                }
+            }
+            return 50;
+        }
+        function decileOf(score) {
+            for (let i = DECILES.length - 1; i >= 0; i--) {
+                if (score >= DECILES[i]) return i + 2;
+            }
+            return 1;
+        }
+        function decileLabel(d) {
+            if (d === 10) return '10th (top 10%)';
+            if (d === 1) return '1st (bottom 10%)';
+            const suffix = d === 2 ? 'nd' : d === 3 ? 'rd' : 'th';
+            return d + suffix;
+        }
+
+        function calculateAll() {
+            let vrScore, dmScore, qrScore;
+            if (entryMode === 'scaled') {
+                vrScore = parseFloat($('vrScaled').value) || 300;
+                dmScore = parseFloat($('dmScaled').value) || 300;
+                qrScore = parseFloat($('qrScaled').value) || 300;
+            } else {
+                vrScore = rawToScaled(parseFloat($('vrRaw').value) || 0, RAW_MAX.vr);
+                dmScore = rawToScaled(parseFloat($('dmRaw').value) || 0, RAW_MAX.dm);
+                qrScore = rawToScaled(parseFloat($('qrRaw').value) || 0, RAW_MAX.qr);
+            }
+
+            const total = vrScore + dmScore + qrScore;
+            const percentile = estimatePercentile(total);
+            const decile = decileOf(total);
+            const vsMean = total - MEAN_TOTAL;
+
+            $('totalResult').textContent = fmt0(total) + ' / 2700';
+            $('percentileResult').textContent = percentile === null ? '<10th' : percentile + 'th';
+            $('decileResult').textContent = decileLabel(decile);
+            $('vsMeanResult').textContent = (vsMean >= 0 ? '+' : '') + fmt0(vsMean);
+
+            const sjtVal = $('sjtBand').value;
+            $('sjtDisplayResult').textContent = sjtVal ? 'Band ' + sjtVal : 'Not entered';
+
+            // Per-section bars vs national mean
+            const bars = $('sectionBars');
+            bars.innerHTML = '';
+            [
+                { label: 'Verbal Reasoning', score: vrScore, mean: SUBTEST_MEANS.vr },
+                { label: 'Decision Making', score: dmScore, mean: SUBTEST_MEANS.dm },
+                { label: 'Quantitative Reasoning', score: qrScore, mean: SUBTEST_MEANS.qr }
+            ].forEach(s => {
+                const pct = Math.max(0, Math.min(100, ((s.score - 300) / 600) * 100));
+                const meanPct = Math.max(0, Math.min(100, ((s.mean - 300) / 600) * 100));
+                const row = document.createElement('div');
+                row.className = 'section-bar-row';
+                row.innerHTML =
+                    '<div class="section-bar-label"><span>' + s.label + '</span><span>' + fmt0(s.score) + '</span></div>' +
+                    '<div class="section-bar-track"><div class="section-bar-fill" style="width:' + pct + '%;"></div><div class="section-bar-mean" style="left:' + meanPct + '%;" title="2025 mean: ' + s.mean + '"></div></div>';
+                bars.appendChild(row);
+            });
+
+            // Competitiveness note (general, caveated)
+            const noteEl = $('competitivenessNote');
+            let status, msg;
+            if (decile >= 9) {
+                status = 'good';
+                msg = '<i class="fas fa-circle-check"></i> This total is in the top 10-20% of the 2025 UK cohort \u2014 generally considered a strong or excellent score by most measures. Specific university requirements still vary, so check individual entry criteria.';
+            } else if (decile >= 6) {
+                status = 'neutral';
+                msg = '<i class="fas fa-info-circle"></i> This total is above the 2025 national mean of 1891. Competitiveness still depends heavily on which universities you\u2019re applying to and how each one weights UCAT.';
+            } else {
+                status = 'caution';
+                msg = '<i class="fas fa-circle-info"></i> This total is below the 2025 national mean of 1891. A lower UCAT score doesn\u2019t rule out an application \u2014 some universities weight it alongside grades and other factors, or set lower thresholds for certain courses/widening-access routes. Check each university\u2019s specific policy.';
+            }
+            noteEl.className = 'status-note status-' + status + ' show';
+            noteEl.innerHTML = msg;
+
+            renderDecileTable(total, decile);
+        }
+
+        function renderDecileTable(total, currentDecile) {
+            const rows = [
+                { decile: 1, label: '1st', score: 'below ' + DECILES[0], pct: '<10th' },
+                { decile: 2, label: '2nd', score: DECILES[0] + ' \u2013 ' + (DECILES[1] - 10), pct: '10th\u201320th' },
+                { decile: 3, label: '3rd', score: DECILES[1] + ' \u2013 ' + (DECILES[2] - 10), pct: '20th\u201330th' },
+                { decile: 4, label: '4th', score: DECILES[2] + ' \u2013 ' + (DECILES[3] - 10), pct: '30th\u201340th' },
+                { decile: 5, label: '5th', score: DECILES[3] + ' \u2013 ' + (DECILES[4] - 10), pct: '40th\u201350th' },
+                { decile: 6, label: '6th', score: DECILES[4] + ' \u2013 ' + (DECILES[5] - 10), pct: '50th\u201360th' },
+                { decile: 7, label: '7th', score: DECILES[5] + ' \u2013 ' + (DECILES[6] - 10), pct: '60th\u201370th' },
+                { decile: 8, label: '8th', score: DECILES[6] + ' \u2013 ' + (DECILES[7] - 10), pct: '70th\u201380th' },
+                { decile: 9, label: '9th', score: DECILES[7] + ' \u2013 ' + (DECILES[8] - 10), pct: '80th\u201390th' },
+                { decile: 10, label: '10th (top 10%)', score: DECILES[8] + '+', pct: '90th+' }
+            ];
+            const tbody = $('decileTableBody');
+            tbody.innerHTML = '';
+            rows.forEach(r => {
+                const tr = document.createElement('tr');
+                if (r.decile === currentDecile) tr.classList.add('your-row');
+                tr.innerHTML = '<td>' + r.label + '</td><td>' + r.score + '</td><td>' + r.pct + '</td>';
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            document.querySelectorAll('#entryModeToggle .toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1');
+                if (b.dataset.entry === 'scaled') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); }
+            });
+            entryMode = 'scaled';
+            $('scaledFields').style.display = '';
+            $('rawFields').style.display = 'none';
+            $('rawInfoTip').style.display = 'none';
+
+            $('vrScaled').value = '610';
+            $('dmScaled').value = '650';
+            $('qrScaled').value = '680';
+            $('vrRaw').value = '30';
+            $('dmRaw').value = '26';
+            $('qrRaw').value = '27';
+            $('sjtBand').value = '';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('UCAT Score Summary', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Scores', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Entry mode: ' + (entryMode === 'scaled' ? 'Scaled scores' : 'Raw marks (estimated)'), 25, 60);
+            doc.text('Verbal Reasoning: ' + (entryMode === 'scaled' ? $('vrScaled').value : $('vrRaw').value + ' raw'), 25, 67);
+            doc.text('Decision Making: ' + (entryMode === 'scaled' ? $('dmScaled').value : $('dmRaw').value + ' raw'), 25, 74);
+            doc.text('Quantitative Reasoning: ' + (entryMode === 'scaled' ? $('qrScaled').value : $('qrRaw').value + ' raw'), 25, 81);
+            doc.text('SJT Band: ' + $('sjtDisplayResult').textContent, 25, 88);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Result', 20, 104);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Total: ' + $('totalResult').textContent, 25, 114);
+            doc.text('Estimated Percentile: ' + $('percentileResult').textContent, 25, 121);
+            doc.text('Decile: ' + $('decileResult').textContent, 25, 128);
+            doc.text('vs 2025 Mean (1891): ' + $('vsMeanResult').textContent, 25, 135);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Estimate based on official UCAT Consortium 2025 test statistics. Not an official UCAT result.', 105, 265, { align: 'center' });
+            doc.text('Not affiliated with the UCAT Consortium or Pearson.', 105, 272, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - UCAT Score Calculator', 105, 280, { align: 'center' });
+
+            doc.save('UCAT_Score_Summary_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
