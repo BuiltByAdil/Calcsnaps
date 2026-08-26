@@ -96,11 +96,11 @@
         .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100; text-decoration: none; }
         .skip-link:focus { top: 0; }
         .calc-main-header { text-align: center; margin: 20px auto 40px auto; padding: 30px; max-width: 900px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-bottom: 3px solid var(--secondary); }
-        .calc-main-header h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .calc-main-header h2 { color: white; font-size: 25px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; }
         .calc-main-header p { color: var(--gray); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
 
         .mode-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; background: var(--bg-secondary); padding: 6px; border-radius: 60px; border: 1px solid var(--border-color); }
-        .mode-tab { flex: 1; min-width: 150px; padding: 12px; border: none; background: transparent; border-radius: 50px; font-weight: 600; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .mode-tab { flex: 1; min-width: 150px; padding: 12px; border: none; background: transparent; border-radius: 50px; font-weight: 600; font-size: 13.5px; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
         .mode-tab.active { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
         .mode-tab:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
         .mode-panel { display: none; }
@@ -114,13 +114,13 @@
         .section-title { color: var(--primary); font-size: 1.4rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border-color); display: flex; align-items: center; gap: 10px; }
 
         .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 12.5px; }
         .input-group select, .input-group input {
             width: 100%; padding: 12px; border: 2px solid var(--border-color);
-            border-radius: var(--radius-sm); font-size: 0.95rem; background: var(--bg-secondary); color: var(--text-primary);
+            border-radius: var(--radius-sm); font-size: 17px; font-weight: 700; background: var(--bg-secondary); color: var(--text-primary);
         }
         .input-group select:focus, .input-group input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
-        .input-group .hint { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
+        .input-group .hint { font-size: 12.5px; color: var(--text-secondary); margin-top: 4px; font-weight: 400; }
 
         .checkbox-row { display: flex; align-items: center; gap: 10px; padding: 12px; background: var(--bg-secondary); border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 10px; }
         .checkbox-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--primary); }
@@ -133,8 +133,8 @@
         .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(139,92,246,0.3); }
 
         .result-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-lg); color: white; margin-bottom: 24px; }
-        .result-hero .score-value { font-size: 2.6rem; font-weight: 800; line-height: 1; }
-        .result-hero .score-label { font-size: 0.95rem; opacity: 0.9; margin-top: 6px; }
+        .result-hero .score-value { font-size: 30px; font-weight: 800; line-height: 1; }
+        .result-hero .score-label { font-size: 12px; opacity: 0.9; margin-top: 6px; }
 
         .breakdown-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         .breakdown-table th { background: var(--dark); color: white; padding: 10px 12px; text-align: left; font-size: 0.85rem; }
@@ -142,8 +142,8 @@
         .breakdown-table tr:last-child td { font-weight: 700; background: var(--bg-secondary); }
         .breakdown-table td.num { text-align: right; }
 
-        .calculator-disclaimer { background: rgba(251,191,36,0.1); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 12px; margin: 20px 0 30px; font-size: 0.92rem; color: var(--text-secondary); }
-        .validation-banner { background: rgba(239,68,68,0.1); border-left: 5px solid var(--danger); padding: 14px 18px; border-radius: 12px; margin: 0 0 20px; font-size: 0.9rem; color: #7f1d1d; }
+        .calculator-disclaimer { background: rgba(251,191,36,0.1); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 12px; margin: 20px 0 30px; font-size: 12.5px; color: var(--text-secondary); }
+        .validation-banner { background: rgba(239,68,68,0.1); border-left: 5px solid var(--danger); padding: 14px 18px; border-radius: 12px; margin: 0 0 20px; font-size: 12.5px; color: #7f1d1d; }
         .validation-banner ul { margin: 8px 0 0 20px; }
 
         .result-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
@@ -161,8 +161,8 @@
             gap: 10px; align-items: end; margin-bottom: 16px; padding: 16px;
             background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-color);
         }
-        .tree-field label { display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
-        .tree-field select, .tree-field input { width: 100%; padding: 9px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.85rem; background: white; }
+        .tree-field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+        .tree-field select, .tree-field input { width: 100%; padding: 9px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 17px; font-weight: 700; background: white; }
         .tree-field select:focus, .tree-field input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
         .remove-tree-btn { background: rgba(239,68,68,0.1); color: var(--danger); border: none; width: 38px; height: 38px; border-radius: var(--radius-sm); cursor: pointer; }
         .remove-tree-btn:disabled { opacity: 0.35; cursor: not-allowed; }
@@ -182,12 +182,15 @@
 
         .article-container { max-width: 900px; margin: 30px auto; padding: 30px 20px; background: var(--bg-primary); border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid var(--border-color); }
         .article-header { text-align: center; margin-bottom: 40px; padding: 30px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 24px; color: white; }
-        .article-header h1 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); color: white; line-height: 1.3; }
-        .article-content h2 { font-size: 1.7rem; color: var(--dark); margin: 36px 0 18px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
-        .article-content h3 { font-size: 1.25rem; color: var(--dark-light); margin: 26px 0 12px; }
-        .article-content p { margin-bottom: 18px; color: var(--text-secondary); line-height: 1.7; }
+        .article-header h1 { font-size: 27px; color: white; line-height: 1.3; }
+        .article-content h2 { font-size: 24px; color: var(--dark); margin: 36px 0 18px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .article-content h3 { font-size: 19px; color: var(--dark-light); margin: 26px 0 12px; }
+        .article-content p { margin-bottom: 18px; color: var(--text-secondary); line-height: 1.7; font-size: 16px; }
         .article-content ul, .article-content ol { margin-left: 26px; margin-bottom: 18px; }
-        .article-content li { margin-bottom: 8px; }
+        .article-content li { margin-bottom: 8px; font-size: 16px; }
+        .article-content a { color: var(--primary); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(139,92,246,0.4); text-underline-offset: 2px; transition: color 0.2s; }
+        .article-content a:hover { color: var(--primary-dark); }
+        .article-content a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
         .cost-table { overflow-x: auto; margin: 26px 0; background: var(--bg-primary); border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
         .cost-table table { width: 100%; border-collapse: collapse; min-width: 500px; }
@@ -207,11 +210,12 @@
         .faq-section { background: var(--bg-primary); border-radius: 20px; padding: 26px; margin: 40px 0; border: 1px solid var(--border-color); }
         .faq-item { border-bottom: 1px solid var(--border-color); padding: 18px 0; }
         .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-weight: 700; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; font-size: 1rem; font-family: inherit; text-align: left; padding: 0; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; font-family: inherit; text-align: left; padding: 0; transition: color 0.2s; }
+        .faq-question:hover { color: var(--primary); }
         .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 4px; border-radius: 4px; }
         .faq-question i { transition: transform 0.2s; color: var(--gray); }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
-        .faq-answer { color: var(--text-secondary); display: none; padding-top: 10px; }
+        .faq-answer { color: var(--text-secondary); font-size: 15px; display: none; padding-top: 10px; }
         .faq-item.active .faq-answer { display: block; }
 
         .related-links { background: var(--bg-secondary); border-radius: 20px; padding: 26px; margin: 26px 0; text-align: center; border: 1px solid var(--border-color); }
@@ -224,6 +228,11 @@
             .container { padding: 0 15px; }
             .tree-row { grid-template-columns: 1fr 1fr; }
             .calculator-box, .result-box { padding: 20px; }
+            .calc-main-header h2 { font-size: 19px; }
+            .article-header h1 { font-size: 21px; }
+            .article-content h2 { font-size: 20px; }
+            .mode-tab { font-size: 12px; }
+            .result-hero .score-value { font-size: 24px; }
         }
         html { overflow-x: hidden; }
     </style>
