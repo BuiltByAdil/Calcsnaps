@@ -97,15 +97,15 @@
         .skip-link { position: absolute; top: -40px; left: 0; background: var(--primary); color: white; padding: 8px; z-index: 100; text-decoration: none; }
         .skip-link:focus { top: 0; }
         .calc-main-header { text-align: center; margin: 20px auto 40px auto; padding: 30px; max-width: 900px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-bottom: 3px solid var(--secondary); }
-        .calc-main-header h2 { color: white; font-size: clamp(1.8rem, 4vw, 2.2rem); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+        .calc-main-header h2 { color: white; font-size: 25px; margin-bottom: 10px; display: flex; align-items: center; justify-content: center; gap: 12px; }
         .calc-main-header p { color: var(--gray); font-size: 1.1rem; max-width: 800px; margin: 0 auto; }
         .preset-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 24px; }
-        .preset-chip { padding: 10px 18px; border-radius: 60px; border: 2px solid var(--border-color); background: white; color: var(--text-primary); font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .preset-chip { padding: 10px 18px; border-radius: 60px; border: 2px solid var(--border-color); background: white; color: var(--text-primary); font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
         .preset-chip:hover { border-color: var(--primary-light); }
         .preset-chip.active { background: var(--primary); border-color: var(--primary); color: white; }
         .preset-chip:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
         .mode-tabs { display: flex; gap: 8px; margin-bottom: 24px; background: var(--bg-secondary); padding: 6px; border-radius: 60px; border: 1px solid var(--border-color); }
-        .mode-tab { flex: 1; padding: 12px; border: none; background: transparent; border-radius: 50px; font-weight: 600; font-size: 0.95rem; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .mode-tab { flex: 1; padding: 12px; border: none; background: transparent; border-radius: 50px; font-weight: 600; font-size: 13.5px; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
         .mode-tab.active { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
         .mode-tab:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
         .mode-panel { display: none; }
@@ -153,8 +153,8 @@
         }
         .whatif-note.positive, .target-note.positive { background: rgba(16,185,129,0.1); border-left: 4px solid var(--success); }
         .whatif-note.negative, .target-note.negative { background: rgba(239,68,68,0.1); border-left: 4px solid var(--danger); }
-        .section-field label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
-        .section-field input { width: 100%; padding: 10px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; background: white; color: var(--text-primary); }
+        .section-field label { display: block; font-size: 12.5px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+        .section-field input { width: 100%; padding: 10px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 17px; font-weight: 700; background: white; color: var(--text-primary); }
         .section-field input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
         .remove-section-btn { background: rgba(239,68,68,0.1); color: var(--danger); border: none; width: 38px; height: 38px; border-radius: var(--radius-sm); cursor: pointer; font-size: 1rem; }
         .remove-section-btn:focus-visible { outline: 2px solid var(--danger); outline-offset: 2px; }
@@ -166,12 +166,12 @@
         .btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
         .btn:hover { transform: translateY(-2px); box-shadow: 0 7px 14px rgba(139,92,246,0.3); }
         .result-hero { text-align: center; padding: 24px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: var(--radius-lg); color: white; margin-bottom: 24px; }
-        .result-hero .score-value { font-size: 3rem; font-weight: 800; line-height: 1; }
-        .result-hero .score-label { font-size: 0.95rem; opacity: 0.9; margin-top: 6px; }
+        .result-hero .score-value { font-size: 30px; font-weight: 800; line-height: 1; }
+        .result-hero .score-label { font-size: 12px; opacity: 0.9; margin-top: 6px; }
         .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 14px; margin-bottom: 24px; }
         .stat-card { background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 16px; text-align: center; }
-        .stat-card .stat-value { font-size: 1.4rem; font-weight: 700; color: var(--dark); }
-        .stat-card .stat-label { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
+        .stat-card .stat-value { font-size: 20px; font-weight: 700; color: var(--dark); }
+        .stat-card .stat-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
         .breakdown-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
         .breakdown-table th { background: var(--dark); color: white; padding: 10px 12px; text-align: left; font-size: 0.85rem; }
         .breakdown-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-color); font-size: 0.9rem; }
@@ -188,18 +188,21 @@
         .compare-verdict.win-b { background: rgba(139,92,246,0.15); color: var(--primary-dark); }
         .compare-verdict.tie { background: rgba(148,163,184,0.15); color: var(--text-secondary); }
         .input-group { margin-bottom: 18px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
-        .input-group input { width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 1rem; background: var(--bg-secondary); }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 12.5px; }
+        .input-group input { width: 100%; padding: 12px; border: 2px solid var(--border-color); border-radius: var(--radius-sm); font-size: 17px; font-weight: 700; background: var(--bg-secondary); }
         .input-group input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
-        .calculator-disclaimer { background: rgba(251,191,36,0.1); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 12px; margin: 20px 0 30px; font-size: 0.92rem; color: var(--text-secondary); }
+        .calculator-disclaimer { background: rgba(251,191,36,0.1); border-left: 5px solid var(--secondary); padding: 15px 20px; border-radius: 12px; margin: 20px 0 30px; font-size: 12.5px; color: var(--text-secondary); }
         .article-container { max-width: 900px; margin: 30px auto; padding: 30px 20px; background: var(--bg-primary); border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); border: 1px solid var(--border-color); }
         .article-header { text-align: center; margin-bottom: 40px; padding: 30px; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 24px; color: white; }
-        .article-header h1 { font-size: clamp(1.7rem, 4.5vw, 2.3rem); color: white; line-height: 1.3; }
-        .article-content h2 { font-size: 1.7rem; color: var(--dark); margin: 36px 0 18px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
-        .article-content h3 { font-size: 1.25rem; color: var(--dark-light); margin: 26px 0 12px; }
-        .article-content p { margin-bottom: 18px; color: var(--text-secondary); line-height: 1.7; }
+        .article-header h1 { font-size: 27px; color: white; line-height: 1.3; }
+        .article-content h2 { font-size: 24px; color: var(--dark); margin: 36px 0 18px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); }
+        .article-content h3 { font-size: 19px; color: var(--dark-light); margin: 26px 0 12px; }
+        .article-content p { margin-bottom: 18px; color: var(--text-secondary); line-height: 1.7; font-size: 16px; }
         .article-content ul, .article-content ol { margin-left: 26px; margin-bottom: 18px; }
-        .article-content li { margin-bottom: 8px; }
+        .article-content li { margin-bottom: 8px; font-size: 16px; }
+        .article-content a { color: var(--primary); font-weight: 600; text-decoration: underline; text-decoration-color: rgba(139,92,246,0.4); text-underline-offset: 2px; transition: color 0.2s; }
+        .article-content a:hover { color: var(--primary-dark); }
+        .article-content a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
         .exam-table { overflow-x: auto; margin: 26px 0; background: var(--bg-primary); border-radius: 16px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
         .exam-table table { width: 100%; border-collapse: collapse; min-width: 500px; }
         .exam-table th { background: var(--dark); color: white; font-weight: 600; padding: 14px; text-align: left; }
@@ -215,11 +218,24 @@
         .faq-section { background: var(--bg-primary); border-radius: 20px; padding: 26px; margin: 40px 0; border: 1px solid var(--border-color); }
         .faq-item { border-bottom: 1px solid var(--border-color); padding: 18px 0; }
         .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-weight: 700; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.2s; }
+        .faq-question:hover { color: var(--primary); }
         .faq-question i { transition: transform 0.2s; color: var(--gray); }
         .faq-item.active .faq-question i { transform: rotate(180deg); }
-        .faq-answer { color: var(--text-secondary); display: none; padding-top: 10px; }
+        .faq-answer { color: var(--text-secondary); font-size: 15px; display: none; padding-top: 10px; }
         .faq-item.active .faq-answer { display: block; }
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 26px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        .calc-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4); }
+        .calc-cta a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; display: block; }
+        .calc-cta a span { font-size: 22px; margin-right: 8px; }
         .related-links { background: var(--bg-secondary); border-radius: 20px; padding: 26px; margin: 26px 0; text-align: center; border: 1px solid var(--border-color); }
         .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 16px; }
         .related-grid a { color: var(--primary); text-decoration: none; padding: 10px 20px; background: var(--bg-primary); border-radius: 40px; font-size: 14px; font-weight: 500; }
@@ -230,6 +246,12 @@
             .section-row { grid-template-columns: 1fr 1fr; }
             .compare-grid { grid-template-columns: 1fr; }
             .calculator-box, .result-box { padding: 20px; }
+            .calc-main-header h2 { font-size: 19px; }
+            .article-header h1 { font-size: 21px; }
+            .article-content h2 { font-size: 20px; }
+            .mode-tab { font-size: 12px; }
+            .result-hero .score-value { font-size: 24px; }
+            .stat-card .stat-value { font-size: 15px; }
         }
         .stat-grid { grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); }
         html { overflow-x: hidden; }
@@ -528,7 +550,7 @@
                 </ul>
 
                 <h2 id="exam-patterns">Negative Marking by Exam</h2>
-                <p>Marking schemes are set by each exam's conducting body and can change between exam cycles — always confirm the current ratio from the official notification for the year you're appearing. As of recent cycles, the commonly used patterns are:</p>
+                <p>Marking schemes are set by each exam's conducting body and can change between exam cycles — always confirm the current ratio from the <a href="https://neet.nta.nic.in" target="_blank" rel="noopener noreferrer">official NTA NEET notification</a> or the <a href="https://upsc.gov.in" target="_blank" rel="noopener noreferrer">UPSC official website</a> for the year you're appearing. As of recent cycles, the commonly used patterns are:</p>
 
                 <div class="exam-table">
                     <table>
@@ -590,6 +612,12 @@
                         <div class="faq-question">Does attempting more questions always give a higher score?<i class="fas fa-chevron-down"></i></div>
                         <div class="faq-answer">No. Under negative marking, attempting more questions only helps if your accuracy on those extra attempts stays above the break-even threshold for that exam. Below that threshold, attempting more questions can lower your score compared to leaving them blank.</div>
                     </div>
+                </div>
+
+                <div class="calc-cta">
+                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                        <span>📝</span> Try Our Negative Marking Calculator → <span>⚡</span>
+                    </a>
                 </div>
 
                 <div class="related-links">
