@@ -218,6 +218,18 @@
         .faq-answer { color: var(--text-secondary); font-size: 15px; display: none; padding-top: 10px; }
         .faq-item.active .faq-answer { display: block; }
 
+        .calc-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 60px;
+            padding: 18px 32px;
+            text-align: center;
+            margin: 40px 0 26px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        .calc-cta:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4); }
+        .calc-cta a { color: white; text-decoration: none; font-weight: bold; font-size: 18px; display: block; }
+        .calc-cta a span { font-size: 22px; margin-right: 8px; }
         .related-links { background: var(--bg-secondary); border-radius: 20px; padding: 26px; margin: 26px 0; text-align: center; border: 1px solid var(--border-color); }
         .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 16px; }
         .related-grid a { color: var(--primary); text-decoration: none; padding: 10px 20px; background: var(--bg-primary); border-radius: 40px; font-size: 14px; font-weight: 500; }
@@ -620,6 +632,12 @@
                         <button type="button" class="faq-question" id="faqq-6" aria-expanded="false" aria-controls="faqa-6">Do I need a permit to remove a tree?<i class="fas fa-chevron-down" aria-hidden="true"></i></button>
                         <div class="faq-answer" id="faqa-6" role="region" aria-labelledby="faqq-6">It depends on your city or county — many municipalities require a permit for removing trees above a certain trunk diameter, for protected or heritage species, or for trees in designated conservation zones. Requirements vary widely by location, so check with your local planning or public works department before removal.</div>
                     </div>
+                </div>
+
+                <div class="calc-cta">
+                    <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                        <span>🌳</span> Try Our Tree Removal Cost Calculator → <span>⚡</span>
+                    </a>
                 </div>
 
                 <div class="related-links">
