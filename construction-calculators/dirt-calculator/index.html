@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Dirt Calculator - Cubic Yards, Tons & Truckloads | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free dirt calculator for cubic yards, tons, and truckloads. Combine rectangular and circular areas, add an ordering allowance, and estimate cost instantly. No sign-up.">
+    <meta name="keywords" content="dirt calculator, dirt volume calculator, fill dirt calculator, calculate yards of dirt, dirt calculator yards, dirt calculator cubic yards, dirt cubic yard calculator, dirt yardage calculator, estimate dirt yardage, calculate cubic yards of dirt, how much dirt do I need">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/dirt-calculator">
+
+    <meta property="og:title" content="Dirt Calculator - Cubic Yards, Tons & Truckloads | CalcSnaps">
+    <meta property="og:description" content="Free dirt calculator for cubic yards, tons, and truckloads. Combine rectangular and circular areas, add an ordering allowance, and estimate cost instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/dirt-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Dirt Calculator",
+        "description": "Calculate cubic yards, tons, and truckloads of dirt needed for rectangular and circular areas, with adjustable material density and an ordering allowance for settling",
+        "url": "https://calcsnaps.com/construction-calculators/dirt-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Dirt Calculator Guide: Cubic Yards, Tons, and Truckloads Explained",
+        "description": "How to calculate dirt volume, weight, and truckloads for grading, backfill, and landscaping projects, including a worked example and formula breakdown.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/dirt-calculator" },
+        "datePublished": "2026-09-14",
+        "dateModified": "2026-09-14"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many cubic yards of dirt do I need for my yard?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Multiply the length and width of your area in feet to get the square footage, multiply that by your fill depth converted to feet, then divide by 27 to convert cubic feet into cubic yards. The calculator above does this automatically and lets you total multiple areas at once." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a cubic yard of dirt weigh in tons?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on the material and its moisture content, but a commonly used planning figure for fill dirt is roughly 1.2 tons per cubic yard, about 2,400 pounds. Topsoil tends to be lighter when loose, while compacted fill is heavier. Soil density genuinely varies with moisture, particle size, and organic content, so treat any single figure as a planning estimate and confirm the exact number with your supplier for large orders." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between topsoil and fill dirt?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Topsoil is the nutrient-rich surface layer meant for planting. It contains more organic matter and is screened for growing plants. Fill dirt is subsoil with little to no organic matter, used to raise grade, fill holes, or backfill, and it is denser and cheaper than topsoil. Select fill is a further engineered version of fill dirt, screened and graded for structural or drainage-sensitive uses like foundation backfill." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much extra dirt should I order as an allowance for settling?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A common range is 10 to 15 percent extra for smaller projects and up to 20 to 30 percent for larger grading jobs, since loose delivered dirt settles once it is spread and compacted. This is a planning buffer, not a precise engineering compaction calculation, so the exact amount still depends on your soil type and compaction method, and the calculator's allowance field is adjustable rather than fixed." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many dump truck loads of dirt do I need?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on the truck. A standard full-size dump truck commonly carries around 10 cubic yards per load, while a smaller pickup truck load is closer to 2 to 3 cubic yards. The calculator's truck capacity field defaults to 10 cubic yards but can be adjusted to match your vehicle or supplier's load size." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Dirt Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; transition: border-color 0.2s, background 0.2s; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .area-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .area-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .area-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-area-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-area-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-area-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-area-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-area-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-area-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-area-btn:focus-visible { outline: 3px solid var(--primary); }
+
+        .info-tip { background: #fef9e7; border-radius: 16px; padding: 14px 18px; font-size: 13.5px; color: #876b1a; display: flex; align-items: flex-start; gap: 10px; margin: 16px 0; border: 1px solid #ffe6a6; }
+        .info-tip i { font-style: normal; background: #ffc107; color: #1e1e1e; width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 8px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-truck-loading"></i> Dirt Calculator</h1>
+                    <p>Cubic yards · Tons · Truckloads for rectangular and circular areas</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Confirm exact density and pricing with your supplier before placing a large order.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Project Areas</div>
+                    <div id="areasContainer"></div>
+                    <button class="add-area-btn" id="addAreaBtn" type="button"><i class="fas fa-plus"></i> Add Another Area (up to 4)</button>
+
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Material</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Type</span>
+                        <div class="toggle-switch" id="materialToggle" role="radiogroup" aria-label="Material type">
+                            <button type="button" class="toggle-option" data-material="topsoil" role="radio" aria-checked="false">Topsoil</button>
+                            <button type="button" class="toggle-option active" data-material="filldirt" role="radio" aria-checked="true">Fill Dirt</button>
+                            <button type="button" class="toggle-option" data-material="compacted" role="radio" aria-checked="false">Compacted Fill</button>
+                            <button type="button" class="toggle-option" data-material="custom" role="radio" aria-checked="false">Custom</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="customDensityGroup" style="display:none;">
+                        <div class="input-group">
+                            <label for="customDensity">Custom density</label>
+                            <div class="row"><input type="number" id="customDensity" value="2410" min="500" max="4000" step="10"><span class="unit">lb/yd³</span></div>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show" id="densityHint" style="display:none;">Supplier-provided bulk density is more accurate for purchasing than a generic estimate. Use it here if you have it.</div>
+
+                    <div class="section-title"><i class="fas fa-compress-arrows-alt"></i> Ordering Allowance, Truck & Cost</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="cushionPct">Ordering allowance</label>
+                            <div class="row"><input type="number" id="cushionPct" value="15" min="0" max="50" step="1"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="truckCapacity">Truck capacity</label>
+                            <div class="row"><input type="number" id="truckCapacity" value="10" min="1" max="30" step="0.5"><span class="unit">cu yd</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="priceValue">Price (optional)</label>
+                            <div class="row"><input type="number" id="priceValue" placeholder="0" min="0" step="0.01"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="priceMode">Per</label>
+                            <select id="priceMode">
+                                <option value="yard">Cubic Yard</option>
+                                <option value="ton">Ton</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show">This is a planning buffer for settling and delivery shortfall, not an engineering compaction calculation. Adjust it based on your own project and soil conditions.</div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Dirt Needed</span>
+                            <span class="amount" id="yardsResult">0 cu yd</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Cubic Feet</div><div class="result-value small" id="cubicFeetResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Weight</div><div class="result-value small" id="tonsResult">0 tons</div></div>
+                            <div class="result-card"><div class="result-label">Truckloads</div><div class="result-value small" id="truckloadsResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Est. Cost</div><div class="result-value small" id="costResult">-</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table">
+                                <thead><tr><th>Area</th><th>Shape</th><th>Footprint</th><th>Volume</th></tr></thead>
+                                <tbody id="breakdownBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="status-note status-neutral show" id="bagsNote"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Dirt Calculator Guide: Cubic Yards, Tons, and Truckloads Explained</h2>
+                    <p>How to turn length, width, and depth into an order-ready number, for rectangular and circular areas alike</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Dirt Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Dirt Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Dirt Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#units">6. Units and Conversions</a></div>
+                            <div class="toc-item"><a href="#tips">7. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">8. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">9. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Figuring out how much dirt to order for a grading job, a raised bed, or a backyard low spot usually turns into guesswork. The delivery truck shows up short, or with two yards too many.</p>
+                    <p>This dirt calculator solves that by turning your project's length, width, and depth, or diameter for round areas, into the numbers that actually matter: cubic yards, tons, and how many truckloads you will need. Enter up to four separate areas, rectangular, circular, or a mix of both, pick the material you are working with, and the calculator above handles the rest, including an ordering allowance so the number you order matches what you actually need on the ground.</p>
+
+                    <h2 id="how-works">1. How the Dirt Calculator Works</h2>
+                    <p>The calculator starts with the footprint of each area you are filling: length and width for a rectangle, or diameter for a circle, plus how deep you need the fill to be. It converts your depth from inches to feet, multiplies it by the footprint, and gets a raw volume in cubic feet.</p>
+                    <p>It then adds an ordering allowance, since loose dirt settles once it is spread and tamped. This allowance is a planning buffer, not a precise engineering compaction calculation. That adjusted volume becomes cubic yards, the unit most suppliers sell by, and then tons using the density of the material you select.</p>
+                    <p>If your project spans several areas, say a low spot in the backyard plus a circular tree well, add each one as its own row. The calculator totals them automatically instead of making you add up several results by hand.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions:</strong>
+                        <p style="margin: 10px 0 0;">Each area is treated as a simple rectangle or circle. Irregular shapes should be split into a few of these simpler shapes and entered as separate rows. Density and compaction figures are typical starting points, not guaranteed values for your exact material.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Dirt Calculator</h2>
+                    <ol>
+                        <li>Choose a shape for your first area, Rectangle or Circle.</li>
+                        <li>Enter the length and width in feet, or the diameter in feet for a circle.</li>
+                        <li>Enter the fill depth in inches.</li>
+                        <li>Select your material, or enter a custom density if your supplier has given you one.</li>
+                        <li>Adjust the ordering allowance if you want a different buffer than the 15% default.</li>
+                        <li>Add another area if your project has more than one section.</li>
+                        <li>Optionally enter a price per cubic yard or per ton to see an estimated cost.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Dirt Calculator Formula</h2>
+                    <div class="pro-tip">
+                        <code>Rectangle volume (cu ft) = Length x Width x (Depth in inches / 12)</code>
+                        <code>Circle volume (cu ft) = Pi x (Diameter / 2)² x (Depth in inches / 12)</code>
+                        <p style="margin: 10px 0 0;">Length and Width are the footprint of a rectangular area in feet, Diameter is the distance across a circular area in feet, and Depth is the fill thickness in inches.</p>
+                    </div>
+                    <p>Once every area's raw volume is added together, the ordering allowance and unit conversions bring it to an order-ready number:</p>
+                    <div class="pro-tip">
+                        <code>Total loose volume = Sum of all area volumes x (1 + ordering allowance %)</code>
+                        <code>Cubic yards = Total loose volume (cu ft) / 27</code>
+                        <code>Tons = Cubic yards x density (lb per cu yd) / 2,000</code>
+                    </div>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Using the calculator's defaults: a 20 by 15 ft rectangle at 4 inches deep, plus a 6 ft diameter circle at 6 inches deep.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Area</th><th>Footprint</th><th>Volume</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rectangle, 20 x 15 ft, 4 in deep</td><td>300 sq ft</td><td>100 cu ft</td></tr>
+                            <tr><td>Circle, 6 ft diameter, 6 in deep</td><td>about 28.27 sq ft</td><td>about 14.14 cu ft</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Combined raw volume</strong> = 100 + 14.14 = 114.14 cubic feet. Add a 15% ordering allowance: 114.14 x 1.15 = about 131.26 cubic feet.</p>
+                    <p><strong>Convert to cubic yards:</strong> 131.26 / 27 = about 4.86 cubic yards, which most suppliers round up to 5 for delivery. At Fill Dirt's default density of 2,410 lb per cubic yard, that is about 5.9 tons, or 1 truckload at 10 cubic yards per load. At $45 per cubic yard, that comes to roughly $219.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The cubic yard figure is your primary ordering number, since it is what most suppliers quote and deliver by. The tons figure matters when a supplier bills by weight, or when you need to know what a delivery vehicle can carry.</p>
+                    <p>Both are estimates, not exact measurements. Real soil and fill dirt density varies with moisture content, particle size, and how much organic matter or rock is mixed in, so two loads described as fill dirt from different suppliers can weigh noticeably different amounts for the same volume. According to <a href="https://www.nrcs.usda.gov/sites/default/files/2022-10/nrcs142p2_051591.pdf" target="_blank" rel="noopener">USDA NRCS guidance on soil bulk density</a>, natural soil density commonly falls between roughly 1.0 and 1.4 grams per cubic centimeter, and can run higher once compacted. That variability is part of why this calculator lets you pick a material or enter a custom density instead of relying on one fixed number.</p>
+                    <p>Treat the result as a strong planning number, and confirm the exact density with your supplier before finalizing a large order. When in doubt, round up slightly rather than down. A small surplus of dirt costs far less than a second delivery.</p>
+
+                    <h2 id="units">6. Units and Conversions</h2>
+                    <ul>
+                        <li>1 cubic yard equals 27 cubic feet (3 ft x 3 ft x 3 ft). This is the conversion the calculator relies on most.</li>
+                        <li>1 cubic yard of fill dirt is roughly 1.0 to 1.35 tons, depending on moisture and compaction. The calculator defaults to about 1.2 tons per cubic yard for Fill Dirt.</li>
+                        <li>Depth is almost always measured in inches, while footprint is measured in feet. Mixing these up is the single most common calculation mistake for this kind of project.</li>
+                    </ul>
+
+                    <h2 id="tips">7. Practical Tips</h2>
+                    <ul>
+                        <li>Measure depth as the actual thickness of fill you need, not the total depth of the hole or bed if part of it is already filled.</li>
+                        <li>Keep footprint in feet and depth in inches, and let the calculator handle the conversion.</li>
+                        <li>Add 10 to 15% for a small project, and closer to 20 to 30% for a large grading job.</li>
+                        <li>Ask your supplier whether their price is per cubic yard or per ton, and use the matching output.</li>
+                        <li>For odd shapes, split the space into a few rectangles and circles rather than averaging one set of dimensions.</li>
+                    </ul>
+
+                    <h2 id="mistakes">8. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Mixing units:</strong> entering depth in feet instead of inches can throw off the entire result by a factor of 12.</li>
+                        <li><strong>Confusing square measurements with cubic ones:</strong> square footage tells you nothing about volume until it is multiplied by depth.</li>
+                        <li><strong>Skipping the ordering allowance:</strong> ordering exactly the calculated volume often leads to falling short once the material settles.</li>
+                        <li><strong>Assuming all dirt has the same density:</strong> topsoil, fill dirt, and compacted fill genuinely weigh different amounts per cubic yard.</li>
+                        <li><strong>Rounding too early:</strong> round only the final cubic yard or ton figure, not the inputs along the way.</li>
+                    </ul>
+
+                    <h2 id="related">9. Related Calculations and Use Cases</h2>
+                    <p>Dirt and fill calculations often overlap with other landscaping work. If your project also involves finishing the surface with decorative stone or edging, our <a href="https://calcsnaps.com/calculators/river-rock-calculator">River Rock Calculator</a> can estimate that material using the same length, width, and depth approach.</p>
+                    <p>Common real-world use cases include filling a low spot before reseeding a lawn, backfilling around a new foundation, building up a raised garden bed, leveling a yard before laying sod, and filling in a decommissioned pool excavation.</p>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="dirtfaq1-answer">How many cubic yards of dirt do I need for my yard?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="dirtfaq1-answer"><p>Multiply the length and width of your area in feet to get the square footage, multiply that by your fill depth converted to feet, then divide by 27 to convert cubic feet into cubic yards. The calculator above does this automatically and lets you total multiple areas at once.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="dirtfaq2-answer">How much does a cubic yard of dirt weigh in tons?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="dirtfaq2-answer"><p>It depends on the material and its moisture content, but a commonly used planning figure for fill dirt is roughly 1.2 tons per cubic yard, about 2,400 pounds. Topsoil tends to be lighter when loose, while compacted fill is heavier. Soil density genuinely varies with moisture, particle size, and organic content, so treat any single figure as a planning estimate and confirm the exact number with your supplier for large orders.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="dirtfaq3-answer">What is the difference between topsoil and fill dirt?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="dirtfaq3-answer"><p>Topsoil is the nutrient-rich surface layer meant for planting. It contains more organic matter and is screened for growing plants. Fill dirt is subsoil with little to no organic matter, used to raise grade, fill holes, or backfill, and it is denser and cheaper than topsoil. Select fill is a further engineered version of fill dirt, screened and graded for structural or drainage-sensitive uses like foundation backfill.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="dirtfaq4-answer">How much extra dirt should I order as an allowance for settling?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="dirtfaq4-answer"><p>A common range is 10 to 15 percent extra for smaller projects and up to 20 to 30 percent for larger grading jobs, since loose delivered dirt settles once it is spread and compacted. This is a planning buffer, not a precise engineering compaction calculation, so the exact amount still depends on your soil type and compaction method, and the calculator's allowance field is adjustable rather than fixed.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="dirtfaq5-answer">How many dump truck loads of dirt do I need?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="dirtfaq5-answer"><p>It depends on the truck. A standard full-size dump truck commonly carries around 10 cubic yards per load, while a smaller pickup truck load is closer to 2 to 3 cubic yards. The calculator's truck capacity field defaults to 10 cubic yards but can be adjusted to match your vehicle or supplier's load size.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Confirm exact density, ordering allowance, and pricing with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📐</span> Try the Dirt Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📐 Dirt Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/river-rock-calculator">🪨 River Rock Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/soffit-calculator">🏠 Soffit & Ventilation Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/tree-removal-calculator">🌳 Tree Removal Cost Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/calculators/river-rock-calculator">River Rock Calculator</a>
+                    <a href="https://calcsnaps.com/calculators/soffit-calculator">Soffit & Ventilation Calculator</a>
+                    <a href="https://calcsnaps.com/calculators/tree-removal-calculator">Tree Removal Cost Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+
+        // Central numeric sanitizer: handles NaN, Infinity, and out-of-range values consistently
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+
+        const DENSITIES = { topsoil: 2050, filldirt: 2410, compacted: 2700 };
+        const DENSITY_MIN = 500, DENSITY_MAX = 4000;
+        const CUSHION_MAX = 50;
+        const TRUCK_MIN = 0.5, TRUCK_MAX = 30;
+        let material = 'filldirt';
+        let areaCount = 0;
+        let areaUid = 0;
+        const maxAreas = 4;
+
+        function makeAreaRow(index, defaults) {
+            const shape = defaults.shape || 'rectangle';
+            const uid = 'area' + (areaUid++);
+            const wrap = document.createElement('div');
+            wrap.className = 'area-card';
+            wrap.dataset.index = index;
+            wrap.innerHTML =
+                '<div class="area-card-header">' +
+                    '<span class="area-card-label">Area ' + (index + 1) + '</span>' +
+                    (index > 0 ? '<button type="button" class="remove-area-btn" data-remove="' + index + '"><i class="fas fa-times"></i> Remove</button>' : '') +
+                '</div>' +
+                '<div class="toggle-switch shape-toggle" role="radiogroup" aria-label="Shape for area ' + (index + 1) + '" style="margin-bottom:14px;">' +
+                    '<button type="button" class="toggle-option ' + (shape === 'rectangle' ? 'active' : '') + '" data-shape="rectangle" role="radio" aria-checked="' + (shape === 'rectangle') + '">Rectangle</button>' +
+                    '<button type="button" class="toggle-option ' + (shape === 'circle' ? 'active' : '') + '" data-shape="circle" role="radio" aria-checked="' + (shape === 'circle') + '">Circle</button>' +
+                '</div>' +
+                '<div class="input-grid" style="margin-bottom:0;">' +
+                    '<div class="input-group rect-field" style="display:' + (shape === 'rectangle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-length">Length</label><div class="row"><input type="number" id="' + uid + '-length" class="length-input" min="0" step="0.1" value="' + (defaults.length != null ? defaults.length : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group rect-field" style="display:' + (shape === 'rectangle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-width">Width</label><div class="row"><input type="number" id="' + uid + '-width" class="width-input" min="0" step="0.1" value="' + (defaults.width != null ? defaults.width : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group circle-field" style="display:' + (shape === 'circle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-diameter">Diameter</label><div class="row"><input type="number" id="' + uid + '-diameter" class="diameter-input" min="0" step="0.1" value="' + (defaults.diameter != null ? defaults.diameter : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group">' +
+                        '<label for="' + uid + '-depth">Depth</label><div class="row"><input type="number" id="' + uid + '-depth" class="depth-input" min="0" step="0.5" value="' + (defaults.depth != null ? defaults.depth : '') + '"><span class="unit">in</span></div>' +
+                    '</div>' +
+                '</div>';
+            return wrap;
+        }
+
+        function addArea(defaults) {
+            if (areaCount >= maxAreas) return;
+            const row = makeAreaRow(areaCount, defaults || {});
+            $('areasContainer').appendChild(row);
+            wireAreaRow(row);
+            areaCount++;
+            $('addAreaBtn').disabled = areaCount >= maxAreas;
+            calculateAll();
+        }
+
+        function wireAreaRow(row) {
+            row.querySelectorAll('.shape-toggle .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const shape = btn.dataset.shape;
+                    row.querySelectorAll('.shape-toggle .toggle-option').forEach(b => {
+                        b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                    });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    row.querySelectorAll('.rect-field').forEach(f => f.style.display = shape === 'rectangle' ? 'block' : 'none');
+                    row.querySelectorAll('.circle-field').forEach(f => f.style.display = shape === 'circle' ? 'block' : 'none');
+                    calculateAll();
+                });
+            });
+            row.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateAll));
+            const removeBtn = row.querySelector('.remove-area-btn');
+            if (removeBtn) {
+                removeBtn.addEventListener('click', () => {
+                    row.remove();
+                    renumberAreas();
+                    calculateAll();
+                });
+            }
+        }
+
+        function renumberAreas() {
+            const rows = $('areasContainer').querySelectorAll('.area-card');
+            areaCount = rows.length;
+            rows.forEach((row, i) => {
+                row.dataset.index = i;
+                row.querySelector('.area-card-label').textContent = 'Area ' + (i + 1);
+            });
+            $('addAreaBtn').disabled = areaCount >= maxAreas;
+        }
+
+        function getRowVolume(row) {
+            const shape = row.querySelector('.shape-toggle .toggle-option.active').dataset.shape;
+            const depth = safeNumber(row.querySelector('.depth-input').value, { min: 0, max: 240 });
+            let footprint = 0, label = '', dims = {};
+            if (shape === 'rectangle') {
+                const l = safeNumber(row.querySelector('.length-input').value, { min: 0, max: 1000 });
+                const w = safeNumber(row.querySelector('.width-input').value, { min: 0, max: 1000 });
+                footprint = l * w;
+                label = l + ' x ' + w + ' ft';
+                dims = { length: l, width: w };
+            } else {
+                const d = safeNumber(row.querySelector('.diameter-input').value, { min: 0, max: 1000 });
+                footprint = Math.PI * Math.pow(d / 2, 2);
+                label = d + ' ft diameter';
+                dims = { diameter: d };
+            }
+            const volume = footprint * (depth / 12);
+            return { shape, footprint, depth, volume, label, dims, valid: footprint > 0 && depth > 0 };
+        }
+
+        function calculateAll() {
+            const rows = Array.from($('areasContainer').querySelectorAll('.area-card'));
+            let rawFt3 = 0;
+            let anyInvalidWithInput = false;
+            const breakdown = [];
+
+            rows.forEach((row, i) => {
+                const r = getRowVolume(row);
+                if (r.valid) {
+                    rawFt3 += r.volume;
+                } else {
+                    const hasSomeInput = Array.from(row.querySelectorAll('input')).some(inp => inp.value !== '');
+                    if (hasSomeInput) anyInvalidWithInput = true;
+                }
+                breakdown.push({ index: i, ...r });
+            });
+
+            const warning = $('warningNote');
+            if (anyInvalidWithInput) {
+                warning.innerHTML = '<i class="fas fa-triangle-exclamation"></i> One or more areas is missing a dimension or depth greater than zero, so that area is not included in the total yet.';
+                warning.classList.add('show');
+            } else {
+                warning.classList.remove('show');
+            }
+
+            const cushion = safeNumber($('cushionPct').value, { min: 0, max: CUSHION_MAX, fallback: 0 });
+            const truckCap = safeNumber($('truckCapacity').value, { min: TRUCK_MIN, max: TRUCK_MAX, fallback: 10 });
+            const density = material === 'custom'
+                ? safeNumber($('customDensity').value, { min: DENSITY_MIN, max: DENSITY_MAX, fallback: 2410 })
+                : DENSITIES[material];
+
+            const looseFt3 = rawFt3 * (1 + cushion / 100);
+            const cubicYards = looseFt3 / 27;
+            const tons = cubicYards * density / 2000;
+            const truckloads = cubicYards > 0 ? Math.ceil(cubicYards / truckCap) : 0;
+            const bags = Math.ceil(looseFt3 / 0.75);
+
+            $('yardsResult').textContent = cubicYards.toFixed(2) + ' cu yd';
+            $('cubicFeetResult').textContent = Math.round(looseFt3);
+            $('tonsResult').textContent = tons.toFixed(2) + ' tons';
+            $('truckloadsResult').textContent = truckloads;
+            $('bagsNote').textContent = cubicYards > 0
+                ? ('Equivalent 0.75 cu ft bags: about ' + bags + ' (a rough reference for small bag-based purchases, not a delivery recommendation).')
+                : 'Enter at least one area above to see bag and delivery estimates.';
+
+            const price = safeNumber($('priceValue').value, { min: 0, max: 1000000, fallback: 0 });
+            const priceMode = $('priceMode').value;
+            if (price > 0 && cubicYards > 0) {
+                const cost = priceMode === 'yard' ? cubicYards * price : tons * price;
+                $('costResult').textContent = '$' + cost.toFixed(2);
+            } else {
+                $('costResult').textContent = '-';
+            }
+
+            const tbody = $('breakdownBody');
+            tbody.innerHTML = '';
+            breakdown.forEach(b => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = '<td>Area ' + (b.index + 1) + '</td>' +
+                    '<td>' + escapeHtml(b.shape.charAt(0).toUpperCase() + b.shape.slice(1)) + '</td>' +
+                    '<td>' + escapeHtml(b.label) + '</td>' +
+                    '<td>' + (b.valid ? Math.round(b.volume) + ' cu ft' : 'incomplete') + '</td>';
+                tbody.appendChild(tr);
+            });
+
+            return { cubicYards, tons, truckloads, cushion, density, breakdown, truckCap };
+        }
+
+        $('addAreaBtn').addEventListener('click', () => addArea({}));
+
+        $('materialToggle').querySelectorAll('.toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                $('materialToggle').querySelectorAll('.toggle-option').forEach(b => {
+                    b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                material = btn.dataset.material;
+                const isCustom = material === 'custom';
+                $('customDensityGroup').style.display = isCustom ? 'grid' : 'none';
+                $('densityHint').style.display = isCustom ? 'block' : 'none';
+                calculateAll();
+            });
+        });
+
+        ['cushionPct', 'truckCapacity', 'priceValue', 'customDensity'].forEach(id => {
+            $(id).addEventListener('input', calculateAll);
+        });
+        $('priceMode').addEventListener('change', calculateAll);
+
+        // ===== COPY / SHARE =====
+        function buildSummary() {
+            const res = calculateAll();
+            return 'Dirt Calculator Result\n' +
+                'Volume needed: ' + res.cubicYards.toFixed(2) + ' cubic yards\n' +
+                'Weight: ' + res.tons.toFixed(2) + ' tons\n' +
+                'Truckloads: ' + res.truckloads + '\n' +
+                'Ordering allowance: ' + res.cushion + '%\n' +
+                'Source: CalcSnaps Dirt Calculator (https://calcsnaps.com/construction-calculators/dirt-calculator)';
+        }
+
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this;
+            const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Dirt Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/dirt-calculator' }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text);
+                const btn = this;
+                const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const res = calculateAll();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            let y = 20;
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Dirt Calculator Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 12;
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Project Areas', 20, y); y += 10;
+            doc.setFontSize(10); doc.setTextColor(0, 0, 0);
+            res.breakdown.forEach(b => {
+                if (y > 265) { doc.addPage(); y = 20; }
+                const shapeLabel = b.shape.charAt(0).toUpperCase() + b.shape.slice(1);
+                doc.text('Area ' + (b.index + 1) + ' (' + shapeLabel + '): ' + b.label + ', ' + b.depth + ' in deep', 25, y);
+                y += 6;
+                doc.setTextColor(100, 100, 100);
+                doc.text(b.valid
+                    ? ('Footprint: ' + b.footprint.toFixed(2) + ' sq ft   Volume: ' + b.volume.toFixed(2) + ' cu ft')
+                    : 'Incomplete - not included in the total', 30, y);
+                doc.setTextColor(0, 0, 0);
+                y += 9;
+            });
+
+            y += 3;
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Settings', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Material: ' + material, 25, y); y += 7;
+            doc.text('Ordering allowance: ' + res.cushion + '% (planning buffer, not an engineering compaction figure)', 25, y); y += 7;
+            doc.text('Density used: ' + res.density + ' lb per cubic yard', 25, y); y += 7;
+            doc.text('Truck capacity: ' + res.truckCap + ' cubic yards per load', 25, y); y += 12;
+
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Results', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Total volume needed: ' + res.cubicYards.toFixed(2) + ' cubic yards', 25, y); y += 7;
+            doc.text('Weight: ' + res.tons.toFixed(2) + ' tons', 25, y); y += 7;
+            doc.text('Estimated truckloads: ' + res.truckloads, 25, y);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Planning estimate only. Confirm exact density, allowance, and pricing with your supplier.', 105, 285, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Dirt Calculator', 105, 292, { align: 'center' });
+
+            doc.save('Dirt_Calculator_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== RESET =====
+        function resetAll() {
+            $('areasContainer').innerHTML = '';
+            areaCount = 0;
+            addArea({ shape: 'rectangle', length: 20, width: 15, depth: 4 });
+            addArea({ shape: 'circle', diameter: 6, depth: 6 });
+
+            $('materialToggle').querySelectorAll('.toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.material === 'filldirt') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            material = 'filldirt';
+            $('customDensityGroup').style.display = 'none';
+            $('densityHint').style.display = 'none';
+            $('customDensity').value = 2410;
+            $('cushionPct').value = 15;
+            $('truckCapacity').value = 10;
+            $('priceValue').value = '';
+            $('priceMode').value = 'yard';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        addArea({ shape: 'rectangle', length: 20, width: 15, depth: 4 });
+        addArea({ shape: 'circle', diameter: 6, depth: 6 });
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
