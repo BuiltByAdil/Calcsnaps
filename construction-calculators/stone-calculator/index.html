@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Stone Calculator – Tons, Cubic Yards & Cost | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free stone calculator: enter dimensions, area, or volume to get tons, cubic yards, bags and cost for crushed stone, river rock, and more. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/stone-calculator">
+
+    <meta property="og:title" content="Stone Calculator – Tons, Cubic Yards & Cost | CalcSnaps">
+    <meta property="og:description" content="Free stone calculator: enter dimensions, area, or volume to get tons, cubic yards, bags and cost for crushed stone, river rock, and more. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/stone-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Stone Calculator",
+        "description": "Calculate how much stone you need in tons and cubic yards from dimensions, area, or volume, with adjustable waste allowance, bag equivalents, and cost estimate for crushed stone, river rock, decorative stone, rip rap, pea gravel, and sand",
+        "url": "https://calcsnaps.com/construction-calculators/stone-calculator",
+        "applicationCategory": "ConstructionApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Stone Calculator: Tons, Cubic Yards & Cost for Any Project",
+        "description": "How to calculate how much stone you need in tons and cubic yards, why the result is shown as a range, a worked example, and how to avoid the most common ordering mistakes.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/stone-calculator" },
+        "datePublished": "2026-09-14",
+        "dateModified": "2026-09-14"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much stone do I need for my project?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Multiply your project's length by width (or use the calculator's circle/triangle option) to get square footage, multiply by your desired depth in feet, then multiply by your stone's density in tons per cubic yard. For a 20x15 ft bed at 3 inches deep with crushed stone, that works out to roughly 4.3-5.2 tons, including a 10% waste allowance." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many square feet does a ton of stone cover?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on depth and material. Using crushed stone as an example (density midpoint 1.55 tons per cubic yard), a ton covers roughly 105 sq ft at a 2-inch decorative depth, about 70 sq ft at 3 inches, about 52 sq ft at 4 inches, and about 35 sq ft at 6 inches. Deeper layers pack more material into the same footprint, so coverage drops as depth increases. Check the Coverage Reference tab for exact figures by material." }
+            },
+            {
+                "@type": "Question",
+                "name": "Is stone sold by the ton or by the cubic yard?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Most bulk suppliers sell by the ton, since weight is easier to verify with a truck scale than loose volume. Smaller retail quantities, especially bagged stone, are often sold by the cubic foot or in fixed bag sizes, commonly 0.5 cubic feet per bag." }
+            },
+            {
+                "@type": "Question",
+                "name": "Why does this calculator show a range instead of one exact number?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Stone density genuinely varies by rock type, moisture content, and how tightly the material is graded, typically by 15-20% within a single named category like crushed stone. Showing a single number would imply false precision; the range gives you a realistic planning bracket that better matches what a supplier will actually quote." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much extra stone should I order for waste?",
+                "acceptedAnswer": { "@type": "Answer", "text": "5-10% is a reasonable default for a flat, regular-shaped project. Sloped sites, irregular or curved beds, and compacted base layers, which lose volume during compaction, typically warrant 15-25% extra to avoid a costly second delivery." }
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Stone Calculator – Tons, Cubic Yards & Cost",
+        "description": "Calculate how much stone you need in tons and cubic yards from dimensions, area, or volume, with cost estimate.",
+        "url": "https://calcsnaps.com/construction-calculators/stone-calculator",
+        "isPartOf": { "@type": "WebSite", "name": "CalcSnaps", "url": "https://calcsnaps.com/" },
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .unit-toggle { display: flex; gap: 12px; padding: 20px 28px 0 28px; }
+        .unit-btn { padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: 500; border: 1px solid #cbd5e1; background: white; color: #1e293b; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .unit-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .unit-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .unit-btn:hover:not(.active) { background: #f1f5f9; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; margin-top: 16px; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 26px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .toggle-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+        .toggle-label { font-weight: 600; font-size: 13.5px; color: var(--dark-light); display: flex; align-items: center; gap: 6px; }
+        .toggle-switch { display: flex; background: var(--light); border: 1px solid #e2e8f0; border-radius: 12px; padding: 4px; gap: 4px; flex-wrap: wrap; }
+        .toggle-option { padding: 8px 16px; border-radius: 8px; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; color: var(--gray-text); transition: all 0.2s; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; }
+
+        .section-title { font-size: 14.5px; font-weight: 700; color: var(--dark); margin: 20px 0 12px; display: flex; align-items: center; gap: 8px; }
+        .section-title i { color: var(--primary); }
+
+        .optional-section { margin: 20px 0 6px; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px; background: var(--light); }
+        .optional-section summary { font-size: 14.5px; font-weight: 700; color: var(--dark); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+        .optional-section summary::-webkit-details-marker { display: none; }
+        .optional-section summary i { color: var(--primary); }
+        .optional-section summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; margin-left: auto; font-size: 12px; color: var(--gray-text); transition: transform 0.2s; }
+        .optional-section[open] summary::after { transform: rotate(180deg); }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 6px; }
+        .input-group label { display: block; font-size: 12.5px; font-weight: 600; color: var(--gray-text); margin-bottom: 6px; }
+        .input-group .row { display: flex; gap: 6px; }
+        .input-group input, .input-group select { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark); background: white; }
+        .input-group select.unit-select { max-width: 82px; flex-shrink: 0; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .clamp-msg { display: none; font-size: 11.5px; color: var(--warning); margin-top: 4px; }
+        .clamp-msg.show { display: block; }
+        .input-group.field-invalid input { border-color: var(--danger); }
+        .input-group .error-msg { display: none; font-size: 11.5px; color: var(--danger); margin-top: 4px; }
+        .input-group.field-invalid .error-msg { display: block; }
+
+        .preset-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 4px; }
+        .preset-btn { padding: 7px 13px; border-radius: 30px; border: 1px solid #cbd5e1; background: white; color: var(--dark-light); font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .preset-btn:hover { background: #f1f5f9; }
+        .preset-btn.active { background: var(--secondary); border-color: var(--secondary); color: var(--dark); }
+
+        .info-tip { display: flex; gap: 10px; background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.2); border-radius: 14px; padding: 14px 16px; margin-top: 14px; font-size: 12.5px; color: var(--dark-light); }
+        .info-tip i { width: 20px; height: 20px; flex-shrink: 0; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 12px; font-weight: 700; }
+
+        .status-note { display: none; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 14px; font-size: 12.5px; margin-top: 14px; line-height: 1.5; }
+        .status-note.show { display: flex; }
+        .status-note-neutral, .status-neutral { background: rgba(139,92,246,0.06); color: var(--dark-light); border: 1px solid rgba(139,92,246,0.2); }
+
+        .results-panel { background: var(--light); border-radius: 20px; padding: 22px; margin-top: 22px; border: 1px solid #e2e8f0; }
+        .total-payment-card { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 16px; padding: 18px 22px; text-align: center; margin-bottom: 16px; }
+        .total-payment-card .label { display: block; font-size: 12px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+        .total-payment-card .amount { display: block; font-size: 28px; font-weight: 800; color: white; margin-top: 4px; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+        .result-card { background: white; border-radius: 14px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 11.5px; color: var(--gray-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+        .result-value { font-size: 19px; font-weight: 700; color: var(--dark); margin-top: 4px; }
+        .result-value.small { font-size: 16px; }
+
+        .coverage-strip { display: flex; gap: 10px; overflow-x: auto; margin-top: 18px; padding-bottom: 4px; }
+        .coverage-chip { flex-shrink: 0; background: white; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px 16px; text-align: center; min-width: 110px; }
+        .coverage-chip .num { font-size: 17px; font-weight: 800; color: var(--primary-text); }
+        .coverage-chip .lbl { font-size: 10.5px; color: var(--gray-text); font-weight: 600; margin-top: 2px; }
+
+        .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 160px; padding: 13px 20px; border-radius: 14px; border: none; font-weight: 700; font-size: 13.5px; cursor: pointer; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary); color: white; transition: all 0.2s; }
+        .action-btn:hover { background: var(--primary-dark); }
+        .action-btn.secondary { background: white; color: var(--dark-light); border: 1px solid #cbd5e1; }
+        .action-btn.secondary:hover { background: #f1f5f9; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+        table.coverage-table { width: 100%; border-collapse: collapse; margin-top: 8px; background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13.5px; }
+        table.coverage-table th { background: var(--dark); color: white; font-weight: 600; padding: 11px 12px; text-align: left; }
+        table.coverage-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; color: var(--gray-text); }
+        table.coverage-table tr:last-child td { border-bottom: none; }
+        table.coverage-table tr.your-row td { background: rgba(139,92,246,0.08); font-weight: 700; color: var(--dark); }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+
+        .formula-box { background: var(--dark); color: #e2e8f0; border-radius: 16px; padding: 20px 24px; margin: 18px 0; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13.5px; line-height: 1.8; overflow-x: auto; }
+        .formula-box .fvar { color: var(--secondary); }
+
+        .example-box { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2); border-radius: 16px; padding: 22px 24px; margin: 22px 0; }
+        .example-box ol { margin-bottom: 0; }
+        .example-box li { color: var(--dark-light); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-mountain"></i> Stone Calculator</h1>
+                    <p>Tons · Cubic Yards · Bags · Cost, for crushed stone, river rock, decorative stone & more</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private — calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> Results use typical planning densities and are shown as a range. Always confirm exact tonnage with your supplier before ordering.</div>
+
+                <div class="unit-toggle" role="radiogroup" aria-label="Unit system">
+                    <button class="unit-btn active" data-unit="imperial" role="radio" aria-checked="true">Imperial</button>
+                    <button class="unit-btn" data-unit="metric" role="radio" aria-checked="false">Metric</button>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="calc" role="tab" aria-selected="true" aria-controls="tab-calc" id="tabbtn-calc" tabindex="0">🧮 Stone Calculator</button>
+                    <button class="tab" data-tab="coverage" role="tab" aria-selected="false" aria-controls="tab-coverage" id="tabbtn-coverage" tabindex="-1">📋 Coverage Reference</button>
+                </div>
+
+                <!-- TAB 1: CALCULATOR -->
+                <div class="tab-content active" id="tab-calc" role="tabpanel" aria-labelledby="tabbtn-calc">
+
+                    <div class="toggle-row">
+                        <span class="toggle-label"><i class="fas fa-ruler-combined"></i> Calculate by</span>
+                        <div class="toggle-switch" id="modeToggle" role="radiogroup" aria-label="Calculation mode">
+                            <button class="toggle-option active" data-mode="dimensions" role="radio" aria-checked="true" tabindex="0">Dimensions</button>
+                            <button class="toggle-option" data-mode="area" role="radio" aria-checked="false" tabindex="-1">Area</button>
+                            <button class="toggle-option" data-mode="volume" role="radio" aria-checked="false" tabindex="-1">Volume</button>
+                            <button class="toggle-option" data-mode="tons" role="radio" aria-checked="false" tabindex="-1">I Have Tons</button>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row" id="shapeRow">
+                        <span class="toggle-label"><i class="fas fa-shapes"></i> Shape</span>
+                        <div class="toggle-switch" id="shapeToggle" role="radiogroup" aria-label="Project shape">
+                            <button class="toggle-option active" data-shape="rect" role="radio" aria-checked="true" tabindex="0">Rectangle</button>
+                            <button class="toggle-option" data-shape="circle" role="radio" aria-checked="false" tabindex="-1">Circle</button>
+                            <button class="toggle-option" data-shape="triangle" role="radio" aria-checked="false" tabindex="-1">Triangle</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-pen-to-square"></i> Project Measurements</div>
+                    <div class="input-grid" id="dimensionInputs"></div>
+
+                    <div id="depthBlock">
+                        <div class="section-title"><i class="fas fa-arrows-up-down"></i> <span id="depthBlockLabel">Depth</span></div>
+                        <div class="input-grid" id="depthInputGrid"></div>
+                        <div class="preset-row" id="depthPresets"></div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Material</div>
+                    <div class="input-grid">
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="materialSelect">Stone type</label>
+                            <select id="materialSelect" aria-label="Stone material">
+                                <option value="crushed" selected>Crushed Stone (3/4" - 2")</option>
+                                <option value="s57">#57 Stone (3/4")</option>
+                                <option value="s67">#67 Stone (3/4" - fine)</option>
+                                <option value="crusherrun">Crusher Run</option>
+                                <option value="limestone">Crushed Limestone</option>
+                                <option value="stonedust">Stone Dust (Screenings)</option>
+                                <option value="river">River Rock</option>
+                                <option value="decorative">Decorative / Landscape Stone</option>
+                                <option value="riprap">Rip Rap (6" - 9")</option>
+                                <option value="peagravel">Pea Gravel</option>
+                                <option value="sand">Sand</option>
+                                <option value="custom">Custom Density</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="customDensityRow" style="display:none;">
+                        <div class="input-group">
+                            <label for="customDensity">Custom density (tons per cu yd)</label>
+                            <div class="row"><input type="number" id="customDensity" value="1.5" step="0.05" min="0.3" max="3" aria-label="Custom density in tons per cubic yard"></div>
+                            <span class="error-msg">Enter a density greater than 0</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-percent"></i> Waste / Overage Allowance</div>
+                    <div class="input-grid">
+                        <div class="input-group" id="wasteGroup">
+                            <label for="wastePct">Extra to order (%)</label>
+                            <div class="row"><input type="number" id="wastePct" value="10" step="1" min="0" max="50" aria-label="Waste percentage"></div>
+                            <span class="clamp-msg" id="wasteClamp">Adjusted to a valid value</span>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>Waste % covers spillage, cutting, and irregular edges, not compaction. For compacted base layers (driveways, patio sub-bases), compaction can reduce loose material by roughly 20-25%, so either raise your waste % by that much or increase your depth setting to account for it.</span>
+                    </div>
+
+                    <details class="optional-section" id="priceDetails">
+                        <summary><i class="fas fa-dollar-sign"></i> Optional: Estimate Cost & Bag Size</summary>
+                        <div class="input-grid" style="margin-top:14px;">
+                            <div class="input-group">
+                                <label for="priceValue">Price</label>
+                                <div class="row">
+                                    <input type="number" id="priceValue" value="" step="1" min="0" placeholder="0.00" aria-label="Price">
+                                    <select id="priceBasis" class="unit-select" aria-label="Price basis" style="max-width:120px;">
+                                        <option value="ton">per ton</option>
+                                        <option value="yard">per cu yd</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="input-group" id="bagSizeGroup">
+                                <label for="bagSize">Bag size (cu ft)</label>
+                                <div class="row"><input type="number" id="bagSize" value="0.5" step="0.1" min="0.1" max="5" aria-label="Bag size in cubic feet"></div>
+                                <span class="clamp-msg" id="bagSizeClamp">Adjusted to a valid value</span>
+                            </div>
+                        </div>
+                    </details>
+
+
+                    <div class="results-panel">
+                        <div class="status-note status-neutral" id="validationNote" style="border-left:4px solid var(--danger);background:rgba(239,68,68,0.06);color:#a11f1f;">
+                            <i class="fas fa-triangle-exclamation"></i> <span>Enter valid project measurements (greater than 0) to see your estimate.</span>
+                        </div>
+                        <div id="resultsBody">
+                        <div class="total-payment-card">
+                            <span class="label" id="weightLabel">Stone Needed</span>
+                            <span class="amount" id="weightResult">0 tons</span>
+                        </div>
+
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label" id="areaLabel">Area Covered</div><div class="result-value small" id="areaResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Volume</div><div class="result-value small" id="volumeResult">-</div></div>
+                            <div class="result-card"><div class="result-label" id="orderVolumeLabel">Order Volume (w/ waste)</div><div class="result-value small" id="orderVolumeResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Equivalent Bags</div><div class="result-value small" id="bagsResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Estimated Cost</div><div class="result-value small" id="costResult">-</div></div>
+                            <div class="result-card"><div class="result-label">Coverage at This Depth</div><div class="result-value small" id="coverageResult">-</div></div>
+                        </div>
+
+                        <div class="status-note status-neutral show" id="bagsNote" style="margin-top:16px;">
+                            <i class="fas fa-info-circle"></i> <span id="bagsNoteText">This is a small order, bulk delivery may not be worth it. See the bag count above.</span>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: COVERAGE REFERENCE -->
+                <div class="tab-content" id="tab-coverage" role="tabpanel" aria-labelledby="tabbtn-coverage">
+                    <div class="section-title"><i class="fas fa-table-list"></i> Square Feet Covered per Ton, by Depth</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-bottom:14px;">Based on your selected material's typical density. Actual coverage varies with your supplier's specific product. Use this as a planning reference, not a guarantee.</p>
+                    <div style="overflow-x:auto;">
+                        <table class="coverage-table" id="coverageTable">
+                            <thead><tr><th>Depth</th><th>Sq Ft per Ton (approx.)</th><th>Typical Use</th></tr></thead>
+                            <tbody id="coverageTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="info-tip" style="margin-top:16px;">
+                        <i>i</i>
+                        <span>Base layers (4-6 in) need more depth than decorative beds (2-3 in), so the same ton covers less ground. If you're compacting a driveway base, order for the loose depth before compaction, not the finished compacted depth.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Summary</button>
+                        <button class="action-btn secondary" id="copyResultsBtn"><i class="fas fa-copy"></i> Copy Results</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Stone Calculator: Tons, Cubic Yards & Cost for Any Project</h2>
+                    <p>How to convert your project into an order quantity your supplier will accept</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-it-works">1. How the Stone Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Stone Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Stone Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#units">6. Units and Conversions</a></div>
+                            <div class="toc-item"><a href="#tips">7. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">8. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">9. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Buying stone almost always runs into the same snag: you measure your project in feet, but your supplier sells by the ton. This <strong>stone calculator</strong> solves that mismatch.</p>
+                    <p>Enter your project's dimensions, area, or a volume you already know. It converts your measurements into cubic yards, a realistic tonnage range, and an estimated cost. It's built for anyone ordering crushed stone, river rock, decorative landscape stone, rip rap, or pea gravel: homeowners planning a driveway base, landscapers pricing a decorative bed, or DIYers topping off a walkway.</p>
+                    <p>Because stone density varies by type and source, the calculator reports weight as a range rather than a single misleadingly precise number, so what you see is closer to what your supplier will actually quote. Use the tool above to get your numbers, then read on for the formula, a worked example, and the details that keep people from over- or under-ordering.</p>
+
+                    <h2 id="how-it-works">1. How the Stone Calculator Works</h2>
+                    <p>The calculator takes three possible starting points: your project's length, width, and depth; a known area plus depth; or a volume you've already calculated. It walks the same three steps regardless of which one you use.</p>
+                    <p>First, it finds the <strong>area</strong> of your project shape (rectangle, circle, or triangle). Second, it multiplies that area by your chosen <strong>depth</strong> to get volume, converting inches to feet automatically. Third, it applies the <strong>density</strong> of your selected stone type, expressed in tons per cubic yard, to convert that volume into a weight.</p>
+                    <p>Real stone density depends on the specific rock, its moisture content, and how tightly it's graded. So the calculator shows that final weight as a range (for example, "4.3 to 5.2 tons") instead of one falsely precise figure. If you add a waste percentage, it's applied to the volume before the weight conversion. If you enter a price, the same range logic carries through to your estimated cost.</p>
+                    <div class="pro-tip">
+                        <strong>Planning-grade values, not a lab result.</strong>
+                        <p style="margin: 10px 0 0;">A quarry's crushed limestone and a landscape yard's decorative river rock can have meaningfully different densities even within the "crushed stone" category. Treat the result as a strong starting number to confirm with your supplier, not a guaranteed order quantity.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Stone Calculator</h2>
+                    <ol>
+                        <li><strong>Choose your calculation mode</strong>: Dimensions (if you're measuring length, width, and depth yourself), Area (if you already know your square footage), or Volume (if you've already calculated cubic yards or cubic feet).</li>
+                        <li><strong>Pick your shape</strong> if you're in Dimensions mode: rectangle for most beds and driveways, circle for round planters or tree rings, triangle for corner lots and odd angles.</li>
+                        <li><strong>Enter your measurements</strong>, switching units if needed (inches, feet, yards, centimeters, or meters are all supported).</li>
+                        <li><strong>Set your depth</strong>, either by typing a number or tapping a preset: 2 inches for a thin decorative topping, 3 inches for a standard landscape bed, 4 inches for a walkway base, or 6 inches for a driveway base.</li>
+                        <li><strong>Select your stone type</strong> from the material dropdown, or choose custom to enter your own density if your supplier gave you one.</li>
+                        <li><strong>Adjust the waste percentage</strong> if your site is sloped, irregular, or you want extra buffer. 10% is a reasonable starting point for most flat, regular projects.</li>
+                        <li><strong>Optionally enter a price</strong> per ton or per cubic yard to see an estimated cost range.</li>
+                        <li><strong>Read your results</strong>: area covered, volume in cubic feet and cubic yards, order volume with waste included, weight in tons, equivalent bags (if your order is small), and estimated cost. Download a PDF summary if you want to bring the numbers to your supplier.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Stone Calculator Formula</h2>
+                    <p><strong>Volume:</strong></p>
+                    <div class="formula-box">Area (sq ft) = shape-specific formula (see below)<br>Volume (cu ft) = Area (sq ft) × <span class="fvar">Depth (ft)</span><br>Volume (cu yd) = Volume (cu ft) ÷ 27</div>
+                    <p>Where:</p>
+                    <ul>
+                        <li><strong>Area</strong> depends on shape: rectangle is length × width; circle is π × radius²; triangle is (base × height) ÷ 2.</li>
+                        <li><strong>Depth (ft)</strong>: if you entered depth in inches, divide by 12 first.</li>
+                        <li><strong>27</strong> is the number of cubic feet in one cubic yard (3 ft × 3 ft × 3 ft), the standard conversion used throughout U.S. construction and confirmed in <a href="https://www.nist.gov/pml/owm/metric-si/unit-conversion" target="_blank" rel="noopener">NIST's official unit conversion guidance</a>.</li>
+                    </ul>
+                    <p><strong>Weight:</strong></p>
+                    <div class="formula-box">Order volume (cu yd) = Volume (cu yd) × (1 + <span class="fvar">waste%</span> ÷ 100)<br>Weight (tons) = Order volume (cu yd) × <span class="fvar">density</span> (tons per cu yd)</div>
+                    <p>Where <strong>density</strong> is material-specific. For example, crushed stone typically runs 1.4 to 1.7 tons per cubic yard, while lighter materials like lava rock can run under 1 ton per cubic yard. Because that range is real, not a rounding error, the calculator carries it through to the final weight instead of picking a single midpoint.</p>
+
+                    <h3>Typical Density Assumptions Used in This Calculator</h3>
+                    <p style="font-size: 14.5px;">These are planning-grade ranges consistent with typical published aggregate density figures used across construction estimating resources. Your supplier's exact product may fall outside these ranges depending on moisture content and gradation, so confirm with them for a final order.</p>
+                    <div style="overflow-x:auto;">
+                        <table class="coverage-table">
+                            <thead><tr><th>Material</th><th>Density (tons/cu yd)</th></tr></thead>
+                            <tbody>
+                                <tr><td>Crushed Stone (3/4" - 2")</td><td>1.40 - 1.70</td></tr>
+                                <tr><td>#57 Stone</td><td>1.35 - 1.50</td></tr>
+                                <tr><td>#67 Stone</td><td>1.40 - 1.55</td></tr>
+                                <tr><td>Crusher Run</td><td>1.50 - 1.80</td></tr>
+                                <tr><td>Crushed Limestone</td><td>1.35 - 1.50</td></tr>
+                                <tr><td>Stone Dust (Screenings)</td><td>1.60 - 1.75</td></tr>
+                                <tr><td>River Rock</td><td>1.30 - 1.50</td></tr>
+                                <tr><td>Decorative / Landscape Stone</td><td>1.20 - 1.50</td></tr>
+                                <tr><td>Rip Rap (6" - 9")</td><td>1.70 - 2.00</td></tr>
+                                <tr><td>Pea Gravel</td><td>1.30 - 1.50</td></tr>
+                                <tr><td>Sand</td><td>1.30 - 1.50</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Say you're covering a <strong>20 ft × 15 ft</strong> rectangular landscape bed with <strong>crushed stone</strong> at a <strong>3-inch</strong> depth, using the default 10% waste allowance.</p>
+                    <div class="example-box">
+                        <ol>
+                            <li><strong>Area:</strong> 20 ft × 15 ft = 300 sq ft</li>
+                            <li><strong>Depth in feet:</strong> 3 in ÷ 12 = 0.25 ft</li>
+                            <li><strong>Volume:</strong> 300 sq ft × 0.25 ft = 75 cu ft</li>
+                            <li><strong>Cubic yards:</strong> 75 ÷ 27 = 2.78 cu yd</li>
+                            <li><strong>Order volume with 10% waste:</strong> 2.78 × 1.10 = 3.06 cu yd</li>
+                            <li><strong>Weight</strong> (crushed stone density 1.4 to 1.7 tons/yd³): 3.06 × 1.4 = <strong>4.28 tons</strong>, and 3.06 × 1.7 = <strong>5.20 tons</strong></li>
+                        </ol>
+                    </div>
+                    <p>So this project needs roughly <strong>4.3 to 5.2 tons</strong> of crushed stone, a range you can hand directly to a supplier, who will typically round up to the nearest half or full ton anyway.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The tonnage range you get isn't a sign the calculator is unsure of the math. It's an honest reflection of how much real stone density varies by source, moisture, and how tightly it's graded.</p>
+                    <p>When you call a supplier, ask for their specific material's tons-per-yard figure. If they give you a number inside the calculator's range, your order is well-estimated. If their number falls outside it, use theirs, since suppliers know their own product better than any generic planning tool can.</p>
+                    <p>As a rule of thumb, round your final order <strong>up</strong>, not down. Running short mid-project usually costs more in a second delivery fee than simply ordering a bit extra up front. If your site has significant slope or irregular edges, or you're compacting a base layer, lean toward the higher end of the suggested waste range.</p>
+
+                    <h2 id="units">6. Units and Conversions</h2>
+                    <p>Suppliers in the U.S. almost always sell by the <strong>short ton</strong> (2,000 lb). If a supplier quotes in <strong>metric tonnes</strong> (1,000 kg, about 2,205 lb), the two aren't interchangeable. A metric tonne is roughly 10% heavier than a U.S. short ton, which matters on a large order. If a quote simply says "ton," confirm which one before you place the order.</p>
+                    <p>For volume, <strong>1 cubic yard equals 27 cubic feet</strong> (3 ft × 3 ft × 3 ft), the standard conversion this calculator uses throughout, consistent with official U.S. measurement guidance. The calculator also accepts centimeters and meters directly if you're working in metric.</p>
+
+                    <h2 id="tips">7. Practical Tips</h2>
+                    <ul>
+                        <li><strong>Measure at multiple points</strong> if your project area isn't perfectly flat or rectangular. An average depth across a few spots gives a more accurate volume than a single measurement.</li>
+                        <li><strong>Keep your units consistent</strong> while entering dimensions. The calculator converts automatically, but double-check you selected the right unit for each field before reading the result.</li>
+                        <li><strong>Ask your supplier for their exact density figure</strong> if you have one. Plug it into the custom density option for the most accurate possible weight.</li>
+                        <li><strong>Increase your waste allowance on sloped or irregular sites.</strong> Flat, simple rectangles need less buffer than curved beds or uneven terrain.</li>
+                        <li><strong>Confirm short ton vs. metric tonne</strong> before finalizing a large order, since the difference compounds quickly at scale.</li>
+                        <li><strong>For compacted base layers</strong> (driveways, patio sub-bases), remember that compaction reduces the finished depth of loose material. Many contractors order 20 to 25% more loose volume than the finished compacted depth would suggest, on top of ordinary waste allowance.</li>
+                    </ul>
+
+                    <h2 id="mistakes">8. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Confusing square feet with cubic feet.</strong> Square footage only measures area. You still need depth to get a real volume, and skipping that step is the single most common estimating error.</li>
+                        <li><strong>Mixing inches and feet without converting.</strong> Entering a depth of "3" without specifying inches vs. feet produces a result that's off by a factor of 12. Always double-check the unit shown next to the field.</li>
+                        <li><strong>Using one density figure for every stone type.</strong> Crushed stone, river rock, and lightweight decorative stone can differ by 30% or more in tons per cubic yard. Picking the wrong material preset overstates or understates your order significantly.</li>
+                        <li><strong>Ignoring compaction for base layers.</strong> A 4-inch compacted driveway base needs more than 4 inches of loose material before it's rolled or tamped down. Ordering exactly the finished depth in loose volume leaves you short.</li>
+                        <li><strong>Rounding too early in the calculation.</strong> Round only your final order quantity, not intermediate steps like cubic feet or cubic yards. Early rounding compounds into a meaningfully wrong final tonnage on larger projects.</li>
+                    </ul>
+
+                    <h2 id="related">9. Related Calculations and Use Cases</h2>
+                    <p>Stone calculations overlap with several adjacent project types. If you're specifically working with smooth, rounded decorative stone for a garden bed or drainage channel, our <a href="https://calcsnaps.com/calculators/river-rock-calculator">River Rock Calculator</a> handles that material's specific density range and includes an interactive area-shape helper. If your project involves a soil or fill layer beneath the stone, that's a separate material with its own density, common on driveway bases or drainage trenches, and worth estimating on its own rather than folding into the stone quantity.</p>
+                    <p>Common real-world use cases for this calculator include driveway base layers (crushed stone or crusher run at 4 to 6 inches), decorative landscape beds (2 to 3 inches of river rock, pea gravel, or 3/4 stone), drainage trenches and French drains (rip rap or larger crushed stone), and walkway or patio sub-bases (compacted crushed stone at 4 inches). Each use case generally points to a different depth and sometimes a different material. The depth presets in the calculator above are built around exactly these scenarios.</p>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="stonefaq1-answer">How much stone do I need for my project?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stonefaq1-answer"><p>Multiply your project's length by width (or use the calculator's circle/triangle option) to get square footage, multiply by your desired depth in feet, then multiply by your stone's density in tons per cubic yard. For a 20x15 ft bed at 3 inches deep with crushed stone, that works out to roughly 4.3 to 5.2 tons, including a 10% waste allowance.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stonefaq2-answer">How many square feet does a ton of stone cover?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stonefaq2-answer"><p>It depends on depth and material. Using crushed stone as an example (density midpoint 1.55 tons per cubic yard), a ton covers roughly 105 sq ft at a 2-inch decorative depth, about 70 sq ft at 3 inches, about 52 sq ft at 4 inches, and about 35 sq ft at 6 inches. Deeper layers pack more material into the same footprint, so coverage drops as depth increases. Check the Coverage Reference tab for exact figures by material.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stonefaq3-answer">Is stone sold by the ton or by the cubic yard?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stonefaq3-answer"><p>Most bulk suppliers sell by the ton, since weight is easier to verify with a truck scale than loose volume. Smaller retail quantities, especially bagged stone, are often sold by the cubic foot or in fixed bag sizes (commonly 0.5 cubic feet per bag).</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stonefaq4-answer">Why does this calculator show a range instead of one exact number?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stonefaq4-answer"><p>Stone density genuinely varies by rock type, moisture content, and how tightly the material is graded, typically by 15 to 20% within a single named category like "crushed stone." Showing a single number would imply false precision. The range gives you a realistic planning bracket that better matches what a supplier will actually quote.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stonefaq5-answer">How much extra stone should I order for waste?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stonefaq5-answer"><p>5 to 10% is a reasonable default for a flat, regular-shaped project. Sloped sites, irregular or curved beds, and compacted base layers (which lose volume during compaction) typically warrant 15 to 25% extra to avoid a costly second delivery.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator provides planning estimates only. Always confirm exact quantities and pricing with your stone supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪨</span> Try the Stone Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪨 Stone Calculator</a>
+                            <a href="/calculators/river-rock-calculator">🌊 River Rock Calculator</a>
+                            <a href="/construction-calculators/dirt-calculator">🟤 Dirt Calculator</a>
+                            <a href="/calculators/soffit-calculator">🏠 Soffit Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap — fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/calculators/river-rock-calculator">River Rock Calculator</a>
+                    <a href="/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                    <a href="/calculators/soffit-calculator">Soffit Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        // ===== MATERIAL DENSITY DATA (tons per cubic yard, typical planning range) =====
+        const MATERIALS = {
+            crushed:    { name: 'Crushed Stone (3/4" - 2")',        low: 1.4,  high: 1.7 },
+            s57:        { name: '#57 Stone (3/4")',                  low: 1.35, high: 1.5 },
+            s67:        { name: '#67 Stone (3/4" - fine)',            low: 1.4,  high: 1.55 },
+            crusherrun: { name: 'Crusher Run',                       low: 1.5,  high: 1.8 },
+            limestone:  { name: 'Crushed Limestone',                 low: 1.35, high: 1.5 },
+            stonedust:  { name: 'Stone Dust (Screenings)',           low: 1.6,  high: 1.75 },
+            river:      { name: 'River Rock',                        low: 1.3,  high: 1.5 },
+            decorative: { name: 'Decorative / Landscape Stone',      low: 1.2,  high: 1.5 },
+            riprap:     { name: 'Rip Rap (6" - 9")',                 low: 1.7,  high: 2.0 },
+            peagravel:  { name: 'Pea Gravel',                        low: 1.3,  high: 1.5 },
+            sand:       { name: 'Sand',                              low: 1.3,  high: 1.5 },
+            custom:     { name: 'Custom Density',                    low: null, high: null }
+        };
+        const DEPTH_PRESETS = [
+            { label: '2" Decorative', inches: 2 },
+            { label: '3" Standard Bed', inches: 3 },
+            { label: '4" Walkway Base', inches: 4 },
+            { label: '6" Driveway Base', inches: 6 }
+        ];
+        const FT_PER_M = 3.28084;
+        const CUFT_PER_CUYD = 27;
+
+        let currentUnit = 'imperial';
+        let currentMode = 'dimensions';
+        let currentShape = 'rect';
+        let activeDepthPreset = null;
+
+        // ===== PERSISTENT STATE (kept in base units, in/across unit, mode & shape switches) =====
+        const dims = {
+            length: 20, width: 15, diameter: 10, base: 20, height: 12, // feet
+            depth: 0.25,   // feet (3 in)
+            area: 300,     // sq ft
+            volume: 81,    // cu ft (3 cu yd)
+            tons: 2        // tons (for reverse "I Have Tons" mode)
+        };
+
+        function fmt2(n) { return isFinite(n) ? n.toLocaleString(undefined, { maximumFractionDigits: 2 }) : '-'; }
+        function fmt1(n) { return isFinite(n) ? n.toLocaleString(undefined, { maximumFractionDigits: 1 }) : '-'; }
+        function fmt0(n) { return isFinite(n) ? Math.round(n).toLocaleString() : '-'; }
+        function roundNice(n) { return isFinite(n) ? parseFloat(n.toFixed(3)).toString() : ''; }
+
+        function lengthUnitOptions(defaultUnit) {
+            const units = currentUnit === 'imperial' ? ['in','ft','yd'] : ['cm','m'];
+            return units.map(u => `<option value="${u}"${u === defaultUnit ? ' selected' : ''}>${u}</option>`).join('');
+        }
+        function toFeet(value, unit) {
+            switch (unit) {
+                case 'in': return value / 12;
+                case 'ft': return value;
+                case 'yd': return value * 3;
+                case 'cm': return (value / 100) * FT_PER_M;
+                case 'm': return value * FT_PER_M;
+                default: return value;
+            }
+        }
+        function fromFeet(ft, unit) {
+            switch (unit) {
+                case 'in': return ft * 12;
+                case 'ft': return ft;
+                case 'yd': return ft / 3;
+                case 'cm': return (ft / FT_PER_M) * 100;
+                case 'm': return ft / FT_PER_M;
+                default: return ft;
+            }
+        }
+        function sqftFromAreaUnit(value, unit) {
+            if (unit === 'sq ft') return value;
+            if (unit === 'sq yd') return value * 9;
+            if (unit === 'sq m') return value * FT_PER_M * FT_PER_M;
+            return value;
+        }
+        function sqftToAreaUnit(sqft, unit) {
+            if (unit === 'sq ft') return sqft;
+            if (unit === 'sq yd') return sqft / 9;
+            if (unit === 'sq m') return sqft / (FT_PER_M * FT_PER_M);
+            return sqft;
+        }
+        function cuftFromVolUnit(value, unit) {
+            if (unit === 'cu ft') return value;
+            if (unit === 'cu yd') return value * CUFT_PER_CUYD;
+            if (unit === 'cu m') return value * Math.pow(FT_PER_M, 3);
+            return value;
+        }
+        function cuftToVolUnit(cuft, unit) {
+            if (unit === 'cu ft') return cuft;
+            if (unit === 'cu yd') return cuft / CUFT_PER_CUYD;
+            if (unit === 'cu m') return cuft / Math.pow(FT_PER_M, 3);
+            return cuft;
+        }
+
+        function validateField(el) {
+            const group = el.closest('.input-group');
+            if (!group) return true;
+            const val = parseFloat(el.value);
+            const invalid = el.value === '' || isNaN(val) || val <= 0;
+            group.classList.toggle('field-invalid', invalid);
+            return !invalid;
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            if (tab.dataset.tab === 'coverage') renderCoverageTable();
+        }
+
+        // ===== UNIT TOGGLE =====
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.unit-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                currentUnit = btn.dataset.unit;
+                renderDimensionInputs();
+                renderDepthInputs();
+                calculateAll();
+            });
+        });
+
+        // ===== MODE TOGGLE =====
+        document.querySelectorAll('#modeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#modeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                currentMode = btn.dataset.mode;
+                $('shapeRow').style.display = currentMode === 'dimensions' ? 'flex' : 'none';
+                $('depthBlock').style.display = (currentMode === 'volume') ? 'none' : 'block';
+                $('depthBlockLabel').textContent = currentMode === 'tons' ? 'Depth (optional, for coverage area)' : 'Depth';
+                renderDimensionInputs();
+                calculateAll();
+            });
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+        });
+
+        // ===== SHAPE TOGGLE =====
+        document.querySelectorAll('#shapeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#shapeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                currentShape = btn.dataset.shape;
+                renderDimensionInputs();
+                calculateAll();
+            });
+            btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); } });
+        });
+
+        // ===== RENDER DIMENSION INPUTS =====
+        function renderDimensionInputs() {
+            const grid = $('dimensionInputs');
+            const defUnit = currentUnit === 'imperial' ? 'ft' : 'm';
+            const areaUnit = currentUnit === 'imperial' ? ['sq ft','sq yd'] : ['sq m'];
+            const volUnit = currentUnit === 'imperial' ? ['cu ft','cu yd'] : ['cu m'];
+
+            if (currentMode === 'dimensions') {
+                if (currentShape === 'rect') {
+                    grid.innerHTML = `
+                        <div class="input-group"><label for="dimLength">Length</label><div class="row"><input type="number" id="dimLength" data-dim="length" value="${roundNice(fromFeet(dims.length, defUnit))}" min="0" step="0.1" aria-label="Length"><select id="dimLengthUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a length greater than 0</span></div>
+                        <div class="input-group"><label for="dimWidth">Width</label><div class="row"><input type="number" id="dimWidth" data-dim="width" value="${roundNice(fromFeet(dims.width, defUnit))}" min="0" step="0.1" aria-label="Width"><select id="dimWidthUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a width greater than 0</span></div>`;
+                } else if (currentShape === 'circle') {
+                    grid.innerHTML = `
+                        <div class="input-group"><label for="dimDiameter">Diameter</label><div class="row"><input type="number" id="dimDiameter" data-dim="diameter" value="${roundNice(fromFeet(dims.diameter, defUnit))}" min="0" step="0.1" aria-label="Diameter"><select id="dimDiameterUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a diameter greater than 0</span></div>`;
+                } else {
+                    grid.innerHTML = `
+                        <div class="input-group"><label for="dimBase">Base</label><div class="row"><input type="number" id="dimBase" data-dim="base" value="${roundNice(fromFeet(dims.base, defUnit))}" min="0" step="0.1" aria-label="Base"><select id="dimBaseUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a base greater than 0</span></div>
+                        <div class="input-group"><label for="dimHeight">Height</label><div class="row"><input type="number" id="dimHeight" data-dim="height" value="${roundNice(fromFeet(dims.height, defUnit))}" min="0" step="0.1" aria-label="Height"><select id="dimHeightUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a height greater than 0</span></div>`;
+                }
+                attachLengthListeners(grid);
+            } else if (currentMode === 'area') {
+                const defAreaUnit = areaUnit[0];
+                grid.innerHTML = `
+                    <div class="input-group"><label for="areaDirect">Area</label><div class="row"><input type="number" id="areaDirect" value="${roundNice(sqftToAreaUnit(dims.area, defAreaUnit))}" min="0" step="1" aria-label="Area"><select id="areaDirectUnit" class="unit-select">${areaUnit.map(u=>`<option value="${u}">${u}</option>`).join('')}</select></div><span class="error-msg">Enter an area greater than 0</span></div>`;
+                $('areaDirect').addEventListener('input', e => { dims.area = sqftFromAreaUnit(parseFloat(e.target.value) || 0, $('areaDirectUnit').value); validateField(e.target); calculateAll(); });
+                $('areaDirectUnit').addEventListener('change', () => { $('areaDirect').value = roundNice(sqftToAreaUnit(dims.area, $('areaDirectUnit').value)); calculateAll(); });
+                validateField($('areaDirect'));
+            } else if (currentMode === 'volume') {
+                const defVolUnit = currentUnit === 'imperial' ? 'cu yd' : 'cu m';
+                grid.innerHTML = `
+                    <div class="input-group"><label for="volumeDirect">Volume</label><div class="row"><input type="number" id="volumeDirect" value="${roundNice(cuftToVolUnit(dims.volume, defVolUnit))}" min="0" step="0.1" aria-label="Volume"><select id="volumeDirectUnit" class="unit-select">${volUnit.map(u=>`<option value="${u}"${u===defVolUnit?' selected':''}>${u}</option>`).join('')}</select></div><span class="error-msg">Enter a volume greater than 0</span></div>`;
+                $('volumeDirect').addEventListener('input', e => { dims.volume = cuftFromVolUnit(parseFloat(e.target.value) || 0, $('volumeDirectUnit').value); validateField(e.target); calculateAll(); });
+                $('volumeDirectUnit').addEventListener('change', () => { $('volumeDirect').value = roundNice(cuftToVolUnit(dims.volume, $('volumeDirectUnit').value)); calculateAll(); });
+                validateField($('volumeDirect'));
+            } else {
+                grid.innerHTML = `
+                    <div class="input-group"><label for="tonsDirect">Tons of stone you have</label><div class="row"><input type="number" id="tonsDirect" value="${roundNice(dims.tons)}" min="0" step="0.1" aria-label="Tons of stone"></div><span class="error-msg">Enter a tonnage greater than 0</span></div>`;
+                $('tonsDirect').addEventListener('input', e => { dims.tons = parseFloat(e.target.value) || 0; validateField(e.target); calculateAll(); });
+                validateField($('tonsDirect'));
+            }
+        }
+
+        function attachLengthListeners(container) {
+            container.querySelectorAll('input[data-dim]').forEach(el => {
+                const unitSel = $(el.id + 'Unit');
+                el.addEventListener('input', () => {
+                    dims[el.dataset.dim] = toFeet(parseFloat(el.value) || 0, unitSel.value);
+                    validateField(el);
+                    calculateAll();
+                });
+                unitSel.addEventListener('change', () => {
+                    el.value = roundNice(fromFeet(dims[el.dataset.dim], unitSel.value));
+                    validateField(el);
+                    calculateAll();
+                });
+                validateField(el);
+            });
+        }
+
+        // ===== DEPTH INPUT =====
+        function renderDepthInputs() {
+            const defUnit = currentUnit === 'imperial' ? 'in' : 'cm';
+            const grid = $('depthInputGrid');
+            grid.innerHTML = `
+                <div class="input-group"><label for="depthValue">Depth</label><div class="row"><input type="number" id="depthValue" value="${roundNice(fromFeet(dims.depth, defUnit))}" min="0" step="0.1" aria-label="Depth"><select id="depthUnit" class="unit-select">${lengthUnitOptions(defUnit)}</select></div><span class="error-msg">Enter a depth greater than 0</span></div>`;
+            function validateDepthField() {
+                if (currentMode === 'tons') { $('depthValue').closest('.input-group').classList.remove('field-invalid'); return true; }
+                return validateField($('depthValue'));
+            }
+            $('depthValue').addEventListener('input', () => {
+                dims.depth = toFeet(parseFloat($('depthValue').value) || 0, $('depthUnit').value);
+                activeDepthPreset = null;
+                updatePresetActive();
+                validateDepthField();
+                calculateAll();
+            });
+            $('depthUnit').addEventListener('change', () => {
+                $('depthValue').value = roundNice(fromFeet(dims.depth, $('depthUnit').value));
+                validateDepthField();
+                calculateAll();
+            });
+            validateDepthField();
+
+            const presetWrap = $('depthPresets');
+            presetWrap.innerHTML = '';
+            DEPTH_PRESETS.forEach(p => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'preset-btn';
+                btn.textContent = p.label;
+                btn.addEventListener('click', () => {
+                    activeDepthPreset = p.inches;
+                    dims.depth = p.inches / 12;
+                    $('depthUnit').value = currentUnit === 'imperial' ? 'in' : 'cm';
+                    $('depthValue').value = roundNice(fromFeet(dims.depth, $('depthUnit').value));
+                    validateDepthField();
+                    updatePresetActive();
+                    calculateAll();
+                });
+                presetWrap.appendChild(btn);
+            });
+            updatePresetActive();
+        }
+        function updatePresetActive() {
+            document.querySelectorAll('#depthPresets .preset-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', activeDepthPreset === DEPTH_PRESETS[i].inches);
+            });
+        }
+
+        // ===== MATERIAL =====
+        $('materialSelect').addEventListener('change', () => {
+            $('customDensityRow').style.display = $('materialSelect').value === 'custom' ? 'grid' : 'none';
+            calculateAll();
+        });
+        $('customDensity').addEventListener('input', () => { validateField($('customDensity')); calculateAll(); });
+
+        // ===== WASTE / PRICE / BAG INPUTS =====
+        $('wastePct').addEventListener('input', () => {
+            let v = parseFloat($('wastePct').value);
+            const clamp = $('wasteClamp');
+            if (isNaN(v)) v = 0;
+            if (v < 0 || v > 50) { clamp.classList.add('show'); v = Math.max(0, Math.min(50, v)); $('wastePct').value = v; }
+            else clamp.classList.remove('show');
+            calculateAll();
+        });
+        $('priceValue').addEventListener('input', calculateAll);
+        $('priceBasis').addEventListener('change', calculateAll);
+        $('bagSize').addEventListener('input', () => {
+            let v = parseFloat($('bagSize').value);
+            const clamp = $('bagSizeClamp');
+            if (isNaN(v) || v <= 0) { clamp.classList.add('show'); v = 0.5; $('bagSize').value = v; }
+            else if (v > 5) { clamp.classList.add('show'); v = 5; $('bagSize').value = v; }
+            else clamp.classList.remove('show');
+            calculateAll();
+        });
+
+        // ===== CORE CALCULATION =====
+        function getAreaSqFt() {
+            if (currentMode === 'dimensions') {
+                if (currentShape === 'rect') {
+                    const l = toFeet(parseFloat($('dimLength').value) || 0, $('dimLengthUnit').value);
+                    const w = toFeet(parseFloat($('dimWidth').value) || 0, $('dimWidthUnit').value);
+                    return l * w;
+                } else if (currentShape === 'circle') {
+                    const d = toFeet(parseFloat($('dimDiameter').value) || 0, $('dimDiameterUnit').value);
+                    const r = d / 2;
+                    return Math.PI * r * r;
+                } else {
+                    const b = toFeet(parseFloat($('dimBase').value) || 0, $('dimBaseUnit').value);
+                    const h = toFeet(parseFloat($('dimHeight').value) || 0, $('dimHeightUnit').value);
+                    return (b * h) / 2;
+                }
+            } else if (currentMode === 'area') {
+                const val = parseFloat($('areaDirect').value) || 0;
+                const unit = $('areaDirectUnit').value;
+                if (unit === 'sq ft') return val;
+                if (unit === 'sq yd') return val * 9;
+                if (unit === 'sq m') return val * FT_PER_M * FT_PER_M;
+                return val;
+            }
+            return 0;
+        }
+
+        function getDepthFt() {
+            if (currentMode === 'volume') return null;
+            const val = parseFloat($('depthValue').value) || 0;
+            return toFeet(val, $('depthUnit').value);
+        }
+
+        function getVolumeCuFt() {
+            if (currentMode === 'volume') {
+                const val = parseFloat($('volumeDirect').value) || 0;
+                const unit = $('volumeDirectUnit').value;
+                if (unit === 'cu ft') return val;
+                if (unit === 'cu yd') return val * CUFT_PER_CUYD;
+                if (unit === 'cu m') return val * Math.pow(FT_PER_M, 3);
+                return val;
+            }
+            const area = getAreaSqFt();
+            const depth = getDepthFt() || 0;
+            return area * depth;
+        }
+
+        function getDensity() {
+            const key = $('materialSelect').value;
+            if (key === 'custom') {
+                const v = parseFloat($('customDensity').value) || 1.5;
+                return { low: v, high: v };
+            }
+            return { low: MATERIALS[key].low, high: MATERIALS[key].high };
+        }
+
+        function getRequiredFieldsValid() {
+            let ids = [];
+            if (currentMode === 'dimensions') {
+                if (currentShape === 'rect') ids = ['dimLength', 'dimWidth'];
+                else if (currentShape === 'circle') ids = ['dimDiameter'];
+                else ids = ['dimBase', 'dimHeight'];
+                ids.push('depthValue');
+            } else if (currentMode === 'area') {
+                ids = ['areaDirect', 'depthValue'];
+            } else if (currentMode === 'volume') {
+                ids = ['volumeDirect'];
+            } else {
+                ids = ['tonsDirect']; // depth is optional in Tons mode
+            }
+            if ($('materialSelect').value === 'custom') ids.push('customDensity');
+            let valid = true;
+            ids.forEach(id => {
+                const el = $(id);
+                if (el && !validateField(el)) valid = false;
+            });
+            return valid;
+        }
+
+        function calculateAll() {
+            const isValid = getRequiredFieldsValid();
+            $('validationNote').classList.toggle('show', !isValid);
+            $('resultsBody').style.display = isValid ? '' : 'none';
+            if (!isValid) return;
+
+            const density = getDensity();
+
+            // ===== TONS MODE (reverse: tons -> volume / coverage) =====
+            if (currentMode === 'tons') {
+                const tons = parseFloat($('tonsDirect').value) || 0;
+                $('weightLabel').textContent = 'You Have';
+                $('weightResult').textContent = fmt2(tons) + ' tons';
+
+                const cuYdLow = density.high > 0 ? tons / density.high : 0;
+                const cuYdHigh = density.low > 0 ? tons / density.low : 0;
+                const cuYdLabel = (Math.abs(cuYdHigh - cuYdLow) < 0.02) ? fmt2(cuYdLow) + ' cu yd' : fmt2(cuYdLow) + ' – ' + fmt2(cuYdHigh) + ' cu yd';
+                $('volumeResult').textContent = cuYdLabel;
+
+                $('orderVolumeLabel').textContent = 'Coverage at Depth Given';
+                const depthFt = getDepthFt();
+                if (depthFt && depthFt > 0) {
+                    const areaLow = (cuYdLow * CUFT_PER_CUYD) / depthFt;
+                    const areaHigh = (cuYdHigh * CUFT_PER_CUYD) / depthFt;
+                    $('orderVolumeResult').textContent = fmt0(areaLow) + ' – ' + fmt0(areaHigh) + ' sq ft';
+                } else {
+                    $('orderVolumeResult').textContent = 'Add a depth to see area';
+                }
+                $('areaLabel').textContent = 'Area You Can Cover';
+                $('areaResult').textContent = depthFt && depthFt > 0 ? $('orderVolumeResult').textContent : 'N/A';
+                $('bagsResult').textContent = 'N/A';
+                $('bagsNote').classList.remove('show');
+                $('costResult').textContent = 'N/A';
+                $('coverageResult').textContent = 'N/A';
+                return;
+            }
+
+            // Reset labels back to forward-mode wording (in case Tons mode was used before)
+            $('weightLabel').textContent = 'Stone Needed';
+            $('orderVolumeLabel').textContent = 'Order Volume (w/ waste)';
+            $('areaLabel').textContent = 'Area Covered';
+
+            const areaSqFt = currentMode === 'volume' ? null : getAreaSqFt();
+            const volumeCuFt = getVolumeCuFt();
+            const volumeCuYd = volumeCuFt / CUFT_PER_CUYD;
+
+            let waste = parseFloat($('wastePct').value);
+            if (isNaN(waste)) waste = 0;
+            const orderCuYd = volumeCuYd * (1 + waste / 100);
+            const orderCuFt = orderCuYd * CUFT_PER_CUYD;
+
+            const weightLow = orderCuYd * density.low;
+            const weightHigh = orderCuYd * density.high;
+
+            // Display: area
+            if (currentMode === 'volume' || areaSqFt === null) {
+                $('areaResult').textContent = 'N/A';
+            } else if (currentUnit === 'imperial') {
+                $('areaResult').textContent = fmt0(areaSqFt) + ' sq ft';
+            } else {
+                $('areaResult').textContent = fmt2(areaSqFt / (FT_PER_M * FT_PER_M)) + ' sq m';
+            }
+
+            // Volume
+            $('volumeResult').textContent = fmt2(volumeCuYd) + ' cu yd (' + fmt0(volumeCuFt) + ' cu ft)';
+            $('orderVolumeResult').textContent = fmt2(orderCuYd) + ' cu yd';
+
+            // Weight
+            const weightLabel = (Math.abs(weightHigh - weightLow) < 0.05) ? fmt2(weightLow) + ' tons' : fmt2(weightLow) + ' – ' + fmt2(weightHigh) + ' tons';
+            $('weightResult').textContent = weightLabel;
+
+            // Bags: always show the equivalent count, plus a separate purchase recommendation
+            const bagSize = parseFloat($('bagSize').value) || 0.5;
+            const bagsNeeded = Math.ceil(orderCuFt / bagSize);
+            const smallOrder = orderCuFt < CUFT_PER_CUYD; // less than 1 cu yd
+            $('bagsResult').textContent = bagsNeeded.toLocaleString() + ' bags';
+            $('bagsNote').classList.add('show');
+            $('bagsNoteText').textContent = smallOrder
+                ? ("Equivalent to about " + bagsNeeded + " bags at " + bagSize + " cu ft each. Recommended purchase: bags (bulk delivery usually isn't worth it under 1 cu yd).")
+                : ("Equivalent to about " + bagsNeeded + " bags at " + bagSize + " cu ft each. Recommended purchase: bulk delivery, buying this many bags is rarely practical.");
+
+            // Cost
+            const priceVal = parseFloat($('priceValue').value);
+            if (!isNaN(priceVal) && priceVal > 0) {
+                const basis = $('priceBasis').value;
+                if (basis === 'ton') {
+                    const costLow = weightLow * priceVal;
+                    const costHigh = weightHigh * priceVal;
+                    $('costResult').textContent = (Math.abs(costHigh - costLow) < 0.5) ? '$' + fmt2(costLow) : '$' + fmt2(costLow) + ' – $' + fmt2(costHigh);
+                } else {
+                    $('costResult').textContent = '$' + fmt2(orderCuYd * priceVal);
+                }
+            } else {
+                $('costResult').textContent = 'Enter a price';
+            }
+
+            // Coverage at this depth (approx, using mid density and current depth if available)
+            const depthFt = currentMode === 'volume' ? null : getDepthFt();
+            if (depthFt && depthFt > 0) {
+                const midDensity = (density.low + density.high) / 2;
+                const sqFtPerTon = (CUFT_PER_CUYD / midDensity) / depthFt;
+                $('coverageResult').textContent = '~' + fmt0(sqFtPerTon) + ' sq ft/ton';
+            } else {
+                $('coverageResult').textContent = 'N/A';
+            }
+        }
+
+        // ===== COVERAGE REFERENCE TABLE =====
+        function renderCoverageTable() {
+            const key = $('materialSelect').value;
+            const density = getDensity();
+            const midDensity = (density.low + density.high) / 2;
+            const tbody = $('coverageTableBody');
+            if (!isFinite(midDensity) || midDensity <= 0) {
+                tbody.innerHTML = '<tr><td colspan="3">Enter a valid custom density above to see coverage figures.</td></tr>';
+                return;
+            }
+            const depths = [
+                { inches: 2, use: 'Decorative topping' },
+                { inches: 3, use: 'Standard landscape bed' },
+                { inches: 4, use: 'Walkway / patio base' },
+                { inches: 6, use: 'Driveway base' }
+            ];
+            const currentDepthIn = currentMode !== 'volume' ? (parseFloat($('depthValue').value) || null) : null;
+            tbody.innerHTML = '';
+            depths.forEach(d => {
+                const depthFt = d.inches / 12;
+                const sqFtPerTon = (CUFT_PER_CUYD / midDensity) / depthFt;
+                const tr = document.createElement('tr');
+                if (currentDepthIn && Math.round(currentDepthIn) === d.inches && currentUnit === 'imperial') tr.classList.add('your-row');
+                tr.innerHTML = `<td>${d.inches}"</td><td>${fmt0(sqFtPerTon)} sq ft</td><td>${d.use}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            currentUnit = 'imperial';
+            document.querySelectorAll('.unit-btn').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            currentMode = 'dimensions';
+            document.querySelectorAll('#modeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+            $('shapeRow').style.display = 'flex';
+            $('depthBlock').style.display = 'block';
+            $('depthBlockLabel').textContent = 'Depth';
+
+            currentShape = 'rect';
+            document.querySelectorAll('#shapeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+
+            $('materialSelect').value = 'crushed';
+            $('customDensityRow').style.display = 'none';
+            $('customDensity').value = '1.5';
+            $('wastePct').value = '10';
+            $('wasteClamp').classList.remove('show');
+            $('priceValue').value = '';
+            $('priceBasis').value = 'ton';
+            $('bagSize').value = '0.5';
+            activeDepthPreset = null;
+
+            dims.length = 20; dims.width = 15; dims.diameter = 10; dims.base = 20; dims.height = 12;
+            dims.depth = 0.25; dims.area = 300; dims.volume = 81; dims.tons = 2;
+
+            renderDimensionInputs();
+            renderDepthInputs();
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            const density = getDensity();
+            const materialName = MATERIALS[$('materialSelect').value].name;
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Stone Calculator Summary', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Project Summary', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Material: ' + materialName, 25, 60);
+            doc.text('Area Covered: ' + $('areaResult').textContent, 25, 67);
+            doc.text('Volume: ' + $('volumeResult').textContent, 25, 74);
+            doc.text('Order Volume (with waste): ' + $('orderVolumeResult').textContent, 25, 81);
+            doc.text('Stone Needed: ' + $('weightResult').textContent, 25, 88);
+            doc.text('Equivalent Bags: ' + $('bagsResult').textContent, 25, 95);
+            doc.text('Estimated Cost: ' + $('costResult').textContent, 25, 102);
+            doc.text('Coverage at This Depth: ' + $('coverageResult').textContent, 25, 109);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Methodology (inputs used)', 20, 125);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Density range used: ' + fmt2(density.low) + ' - ' + fmt2(density.high) + ' tons per cu yd', 25, 135);
+            doc.text('Waste / overage applied: ' + ($('wastePct').value || '0') + '%', 25, 142);
+            doc.text('Depth used: ' + (currentMode === 'volume' ? 'N/A (volume entered directly)' : $('depthValue').value + ' ' + $('depthUnit').value), 25, 149);
+            doc.text('Price basis: ' + ($('priceValue').value ? ($('priceBasis').value === 'ton' ? 'per ton' : 'per cubic yard') : 'not entered'), 25, 156);
+            doc.text('Bag size used: ' + $('bagSize').value + ' cu ft per bag', 25, 163);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Estimate only. Confirm final quantities and pricing with your supplier. Generated by CalcSnaps.', 105, 280, { align: 'center' });
+
+            doc.save('Stone_Calculator_Summary_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== COPY RESULTS =====
+        function copyResults() {
+            const density = getDensity();
+            const materialName = MATERIALS[$('materialSelect').value].name;
+            let lines = ['Stone Calculator Summary', '-------------------------', 'Material: ' + materialName];
+            if (currentMode === 'tons') {
+                lines.push('You Have: ' + $('weightResult').textContent);
+                lines.push('Volume: ' + $('volumeResult').textContent);
+                lines.push($('orderVolumeLabel').textContent + ': ' + $('orderVolumeResult').textContent);
+            } else {
+                lines.push('Area Covered: ' + $('areaResult').textContent);
+                lines.push('Volume: ' + $('volumeResult').textContent);
+                lines.push('Order Volume (with waste): ' + $('orderVolumeResult').textContent);
+                lines.push('Stone Needed: ' + $('weightResult').textContent);
+                lines.push('Equivalent Bags: ' + $('bagsResult').textContent);
+                lines.push('Estimated Cost: ' + $('costResult').textContent);
+                lines.push('Waste applied: ' + ($('wastePct').value || '0') + '%');
+            }
+            lines.push('Density range used: ' + fmt2(density.low) + ' - ' + fmt2(density.high) + ' tons per cu yd');
+            lines.push('');
+            lines.push('Estimate only. Confirm final quantities with your supplier.');
+            const text = lines.join('\n');
+
+            const btn = $('copyResultsBtn');
+            const original = btn.innerHTML;
+            function showCopied() {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(showCopied).catch(() => fallbackCopy(text, showCopied));
+            } else {
+                fallbackCopy(text, showCopied);
+            }
+        }
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+            cb();
+        }
+        $('copyResultsBtn').addEventListener('click', copyResults);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                const item = q.parentElement;
+                q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                const toggle = () => { item.classList.toggle('active'); q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false'); };
+                q.addEventListener('click', toggle);
+                q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+            });
+        });
+
+        // ===== INIT =====
+        renderDimensionInputs();
+        renderDepthInputs();
+        calculateAll();
+        renderCoverageTable();
+    })();
+    </script>
+</body>
+</html>
