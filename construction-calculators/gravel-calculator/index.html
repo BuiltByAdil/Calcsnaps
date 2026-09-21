@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Gravel Calculator - Tons, Yards & Cost | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free gravel calculator for tons, cubic yards, and cost. Add rectangular or circular areas with their own material, plus separate overage and compaction. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/gravel-calculator">
+
+    <meta property="og:title" content="Gravel Calculator - Tons, Yards & Cost | CalcSnaps">
+    <meta property="og:description" content="Free gravel calculator for tons, cubic yards, and cost. Add rectangular or circular areas with their own material, plus separate overage and compaction.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/gravel-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Gravel Calculator",
+        "description": "Calculate tons, cubic yards, and cost of gravel needed across rectangular and circular areas, each with its own material, plus separate overage and compaction allowances",
+        "url": "https://calcsnaps.com/construction-calculators/gravel-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Gravel Calculator Guide: Tons, Yards, and Cost Explained",
+        "description": "How to calculate gravel tonnage, cubic yards, and cost for driveways, patios, and landscaping, including a two-layer worked example and formula breakdown.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/gravel-calculator" },
+        "datePublished": "2026-09-20",
+        "dateModified": "2026-09-20"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much gravel do I need for my project?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Multiply the length and width of your area in feet to get the square footage, multiply that by your depth converted to feet to get cubic feet, then divide by 27 to get cubic yards. Multiply cubic yards by your gravel's density to get tons. The calculator above does this automatically and lets you add multiple areas, even with different materials, in one pass." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many tons of gravel do I need for a driveway?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It depends on the driveway's length, width, and depth, but a typical gravel driveway uses 4 to 8 inches of material and commonly needs several tons even for a modest size. Because driveways are usually compacted, the calculator's compaction allowance matters more here than for a decorative landscaping area." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a yard of gravel weigh?",
+                "acceptedAnswer": { "@type": "Answer", "text": "It varies by source and material, but a cubic yard of standard gravel commonly falls somewhere between about 2,400 and 3,400 pounds, roughly 1.2 to 1.7 tons. Pea gravel and rock tend to sit at different points in that range since particle size and shape affect how tightly the material packs. Treat any single number as an estimate and confirm your supplier's exact figure for large orders." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between gravel, crushed stone, and pea gravel?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Gravel generally refers to naturally rounded rock fragments, while crushed stone is mechanically crushed and has rougher, angular edges that interlock and hold together better under load, which is why it is common in driveway base layers. Pea gravel is a smaller, smooth, rounded gravel often used as a decorative top layer or on paths, though it can shift more underfoot than angular material." }
+            },
+            {
+                "@type": "Question",
+                "name": "How much extra gravel should I order for overage and compaction?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A common starting point is about 10% extra for overage, to cover spillage and small voids, on top of any compaction allowance. Compaction mainly matters for driveways and roads, where the material is deliberately packed down, and can call for meaningfully more material than a decorative area that is not compacted. Both are planning buffers rather than precise engineering figures, so the calculator's fields are adjustable." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Gravel Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <!-- jsPDF is loaded on demand, only when Download PDF is clicked, not on page load -->
+
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .area-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .area-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .area-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-area-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-area-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-area-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-area-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-area-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-area-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-area-btn:focus-visible { outline: 3px solid var(--primary); }
+        .field-caption { font-size: 11.5px; color: var(--gray-text); margin: -6px 0 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+        }
+        @media (max-width: 480px) { .input-grid { grid-template-columns: 1fr; } }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-mound"></i> Gravel Calculator</h1>
+                    <p>Tons · Cubic Yards · Cost, with a different material for each area</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Confirm exact density and pricing with your supplier before placing a large order.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Project Areas</div>
+                    <p class="field-caption" style="text-transform:none;font-weight:500;font-size:13px;">Each area can use its own material, so a base layer and a top layer can be added separately.</p>
+                    <div id="areasContainer"></div>
+                    <button class="add-area-btn" id="addAreaBtn" type="button"><i class="fas fa-plus"></i> Add Another Area (up to 4)</button>
+
+                    <div class="section-title"><i class="fas fa-road"></i> Project Type, Overage & Cost</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Project type</span>
+                        <div class="toggle-switch" id="projectTypeToggle" role="radiogroup" aria-label="Project type">
+                            <button type="button" class="toggle-option" data-project="landscaping" role="radio" aria-checked="false">Landscaping / Path</button>
+                            <button type="button" class="toggle-option active" data-project="driveway" role="radio" aria-checked="true">Driveway / Road</button>
+                        </div>
+                    </div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="overagePct">Overage</label>
+                            <div class="row"><input type="number" id="overagePct" value="10" min="0" max="25" step="1"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="compactionPct">Compaction</label>
+                            <div class="row"><input type="number" id="compactionPct" value="30" min="0" max="40" step="1"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="truckCapacity">Truck capacity</label>
+                            <div class="row"><input type="number" id="truckCapacity" value="10" min="0.5" max="30" step="0.5"><span class="unit">cu yd</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="priceValue">Price (optional)</label>
+                            <div class="row"><input type="number" id="priceValue" placeholder="0" min="0" step="0.01"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="priceMode">Per</label>
+                            <select id="priceMode">
+                                <option value="ton">Ton</option>
+                                <option value="yard">Cubic Yard</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show">Overage covers spillage and small voids. Compaction only matters where the material is packed down, like a driveway or road base. Both are planning buffers, not precise engineering figures, so adjust them for your own project.</div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Gravel Needed</span>
+                            <span class="amount" id="tonsResult">0 tons</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Cubic Yards</div><div class="result-value small" id="yardsResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Truckloads (combined)</div><div class="result-value small" id="truckloadsResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Bags (0.5 cu ft)</div><div class="result-value small" id="bagsResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Est. Cost</div><div class="result-value small" id="costResult">-</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table">
+                                <thead><tr><th>Area</th><th>Shape</th><th>Material</th><th>Footprint</th><th>Volume</th><th>Weight</th></tr></thead>
+                                <tbody id="breakdownBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="status-note status-neutral show" id="materialSubtotalNote"></div>
+                        <div class="status-note status-neutral show" id="bagsNote"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Gravel Calculator Guide: Tons, Yards, and Cost Explained</h2>
+                    <p>How to plan a gravel order for one area or a full two-layer driveway, in the units your supplier actually quotes</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Gravel Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Gravel Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Gravel Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#units">6. Units and Conversions</a></div>
+                            <div class="toc-item"><a href="#tips">7. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">8. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">9. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Ordering gravel usually means translating a length and width into a number a quarry or supplier will actually recognize: tons. Most suppliers sell and deliver gravel by weight, not by volume, so a gravel calculator that only gives you cubic yards is only telling you half of what you need.</p>
+                    <p>This gravel calculator solves that by working in tons first, while still showing cubic yards, truckloads, and bags. It also handles a project most tools skip entirely: a driveway or path with a compacted base layer of one material and a decorative top layer of another. Add each layer as its own area, pick its own material, and the calculator totals everything, including separate overage and compaction allowances.</p>
+
+                    <h2 id="how-works">1. How the Gravel Calculator Works</h2>
+                    <p>Each area you add has its own shape, either rectangle or circle, its own material, and its own depth. The calculator converts depth from inches to feet, multiplies it by the footprint, and gets a raw volume in cubic feet for that area.</p>
+                    <p>It then applies two separate adjustments: an overage percentage for spillage and small voids, applied to every area, and a compaction percentage that only applies to areas you mark as compacted. A driveway base can carry the compaction allowance while a decorative top layer right above it does not, since a top layer that is not driven on usually is not packed down the same way.</p>
+                    <p>Each area's adjusted volume is converted to tons using that area's own material density, so a project with a crushed stone base and a pea gravel top layer gets an accurate weight for each, not one blended guess.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions:</strong>
+                        <p style="margin: 10px 0 0;">Each area is treated as a simple rectangle or circle. Overage applies to every area, while compaction only applies to areas individually marked as compacted, using the compaction percentage entered above. Material densities are typical planning figures, not guaranteed values for your exact supplier's product.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Gravel Calculator</h2>
+                    <ol>
+                        <li>Choose a shape for your first area, Rectangle or Circle.</li>
+                        <li>Enter the length and width in feet, or the diameter in feet for a circle.</li>
+                        <li>Pick the material for that area, or enter a custom density if your supplier has given you one.</li>
+                        <li>Enter the depth in inches for that area.</li>
+                        <li>Add another area if your project has a second layer or a separate section, with its own material if needed.</li>
+                        <li>Mark whether that area is compacted, and choose a project type to load a sensible starting compaction percentage.</li>
+                        <li>Optionally enter a price per ton or per cubic yard to see an estimated cost.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Gravel Calculator Formula</h2>
+                    <div class="pro-tip">
+                        <code>Rectangle volume (cu ft) = Length x Width x (Depth in inches / 12)</code>
+                        <code>Circle volume (cu ft) = Pi x (Diameter / 2)² x (Depth in inches / 12)</code>
+                        <p style="margin: 10px 0 0;">Length and Width are the footprint of a rectangular area in feet, Diameter is the distance across a circular area in feet, and Depth is the material thickness in inches.</p>
+                    </div>
+                    <p>Each area's volume then gets the overage and compaction allowances applied, one after the other, before converting to yards and tons:</p>
+                    <div class="pro-tip">
+                        <code>Adjusted volume = Raw volume x (1 + overage %) x (1 + compaction %, only if that area is marked compacted)</code>
+                        <code>Cubic yards = Adjusted volume (cu ft) / 27</code>
+                        <code>Tons = Cubic yards x density (lb per cu yd) / 2,000</code>
+                    </div>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Using the calculator's defaults: a two-layer driveway, 40 ft long and 12 ft wide, with a 4 inch crushed stone base and a 2 inch pea gravel top layer.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Layer</th><th>Footprint</th><th>Raw Volume</th></tr></thead>
+                        <tbody>
+                            <tr><td>Base, Crushed Stone, 4 in deep</td><td>480 sq ft</td><td>160 cu ft</td></tr>
+                            <tr><td>Top, Pea Gravel, 2 in deep</td><td>480 sq ft</td><td>80 cu ft</td></tr>
+                        </tbody>
+                    </table>
+                    <p>With a driveway project type, overage defaults to 10% and compaction to 30%. The base layer is marked compacted, so it gets both adjustments; the top layer is not marked compacted, so it only gets the overage.</p>
+                    <p><strong>Base layer (compacted):</strong> 160 x 1.10 x 1.30 = 228.8 cu ft = about 8.47 cu yd. At crushed stone's default density of 2,700 lb per cubic yard, that is about 11.44 tons.</p>
+                    <p><strong>Top layer (not compacted):</strong> 80 x 1.10 = 88 cu ft = about 3.26 cu yd. At pea gravel's default density of 2,600 lb per cubic yard, that is about 4.24 tons.</p>
+                    <p><strong>Combined total:</strong> about 11.73 cubic yards and 15.68 tons, which comes to 2 truckloads at 10 cubic yards per load, or roughly $784 at $50 per ton.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The tons figure is your primary ordering number, since most gravel suppliers quote and deliver by weight. The cubic yards figure still matters for checking a supplier's volume-based quote or for smaller loads sold that way.</p>
+                    <p>Both numbers are estimates. Gravel density varies meaningfully by material and source, commonly landing somewhere between about 2,400 and 3,400 pounds per cubic yard depending on particle size and moisture. Treat the calculator's defaults as reasonable starting points and confirm the exact density with your supplier before finalizing a large order. If your project has a compacted base layer, giving that layer's compaction figure a bit of room rather than cutting it close tends to work out better than ordering exactly to the calculated number. A properly compacted gravel base is also a standard part of building a durable driveway or gravel road in the first place, as outlined in the <a href="https://www.epa.gov/sites/default/files/2015-10/documents/2003_07_24_nps_gravelroads_gravelroads.pdf" target="_blank" rel="noopener">Federal Highway Administration's Gravel Roads Maintenance and Design Manual</a>, which is why the calculator treats compaction as something you turn on for a structural base rather than a fixed add-on for every area.</p>
+
+                    <h2 id="units">6. Units and Conversions</h2>
+                    <ul>
+                        <li>1 cubic yard equals 27 cubic feet (3 ft x 3 ft x 3 ft), the conversion this calculator relies on most.</li>
+                        <li>Standard gravel commonly weighs 2,800 to 3,400 lb per cubic yard, roughly 1.4 to 1.7 tons. Pea gravel and rock sit at somewhat different points in that range due to particle size and shape.</li>
+                        <li>Depth is almost always measured in inches, while footprint is measured in feet. Mixing these up is the single most common calculation mistake for this kind of project.</li>
+                    </ul>
+
+                    <h2 id="tips">7. Practical Tips</h2>
+                    <ul>
+                        <li>A workable baseline depth for a decorative gravel area is about 2 to 4 inches, while driveways typically need more.</li>
+                        <li>Keep footprint in feet and depth in inches, and let the calculator handle the conversion.</li>
+                        <li>Only add a compaction allowance for material that will actually be packed down, such as a driveway or road base.</li>
+                        <li>Ask your supplier whether their price is per ton or per cubic yard, and use the matching output.</li>
+                        <li>For an irregular area, split the space into a few rectangles and circles and enter each as a separate row.</li>
+                    </ul>
+
+                    <h2 id="mistakes">8. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Mixing units:</strong> entering depth in feet instead of inches can throw off the entire result by a factor of 12.</li>
+                        <li><strong>Applying one density to every layer:</strong> a crushed stone base and a pea gravel top layer genuinely weigh different amounts per cubic yard, so using one figure for both under or overstates the total.</li>
+                        <li><strong>Skipping compaction on a driveway base:</strong> ordering exactly the raw calculated volume for a base layer that will be compacted often leaves the finished job short.</li>
+                        <li><strong>Marking a decorative layer as compacted:</strong> a top layer that is not driven on or packed down usually does not need the same allowance as a structural base, so leave its compaction toggle off.</li>
+                        <li><strong>Rounding too early:</strong> round only the final ton or cubic yard figure, not the inputs along the way.</li>
+                    </ul>
+
+                    <h2 id="related">9. Related Calculations and Use Cases</h2>
+                    <p>Gravel projects often overlap with other aggregate work. If part of your project uses larger decorative stone instead of gravel, our <a href="https://calcsnaps.com/calculators/river-rock-calculator">River Rock Calculator</a> can estimate that material using the same length, width, and depth approach.</p>
+                    <p>Common real-world use cases include a gravel driveway base and top layer, a landscaping path, a patio base under pavers, a drainage trench, and filling in low spots around a new build.</p>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="gravelfaq1-answer">How much gravel do I need for my project?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="gravelfaq1-answer"><p>Multiply the length and width of your area in feet to get the square footage, multiply that by your depth converted to feet to get cubic feet, then divide by 27 to get cubic yards. Multiply cubic yards by your gravel's density to get tons. The calculator above does this automatically and lets you add multiple areas, even with different materials, in one pass.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="gravelfaq2-answer">How many tons of gravel do I need for a driveway?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="gravelfaq2-answer"><p>It depends on the driveway's length, width, and depth, but a typical gravel driveway uses 4 to 8 inches of material and commonly needs several tons even for a modest size. Because driveways are usually compacted, the calculator's compaction allowance matters more here than for a decorative landscaping area.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="gravelfaq3-answer">How much does a yard of gravel weigh?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="gravelfaq3-answer"><p>It varies by source and material, but a cubic yard of standard gravel commonly falls somewhere between about 2,400 and 3,400 pounds, roughly 1.2 to 1.7 tons. Pea gravel and rock tend to sit at different points in that range since particle size and shape affect how tightly the material packs. Treat any single number as an estimate and confirm your supplier's exact figure for large orders.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="gravelfaq4-answer">What is the difference between gravel, crushed stone, and pea gravel?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="gravelfaq4-answer"><p>Gravel generally refers to naturally rounded rock fragments, while crushed stone is mechanically crushed and has rougher, angular edges that interlock and hold together better under load, which is why it is common in driveway base layers. Pea gravel is a smaller, smooth, rounded gravel often used as a decorative top layer or on paths, though it can shift more underfoot than angular material.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="gravelfaq5-answer">How much extra gravel should I order for overage and compaction?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="gravelfaq5-answer"><p>A common starting point is about 10% extra for overage, to cover spillage and small voids, on top of any compaction allowance. Compaction mainly matters for driveways and roads, where the material is deliberately packed down, and can call for meaningfully more material than a decorative area that is not compacted. Both are planning buffers rather than precise engineering figures, so the calculator's fields are adjustable.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Confirm exact density, overage, compaction, and pricing with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪨</span> Try the Gravel Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪨 Gravel Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stone-calculator">🧱 Stone Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">📐 Dirt Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/river-rock-calculator">🏔️ River Rock Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stone-calculator">Stone Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                    <a href="https://calcsnaps.com/calculators/river-rock-calculator">River Rock Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+        // Same as safeNumber, but also reports whether the raw value had to be capped,
+        // so the UI can tell the person instead of silently using a different number.
+        function trackedNumber(raw, opts) {
+            const n = parseFloat(raw);
+            const value = safeNumber(raw, opts);
+            const wasClamped = isFinite(n) && (n < (opts.min ?? 0) || n > (opts.max ?? Infinity));
+            return { value, wasClamped };
+        }
+
+        const MATERIALS = {
+            gravel: { label: 'Gravel', density: 2800 },
+            crushed: { label: 'Crushed Stone', density: 2700 },
+            pea: { label: 'Pea Gravel', density: 2600 },
+            rock: { label: 'Rock', density: 2500 }
+        };
+        const DENSITY_MIN = 1500, DMAX = 4000;
+        const OVERAGE_MAX = 25, COMPACTION_MAX = 40;
+        const TRUCK_MIN = 0.5, TRUCK_MAX = 30;
+        let areaCount = 0;
+        let areaUid = 0;
+        const maxAreas = 4;
+
+        function materialOptionsHtml(uid, selected) {
+            let html = '';
+            Object.keys(MATERIALS).forEach(key => {
+                html += '<button type="button" class="toggle-option ' + (selected === key ? 'active' : '') + '" data-material="' + key + '" role="radio" aria-checked="' + (selected === key) + '">' + MATERIALS[key].label + '</button>';
+            });
+            html += '<button type="button" class="toggle-option ' + (selected === 'custom' ? 'active' : '') + '" data-material="custom" role="radio" aria-checked="' + (selected === 'custom') + '">Custom</button>';
+            return html;
+        }
+
+        function makeAreaRow(index, defaults) {
+            const shape = defaults.shape || 'rectangle';
+            const material = defaults.material || 'gravel';
+            const compacted = defaults.compacted === true;
+            const uid = 'area' + (areaUid++);
+            const wrap = document.createElement('div');
+            wrap.className = 'area-card';
+            wrap.dataset.index = index;
+            wrap.dataset.uid = uid;
+            wrap.innerHTML =
+                '<div class="area-card-header">' +
+                    '<span class="area-card-label">Area ' + (index + 1) + '</span>' +
+                    (index > 0 ? '<button type="button" class="remove-area-btn" data-remove="' + index + '"><i class="fas fa-times"></i> Remove</button>' : '') +
+                '</div>' +
+                '<div class="toggle-switch shape-toggle" role="radiogroup" aria-label="Shape for area ' + (index + 1) + '" style="margin-bottom:12px;">' +
+                    '<button type="button" class="toggle-option ' + (shape === 'rectangle' ? 'active' : '') + '" data-shape="rectangle" role="radio" aria-checked="' + (shape === 'rectangle') + '">Rectangle</button>' +
+                    '<button type="button" class="toggle-option ' + (shape === 'circle' ? 'active' : '') + '" data-shape="circle" role="radio" aria-checked="' + (shape === 'circle') + '">Circle</button>' +
+                '</div>' +
+                '<div class="toggle-switch material-toggle" role="radiogroup" aria-label="Material for area ' + (index + 1) + '" style="margin-bottom:14px;">' +
+                    materialOptionsHtml(uid, material) +
+                '</div>' +
+                '<div class="toggle-row" style="margin-bottom:14px;">' +
+                    '<span class="toggle-label" style="font-size:12.5px;">Compaction applies to this area</span>' +
+                    '<div class="toggle-switch compaction-toggle" role="radiogroup" aria-label="Compaction for area ' + (index + 1) + '">' +
+                        '<button type="button" class="toggle-option ' + (!compacted ? 'active' : '') + '" data-compacted="false" role="radio" aria-checked="' + (!compacted) + '">Not compacted</button>' +
+                        '<button type="button" class="toggle-option ' + (compacted ? 'active' : '') + '" data-compacted="true" role="radio" aria-checked="' + compacted + '">Compacted</button>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="input-grid custom-density-group" style="display:' + (material === 'custom' ? 'grid' : 'none') + ';margin-bottom:14px;">' +
+                    '<div class="input-group">' +
+                        '<label for="' + uid + '-density">Custom density</label><div class="row"><input type="number" id="' + uid + '-density" class="density-input" min="' + DENSITY_MIN + '" max="' + DMAX + '" step="10" value="' + (defaults.density != null ? defaults.density : 2800) + '"><span class="unit">lb/yd³</span></div>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="input-grid" style="margin-bottom:0;">' +
+                    '<div class="input-group rect-field" style="display:' + (shape === 'rectangle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-length">Length</label><div class="row"><input type="number" id="' + uid + '-length" class="length-input" min="0" step="0.1" value="' + (defaults.length != null ? defaults.length : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group rect-field" style="display:' + (shape === 'rectangle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-width">Width</label><div class="row"><input type="number" id="' + uid + '-width" class="width-input" min="0" step="0.1" value="' + (defaults.width != null ? defaults.width : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group circle-field" style="display:' + (shape === 'circle' ? 'block' : 'none') + ';">' +
+                        '<label for="' + uid + '-diameter">Diameter</label><div class="row"><input type="number" id="' + uid + '-diameter" class="diameter-input" min="0" step="0.1" value="' + (defaults.diameter != null ? defaults.diameter : '') + '"><span class="unit">ft</span></div>' +
+                    '</div>' +
+                    '<div class="input-group">' +
+                        '<label for="' + uid + '-depth">Depth</label><div class="row"><input type="number" id="' + uid + '-depth" class="depth-input" min="0" step="0.5" value="' + (defaults.depth != null ? defaults.depth : '') + '"><span class="unit">in</span></div>' +
+                    '</div>' +
+                '</div>';
+            return wrap;
+        }
+
+        function addArea(defaults) {
+            if (areaCount >= maxAreas) return;
+            const row = makeAreaRow(areaCount, defaults || {});
+            $('areasContainer').appendChild(row);
+            wireAreaRow(row);
+            areaCount++;
+            $('addAreaBtn').disabled = areaCount >= maxAreas;
+            calculateAll();
+        }
+
+        function wireAreaRow(row) {
+            row.querySelectorAll('.shape-toggle .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const shape = btn.dataset.shape;
+                    row.querySelectorAll('.shape-toggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    row.querySelectorAll('.rect-field').forEach(f => f.style.display = shape === 'rectangle' ? 'block' : 'none');
+                    row.querySelectorAll('.circle-field').forEach(f => f.style.display = shape === 'circle' ? 'block' : 'none');
+                    calculateAll();
+                });
+            });
+            row.querySelectorAll('.material-toggle .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const mat = btn.dataset.material;
+                    row.querySelectorAll('.material-toggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    row.querySelector('.custom-density-group').style.display = mat === 'custom' ? 'grid' : 'none';
+                    calculateAll();
+                });
+            });
+            row.querySelectorAll('.compaction-toggle .toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    row.querySelectorAll('.compaction-toggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    calculateAll();
+                });
+            });
+            row.querySelectorAll('input').forEach(inp => inp.addEventListener('input', calculateAll));
+            const removeBtn = row.querySelector('.remove-area-btn');
+            if (removeBtn) {
+                removeBtn.addEventListener('click', () => { row.remove(); renumberAreas(); calculateAll(); });
+            }
+        }
+
+        function renumberAreas() {
+            const rows = $('areasContainer').querySelectorAll('.area-card');
+            areaCount = rows.length;
+            rows.forEach((row, i) => {
+                row.dataset.index = i;
+                row.querySelector('.area-card-label').textContent = 'Area ' + (i + 1);
+            });
+            $('addAreaBtn').disabled = areaCount >= maxAreas;
+        }
+
+        function getRowData(row) {
+            const shape = row.querySelector('.shape-toggle .toggle-option.active').dataset.shape;
+            const materialKey = row.querySelector('.material-toggle .toggle-option.active').dataset.material;
+            let rowClamped = false;
+
+            const depthT = trackedNumber(row.querySelector('.depth-input').value, { min: 0, max: 240 });
+            const depth = depthT.value; if (depthT.wasClamped) rowClamped = true;
+
+            let footprint = 0, label = '';
+            if (shape === 'rectangle') {
+                const lT = trackedNumber(row.querySelector('.length-input').value, { min: 0, max: 1000 });
+                const wT = trackedNumber(row.querySelector('.width-input').value, { min: 0, max: 1000 });
+                if (lT.wasClamped || wT.wasClamped) rowClamped = true;
+                footprint = lT.value * wT.value;
+                label = lT.value + ' x ' + wT.value + ' ft';
+            } else {
+                const dT = trackedNumber(row.querySelector('.diameter-input').value, { min: 0, max: 1000 });
+                if (dT.wasClamped) rowClamped = true;
+                footprint = Math.PI * Math.pow(dT.value / 2, 2);
+                label = dT.value + ' ft diameter';
+            }
+
+            let density;
+            if (materialKey === 'custom') {
+                const densT = trackedNumber(row.querySelector('.density-input').value, { min: DENSITY_MIN, max: DMAX, fallback: 2800 });
+                density = densT.value; if (densT.wasClamped) rowClamped = true;
+            } else {
+                density = MATERIALS[materialKey].density;
+            }
+            const materialLabel = materialKey === 'custom' ? 'Custom' : MATERIALS[materialKey].label;
+            const compacted = row.querySelector('.compaction-toggle .toggle-option.active').dataset.compacted === 'true';
+            const volume = footprint * (depth / 12);
+            return { shape, materialKey, materialLabel, density, footprint, depth, volume, label, compacted, clamped: rowClamped, valid: footprint > 0 && depth > 0 };
+        }
+
+        $('projectTypeToggle').querySelectorAll('.toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                $('projectTypeToggle').querySelectorAll('.toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                $('compactionPct').value = btn.dataset.project === 'driveway' ? 30 : 0;
+                calculateAll();
+            });
+        });
+
+        function calculateAll() {
+            const rows = Array.from($('areasContainer').querySelectorAll('.area-card'));
+            let anyInvalidWithInput = false;
+            let anyClamped = false;
+            const breakdown = [];
+
+            const overageT = trackedNumber($('overagePct').value, { min: 0, max: OVERAGE_MAX, fallback: 0 });
+            const compactionT = trackedNumber($('compactionPct').value, { min: 0, max: COMPACTION_MAX, fallback: 0 });
+            const truckCapT = trackedNumber($('truckCapacity').value, { min: TRUCK_MIN, max: TRUCK_MAX, fallback: 10 });
+            if (overageT.wasClamped || compactionT.wasClamped || truckCapT.wasClamped) anyClamped = true;
+
+            const overage = overageT.value, compaction = compactionT.value, truckCap = truckCapT.value;
+
+            let totalAdjFt3 = 0, totalTons = 0, totalYd3ByMaterial = {};
+            const materialTotals = {};
+
+            rows.forEach((row, i) => {
+                const r = getRowData(row);
+                if (r.clamped) anyClamped = true;
+                if (r.valid) {
+                    // Overage applies to every area (spillage/voids affect any delivered material).
+                    // Compaction only applies to areas the user has marked as compacted, since a
+                    // decorative top layer usually isn't packed down the way a base layer is.
+                    const rowFactor = (1 + overage / 100) * (1 + (r.compacted ? compaction / 100 : 0));
+                    const adjFt3 = r.volume * rowFactor;
+                    const yd3 = adjFt3 / 27;
+                    const tons = yd3 * r.density / 2000;
+                    totalAdjFt3 += adjFt3;
+                    totalTons += tons;
+                    materialTotals[r.materialLabel] = (materialTotals[r.materialLabel] || 0) + tons;
+                    totalYd3ByMaterial[r.materialLabel] = (totalYd3ByMaterial[r.materialLabel] || 0) + yd3;
+                    breakdown.push({ index: i, ...r, adjFt3, yd3, tons });
+                } else {
+                    const hasSomeInput = Array.from(row.querySelectorAll('input')).some(inp => inp.value !== '');
+                    if (hasSomeInput) anyInvalidWithInput = true;
+                    breakdown.push({ index: i, ...r });
+                }
+            });
+
+            const warning = $('warningNote');
+            const messages = [];
+            if (anyInvalidWithInput) messages.push('One or more areas is missing a dimension or depth greater than zero, so that area is not included in the total yet.');
+            if (anyClamped) messages.push('One or more values were outside the allowed range and were capped to the nearest valid limit shown on that field (for example, overage up to ' + OVERAGE_MAX + '% or compaction up to ' + COMPACTION_MAX + '%) - the result reflects the capped value, not what was typed.');
+            if (messages.length) {
+                warning.innerHTML = '<i class="fas fa-triangle-exclamation"></i> ' + messages.join(' ');
+                warning.classList.add('show');
+            } else {
+                warning.classList.remove('show');
+            }
+
+            const totalYd3 = totalAdjFt3 / 27;
+            const truckloads = totalYd3 > 0 ? Math.ceil(totalYd3 / truckCap) : 0;
+            const bags = Math.ceil(totalAdjFt3 / 0.5);
+
+            $('tonsResult').textContent = totalTons.toFixed(2) + ' tons';
+            $('yardsResult').textContent = totalYd3.toFixed(2);
+            $('truckloadsResult').textContent = truckloads;
+            $('bagsResult').textContent = bags;
+            $('bagsNote').textContent = totalYd3 > 0
+                ? ('Equivalent 0.5 cu ft bag count: about ' + bags + ' (a rough reference for small bag-based purchases at a common 0.5 cu ft bag size - your supplier may sell 0.75 or 1 cu ft bags instead, not a delivery recommendation).')
+                : 'Enter at least one area above to see bag and delivery estimates.';
+
+            const materialKeys = Object.keys(materialTotals);
+            const multiMaterial = materialKeys.length > 1;
+            $('materialSubtotalNote').style.display = multiMaterial ? 'block' : 'none';
+            if (multiMaterial) {
+                const tonLine = 'By material (tons): ' + materialKeys.map(k => k + ': ' + materialTotals[k].toFixed(2)).join('   |   ');
+                const truckLine = 'Approx. truckloads if delivered separately: ' + materialKeys.map(k => k + ': ' + Math.max(1, Math.ceil(totalYd3ByMaterial[k] / truckCap))).join('   |   ');
+                $('materialSubtotalNote').innerHTML = escapeHtml(tonLine) + '<br>' + escapeHtml(truckLine) + '<br>The combined truckload figure above assumes everything could ride on the same trucks; most suppliers deliver different materials separately.';
+            }
+
+            const price = safeNumber($('priceValue').value, { min: 0, max: 1000000, fallback: 0 });
+            const priceMode = $('priceMode').value;
+            if (price > 0 && totalTons > 0) {
+                const cost = priceMode === 'ton' ? totalTons * price : totalYd3 * price;
+                $('costResult').textContent = '$' + cost.toFixed(2) + (multiMaterial ? ' (blended)' : '');
+            } else {
+                $('costResult').textContent = '-';
+            }
+
+            const tbody = $('breakdownBody');
+            tbody.innerHTML = '';
+            breakdown.forEach(b => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = '<td>Area ' + (b.index + 1) + '</td>' +
+                    '<td>' + escapeHtml(b.shape.charAt(0).toUpperCase() + b.shape.slice(1)) + '</td>' +
+                    '<td>' + escapeHtml(b.materialLabel) + (b.compacted ? ' <span style="color:var(--gray-text);font-size:11px;">(compacted)</span>' : '') + '</td>' +
+                    '<td>' + escapeHtml(b.label) + '</td>' +
+                    '<td>' + (b.valid ? Math.round(b.volume) + ' cu ft' : 'incomplete') + '</td>' +
+                    '<td>' + (b.valid ? b.tons.toFixed(2) + ' t' : '-') + '</td>';
+                tbody.appendChild(tr);
+            });
+
+            return { totalTons, totalYd3, truckloads, overage, compaction, truckCap, breakdown };
+        }
+
+        $('addAreaBtn').addEventListener('click', () => addArea({}));
+        ['overagePct', 'compactionPct', 'truckCapacity', 'priceValue'].forEach(id => { $(id).addEventListener('input', calculateAll); });
+        $('priceMode').addEventListener('change', calculateAll);
+
+        // ===== COPY / SHARE =====
+        function buildSummary() {
+            const res = calculateAll();
+            return 'Gravel Calculator Result\n' +
+                'Weight needed: ' + res.totalTons.toFixed(2) + ' tons\n' +
+                'Volume: ' + res.totalYd3.toFixed(2) + ' cubic yards\n' +
+                'Truckloads: ' + res.truckloads + '\n' +
+                'Overage: ' + res.overage + '%   Compaction: ' + res.compaction + '%\n' +
+                'Source: CalcSnaps Gravel Calculator (https://calcsnaps.com/construction-calculators/gravel-calculator)';
+        }
+
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Gravel Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/gravel-calculator' }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text);
+                const btn = this; const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF EXPORT (jsPDF loaded on demand) =====
+        let jsPDFLoadPromise = null;
+        function ensureJsPDFLoaded() {
+            if (window.jspdf) return Promise.resolve();
+            if (jsPDFLoadPromise) return jsPDFLoadPromise;
+            jsPDFLoadPromise = new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                script.onload = () => resolve();
+                script.onerror = () => reject(new Error('Could not load PDF library'));
+                document.head.appendChild(script);
+            });
+            return jsPDFLoadPromise;
+        }
+
+        function generatePDF() {
+            const res = calculateAll();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            let y = 20;
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Gravel Calculator Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 12;
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Project Areas', 20, y); y += 10;
+            doc.setFontSize(10); doc.setTextColor(0, 0, 0);
+            res.breakdown.forEach(b => {
+                if (y > 260) { doc.addPage(); y = 20; }
+                const shapeLabel = b.shape.charAt(0).toUpperCase() + b.shape.slice(1);
+                doc.text('Area ' + (b.index + 1) + ' (' + shapeLabel + ', ' + b.materialLabel + '): ' + b.label + ', ' + b.depth + ' in deep', 25, y);
+                y += 6;
+                doc.setTextColor(100, 100, 100);
+                doc.text(b.valid
+                    ? ('Footprint: ' + b.footprint.toFixed(2) + ' sq ft   Volume: ' + b.volume.toFixed(2) + ' cu ft   Weight: ' + b.tons.toFixed(2) + ' tons')
+                    : 'Incomplete - not included in the total', 30, y);
+                doc.setTextColor(0, 0, 0);
+                y += 9;
+            });
+
+            y += 3;
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Settings', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Overage: ' + res.overage + '% (planning buffer, not an engineering figure)', 25, y); y += 7;
+            doc.text('Compaction: ' + res.compaction + '% (planning buffer, not an engineering figure)', 25, y); y += 7;
+            doc.text('Truck capacity: ' + res.truckCap + ' cubic yards per load', 25, y); y += 12;
+
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Results', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Total weight needed: ' + res.totalTons.toFixed(2) + ' tons', 25, y); y += 7;
+            doc.text('Total volume: ' + res.totalYd3.toFixed(2) + ' cubic yards', 25, y); y += 7;
+            doc.text('Estimated truckloads (combined): ' + res.truckloads, 25, y);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Planning estimate only. Confirm exact density, overage, compaction, and pricing with your supplier.', 105, 285, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Gravel Calculator', 105, 292, { align: 'center' });
+
+            doc.save('Gravel_Calculator_Report_' + Date.now() + '.pdf');
+        }
+
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing PDF...';
+            btn.disabled = true;
+            ensureJsPDFLoaded().then(() => {
+                generatePDF();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> PDF unavailable';
+                btn.disabled = false;
+                setTimeout(() => { btn.innerHTML = original; }, 2000);
+            });
+        });
+
+        // ===== RESET =====
+        function resetAll() {
+            $('areasContainer').innerHTML = '';
+            areaCount = 0;
+            addArea({ shape: 'rectangle', material: 'crushed', length: 40, width: 12, depth: 4, compacted: true });
+            addArea({ shape: 'rectangle', material: 'pea', length: 40, width: 12, depth: 2, compacted: false });
+
+            $('projectTypeToggle').querySelectorAll('.toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.project === 'driveway') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            $('overagePct').value = 10;
+            $('compactionPct').value = 30;
+            $('truckCapacity').value = 10;
+            $('priceValue').value = '';
+            $('priceMode').value = 'ton';
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        addArea({ shape: 'rectangle', material: 'crushed', length: 40, width: 12, depth: 4, compacted: true });
+        addArea({ shape: 'rectangle', material: 'pea', length: 40, width: 12, depth: 2, compacted: false });
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
