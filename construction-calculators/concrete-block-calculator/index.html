@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Concrete Block Calculator – Blocks, Mortar & Cost | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free CMU, cinder, and cement block calculator: get an estimated block count, mortar, sand, grout fill, and cost from your wall size and openings. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/concrete-block-calculator">
+
+    <meta property="og:title" content="Concrete Block Calculator – Blocks, Mortar & Cost | CalcSnaps">
+    <meta property="og:description" content="Free concrete block calculator: enter wall size, openings, and block size to get an estimated block count, mortar, sand, grout fill, and cost. No sign-up.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/concrete-block-calculator">
+    <meta property="og:image" content="https://calcsnaps.com/images/concrete-block-calculator-og.jpg">
+    <meta property="og:site_name" content="CalcSnaps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calcsnaps.com/images/concrete-block-calculator-og.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Concrete Block Calculator",
+        "description": "Calculate how many concrete blocks (CMU) you need for a wall, with door and window opening deductions, mortar, sand, optional grout fill, adjustable waste, and cost.",
+        "url": "https://calcsnaps.com/construction-calculators/concrete-block-calculator",
+        "applicationCategory": "ConstructionApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Concrete Block Calculator: Blocks, Mortar & Cost for Any Wall",
+        "description": "How to calculate concrete blocks for a wall with openings, why nominal and actual block sizes differ, a worked example, and how to avoid the most common ordering mistakes.",
+        "image": "https://calcsnaps.com/images/concrete-block-calculator-og.jpg",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/concrete-block-calculator" },
+        "datePublished": "2026-09-21",
+        "dateModified": "2026-09-22"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Concrete Block Calculator – Blocks, Mortar & Cost",
+        "description": "Calculate concrete blocks, mortar, sand, grout fill, and cost for a wall with openings.",
+        "url": "https://calcsnaps.com/construction-calculators/concrete-block-calculator",
+        "isPartOf": { "@type": "WebSite", "name": "CalcSnaps", "url": "https://calcsnaps.com/" },
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .unit-toggle { display: flex; gap: 12px; padding: 20px 28px 0 28px; }
+        .unit-btn { padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: 500; border: 1px solid #cbd5e1; background: white; color: #1e293b; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .unit-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .unit-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .unit-btn:hover:not(.active) { background: #f1f5f9; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; margin-top: 16px; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 26px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .toggle-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+        .toggle-label { font-weight: 600; font-size: 13.5px; color: var(--dark-light); display: flex; align-items: center; gap: 6px; }
+        .toggle-switch { display: flex; background: var(--light); border: 1px solid #e2e8f0; border-radius: 12px; padding: 4px; gap: 4px; flex-wrap: wrap; }
+        .toggle-option { padding: 8px 16px; border-radius: 8px; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; color: var(--gray-text); transition: all 0.2s; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; }
+
+        .section-title { font-size: 14.5px; font-weight: 700; color: var(--dark); margin: 20px 0 12px; display: flex; align-items: center; gap: 8px; }
+        .section-title i { color: var(--primary); }
+
+        .optional-section { margin: 20px 0 6px; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px; background: var(--light); }
+        .optional-section summary { font-size: 14.5px; font-weight: 700; color: var(--dark); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+        .optional-section summary::-webkit-details-marker { display: none; }
+        .optional-section summary i { color: var(--primary); }
+        .optional-section summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; margin-left: auto; font-size: 12px; color: var(--gray-text); transition: transform 0.2s; }
+        .optional-section[open] summary::after { transform: rotate(180deg); }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 6px; }
+        .input-group label { display: block; font-size: 12.5px; font-weight: 600; color: var(--gray-text); margin-bottom: 6px; }
+        .input-group .row { display: flex; gap: 6px; }
+        .input-group input, .input-group select { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark); background: white; }
+        .input-group select.unit-select { max-width: 82px; flex-shrink: 0; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .clamp-msg { display: none; font-size: 11.5px; color: var(--warning); margin-top: 4px; }
+        .clamp-msg.show { display: block; }
+        .input-group.field-invalid input { border-color: var(--danger); }
+        .input-group .error-msg { display: none; font-size: 11.5px; color: var(--danger); margin-top: 4px; }
+        .input-group.field-invalid .error-msg { display: block; }
+
+        .preset-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 4px; }
+        .preset-btn { padding: 7px 13px; border-radius: 30px; border: 1px solid #cbd5e1; background: white; color: var(--dark-light); font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .preset-btn:hover { background: #f1f5f9; }
+        .preset-btn.active { background: var(--secondary); border-color: var(--secondary); color: var(--dark); }
+
+        .info-tip { display: flex; gap: 10px; background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.2); border-radius: 14px; padding: 14px 16px; margin-top: 14px; font-size: 12.5px; color: var(--dark-light); }
+        .info-tip i { width: 20px; height: 20px; flex-shrink: 0; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 12px; font-weight: 700; }
+
+        .status-note { display: none; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 14px; font-size: 12.5px; margin-top: 14px; line-height: 1.5; }
+        .status-note.show { display: flex; }
+        .status-neutral { background: rgba(139,92,246,0.06); color: var(--dark-light); border: 1px solid rgba(139,92,246,0.2); }
+
+        .openings-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 10px; }
+        .opening-row { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; gap: 8px; align-items: end; background: var(--light); border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 12px; }
+        .opening-row label { display: block; font-size: 11px; font-weight: 600; color: var(--gray-text); margin-bottom: 4px; }
+        .opening-row input { width: 100%; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .opening-row input.invalid { border-color: var(--danger); }
+        .remove-opening-btn { background: none; border: 1px solid #fecaca; color: var(--danger); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 14px; }
+        .remove-opening-btn:hover { background: #fef2f2; }
+        .add-opening-btn { padding: 9px 16px; border-radius: 10px; border: 1px dashed var(--primary); background: rgba(139,92,246,0.05); color: var(--primary-text); font-weight: 600; font-size: 13px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .add-opening-btn:hover { background: rgba(139,92,246,0.1); }
+
+        .results-panel { background: var(--light); border-radius: 20px; padding: 22px; margin-top: 22px; border: 1px solid #e2e8f0; }
+        .total-payment-card { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 16px; padding: 18px 22px; text-align: center; margin-bottom: 16px; }
+        .total-payment-card .label { display: block; font-size: 12px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+        .total-payment-card .amount { display: block; font-size: 28px; font-weight: 800; color: white; margin-top: 4px; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+        .result-card { background: white; border-radius: 14px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 11.5px; color: var(--gray-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+        .result-value { font-size: 19px; font-weight: 700; color: var(--dark); margin-top: 4px; }
+        .result-value.small { font-size: 16px; }
+
+        .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 160px; padding: 13px 20px; border-radius: 14px; border: none; font-weight: 700; font-size: 13.5px; cursor: pointer; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary); color: white; transition: all 0.2s; }
+        .action-btn:hover { background: var(--primary-dark); }
+        .action-btn.secondary { background: white; color: var(--dark-light); border: 1px solid #cbd5e1; }
+        .action-btn.secondary:hover { background: #f1f5f9; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+        table.ref-table { width: 100%; border-collapse: collapse; margin-top: 8px; background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13px; }
+        table.ref-table th { background: var(--dark); color: white; font-weight: 600; padding: 10px 10px; text-align: left; }
+        table.ref-table td { padding: 9px 10px; border-bottom: 1px solid #e2e8f0; color: var(--gray-text); }
+        table.ref-table tr:last-child td { border-bottom: none; }
+        table.ref-table tr.your-row td { background: rgba(139,92,246,0.08); font-weight: 700; color: var(--dark); }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+
+        .formula-box { background: var(--dark); color: #e2e8f0; border-radius: 16px; padding: 20px 24px; margin: 18px 0; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13.5px; line-height: 1.8; overflow-x: auto; }
+        .formula-box .fvar { color: var(--secondary); }
+
+        .example-box { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2); border-radius: 16px; padding: 22px 24px; margin: 22px 0; }
+        .example-box ol { margin-bottom: 0; }
+        .example-box li { color: var(--dark-light); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+            .opening-row { grid-template-columns: 1fr 1fr; }
+            .opening-row .remove-opening-btn { grid-column: 1 / -1; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-border-all"></i> Concrete Block Calculator</h1>
+                    <p>Blocks · Mortar · Sand · Grout Fill · Cost, with door and window openings deducted</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> Results are planning estimates using standard block and mortar assumptions. Confirm exact block dimensions and quantities with your supplier before ordering.</div>
+
+                <div class="unit-toggle" role="radiogroup" aria-label="Unit system">
+                    <button class="unit-btn active" data-unit="imperial" role="radio" aria-checked="true">Imperial</button>
+                    <button class="unit-btn" data-unit="metric" role="radio" aria-checked="false">Metric</button>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="calc" role="tab" aria-selected="true" aria-controls="tab-calc" id="tabbtn-calc" tabindex="0">🧱 Block Calculator</button>
+                    <button class="tab" data-tab="reference" role="tab" aria-selected="false" aria-controls="tab-reference" id="tabbtn-reference" tabindex="-1">📋 Block Size Reference</button>
+                </div>
+
+                <!-- TAB 1: CALCULATOR -->
+                <div class="tab-content active" id="tab-calc" role="tabpanel" aria-labelledby="tabbtn-calc">
+
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Wall Dimensions</div>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="wallLength">Wall length</label><div class="row"><input type="number" id="wallLength" min="0" step="0.1" aria-label="Wall length"><select id="wallLengthUnit" class="unit-select"></select></div><span class="error-msg">Enter a length greater than 0</span></div>
+                        <div class="input-group"><label for="wallHeight">Wall height</label><div class="row"><input type="number" id="wallHeight" min="0" step="0.1" aria-label="Wall height"><select id="wallHeightUnit" class="unit-select"></select></div><span class="error-msg">Enter a height greater than 0</span></div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-door-open"></i> Openings (doors &amp; windows) <span style="font-weight:500;color:var(--gray-text);text-transform:none;">(optional)</span></div>
+                    <div class="openings-list" id="openingsList"></div>
+                    <button type="button" class="add-opening-btn" id="addOpeningBtn"><i class="fas fa-plus"></i> Add an opening</button>
+
+                    <div class="section-title"><i class="fas fa-th-large"></i> Block Face Size</div>
+                    <div class="input-grid">
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="blockFacePreset">Block size (length x height)</label>
+                            <select id="blockFacePreset" aria-label="Block face size preset">
+                                <option value="16x8" selected>16" x 8" (standard)</option>
+                                <option value="12x8">12" x 8"</option>
+                                <option value="8x8">8" x 8"</option>
+                                <option value="16x4">16" x 4"</option>
+                                <option value="12x4">12" x 4"</option>
+                                <option value="8x4">8" x 4"</option>
+                                <option value="custom">Custom size</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="customFaceRow" style="display:none;">
+                        <div class="input-group"><label for="customFaceLength">Block length</label><div class="row"><input type="number" id="customFaceLength" min="0" step="0.1" value="16" aria-label="Custom block length"><select id="customFaceLengthUnit" class="unit-select"></select></div><span class="error-msg">Enter a length greater than 0</span></div>
+                        <div class="input-group"><label for="customFaceHeight">Block height</label><div class="row"><input type="number" id="customFaceHeight" min="0" step="0.1" value="8" aria-label="Custom block height"><select id="customFaceHeightUnit" class="unit-select"></select></div><span class="error-msg">Enter a height greater than 0</span></div>
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <span class="toggle-label" style="margin-bottom:6px;display:block;">Is this size nominal or actual?</span>
+                            <div class="toggle-switch" id="sizeBasisToggle" role="radiogroup" aria-label="Nominal or actual block size">
+                                <button type="button" class="toggle-option active" data-basis="nominal" role="radio" aria-checked="true" tabindex="0">Nominal (includes joint)</button>
+                                <button type="button" class="toggle-option" data-basis="actual" role="radio" aria-checked="false" tabindex="-1">Actual (physical block)</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-cube"></i> Block Thickness &amp; Type</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="blockThickness">Thickness</label>
+                            <select id="blockThickness" aria-label="Block thickness">
+                                <option value="4">4"</option>
+                                <option value="6">6"</option>
+                                <option value="8" selected>8" (standard)</option>
+                                <option value="10">10"</option>
+                                <option value="12">12"</option>
+                                <option value="custom">Custom</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="customThicknessRow" style="display:none;">
+                            <label for="customThickness">Custom thickness</label>
+                            <div class="row"><input type="number" id="customThickness" min="0" step="0.5" value="8" aria-label="Custom block thickness"><select id="customThicknessUnit" class="unit-select"><option value="in">in</option><option value="cm">cm</option></select></div>
+                            <span class="error-msg">Enter a thickness greater than 0</span>
+                        </div>
+                    </div>
+                    <div class="toggle-row" style="margin-top:14px;">
+                        <span class="toggle-label"><i class="fas fa-circle-half-stroke"></i> Block type</span>
+                        <div class="toggle-switch" id="blockTypeToggle" role="radiogroup" aria-label="Block type">
+                            <button type="button" class="toggle-option active" data-type="hollow" role="radio" aria-checked="true" tabindex="0">Hollow (CMU)</button>
+                            <button type="button" class="toggle-option" data-type="solid" role="radio" aria-checked="false" tabindex="-1">Solid</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="fillGroutRow" style="margin-top:14px;">
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:13.5px;color:var(--dark-light);font-weight:600;">
+                                <input type="checkbox" id="fillGrout" style="width:auto;"> Fill all cells with grout (estimate fill volume)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-ruler"></i> Mortar Joint Thickness</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="mortarJoint">Joint thickness</label>
+                            <div class="row"><input type="number" id="mortarJoint" min="0.1" step="0.05" value="0.375" aria-label="Mortar joint thickness in inches"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">in</span></div>
+                            <span class="error-msg">Enter a joint thickness greater than 0 (required for custom actual-size entries)</span>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>Standard mortar joints are 3/8" (0.375in) per ASTM C90 convention. Preset block sizes above are nominal and already include this joint, so it has no further effect on them. If you choose a custom "actual size" block, this joint thickness is added to get the effective nominal size, which then feeds into block count, mortar, and grout estimates.</span>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-percent"></i> Waste / Overage Allowance</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="wastePct">Extra to order (%)</label>
+                            <div class="row"><input type="number" id="wastePct" value="7" step="1" min="0" max="20" aria-label="Waste percentage"></div>
+                            <span class="clamp-msg" id="wasteClamp">Adjusted to a valid value</span>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>5-7% covers a simple wall with few openings. Walls with more doors, windows, or corners need more cutting, so raise this to 8-10% for complex layouts.</span>
+                    </div>
+
+                    <details class="optional-section" id="priceDetails">
+                        <summary><i class="fas fa-dollar-sign"></i> Optional: Estimate Cost &amp; Mortar Yield</summary>
+                        <div class="input-grid" style="margin-top:14px;">
+                            <div class="input-group">
+                                <label for="priceBlock">Price per block</label>
+                                <div class="row"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">$</span><input type="number" id="priceBlock" step="0.1" min="0" placeholder="0.00" aria-label="Price per block"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="priceMortarBag">Price per mortar bag</label>
+                                <div class="row"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">$</span><input type="number" id="priceMortarBag" step="0.1" min="0" placeholder="0.00" aria-label="Price per mortar bag"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="priceSand">Price per cu yd sand</label>
+                                <div class="row"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">$</span><input type="number" id="priceSand" step="0.1" min="0" placeholder="0.00" aria-label="Price per cubic yard of sand"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="priceGrout">Price per cu yd grout</label>
+                                <div class="row"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">$</span><input type="number" id="priceGrout" step="0.1" min="0" placeholder="0.00" aria-label="Price per cubic yard of grout"></div>
+                            </div>
+                            <div class="input-group" style="grid-column: 1 / -1;">
+                                <label for="mortarYield">Blocks per mortar bag (product yield) <span style="font-weight:500;text-transform:none;">(default 33.3; check your specific bag's label or ask your supplier)</span></label>
+                                <div class="row"><input type="number" id="mortarYield" step="0.1" min="1" value="33.3" aria-label="Blocks per mortar bag"></div>
+                            </div>
+                            <div class="input-group" style="grid-column: 1 / -1;">
+                                <label for="sandRatio">Sand per mortar bag, cu yd <span style="font-weight:500;text-transform:none;">(only relevant if site-mixing mortar; default 0.143 = 1 cu yd per 7 bags of cement)</span></label>
+                                <div class="row"><input type="number" id="sandRatio" step="0.01" min="0.01" value="0.143" aria-label="Cubic yards of sand per mortar bag"></div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <div class="results-panel">
+                        <div class="status-note status-neutral" id="validationNote" style="border-left:4px solid var(--danger);background:rgba(239,68,68,0.06);color:#a11f1f;">
+                            <i class="fas fa-triangle-exclamation"></i> <span>Enter valid wall dimensions and block size (greater than 0) to see your estimate.</span>
+                        </div>
+                        <div id="resultsBody">
+                            <div class="total-payment-card">
+                                <span class="label">Total Blocks to Buy</span>
+                                <span class="amount" id="totalBlocksResult">0 blocks</span>
+                            </div>
+
+                            <div class="results-grid">
+                                <div class="result-card"><div class="result-label">Net Wall Area</div><div class="result-value small" id="netAreaResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Blocks Needed (before waste)</div><div class="result-value small" id="blocksNeededResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Mortar Bags</div><div class="result-value small" id="mortarResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Sand (if site-mixing mortar)</div><div class="result-value small" id="sandResult">-</div></div>
+                                <div class="result-card" id="groutCard"><div class="result-label">Approx. Grout Fill Volume</div><div class="result-value small" id="groutResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Blocks per 100 sq ft</div><div class="result-value small" id="per100Result">-</div></div>
+                            </div>
+
+                            <div class="status-note status-neutral show" style="margin-top:16px;">
+                                <i class="fas fa-dollar-sign"></i> <span id="costText">Estimated cost: enter block and mortar prices above.</span>
+                            </div>
+                            <div class="status-note status-neutral show" id="openingsNote" style="margin-top:10px;">
+                                <i class="fas fa-info-circle"></i> <span id="openingsNoteText">No openings added, using gross wall area.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: BLOCK SIZE REFERENCE -->
+                <div class="tab-content" id="tab-reference" role="tabpanel" aria-labelledby="tabbtn-reference">
+                    <div class="section-title"><i class="fas fa-table-list"></i> Standard Block Face Sizes (Nominal vs Actual)</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-bottom:14px;">Nominal size includes a 3/8" mortar joint; actual size is the physical block. Blocks per 100 sq ft is based on face area alone and does not change with block thickness.</p>
+                    <div style="overflow-x:auto;">
+                        <table class="ref-table" id="refTable">
+                            <thead><tr><th>Nominal (L x H)</th><th>Actual (L x H)</th><th>Blocks per 100 sq ft</th></tr></thead>
+                            <tbody id="refTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="info-tip" style="margin-top:16px;">
+                        <i>i</i>
+                        <span>Block thickness (4"-12") does not change how many blocks you need, since block count depends only on the face size shown here. Thickness matters for mortar volume, grout fill, weight, and whether the wall meets structural requirements.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Summary</button>
+                        <button class="action-btn secondary" id="copyResultsBtn"><i class="fas fa-copy"></i> Copy Results</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Concrete Block Calculator: Blocks, Mortar &amp; Cost for Any Wall</h2>
+                    <p>How to size a real wall, openings included, without over- or under-ordering</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-it-works">1. How the Concrete Block Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Concrete Block Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Concrete Block Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#units">6. Nominal vs Actual Block Sizes</a></div>
+                            <div class="toc-item"><a href="#tips">7. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">8. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">9. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Building with concrete block almost always comes down to one question: how many blocks does this actual wall need, openings included? This <strong>concrete block calculator</strong> answers that directly. Enter your wall's length and height, subtract any doors or windows, pick a block size, and it returns an estimated block count, mortar bags, sand, an optional grout fill volume, and a cost estimate.</p>
+                    <p>It's built for anyone laying out a CMU, cinder, or cement block wall: homeowners planning a garden or boundary wall, DIYers building a small foundation or utility wall, and contractors who want a fast second check on a takeoff. Use the tool above to get your numbers, then read on for the formula, a worked example, and the details that keep people from over- or under-ordering.</p>
+
+                    <h2 id="how-it-works">1. How the Concrete Block Calculator Works</h2>
+                    <p>The calculator starts with your wall's gross area (length times height), then subtracts any door or window openings you add to get the net area that actually needs block. That net area is divided by the face area of a single block to get an estimated block count.</p>
+                    <p>From there, it applies your waste percentage to get a real order quantity, and uses that final block count to estimate mortar bags and sand. If you're using hollow blocks and choose to fill the cells, it also estimates a grout volume based on your block's thickness and typical hollow-core proportions.</p>
+                    <div class="pro-tip">
+                        <strong>Planning-grade values, not a lab result.</strong>
+                        <p style="margin: 10px 0 0;">Mortar-bag yield, sand ratios, and hollow-core void percentages vary by manufacturer and mix. Treat the result as a strong starting order to confirm with your supplier, not a guaranteed final quantity.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Concrete Block Calculator</h2>
+                    <ol>
+                        <li><strong>Enter your wall length and height</strong>, switching units if needed (inches, feet, yards, centimeters, or meters are all supported).</li>
+                        <li><strong>Add any openings</strong>: click "Add an opening" for each door or window and enter its width and height. Skip this if your wall has none.</li>
+                        <li><strong>Pick a block face size</strong> from the standard presets, or choose custom and specify whether your measurement is nominal (includes the mortar joint) or the actual physical block size.</li>
+                        <li><strong>Select the block thickness</strong> (4" to 12") and whether the block is hollow or solid.</li>
+                        <li><strong>Check "Fill all cells with grout"</strong> if you're grouting a hollow-block wall and want a fill volume estimate.</li>
+                        <li><strong>Adjust the waste percentage</strong> based on how many openings and corners your wall has. 5-7% suits a simple wall; complex layouts need more.</li>
+                        <li><strong>Optionally enter a price</strong> per block and per mortar bag to see an estimated cost.</li>
+                        <li><strong>Read your results</strong>: net wall area, blocks needed before and after waste, mortar bags, sand, grout fill if selected, and cost. Download a PDF summary if you want to bring the numbers to your supplier.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Concrete Block Calculator Formula</h2>
+                    <p><strong>Wall area and block count:</strong></p>
+                    <div class="formula-box">Gross wall area (sq ft) = Wall length (ft) × Wall height (ft)<br>Net wall area (sq ft) = Gross wall area − sum of opening areas<br>Block face area (sq ft) = Block length (in) × Block height (in) ÷ 144<br>Blocks needed = Net wall area ÷ Block face area<br>Total blocks to buy = Blocks needed × (1 + <span class="fvar">waste%</span> ÷ 100)</div>
+                    <p>Where <strong>block length and height</strong> are nominal dimensions, meaning they already include the mortar joint. For a standard 16" x 8" block, face area is 16 × 8 ÷ 144 = 0.89 sq ft, so a 100 sq ft wall needs about 113 blocks before waste.</p>
+                    <p><strong>Mortar and sand:</strong></p>
+                    <div class="formula-box">Mortar bags = Total blocks ÷ 33.3<br>Sand (cu yd) = Mortar bags ÷ 7</div>
+                    <p>This follows the common estimating rule of three standard mortar bags per 100 blocks, with roughly one cubic yard of sand for every seven bags if mixing mortar from scratch instead of buying it pre-mixed.</p>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Say you're building a <strong>20 ft long, 8 ft high</strong> garden wall using <strong>standard 16" x 8" blocks</strong>, with one <strong>3 ft x 7 ft door opening</strong>, using the default 7% waste allowance.</p>
+                    <div class="example-box">
+                        <ol>
+                            <li><strong>Gross area:</strong> 20 ft × 8 ft = 160 sq ft</li>
+                            <li><strong>Opening area:</strong> 3 ft × 7 ft = 21 sq ft</li>
+                            <li><strong>Net area:</strong> 160 − 21 = 139 sq ft</li>
+                            <li><strong>Block face area:</strong> 16 × 8 ÷ 144 = 0.89 sq ft</li>
+                            <li><strong>Blocks needed:</strong> 139 ÷ (128 ÷ 144) = 139 ÷ 0.8889 = 156.4, rounds up to <strong>157 blocks</strong></li>
+                            <li><strong>Total blocks to buy with 7% waste:</strong> 157 × 1.07 = 168.0, rounds up to <strong>168 blocks</strong></li>
+                            <li><strong>Mortar bags:</strong> 168 ÷ 33.3 = 5.04, rounds up to <strong>6 bags</strong></li>
+                        </ol>
+                    </div>
+                    <p>So this wall needs roughly <strong>168 blocks</strong> and <strong>6 bags of mortar</strong>, a number you can hand directly to a block yard.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The block count is rounded up in two places: once for the exact blocks needed, and again after waste is applied. That's intentional. Suppliers sell whole blocks and whole mortar bags, and rounding down at any step risks a second trip to the yard mid-project.</p>
+                    <p>If your net area came out lower than expected, double-check that your openings were entered in the same unit as your wall dimensions. If it came out higher, confirm you didn't accidentally enter a block's actual size where the calculator expected a nominal size, since actual sizes are smaller and produce a higher block count for the same wall.</p>
+
+                    <h2 id="units">6. Nominal vs Actual Block Sizes</h2>
+                    <p>Every standard block size you'll see, including "16x8" and "8x8," is a <strong>nominal</strong> size. It already includes a standard 3/8" mortar joint, so the physical block itself is smaller. Standard sizes follow ASTM C90, the industry specification most concrete block manufacturers build to; the <a href="https://www.cmha.org/resource/cmu-tec-001/" target="_blank" rel="noopener">Concrete Masonry &amp; Hardscapes Association publishes accessible guidance</a> summarizing these dimensions.</p>
+                    <p>A block sold as 16" x 8" nominal actually measures about 15 5/8" x 7 5/8". Once laid with a 3/8" mortar joint on each side, it occupies the full 16" x 8" of wall space. This is why the calculator's presets use nominal sizes directly, and why a custom entry needs to specify which kind of size you're measuring.</p>
+
+                    <h2 id="tips">7. Practical Tips</h2>
+                    <ul>
+                        <li><strong>Measure openings precisely</strong>, including any rough framing, not just the finished door or window size, since the block wall needs to accommodate the full opening.</li>
+                        <li><strong>Keep wall and opening units consistent.</strong> The calculator converts automatically, but double-check the unit shown next to each field.</li>
+                        <li><strong>Raise your waste percentage for complex walls.</strong> More corners, more openings, and more cutting all mean more waste.</li>
+                        <li><strong>Confirm your block's actual dimensions with your supplier</strong> if you're using a non-standard or regional block, since nominal sizes can vary slightly by manufacturer.</li>
+                        <li><strong>Decide on grout fill early</strong> if your wall is structural or load-bearing, since it affects both material cost and whether steel reinforcement is needed.</li>
+                    </ul>
+
+                    <h2 id="mistakes">8. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Forgetting to deduct openings.</strong> A wall with a garage door or several windows can have meaningfully less net area than its gross size suggests.</li>
+                        <li><strong>Mixing nominal and actual sizes.</strong> Using a block's actual physical size where a nominal size is expected inflates the block count.</li>
+                        <li><strong>Applying brick coverage rates to block.</strong> Concrete blocks are much larger per unit than bricks; a brick-based coverage rate massively overstates how many blocks a wall needs.</li>
+                        <li><strong>Underestimating mortar for larger joints.</strong> A thicker-than-standard mortar joint uses more material per block than the 33.3-blocks-per-bag rule assumes.</li>
+                        <li><strong>Skipping the waste allowance on complex walls.</strong> Corners, openings, and cut blocks all add up faster than a flat rectangle would suggest.</li>
+                    </ul>
+
+                    <h2 id="related">9. Related Calculations and Use Cases</h2>
+                    <p>A block wall's footing or base is commonly a compacted gravel layer, which has very different volume and weight needs than the blocks themselves. If you're planning that base separately, our <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a> can help estimate that material on its own.</p>
+                    <p>Common real-world use cases for this calculator include garden and boundary walls (typically 4"-6" thick blocks), foundation and basement walls (8" or thicker, often filled and reinforced), garage walls with a vehicle door opening, and interior partition walls (usually 4" thick, hollow, unfilled). Each use case generally points to a different thickness and fill decision, which is why those are kept as separate inputs above.</p>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="blockfaq1-answer">How many concrete blocks do I need for a wall?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="blockfaq1-answer"><p>Multiply wall length by height to get gross area, subtract any door or window openings to get net area, then divide net area by the block's face area. For a standard 16x8 inch block (0.89 sq ft), a 200 sq ft wall needs about 225 blocks before waste.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="blockfaq2-answer">What is the difference between nominal and actual concrete block size?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="blockfaq2-answer"><p>Nominal size is the size used for estimating and includes the mortar joint, commonly 3/8 inch. Actual size is the physical block itself, which is smaller. A block sold as 16x8 inches nominal actually measures about 15 5/8 x 7 5/8 inches, with the mortar joint making up the difference once laid.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="blockfaq3-answer">How much mortar do I need for a concrete block wall?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="blockfaq3-answer"><p>A common rule of thumb is three standard mortar bags per 100 blocks, or divide your total block count by 33.3 to get the number of bags. If mixing your own mortar, figure roughly one cubic yard of sand for every seven bags of cement.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="blockfaq4-answer">Do I need to fill concrete blocks with grout?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="blockfaq4-answer"><p>Only hollow blocks (CMUs) have cells that can be filled. Non-structural partition walls often leave cells unfilled or fill only specific cells, while structural and load-bearing walls, and anything below grade, commonly require the cells filled with grout and reinforced with steel. Check your local building code or an engineer for your specific wall.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="blockfaq5-answer">How much extra should I order for waste?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="blockfaq5-answer"><p>5-7% is a reasonable default for a simple wall with few openings. Walls with more doors, windows, or corners need more cutting, so 8-10% is more realistic for complex layouts.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator provides planning estimates only. Always confirm exact block dimensions, quantities, and structural requirements with your supplier or a qualified engineer before ordering or building.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🧱</span> Try the Concrete Block Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/construction-calculators/stone-calculator">Stone Calculator</a>
+                    <a href="/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="/calculators/river-rock-calculator">River Rock Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        const FT_PER_M = 3.28084;
+        const FACE_PRESETS = {
+            '16x8': { l: 16, h: 8 },
+            '12x8': { l: 12, h: 8 },
+            '8x8':  { l: 8,  h: 8 },
+            '16x4': { l: 16, h: 4 },
+            '12x4': { l: 12, h: 4 },
+            '8x4':  { l: 8,  h: 4 }
+        };
+        // Approximate hollow-core void fraction of gross block volume, by thickness.
+        // Planning-grade estimate; confirm exact core volume with your block manufacturer for precise grouting jobs.
+        const VOID_FRACTION_BY_THICKNESS = { 4: 0.30, 6: 0.40, 8: 0.50, 10: 0.52, 12: 0.53 };
+
+        let currentUnit = 'imperial';
+        let openingCount = 0;
+
+        const dims = {
+            wallLength: 20, wallHeight: 8, // feet
+            customFaceLength: 16 / 12, customFaceHeight: 8 / 12, // feet (16in and 8in defaults)
+            customThicknessIn: 8 // inches (always stored in inches as the base unit)
+        };
+
+        function fmt2(n) { return isFinite(n) ? n.toLocaleString(undefined, { maximumFractionDigits: 2 }) : '-'; }
+        function fmt0(n) { return isFinite(n) ? Math.round(n).toLocaleString() : '-'; }
+        function roundNice(n) { return isFinite(n) ? parseFloat(n.toFixed(3)).toString() : ''; }
+
+        function lengthUnitOptions(defaultUnit) {
+            const units = currentUnit === 'imperial' ? ['in','ft','yd'] : ['cm','m'];
+            return units.map(u => `<option value="${u}"${u === defaultUnit ? ' selected' : ''}>${u}</option>`).join('');
+        }
+        function toFeet(value, unit) {
+            switch (unit) {
+                case 'in': return value / 12;
+                case 'ft': return value;
+                case 'yd': return value * 3;
+                case 'cm': return (value / 100) * FT_PER_M;
+                case 'm': return value * FT_PER_M;
+                default: return value;
+            }
+        }
+        function fromFeet(ft, unit) {
+            switch (unit) {
+                case 'in': return ft * 12;
+                case 'ft': return ft;
+                case 'yd': return ft / 3;
+                case 'cm': return (ft / FT_PER_M) * 100;
+                case 'm': return ft / FT_PER_M;
+                default: return ft;
+            }
+        }
+
+        function validateField(el) {
+            const group = el.closest('.input-group');
+            if (!group) return true;
+            const val = parseFloat(el.value);
+            const invalid = el.value === '' || isNaN(val) || val <= 0;
+            group.classList.toggle('field-invalid', invalid);
+            return !invalid;
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            if (tab.dataset.tab === 'reference') renderRefTable();
+        }
+
+        // ===== UNIT TOGGLE =====
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.unit-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                currentUnit = btn.dataset.unit;
+                renderWallInputs();
+                renderCustomFaceInputs();
+                renderCustomThicknessUnit();
+                renderOpenings();
+                calculateAll();
+            });
+        });
+
+        // ===== WALL DIMENSION INPUTS =====
+        function renderWallInputs() {
+            const defUnit = currentUnit === 'imperial' ? 'ft' : 'm';
+            $('wallLengthUnit').innerHTML = lengthUnitOptions(defUnit);
+            $('wallHeightUnit').innerHTML = lengthUnitOptions(defUnit);
+            $('wallLength').value = roundNice(fromFeet(dims.wallLength, defUnit));
+            $('wallHeight').value = roundNice(fromFeet(dims.wallHeight, defUnit));
+            validateField($('wallLength'));
+            validateField($('wallHeight'));
+        }
+        $('wallLength').addEventListener('input', () => { dims.wallLength = toFeet(parseFloat($('wallLength').value) || 0, $('wallLengthUnit').value); validateField($('wallLength')); calculateAll(); });
+        $('wallLengthUnit').addEventListener('change', () => { $('wallLength').value = roundNice(fromFeet(dims.wallLength, $('wallLengthUnit').value)); validateField($('wallLength')); calculateAll(); });
+        $('wallHeight').addEventListener('input', () => { dims.wallHeight = toFeet(parseFloat($('wallHeight').value) || 0, $('wallHeightUnit').value); validateField($('wallHeight')); calculateAll(); });
+        $('wallHeightUnit').addEventListener('change', () => { $('wallHeight').value = roundNice(fromFeet(dims.wallHeight, $('wallHeightUnit').value)); validateField($('wallHeight')); calculateAll(); });
+
+        // ===== OPENINGS =====
+        function addOpening(widthFt, heightFt) {
+            openingCount++;
+            const id = openingCount;
+            const row = document.createElement('div');
+            row.className = 'opening-row';
+            row.dataset.openingId = id;
+            row.dataset.widthFt = (widthFt != null && isFinite(widthFt)) ? widthFt : '';
+            row.dataset.heightFt = (heightFt != null && isFinite(heightFt)) ? heightFt : '';
+            const unit = currentUnit === 'imperial' ? 'ft' : 'm';
+            const wDisplay = row.dataset.widthFt !== '' ? roundNice(fromFeet(widthFt, unit)) : '';
+            const hDisplay = row.dataset.heightFt !== '' ? roundNice(fromFeet(heightFt, unit)) : '';
+            row.innerHTML = `
+                <div><label>Opening ${id}</label><input type="text" value="Door/Window" data-role="name" aria-label="Opening name"></div>
+                <div><label>Width (${unit})</label><input type="number" min="0" step="0.1" value="${wDisplay}" data-role="width" aria-label="Opening width"></div>
+                <div><label>Height (${unit})</label><input type="number" min="0" step="0.1" value="${hDisplay}" data-role="height" aria-label="Opening height"></div>
+                <button type="button" class="remove-opening-btn" aria-label="Remove this opening" title="Remove"><i class="fas fa-trash"></i></button>`;
+            $('openingsList').appendChild(row);
+            const wEl = row.querySelector('[data-role="width"]');
+            const hEl = row.querySelector('[data-role="height"]');
+            wEl.addEventListener('input', () => {
+                const u = currentUnit === 'imperial' ? 'ft' : 'm';
+                row.dataset.widthFt = toFeet(parseFloat(wEl.value) || 0, u);
+                calculateAll();
+            });
+            hEl.addEventListener('input', () => {
+                const u = currentUnit === 'imperial' ? 'ft' : 'm';
+                row.dataset.heightFt = toFeet(parseFloat(hEl.value) || 0, u);
+                calculateAll();
+            });
+            row.querySelector('.remove-opening-btn').addEventListener('click', () => { row.remove(); calculateAll(); });
+        }
+        $('addOpeningBtn').addEventListener('click', () => { addOpening(null, null); calculateAll(); });
+
+        function renderOpenings() {
+            const unit = currentUnit === 'imperial' ? 'ft' : 'm';
+            document.querySelectorAll('.opening-row').forEach(row => {
+                const labels = row.querySelectorAll('label');
+                if (labels[1]) labels[1].textContent = 'Width (' + unit + ')';
+                if (labels[2]) labels[2].textContent = 'Height (' + unit + ')';
+                const wEl = row.querySelector('[data-role="width"]');
+                const hEl = row.querySelector('[data-role="height"]');
+                const wFt = parseFloat(row.dataset.widthFt);
+                const hFt = parseFloat(row.dataset.heightFt);
+                wEl.value = isFinite(wFt) ? roundNice(fromFeet(wFt, unit)) : '';
+                hEl.value = isFinite(hFt) ? roundNice(fromFeet(hFt, unit)) : '';
+            });
+        }
+
+        function rowHasPartialEntry(w, h) {
+            const wEntered = !isNaN(w);
+            const hEntered = !isNaN(h);
+            return (wEntered || hEntered) && !(wEntered && hEntered && w > 0 && h > 0);
+        }
+
+        // Returns { area, oversized }. oversized is true if any single opening is wider/taller than the wall itself (P0-3)
+        function getOpeningsAreaSqFt() {
+            let total = 0;
+            let anyOversized = false;
+            document.querySelectorAll('.opening-row').forEach(row => {
+                const wEl = row.querySelector('[data-role="width"]');
+                const hEl = row.querySelector('[data-role="height"]');
+                const wFt = parseFloat(row.dataset.widthFt);
+                const hFt = parseFloat(row.dataset.heightFt);
+                const wRaw = parseFloat(wEl.value);
+                const hRaw = parseFloat(hEl.value);
+                const rowValid = isFinite(wFt) && wFt > 0 && isFinite(hFt) && hFt > 0;
+                const partial = rowHasPartialEntry(wRaw, hRaw);
+                let oversized = false;
+                if (rowValid && (wFt > dims.wallLength || hFt > dims.wallHeight)) { oversized = true; anyOversized = true; }
+                wEl.classList.toggle('invalid', (partial && !rowValid) || oversized);
+                hEl.classList.toggle('invalid', (partial && !rowValid) || oversized);
+                if (rowValid && !oversized) total += wFt * hFt;
+            });
+            return { area: total, oversized: anyOversized };
+        }
+
+        // ===== BLOCK FACE SIZE =====
+        $('blockFacePreset').addEventListener('change', () => {
+            $('customFaceRow').style.display = $('blockFacePreset').value === 'custom' ? 'grid' : 'none';
+            calculateAll();
+        });
+        function renderCustomFaceInputs() {
+            const defUnit = currentUnit === 'imperial' ? 'in' : 'cm';
+            $('customFaceLengthUnit').innerHTML = lengthUnitOptions(defUnit);
+            $('customFaceHeightUnit').innerHTML = lengthUnitOptions(defUnit);
+            $('customFaceLength').value = roundNice(fromFeet(dims.customFaceLength, defUnit));
+            $('customFaceHeight').value = roundNice(fromFeet(dims.customFaceHeight, defUnit));
+            validateField($('customFaceLength'));
+            validateField($('customFaceHeight'));
+        }
+        $('customFaceLength').addEventListener('input', () => {
+            dims.customFaceLength = toFeet(parseFloat($('customFaceLength').value) || 0, $('customFaceLengthUnit').value);
+            validateField($('customFaceLength')); calculateAll();
+        });
+        $('customFaceLengthUnit').addEventListener('change', () => {
+            $('customFaceLength').value = roundNice(fromFeet(dims.customFaceLength, $('customFaceLengthUnit').value));
+            validateField($('customFaceLength')); calculateAll();
+        });
+        $('customFaceHeight').addEventListener('input', () => {
+            dims.customFaceHeight = toFeet(parseFloat($('customFaceHeight').value) || 0, $('customFaceHeightUnit').value);
+            validateField($('customFaceHeight')); calculateAll();
+        });
+        $('customFaceHeightUnit').addEventListener('change', () => {
+            $('customFaceHeight').value = roundNice(fromFeet(dims.customFaceHeight, $('customFaceHeightUnit').value));
+            validateField($('customFaceHeight')); calculateAll();
+        });
+
+        let sizeBasis = 'nominal';
+        document.querySelectorAll('#sizeBasisToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#sizeBasisToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                sizeBasis = btn.dataset.basis;
+                calculateAll();
+            });
+        });
+
+        // ===== BLOCK THICKNESS =====
+        $('blockThickness').addEventListener('change', () => {
+            $('customThicknessRow').style.display = $('blockThickness').value === 'custom' ? 'block' : 'none';
+            calculateAll();
+        });
+        $('customThickness').addEventListener('input', () => {
+            const u = $('customThicknessUnit').value;
+            dims.customThicknessIn = u === 'cm' ? (parseFloat($('customThickness').value) || 0) / 2.54 : (parseFloat($('customThickness').value) || 0);
+            validateField($('customThickness'));
+            calculateAll();
+        });
+        $('customThicknessUnit').addEventListener('change', () => {
+            const u = $('customThicknessUnit').value;
+            $('customThickness').value = roundNice(u === 'cm' ? dims.customThicknessIn * 2.54 : dims.customThicknessIn);
+            validateField($('customThickness'));
+            calculateAll();
+        });
+        function renderCustomThicknessUnit() {
+            $('customThicknessUnit').value = currentUnit === 'imperial' ? 'in' : 'cm';
+            const u = $('customThicknessUnit').value;
+            $('customThickness').value = roundNice(u === 'cm' ? dims.customThicknessIn * 2.54 : dims.customThicknessIn);
+        }
+
+        // ===== BLOCK TYPE =====
+        let blockType = 'hollow';
+        document.querySelectorAll('#blockTypeToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#blockTypeToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                blockType = btn.dataset.type;
+                $('fillGroutRow').style.display = blockType === 'hollow' ? 'grid' : 'none';
+                if (blockType === 'solid') $('fillGrout').checked = false;
+                calculateAll();
+            });
+        });
+        $('fillGrout').addEventListener('change', calculateAll);
+        $('mortarJoint').addEventListener('input', () => { validateField($('mortarJoint')); calculateAll(); });
+
+        // ===== WASTE =====
+        $('wastePct').addEventListener('input', () => {
+            let v = parseFloat($('wastePct').value);
+            const clamp = $('wasteClamp');
+            if (isNaN(v)) v = 0;
+            if (v < 0 || v > 20) { clamp.classList.add('show'); v = Math.max(0, Math.min(20, v)); $('wastePct').value = v; }
+            else clamp.classList.remove('show');
+            calculateAll();
+        });
+        $('priceBlock').addEventListener('input', calculateAll);
+        $('priceMortarBag').addEventListener('input', calculateAll);
+        $('priceSand').addEventListener('input', calculateAll);
+        $('priceGrout').addEventListener('input', calculateAll);
+        $('mortarYield').addEventListener('input', calculateAll);
+        $('sandRatio').addEventListener('input', calculateAll);
+
+        // ===== BLOCK FACE AREA (sq ft) =====
+        function getBlockFaceAreaSqFt() {
+            const preset = $('blockFacePreset').value;
+            if (preset !== 'custom') {
+                const p = FACE_PRESETS[preset];
+                return (p.l * p.h) / 144;
+            }
+            let lIn = toFeet(parseFloat($('customFaceLength').value) || 0, $('customFaceLengthUnit').value) * 12;
+            let hIn = toFeet(parseFloat($('customFaceHeight').value) || 0, $('customFaceHeightUnit').value) * 12;
+            if (sizeBasis === 'actual') {
+                const joint = parseFloat($('mortarJoint').value) || 0.375;
+                lIn += joint;
+                hIn += joint;
+            }
+            return (lIn * hIn) / 144;
+        }
+
+        function getThicknessIn() {
+            const sel = $('blockThickness').value;
+            if (sel === 'custom') return dims.customThicknessIn || 0;
+            return parseFloat(sel);
+        }
+
+        function getRequiredFieldsValid() {
+            let ids = ['wallLength', 'wallHeight'];
+            if ($('blockFacePreset').value === 'custom') {
+                ids.push('customFaceLength', 'customFaceHeight');
+                if (sizeBasis === 'actual') ids.push('mortarJoint');
+            }
+            if ($('blockThickness').value === 'custom') ids.push('customThickness');
+            let valid = true;
+            ids.forEach(id => { const el = $(id); if (el && !validateField(el)) valid = false; });
+            return valid;
+        }
+
+        // ===== CORE CALCULATION =====
+        function calculateAll() {
+            const isValid = getRequiredFieldsValid();
+            $('validationNote').classList.toggle('show', !isValid);
+            $('resultsBody').style.display = isValid ? '' : 'none';
+            if (!isValid) return;
+
+            const grossArea = dims.wallLength * dims.wallHeight;
+            const openings = getOpeningsAreaSqFt();
+            const openingsArea = openings.area;
+            const openingsExceedGross = grossArea > 0 && openingsArea >= grossArea;
+            const netArea = Math.max(0, grossArea - openingsArea);
+
+            const blockFaceArea = getBlockFaceAreaSqFt();
+            const blocksNeeded = blockFaceArea > 0 ? Math.ceil(netArea / blockFaceArea) : 0;
+
+            let waste = parseFloat($('wastePct').value);
+            if (isNaN(waste)) waste = 0;
+            const totalBlocks = Math.ceil(blocksNeeded * (1 + waste / 100));
+
+            let mortarYield = parseFloat($('mortarYield').value);
+            if (isNaN(mortarYield) || mortarYield <= 0) mortarYield = 33.3;
+            const mortarBags = Math.ceil(totalBlocks / mortarYield);
+            let sandRatio = parseFloat($('sandRatio').value);
+            if (isNaN(sandRatio) || sandRatio <= 0) sandRatio = 0.143;
+            const sandCuYd = mortarBags * sandRatio;
+
+            $('netAreaResult').textContent = currentUnit === 'imperial' ? fmt0(netArea) + ' sq ft' : fmt2(netArea / (FT_PER_M * FT_PER_M)) + ' sq m';
+            $('blocksNeededResult').textContent = blocksNeeded.toLocaleString() + ' blocks';
+            $('totalBlocksResult').textContent = totalBlocks.toLocaleString() + ' blocks';
+            $('mortarResult').textContent = mortarBags.toLocaleString() + ' bags';
+            $('sandResult').textContent = fmt2(sandCuYd) + ' cu yd';
+            $('per100Result').textContent = blockFaceArea > 0 ? fmt0(100 / blockFaceArea) : '-';
+
+            // Openings note: clear error instead of a silent 0 (P0-3)
+            function areaLabel(sqFt) {
+                return currentUnit === 'imperial' ? fmt0(sqFt) + ' sq ft' : fmt2(sqFt / (FT_PER_M * FT_PER_M)) + ' sq m';
+            }
+            const openingsNoteEl = $('openingsNote');
+            if (openings.oversized) {
+                openingsNoteEl.style.background = 'rgba(239,68,68,0.06)';
+                openingsNoteEl.style.borderColor = '#fecaca';
+                openingsNoteEl.style.color = '#a11f1f';
+                $('openingsNoteText').textContent = 'One or more openings is wider or taller than the wall itself and has been excluded from the calculation. Check the highlighted opening above.';
+            } else if (openingsExceedGross) {
+                openingsNoteEl.style.background = 'rgba(239,68,68,0.06)';
+                openingsNoteEl.style.borderColor = '#fecaca';
+                openingsNoteEl.style.color = '#a11f1f';
+                $('openingsNoteText').textContent = 'Your openings (' + areaLabel(openingsArea) + ') equal or exceed the gross wall area (' + areaLabel(grossArea) + '). Net area has been floored to 0, check your entries above.';
+            } else {
+                openingsNoteEl.style.background = '';
+                openingsNoteEl.style.borderColor = '';
+                openingsNoteEl.style.color = '';
+                if (openingsArea > 0) {
+                    $('openingsNoteText').textContent = 'Gross area ' + areaLabel(grossArea) + ', minus ' + areaLabel(openingsArea) + ' of openings, equals ' + areaLabel(netArea) + ' net.';
+                } else {
+                    $('openingsNoteText').textContent = 'No openings added, using gross wall area.';
+                }
+            }
+
+            let groutCuYd = 0;
+            if (blockType === 'hollow' && $('fillGrout').checked) {
+                const thicknessIn = getThicknessIn();
+                const facePreset = $('blockFacePreset').value;
+                let lIn, hIn;
+                if (facePreset !== 'custom') {
+                    const p = FACE_PRESETS[facePreset];
+                    lIn = p.l; hIn = p.h;
+                } else {
+                    lIn = dims.customFaceLength * 12;
+                    hIn = dims.customFaceHeight * 12;
+                }
+                const roundedThickness = [4,6,8,10,12].reduce((a,b) => Math.abs(b - thicknessIn) < Math.abs(a - thicknessIn) ? b : a, 8);
+                const voidFraction = VOID_FRACTION_BY_THICKNESS[roundedThickness] || 0.45;
+                const grossVolumeCuIn = lIn * hIn * thicknessIn;
+                const coreVolumeCuIn = grossVolumeCuIn * voidFraction;
+                groutCuYd = (coreVolumeCuIn * totalBlocks) / 46656;
+                $('groutCard').style.display = '';
+                $('groutResult').textContent = '~' + fmt2(groutCuYd) + ' cu yd';
+            } else {
+                $('groutCard').style.display = blockType === 'hollow' ? '' : 'none';
+                $('groutResult').textContent = blockType === 'hollow' ? 'Not selected' : 'N/A (solid)';
+            }
+
+            const priceBlock = parseFloat($('priceBlock').value);
+            const priceMortar = parseFloat($('priceMortarBag').value);
+            const priceSand = parseFloat($('priceSand').value);
+            const priceGrout = parseFloat($('priceGrout').value);
+            let costParts = [];
+            let totalCost = 0;
+            let hasCost = false;
+            if (!isNaN(priceBlock) && priceBlock > 0) { const c = totalBlocks * priceBlock; totalCost += c; hasCost = true; costParts.push('blocks $' + fmt2(c)); }
+            if (!isNaN(priceMortar) && priceMortar > 0) { const c = mortarBags * priceMortar; totalCost += c; hasCost = true; costParts.push('mortar $' + fmt2(c)); }
+            if (!isNaN(priceSand) && priceSand > 0) { const c = sandCuYd * priceSand; totalCost += c; hasCost = true; costParts.push('sand $' + fmt2(c)); }
+            if (!isNaN(priceGrout) && priceGrout > 0 && groutCuYd > 0) { const c = groutCuYd * priceGrout; totalCost += c; hasCost = true; costParts.push('grout $' + fmt2(c)); }
+            if (hasCost) {
+                $('costText').textContent = 'Estimated cost: $' + fmt2(totalCost) + ' (' + costParts.join(', ') + ')';
+            } else {
+                $('costText').textContent = 'Estimated cost: enter prices above (blocks, mortar, sand, grout).';
+            }
+        }
+
+        // ===== BLOCK SIZE REFERENCE TABLE =====
+        function renderRefTable() {
+            const rows = [
+                { nominal: '16" x 8"', actual: '15 5/8" x 7 5/8"', per100: 113, key: '16x8' },
+                { nominal: '12" x 8"', actual: '11 5/8" x 7 5/8"', per100: 150, key: '12x8' },
+                { nominal: '8" x 8"',  actual: '7 5/8" x 7 5/8"',  per100: 225, key: '8x8' },
+                { nominal: '16" x 4"', actual: '15 5/8" x 3 5/8"', per100: 225, key: '16x4' },
+                { nominal: '12" x 4"', actual: '11 5/8" x 3 5/8"', per100: 300, key: '12x4' },
+                { nominal: '8" x 4"',  actual: '7 5/8" x 3 5/8"',  per100: 450, key: '8x4' }
+            ];
+            const current = $('blockFacePreset').value;
+            const tbody = $('refTableBody');
+            tbody.innerHTML = '';
+            rows.forEach(r => {
+                const tr = document.createElement('tr');
+                if (r.key === current) tr.classList.add('your-row');
+                tr.innerHTML = `<td>${r.nominal}</td><td>${r.actual}</td><td>${r.per100}</td>`;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            currentUnit = 'imperial';
+            document.querySelectorAll('.unit-btn').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            dims.wallLength = 20; dims.wallHeight = 8;
+            dims.customFaceLength = 16 / 12; dims.customFaceHeight = 8 / 12;
+            $('openingsList').innerHTML = '';
+            openingCount = 0;
+
+            $('blockFacePreset').value = '16x8';
+            $('customFaceRow').style.display = 'none';
+            sizeBasis = 'nominal';
+            document.querySelectorAll('#sizeBasisToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+
+            $('blockThickness').value = '8';
+            $('customThicknessRow').style.display = 'none';
+            $('customThickness').value = '8';
+
+            blockType = 'hollow';
+            document.querySelectorAll('#blockTypeToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+            $('fillGroutRow').style.display = 'grid';
+            $('fillGrout').checked = false;
+
+            $('mortarJoint').value = '0.375';
+            $('wastePct').value = '7';
+            $('wasteClamp').classList.remove('show');
+            $('priceBlock').value = '';
+            $('priceMortarBag').value = '';
+            $('priceSand').value = '';
+            $('priceGrout').value = '';
+            $('mortarYield').value = '33.3';
+            $('sandRatio').value = '0.143';
+            dims.customThicknessIn = 8;
+
+            renderWallInputs();
+            renderCustomFaceInputs();
+            renderCustomThicknessUnit();
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Concrete Block Calculator Summary', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Project Summary', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Net Wall Area: ' + $('netAreaResult').textContent, 25, 60);
+            doc.text('Blocks Needed (before waste): ' + $('blocksNeededResult').textContent, 25, 67);
+            doc.text('Total Blocks to Buy: ' + $('totalBlocksResult').textContent, 25, 74);
+            doc.text('Mortar Bags: ' + $('mortarResult').textContent, 25, 81);
+            doc.text('Sand: ' + $('sandResult').textContent, 25, 88);
+            doc.text('Grout Fill: ' + $('groutResult').textContent, 25, 95);
+            doc.text($('costText').textContent, 25, 102);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Methodology (inputs used)', 20, 118);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Block face size: ' + $('blockFacePreset').selectedOptions[0].text, 25, 128);
+            doc.text('Block thickness: ' + getThicknessIn() + ' in, type: ' + blockType, 25, 135);
+            doc.text('Mortar joint thickness: ' + $('mortarJoint').value + ' in', 25, 142);
+            doc.text('Waste applied: ' + ($('wastePct').value || '0') + '%', 25, 149);
+            doc.text('Blocks per mortar bag (yield): ' + ($('mortarYield').value || '33.3'), 25, 156);
+            doc.text('Sand per mortar bag (site-mix only): ' + ($('sandRatio').value || '0.143') + ' cu yd', 25, 163);
+            doc.text('Blocks per 100 sq ft: ' + $('per100Result').textContent, 25, 170);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Estimate only. Confirm final quantities with your supplier. Generated by CalcSnaps.', 105, 285, { align: 'center' });
+
+            doc.save('Concrete_Block_Calculator_Summary_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== COPY RESULTS =====
+        function copyResults() {
+            let lines = ['Concrete Block Calculator Summary', '----------------------------------'];
+            lines.push('Net Wall Area: ' + $('netAreaResult').textContent);
+            lines.push('Blocks Needed (before waste): ' + $('blocksNeededResult').textContent);
+            lines.push('Total Blocks to Buy: ' + $('totalBlocksResult').textContent);
+            lines.push('Mortar Bags: ' + $('mortarResult').textContent);
+            lines.push('Sand: ' + $('sandResult').textContent);
+            lines.push('Grout Fill: ' + $('groutResult').textContent);
+            lines.push($('costText').textContent);
+            lines.push('Waste applied: ' + ($('wastePct').value || '0') + '%');
+            lines.push('');
+            lines.push('Estimate only. Confirm final quantities with your supplier.');
+            const text = lines.join('\n');
+
+            const btn = $('copyResultsBtn');
+            const original = btn.innerHTML;
+            function showCopied() {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(showCopied).catch(() => fallbackCopy(text, showCopied));
+            } else {
+                fallbackCopy(text, showCopied);
+            }
+        }
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+            cb();
+        }
+        $('copyResultsBtn').addEventListener('click', copyResults);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                const item = q.parentElement;
+                q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                const toggle = () => { item.classList.toggle('active'); q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false'); };
+                q.addEventListener('click', toggle);
+                q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+            });
+        });
+
+        // ===== INIT =====
+        renderWallInputs();
+        renderCustomFaceInputs();
+        renderCustomThicknessUnit();
+        calculateAll();
+        renderRefTable();
+    })();
+    </script>
+</body>
+</html>
