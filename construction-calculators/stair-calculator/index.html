@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Stair Calculator - Rise, Run, Stringer & Landing | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free stair calculator for rise, run, stringer length, and angle. Supports Standard and Flush mount, live code checks, and a real two-flight landing mode. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/stair-calculator">
+
+    <meta property="og:title" content="Stair Calculator - Rise, Run, Stringer & Landing | CalcSnaps">
+    <meta property="og:description" content="Free stair calculator for rise, run, stringer length, and angle. Supports Standard and Flush mount, live code checks, and a real two-flight landing mode.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/stair-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Stair Calculator",
+        "description": "Calculate stair rise, run, stringer length, and angle for Standard or Flush mount, including a two-flight landing mode with live code-compliance and comfort checks",
+        "url": "https://calcsnaps.com/construction-calculators/stair-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Stair Calculator Guide: Rise, Run, Stringer, and Landings Explained",
+        "description": "How to calculate stair rise, run, stringer length, and angle, including when a landing is needed and how to check comfort and code compliance.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/stair-calculator" },
+        "datePublished": "2026-09-24",
+        "dateModified": "2026-09-24"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many stairs do I need for a given total rise?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Divide your total rise by your target riser height and round to the nearest whole number, then divide the total rise by that number of steps to get the actual, even riser height. The calculator above does this automatically and lets you adjust the target riser height until the result feels right." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the standard rise and run for stairs?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A common comfortable range is a riser around 7 to 7.5 inches with a tread depth around 10 to 11 inches. Building codes typically cap riser height at about 7.75 inches and require a tread depth of at least 10 inches, and a widely used comfort guideline suggests keeping twice the riser plus the tread close to 24 to 25 inches." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate stair stringer length?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Stringer length follows the Pythagorean theorem: stringer length equals the square root of the total run squared plus the stringer height squared, since the run, the stringer height, and the stringer itself form a right triangle. The calculator above computes this automatically once you have entered your rise, run, and mount type." }
+            },
+            {
+                "@type": "Question",
+                "name": "When does a staircase need a landing?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Building codes commonly limit the vertical rise between landings to somewhere around 147 to 151 inches depending on the code edition, so a single flight taller than that generally needs to be broken into two flights with a landing in between. The calculator above can split your total rise into two flights with a landing automatically." }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a comfortable stair angle?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Most comfortable residential stairs work out to an incline of roughly 30 to 35 degrees. Steeper stairs, common on tight spiral or attic access stairs, feel more like a ladder, while shallower stairs need a lot more floor space than most homes have to spare." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Stair Calculator",
+        "step": [
+            { "@type": "HowToStep", "position": 1, "text": "Enter your total rise in feet and inches." },
+            { "@type": "HowToStep", "position": 2, "text": "Choose whether to solve by target riser height or by a target number of steps." },
+            { "@type": "HowToStep", "position": 3, "text": "Choose Standard or Flush mount." },
+            { "@type": "HowToStep", "position": 4, "text": "If your total rise is tall enough to need a landing, or you simply want one, turn on the landing option and enter Flight 1's rise and the landing depth; Flight 2's rise is calculated automatically." },
+            { "@type": "HowToStep", "position": 5, "text": "Enter your tread depth, tread thickness, and stairway width." },
+            { "@type": "HowToStep", "position": 6, "text": "Review the live code and comfort notes, and the diagram, then check the results below." }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Stair Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .flight-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .flight-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 12px; display: block; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-danger { background: rgba(239,68,68,0.08); border-color: var(--danger); color: #991b1b; }
+        .status-note.status-good { background: rgba(16,185,129,0.08); border-color: var(--success); color: #065f46; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { max-width: 100%; height: auto; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-stairs"></i> Stair Calculator</h1>
+                    <p>Rise · Run · Stringer · Angle, with a real two-flight landing mode</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Building codes vary by location, so confirm final dimensions against your local code before building.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-danger" id="codeWarning" role="alert"></div>
+                    <div class="status-note status-good" id="codeGood"></div>
+                    <div class="status-note status-caution" id="comfortNote"></div>
+
+                    <div class="section-title"><i class="fas fa-ruler-vertical"></i> Total Rise</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="riseFeet">Feet</label>
+                            <div class="row"><input type="number" id="riseFeet" value="12" min="0" max="40" step="1"><span class="unit">ft</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="riseInches">Inches</label>
+                            <div class="row"><input type="number" id="riseInches" value="6" min="0" max="11.9" step="0.25"><span class="unit">in</span></div>
+                        </div>
+                    </div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Solve using</span>
+                        <div class="toggle-switch" id="solveModeToggle" role="radiogroup" aria-label="Solve mode">
+                            <button type="button" class="toggle-option active" data-mode="riser" role="radio" aria-checked="true">Target riser height</button>
+                            <button type="button" class="toggle-option" data-mode="steps" role="radio" aria-checked="false">Number of steps</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Mount type</span>
+                        <div class="toggle-switch" id="mountToggle" role="radiogroup" aria-label="Mount type">
+                            <button type="button" class="toggle-option active" data-mount="standard" role="radio" aria-checked="true">Standard</button>
+                            <button type="button" class="toggle-option" data-mount="flush" role="radio" aria-checked="false">Flush</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">This staircase has a landing</span>
+                        <div class="toggle-switch" id="landingToggle" role="radiogroup" aria-label="Landing">
+                            <button type="button" class="toggle-option" data-landing="false" role="radio" aria-checked="false">No</button>
+                            <button type="button" class="toggle-option active" data-landing="true" role="radio" aria-checked="true">Yes, split into 2 flights</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Flight 1</div>
+                    <div class="flight-card">
+                        <span class="flight-card-label" id="flight1Label">Flight 1</span>
+                        <div class="input-grid" style="margin-bottom:0;">
+                            <div class="input-group" id="flight1RiseGroup">
+                                <label for="flight1Rise">This flight's rise</label>
+                                <div class="row"><input type="number" id="flight1Rise" value="75" min="1" step="0.25"><span class="unit">in</span></div>
+                            </div>
+                            <div class="input-group" id="targetGroup1">
+                                <label for="targetRiser1">Target riser height</label>
+                                <div class="row"><input type="number" id="targetRiser1" value="7.5" min="4" max="8.5" step="0.125"><span class="unit">in</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="landingGroup">
+                        <div class="flight-card" style="background:var(--light);">
+                            <span class="flight-card-label">Landing</span>
+                            <div class="input-grid" style="margin-bottom:0;">
+                                <div class="input-group">
+                                    <label for="landingDepth">Landing depth</label>
+                                    <div class="row"><input type="number" id="landingDepth" value="36" min="30" step="1"><span class="unit">in</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-title"><i class="fas fa-layer-group"></i> Flight 2</div>
+                        <div class="flight-card">
+                            <span class="flight-card-label">Flight 2</span>
+                            <div class="input-grid" style="margin-bottom:0;">
+                                <div class="input-group" id="flight2RiseGroup">
+                                    <label for="flight2RiseDisplay">This flight's rise</label>
+                                    <div class="row"><input type="text" id="flight2RiseDisplay" readonly style="cursor:not-allowed;"><span class="unit">in</span></div>
+                                    <div class="hint" style="font-size:11px;color:var(--gray-text);margin-top:4px;">Total Rise minus Flight 1, so the two always add up correctly</div>
+                                </div>
+                                <div class="input-group" id="targetGroup2">
+                                    <label for="targetRiser2">Target riser height</label>
+                                    <div class="row"><input type="number" id="targetRiser2" value="7.5" min="4" max="8.5" step="0.125"><span class="unit">in</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-ruler-horizontal"></i> Tread & Stairway</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="treadDepth">Tread depth</label>
+                            <div class="row"><input type="number" id="treadDepth" value="10" min="6" max="20" step="0.25"><span class="unit">in</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="treadThickness">Tread thickness</label>
+                            <div class="row"><input type="number" id="treadThickness" value="1.5" min="0.5" max="4" step="0.25"><span class="unit">in</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="stairWidth">Stairway width</label>
+                            <div class="row"><input type="number" id="stairWidth" value="36" min="20" step="1"><span class="unit">in</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="headroomInput">Available headroom (optional)</label>
+                            <div class="row"><input type="number" id="headroomInput" placeholder="e.g. 84" min="0" max="150" step="0.5"><span class="unit">in</span></div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-wrap">
+                        <svg id="stairSvg" viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg"></svg>
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Total Steps</span>
+                            <span class="amount" id="stepsResult">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Actual Riser</div><div class="result-value small" id="riserResult">0 in</div></div>
+                            <div class="result-card"><div class="result-label">Total Run</div><div class="result-value small" id="runResult">0 in</div></div>
+                            <div class="result-card"><div class="result-label">Stringer Length</div><div class="result-value small" id="stringerResult">0 in</div></div>
+                            <div class="result-card"><div class="result-label">Angle</div><div class="result-value small" id="angleResult">0°</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table" id="flightTable" style="display:none;">
+                                <thead><tr><th>Flight</th><th>Steps</th><th>Actual Riser</th><th>Total Run</th><th>Stringer</th><th>Angle</th></tr></thead>
+                                <tbody id="flightBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="status-note status-neutral show" id="footprintNote"></div>
+                        <div class="pro-tip" id="stepByStepBlock" style="margin-top:14px;text-align:left;"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Stair Calculator Guide: Rise, Run, Stringer, and Landings Explained</h2>
+                    <p>How to solve a staircase from a total rise, check it against comfort and code, and know when a landing is genuinely needed</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Stair Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Stair Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Stair Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#units">6. Units and Terminology</a></div>
+                            <div class="toc-item"><a href="#headroom">7. Headroom and Handrail Requirements</a></div>
+                            <div class="toc-item"><a href="#tips">8. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">9. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">10. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">11. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Building a set of stairs starts with one number: the total rise, the full vertical height from one floor to the next. Everything else, the number of steps, how deep each tread needs to be, and how long a board you need for the stringer, follows from that one measurement.</p>
+                    <p>This stair calculator solves all of it at once, checks the result against common building-code limits and a comfort guideline as you type, and draws a simple diagram so you can see what you are building. It also handles something most stair calculators skip: a staircase tall enough to need a landing, split into two flights with the landing depth included in the total footprint.</p>
+
+                    <h2 id="how-works">1. How the Stair Calculator Works</h2>
+                    <p>You enter the total rise in feet and inches, then choose whether to solve using a target riser height or a target number of steps. From there, the calculator finds the number of steps that divides the rise evenly, then works out the actual riser height, the total run, the stringer length, and the incline angle. When solving from a target riser height, the calculator always rounds the step count up rather than to the nearest whole number, so the actual riser you end up with never comes out taller than the target you set, which keeps you further from accidentally exceeding a code maximum.</p>
+                    <p>Mount type changes how the last step is counted. In a standard mount, the top tread is the floor itself, so the stringer carries one fewer physical tread than the number of steps. In a flush mount, the top tread sits at floor level as part of the stringer, so the stringer carries a tread for every step.</p>
+                    <p>If you turn on the landing option, Flight 1's rise is the only number you enter directly. Flight 2's rise is always calculated as the total rise minus Flight 1, so the two flights can never silently disagree with the total rise you measured on site. The calculator also checks your available headroom, if you provide it, and flags whether a handrail is commonly required based on your total step count.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions:</strong>
+                        <p style="margin: 10px 0 0;">This calculator covers a straight flight of stairs, or two straight flights joined by one landing. Curved, winding, and spiral stairs follow different geometry and are not covered here. Code thresholds shown are common residential figures and can vary by jurisdiction and code edition, so always confirm against your local building code.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Stair Calculator</h2>
+                    <ol>
+                        <li>Enter your total rise in feet and inches.</li>
+                        <li>Choose whether to solve by target riser height or by a target number of steps.</li>
+                        <li>Choose Standard or Flush mount.</li>
+                        <li>If your total rise is tall enough to need a landing, or you simply want one, turn on the landing option and enter Flight 1's rise and the landing depth; Flight 2's rise is calculated automatically.</li>
+                        <li>Enter your tread depth, tread thickness, and stairway width.</li>
+                        <li>Review the live code and comfort notes, and the diagram, then check the results below.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Stair Calculator Formula</h2>
+                    <div class="pro-tip">
+                        <code>Number of steps = Total rise / Target riser height (rounded to the nearest whole number)</code>
+                        <code>Actual riser height = Total rise / Number of steps</code>
+                        <code>Number of treads on the stringer = Standard mount: steps - 1, Flush mount: steps</code>
+                    </div>
+                    <p>The stringer itself is the hypotenuse of a right triangle formed by the total run and the stringer height, so its length follows the Pythagorean theorem:</p>
+                    <div class="pro-tip">
+                        <code>Total run = Number of treads x Tread depth</code>
+                        <code>Stringer height = Standard mount: Total rise - Actual riser, Flush mount: Total rise</code>
+                        <code>Stringer length = sqrt(Total run² + Stringer height²)</code>
+                        <code>Angle = arcsin(Stringer height / Stringer length)</code>
+                    </div>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Using the calculator's defaults: a 12 ft 6 in total rise (150 inches), split into two equal 75 inch flights with a 36 inch landing, a 7.5 inch target riser, a 10 inch tread depth, and a standard mount.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Flight</th><th>Steps</th><th>Actual Riser</th><th>Total Run</th><th>Stringer Length</th><th>Angle</th></tr></thead>
+                        <tbody>
+                            <tr><td>Flight 1 (75 in rise)</td><td>10</td><td>7.5 in</td><td>90 in</td><td>112.5 in</td><td>36.87°</td></tr>
+                            <tr><td>Flight 2 (75 in rise)</td><td>10</td><td>7.5 in</td><td>90 in</td><td>112.5 in</td><td>36.87°</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Each flight uses 75 / 7.5 = 10 steps, so the actual riser lands exactly on the 7.5 inch target. With a standard mount, that is 9 physical treads per stringer, so total run = 9 x 10 = 90 inches, and stringer height = 75 - 7.5 = 67.5 inches. Stringer length = sqrt(90² + 67.5²) = sqrt(8,100 + 4,556.25) = sqrt(12,656.25) ≈ 112.5 inches, and angle = arcsin(67.5 / 112.5) ≈ 36.87 degrees.</p>
+                    <p><strong>Combined footprint:</strong> 90 + 36 (landing) + 90 = 216 inches of total horizontal space, across 20 steps total.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The number of steps and actual riser height are your primary building numbers, since every riser in a flight needs to be the same height. A small mismatch here, even an eighth of an inch, is a common trip hazard, which is why the calculator always shows the actual, evenly divided riser rather than your raw target.</p>
+                    <p>The stringer length is the minimum length of stringer material you need, measured tip to tip along the cut line, not the straight-line floor distance. The angle is a planning number for comfort and headroom checks, not a precise cut angle on its own, since the actual bevel cuts depend on your specific stringer layout method.</p>
+
+                    <h2 id="units">6. Units and Terminology</h2>
+                    <ul>
+                        <li><strong>Rise/riser:</strong> the vertical height of one step, measured top of tread to top of tread.</li>
+                        <li><strong>Run/tread:</strong> the horizontal depth of one step, the part you actually step on.</li>
+                        <li><strong>Total rise:</strong> the full vertical height being climbed, floor to floor.</li>
+                        <li><strong>Total run:</strong> the full horizontal footprint of one flight's stringer.</li>
+                        <li><strong>Stringer:</strong> the structural board the treads and risers are built onto, usually three per stairway.</li>
+                        <li><strong>Standard vs. flush mount:</strong> whether the top tread is one step below floor level (standard) or level with the floor (flush).</li>
+                    </ul>
+
+                    <h2 id="headroom">7. Headroom and Handrail Requirements</h2>
+                    <p>Headroom is the clear vertical space measured above the front edge (the nosing) of each tread, running the full length of the staircase. A code-compliant rise and run can still fail in practice if a ceiling, floor opening, or beam sits too close overhead, which is why the calculator includes an optional headroom field, checked against a common 80 inch (6 ft 8 in) minimum.</p>
+                    <p>Handrails are commonly required once a staircase reaches four or more risers, on at least one side of the stairway. The calculator flags this automatically based on your total step count. Guards, the barrier along the open side of a stairway or landing, are a separate requirement that typically applies once a walking surface is more than 30 inches above the grade or floor below, and are not covered by this calculator.</p>
+
+                    <h2 id="tips">8. Practical Tips</h2>
+                    <ul>
+                        <li>Keep every riser in a flight within about 3/8 inch of the others. Building codes generally require this, and it is also what makes stairs feel safe to walk.</li>
+                        <li>A riser around 7 to 7.5 inches with a tread around 10 to 11 inches is a comfortable, widely used starting point.</li>
+                        <li>If your total rise comes out tall, check the landing option rather than forcing one long flight, both for comfort and for code.</li>
+                        <li>Measure your actual floor-to-floor height on site before finalizing numbers. A few site conditions, like finished flooring thickness, commonly get missed.</li>
+                        <li>Account for tread thickness when planning how the top step meets the upper landing, especially on a standard mount.</li>
+                    </ul>
+
+                    <h2 id="mistakes">9. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Rounding the riser height before dividing evenly:</strong> always divide the total rise by the final whole number of steps, not by a rounded target riser.</li>
+                        <li><strong>Confusing number of steps with number of treads:</strong> the two only match on a flush mount; a standard mount has one fewer tread than steps.</li>
+                        <li><strong>Forgetting the landing depth in the total footprint:</strong> a landing adds real floor space between flights, not just a pause in the rise.</li>
+                        <li><strong>Ignoring headroom:</strong> a technically code-compliant rise and run can still leave too little headroom if there is a ceiling, floor opening, or beam above the stairs.</li>
+                        <li><strong>Treating the comfort guideline as a code requirement:</strong> the 2×riser + tread rule is a comfort recommendation, not a legal minimum, even though it is worth following.</li>
+                    </ul>
+
+                    <h2 id="related">10. Related Calculations and Use Cases</h2>
+                    <p>Stair projects often continue past the stairs themselves. If your stairs lead down to a gravel path or patio, our <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a> can help estimate the base material for that area using the same kind of straightforward inputs.</p>
+                    <p>Common real-world use cases include a deck or porch staircase, basement stairs, an exterior staircase down to a yard or driveway, and a two-flight interior staircase with a mid-level landing.</p>
+
+                    <h2 id="faq">11. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="stairfaq1-answer">How many stairs do I need for a given total rise?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stairfaq1-answer"><p>Divide your total rise by your target riser height and round to the nearest whole number, then divide the total rise by that number of steps to get the actual, even riser height. The calculator above does this automatically and lets you adjust the target riser height until the result feels right.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stairfaq2-answer">What is the standard rise and run for stairs?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stairfaq2-answer"><p>A common comfortable range is a riser around 7 to 7.5 inches with a tread depth around 10 to 11 inches. Building codes typically cap riser height at about 7.75 inches and require a tread depth of at least 10 inches, and a widely used comfort guideline suggests keeping twice the riser plus the tread close to 24 to 25 inches.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stairfaq3-answer">How do I calculate stair stringer length?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stairfaq3-answer"><p>Stringer length follows the Pythagorean theorem: stringer length equals the square root of the total run squared plus the stringer height squared, since the run, the stringer height, and the stringer itself form a right triangle. The calculator above computes this automatically once you have entered your rise, run, and mount type.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stairfaq4-answer">When does a staircase need a landing?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stairfaq4-answer"><p>Building codes commonly limit the vertical rise between landings to somewhere around 147 to 151 inches depending on the code edition, so a single flight taller than that generally needs to be broken into two flights with a landing in between. The calculator above can split your total rise into two flights with a landing automatically.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="stairfaq5-answer">What is a comfortable stair angle?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="stairfaq5-answer"><p>Most comfortable residential stairs work out to an incline of roughly 30 to 35 degrees. Steeper stairs, common on tight spiral or attic access stairs, feel more like a ladder, while shallower stairs need a lot more floor space than most homes have to spare.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>A staircase comes down to one measurement, the total rise, divided into a set of steps that are safe, even, and comfortable to climb. This stair calculator handles that division automatically, rounds up rather than down so no riser quietly exceeds your target, and checks the result against common code and comfort guidelines as you type. Accurate inputs matter here more than almost any other home project, since even an eighth-inch difference between risers is a real trip hazard. Whether you are building a single flight or a taller staircase that needs a landing, this stair calculator gives you the rise, run, stringer length, and angle you need before you cut a single board.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Building codes vary by location and code edition; confirm your local requirements before construction. For the current residential code text, see the <a href="https://codes.iccsafe.org/content/IRC2024P2/chapter-3-building-planning#IRC2024P2_Pt03_Ch03_SecR318.7" target="_blank" rel="noopener">2024 International Residential Code, Section R318, Means of Egress</a>, published by the International Code Council.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪜</span> Try the Stair Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪜 Stair Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stone-calculator">🧱 Stone Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">📐 Dirt Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">🪨 Gravel Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stone-calculator">Stone Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+        function trackedNumber(raw, opts) {
+            const n = parseFloat(raw);
+            const value = safeNumber(raw, opts);
+            const wasClamped = isFinite(n) && (n < (opts.min ?? 0) || n > (opts.max ?? Infinity));
+            return { value, wasClamped };
+        }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+
+        let solveMode = 'riser';
+        let mount = 'standard';
+        let hasLanding = true;
+
+        // ===== Toggle wiring =====
+        function wireToggleGroup(containerId, dataAttr, onChange) {
+            $(containerId).querySelectorAll('.toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    $(containerId).querySelectorAll('.toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    onChange(btn.dataset[dataAttr]);
+                });
+            });
+        }
+        wireToggleGroup('solveModeToggle', 'mode', v => { solveMode = v; updateModeVisibility(); calculateAll(); });
+        wireToggleGroup('mountToggle', 'mount', v => { mount = v; calculateAll(); });
+        wireToggleGroup('landingToggle', 'landing', v => { hasLanding = (v === 'true'); updateLandingVisibility(); calculateAll(); });
+
+        function updateModeVisibility() {
+            const showTarget = solveMode === 'riser';
+            $('flight1RiseGroup').style.display = 'block';
+            $('targetGroup1').querySelector('label').textContent = showTarget ? 'Target riser height' : 'Number of steps';
+            $('targetRiser1').step = showTarget ? '0.125' : '1';
+            $('targetRiser1').min = showTarget ? '4' : '1';
+            $('targetRiser1').max = showTarget ? '8.5' : '60';
+            $('targetRiser1').value = showTarget ? '7.5' : '10';
+            $('targetGroup2').querySelector('label').textContent = showTarget ? 'Target riser height' : 'Number of steps';
+            $('targetRiser2').step = showTarget ? '0.125' : '1';
+            $('targetRiser2').min = showTarget ? '4' : '1';
+            $('targetRiser2').max = showTarget ? '8.5' : '60';
+            $('targetRiser2').value = showTarget ? '7.5' : '10';
+        }
+        function updateLandingVisibility() {
+            $('landingGroup').style.display = hasLanding ? 'block' : 'none';
+            $('flight1Label').textContent = hasLanding ? 'Flight 1' : 'Staircase';
+        }
+
+        ['riseFeet', 'riseInches', 'flight1Rise', 'targetRiser1', 'targetRiser2',
+         'treadDepth', 'treadThickness', 'stairWidth', 'landingDepth', 'headroomInput'].forEach(id => {
+            $(id).addEventListener('input', calculateAll);
+        });
+
+        // Keep flight rises in sync with total rise when landing is off, and offer an even split button-less default
+        $('riseFeet').addEventListener('input', syncFlightDefaults);
+        $('riseInches').addEventListener('input', syncFlightDefaults);
+        function syncFlightDefaults() {
+            const totalRise = getTotalRise();
+            if (!hasLanding) {
+                $('flight1Rise').value = totalRise.toFixed(2);
+            }
+        }
+
+        function getTotalRise() {
+            const ft = safeNumber($('riseFeet').value, { min: 0, max: 40 });
+            const inch = safeNumber($('riseInches').value, { min: 0, max: 11.9 });
+            return ft * 12 + inch;
+        }
+
+        function solveFlight(flightRise, targetInput, treadDepth) {
+            let numSteps;
+            if (solveMode === 'riser') {
+                const target = safeNumber(targetInput, { min: 4, max: 8.5, fallback: 7.5 });
+                // Round UP the step count so the actual riser never ends up taller than the
+                // target you set, rather than rounding to the nearest count and risking a
+                // riser that quietly exceeds both your target and the common code maximum.
+                numSteps = Math.max(1, Math.ceil(flightRise / target));
+            } else {
+                numSteps = Math.max(1, Math.round(safeNumber(targetInput, { min: 1, max: 60, fallback: 10 })));
+            }
+            const actualRiser = flightRise / numSteps;
+            const numTreads = mount === 'flush' ? numSteps : Math.max(numSteps - 1, 0);
+            const totalRun = numTreads * treadDepth;
+            const stringerHeight = mount === 'flush' ? flightRise : flightRise - actualRiser;
+            const stringerLength = Math.sqrt(totalRun * totalRun + stringerHeight * stringerHeight);
+            const angle = totalRun > 0 ? Math.atan(stringerHeight / totalRun) * (180 / Math.PI) : 90;
+            return { numSteps, actualRiser, numTreads, totalRun, stringerHeight, stringerLength, angle };
+        }
+
+        function drawDiagram(flights, treadThickness) {
+            const svg = $('stairSvg');
+            const W = 440, H = 220, pad = 20;
+            const landingDepthVal = hasLanding ? safeNumber($('landingDepth').value, { min: 0, max: 200, fallback: 36 }) : 0;
+            const totalRun = flights.reduce((s, f) => s + f.totalRun, 0) + landingDepthVal;
+            const totalRise = flights.reduce((s, f) => s + f.numSteps * f.actualRiser, 0);
+            const scaleX = (W - pad * 2) / Math.max(totalRun, 1);
+            const scaleY = (H - pad * 2) / Math.max(totalRise, 1);
+            const scale = Math.min(scaleX, scaleY);
+
+            let x = pad, y = H - pad;
+            let path = 'M ' + x + ' ' + y;
+            flights.forEach((f, fi) => {
+                const treadPx = f.numTreads > 0 ? (f.totalRun / f.numTreads) * scale : 0;
+                for (let i = 0; i < f.numSteps; i++) {
+                    y -= f.actualRiser * scale;
+                    path += ' L ' + x + ' ' + y;
+                    const isLastStepOfFlight = i === f.numSteps - 1;
+                    const drawsTread = mount === 'flush' || !isLastStepOfFlight || fi < flights.length - 1;
+                    if (drawsTread && treadPx > 0) {
+                        x += treadPx;
+                        path += ' L ' + x + ' ' + y;
+                    }
+                }
+                if (hasLanding && fi === 0) {
+                    const landingPx = landingDepthVal * scale;
+                    x += landingPx;
+                    path += ' L ' + x + ' ' + y;
+                }
+            });
+
+            const floorY = H - pad;
+            svg.innerHTML =
+                '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="none"/>' +
+                '<line x1="' + pad + '" y1="' + floorY + '" x2="' + x + '" y2="' + floorY + '" stroke="#cbd5e1" stroke-width="2"/>' +
+                '<path d="' + path + '" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-linejoin="round"/>' +
+                '<circle cx="' + pad + '" cy="' + floorY + '" r="4" fill="#7c3aed"/>' +
+                '<circle cx="' + x + '" cy="' + y + '" r="4" fill="#7c3aed"/>';
+        }
+
+        function calculateAll() {
+            const totalRise = getTotalRise();
+            const treadDepth = safeNumber($('treadDepth').value, { min: 6, max: 20, fallback: 10 });
+            const treadThickness = safeNumber($('treadThickness').value, { min: 0.5, max: 4, fallback: 1.5 });
+            const width = safeNumber($('stairWidth').value, { min: 20, max: 120, fallback: 36 });
+
+            let flight1Rise, flight2Rise = 0, landingRiseIssue = '';
+            if (hasLanding) {
+                flight1Rise = safeNumber($('flight1Rise').value, { min: 1, max: 300, fallback: totalRise / 2 });
+                flight2Rise = totalRise - flight1Rise;
+                if (flight2Rise <= 0) {
+                    landingRiseIssue = 'Flight 1\'s rise (' + flight1Rise.toFixed(2) + ' in) is greater than or equal to the total rise (' + totalRise.toFixed(2) + ' in), so Flight 2 has nothing left to climb. Lower Flight 1\'s rise.';
+                    flight2Rise = Math.max(flight2Rise, 0.01); // keep the math finite while the warning is shown
+                }
+                $('flight2RiseDisplay').value = (totalRise - flight1Rise).toFixed(2);
+            } else {
+                flight1Rise = totalRise;
+            }
+
+            const f1 = solveFlight(flight1Rise, $('targetRiser1').value, treadDepth);
+            const flights = [f1];
+            let f2 = null;
+            if (hasLanding) {
+                f2 = solveFlight(flight2Rise, $('targetRiser2').value, treadDepth);
+                flights.push(f2);
+            }
+
+            const totalSteps = flights.reduce((s, f) => s + f.numSteps, 0);
+            const totalRunSum = flights.reduce((s, f) => s + f.totalRun, 0);
+            const landingDepth = hasLanding ? safeNumber($('landingDepth').value, { min: 0, max: 200, fallback: 36 }) : 0;
+            const combinedFootprint = totalRunSum + landingDepth;
+            const combinedStringer = flights.reduce((s, f) => s + f.stringerLength, 0);
+
+            $('stepsResult').textContent = totalSteps;
+            $('riserResult').textContent = f1.actualRiser.toFixed(2) + ' in' + (hasLanding && f2 ? ' / ' + f2.actualRiser.toFixed(2) + ' in' : '');
+            $('runResult').textContent = combinedFootprint.toFixed(1) + ' in';
+            $('stringerResult').textContent = combinedStringer.toFixed(1) + ' in';
+            $('angleResult').textContent = f1.angle.toFixed(1) + '°' + (hasLanding && f2 ? ' / ' + f2.angle.toFixed(1) + '°' : '');
+
+            $('flightTable').style.display = hasLanding ? 'table' : 'none';
+            if (hasLanding) {
+                const tbody = $('flightBody');
+                tbody.innerHTML = '';
+                flights.forEach((f, i) => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = '<td>Flight ' + (i + 1) + '</td><td>' + f.numSteps + '</td><td>' + f.actualRiser.toFixed(2) + ' in</td><td>' + f.totalRun.toFixed(1) + ' in</td><td>' + f.stringerLength.toFixed(1) + ' in</td><td>' + f.angle.toFixed(1) + '°</td>';
+                    tbody.appendChild(tr);
+                });
+                $('footprintNote').textContent = 'Combined footprint (both flights plus the ' + landingDepth + ' in landing): ' + combinedFootprint.toFixed(1) + ' in.';
+            } else {
+                $('footprintNote').textContent = 'Total run for this single flight: ' + combinedFootprint.toFixed(1) + ' in.';
+            }
+
+            function stepMathHtml(f, rise, label) {
+                const treadWord = mount === 'flush' ? f.numSteps : f.numSteps - 1;
+                return '<strong>' + label + ':</strong> ' + rise.toFixed(2) + ' &divide; ' + f.actualRiser.toFixed(2) + ' &asymp; ' + f.numSteps + ' risers<br>' +
+                    f.numSteps + ' ' + (mount === 'flush' ? '' : '&minus; 1 ') + '= ' + treadWord + ' tread' + (treadWord === 1 ? '' : 's') + '<br>' +
+                    treadWord + ' &times; ' + treadDepth.toFixed(2) + ' = ' + f.totalRun.toFixed(1) + ' in run<br>' +
+                    '&radic;(' + f.totalRun.toFixed(1) + '&sup2; + ' + f.stringerHeight.toFixed(1) + '&sup2;) = ' + f.stringerLength.toFixed(1) + ' in stringer';
+            }
+            let mathHtml = '<strong>How this was calculated</strong><br><br>' + stepMathHtml(f1, flight1Rise, hasLanding ? 'Flight 1' : 'Staircase');
+            if (hasLanding && f2) mathHtml += '<br><br>' + stepMathHtml(f2, flight2Rise, 'Flight 2');
+            mathHtml += '<br><br>Based on a total rise of ' + totalRise.toFixed(1) + ' in, this staircase works out to ' + totalSteps + ' total steps' +
+                (hasLanding ? ', split across two flights with a landing in between' : '') +
+                ', at an actual riser of ' + f1.actualRiser.toFixed(2) + ' in' + (hasLanding && f2 ? ' and ' + f2.actualRiser.toFixed(2) + ' in' : '') +
+                ' with a ' + treadDepth.toFixed(1) + ' in tread depth.';
+            $('stepByStepBlock').innerHTML = mathHtml;
+
+            // Live code + comfort checks, across every flight
+            const codeIssues = [];
+            if (landingRiseIssue) codeIssues.push(landingRiseIssue);
+            flights.forEach((f, i) => {
+                const tag = hasLanding ? 'Flight ' + (i + 1) + ': ' : '';
+                if (f.actualRiser > 7.75) codeIssues.push(tag + 'riser ' + f.actualRiser.toFixed(2) + ' in exceeds the common 7.75 in maximum.');
+                if (treadDepth < 10) codeIssues.push(tag + 'tread depth ' + treadDepth.toFixed(2) + ' in is below the common 10 in minimum.');
+                if (!hasLanding && (f.numSteps * f.actualRiser) > 147) codeIssues.push('A single flight rise over about 147 in commonly requires a landing, consider turning that option on.');
+            });
+            if (width < 36) codeIssues.push('Stairway width ' + width + ' in is below the common 36 in minimum.');
+            const headroom = $('headroomInput').value === '' ? null : safeNumber($('headroomInput').value, { min: 0, max: 150, fallback: 0 });
+            if (headroom !== null && headroom < 80) codeIssues.push('Available headroom ' + headroom.toFixed(1) + ' in is below the common 80 in (6 ft 8 in) minimum.');
+            const handrailRequired = totalSteps >= 4;
+
+            const codeWarning = $('codeWarning'), codeGood = $('codeGood');
+            if (codeIssues.length) {
+                codeWarning.innerHTML = '<i class="fas fa-triangle-exclamation"></i> ' + codeIssues.map(escapeHtml).join(' ');
+                codeWarning.classList.add('show');
+                codeGood.classList.remove('show');
+            } else {
+                codeWarning.classList.remove('show');
+                codeGood.innerHTML = '<i class="fas fa-check-circle"></i> These dimensions fall within common residential code ranges. Always confirm against your local code.' +
+                    (handrailRequired ? ' A staircase with 4 or more risers commonly requires a handrail.' : '');
+                codeGood.classList.add('show');
+            }
+
+            const comfortParts = [];
+            flights.forEach((f, i) => {
+                const c = 2 * f.actualRiser + treadDepth;
+                if (c < 24 || c > 25.5) comfortParts.push((hasLanding ? 'Flight ' + (i + 1) + ': ' : '') + c.toFixed(2) + ' in');
+            });
+            const comfortNote = $('comfortNote');
+            if (comfortParts.length) {
+                comfortNote.innerHTML = '<i class="fas fa-info-circle"></i> Comfort guideline: 2 x riser + tread = ' + comfortParts.join(', ') + '. A widely used comfort range is about 24-25 in; this is a guideline, not a code requirement.';
+                comfortNote.classList.add('show');
+            } else {
+                comfortNote.classList.remove('show');
+            }
+
+            drawDiagram(flights, treadThickness);
+
+            return { totalSteps, combinedFootprint, combinedStringer, flights, mount, hasLanding, landingDepth, width, treadDepth };
+        }
+
+        // ===== COPY / SHARE =====
+        function buildSummary() {
+            const res = calculateAll();
+            let text = 'Stair Calculator Result\n' +
+                'Total steps: ' + res.totalSteps + '\n' +
+                'Combined footprint: ' + res.combinedFootprint.toFixed(1) + ' in\n' +
+                'Combined stringer length: ' + res.combinedStringer.toFixed(1) + ' in\n';
+            res.flights.forEach((f, i) => {
+                text += 'Flight ' + (i + 1) + ': ' + f.numSteps + ' steps, ' + f.actualRiser.toFixed(2) + ' in riser, ' + f.stringerLength.toFixed(1) + ' in stringer, ' + f.angle.toFixed(1) + ' deg\n';
+            });
+            text += 'Source: CalcSnaps Stair Calculator (https://calcsnaps.com/construction-calculators/stair-calculator)';
+            return text;
+        }
+
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Stair Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/stair-calculator' }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text);
+                const btn = this; const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF EXPORT (lazy-loaded) =====
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+
+        function downloadPDF() {
+            const res = calculateAll();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+            let y = 20;
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Stair Calculator Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 12;
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Flights', 20, y); y += 10;
+            doc.setFontSize(10); doc.setTextColor(0, 0, 0);
+            res.flights.forEach((f, i) => {
+                if (y > 260) { doc.addPage(); y = 20; }
+                doc.text('Flight ' + (i + 1) + ': ' + f.numSteps + ' steps, riser ' + f.actualRiser.toFixed(2) + ' in, run ' + f.totalRun.toFixed(1) + ' in', 25, y); y += 6;
+                doc.setTextColor(100, 100, 100);
+                doc.text('Stringer length ' + f.stringerLength.toFixed(1) + ' in, angle ' + f.angle.toFixed(1) + ' deg', 30, y); y += 9;
+                doc.setTextColor(0, 0, 0);
+            });
+
+            y += 3;
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Settings', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Mount: ' + res.mount, 25, y); y += 7;
+            doc.text('Tread depth: ' + res.treadDepth + ' in, Width: ' + res.width + ' in', 25, y); y += 7;
+            if (res.hasLanding) { doc.text('Landing depth: ' + res.landingDepth + ' in', 25, y); y += 7; }
+            y += 5;
+
+            if (y > 250) { doc.addPage(); y = 20; }
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Totals', 20, y); y += 10;
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Total steps: ' + res.totalSteps, 25, y); y += 7;
+            doc.text('Combined footprint: ' + res.combinedFootprint.toFixed(1) + ' in', 25, y); y += 7;
+            doc.text('Combined stringer length: ' + res.combinedStringer.toFixed(1) + ' in', 25, y);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('Planning estimate only. Confirm against your local building code before construction.', 105, 285, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated by CalcSnaps - Stair Calculator', 105, 292, { align: 'center' });
+
+            doc.save('Stair_Calculator_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => {
+                downloadPDF();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            });
+        });
+
+        // ===== RESET =====
+        function resetAll() {
+            $('riseFeet').value = 12; $('riseInches').value = 6;
+            solveMode = 'riser';
+            $('solveModeToggle').querySelectorAll('.toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.mode === 'riser') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            mount = 'standard';
+            $('mountToggle').querySelectorAll('.toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.mount === 'standard') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            hasLanding = true;
+            $('landingToggle').querySelectorAll('.toggle-option').forEach(b => {
+                b.classList.remove('active'); b.setAttribute('aria-checked', 'false');
+                if (b.dataset.landing === 'true') { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); }
+            });
+            updateModeVisibility();
+            updateLandingVisibility();
+            $('flight1Rise').value = 75; $('targetRiser1').value = 7.5;
+            $('targetRiser2').value = 7.5;
+            $('headroomInput').value = '';
+            $('landingDepth').value = 36;
+            $('treadDepth').value = 10; $('treadThickness').value = 1.5; $('stairWidth').value = 36;
+
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== INIT =====
+        updateModeVisibility();
+        updateLandingVisibility();
+        $('targetRiser1').value = 7.5; $('targetRiser2').value = 7.5;
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
