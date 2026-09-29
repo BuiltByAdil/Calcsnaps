@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Stud Calculator - Studs, Plates & Layout Marks | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free stud calculator for walls with doors and windows. Get studs to buy, plate boards, header lengths, and stud layout marks for any spacing. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/stud-calculator">
+
+    <meta property="og:title" content="Stud Calculator - Studs, Plates & Layout Marks | CalcSnaps">
+    <meta property="og:description" content="Free stud calculator for walls with doors and windows. Get studs to buy, plate boards, header lengths, and stud layout marks for any spacing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/stud-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Stud Calculator",
+        "description": "Calculate the studs, plate boards, and header lengths a wall needs, including doors, windows, corners, and waste, with stud layout marks for every wall",
+        "url": "https://calcsnaps.com/construction-calculators/stud-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Stud Calculator Guide: Count Studs, Plates, and Openings for Any Wall",
+        "description": "How to calculate how many studs a wall needs, including doors, windows, corners, plates, and waste, with a worked example and layout marks.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/stud-calculator" },
+        "datePublished": "2026-09-28",
+        "dateModified": "2026-09-28"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many studs do I need for a wall?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Divide the wall length by the stud spacing, round up to the next whole number, and add one for the end stud. For example, a 16-foot wall with studs 16 inches on center needs 192 divided by 16, which is 12, plus 1, so 13 studs. That count does not include extra studs for openings, corners, or waste, which the calculator above adds for you." }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate studs for a wall with a door and windows?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Start with the regular layout count, then remove the layout studs that fall inside each opening. Add two king studs and two jack studs for every opening, plus cripple studs above the header and, for a window, below the sill. The calculator above does this for each door and window you add, using the position you enter or spacing the openings evenly." }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I space studs 16 or 24 inches on center?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Sixteen inches is the most common spacing and a safe default for most walls. Twenty-four inches uses fewer studs but is only allowed where the stud size, wall height, and load permit it, so check your local code and plans. Building codes set stud size, height, and spacing together, so the right answer depends on what the wall supports." }
+            },
+            {
+                "@type": "Question",
+                "name": "How many 2x4s do I need to frame a wall?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Add the studs and the plate boards. Studs are counted from the wall length, spacing, openings, and corners, and plates are usually one bottom plate and a double top plate, so the total plate length is the wall length times three. The calculator above gives both counts and a combined total, including your waste allowance, which is the number of 2x4s when the wall is framed with 2x4 lumber. Headers are extra." }
+            },
+            {
+                "@type": "Question",
+                "name": "What are king, jack, and cripple studs?",
+                "acceptedAnswer": { "@type": "Answer", "text": "A king stud runs the full height of the wall beside an opening. A jack stud, also called a trimmer, sits inside the king stud and supports the end of the header. Cripple studs are the short studs above a header and below a window sill that keep the stud spacing going across the opening." }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Stud Calculator",
+        "step": [
+            { "@type": "HowToStep", "position": 1, "text": "Enter the length of your first wall in feet and inches." },
+            { "@type": "HowToStep", "position": 2, "text": "Add any doors or windows on that wall, with each opening's rough width and, if you know it, its distance from the left end of the wall." },
+            { "@type": "HowToStep", "position": 3, "text": "Add more walls if your project has them, and enter the number of corners and T-intersections." },
+            { "@type": "HowToStep", "position": 4, "text": "Choose your stud spacing, stud length, and whether the top plate is single or double." },
+            { "@type": "HowToStep", "position": 5, "text": "Set the plate board length, the header style, and your waste percentage." },
+            { "@type": "HowToStep", "position": 6, "text": "Optionally enter your price per stud and per plate board to see an estimated cost." },
+            { "@type": "HowToStep", "position": 7, "text": "Review the studs to buy, the plate boards, the lumber list, and the stud layout marks." }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Stud Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .wall-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .wall-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .wall-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-wall-btn, .remove-opening-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-wall-btn:hover, .remove-opening-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-wall-btn:focus-visible, .remove-opening-btn:focus-visible { outline: 3px solid var(--primary); }
+        .openings-title { font-size: 12.5px; font-weight: 700; color: var(--text-dark); margin: 4px 0 10px; }
+        .opening-row { display: grid; grid-template-columns: 84px 1fr 1fr auto; gap: 12px; align-items: center; background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 10px 12px; margin-bottom: 10px; }
+        .opening-tag { font-size: 12.5px; font-weight: 700; color: var(--primary-text); }
+        .opening-row .input-group { padding: 8px 12px; background: white; }
+        .opening-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+        .mini-btn { padding: 8px 14px; border-radius: 40px; border: 1px dashed var(--primary-light); background: rgba(139,92,246,0.05); color: var(--primary-dark); font-weight: 600; font-size: 12.5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .mini-btn:hover { background: rgba(139,92,246,0.1); }
+        .mini-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .mini-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-wall-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-wall-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-wall-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-wall-btn:focus-visible { outline: 3px solid var(--primary); }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { width: 100%; height: auto; }
+        .sv-stud { fill: var(--primary); }
+        .sv-king { fill: var(--primary-dark); }
+        .sv-jack { fill: var(--primary-light); }
+        .sv-cripple { fill: var(--primary-light); opacity: 0.6; }
+        .sv-plate { fill: var(--secondary-dark); }
+        .sv-header { fill: var(--secondary); }
+        .sv-open { fill: none; stroke: var(--gray); stroke-width: 1; stroke-dasharray: 4 3; }
+        .sv-text { fill: var(--text-dark); font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; font-size: 12px; color: var(--text-dark); margin-bottom: 18px; }
+        .legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+        .lg-stud { background: var(--primary); }
+        .lg-king { background: var(--primary-dark); }
+        .lg-cripple { background: var(--primary-light); }
+        .lg-header { background: var(--secondary); }
+        .lg-plate { background: var(--secondary-dark); }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+        .breakdown-table tr.total-row td { font-weight: 700; background: rgba(139,92,246,0.06); }
+
+        .info-block { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 16px; margin-top: 14px; text-align: left; font-size: 13.5px; color: var(--text-dark); line-height: 1.7; }
+        .info-block strong { color: var(--primary-text); }
+        .marks-box { max-height: 260px; overflow: auto; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+            .opening-row { grid-template-columns: 1fr 1fr; }
+            .opening-tag { grid-column: 1 / -1; }
+            .remove-opening-btn { grid-column: 1 / -1; justify-self: end; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-grip-lines-vertical"></i> Stud Calculator</h1>
+                    <p>Studs · Plates · Lumber list · Layout marks, for one wall or a whole room</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Confirm stud size, spacing, and headers against your plans and local building code before you buy or build.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="section-title"><i class="fas fa-border-all"></i> Walls</div>
+                    <div id="wallsContainer"></div>
+                    <button class="add-wall-btn" id="addWallBtn" type="button"><i class="fas fa-plus"></i> Add Another Wall (up to 6)</button>
+
+                    <div class="section-title"><i class="fas fa-ruler-combined"></i> Framing Settings</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Stud spacing (on center)</span>
+                        <div class="toggle-switch" id="spacingToggle" role="radiogroup" aria-label="Stud spacing on center">
+                            <button type="button" class="toggle-option" data-spacing="12" role="radio" aria-checked="false">12 in</button>
+                            <button type="button" class="toggle-option active" data-spacing="16" role="radio" aria-checked="true">16 in</button>
+                            <button type="button" class="toggle-option" data-spacing="19.2" role="radio" aria-checked="false">19.2 in</button>
+                            <button type="button" class="toggle-option" data-spacing="24" role="radio" aria-checked="false">24 in</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Stud length</span>
+                        <div class="toggle-switch" id="studToggle" role="radiogroup" aria-label="Stud length">
+                            <button type="button" class="toggle-option active" data-stud="8" role="radio" aria-checked="true">8 ft wall (92-5/8 in)</button>
+                            <button type="button" class="toggle-option" data-stud="9" role="radio" aria-checked="false">9 ft wall (104-5/8 in)</button>
+                            <button type="button" class="toggle-option" data-stud="10" role="radio" aria-checked="false">10 ft wall (116-5/8 in)</button>
+                            <button type="button" class="toggle-option" data-stud="custom" role="radio" aria-checked="false">Custom</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="customStudGroup" style="display:none;">
+                        <div class="input-group">
+                            <label for="customStud">Custom stud length</label>
+                            <div class="row"><input type="number" id="customStud" value="92.625" min="24" max="240" step="0.125"><span class="unit">in</span></div>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Top plate</span>
+                        <div class="toggle-switch" id="topPlateToggle" role="radiogroup" aria-label="Top plate">
+                            <button type="button" class="toggle-option active" data-top="2" role="radio" aria-checked="true">Double</button>
+                            <button type="button" class="toggle-option" data-top="1" role="radio" aria-checked="false">Single</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Plate board length</span>
+                        <div class="toggle-switch" id="boardToggle" role="radiogroup" aria-label="Plate board length">
+                            <button type="button" class="toggle-option active" data-board="8" role="radio" aria-checked="true">8 ft</button>
+                            <button type="button" class="toggle-option" data-board="10" role="radio" aria-checked="false">10 ft</button>
+                            <button type="button" class="toggle-option" data-board="12" role="radio" aria-checked="false">12 ft</button>
+                            <button type="button" class="toggle-option" data-board="16" role="radio" aria-checked="false">16 ft</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Header style</span>
+                        <div class="toggle-switch" id="headerToggle" role="radiogroup" aria-label="Header style">
+                            <button type="button" class="toggle-option active" data-header="2" role="radio" aria-checked="true">Double</button>
+                            <button type="button" class="toggle-option" data-header="1" role="radio" aria-checked="false">Single</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-vector-square"></i> Corners, Intersections & Waste</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="cornersInput">Corners</label>
+                            <div class="row"><input type="number" id="cornersInput" value="1" min="0" max="24" step="1"><span class="unit">count</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="tCount">T-intersections</label>
+                            <div class="row"><input type="number" id="tCount" value="0" min="0" max="24" step="1"><span class="unit">count</span></div>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Corner style</span>
+                        <div class="toggle-switch" id="cornerStyleToggle" role="radiogroup" aria-label="Corner framing style">
+                            <button type="button" class="toggle-option" data-corner="0" role="radio" aria-checked="false">Two-stud (drywall clips)</button>
+                            <button type="button" class="toggle-option active" data-corner="1" role="radio" aria-checked="true">California (3-stud)</button>
+                            <button type="button" class="toggle-option" data-corner="2" role="radio" aria-checked="false">Traditional (4-stud)</button>
+                            <button type="button" class="toggle-option" data-corner="custom" role="radio" aria-checked="false">Custom</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="perCornerGroup" style="display:none;">
+                        <div class="input-group">
+                            <label for="perCorner">Extra studs per corner</label>
+                            <div class="row"><input type="number" id="perCorner" value="1" min="0" max="3" step="1"><span class="unit">studs</span></div>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">T-intersection style</span>
+                        <div class="toggle-switch" id="tStyleToggle" role="radiogroup" aria-label="T-intersection framing style">
+                            <button type="button" class="toggle-option" data-tstyle="1" role="radio" aria-checked="false">Ladder block</button>
+                            <button type="button" class="toggle-option active" data-tstyle="2" role="radio" aria-checked="true">Full backer</button>
+                            <button type="button" class="toggle-option" data-tstyle="custom" role="radio" aria-checked="false">Custom</button>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="perTGroup" style="display:none;">
+                        <div class="input-group">
+                            <label for="perT">Extra studs per T-intersection</label>
+                            <div class="row"><input type="number" id="perT" value="2" min="0" max="4" step="1"><span class="unit">studs</span></div>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show">Corner and T-intersection terminology and stud counts vary by region and framer, so these presets are common starting points, not a single correct answer; pick Custom to set your own count.</div>
+
+                    <div class="input-grid" style="margin-top:14px;">
+                        <div class="input-group">
+                            <label for="wastePct">Waste allowance</label>
+                            <div class="row"><input type="number" id="wastePct" value="10" min="0" max="30" step="1"><span class="unit">%</span></div>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show" id="wasteHint"></div>
+
+                    <div class="section-title"><i class="fas fa-dollar-sign"></i> Cost (optional)</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="priceStud">Price per stud</label>
+                            <div class="row"><input type="number" id="priceStud" placeholder="0" min="0" max="1000" step="0.01"><span class="unit">$</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="priceBoard">Price per plate board</label>
+                            <div class="row"><input type="number" id="priceBoard" placeholder="0" min="0" max="1000" step="0.01"><span class="unit">$</span></div>
+                        </div>
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label">Studs to Buy (with waste)</span>
+                            <span class="amount" id="studsResult">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label" id="plateLabel">Plate Boards (8 ft)</div><div class="result-value small" id="plateResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Studs + Plate Boards</div><div class="result-value small" id="totalResult">0</div></div>
+                            <div class="result-card"><div class="result-label">Header + Sill Lumber</div><div class="result-value small" id="headerResult">0 ft</div></div>
+                            <div class="result-card"><div class="result-label">Est. Cost (studs and plates)</div><div class="result-value small" id="costResult">-</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table">
+                                <thead><tr><th>Wall</th><th>Length</th><th>Layout Studs</th><th>Replaced</th><th>King + Jack</th><th>Cripples</th><th>Studs</th></tr></thead>
+                                <tbody id="breakdownBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="info-block" id="lumberList"></div>
+                    </div>
+
+                    <div class="diagram-wrap">
+                        <svg id="studSvg" viewBox="0 0 640 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic elevation of each wall showing stud layout, openings, headers, and plates"></svg>
+                    </div>
+                    <div class="legend">
+                        <span><i class="lg-stud"></i> Studs</span>
+                        <span><i class="lg-king"></i> King studs</span>
+                        <span><i class="lg-cripple"></i> Jacks and cripples</span>
+                        <span><i class="lg-header"></i> Headers and sills</span>
+                        <span><i class="lg-plate"></i> Plates</span>
+                    </div>
+                    <div class="status-note status-neutral" id="autoNote"></div>
+                    <div class="status-note status-neutral show" style="margin-top:0;">Schematic only, not to scale vertically. Door and window heights in the diagram are illustrative.</div>
+
+                    <div class="section-title" style="margin-top:22px;"><i class="fas fa-ruler-horizontal"></i> Stud Layout Marks</div>
+                    <div class="info-block marks-box" id="marksBox"></div>
+                    <div class="info-block" id="stepBlock"></div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Stud Calculator Guide: Count Studs, Plates, and Openings for Any Wall</h2>
+                    <p>How many studs a wall needs, with doors, windows, corners, plates, and layout marks worked out step by step</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Stud Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Stud Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Stud Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#spacing">6. Stud Spacing: 12, 16, 19.2 or 24 Inches</a></div>
+                            <div class="toc-item"><a href="#openings">7. Openings, Corners and Intersections</a></div>
+                            <div class="toc-item"><a href="#units">8. Units and Terminology</a></div>
+                            <div class="toc-item"><a href="#tips">9. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">10. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">11. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">12. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>A stud calculator turns a wall's length into the number of studs, plates, and framing pieces you need to buy before you start building. It is useful for anyone framing a partition wall, a garage, a shed, or a basement room, and it matters because framing lumber is sold in whole pieces, so a bad count means either a second trip to the yard or a stack of leftover boards.</p>
+                    <p>This stud calculator handles more than one wall at a time, accounts for doors and windows, adds corner and intersection studs, and gives you a lumber list plus the layout marks to transfer onto your plates. Enter your walls in the calculator above to get started.</p>
+                    <p>Most quick stud tools stop at wall length divided by spacing. That is a fine starting point, but real walls have doors, windows, corners, and plates, and each of those changes the lumber order. This calculator adds them one at a time so you can see where every piece comes from.</p>
+
+                    <div class="pro-tip">
+                        <strong>Quick answer:</strong>
+                        <p style="margin: 10px 0 0;">To estimate studs for a plain wall, divide the wall length in inches by the stud spacing in inches, round up, and add 1 for the end stud. A 16 ft wall at 16 in on center needs (192 &divide; 16) + 1 = 13 studs. Doors and windows replace some of those studs but add king studs, jack studs, and cripple studs around the opening, so a wall with openings usually needs more pieces, not fewer. Add plates separately: a double top plate and one bottom plate need 3 times the wall length in board footage.</p>
+                    </div>
+
+                    <h2 id="how-works">1. How the Stud Calculator Works</h2>
+                    <p>You describe your project one wall at a time. For each wall you enter the length in feet and inches, then add any doors or windows with their rough opening width and, if you know it, how far each one sits from the left end of the wall. You then choose the stud spacing, the stud length, and whether the top plate is single or double.</p>
+                    <p>For every wall, the calculator first counts the regular layout studs: one at the start, one at every spacing interval, and one at the far end. Each opening then replaces the layout studs that would have landed inside it, and adds two king studs, two jack studs, and the cripple studs that fill the space above the header, and below the sill on a window.</p>
+                    <p>Next it adds the extra studs you allow for corners and T-intersections, applies your waste percentage, and rounds up to whole pieces. Plates are counted separately from the total wall length and the number of plate courses, then divided by the board length you choose.</p>
+                    <p>The results are a studs-to-buy number, a plate board count, the header and sill lengths, an estimated cost if you enter prices, a list of layout marks for each wall, and a diagram of the layout.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions:</strong>
+                        <p style="margin: 10px 0 0;">The calculator treats every wall as a straight, flat wall built from lumber 1.5 inches thick. If you leave an opening's position blank, it spaces that opening evenly along the wall, so the count can differ by a stud or two from a wall where the openings sit somewhere else. Corner and T-intersection studs follow common conventions that vary between builders, so both are adjustable. Headers are sized by the structure, not by this calculator, so only their length is given. Sheathing, drywall, insulation, blocking, and fasteners are not included.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Stud Calculator</h2>
+                    <ol>
+                        <li>Enter the length of your first wall in feet and inches.</li>
+                        <li>Add any doors or windows on that wall, with each opening's rough width and, if you know it, its distance from the left end of the wall.</li>
+                        <li>Add more walls if your project has them, and enter the number of corners and T-intersections.</li>
+                        <li>Choose your stud spacing, stud length, and whether the top plate is single or double.</li>
+                        <li>Set the plate board length, the header style, and your waste percentage.</li>
+                        <li>Optionally enter your price per stud and per plate board to see an estimated cost.</li>
+                        <li>Review the studs to buy, the plate boards, the lumber list, and the stud layout marks.</li>
+                    </ol>
+                    <p>You can add up to 6 walls, and up to 5 openings on each wall. If a number is outside the allowed range, the calculator tells you and uses the nearest allowed value instead of changing it silently.</p>
+
+                    <h2 id="formula">3. Stud Calculator Formula</h2>
+                    <div class="pro-tip">
+                        <code>Layout studs = rounded-up (Wall length / Stud spacing) + 1</code>
+                        <p style="margin: 10px 0 0;">Wall length and stud spacing are both in inches. The + 1 is the stud at the far end of the wall, and the rounding up covers a wall that is not an exact multiple of the spacing.</p>
+                    </div>
+                    <p>Openings change the count. A layout stud is replaced if its centerline falls inside the opening or within the 3 inches beside it that the king and jack studs take up. Each opening then adds its own framing:</p>
+                    <div class="pro-tip">
+                        <code>Studs for one opening = 2 king + 2 jack + cripples</code>
+                        <code>Header length = Rough opening width + 3 in</code>
+                        <p style="margin: 10px 0 0;">Cripples are counted above the header and, for a window, again below the sill. Each cripple sits at a layout position that falls inside the opening.</p>
+                    </div>
+                    <p>The wall totals, extras, and waste then combine like this:</p>
+                    <div class="pro-tip">
+                        <code>Net studs = Layout studs - Replaced studs + King, jack and cripple studs + Corner and T-intersection studs</code>
+                        <code>Studs to buy = rounded-up (Net studs x (1 + Waste %))</code>
+                        <code>Plate boards = rounded-up (Sum of wall lengths x Plate courses x (1 + Waste %) / Board length)</code>
+                    </div>
+                    <p>Plate courses is 3 for a double top plate and one bottom plate, or 2 for a single top plate. The calculator rounds up only at the end, never in the middle of the calculation.</p>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>These are the calculator's default values: two walls, 16 inch spacing, a double top plate, 8 foot plate boards, a 10% waste allowance, and one corner. Wall 1 is 16 feet long with a 36 inch door starting 24 inches from the left end and a 36 inch window starting 100 inches from the left end. Wall 2 is 12 feet long with no openings.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Wall</th><th>Length</th><th>Layout Studs</th><th>Replaced</th><th>Kings + Jacks</th><th>Cripples</th><th>Studs</th></tr></thead>
+                        <tbody>
+                            <tr><td>Wall 1</td><td>16'-0"</td><td>13</td><td>4</td><td>8</td><td>6</td><td>23</td></tr>
+                            <tr><td>Wall 2</td><td>12'-0"</td><td>10</td><td>0</td><td>0</td><td>0</td><td>10</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Wall 1 is 192 inches long. At 16 inch spacing, 192 divided by 16 is 12, plus one end stud gives 13 layout studs. The door replaces the studs at 32 and 48 inches, and the window replaces the studs at 112 and 128 inches, so 4 layout studs are replaced.</p>
+                    <p>The two openings add 4 king studs, 4 jack studs, and 6 cripple studs: 2 above the door, 2 above the window, and 2 below the window. That gives 13 - 4 + 4 + 4 + 6 = 23 studs for Wall 1. Wall 2 is 144 inches with no openings, so 144 divided by 16 is 9, plus 1 is 10 studs.</p>
+                    <p>The walls meet at one corner, which adds 1 stud for a three-stud corner. The net total is 23 + 10 + 1 = 34 studs. With a 10% waste allowance, 34 x 1.10 = 37.4, which rounds up to 38 studs to buy.</p>
+                    <p>For the plates, a double top plate and one bottom plate make 3 courses. The walls total 192 + 144 = 336 inches, so 336 x 3 = 1,008 inches, or 84 feet of plate. With 10% waste that becomes 92.4 feet, and 92.4 divided by 8 is 11.55, which rounds up to 12 boards.</p>
+                    <p>Each header is 36 + 3 = 39 inches long. With double headers that is 4 pieces, 13 feet in total, plus one 36 inch window sill, for 16 feet of header and sill lumber. The stud and plate total is 38 + 12 = 50 pieces, and at $4 per stud and $5 per plate board the estimate is 38 x 4 + 12 x 5 = $212.</p>
+                    <p>The layout marks for Wall 2 fall at 1'-4", 2'-8", 4'-0", 5'-4", 6'-8", 8'-0", 9'-4", and 10'-8" from the left end, with a stud flush at each end of the wall.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The studs-to-buy number is the figure to take to the lumber yard. It is the net stud count from your walls, openings, and corners, plus your waste allowance, rounded up to whole pieces. The plate board count works the same way for the top and bottom plates.</p>
+                    <p>These are planning counts, not a framing plan. They are exact for the assumptions listed above, but the real number depends on details the calculator cannot see, such as where you add extra backing, how you frame around plumbing or wiring, and how many boards turn out too warped to use. When a total lands close to a whole number, adding one piece is cheap insurance.</p>
+                    <p>Header and sill numbers are lengths only. The calculator does not choose a header size, because the right lumber depends on the span, the load above, and your local code. Take the header size from your plans or the code tables. The cost estimate covers studs and plate boards at the prices you enter, so add headers, sheathing, and fasteners separately.</p>
+
+                    <h2 id="spacing">6. Stud Spacing: 12, 16, 19.2 or 24 Inches</h2>
+                    <p>Stud spacing is measured on center, which means from the middle of one stud to the middle of the next, not from edge to edge. The calculator offers 12, 16, 19.2, and 24 inches, and the spacing you choose changes the stud count more than any other input.</p>
+                    <p>Sixteen inches is the most common choice for walls in houses. It puts a stud under the edge of every 4 foot sheet of drywall or plywood, because 48 divided by 16 is exactly 3, and it works for most stud sizes and wall heights. Twenty-four inches uses about a third fewer studs per wall and also lines up with 4 foot sheets, because 48 divided by 24 is 2, but it is only permitted when the stud size, wall height, and load allow it.</p>
+                    <p>Twelve inches is less common. It is sometimes chosen where a wall needs extra stiffness or carries a heavier load, and it uses roughly a third more studs than 16 inches. The 19.2 inch spacing comes from dividing 8 feet into five equal spaces. It shows up more often in floor and roof framing than in walls, though some builders use it in walls to save a few studs.</p>
+                    <p>The rules that set the maximum spacing are part of the building code. In the <a href="https://codes.iccsafe.org/s/IRC2021P2/chapter-6-wall-construction/IRC2021P2-Pt03-Ch06-SecR602.3.1" target="_blank" rel="noopener">2021 International Residential Code, section R602.3.1</a>, the size, height, and spacing of studs must follow Table R602.3(5), and studs must be No. 2 grade lumber or better, with limited exceptions. Your local code may differ, so use the calculator's spacing options to compare lumber counts, and confirm the spacing your wall is allowed to use with your plans or your building department.</p>
+
+                    <h2 id="openings">7. Openings, Corners and Intersections</h2>
+                    <p>Openings are where a plain length-and-spacing count goes wrong. A door or window interrupts the regular studs, and the framing that replaces them takes more than one piece for one.</p>
+                    <p>On each side of an opening there is a king stud that runs the full height of the wall, and a shorter jack stud beside it, sometimes called a trimmer. The jack studs carry the ends of the header, the horizontal member across the top of the opening. Above a header, and below a window sill, short cripple studs keep the stud spacing going so drywall and sheathing have something to nail to.</p>
+                    <p>To count these, the calculator finds the regular layout studs that would fall inside the opening or within the 3 inches beside it that the king and jack take up. Those studs are removed, then two kings, two jacks, and the cripples are added. A header rests between the king studs, so its length is the rough opening width plus 3 inches. If you choose a double header, the calculator counts two pieces per opening.</p>
+                    <p>The rough opening width is the size of the framed hole, not the size of the door or window. A door usually needs a rough opening a couple of inches wider than the slab, so check the manufacturer's rough opening dimensions before you enter a width.</p>
+                    <p>Corners and intersections need extra studs too, and framers build them a few different ways. A two-stud corner uses drywall clips or scrap backing instead of a third stud, adding no full-length studs. A California corner, a common choice for exterior walls, adds one backing stud to the two end studs the wall counts already include. A traditional four-stud corner uses two extra studs for a solid, fully backed corner. The calculator's corner style presets set this for you, and Custom lets you enter your own count.</p>
+                    <p>A T-intersection, where one wall meets the middle of another, needs backing for the wall that ties in. A ladder-block T uses horizontal blocking between studs, adding roughly one full-length stud, while a full backer approach adds two. As with corners, exact terminology and stud counts vary by region and by framer, so the T-intersection presets are starting points rather than one fixed rule, and Custom is available if your framing differs.</p>
+                    <p>If you know where your openings sit, enter the distance from the left end of the wall to the opening's left edge. If you leave that field blank, the calculator spaces the opening evenly along the wall. That is a reasonable estimate, but it can differ by a stud or two from your actual layout.</p>
+
+                    <h2 id="units">8. Units and Terminology</h2>
+                    <ul>
+                        <li><strong>On center (OC):</strong> the distance from the center of one stud to the center of the next.</li>
+                        <li><strong>Plates:</strong> the horizontal members at the bottom (bottom plate) and top (top plate) of a wall. A double top plate has two layers, and the upper layer overlaps at corners and intersections to tie walls together.</li>
+                        <li><strong>Rough opening:</strong> the framed hole for a door or window, slightly larger than the unit itself.</li>
+                        <li><strong>King, jack, and cripple studs, headers, and sills:</strong> the framing around an opening, described in the previous section.</li>
+                        <li><strong>Nominal and actual size:</strong> a 2x4 is nominally 2 by 4 inches but measures about 1.5 by 3.5 inches, and the calculator uses the 1.5 inch thickness.</li>
+                        <li><strong>Layout marks:</strong> the stud positions measured from the left end of the wall to the center of each stud, shown in feet, inches, and fractions of an inch.</li>
+                    </ul>
+                    <p>Precut studs are the common way to buy studs for standard walls. They are sold at 92-5/8 inches for 8 foot walls and 104-5/8 inches for 9 foot walls, sized to work with one bottom plate and a double top plate, as <a href="https://www.jlconline.com/how-to/framing/precut-stud-lengths_o" target="_blank" rel="noopener">The Journal of Light Construction explains</a>. A 10 foot wall uses a 116-5/8 inch precut. The calculator uses these lengths for its stud length options, and you can enter a custom length if your wall is a different height.</p>
+
+                    <h2 id="tips">9. Practical Tips</h2>
+                    <ul>
+                        <li>Measure each wall along the plate, the same way you will cut the plates, and enter lengths in feet and inches rather than converting them yourself.</li>
+                        <li>Write down door and window positions from your plans before you use the calculator. Entering them improves the count and gives you exact king and jack marks.</li>
+                        <li>Sort through the stud pile at the yard. Warped studs are common, and the waste allowance is there for the boards you cannot use. Ten percent is a reasonable starting point, and a small or complicated job may deserve more.</li>
+                        <li>Buy precut studs when your wall height matches one of the standard sizes, so you do not have to cut every stud to length.</li>
+                        <li>Order plate boards long enough to keep joints to a minimum. A 12 or 16 foot board leaves fewer splices on a long wall, and top plate splices should be staggered.</li>
+                        <li>Mark the layout on the top and bottom plates together, laid side by side, so the studs line up from one plate to the other.</li>
+                        <li>Take header lumber sizes from your plans or local code. This calculator counts pieces and lengths, but it does not size structural members.</li>
+                        <li>Check current local prices before you rely on the cost estimate, since lumber prices change often.</li>
+                    </ul>
+
+                    <h2 id="mistakes">10. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Forgetting the end stud:</strong> dividing wall length by spacing counts the gaps between studs, not the studs, so one more is needed for the far end.</li>
+                        <li><strong>Rounding down:</strong> a wall 200 inches long at 16 inch spacing works out to 12.5, and rounding that down would leave the end of the wall without a properly spaced stud.</li>
+                        <li><strong>Mixing units:</strong> entering feet where inches are expected, or the other way around, throws the count off by a factor of 12.</li>
+                        <li><strong>Measuring spacing edge to edge:</strong> stud spacing is measured on center, so measuring from one edge to the same edge of the next stud is correct, but measuring the gap between studs is not.</li>
+                        <li><strong>Leaving out the plates:</strong> the plate boards are part of the lumber order and are easy to forget.</li>
+                        <li><strong>Treating openings as free:</strong> a window removes a couple of layout studs but adds kings, jacks, cripples, and a header, so a wall with openings usually needs more pieces, not fewer.</li>
+                        <li><strong>Skipping waste:</strong> ordering the exact net count leaves no room for warped or damaged boards.</li>
+                        <li><strong>Using the count in place of plans:</strong> a calculator gives a planning estimate, so structural details still come from your plans and local code.</li>
+                    </ul>
+
+                    <h2 id="related">11. Related Calculations and Use Cases</h2>
+                    <p>A stud count is usually one part of a larger framing job. If your project includes a staircase, for example a basement or loft that needs a new stairwell, our <a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a> works out the rise, run, stringer length, and landing for you.</p>
+                    <p>Outdoor framing projects often start with the ground. If you are building a shed or small outbuilding, our <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a> can estimate the base material for the pad before the walls go up.</p>
+                    <p>Common uses for this stud calculator include partition walls in a basement or garage, framing a shed or workshop, building an interior wall to divide a room, framing an addition, and planning the lumber order for a small cabin or tiny house. Because the calculator handles several walls in one pass, you can enter a whole room, or a whole building, and get one combined lumber list.</p>
+
+                    <h2 id="faq">12. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="studfaq1-answer">How many studs do I need for a wall?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="studfaq1-answer"><p>Divide the wall length by the stud spacing, round up to the next whole number, and add one for the end stud. For example, a 16-foot wall with studs 16 inches on center needs 192 divided by 16, which is 12, plus 1, so 13 studs. That count does not include extra studs for openings, corners, or waste, which the calculator above adds for you.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="studfaq2-answer">How do I calculate studs for a wall with a door and windows?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="studfaq2-answer"><p>Start with the regular layout count, then remove the layout studs that fall inside each opening. Add two king studs and two jack studs for every opening, plus cripple studs above the header and, for a window, below the sill. The calculator above does this for each door and window you add, using the position you enter or spacing the openings evenly.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="studfaq3-answer">Should I space studs 16 or 24 inches on center?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="studfaq3-answer"><p>Sixteen inches is the most common spacing and a safe default for most walls. Twenty-four inches uses fewer studs but is only allowed where the stud size, wall height, and load permit it, so check your local code and plans. Building codes set stud size, height, and spacing together, so the right answer depends on what the wall supports.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="studfaq4-answer">How many 2x4s do I need to frame a wall?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="studfaq4-answer"><p>Add the studs and the plate boards. Studs are counted from the wall length, spacing, openings, and corners, and plates are usually one bottom plate and a double top plate, so the total plate length is the wall length times three. The calculator above gives both counts and a combined total, including your waste allowance, which is the number of 2x4s when the wall is framed with 2x4 lumber. Headers are extra.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="studfaq5-answer">What are king, jack, and cripple studs?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="studfaq5-answer"><p>A king stud runs the full height of the wall beside an opening. A jack stud, also called a trimmer, sits inside the king stud and supports the end of the header. Cripple studs are the short studs above a header and below a window sill that keep the stud spacing going across the opening.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>A wall's stud count starts with a simple idea, wall length divided by spacing plus one, but real walls also have plates, openings, corners, and boards that are not usable. This stud calculator handles those parts together, turning your measurements into studs to buy, plate boards, header lengths, and layout marks you can transfer to the plates. Accurate lengths and opening positions matter most, because small errors in either change the count. Use the stud calculator above to plan your lumber order, then check the numbers against your plans and local code before you buy.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Stud size, spacing, and headers must follow your plans and local building code. Confirm all quantities with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪵</span> Try the Stud Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪵 Stud Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stair-calculator">🪜 Stair Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/soffit-calculator">🏠 Soffit & Ventilation Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">🪨 Gravel Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+        // Same as safeNumber, but also reports whether the raw value had to be capped,
+        // so the page can tell the person instead of silently using a different number.
+        function trackedNumber(raw, opts) {
+            const n = parseFloat(raw);
+            const value = safeNumber(raw, opts);
+            const wasClamped = isFinite(n) && (n < (opts.min ?? 0) || n > (opts.max ?? Infinity));
+            return { value, wasClamped };
+        }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+
+        // ==PURE-START==
+        function ceilEps(x) { return Math.ceil(x - 1e-9); }
+        function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+        function fmtN(n, d) { return parseFloat(n.toFixed(d === undefined ? 2 : d)).toString(); }
+
+        // Feet, inches and fractions to the nearest 1/16 in, e.g. 21.75 -> 1'-9 3/4"
+        function fmtFtIn(inches) {
+            const t = Math.round(inches * 16);
+            if (t <= 0) return '0"';
+            const ft = Math.floor(t / 192);
+            const rem = t - ft * 192;
+            const inch = Math.floor(rem / 16);
+            const f16 = rem - inch * 16;
+            let inchPart;
+            if (f16 > 0) {
+                const g = gcd(f16, 16);
+                const frac = (f16 / g) + '/' + (16 / g);
+                inchPart = (inch > 0 || ft > 0) ? inch + ' ' + frac : frac;
+            } else {
+                inchPart = String(inch);
+            }
+            return ft > 0 ? ft + "'-" + inchPart + '"' : inchPart + '"';
+        }
+        // Inches with a fraction, e.g. 92.625 -> 92-5/8
+        function fracStr(inches) {
+            const t = Math.round(inches * 16);
+            const whole = Math.floor(t / 16);
+            const f16 = t - whole * 16;
+            if (f16 === 0) return String(whole);
+            const g = gcd(f16, 16);
+            return whole + '-' + (f16 / g) + '/' + (16 / g);
+        }
+
+        // One wall: L (in), S (spacing in), openings [{type, label, w, pos|null}], headerPlies
+        function computeWall(L, S, openings, headerPlies) {
+            const res = { valid: false, L: L, issues: [], openings: [] };
+            if (!(L > 0) || !(S > 0)) return res;
+            const n = Math.max(1, ceilEps(L / S));
+            const positions = [];
+            for (let k = 0; k < n; k++) positions.push(k * S);
+            positions.push(L);
+
+            const unpos = openings.filter(o => o.pos === null);
+            const list = openings.map(o => {
+                const item = { type: o.type, label: o.label, w: o.w, auto: o.pos === null, a: 0 };
+                if (o.pos === null) {
+                    const j = unpos.indexOf(o);
+                    item.a = Math.round((L * (j + 1) / (unpos.length + 1) - o.w / 2) * 4) / 4;
+                } else {
+                    item.a = o.pos;
+                }
+                return item;
+            });
+            list.sort((x, y) => x.a - y.a);
+
+            const valid = [];
+            list.forEach(o => {
+                if (!(o.w >= 12)) {
+                    res.issues.push(o.label + ' needs a rough width of at least 12 in, so it is not included yet.');
+                    return;
+                }
+                if (o.a < 4.5 - 1e-9 || o.a + o.w + 4.5 > L + 1e-9) {
+                    res.issues.push(o.label + ' does not fit inside the wall. Each side needs about 4.5 in for the end stud, king stud, and jack stud, so it is not included.');
+                    return;
+                }
+                if (valid.length) {
+                    const prev = valid[valid.length - 1];
+                    if (o.a < prev.a + prev.w + 6 - 1e-9) {
+                        res.issues.push(o.label + ' overlaps ' + prev.label + '. Openings need at least 6 in between them, so it is not included.');
+                        return;
+                    }
+                }
+                valid.push(o);
+            });
+
+            const removed = new Set();
+            valid.forEach(o => {
+                o.cripples = [];
+                positions.forEach((p, idx) => {
+                    if (p >= o.a - 3 - 1e-9 && p <= o.a + o.w + 3 + 1e-9) removed.add(idx);
+                    if (p > o.a + 1e-9 && p < o.a + o.w - 1e-9) o.cripples.push(p);
+                });
+                o.kingL = o.a - 2.25; o.kingR = o.a + o.w + 2.25;
+                o.jackL = o.a - 0.75; o.jackR = o.a + o.w + 0.75;
+                o.headerLen = o.w + 3;
+            });
+
+            let cripAbove = 0, cripBelow = 0, headerPieces = 0, headerInches = 0, sillPieces = 0, sillInches = 0, autoCount = 0;
+            valid.forEach(o => {
+                cripAbove += o.cripples.length;
+                if (o.type === 'window') { cripBelow += o.cripples.length; sillPieces += 1; sillInches += o.w; }
+                headerPieces += headerPlies;
+                headerInches += headerPlies * o.headerLen;
+                if (o.auto) autoCount += 1;
+            });
+
+            res.valid = true;
+            res.openings = valid;
+            res.n = n;
+            res.quotient = L / S;
+            res.baseCount = positions.length;
+            res.removedCount = removed.size;
+            res.layoutStuds = positions.length - removed.size;
+            res.kings = 2 * valid.length;
+            res.jacks = 2 * valid.length;
+            res.cripAbove = cripAbove;
+            res.cripBelow = cripBelow;
+            res.headerPieces = headerPieces;
+            res.headerInches = headerInches;
+            res.sillPieces = sillPieces;
+            res.sillInches = sillInches;
+            res.autoCount = autoCount;
+            res.regular = positions.filter((p, i) => !removed.has(i));
+            res.wallStuds = res.layoutStuds + res.kings + res.jacks + cripAbove + cripBelow;
+            return res;
+        }
+
+        function computeTotals(walls, cfg) {
+            let net = 0, plateInches = 0, headerPieces = 0, headerInches = 0, sillPieces = 0, sillInches = 0;
+            let anyValid = false;
+            walls.forEach(w => {
+                if (!w.valid) return;
+                anyValid = true;
+                net += w.wallStuds;
+                plateInches += w.L * (cfg.topPlates + 1);
+                headerPieces += w.headerPieces; headerInches += w.headerInches;
+                sillPieces += w.sillPieces; sillInches += w.sillInches;
+            });
+            const extras = anyValid ? cfg.corners * cfg.perCorner + cfg.tCount * cfg.perT : 0;
+            net += extras;
+            const wasteF = 1 + cfg.waste / 100;
+            const boardIn = cfg.boardLenFt * 12;
+            const gross = ceilEps(net * wasteF);
+            const plateBoardsNet = ceilEps(plateInches / boardIn);
+            const plateBoards = ceilEps(plateInches * wasteF / boardIn);
+            return {
+                anyValid: anyValid, net: net, extras: extras, gross: gross, wasteF: wasteF,
+                plateInches: plateInches, plateBoardsNet: plateBoardsNet, plateBoards: plateBoards,
+                headerPieces: headerPieces, headerInches: headerInches, sillPieces: sillPieces, sillInches: sillInches,
+                totalPieces: gross + plateBoards,
+                cost: gross * cfg.priceStud + plateBoards * cfg.priceBoard
+            };
+        }
+        // ==PURE-END==
+
+        // ===== State =====
+        const PRECUT = { '8': 92.625, '9': 104.625, '10': 116.625 };
+        const MAX_WALLS = 6, MAX_OPENINGS = 5;
+        let spacing = 16, topPlates = 2, boardLen = 8, headerPlies = 2, studMode = '8';
+        let wallUid = 0, openUid = 0;
+
+        function wireToggle(containerId, attr, onChange) {
+            const box = $(containerId);
+            box.querySelectorAll('.toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    box.querySelectorAll('.toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    onChange(btn.dataset[attr]);
+                });
+            });
+        }
+        function setToggle(containerId, attr, value) {
+            $(containerId).querySelectorAll('.toggle-option').forEach(b => {
+                const on = b.dataset[attr] === String(value);
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+        }
+        wireToggle('spacingToggle', 'spacing', v => { spacing = parseFloat(v); calculateAll(); });
+        wireToggle('studToggle', 'stud', v => { studMode = v; $('customStudGroup').style.display = v === 'custom' ? 'grid' : 'none'; calculateAll(); });
+        wireToggle('topPlateToggle', 'top', v => { topPlates = parseInt(v, 10); calculateAll(); });
+        wireToggle('boardToggle', 'board', v => { boardLen = parseInt(v, 10); calculateAll(); });
+        wireToggle('headerToggle', 'header', v => { headerPlies = parseInt(v, 10); calculateAll(); });
+        wireToggle('cornerStyleToggle', 'corner', v => {
+            $('perCornerGroup').style.display = v === 'custom' ? 'grid' : 'none';
+            if (v !== 'custom') $('perCorner').value = v;
+            calculateAll();
+        });
+        wireToggle('tStyleToggle', 'tstyle', v => {
+            $('perTGroup').style.display = v === 'custom' ? 'grid' : 'none';
+            if (v !== 'custom') $('perT').value = v;
+            calculateAll();
+        });
+
+        ['customStud', 'cornersInput', 'perCorner', 'tCount', 'perT', 'wastePct', 'priceStud', 'priceBoard'].forEach(id => {
+            $(id).addEventListener('input', calculateAll);
+        });
+
+        // ===== Walls and openings =====
+        function makeOpeningRow(type, d) {
+            const uid = 'o' + (openUid++);
+            const row = document.createElement('div');
+            row.className = 'opening-row';
+            row.dataset.type = type;
+            row.innerHTML =
+                '<span class="opening-tag"></span>' +
+                '<div class="input-group"><label for="' + uid + '-w">Rough opening width</label><div class="row"><input type="number" id="' + uid + '-w" class="op-w" min="12" max="240" step="1" value="' + (d.w != null ? d.w : 36) + '"><span class="unit">in</span></div></div>' +
+                '<div class="input-group"><label for="' + uid + '-p">From left end (optional)</label><div class="row"><input type="number" id="' + uid + '-p" class="op-p" min="0" max="2400" step="1" placeholder="auto" value="' + (d.pos != null ? d.pos : '') + '"><span class="unit">in</span></div></div>' +
+                '<button type="button" class="remove-opening-btn" aria-label="Remove this opening"><i class="fas fa-times"></i></button>';
+            return row;
+        }
+
+        function renumberOpenings(card) {
+            let doors = 0, windows = 0;
+            const rows = card.querySelectorAll('.opening-row');
+            rows.forEach(row => {
+                const isDoor = row.dataset.type === 'door';
+                const num = isDoor ? ++doors : ++windows;
+                row.querySelector('.opening-tag').textContent = (isDoor ? 'Door ' : 'Window ') + num;
+            });
+            const full = rows.length >= MAX_OPENINGS;
+            card.querySelector('.add-door').disabled = full;
+            card.querySelector('.add-window').disabled = full;
+        }
+
+        function makeWallCard(index, d) {
+            const uid = 'w' + (wallUid++);
+            const card = document.createElement('div');
+            card.className = 'wall-card';
+            card.innerHTML =
+                '<div class="wall-card-header"><span class="wall-card-label">Wall ' + (index + 1) + '</span>' +
+                    (index > 0 ? '<button type="button" class="remove-wall-btn"><i class="fas fa-times"></i> Remove</button>' : '') + '</div>' +
+                '<div class="input-grid">' +
+                    '<div class="input-group"><label for="' + uid + '-ft">Length, feet</label><div class="row"><input type="number" id="' + uid + '-ft" class="len-ft" min="0" max="200" step="1" value="' + (d.ft != null ? d.ft : '') + '"><span class="unit">ft</span></div></div>' +
+                    '<div class="input-group"><label for="' + uid + '-in">Length, inches</label><div class="row"><input type="number" id="' + uid + '-in" class="len-in" min="0" max="11.99" step="0.25" value="' + (d.inch != null ? d.inch : 0) + '"><span class="unit">in</span></div></div>' +
+                '</div>' +
+                '<div class="openings-title">Doors and windows on this wall</div>' +
+                '<div class="openings-list"></div>' +
+                '<div class="opening-actions"><button type="button" class="mini-btn add-door"><i class="fas fa-plus"></i> Door</button><button type="button" class="mini-btn add-window"><i class="fas fa-plus"></i> Window</button></div>';
+            const list = card.querySelector('.openings-list');
+            (d.openings || []).forEach(o => list.appendChild(makeOpeningRow(o.type, o)));
+            renumberOpenings(card);
+            return card;
+        }
+
+        function renumberWalls() {
+            const cards = $('wallsContainer').querySelectorAll('.wall-card');
+            cards.forEach((c, i) => { c.querySelector('.wall-card-label').textContent = 'Wall ' + (i + 1); });
+            $('addWallBtn').disabled = cards.length >= MAX_WALLS;
+        }
+
+        function addWall(d) {
+            const count = $('wallsContainer').querySelectorAll('.wall-card').length;
+            if (count >= MAX_WALLS) return;
+            $('wallsContainer').appendChild(makeWallCard(count, d || {}));
+            renumberWalls();
+            calculateAll();
+        }
+        $('addWallBtn').addEventListener('click', () => addWall({}));
+
+        $('wallsContainer').addEventListener('input', calculateAll);
+        $('wallsContainer').addEventListener('click', e => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+            const card = btn.closest('.wall-card');
+            if (!card) return;
+            if (btn.classList.contains('add-door') || btn.classList.contains('add-window')) {
+                const list = card.querySelector('.openings-list');
+                if (list.children.length >= MAX_OPENINGS) return;
+                list.appendChild(makeOpeningRow(btn.classList.contains('add-door') ? 'door' : 'window', {}));
+                renumberOpenings(card);
+                calculateAll();
+            } else if (btn.classList.contains('remove-opening-btn')) {
+                btn.closest('.opening-row').remove();
+                renumberOpenings(card);
+                calculateAll();
+            } else if (btn.classList.contains('remove-wall-btn')) {
+                card.remove();
+                renumberWalls();
+                calculateAll();
+            }
+        });
+
+        // ===== Layout marks =====
+        function wallMarks(w) {
+            const lines = [];
+            const regular = w.regular.map(p => p <= 0 ? 'left end' : (p >= w.L ? 'right end (' + fmtFtIn(w.L) + ')' : fmtFtIn(p)));
+            lines.push('Regular studs: ' + regular.join(', '));
+            w.openings.forEach(o => {
+                const short = o.label.replace(/^Wall \d+ /, '');
+                let s = short + ' from ' + fmtFtIn(o.a) + ' to ' + fmtFtIn(o.a + o.w) + (o.auto ? ' (spaced evenly)' : '') +
+                    ': king studs at ' + fmtFtIn(o.kingL) + ' and ' + fmtFtIn(o.kingR) +
+                    ', jack studs at ' + fmtFtIn(o.jackL) + ' and ' + fmtFtIn(o.jackR) +
+                    ', header ' + fmtFtIn(o.headerLen) + ' long';
+                if (o.cripples.length) s += ', cripple studs at ' + o.cripples.map(fmtFtIn).join(', ');
+                lines.push(s);
+            });
+            return lines;
+        }
+
+        // ===== Diagram =====
+        function drawDiagram(walls, studLenIn) {
+            const svg = $('studSvg');
+            const W = 640, pad = 12;
+            const valid = walls.filter(w => w.valid);
+            if (!valid.length) {
+                svg.setAttribute('viewBox', '0 0 640 60');
+                svg.innerHTML = '<text x="320" y="34" text-anchor="middle" class="sv-text">Enter a wall length to see the layout</text>';
+                return;
+            }
+            const maxL = Math.max.apply(null, valid.map(w => w.L));
+            const plateT = 1.5, hdr = 5.5;
+            const totalH = studLenIn + (topPlates + 1) * plateT;
+            const sx = (W - 2 * pad) / maxL;
+            const sy = Math.min(sx, 120 / totalH);
+            const t = Math.max(1.5 * sx, 1.8);
+            const openTop = Math.max(12, Math.min(82, studLenIn - hdr - 3));
+            const sillH = Math.max(6, Math.min(36, openTop - 12));
+            const R = (x, y, w, h, cls) => '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + Math.max(w, 0.5).toFixed(1) + '" height="' + Math.max(h, 1.2).toFixed(1) + '" class="' + cls + '"/>';
+            let y = pad, out = '';
+            walls.forEach((w, i) => {
+                if (!w.valid) return;
+                const x0 = pad;
+                const hPx = totalH * sy;
+                const yBottom = y + 14 + hPx;
+                const Y = inch => yBottom - inch * sy;
+                const xc = c => x0 + c * sx - t / 2;
+                const xStud = p => p <= 0 ? x0 : (p >= w.L ? x0 + w.L * sx - t : xc(p));
+                out += '<text x="' + x0 + '" y="' + (y + 10) + '" class="sv-text">Wall ' + (i + 1) + ' (' + escapeHtml(fmtFtIn(w.L)) + ')</text>';
+                out += R(x0, Y(plateT), w.L * sx, plateT * sy, 'sv-plate');
+                out += R(x0, Y(plateT + studLenIn + topPlates * plateT), w.L * sx, topPlates * plateT * sy, 'sv-plate');
+                w.openings.forEach(o => {
+                    const xa = x0 + o.a * sx, xw = o.w * sx;
+                    const winBottom = o.type === 'window' ? sillH + plateT : 0;
+                    out += '<rect x="' + xa.toFixed(1) + '" y="' + Y(plateT + openTop).toFixed(1) + '" width="' + xw.toFixed(1) + '" height="' + Math.max((openTop - winBottom) * sy, 1).toFixed(1) + '" class="sv-open"/>';
+                });
+                w.regular.forEach(p => { out += R(xStud(p), Y(plateT + studLenIn), t, studLenIn * sy, 'sv-stud'); });
+                w.openings.forEach(o => {
+                    out += R(xc(o.kingL), Y(plateT + studLenIn), t, studLenIn * sy, 'sv-king');
+                    out += R(xc(o.kingR), Y(plateT + studLenIn), t, studLenIn * sy, 'sv-king');
+                    out += R(xc(o.jackL), Y(plateT + openTop), t, openTop * sy, 'sv-jack');
+                    out += R(xc(o.jackR), Y(plateT + openTop), t, openTop * sy, 'sv-jack');
+                    out += R(x0 + (o.a - 1.5) * sx, Y(plateT + openTop + hdr), (o.w + 3) * sx, hdr * sy, 'sv-header');
+                    const above = studLenIn - openTop - hdr;
+                    if (above > 1) o.cripples.forEach(p => { out += R(xc(p), Y(plateT + studLenIn), t, above * sy, 'sv-cripple'); });
+                    if (o.type === 'window') {
+                        out += R(x0 + o.a * sx, Y(plateT + sillH + 1.5), o.w * sx, 1.5 * sy, 'sv-header');
+                        o.cripples.forEach(p => { out += R(xc(p), Y(plateT + sillH), t, sillH * sy, 'sv-cripple'); });
+                    }
+                });
+                y = yBottom + 16;
+            });
+            svg.setAttribute('viewBox', '0 0 ' + W + ' ' + Math.ceil(y + pad));
+            svg.innerHTML = out;
+        }
+
+        // ===== Main calculation =====
+        function calculateAll() {
+            const issues = [];
+            let anyClamped = false;
+            const track = (raw, opts) => { const t = trackedNumber(raw, opts); if (t.wasClamped) anyClamped = true; return t.value; };
+
+            const studLenIn = studMode === 'custom' ? track($('customStud').value, { min: 24, max: 240, fallback: 92.625 }) : PRECUT[studMode];
+            const cfg = {
+                topPlates: topPlates, boardLenFt: boardLen, headerPlies: headerPlies,
+                corners: Math.round(track($('cornersInput').value, { min: 0, max: 24, fallback: 0 })),
+                perCorner: Math.round(track($('perCorner').value, { min: 0, max: 3, fallback: 0 })),
+                tCount: Math.round(track($('tCount').value, { min: 0, max: 24, fallback: 0 })),
+                perT: Math.round(track($('perT').value, { min: 0, max: 4, fallback: 0 })),
+                waste: track($('wastePct').value, { min: 0, max: 30, fallback: 0 }),
+                priceStud: track($('priceStud').value, { min: 0, max: 1000, fallback: 0 }),
+                priceBoard: track($('priceBoard').value, { min: 0, max: 1000, fallback: 0 })
+            };
+
+            const cards = Array.from($('wallsContainer').querySelectorAll('.wall-card'));
+            const walls = cards.map((card, i) => {
+                const ft = track(card.querySelector('.len-ft').value, { min: 0, max: 200, fallback: 0 });
+                const inch = track(card.querySelector('.len-in').value, { min: 0, max: 11.99, fallback: 0 });
+                const L = ft * 12 + inch;
+                const ops = [];
+                card.querySelectorAll('.opening-row').forEach(row => {
+                    const pRaw = row.querySelector('.op-p').value;
+                    ops.push({
+                        type: row.dataset.type,
+                        label: 'Wall ' + (i + 1) + ' ' + row.querySelector('.opening-tag').textContent,
+                        w: track(row.querySelector('.op-w').value, { min: 12, max: 240, fallback: 0 }),
+                        pos: pRaw === '' ? null : track(pRaw, { min: 0, max: 2400, fallback: 0 })
+                    });
+                });
+                const w = computeWall(L, spacing, ops, headerPlies);
+                const hasInput = card.querySelector('.len-ft').value !== '' || card.querySelector('.len-in').value !== '0';
+                if (!w.valid && hasInput) issues.push('Wall ' + (i + 1) + ' needs a length greater than zero, so it is not included yet.');
+                w.issues.forEach(m => issues.push(m));
+                return w;
+            });
+            if (anyClamped) issues.push('One or more values were outside the allowed range and were capped to the nearest allowed value.');
+
+            const warning = $('warningNote');
+            if (issues.length) {
+                warning.innerHTML = '<i class="fas fa-triangle-exclamation"></i> ' + issues.map(escapeHtml).join(' ');
+                warning.classList.add('show');
+            } else {
+                warning.classList.remove('show');
+            }
+
+            const validWalls = walls.filter(w => w.valid);
+            const openingCount = validWalls.reduce((s, w) => s + w.openings.length, 0);
+            const wasteHint = $('wasteHint');
+            if (validWalls.length) {
+                let suggestion, why;
+                if (validWalls.length <= 2 && openingCount <= 1) {
+                    suggestion = 'around 5-10%'; why = 'a simple, single-wall job with few or no openings';
+                } else if (validWalls.length <= 4 && openingCount <= 4) {
+                    suggestion = 'around 10-15%'; why = 'a multi-wall project with a normal number of openings';
+                } else {
+                    suggestion = 'around 15-20%'; why = 'a larger or more complex layout with several openings and cuts';
+                }
+                wasteHint.innerHTML = '<i class="fas fa-lightbulb"></i> For ' + why + ', framers commonly allow ' + suggestion + '. This is a general starting point, not a measured figure for your specific lumber, so adjust it for your own project and supplier.';
+            } else {
+                wasteHint.innerHTML = '<i class="fas fa-lightbulb"></i> A common starting point is 10%, more for a complex layout with several openings, less for a single simple wall.';
+            }
+
+            const tot = computeTotals(walls, cfg);
+            const plateCourses = topPlates + 1;
+
+            $('studsResult').textContent = tot.gross;
+            $('plateLabel').textContent = 'Plate Boards (' + boardLen + ' ft)';
+            $('plateResult').textContent = tot.plateBoards;
+            $('totalResult').textContent = tot.totalPieces;
+            $('headerResult').textContent = ((tot.headerInches + tot.sillInches) / 12).toFixed(1) + ' ft';
+            const priced = cfg.priceStud > 0 || cfg.priceBoard > 0;
+            $('costResult').textContent = (priced && tot.anyValid) ? '$' + tot.cost.toFixed(2) : '-';
+
+            const tbody = $('breakdownBody');
+            tbody.innerHTML = '';
+            walls.forEach((w, i) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = w.valid
+                    ? '<td>Wall ' + (i + 1) + '</td><td>' + escapeHtml(fmtFtIn(w.L)) + '</td><td>' + w.baseCount + '</td><td>' + w.removedCount + '</td><td>' + (w.kings + w.jacks) + '</td><td>' + (w.cripAbove + w.cripBelow) + '</td><td>' + w.wallStuds + '</td>'
+                    : '<td>Wall ' + (i + 1) + '</td><td colspan="6">incomplete</td>';
+                tbody.appendChild(tr);
+            });
+            if (tot.anyValid) {
+                const ex = document.createElement('tr');
+                ex.innerHTML = '<td colspan="6">Corners and T-intersections</td><td>' + tot.extras + '</td>';
+                tbody.appendChild(ex);
+                const nt = document.createElement('tr');
+                nt.className = 'total-row';
+                nt.innerHTML = '<td colspan="6">Net studs (before waste)</td><td>' + tot.net + '</td>';
+                tbody.appendChild(nt);
+            }
+
+            // Lumber list
+            const studLabel = studMode === 'custom' ? fracStr(studLenIn) + ' in (custom)' : fracStr(studLenIn) + ' in (precut for ' + studMode + ' ft walls)';
+            let lumber = '<strong>Lumber list</strong><br>';
+            if (tot.anyValid) {
+                lumber += 'Studs: ' + tot.gross + ' pieces at ' + studLabel + ' (' + tot.net + ' net plus ' + fmtN(cfg.waste, 1) + '% waste). Jack, cripple, and other short pieces are cut from these.<br>' +
+                    'Plates: ' + tot.plateBoards + ' boards, ' + boardLen + ' ft long (' + fmtN(tot.plateInches / 12, 1) + ' ft of plate across ' + plateCourses + ' courses: ' + topPlates + ' top, 1 bottom).<br>';
+                if (tot.headerPieces > 0) lumber += 'Headers: ' + tot.headerPieces + ' pieces, ' + fmtN(tot.headerInches / 12, 1) + ' ft in total. Each header is its opening width plus 3 in, and its lumber size comes from your plans.<br>';
+                if (tot.sillPieces > 0) lumber += 'Window sills: ' + tot.sillPieces + ' pieces, ' + fmtN(tot.sillInches / 12, 1) + ' ft in total.<br>';
+                lumber += 'Studs plus plate boards: ' + tot.totalPieces + ' pieces.';
+            } else {
+                lumber += 'Enter a wall length above to see the lumber list.';
+            }
+            $('lumberList').innerHTML = lumber;
+
+            // Step by step
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (tot.anyValid) {
+                const parts = [];
+                walls.forEach((w, i) => {
+                    if (!w.valid) return;
+                    parts.push(w.wallStuds);
+                    step += '<strong>Wall ' + (i + 1) + ' (' + escapeHtml(fmtFtIn(w.L)) + '):</strong> ' + fmtN(w.L, 2) + ' &divide; ' + fmtN(spacing, 1) + ' = ' + w.quotient.toFixed(2) + ', rounded up = ' + w.n + ', plus 1 end stud = ' + w.baseCount + ' layout studs<br>';
+                    if (w.openings.length) {
+                        step += w.openings.length + (w.openings.length === 1 ? ' opening replaces ' : ' openings replace ') + w.removedCount + ' layout stud' + (w.removedCount === 1 ? '' : 's') + ', then adds ' + w.kings + ' king, ' + w.jacks + ' jack, and ' + (w.cripAbove + w.cripBelow) + ' cripple studs<br>' +
+                            w.baseCount + ' &minus; ' + w.removedCount + ' + ' + w.kings + ' + ' + w.jacks + ' + ' + (w.cripAbove + w.cripBelow) + ' = ' + w.wallStuds + ' studs<br>';
+                    }
+                    step += '<br>';
+                });
+                step += '<strong>Studs:</strong> ' + parts.join(' + ') + (tot.extras ? ' + ' + tot.extras + ' corner and intersection' : '') + ' = ' + tot.net + ' net; &times; ' + tot.wasteF.toFixed(2) + ' = ' + (tot.net * tot.wasteF).toFixed(2) + ', rounded up = ' + tot.gross + ' studs<br>';
+                step += '<strong>Plates:</strong> ' + fmtN(tot.plateInches, 2) + ' in (' + fmtN(tot.plateInches / 12, 1) + ' ft) = wall lengths &times; ' + plateCourses + ' courses; &times; ' + tot.wasteF.toFixed(2) + ' = ' + fmtN(tot.plateInches * tot.wasteF / 12, 2) + ' ft; &divide; ' + boardLen + ' ft boards = ' + (tot.plateInches * tot.wasteF / (boardLen * 12)).toFixed(2) + ', rounded up = ' + tot.plateBoards + ' boards';
+            } else {
+                step += 'Enter a wall length above to see the math.';
+            }
+            $('stepBlock').innerHTML = step;
+
+            // Layout marks
+            let marks = '';
+            walls.forEach((w, i) => {
+                if (!w.valid) return;
+                marks += '<strong>Wall ' + (i + 1) + ' (' + escapeHtml(fmtFtIn(w.L)) + ')</strong><br>' + wallMarks(w).map(escapeHtml).join('<br>') + '<br><br>';
+            });
+            $('marksBox').innerHTML = marks ? '<em>Measured from the left end of the wall to the center of each stud.</em><br><br>' + marks : 'Enter a wall length above to see the layout marks.';
+
+            const autoTotal = walls.reduce((s, w) => s + (w.valid ? w.autoCount : 0), 0);
+            const autoNote = $('autoNote');
+            if (autoTotal > 0) {
+                autoNote.textContent = 'Openings without a position are spaced evenly along their wall. Enter each opening\'s distance from the left end to match your plans exactly.';
+                autoNote.classList.add('show');
+            } else {
+                autoNote.classList.remove('show');
+            }
+
+            drawDiagram(walls, studLenIn);
+
+            return { walls: walls, tot: tot, cfg: cfg, studLenIn: studLenIn, studLabel: studLabel, plateCourses: plateCourses };
+        }
+
+        // ===== Copy / Share =====
+        function buildSummary() {
+            const r = calculateAll();
+            if (!r.tot.anyValid) return 'Stud Calculator: enter a wall length to see results.\nSource: CalcSnaps Stud Calculator (https://calcsnaps.com/construction-calculators/stud-calculator)';
+            let text = 'Stud Calculator Result\n' +
+                'Studs to buy: ' + r.tot.gross + ' (' + r.tot.net + ' net plus ' + fmtN(r.cfg.waste, 1) + '% waste), ' + r.studLabel + '\n' +
+                'Plate boards: ' + r.tot.plateBoards + ' at ' + r.cfg.boardLenFt + ' ft\n' +
+                'Studs plus plate boards: ' + r.tot.totalPieces + '\n' +
+                'Header and sill lumber: ' + ((r.tot.headerInches + r.tot.sillInches) / 12).toFixed(1) + ' ft\n' +
+                'Spacing: ' + fmtN(spacing, 1) + ' in on center\n';
+            r.walls.forEach((w, i) => { if (w.valid) text += 'Wall ' + (i + 1) + ': ' + fmtFtIn(w.L) + ', ' + w.wallStuds + ' studs, ' + w.openings.length + ' opening' + (w.openings.length === 1 ? '' : 's') + '\n'; });
+            text += 'Source: CalcSnaps Stud Calculator (https://calcsnaps.com/construction-calculators/stud-calculator)';
+            return text;
+        }
+
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Stud Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/stud-calculator' }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(text);
+                const btn = this; const original = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF export (jsPDF loads only when needed) =====
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+
+        function downloadPDF() {
+            const r = calculateAll();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+            const ensure = h => { if (y + h > 280) { doc.addPage(); y = 20; } };
+            const write = (str, x, size, color) => {
+                doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
+                doc.splitTextToSize(str, 190 - x).forEach(line => { ensure(6); doc.text(line, x, y); y += 5.5; });
+            };
+            const purple = [139, 92, 246], black = [0, 0, 0], gray = [100, 100, 100];
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Stud Calculator Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + new Date().toLocaleString(), 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 10;
+
+            write('Walls', 20, 14, purple); y += 2;
+            r.walls.forEach((w, i) => {
+                if (!w.valid) { write('Wall ' + (i + 1) + ': incomplete, not included', 25, 10, gray); return; }
+                write('Wall ' + (i + 1) + ': ' + fmtFtIn(w.L) + ', ' + w.baseCount + ' layout studs, ' + w.removedCount + ' replaced, ' + (w.kings + w.jacks) + ' king and jack, ' + (w.cripAbove + w.cripBelow) + ' cripples = ' + w.wallStuds + ' studs', 25, 10, black);
+                w.openings.forEach(o => {
+                    write(o.label.replace(/^Wall \d+ /, '') + ': ' + fmtFtIn(o.w) + ' rough width, from ' + fmtFtIn(o.a) + (o.auto ? ' (spaced evenly)' : '') + ', header ' + fmtFtIn(o.headerLen) + ' long', 32, 9, gray);
+                });
+                y += 2;
+            });
+            y += 2;
+
+            write('Settings', 20, 14, purple); y += 2;
+            write('Stud spacing: ' + fmtN(spacing, 1) + ' in on center. Stud length: ' + r.studLabel + '.', 25, 10, black);
+            write('Top plate: ' + (topPlates === 2 ? 'double' : 'single') + ', plate boards ' + r.cfg.boardLenFt + ' ft, headers ' + (headerPlies === 2 ? 'double' : 'single') + '.', 25, 10, black);
+            write('Corners: ' + r.cfg.corners + ' x ' + r.cfg.perCorner + ' extra. T-intersections: ' + r.cfg.tCount + ' x ' + r.cfg.perT + ' extra. Waste: ' + fmtN(r.cfg.waste, 1) + '%.', 25, 10, black);
+            y += 4;
+
+            write('Results', 20, 14, purple); y += 2;
+            if (r.tot.anyValid) {
+                write('Studs to buy: ' + r.tot.gross + ' (' + r.tot.net + ' net before waste)', 25, 11, black);
+                write('Plate boards: ' + r.tot.plateBoards + ' at ' + r.cfg.boardLenFt + ' ft', 25, 11, black);
+                write('Studs plus plate boards: ' + r.tot.totalPieces, 25, 11, black);
+                write('Header and sill lumber: ' + ((r.tot.headerInches + r.tot.sillInches) / 12).toFixed(1) + ' ft (' + r.tot.headerPieces + ' header pieces, ' + r.tot.sillPieces + ' sill pieces)', 25, 11, black);
+                if (r.cfg.priceStud > 0 || r.cfg.priceBoard > 0) write('Estimated cost (studs and plates): $' + r.tot.cost.toFixed(2), 25, 11, black);
+            } else {
+                write('No complete walls were entered.', 25, 11, black);
+            }
+            y += 4;
+
+            write('Stud layout marks (from the left end of each wall to the center of each stud)', 20, 12, purple); y += 2;
+            r.walls.forEach((w, i) => {
+                if (!w.valid) return;
+                write('Wall ' + (i + 1) + ' (' + fmtFtIn(w.L) + ')', 25, 10, black);
+                wallMarks(w).forEach(line => write(line, 30, 9, gray));
+                y += 2;
+            });
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            const pages = doc.getNumberOfPages();
+            for (let p = 1; p <= pages; p++) {
+                doc.setPage(p);
+                doc.text('Planning estimate only. Confirm stud size, spacing, and headers with your plans and local code.', 105, 285, { align: 'center' });
+                doc.text('Generated by CalcSnaps - Stud Calculator', 105, 291, { align: 'center' });
+            }
+            doc.save('Stud_Calculator_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => {
+                downloadPDF();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            });
+        });
+
+        // ===== Reset =====
+        function loadDefaultWalls() {
+            $('wallsContainer').innerHTML = '';
+            addWall({ ft: 16, inch: 0, openings: [{ type: 'door', w: 36, pos: 24 }, { type: 'window', w: 36, pos: 100 }] });
+            addWall({ ft: 12, inch: 0, openings: [] });
+        }
+        function resetAll() {
+            spacing = 16; topPlates = 2; boardLen = 8; headerPlies = 2; studMode = '8';
+            setToggle('spacingToggle', 'spacing', '16');
+            setToggle('studToggle', 'stud', '8');
+            setToggle('topPlateToggle', 'top', '2');
+            setToggle('boardToggle', 'board', '8');
+            setToggle('headerToggle', 'header', '2');
+            $('customStudGroup').style.display = 'none';
+            $('customStud').value = 92.625;
+            $('cornersInput').value = 1; $('perCorner').value = 1;
+            $('tCount').value = 0; $('perT').value = 2;
+            setToggle('cornerStyleToggle', 'corner', '1'); $('perCornerGroup').style.display = 'none';
+            setToggle('tStyleToggle', 'tstyle', '2'); $('perTGroup').style.display = 'none';
+            $('wastePct').value = 10;
+            $('priceStud').value = ''; $('priceBoard').value = '';
+            loadDefaultWalls();
+            calculateAll();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== Init =====
+        loadDefaultWalls();
+        calculateAll();
+    })();
+    </script>
+</body>
+</html>
