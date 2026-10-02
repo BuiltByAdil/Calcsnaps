@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Body Recomp Calculator – Calories, Protein & Timeline | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free body recomp calculator: get your suitability read, training and rest day calories, protein target, and a realistic timeline to build muscle and lose fat.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/fitness-calculators/body-recomp-calculator">
+
+    <meta property="og:title" content="Body Recomp Calculator – Calories, Protein & Timeline | CalcSnaps">
+    <meta property="og:description" content="Free body recomp calculator: get your suitability read, training and rest day calories, protein target, and a realistic timeline to build muscle and lose fat.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/fitness-calculators/body-recomp-calculator">
+    <meta property="og:image" content="https://calcsnaps.com/images/body-recomp-calculator-og.jpg">
+    <meta property="og:site_name" content="CalcSnaps">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://calcsnaps.com/images/body-recomp-calculator-og.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Body Recomp Calculator",
+        "description": "Calculate a suitability read, training and rest day calories, protein target, and an estimated timeline for building muscle while losing fat (body recomposition).",
+        "url": "https://calcsnaps.com/fitness-calculators/body-recomp-calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Body Recomp Calculator: Calories, Protein & Timeline for Building Muscle While Losing Fat",
+        "description": "How a body recomposition calculator estimates calories, protein, and a realistic timeline, whether recomp is right for you, and how to avoid the most common mistakes.",
+        "image": "https://calcsnaps.com/images/body-recomp-calculator-og.jpg",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/fitness-calculators/body-recomp-calculator" },
+        "datePublished": "2026-09-30",
+        "dateModified": "2026-09-30"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Body Recomp Calculator – Calories, Protein & Timeline",
+        "description": "Calculate calories, protein, and a timeline for body recomposition, plus a suitability read for your body fat and training experience.",
+        "url": "https://calcsnaps.com/fitness-calculators/body-recomp-calculator",
+        "isPartOf": { "@type": "WebSite", "name": "CalcSnaps", "url": "https://calcsnaps.com/" },
+        "inLanguage": "en-US"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .unit-toggle { display: flex; gap: 12px; padding: 20px 28px 0 28px; }
+        .unit-btn { padding: 8px 20px; border-radius: 50px; cursor: pointer; font-weight: 500; border: 1px solid #cbd5e1; background: white; color: #1e293b; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .unit-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .unit-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .unit-btn:hover:not(.active) { background: #f1f5f9; }
+
+        .tab-container { display: flex; background: var(--light); border-bottom: 1px solid #e2e8f0; margin-top: 16px; }
+        .tab { flex: 1; padding: 16px 10px; text-align: center; cursor: pointer; font-weight: 600; border-bottom: 3px solid transparent; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; background: none; border-top: none; border-left: none; border-right: none; }
+        .tab:focus-visible { outline: 3px solid var(--primary); outline-offset: -3px; }
+        .tab.active { color: var(--primary); border-bottom-color: var(--primary); background: white; }
+
+        .tab-content { display: none; padding: 26px; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .toggle-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; flex-wrap: wrap; }
+        .toggle-label { font-weight: 600; font-size: 13.5px; color: var(--dark-light); display: flex; align-items: center; gap: 6px; }
+        .toggle-switch { display: flex; background: var(--light); border: 1px solid #e2e8f0; border-radius: 12px; padding: 4px; gap: 4px; flex-wrap: wrap; }
+        .toggle-option { padding: 8px 16px; border-radius: 8px; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 13px; font-family: 'Inter', sans-serif; color: var(--gray-text); transition: all 0.2s; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; }
+
+        .section-title { font-size: 14.5px; font-weight: 700; color: var(--dark); margin: 20px 0 12px; display: flex; align-items: center; gap: 8px; }
+        .section-title i { color: var(--primary); }
+
+        .optional-section { margin: 20px 0 6px; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px 16px; background: var(--light); }
+        .optional-section summary { font-size: 14.5px; font-weight: 700; color: var(--dark); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+        .optional-section summary::-webkit-details-marker { display: none; }
+        .optional-section summary i { color: var(--primary); }
+        .optional-section summary::after { content: '\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; margin-left: auto; font-size: 12px; color: var(--gray-text); transition: transform 0.2s; }
+        .optional-section[open] summary::after { transform: rotate(180deg); }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 6px; }
+        .input-group label { display: block; font-size: 12.5px; font-weight: 600; color: var(--gray-text); margin-bottom: 6px; }
+        .input-group .row { display: flex; gap: 6px; }
+        .input-group input, .input-group select { width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: 'Inter', sans-serif; font-size: 14px; color: var(--dark); background: white; }
+        .input-group select.unit-select { max-width: 82px; flex-shrink: 0; }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(139,92,246,0.15); }
+        .clamp-msg { display: none; font-size: 11.5px; color: var(--warning); margin-top: 4px; }
+        .clamp-msg.show { display: block; }
+        .input-group.field-invalid input { border-color: var(--danger); }
+        .input-group .error-msg { display: none; font-size: 11.5px; color: var(--danger); margin-top: 4px; }
+        .input-group.field-invalid .error-msg { display: block; }
+
+        .info-tip { display: flex; gap: 10px; background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.2); border-radius: 14px; padding: 14px 16px; margin-top: 14px; font-size: 12.5px; color: var(--dark-light); }
+        .info-tip i { width: 20px; height: 20px; flex-shrink: 0; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal; font-size: 12px; font-weight: 700; }
+
+        .status-note { display: none; align-items: flex-start; gap: 10px; padding: 12px 16px; border-radius: 14px; font-size: 12.5px; margin-top: 14px; line-height: 1.5; }
+        .status-note.show { display: flex; }
+        .status-neutral { background: rgba(139,92,246,0.06); color: var(--dark-light); border: 1px solid rgba(139,92,246,0.2); }
+
+        .results-panel { background: var(--light); border-radius: 20px; padding: 22px; margin-top: 22px; border: 1px solid #e2e8f0; }
+        .total-payment-card { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); border-radius: 16px; padding: 18px 22px; text-align: center; margin-bottom: 16px; }
+        .total-payment-card .label { display: block; font-size: 12px; color: var(--gray); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+        .total-payment-card .amount { display: block; font-size: 26px; font-weight: 800; color: white; margin-top: 4px; }
+        .total-payment-card .sub { display: block; font-size: 12px; color: var(--gray); margin-top: 6px; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+        .result-card { background: white; border-radius: 14px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 11.5px; color: var(--gray-text); font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }
+        .result-value { font-size: 19px; font-weight: 700; color: var(--dark); margin-top: 4px; }
+        .result-value.small { font-size: 15px; line-height: 1.4; }
+
+        .action-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 160px; padding: 13px 20px; border-radius: 14px; border: none; font-weight: 700; font-size: 13.5px; cursor: pointer; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--primary); color: white; transition: all 0.2s; }
+        .action-btn:hover { background: var(--primary-dark); }
+        .action-btn.secondary { background: white; color: var(--dark-light); border: 1px solid #cbd5e1; }
+        .action-btn.secondary:hover { background: #f1f5f9; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+
+        table.ref-table { width: 100%; border-collapse: collapse; margin-top: 8px; background: white; border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 13px; }
+        table.ref-table th { background: var(--dark); color: white; font-weight: 600; padding: 10px 10px; text-align: left; }
+        table.ref-table td { padding: 9px 10px; border-bottom: 1px solid #e2e8f0; color: var(--gray-text); }
+        table.ref-table tr:last-child td { border-bottom: none; }
+        table.ref-table tr.your-row td { background: rgba(139,92,246,0.08); font-weight: 700; color: var(--dark); }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+
+        .formula-box { background: var(--dark); color: #e2e8f0; border-radius: 16px; padding: 20px 24px; margin: 18px 0; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 13.5px; line-height: 1.8; overflow-x: auto; }
+        .formula-box .fvar { color: var(--secondary); }
+
+        .example-box { background: rgba(16,185,129,0.06); border: 1px solid rgba(16,185,129,0.2); border-radius: 16px; padding: 22px 24px; margin: 22px 0; }
+        .example-box ol { margin-bottom: 0; }
+        .example-box li { color: var(--dark-light); }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-dumbbell"></i> Body Recomp Calculator</h1>
+                    <p>Suitability · Calories · Protein · Timeline, for building muscle while losing fat</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> General fitness information, not medical or nutrition advice. If you're pregnant, have a medical condition, or have a history of disordered eating, talk to a doctor or registered dietitian before changing your diet or training.</div>
+
+                <div class="unit-toggle" role="radiogroup" aria-label="Unit system">
+                    <button class="unit-btn active" data-unit="imperial" role="radio" aria-checked="true">Imperial</button>
+                    <button class="unit-btn" data-unit="metric" role="radio" aria-checked="false">Metric</button>
+                </div>
+
+                <div class="tab-container" role="tablist">
+                    <button class="tab active" data-tab="calc" role="tab" aria-selected="true" aria-controls="tab-calc" id="tabbtn-calc" tabindex="0">💪 Recomp Calculator</button>
+                    <button class="tab" data-tab="reference" role="tab" aria-selected="false" aria-controls="tab-reference" id="tabbtn-reference" tabindex="-1">📋 Suitability Reference</button>
+                </div>
+
+                <!-- TAB 1: CALCULATOR -->
+                <div class="tab-content active" id="tab-calc" role="tabpanel" aria-labelledby="tabbtn-calc">
+
+                    <div class="section-title"><i class="fas fa-user"></i> About You</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Sex</span>
+                        <div class="toggle-switch" id="sexToggle" role="radiogroup" aria-label="Biological sex">
+                            <button type="button" class="toggle-option active" data-sex="male" role="radio" aria-checked="true" tabindex="0">Male</button>
+                            <button type="button" class="toggle-option" data-sex="female" role="radio" aria-checked="false" tabindex="-1">Female</button>
+                        </div>
+                    </div>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="age">Age</label><div class="row"><input type="number" id="age" min="0" step="1" value="30" aria-label="Age in years"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">yrs</span></div><span class="error-msg">Enter an age greater than 0</span></div>
+                        <div class="input-group"><label for="heightPrimary">Height</label><div class="row"><input type="number" id="heightPrimary" min="0" step="1" aria-label="Height"><input type="number" id="heightSecondary" min="0" max="11" step="1" aria-label="Height inches" style="display:none;"><span id="heightUnitLabel" style="padding:10px 8px;color:var(--gray-text);font-size:13px;">ft/in</span></div><span class="error-msg">Enter a height greater than 0</span></div>
+                        <div class="input-group"><label for="weight">Weight</label><div class="row"><input type="number" id="weight" min="0" step="0.1" aria-label="Weight"><span id="weightUnitLabel" style="padding:10px 8px;color:var(--gray-text);font-size:13px;">lb</span></div><span class="error-msg">Enter a weight greater than 0</span></div>
+                    </div>
+
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="bodyFat">Current body fat % <span style="font-weight:500;text-transform:none;">(optional, strongly recommended)</span></label>
+                            <div class="row"><input type="number" id="bodyFat" min="0" max="60" step="0.5" placeholder="e.g. 20" aria-label="Current body fat percentage"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="targetBodyFat">Target body fat % <span style="font-weight:500;text-transform:none;">(optional)</span></label>
+                            <div class="row"><input type="number" id="targetBodyFat" min="0" max="60" step="0.5" placeholder="e.g. 15" aria-label="Target body fat percentage"><span style="padding:10px 8px;color:var(--gray-text);font-size:13px;">%</span></div>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>Without a body fat %, calories use the Mifflin-St Jeor formula and protein is based on total bodyweight. With it, the calculator switches to the more accurate Katch-McArdle formula, bases protein on lean mass, and can show a suitability read and timeline.</span>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-chart-line"></i> Training &amp; Activity</div>
+                    <div class="input-grid">
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="trainingExp">Training experience</label>
+                            <select id="trainingExp" aria-label="Training experience">
+                                <option value="beginner">Beginner (less than 1 year)</option>
+                                <option value="intermediate" selected>Intermediate (1-3 years)</option>
+                                <option value="advanced">Advanced (3-7 years)</option>
+                                <option value="elite">Elite / competitive (7+ years)</option>
+                            </select>
+                        </div>
+                        <div class="input-group" style="grid-column: 1 / -1;">
+                            <label for="activityLevel">Daily lifestyle activity <span style="font-weight:500;text-transform:none;">(job and daily movement only, not your weight training)</span></label>
+                            <select id="activityLevel" aria-label="Daily lifestyle activity, excluding weight training">
+                                <option value="1.15">Sedentary: desk job, mostly sitting</option>
+                                <option value="1.2">Lightly active: some walking or standing through the day</option>
+                                <option value="1.3" selected>Moderately active: on your feet often (teaching, retail, service work)</option>
+                                <option value="1.45">Very active: physically demanding job (warehouse, trades)</option>
+                                <option value="1.6">Extremely active: very physically demanding job or highly active lifestyle</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="trainingDays">Weight training days per week</label>
+                            <div class="row"><input type="number" id="trainingDays" min="0" max="7" step="1" value="4" aria-label="Weight training days per week"></div>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-utensils"></i> Calorie Approach</div>
+                    <div class="toggle-row">
+                        <div class="toggle-switch" id="approachToggle" role="radiogroup" aria-label="Calorie approach">
+                            <button type="button" class="toggle-option active" data-approach="maintenance" role="radio" aria-checked="true" tabindex="0">Near Maintenance</button>
+                            <button type="button" class="toggle-option" data-approach="deficit" role="radio" aria-checked="false" tabindex="-1">Modest Deficit</button>
+                        </div>
+                    </div>
+                    <div class="info-tip">
+                        <i>i</i>
+                        <span>Research on calorie deficits and muscle growth suggests gains slow sharply once a deficit passes roughly 300-500 kcal/day. Near Maintenance favors muscle gain with slower fat loss; Modest Deficit trades a little muscle-building speed for faster fat loss, staying inside that research-backed range.</span>
+                    </div>
+
+                    <div class="results-panel">
+                        <div class="status-note status-neutral" id="validationNote" style="border-left:4px solid var(--danger);background:rgba(239,68,68,0.06);color:#a11f1f;">
+                            <i class="fas fa-triangle-exclamation"></i> <span>Enter a valid age, height, and weight (greater than 0) to see your results.</span>
+                        </div>
+                        <div id="resultsBody">
+                            <div class="total-payment-card">
+                                <span class="label">Recomp Suitability</span>
+                                <span class="amount" id="suitabilityResult">Enter body fat %</span>
+                                <span class="sub" id="suitabilitySub">Add your body fat % above for a personalized read</span>
+                            </div>
+
+                            <div class="results-grid">
+                                <div class="result-card"><div class="result-label">Training Day Calories</div><div class="result-value" id="trainCalResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Rest Day Calories</div><div class="result-value" id="restCalResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Weekly Average</div><div class="result-value small" id="weeklyAvgResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Daily Protein</div><div class="result-value small" id="proteinResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Training Day Macros</div><div class="result-value small" id="trainMacroResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Rest Day Macros</div><div class="result-value small" id="restMacroResult">-</div></div>
+                                <div class="result-card"><div class="result-label">Fat to Lose</div><div class="result-value small" id="fatToLoseResult">Enter both body fat %s</div></div>
+                                <div class="result-card"><div class="result-label">Estimated Timeline</div><div class="result-value small" id="timelineResult">Enter both body fat %s</div></div>
+                            </div>
+
+                            <div class="status-note status-neutral show" style="margin-top:16px;">
+                                <i class="fas fa-info-circle"></i> <span id="macroNoteText">These are planning estimates. Reassess every 4-6 weeks as your weight and body composition change.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: SUITABILITY REFERENCE -->
+                <div class="tab-content" id="tab-reference" role="tabpanel" aria-labelledby="tabbtn-reference">
+                    <div class="section-title"><i class="fas fa-venus-mars"></i> Recomp Potential by Body Fat %</div>
+                    <div style="overflow-x:auto;">
+                        <table class="ref-table" id="bfRefTable">
+                            <thead><tr><th>Body Fat %</th><th>Men</th><th>Women</th></tr></thead>
+                            <tbody>
+                                <tr><td>Higher</td><td>&gt;25%: Higher Potential</td><td>&gt;35%: Higher Potential</td></tr>
+                                <tr><td>Moderate</td><td>15-25%: Moderate Potential</td><td>25-35%: Moderate Potential</td></tr>
+                                <tr><td>Lower</td><td>&lt;15%: Lower Potential</td><td>&lt;25%: Lower Potential</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="font-size:13px;color:var(--gray-text);margin:14px 0;">Higher body fat gives the body more stored energy to fuel muscle-building while in a deficit or at maintenance, a mechanism called nutrient partitioning. This is a general guide, not a hard cutoff.</p>
+
+                    <div class="section-title"><i class="fas fa-chart-simple"></i> Rough Monthly Muscle-Gain Ranges by Experience</div>
+                    <p style="font-size:13px;color:var(--gray-text);margin-bottom:10px;">These are broad planning ranges drawn from general training literature, not a prediction for any individual. Genetics, sleep, stress, and training quality all move the real number, sometimes well outside these bands.</p>
+                    <div style="overflow-x:auto;">
+                        <table class="ref-table" id="expRefTable">
+                            <thead><tr><th>Training Experience</th><th>Men (kg/month, rough)</th><th>Women (kg/month, rough)</th></tr></thead>
+                            <tbody id="expRefTableBody">
+                                <tr data-key="beginner"><td>Beginner (&lt;1 yr)</td><td>~0.7-1.0</td><td>~50% of men's rate</td></tr>
+                                <tr data-key="intermediate"><td>Intermediate (1-3 yrs)</td><td>~0.45-0.7</td><td>~50% of men's rate</td></tr>
+                                <tr data-key="advanced"><td>Advanced (3-7 yrs)</td><td>~0.2-0.45</td><td>~50% of men's rate</td></tr>
+                                <tr data-key="elite"><td>Elite (7+ yrs)</td><td>&lt;0.2</td><td>~50% of men's rate</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="info-tip" style="margin-top:16px;">
+                        <i>i</i>
+                        <span>Women typically gain muscle at roughly half the rate of men in absolute terms, largely due to differences in testosterone. This doesn't mean less progress relative to starting point, just a slower absolute pace. Treat all of these figures as a general planning guide, not a guarantee.</span>
+                    </div>
+                </div>
+
+                <div style="padding: 0 28px 28px 28px;">
+                    <div class="action-buttons">
+                        <button class="action-btn" id="downloadPDFBtn"><i class="fas fa-file-pdf"></i> Download PDF Summary</button>
+                        <button class="action-btn secondary" id="copyResultsBtn"><i class="fas fa-copy"></i> Copy Results</button>
+                        <button class="action-btn secondary" id="resetAllBtn"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Body Recomp Calculator: Calories, Protein &amp; Timeline for Building Muscle While Losing Fat</h2>
+                    <p>Whether recomposition fits your situation, and the numbers to run it well</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-it-works">1. How the Body Recomp Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Body Recomp Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Body Recomp Calculator Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#who">6. Who Recomp Actually Works For</a></div>
+                            <div class="toc-item"><a href="#tips">7. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">8. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">9. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">10. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>Most nutrition advice forces a choice: bulk to build muscle, or cut to lose fat. This <strong>body recomp calculator</strong> is built for the alternative: doing both at once. Enter your stats and training background, and it returns a suitability read, training and rest day calorie targets, a protein target, and a realistic timeline for the fat you want to lose.</p>
+                    <p>It's built for beginners and intermediate lifters wanting to improve their shape without a dedicated bulk or cut, returning lifters looking to regain lost muscle while dropping fat, and anyone deciding whether recomposition or a straight cut fits their situation better. Use the tool above to get your numbers, then read on for the research behind the approach, a worked example, and where recomposition tends to fall short.</p>
+
+                    <h2 id="how-it-works">1. How the Body Recomp Calculator Works</h2>
+                    <p>The calculator starts by estimating your basal metabolic rate (BMR), the energy your body burns at rest. If you enter a body fat percentage, it uses the Katch-McArdle formula, which is based on lean mass and is more accurate for people who know their body composition. Without it, the calculator falls back to the widely used Mifflin-St Jeor formula.</p>
+                    <p>From there, your daily lifestyle activity (your job and general movement, not your weight training) sets a maintenance-calorie estimate. Your chosen approach (Near Maintenance or Modest Deficit) then sets separate training-day and rest-day targets, since your body needs more fuel on days it trains hard, and the calculator combines those with how many days a week you train into a weekly average. Keeping lifestyle activity and training separate avoids counting the same exercise twice. Protein is shown as a range, since individual needs vary, calculated from lean mass when body fat is known or from total bodyweight otherwise, since protein is the nutrient doing the most work in a recomposition.</p>
+                    <p>If you provide both a current and target body fat percentage, the calculator also estimates the fat you need to lose and a realistic timeline, using a pace that depends on your training experience, since muscle (and the metabolic conditions that come with building it) is gained faster by beginners than advanced lifters.</p>
+                    <div class="pro-tip">
+                        <strong>Planning-grade estimates, not a guarantee.</strong>
+                        <p style="margin: 10px 0 0;">Every formula here is a population-level estimate. Your actual metabolism, recovery, and rate of change will vary. Reassess every 4-6 weeks and adjust based on real results, not just the calculator's starting numbers.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Body Recomp Calculator</h2>
+                    <ol>
+                        <li><strong>Enter your sex, age, height, and weight</strong>, switching to metric if that's easier.</li>
+                        <li><strong>Add your body fat percentage</strong> if you know it (from a scale, calipers, or a body fat calculator). This unlocks the more accurate formula, the suitability read, and the timeline.</li>
+                        <li><strong>Add a target body fat percentage</strong> if you have one in mind, to see how much fat that represents and how long it might realistically take.</li>
+                        <li><strong>Select your training experience and activity level</strong>, and how many days a week you weight train.</li>
+                        <li><strong>Choose your calorie approach</strong>: Near Maintenance leans toward muscle gain, Modest Deficit leans toward faster fat loss, both within the range research suggests still allows muscle growth.</li>
+                        <li><strong>Read your results</strong>: suitability, training and rest day calories and macros, protein target, fat to lose, and estimated timeline. Download a PDF summary or copy your results if you want to track them elsewhere.</li>
+                    </ol>
+
+                    <h2 id="formula">3. Body Recomp Calculator Formula</h2>
+                    <p><strong>Calories:</strong></p>
+                    <div class="formula-box">BMR (Katch-McArdle, if body fat % known):<br>&nbsp;&nbsp;Lean mass (kg) = weight (kg) × (1 − body fat % ÷ 100)<br>&nbsp;&nbsp;BMR = 370 + 21.6 × Lean mass (kg)<br><br>BMR (Mifflin-St Jeor, if body fat % unknown):<br>&nbsp;&nbsp;Men: BMR = 10 × weight (kg) + 6.25 × height (cm) − 5 × age + 5<br>&nbsp;&nbsp;Women: BMR = 10 × weight (kg) + 6.25 × height (cm) − 5 × age − 161<br><br>Maintenance = BMR × <span class="fvar">activity multiplier</span></div>
+                    <p>Where the <strong>activity multiplier</strong> ranges from 1.2 (sedentary) to 1.9 (extremely active), following the standard Harris-Benedict activity scale. Training-day and rest-day calories then adjust from maintenance based on your chosen approach, keeping the gap between them inside the roughly 300-500 kcal range that research associates with still allowing muscle growth.</p>
+                    <p><strong>Protein and macros:</strong></p>
+                    <div class="formula-box">Protein range (g) = Lean mass (lb) × 1.0 to 1.2, if body fat % known<br>Protein range (g) = Bodyweight (lb) × 0.7 to 1.0, if body fat % unknown<br>Protein target (used for macros) = midpoint of that range<br>Fat (g) = (Daily calories × 25%) ÷ 9<br>Carbs (g) = (Daily calories − protein calories − fat calories) ÷ 4</div>
+                    <p>Protein is shown as a range rather than a single exact number, since individual needs vary within it. The midpoint of that range is what the fat and carb targets below are built around.</p>
+                    <p><strong>Fat to lose and timeline:</strong></p>
+                    <div class="formula-box">Lean mass (lb) = Bodyweight (lb) × (1 − current body fat % ÷ 100)<br>Target weight (lb) = Lean mass (lb) ÷ (1 − target body fat % ÷ 100)<br>Fat to lose (lb) = [Bodyweight × current body fat %] − [Target weight × target body fat %], both ÷ 100<br>Timeline (weeks) = Fat to lose (lb) ÷ <span class="fvar">weekly pace (lb/week)</span></div>
+                    <p>Fat to lose is calculated by assuming your lean mass holds steady (or grows slightly) through the recomp, then working out what your bodyweight would be at your target body fat % with that same lean mass. This gives a more accurate figure than simply multiplying bodyweight by the percentage-point difference, which understates the fat you actually need to lose. Weekly pace follows your training experience: faster for beginners, slower for advanced and elite lifters, reflecting how quickly each group can build the muscle that a recomp depends on.</p>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>Say you're a <strong>30-year-old male</strong>, <strong>180 lb</strong> at <strong>20% body fat</strong>, targeting <strong>15%</strong>, intermediate training experience, moderately active lifestyle (on your feet often, outside training), training 4 days a week, choosing Near Maintenance.</p>
+                    <div class="example-box">
+                        <ol>
+                            <li><strong>Lean mass:</strong> 180 × (1 − 0.20) = 144 lb (about 65.3 kg)</li>
+                            <li><strong>BMR (Katch-McArdle):</strong> 370 + 21.6 × 65.3 ≈ 1,781 kcal</li>
+                            <li><strong>Maintenance:</strong> 1,780.9 × 1.3 ≈ 2,315 kcal</li>
+                            <li><strong>Training day:</strong> 2,315 × 1.05 ≈ 2,431 kcal; <strong>Rest day:</strong> 2,315 × 0.90 ≈ 2,084 kcal (Near Maintenance approach)</li>
+                            <li><strong>Weekly average</strong> (4 training days, 3 rest days): (4 × 2,431 + 3 × 2,084) ÷ 7 ≈ <strong>2,282 kcal/day</strong></li>
+                            <li><strong>Protein:</strong> 144 × 1.1 ≈ <strong>158 g</strong></li>
+                            <li><strong>Target weight</strong> (lean mass held constant): 144 ÷ (1 − 0.15) ≈ 169.4 lb</li>
+                            <li><strong>Fat to lose:</strong> (180 × 0.20) − (169.4 × 0.15) = 36 − 25.4 ≈ <strong>10.6 lb</strong></li>
+                            <li><strong>Timeline</strong> (intermediate pace, ~0.375 lb/week): 10.6 ÷ 0.375 ≈ <strong>28 weeks</strong>, about 6-7 months</li>
+                        </ol>
+                    </div>
+                    <p>So this person would target roughly <strong>2,431 kcal on training days</strong>, <strong>2,084 kcal on rest days</strong> (a weekly average of about <strong>2,282 kcal/day</strong>), <strong>158 g of protein</strong> daily, and a realistic <strong>6-7 month</strong> timeline to drop the 10.6 lb of fat while holding muscle.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The scale is a poor progress marker during a recomp, since muscle gain and fat loss can roughly offset each other in total bodyweight. Track waist measurement, progress photos, and strength on your main lifts instead of relying on the number on the scale week to week.</p>
+                    <p>If you don't enter a body fat percentage, you'll still get calorie and protein targets, but not a suitability read or timeline, since both depend on knowing where your body fat currently sits. A tape measure, calipers, or a body fat calculator are enough to get a usable estimate.</p>
+
+                    <h2 id="who">6. Who Recomp Actually Works For</h2>
+                    <p>A <a href="https://doi.org/10.1519/SSC.0000000000000584" target="_blank" rel="noopener">2020 review in the Strength and Conditioning Journal</a> confirmed that building muscle and losing fat at the same time is achievable, particularly for certain groups. Three groups see the best results: true beginners in their first year of structured resistance training, lifters returning after time off who are regaining muscle they've lost before, and undertrained lifters who have years of gym attendance but haven't trained hard or eaten well enough to see real progress.</p>
+                    <p>Higher body fat also helps, since it gives the body more stored energy to draw on while building muscle. As a rough guide, men under about 15% body fat and women under about 22-25% tend to have a harder time recomping and may see faster results from a dedicated cut or lean bulk instead.</p>
+
+                    <h2 id="tips">7. Practical Tips</h2>
+                    <ul>
+                        <li><strong>Prioritize protein above everything else.</strong> It's the nutrient with the most research support for protecting and building muscle in a deficit or at maintenance.</li>
+                        <li><strong>Track measurements, not just the scale.</strong> Waist circumference, progress photos, and how your clothes fit are more reliable recomp signals than bodyweight alone.</li>
+                        <li><strong>Train with progressive overload.</strong> Gradually increasing weight, reps, or volume over time is what actually signals your body to build muscle, regardless of your calorie target.</li>
+                        <li><strong>Get enough sleep.</strong> Research links poor sleep to worse fat loss and blunted muscle gain even when nutrition and training are dialed in.</li>
+                        <li><strong>Reassess every 4-6 weeks.</strong> Your maintenance calories shift as your body composition changes, so recalculate periodically rather than running the same numbers for months.</li>
+                    </ul>
+
+                    <h2 id="mistakes">8. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Judging progress by the scale alone.</strong> A stable or even slightly rising weight can still represent real fat loss if muscle is being added at the same time.</li>
+                        <li><strong>Cutting too hard.</strong> A large calorie deficit undermines the muscle-building side of a recomp; research suggests gains slow sharply past roughly a 300-500 kcal deficit.</li>
+                        <li><strong>Under-eating protein.</strong> In a deficit or at maintenance, too little protein means your body has less material available to build or preserve muscle.</li>
+                        <li><strong>Expecting bulk-and-cut speed.</strong> Recomposition is slower than a dedicated cut because you're not in a large deficit; patience is part of the method, not a sign it's failing.</li>
+                        <li><strong>Ignoring training experience.</strong> An advanced lifter expecting beginner-speed muscle gain will likely become discouraged well before real progress shows up.</li>
+                    </ul>
+
+                    <h2 id="related">9. Related Calculations and Use Cases</h2>
+                    <p>Body composition and fitness testing often go hand in hand, since many fitness standards factor in body composition alongside raw performance. If you're also working through a fitness assessment, our <a href="https://calcsnaps.com/fitness-calculators/pft-calculator">PFT Calculator</a> can help with that side of the picture.</p>
+                    <p>Common real-world use cases for this calculator include a first recomposition attempt after months of inconsistent training, returning to the gym after a layoff and wanting to regain lost muscle while leaning out, and deciding between a recomp and a dedicated cut before starting a structured program. Each of these points to a different calorie approach and timeline, which is why both are kept as adjustable inputs above.</p>
+
+                    <h2 id="faq">10. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="recompfaq1-answer">What is a body recomp calculator?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="recompfaq1-answer"><p>A body recomp calculator estimates the calories, protein, and timeline needed to build muscle and lose fat at the same time, instead of running separate bulking and cutting phases. It typically uses your weight, height, age, sex, and ideally your body fat percentage to set training-day and rest-day calorie targets and a protein goal.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="recompfaq2-answer">How many calories should I eat for body recomposition?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="recompfaq2-answer"><p>Most recomp approaches sit at or slightly below maintenance calories, typically within 300-500 kcal of maintenance at most. Eating right around maintenance favors muscle growth, while a modest 200-300 kcal deficit trades a little muscle-building speed for faster fat loss, without dropping low enough to stall muscle gain entirely.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="recompfaq3-answer">How much protein do I need for body recomposition?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="recompfaq3-answer"><p>Research on protein and resistance training suggests intakes of roughly 1.6-2.2 g per kg of bodyweight maximize muscle gain for most people, with athletes in a calorie deficit often benefiting from the higher end of that range or slightly above it based on lean body mass.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="recompfaq4-answer">How long does body recomposition take?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="recompfaq4-answer"><p>It depends on how much fat you want to lose and your training experience, but most people should plan for months, not weeks. A beginner with 10-15 lb to lose might see meaningful change in 3-4 months, while an advanced lifter with the same amount to lose could take 6 months or longer, since muscle gain slows considerably with training age.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="recompfaq5-answer">Is body recomposition better than a traditional cut or bulk?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="recompfaq5-answer"><p>Neither is universally better. Recomposition tends to suit beginners, returning lifters, and people with higher body fat, while a dedicated cut or lean bulk often works faster for advanced lifters who are already lean or who have one clearly dominant goal (maximum fat loss or maximum muscle gain) rather than both at once.</p></div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator provides general fitness information, not medical or nutrition advice. Individual results vary. If you have a medical condition, are pregnant or breastfeeding, or have a history of disordered eating, talk to a doctor or registered dietitian before changing your diet or training.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>💪</span> Try the Body Recomp Calculator → <span>⚡</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="/fitness-calculators/pft-calculator">PFT Calculator</a>
+                    <a href="/calculators/average-blood-pressure-calculator">Average Blood Pressure Calculator</a>
+                    <a href="/calculators/pain-and-suffering-calculator">Pain and Suffering Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+
+        function $(id) { return document.getElementById(id); }
+
+        const LB_PER_KG = 2.20462;
+        const CM_PER_IN = 2.54;
+        const PACE_BY_EXPERIENCE = { beginner: 0.5, intermediate: 0.375, advanced: 0.25, elite: 0.15 }; // lb/week
+
+        let currentUnit = 'imperial';
+        let currentSex = 'male';
+        let currentApproach = 'maintenance';
+
+        // Persistent state, always stored in a fixed base unit (kg, cm) regardless of display unit
+        const dims = {
+            heightCm: 177.8, // 5'10"
+            weightKg: 81.6   // 180 lb
+        };
+
+        function fmt0(n) { return isFinite(n) ? Math.round(n).toLocaleString() : '-'; }
+        function fmt1(n) { return isFinite(n) ? n.toLocaleString(undefined, { maximumFractionDigits: 1 }) : '-'; }
+        function fmt2(n) { return isFinite(n) ? n.toLocaleString(undefined, { maximumFractionDigits: 2 }) : '-'; }
+        function roundNice(n) { return isFinite(n) ? parseFloat(n.toFixed(2)).toString() : ''; }
+
+        function validateField(el) {
+            const group = el.closest('.input-group');
+            if (!group) return true;
+            const val = parseFloat(el.value);
+            const invalid = el.value === '' || isNaN(val) || val <= 0;
+            group.classList.toggle('field-invalid', invalid);
+            return !invalid;
+        }
+
+        // ===== TABS =====
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => switchTab(tab));
+            tab.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); switchTab(tab); }
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const tabs = Array.from(document.querySelectorAll('.tab'));
+                    const idx = tabs.indexOf(tab);
+                    const next = e.key === 'ArrowRight' ? (idx + 1) % tabs.length : (idx - 1 + tabs.length) % tabs.length;
+                    tabs[next].focus();
+                    switchTab(tabs[next]);
+                }
+            });
+        });
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); t.setAttribute('tabindex', '-1'); });
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            if (tab.dataset.tab === 'reference') highlightExpRow();
+        }
+
+        // ===== SEX TOGGLE =====
+        document.querySelectorAll('#sexToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#sexToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                currentSex = btn.dataset.sex;
+                calculateAll();
+            });
+        });
+
+        // ===== APPROACH TOGGLE =====
+        document.querySelectorAll('#approachToggle .toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#approachToggle .toggle-option').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true'); btn.setAttribute('tabindex', '0');
+                currentApproach = btn.dataset.approach;
+                calculateAll();
+            });
+        });
+
+        // ===== UNIT TOGGLE =====
+        document.querySelectorAll('.unit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.unit-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                currentUnit = btn.dataset.unit;
+                renderHeightWeightInputs();
+                calculateAll();
+            });
+        });
+
+        // ===== HEIGHT / WEIGHT RENDER (persist via dims, convert on unit toggle) =====
+        function renderHeightWeightInputs() {
+            if (currentUnit === 'imperial') {
+                const totalIn = dims.heightCm / CM_PER_IN;
+                const ft = Math.floor(totalIn / 12);
+                const inch = Math.round(totalIn - ft * 12);
+                $('heightPrimary').value = ft;
+                $('heightSecondary').style.display = '';
+                $('heightSecondary').value = inch;
+                $('heightUnitLabel').textContent = 'ft / in';
+                $('weight').value = roundNice(dims.weightKg * LB_PER_KG);
+                $('weightUnitLabel').textContent = 'lb';
+            } else {
+                $('heightPrimary').value = roundNice(dims.heightCm);
+                $('heightSecondary').style.display = 'none';
+                $('heightUnitLabel').textContent = 'cm';
+                $('weight').value = roundNice(dims.weightKg);
+                $('weightUnitLabel').textContent = 'kg';
+            }
+            validateField($('heightPrimary'));
+            validateField($('weight'));
+        }
+        function onHeightInput() {
+            if (currentUnit === 'imperial') {
+                const ft = parseFloat($('heightPrimary').value) || 0;
+                const inch = parseFloat($('heightSecondary').value) || 0;
+                dims.heightCm = (ft * 12 + inch) * CM_PER_IN;
+            } else {
+                dims.heightCm = parseFloat($('heightPrimary').value) || 0;
+            }
+            validateField($('heightPrimary'));
+            calculateAll();
+        }
+        $('heightPrimary').addEventListener('input', onHeightInput);
+        $('heightSecondary').addEventListener('input', onHeightInput);
+        $('weight').addEventListener('input', () => {
+            const v = parseFloat($('weight').value) || 0;
+            dims.weightKg = currentUnit === 'imperial' ? v / LB_PER_KG : v;
+            validateField($('weight'));
+            calculateAll();
+        });
+
+        $('age').addEventListener('input', () => { validateField($('age')); calculateAll(); });
+        $('bodyFat').addEventListener('input', calculateAll);
+        $('targetBodyFat').addEventListener('input', calculateAll);
+        $('trainingExp').addEventListener('change', () => { calculateAll(); highlightExpRow(); });
+        $('activityLevel').addEventListener('change', calculateAll);
+        $('trainingDays').addEventListener('input', calculateAll);
+
+        function highlightExpRow() {
+            document.querySelectorAll('#expRefTableBody tr').forEach(tr => {
+                tr.classList.toggle('your-row', tr.dataset.key === $('trainingExp').value);
+            });
+        }
+
+        function getRequiredFieldsValid() {
+            const ids = ['age', 'heightPrimary', 'weight'];
+            let valid = true;
+            ids.forEach(id => { const el = $(id); if (el && !validateField(el)) valid = false; });
+            return valid;
+        }
+
+        // ===== CORE CALCULATION =====
+        function calculateAll() {
+            const isValid = getRequiredFieldsValid();
+            $('validationNote').classList.toggle('show', !isValid);
+            $('resultsBody').style.display = isValid ? '' : 'none';
+            if (!isValid) return;
+
+            const age = parseFloat($('age').value) || 0;
+            const heightCm = dims.heightCm;
+            const weightKg = dims.weightKg;
+            const weightLb = weightKg * LB_PER_KG;
+            const activityMult = parseFloat($('activityLevel').value) || 1.3;
+
+            const bfRaw = parseFloat($('bodyFat').value);
+            const hasBf = !isNaN(bfRaw) && bfRaw > 0 && bfRaw < 60;
+            const targetBfRaw = parseFloat($('targetBodyFat').value);
+            const hasTargetBf = !isNaN(targetBfRaw) && targetBfRaw > 0 && targetBfRaw < 60;
+
+            // BMR
+            let bmr;
+            let leanMassLb;
+            if (hasBf) {
+                const leanMassKg = weightKg * (1 - bfRaw / 100);
+                leanMassLb = leanMassKg * LB_PER_KG;
+                bmr = 370 + 21.6 * leanMassKg;
+            } else {
+                bmr = currentSex === 'male'
+                    ? 10 * weightKg + 6.25 * heightCm - 5 * age + 5
+                    : 10 * weightKg + 6.25 * heightCm - 5 * age - 161;
+            }
+            const maintenance = bmr * activityMult;
+
+            // Training/rest day calories
+            let trainCal, restCal;
+            if (currentApproach === 'maintenance') {
+                trainCal = maintenance * 1.05;
+                restCal = maintenance * 0.90;
+            } else {
+                trainCal = maintenance * 0.95;
+                restCal = maintenance * 0.80;
+            }
+            $('trainCalResult').textContent = fmt0(trainCal) + ' kcal';
+            $('restCalResult').textContent = fmt0(restCal) + ' kcal';
+
+            let trainingDays = parseInt($('trainingDays').value, 10);
+            if (isNaN(trainingDays) || trainingDays < 0) trainingDays = 0;
+            if (trainingDays > 7) trainingDays = 7;
+            const restDays = 7 - trainingDays;
+            const weeklyAvgCal = (trainingDays * trainCal + restDays * restCal) / 7;
+            $('weeklyAvgResult').textContent = fmt0(weeklyAvgCal) + ' kcal/day (' + trainingDays + ' training, ' + restDays + ' rest)';
+
+            // Protein: shown as a research-informed range with a target used for the macro split,
+            // rather than one number presented as exact (individual protein needs vary within this range)
+            const proteinLowG = hasBf ? leanMassLb * 1.0 : weightLb * 0.7;
+            const proteinHighG = hasBf ? leanMassLb * 1.2 : weightLb * 1.0;
+            const proteinG = hasBf ? leanMassLb * 1.1 : weightLb * 0.85; // target used for the macro split below
+            const proteinPerKg = proteinG / weightKg;
+            $('proteinResult').textContent = fmt0(proteinLowG) + '-' + fmt0(proteinHighG) + ' g/day (target ~' + fmt0(proteinG) + ' g, ' + fmt1(proteinPerKg) + ' g/kg)';
+            const proteinCals = proteinG * 4;
+
+            function macroLine(dayCals) {
+                const fatCals = dayCals * 0.25;
+                const fatG = fatCals / 9;
+                const carbCals = dayCals - proteinCals - fatCals;
+                if (carbCals < 0) {
+                    return fmt0(proteinG) + 'g P / ' + fmt0(fatG) + 'g F / carbs too low, lower protein or fat %';
+                }
+                const carbG = carbCals / 4;
+                return fmt0(proteinG) + 'g P / ' + fmt0(fatG) + 'g F / ' + fmt0(carbG) + 'g C';
+            }
+            $('trainMacroResult').textContent = macroLine(trainCal);
+            $('restMacroResult').textContent = macroLine(restCal);
+
+            // Suitability (labels softened to reflect these are general bands, not a definitive verdict)
+            if (hasBf) {
+                let level, note;
+                if (currentSex === 'male') {
+                    if (bfRaw > 25) { level = 'Higher Potential'; note = 'Higher body fat generally gives more stored energy to support muscle-building.'; }
+                    else if (bfRaw >= 15) { level = 'Moderate Potential'; note = 'A reasonable zone for recomp, results may be slower than at higher body fat.'; }
+                    else { level = 'Lower Potential'; note = 'Recomp is harder to notice at lower body fat; a dedicated approach may work faster.'; }
+                } else {
+                    if (bfRaw > 35) { level = 'Higher Potential'; note = 'Higher body fat generally gives more stored energy to support muscle-building.'; }
+                    else if (bfRaw >= 25) { level = 'Moderate Potential'; note = 'A reasonable zone for recomp, results may be slower than at higher body fat.'; }
+                    else { level = 'Lower Potential'; note = 'Recomp is harder to notice at lower body fat; a dedicated approach may work faster.'; }
+                }
+                $('suitabilityResult').textContent = level;
+                $('suitabilitySub').textContent = 'Based on ' + fmt1(bfRaw) + '% body fat (' + (currentSex === 'male' ? 'male' : 'female') + ' bands). ' + note;
+            } else {
+                $('suitabilityResult').textContent = 'Enter body fat %';
+                $('suitabilitySub').textContent = 'Add your body fat % above for a personalized read';
+            }
+
+            // Fat to lose + timeline
+            // Uses the lean-mass-preserving method: lean mass is assumed to stay level (or grow slightly),
+            // so target weight is derived from lean mass divided by (1 - target body fat%), not just
+            // weight times the raw percentage-point difference, which understates fat loss needed.
+            if (hasBf && hasTargetBf && bfRaw > targetBfRaw) {
+                const leanMassLbForTarget = weightLb * (1 - bfRaw / 100);
+                const targetWeightLb = leanMassLbForTarget / (1 - targetBfRaw / 100);
+                const fatMassNowLb = weightLb * (bfRaw / 100);
+                const fatMassTargetLb = targetWeightLb * (targetBfRaw / 100);
+                const fatToLoseLb = fatMassNowLb - fatMassTargetLb;
+                $('fatToLoseResult').textContent = currentUnit === 'imperial'
+                    ? fmt1(fatToLoseLb) + ' lb'
+                    : fmt1(fatToLoseLb / LB_PER_KG) + ' kg';
+                const pace = PACE_BY_EXPERIENCE[$('trainingExp').value] || 0.375;
+                const weeks = fatToLoseLb / pace;
+                $('timelineResult').textContent = fmt0(weeks) + ' weeks (~' + fmt1(weeks / 4.33) + ' months)';
+            } else if (hasBf && hasTargetBf && bfRaw <= targetBfRaw) {
+                $('fatToLoseResult').textContent = 'Target should be lower than current';
+                $('timelineResult').textContent = 'Target should be lower than current';
+            } else {
+                $('fatToLoseResult').textContent = 'Enter both body fat %s';
+                $('timelineResult').textContent = 'Enter both body fat %s';
+            }
+        }
+
+        // ===== RESET =====
+        function resetAll() {
+            currentUnit = 'imperial';
+            document.querySelectorAll('.unit-btn').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); } });
+
+            currentSex = 'male';
+            document.querySelectorAll('#sexToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+
+            currentApproach = 'maintenance';
+            document.querySelectorAll('#approachToggle .toggle-option').forEach((b, i) => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); b.setAttribute('tabindex', '-1'); if (i === 0) { b.classList.add('active'); b.setAttribute('aria-checked', 'true'); b.setAttribute('tabindex', '0'); } });
+
+            $('age').value = '30';
+            dims.heightCm = 177.8;
+            dims.weightKg = 81.6;
+            $('bodyFat').value = '';
+            $('targetBodyFat').value = '';
+            $('trainingExp').value = 'intermediate';
+            $('activityLevel').value = '1.3';
+            $('trainingDays').value = '4';
+
+            renderHeightWeightInputs();
+            calculateAll();
+            highlightExpRow();
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== PDF EXPORT =====
+        let jsPDFLoadPromise = null;
+        function ensureJsPDFLoaded() {
+            if (window.jspdf) return Promise.resolve();
+            if (jsPDFLoadPromise) return jsPDFLoadPromise;
+            jsPDFLoadPromise = new Promise((resolve, reject) => {
+                const s = document.createElement('script');
+                s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+                s.onload = resolve;
+                s.onerror = reject;
+                document.head.appendChild(s);
+            });
+            return jsPDFLoadPromise;
+        }
+
+        function buildAndSavePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const date = new Date().toLocaleString();
+
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Body Recomp Calculator Summary', 105, 20, { align: 'center' });
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + date, 105, 30, { align: 'center' });
+            doc.line(20, 38, 190, 38);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Your Results', 20, 50);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Recomp Suitability: ' + $('suitabilityResult').textContent, 25, 60);
+            doc.text('Training Day Calories: ' + $('trainCalResult').textContent, 25, 67);
+            doc.text('Rest Day Calories: ' + $('restCalResult').textContent, 25, 74);
+            doc.text('Weekly Average: ' + $('weeklyAvgResult').textContent, 25, 81);
+            doc.text('Daily Protein: ' + $('proteinResult').textContent, 25, 88);
+            doc.text('Training Day Macros: ' + $('trainMacroResult').textContent, 25, 95);
+            doc.text('Rest Day Macros: ' + $('restMacroResult').textContent, 25, 102);
+            doc.text('Fat to Lose: ' + $('fatToLoseResult').textContent, 25, 109);
+            doc.text('Estimated Timeline: ' + $('timelineResult').textContent, 25, 116);
+
+            doc.setFontSize(14); doc.setTextColor(139, 92, 246);
+            doc.text('Methodology (inputs used)', 20, 132);
+            doc.setFontSize(11); doc.setTextColor(0, 0, 0);
+            doc.text('Sex: ' + currentSex + ', Age: ' + $('age').value, 25, 142);
+            doc.text('Training experience: ' + $('trainingExp').selectedOptions[0].text, 25, 149);
+            doc.text('Daily lifestyle activity: ' + $('activityLevel').selectedOptions[0].text, 25, 156);
+            doc.text('Calorie approach: ' + (currentApproach === 'maintenance' ? 'Near Maintenance' : 'Modest Deficit'), 25, 163);
+            doc.text('BMR formula used: ' + (($('bodyFat').value && parseFloat($('bodyFat').value) > 0) ? 'Katch-McArdle (lean mass)' : 'Mifflin-St Jeor'), 25, 170);
+
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            doc.text('General fitness information, not medical or nutrition advice. Generated by CalcSnaps.', 105, 280, { align: 'center' });
+
+            doc.save('Body_Recomp_Calculator_Summary_' + Date.now() + '.pdf');
+        }
+
+        function downloadPDF() {
+            const btn = $('downloadPDFBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing PDF...';
+            ensureJsPDFLoaded().then(() => {
+                buildAndSavePDF();
+                btn.innerHTML = original;
+            }).catch(() => {
+                btn.innerHTML = original;
+                alert('Could not load the PDF library. Check your connection and try again.');
+            });
+        }
+        $('downloadPDFBtn').addEventListener('click', downloadPDF);
+
+        // ===== COPY RESULTS =====
+        function copyResults() {
+            let lines = ['Body Recomp Calculator Summary', '-------------------------------'];
+            lines.push('Recomp Suitability: ' + $('suitabilityResult').textContent);
+            lines.push('Training Day Calories: ' + $('trainCalResult').textContent);
+            lines.push('Rest Day Calories: ' + $('restCalResult').textContent);
+            lines.push('Weekly Average: ' + $('weeklyAvgResult').textContent);
+            lines.push('Daily Protein: ' + $('proteinResult').textContent);
+            lines.push('Training Day Macros: ' + $('trainMacroResult').textContent);
+            lines.push('Rest Day Macros: ' + $('restMacroResult').textContent);
+            lines.push('Fat to Lose: ' + $('fatToLoseResult').textContent);
+            lines.push('Estimated Timeline: ' + $('timelineResult').textContent);
+            lines.push('');
+            lines.push('General fitness information, not medical or nutrition advice.');
+            const text = lines.join('\n');
+
+            const btn = $('copyResultsBtn');
+            const original = btn.innerHTML;
+            function showCopied() {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(showCopied).catch(() => fallbackCopy(text, showCopied));
+            } else {
+                fallbackCopy(text, showCopied);
+            }
+        }
+        function fallbackCopy(text, cb) {
+            const ta = document.createElement('textarea');
+            ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); } catch (e) {}
+            document.body.removeChild(ta);
+            cb();
+        }
+        $('copyResultsBtn').addEventListener('click', copyResults);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                const item = q.parentElement;
+                q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                const toggle = () => { item.classList.toggle('active'); q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false'); };
+                q.addEventListener('click', toggle);
+                q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+            });
+        });
+
+        // ===== INIT =====
+        renderHeightWeightInputs();
+        calculateAll();
+        highlightExpRow();
+    })();
+    </script>
+</body>
+</html>
