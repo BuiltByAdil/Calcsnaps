@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Asphalt Calculator - Tons, Cubic Yards &amp; Cost | CalcSnaps</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+<meta name="description" content="Free asphalt calculator: enter length, width and thickness to get tons of asphalt, cubic yards and material cost for a driveway, parking lot or patch. US and metric.">
+<meta name="author" content="CalcSnaps">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calcsnaps.com/construction-calculators/asphalt-calculator">
+<meta property="og:title" content="Asphalt Calculator - Tons, Cubic Yards &amp; Cost | CalcSnaps">
+<meta property="og:description" content="Free asphalt calculator: tons, cubic yards and cost for driveways, parking lots and patches.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://calcsnaps.com/construction-calculators/asphalt-calculator">
+<meta property="og:site_name" content="CalcSnaps">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Asphalt Calculator","description":"Calculate tons of hot mix asphalt, cubic yards, cubic metres and material cost from length, width and compacted thickness.","url":"https://calcsnaps.com/construction-calculators/asphalt-calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Asphalt Calculator Guide: How Many Tons of Asphalt Do You Need?","description":"How to calculate asphalt tonnage, coverage and material cost for driveways and paving, with a worked example.","author":{"@type":"Organization","name":"CalcSnaps"},"publisher":{"@type":"Organization","name":"CalcSnaps"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://calcsnaps.com/construction-calculators/asphalt-calculator"},"datePublished":"2026-10-06","dateModified":"2026-10-06"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Use the Asphalt Calculator","step":[{"@type":"HowToStep","position":1,"text":"Choose US or metric units."},{"@type":"HowToStep","position":2,"text":"Pick a project preset or enter the compacted thickness."},{"@type":"HowToStep","position":3,"text":"Enter length and width, or the total area."},{"@type":"HowToStep","position":4,"text":"Choose a mix density or enter your supplier's value."},{"@type":"HowToStep","position":5,"text":"Set an allowance for waste and measurement error."},{"@type":"HowToStep","position":6,"text":"Optionally enter your price per ton, then read the tonnage, volume and cost."}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://calcsnaps.com/"},{"@type":"ListItem","position":2,"name":"Construction Calculators","item":"https://calcsnaps.com/construction-calculators"},{"@type":"ListItem","position":3,"name":"Asphalt Calculator"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate asphalt?","acceptedAnswer":{"@type":"Answer","text":"Multiply the area in square feet by the thickness in inches and by the mix density in pounds per cubic foot, then divide by 24,000 to get US tons. For a 20 ft by 20 ft driveway 2.5 inches thick at 145 lb/ft³ that is about 6.04 tons, or 6.34 tons with a 5% allowance."}},{"@type":"Question","name":"How much does 20x20 asphalt cost?","acceptedAnswer":{"@type":"Answer","text":"A 20 ft by 20 ft area is 400 square feet, which needs about 6.04 tons at 2.5 inches thick before allowance. Multiply the tonnage by your supplier's price per ton for the material cost. An installed price is higher because it includes base preparation, labor, equipment and delivery, so ask for a quote."}},{"@type":"Question","name":"How much volume is 1 ton of asphalt?","acceptedAnswer":{"@type":"Answer","text":"At a typical compacted density of 145 lb/ft³, one US ton of asphalt occupies about 13.8 cubic feet, which is roughly 0.51 cubic yards or 0.39 cubic metres. A metric tonne occupies about 0.43 cubic metres."}},{"@type":"Question","name":"What is 12.5 asphalt?","acceptedAnswer":{"@type":"Answer","text":"The number is the nominal maximum aggregate size of the mix in millimetres, about half an inch. A 12.5 mm mix is commonly used for surface courses, but the right mix for your job depends on traffic, thickness and local specification."}},{"@type":"Question","name":"How many square feet does a ton of asphalt cover?","acceptedAnswer":{"@type":"Answer","text":"At 145 lb/ft³, one US ton covers about 165 square feet at 1 inch thick, 83 square feet at 2 inches and 55 square feet at 3 inches. Thicker pavement covers proportionally less area per ton."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="/style.css">
+<style>
+html,body{max-width:100%!important;overflow-x:hidden!important}
+.skip-link{position:absolute;top:-40px;left:0;background:#8b5cf6;color:#fff;padding:8px;z-index:100;text-decoration:none}.skip-link:focus{top:0}
+:root{--primary:#8b5cf6;--primary-dark:#7c3aed;--primary-light:#a78bfa;--primary-text:#7c3aed;--secondary:#fbbf24;--dark:#0f172a;--dark-light:#1e293b;--light:#f8fafc;--gray:#94a3b8;--gray-text:#64748b;--text-dark:#4a5568;--danger:#ef4444;--warning:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:linear-gradient(135deg,#f8fafc,#e2e8f0);min-height:100vh;color:var(--dark);line-height:1.6}
+.site-container{max-width:1280px;width:100%;margin:0 auto;padding:0 24px}
+.container{max-width:900px;width:100%;margin:0 auto;padding:0 20px}
+.header{width:100%;padding:20px 0}
+.calc-container,.article-container{background:#fff;border-radius:32px;overflow:hidden;border:1px solid #e2e8f0}
+.calc-container{box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.article-container{box-shadow:0 20px 40px rgba(0,0,0,.08);margin:30px 0}
+.calc-header,.article-header{background:linear-gradient(135deg,var(--dark),var(--dark-light));padding:32px;text-align:center;border-bottom:3px solid var(--secondary)}
+.calc-header h1{font-size:25px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.calc-header h1 i{color:var(--secondary)}
+.calc-header p,.article-header p{font-size:15px;color:var(--gray);margin-top:8px}
+.privacy-badge{display:inline-block;background:rgba(16,185,129,.15);color:#6ee7b7;padding:5px 14px;border-radius:50px;font-size:12px;margin-top:14px;border:1px solid rgba(16,185,129,.3)}
+.disclaimer-strip{background:#fef2f2;border-bottom:1px solid #fecaca;padding:12px 28px;font-size:12.5px;color:#991b1b;text-align:center}
+.calc-body-inner{padding:28px}
+.section-title{font-size:18px;font-weight:700;margin:6px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:8px}
+.input-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:18px}
+.input-group{background:var(--light);border-radius:16px;padding:14px 16px;border:1px solid #e2e8f0}
+.input-group label{font-size:12.5px;color:var(--text-dark);margin-bottom:6px;display:block;font-weight:500}
+.input-group .row{display:flex;align-items:baseline;gap:4px}
+.input-group input{width:100%;border:none;background:transparent;font-size:17px;font-weight:700;color:var(--dark);outline:none;padding:3px 0;font-family:inherit}
+.input-group input:focus{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
+.unit{font-size:13px;color:var(--gray-text);flex-shrink:0}
+.toggle-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.toggle-label{font-weight:500;font-size:14px}
+.toggle-switch{display:flex;gap:6px;flex-wrap:wrap}
+.toggle-option{padding:7px 14px;border-radius:40px;cursor:pointer;font-size:12.5px;font-weight:500;background:#fff;border:1px solid #e2e8f0;color:#4a5568;font-family:inherit}
+.toggle-option:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+.toggle-option.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.status-note{border-radius:12px;padding:12px 16px;font-size:13.5px;margin:14px 0;border-left:4px solid var(--primary);background:rgba(139,92,246,.06);color:var(--text-dark)}
+.status-note.caution{display:none;background:rgba(245,158,11,.08);border-color:var(--warning);color:#8a5a06}
+.status-note.caution.show{display:block}
+.results-panel{background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(139,92,246,.02));border-radius:24px;padding:22px;margin-top:22px;border:1px solid rgba(139,92,246,.15)}
+.total-payment-card{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:20px 22px;border-radius:22px;margin-bottom:18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;box-shadow:0 10px 20px -8px rgba(139,92,246,.4)}
+.total-payment-card .label{font-size:14px;opacity:.9}
+.total-payment-card .amount{font-size:28px;font-weight:700}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.result-card{background:#fff;border-radius:16px;padding:14px;text-align:center;border:1px solid #e2e8f0}
+.result-label{font-size:12px;color:var(--text-dark);margin-bottom:4px;font-weight:500}
+.result-value{font-size:17px;font-weight:700;color:var(--primary)}
+.action-buttons{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.action-btn{flex:1;min-width:140px;padding:12px 20px;border-radius:50px;font-weight:600;cursor:pointer;border:none;background:var(--primary);color:#fff;font-family:inherit;font-size:13.5px}
+.action-btn:hover{background:var(--primary-dark)}
+.action-btn:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+.action-btn.secondary{background:#e2e8f0;color:var(--dark)}
+.article-header h2{font-size:27px;font-weight:800;color:#fff;line-height:1.3}
+.article-content{padding:40px}
+.article-content a{color:#8b5cf6!important;text-decoration:underline!important;font-weight:500!important}
+.article-content h2{font-size:24px;font-weight:700;margin:38px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--primary)}
+.article-content h2:first-child{margin-top:0}
+.article-content p,.article-content li{font-size:16px;color:var(--gray-text);margin-bottom:14px;line-height:1.7}
+.article-content ul,.article-content ol{padding-left:26px;margin-bottom:14px}
+.pro-tip{background:rgba(139,92,246,.05);border-left:4px solid var(--primary);padding:16px 22px;border-radius:16px;margin:20px 0}
+.pro-tip strong{color:var(--primary-text)}
+.pro-tip code{display:block;font-weight:700;color:var(--primary-text);margin-bottom:6px}
+.pro-tip p{margin:8px 0 0}
+.compare-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;border:1px solid #e2e8f0}
+.compare-table th{background:var(--dark);color:#fff;padding:11px 14px;text-align:left}
+.compare-table td{padding:10px 14px;border-bottom:1px solid #e2e8f0;color:var(--gray-text)}
+.faq-section{background:var(--light);border-radius:24px;padding:20px 28px;margin:20px 0;border:1px solid #e2e8f0}
+.faq-item{border-bottom:1px solid #e2e8f0;padding:14px 0}.faq-item:last-child{border-bottom:none}
+.faq-question{font-weight:700;font-size:16.5px;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;width:100%;border:none;background:none;text-align:left;font-family:inherit}
+.faq-question:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+.faq-answer{display:none;padding-top:10px}.faq-answer p{margin:0}
+.faq-item.active .faq-answer{display:block}
+.faq-item.active .faq-question i{transform:rotate(180deg)}
+.calc-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:60px;padding:18px 32px;text-align:center;margin:34px 0 26px}
+.calc-cta a{color:#fff!important;text-decoration:none!important;font-weight:700;font-size:18px;display:block}
+.related-links{background:var(--light);border-radius:20px;padding:24px;text-align:center;border:1px solid #e2e8f0}
+.related-links h4{margin-bottom:16px;font-size:18px}
+.related-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.related-grid a{text-decoration:none!important;padding:10px 20px;background:#fff;border-radius:40px;font-size:14px}
+.related-grid a:hover{background:var(--primary);color:#fff!important}
+.related-grid .calculator-link{background:var(--secondary);color:var(--dark)!important;font-weight:700!important}
+.toc{background:var(--light);border-radius:20px;padding:22px 28px;margin:26px 0 34px;border:1px solid #e2e8f0}.toc-title{font-size:20px;font-weight:700;margin-bottom:14px}.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}.toc-grid a{text-decoration:none!important;font-weight:500}
+.breakdown-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:18px}.breakdown-table th{background:var(--dark);color:#fff;padding:9px 12px;text-align:left}.breakdown-table td{padding:8px 12px;border-bottom:1px solid #eef2f7}.breakdown-table tr:nth-child(even){background:#f8fafc}
+.diagram{margin-top:18px;background:#fff;border-radius:16px;border:1px solid #e2e8f0;padding:10px}.diagram svg{width:100%;height:auto;display:block}.diagram p{font-size:12px;color:var(--gray-text);text-align:center;margin:4px 0 0}
+@media(max-width:768px){.site-container,.container{padding:0 15px}.calc-header h1{font-size:19px}.calc-body-inner{padding:18px}.total-payment-card .amount{font-size:22px}.article-header{padding:28px 20px}.article-header h2{font-size:21px}.article-content{padding:24px 20px}.article-content h2{font-size:20px}.compare-table{display:block;overflow-x:auto}}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="site-container">
+<header class="header">
+<a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+<nav class="nav"><a href="/">Home</a><a href="/all-calculators">All Calculators</a><a href="/about-us">About</a><a href="/contact-us">Contact</a></nav>
+</header>
+</div>
+<div class="container">
+<main id="main-content">
+<div class="calc-container" id="calculator-section">
+<div class="calc-header">
+<h1><i class="fas fa-road"></i> Asphalt Calculator</h1>
+<p>Tons · Cubic yards · Cost, for driveways, parking lots and patches</p>
+<div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+</div>
+<div class="disclaimer-strip"><i class="fas fa-circle-info"></i> Planning estimate only. Mix density, thickness and compaction vary by job, so confirm tonnage with your asphalt supplier or paving contractor.</div>
+<div class="calc-body-inner">
+<div class="status-note caution" id="warn" role="alert"></div>
+<div class="section-title"><i class="fas fa-ruler-combined"></i> Project</div>
+<div class="toggle-row"><span class="toggle-label">Units</span><div class="toggle-switch" role="radiogroup" aria-label="Units">
+<button type="button" class="toggle-option active" data-g="u" data-v="imp" role="radio" aria-checked="true">Imperial (ft, in)</button>
+<button type="button" class="toggle-option" data-g="u" data-v="met" role="radio" aria-checked="false">Metric (m, cm)</button></div></div>
+<div class="toggle-row"><span class="toggle-label">Project preset</span><div class="toggle-switch" role="radiogroup" aria-label="Project preset">
+<button type="button" class="toggle-option" data-g="p" data-v="ovl" role="radio" aria-checked="false">Patch / overlay</button>
+<button type="button" class="toggle-option active" data-g="p" data-v="drv" role="radio" aria-checked="true">Driveway</button>
+<button type="button" class="toggle-option" data-g="p" data-v="hvy" role="radio" aria-checked="false">Heavy-duty</button>
+<button type="button" class="toggle-option" data-g="p" data-v="cus" role="radio" aria-checked="false">Custom</button></div></div>
+<div class="toggle-row"><span class="toggle-label">Enter area as</span><div class="toggle-switch" role="radiogroup" aria-label="Area input mode">
+<button type="button" class="toggle-option active" data-g="m" data-v="lw" role="radio" aria-checked="true">Length × Width</button>
+<button type="button" class="toggle-option" data-g="m" data-v="area" role="radio" aria-checked="false">Total area</button></div></div>
+<div class="input-grid">
+<div class="input-group lw"><label for="len">Length</label><div class="row"><input type="number" id="len" value="20" min="0" step="any"><span class="unit uL">ft</span></div></div>
+<div class="input-group lw"><label for="wid">Width</label><div class="row"><input type="number" id="wid" value="20" min="0" step="any"><span class="unit uL">ft</span></div></div>
+<div class="input-group ar" style="display:none"><label for="area">Total area</label><div class="row"><input type="number" id="area" value="400" min="0" step="any"><span class="unit" id="uA">ft²</span></div></div>
+<div class="input-group"><label for="depth">Compacted thickness</label><div class="row"><input type="number" id="depth" value="2.5" min="0" step="any"><span class="unit" id="uD">in</span></div></div>
+</div>
+<div class="toggle-row"><span class="toggle-label">Mix density</span><div class="toggle-switch" role="radiogroup" aria-label="Mix density">
+<button type="button" class="toggle-option active" data-g="s" data-v="2322.7" role="radio" aria-checked="true">Standard HMA (145 lb/ft³)</button>
+<button type="button" class="toggle-option" data-g="s" data-v="2400" role="radio" aria-checked="false">Dense mix (2,400 kg/m³)</button>
+<button type="button" class="toggle-option" data-g="s" data-v="cus" role="radio" aria-checked="false">Custom</button></div></div>
+<div class="input-grid" id="densGrp" style="display:none"><div class="input-group"><label for="dens">Custom density</label><div class="row"><input type="number" id="dens" value="2323" min="1000" max="3000" step="any"><span class="unit">kg/m³</span></div></div></div>
+<div class="status-note">For the most accurate estimate, use your supplier's mix density. For reference, 145 lb/ft³ is about 2,323 kg/m³, and 1 lb/ft³ is about 16.02 kg/m³. Thickness here means finished, compacted thickness.</div>
+<div class="input-grid">
+<div class="input-group"><label for="waste">Allowance for waste and error</label><div class="row"><input type="number" id="waste" value="5" min="0" max="50" step="1"><span class="unit">%</span></div></div>
+<div class="input-group"><label for="pT" id="pTl">Price per ton (optional)</label><div class="row"><input type="number" id="pT" placeholder="0" min="0" step="0.01"></div></div>
+</div>
+<div class="results-panel" aria-live="polite">
+<div class="total-payment-card"><span class="label">Asphalt to Order (with allowance)</span><span class="amount" id="main">0</span></div>
+<div class="results-grid">
+<div class="result-card"><div class="result-label">Cubic Yards</div><div class="result-value" id="yd">0</div></div>
+<div class="result-card"><div class="result-label">Cubic Feet</div><div class="result-value" id="ft">0</div></div>
+<div class="result-card"><div class="result-label">Cubic Metres</div><div class="result-value" id="m3">0</div></div>
+<div class="result-card"><div class="result-label">Pounds</div><div class="result-value" id="lb">0</div></div>
+<div class="result-card"><div class="result-label">Kilograms</div><div class="result-value" id="kg">0</div></div>
+<div class="result-card"><div class="result-label">US Tons</div><div class="result-value" id="tn">0</div></div>
+<div class="result-card"><div class="result-label">Metric Tonnes</div><div class="result-value" id="tt">0</div></div>
+<div class="result-card"><div class="result-label">Est. Material Cost</div><div class="result-value" id="cost">-</div></div>
+<div class="result-card"><div class="result-label" id="cpaL">Cost per ft²</div><div class="result-value" id="cpa">-</div></div>
+</div>
+<table class="breakdown-table"><thead><tr><th>Step</th><th>Value</th></tr></thead><tbody id="bd"></tbody></table>
+</div>
+<div class="diagram"><svg id="asphaltSvg" viewBox="0 0 640 170" role="img" aria-label="Cross-section of the asphalt layer over base and subgrade" xmlns="http://www.w3.org/2000/svg">
+<rect x="60" y="30" width="520" height="34" fill="#334155"/><rect x="60" y="64" width="520" height="44" fill="#d6c9a8"/><rect x="60" y="108" width="520" height="30" fill="#a8a29e"/>
+<text id="svT" x="320" y="52" text-anchor="middle" font-size="14" font-weight="600" fill="#fff"></text>
+<text x="320" y="91" text-anchor="middle" font-size="13" fill="#0f172a">Compacted aggregate base (not included)</text>
+<text x="320" y="127" text-anchor="middle" font-size="13" fill="#0f172a">Subgrade</text>
+<text id="svL" x="320" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#0f172a"></text>
+<text id="svD" x="320" y="158" text-anchor="middle" font-size="13" fill="#475569"></text>
+</svg><p>Pavement cross-section schematic, not to scale.</p></div>
+<div class="status-note">Presets are common starting thicknesses, not rules, and the metric ones are rounded. Edit the thickness at any time. Tons are US short tons (2,000 lb); tonnes are metric (1,000 kg).</div>
+<div class="action-buttons">
+<button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+<button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+<button class="action-btn" id="pdfBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+<button class="action-btn secondary" id="resetBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+</div>
+</div>
+</div>
+<div class="article-container">
+<div class="article-header"><h2>Asphalt Calculator Guide: How Many Tons of Asphalt Do You Need?</h2><p>Tonnage, volume, coverage and material cost for driveways and paving</p></div>
+<div class="article-content">
+<p>An asphalt calculator turns the size of a paving job into the tons of hot mix asphalt (HMA) to order. Enter the length, width and compacted thickness, and this asphalt calculator returns weight in tons or tonnes, volume in cubic yards or cubic metres, and an optional material cost. It suits homeowners planning a driveway, contractors checking a bid, and anyone patching or overlaying a parking area. Plans and tape measures give you area and thickness, but asphalt is sold by weight, so figuring asphalt means bridging the two with density. A shortfall can stop a crew mid-job, and a surplus wastes money. Use the calculator above, then read on for the formula, coverage and cost.</p>
+<div class="pro-tip"><strong>Quick answer:</strong><p>Tons = area (ft²) × thickness (in) × density (lb/ft³) ÷ 24,000. A 20 ft × 20 ft driveway paved 2.5 inches thick at 145 lb/ft³ needs about 6.04 tons, or about 6.34 tons with a 5% allowance.</p></div>
+<div class="toc"><div class="toc-title">Table of Contents</div><div class="toc-grid">
+<div><a href="#how-works">1. How the Asphalt Calculator Works</a></div>
+<div><a href="#how-to-use">2. How to Use the Asphalt Calculator</a></div>
+<div><a href="#formula">3. Asphalt Calculation Formula</a></div>
+<div><a href="#worked-example">4. Worked Example</a></div>
+<div><a href="#coverage">5. How Far Does a Ton of Asphalt Go?</a></div>
+<div><a href="#mix">6. Asphalt Mix Types and Density</a></div>
+<div><a href="#pricing">7. Asphalt Cost per Ton and per Square Foot</a></div>
+<div><a href="#understanding">8. Understanding Your Result</a></div>
+<div><a href="#units">9. Units and Conversions</a></div>
+<div><a href="#tips">10. Practical Tips</a></div>
+<div><a href="#mistakes">11. Common Mistakes</a></div>
+<div><a href="#related">12. Related Calculations and Use Cases</a></div>
+<div><a href="#faq">13. Frequently Asked Questions</a></div>
+</div></div>
+
+<h2 id="how-works">How the Asphalt Calculator Works</h2>
+<p>The calculator finds the volume of the finished pavement layer by multiplying area by compacted thickness, adds your allowance, then multiplies by the mix density to get weight. It reports that weight as US tons and metric tonnes, along with volume in cubic yards, cubic feet and cubic metres. If you enter a price per ton, it also gives the material cost and the cost per square foot or square metre.</p>
+<p>It assumes an even, flat layer. For an irregular shape, split it into rectangles and add the results, or enter the total area directly. The result covers the asphalt only, not the stone base beneath it, and it does not size millings, tack coat or sealcoat.</p>
+<h2 id="how-to-use">How to Use the Asphalt Calculator</h2>
+<ol>
+<li>Choose US or metric units.</li>
+<li>Pick a preset (patch or overlay, driveway, heavy-duty) or enter your own thickness.</li>
+<li>Enter length and width, or switch to total area.</li>
+<li>Choose standard or dense mix density, or enter your supplier's figure under Custom.</li>
+<li>Set an allowance for waste and measurement error.</li>
+<li>Optionally enter your price per ton, then read the tonnage, volume and cost.</li>
+</ol>
+<h2 id="formula">Asphalt Calculation Formula</h2>
+<div class="pro-tip">
+<code>Volume = Area × Compacted thickness</code>
+<code>Order volume = Volume × (1 + Allowance %)</code>
+<code>Weight = Order volume × Density</code>
+<code>Tons = Pounds ÷ 2,000</code>
+<p>Keep area and thickness in consistent units before multiplying. The calculator works in metres internally and converts the result. The standard density is 145 lb/ft³ (about 2,323 kg/m³), and the dense option is about 150 lb/ft³ (2,400 kg/m³).</p></div>
+<p>For a hand check in US units, tons = (square feet × thickness in inches × density in lb/ft³) ÷ 24,000, where 24,000 is 12 inches per foot times 2,000 lb per ton. Paving crews often use a shortcut instead: tons = square yards × thickness in inches × 110 ÷ 2,000, since one square yard of mix one inch thick weighs roughly 110 lb.</p>
+<h2 id="worked-example">Worked Example</h2>
+<p>A 20 ft × 20 ft driveway paved 2.5 inches thick with standard mix at 145 lb/ft³ and a 5% allowance:</p>
+<table class="compare-table">
+<thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Area</td><td>20 × 20 ft</td><td>400 ft²</td></tr>
+<tr><td>Volume</td><td>400 × (2.5 ÷ 12)</td><td>83.33 ft³</td></tr>
+<tr><td>With allowance</td><td>83.33 × 1.05</td><td>87.5 ft³ = 3.24 yd³ = 2.48 m³</td></tr>
+<tr><td>Weight</td><td>87.5 × 145 lb/ft³</td><td>12,688 lb = 6.34 tons = 5.75 tonnes</td></tr>
+</tbody></table>
+<p>Cross-check with the field rule: 400 ft² is 44.4 yd², and 44.4 × 2.5 × 110 lb is about 12,222 lb, or 6.11 tons before allowance. That is close to the 6.04 tons from the main formula, because 110 lb per square yard per inch corresponds to a slightly higher density of about 147 lb/ft³.</p>
+<h2 id="coverage">How Far Does a Ton of Asphalt Go?</h2>
+<p>Coverage is the reverse question: how much area does a ton cover at a given thickness? At 145 lb/ft³, one US ton covers about 165 square feet at 1 inch, and coverage falls in proportion as thickness rises.</p>
+<table class="compare-table">
+<thead><tr><th>Thickness</th><th>Per US ton</th><th>Per metric tonne</th></tr></thead>
+<tbody>
+<tr><td>1.5 in (4 cm)</td><td>110 ft²</td><td>about 10.8 m²</td></tr>
+<tr><td>2 in (5 cm)</td><td>83 ft²</td><td>about 8.6 m²</td></tr>
+<tr><td>2.5 in (6 cm)</td><td>66 ft²</td><td>about 7.2 m²</td></tr>
+<tr><td>3 in (7.5 cm)</td><td>55 ft²</td><td>about 5.7 m²</td></tr>
+<tr><td>4 in (10 cm)</td><td>41 ft²</td><td>about 4.3 m²</td></tr>
+</tbody></table>
+<p>These figures are before allowance, so reduce them accordingly when ordering. The metric column uses the centimetre thickness shown, which is close to but not exactly the inch value.</p>
+<h2 id="mix">Asphalt Mix Types and Density</h2>
+<p>Asphalt, also called blacktop or tarmac, is aggregate bound with bitumen. Hot mix asphalt is the most common type and is the basis for the standard density here. Warm mix is made at lower temperatures, and driveway mixes are tailored for residential loads. Mixes are also named by size: a 12.5 mix has a nominal maximum aggregate size of 12.5 mm, about half an inch.</p>
+<p>Density is the main variable. <a href="https://www.superpave.psu.edu/assets/docs/2025/Constructing-Quality-Asphalt-Pavements-Checklist-Booklet-2025-FINAL.pdf" target="_blank" rel="noopener">Pennsylvania Asphalt Pavement Association guidance</a> puts typical compacted mix at roughly 108 to 120 lb per square yard per inch, or about 144 to 160 lb/ft³, which brackets the 145 and 150 lb/ft³ options above. Asphalt millings, recycled asphalt pavement, are sold by weight and vary by source, so use Custom with your supplier's density rather than the hot mix figure.</p>
+<h2 id="pricing">Asphalt Cost per Ton and per Square Foot</h2>
+<p>Material cost is simply tons multiplied by your supplier's price per ton, and the calculator also divides it by area to give a cost per square foot. At 2.5 inches and 145 lb/ft³, one square foot needs about 0.015 tons, so a hypothetical price of $100 per ton gives roughly $1.51 per square foot before allowance, or about $604 for a 400 ft² driveway. With a 5% allowance those become about $1.59 per square foot and $634, which are the figures the calculator shows. The $100 is an illustration only, so enter your own quote.</p>
+<p>An asphalt driveway cost estimate or overlay quote from a contractor will be higher than this material figure, because it also covers base preparation, delivery, equipment, labor and sometimes sealing. Use the calculator to check that a quoted tonnage is reasonable, and ask what thickness and density the quote assumes.</p>
+<h2 id="understanding">Understanding Your Result</h2>
+<p>The main figure is what to order, allowance included. Suppliers sell by the ton, and plants load by truck, so round up to the next sensible load. The result is an estimate: real density, ground evenness and how the crew spreads the mix all move the final tonnage. This asphalt estimator uses finished thickness, not the thicker loose depth laid before rolling, so do not add compaction on top of your allowance.</p>
+<h2 id="units">Units and Conversions</h2>
+<ul>
+<li>1 cubic yard = 27 cubic feet = 0.7646 cubic metres.</li>
+<li>1 US ton = 2,000 lb = 907 kg. 1 metric tonne = 1,000 kg.</li>
+<li>At 145 lb/ft³, one cubic yard weighs about 3,915 lb, or 1.96 tons.</li>
+<li>1 square yard = 9 square feet = 0.836 square metres.</li>
+</ul>
+<h2 id="tips">Practical Tips</h2>
+<ul>
+<li>Measure the length and width of the actual paved surface, and check the thickness your contractor specifies.</li>
+<li>Ask your supplier for the mix density and whether the ton is a US ton or a tonne.</li>
+<li>Keep a 5% allowance for a small, simple area and consider more for an irregular edge or uneven base.</li>
+<li>For separate areas, calculate each and add the results.</li>
+<li>Order close to the paving date, since hot mix must be placed soon after it is loaded.</li>
+</ul>
+<h2 id="mistakes">Common Mistakes</h2>
+<ul>
+<li><strong>Mixing units:</strong> entering thickness in inches while the area is in square metres, or the reverse.</li>
+<li><strong>Using loose depth:</strong> thickness should be the finished, compacted depth.</li>
+<li><strong>Confusing tons and tonnes:</strong> a US ton is about 907 kg, a tonne is 1,000 kg.</li>
+<li><strong>Treating the cost as a final price:</strong> material cost excludes base work, labor and equipment.</li>
+<li><strong>Ignoring density:</strong> a different mix or millings can change the tonnage noticeably.</li>
+</ul>
+<h2 id="related">Related Calculations and Use Cases</h2>
+<p>Common uses include an asphalt driveway calculator for homeowners, a blacktop calculator for parking areas, a pavement calculator for paths and small roads, and an asphalt ton calculator for checking supplier quotes. If the job also needs a compacted stone base under the asphalt, our <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a> estimates that layer.</p>
+<h2 id="faq">Frequently Asked Questions</h2>
+<div class="faq-section">
+<div class="faq-item active"><button type="button" class="faq-question" aria-expanded="true">How do I calculate asphalt?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>Multiply the area in square feet by the thickness in inches and by the mix density in pounds per cubic foot, then divide by 24,000 to get US tons. For a 20 ft by 20 ft driveway 2.5 inches thick at 145 lb/ft³ that is about 6.04 tons, or 6.34 tons with a 5% allowance.</p></div></div>
+<div class="faq-item"><button type="button" class="faq-question" aria-expanded="false">How much does 20x20 asphalt cost?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>A 20 ft by 20 ft area is 400 square feet, which needs about 6.04 tons at 2.5 inches thick before allowance. Multiply the tonnage by your supplier's price per ton for the material cost. An installed price is higher because it includes base preparation, labor, equipment and delivery, so ask for a quote.</p></div></div>
+<div class="faq-item"><button type="button" class="faq-question" aria-expanded="false">How much volume is 1 ton of asphalt?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>At a typical compacted density of 145 lb/ft³, one US ton of asphalt occupies about 13.8 cubic feet, which is roughly 0.51 cubic yards or 0.39 cubic metres. A metric tonne occupies about 0.43 cubic metres.</p></div></div>
+<div class="faq-item"><button type="button" class="faq-question" aria-expanded="false">What is 12.5 asphalt?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>The number is the nominal maximum aggregate size of the mix in millimetres, about half an inch. A 12.5 mm mix is commonly used for surface courses, but the right mix for your job depends on traffic, thickness and local specification.</p></div></div>
+<div class="faq-item"><button type="button" class="faq-question" aria-expanded="false">How many square feet does a ton of asphalt cover?<i class="fas fa-chevron-down"></i></button><div class="faq-answer"><p>At 145 lb/ft³, one US ton covers about 165 square feet at 1 inch thick, 83 square feet at 2 inches and 55 square feet at 3 inches. Thicker pavement covers proportionally less area per ton.</p></div></div>
+</div>
+<h2>Conclusion</h2>
+<p>This asphalt calculator turns length, width and compacted thickness into the tons, volume and material cost you need, with an allowance and your own density. Accurate measurements and the right mix density matter most, since weight follows directly from volume and density. Use the calculator above to plan your order, then confirm the tonnage and price with your supplier.</p>
+<div class="calc-cta"><a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'});return false;"><span>🛣️</span> Try the Asphalt Calculator Above <span>⚡</span></a></div>
+<div class="related-links"><h4>🔗 Related Calculators</h4><div class="related-grid">
+<a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'});return false;">🛣️ Asphalt Calculator</a>
+<a href="https://calcsnaps.com/construction-calculators/gravel-calculator">🪨 Gravel Calculator</a>
+<a href="https://calcsnaps.com/construction-calculators/sand-calculator">🏖️ Sand Calculator</a>
+<a href="https://calcsnaps.com/construction-calculators/stone-calculator">🧱 Stone Calculator</a>
+<a href="https://calcsnaps.com/construction-calculators/dirt-calculator">🌱 Dirt Calculator</a></div></div>
+</div>
+</div>
+</main>
+</div>
+<div class="site-container">
+<footer class="footer">
+<div class="footer-grid">
+<div class="footer-col"><h4>🧮 CalcSnaps</h4><p>Calculations in a Snap, fast, accurate, free.</p><a href="/about-us" class="about-link">About Us →</a></div>
+<div class="footer-col"><h4>Quick Links</h4><a href="/">Home</a><a href="/all-calculators">All Calculators</a><a href="/contact-us">Contact</a></div>
+<div class="footer-col"><h4>Popular</h4><a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a><a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a><a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a></div>
+<div class="footer-col"><h4>Legal</h4><a href="/about-us">About Us</a><a href="/privacy-policy">Privacy Policy</a><a href="/terms-and-conditions">Terms &amp; Conditions</a><a href="/disclaimer">Disclaimer</a></div>
+</div>
+<div class="footer-bottom"><p>&copy; 2026 CalcSnaps. All rights reserved.</p></div>
+</footer>
+</div>
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const S={u:'imp',m:'lw',p:'drv',s:2322.7};
+const PRE={ovl:[1.5,4],drv:[2.5,6],hvy:[4,10]};
+const DEF={imp:{len:20,wid:20,area:400},met:{len:6,wid:6,area:36}};
+let last='',rep=null;
+const fmt=(n,d)=>n.toLocaleString('en-US',{maximumFractionDigits:d});
+function setActive(g,v){document.querySelectorAll('[data-g="'+g+'"]').forEach(b=>{const on=b.dataset.v===v;b.classList.toggle('active',on);b.setAttribute('aria-checked',on)})}
+function labels(){const i=S.u==='imp';
+document.querySelectorAll('.uL').forEach(e=>e.textContent=i?'ft':'m');
+$('uA').textContent=i?'ft²':'m²';$('uD').textContent=i?'in':'cm';
+$('pTl').textContent=i?'Price per ton (optional)':'Price per tonne (optional)';
+$('cpaL').textContent=i?'Cost per ft²':'Cost per m²';
+document.querySelectorAll('.lw').forEach(e=>e.style.display=S.m==='lw'?'':'none');
+document.querySelectorAll('.ar').forEach(e=>e.style.display=S.m==='area'?'':'none')}
+function applyPreset(){if(S.p!=='cus')$('depth').value=PRE[S.p][S.u==='imp'?0:1]}
+function convert(to){const m=to==='met',r=n=>+n.toFixed(4);
+const k={l:m?0.3048:1/0.3048,a:m?0.09290304:1/0.09290304,d:m?2.54:1/2.54,t:m?1/0.90718474:0.90718474};
+[['len',k.l],['wid',k.l],['area',k.a],['depth',k.d],['pT',k.t]].forEach(x=>{const e=$(x[0]),n=parseFloat(e.value);if(isFinite(n))e.value=r(n*x[1])});labels()}
+function syncMode(to){const r=n=>+n.toFixed(4),L=parseFloat($('len').value),W=parseFloat($('wid').value),A=parseFloat($('area').value);
+if(to==='area'){if(isFinite(L)&&isFinite(W))$('area').value=r(L*W)}
+else if(isFinite(A)&&isFinite(L)&&L>0&&Math.abs(L*(isFinite(W)?W:0)-A)>1e-6)$('wid').value=r(A/L);
+labels()}
+function blocked(msg){
+$('main').textContent='-';['yd','ft','m3','lb','kg','tn','tt','cost','cpa'].forEach(id=>$(id).textContent='-');
+const wn=$('warn');wn.textContent=msg;wn.classList.add('show');last='';rep=null;$('bd').innerHTML='';['svT','svL','svD'].forEach(id=>$(id).textContent='')}
+function calc(fix){
+let clip=false;
+if(S.s==='cus'){const d=parseFloat($('dens').value);if(!(d>=1000&&d<=3000)){blocked('Enter a custom density between 1,000 and 3,000 kg/m³.');return}}
+const num=(id,min,max)=>{let v=parseFloat($(id).value);if(!isFinite(v))return 0;if(v<min||v>max){clip=true;v=Math.min(Math.max(v,min),max);if(fix)$(id).value=v}return v};
+const i=S.u==='imp';
+const Lv=S.m==='lw'?num('len',0,5000):0,Wv=S.m==='lw'?num('wid',0,5000):0,Av=S.m==='lw'?Lv*Wv:num('area',0,1e6);
+const A=Av*(i?0.09290304:1);
+const T=num('depth',0,i?24:60),D=T*(i?0.0254:0.01);
+const miss=[];if(S.m==='lw'){if(!(Lv>0))miss.push('length');if(!(Wv>0))miss.push('width')}else if(!(Av>0))miss.push('total area');if(!(T>0))miss.push('thickness');
+if(miss.length){blocked('Enter a value greater than 0 for: '+miss.join(', ')+'.');return}
+const w=num('waste',0,50),pT=num('pT',0,1e7);
+const dens=S.s==='cus'?num('dens',1000,3000):S.s;
+const V0=A*D,V=V0*(1+w/100),kg=V*dens,lb=kg/0.45359237,tons=kg/907.18474,tonnes=kg/1000;
+const total=pT>0?(i?tons:tonnes)*pT:0,cpa=total>0&&Av>0?total/Av:0;
+const main=i?fmt(tons,2)+' tons':fmt(tonnes,2)+' tonnes';
+$('main').textContent=main;
+$('yd').textContent=fmt(V*1.30795062,2);$('ft').textContent=fmt(V*35.3146667,1);$('m3').textContent=fmt(V,3);
+$('lb').textContent=fmt(lb,0);$('kg').textContent=fmt(kg,0);$('tn').textContent=fmt(tons,2);$('tt').textContent=fmt(tonnes,2);
+$('cost').textContent=total>0?fmt(total,2):'-';$('cpa').textContent=cpa>0?fmt(cpa,2):'-';
+const wn=$('warn');wn.textContent='One or more values were outside the allowed range and were adjusted to the nearest limit.';wn.classList.toggle('show',clip);
+const rows=[['Area',i?fmt(A/0.09290304,2)+' ft²':fmt(A,2)+' m²'],['Compacted thickness',fmt(T,2)+(i?' in':' cm')],['Volume (before allowance)',i?fmt(V0*35.3146667,2)+' ft³':fmt(V0,3)+' m³'],['Allowance',w+'%'],['Order volume',i?fmt(V*35.3146667,2)+' ft³ ('+fmt(V*1.30795062,2)+' yd³)':fmt(V,3)+' m³'],['Density',fmt(dens,0)+' kg/m³ ('+fmt(dens*0.062427961,1)+' lb/ft³)'],['Total weight',i?fmt(lb,0)+' lb = '+fmt(tons,2)+' tons':fmt(kg,0)+' kg = '+fmt(tonnes,2)+' tonnes']];
+$('bd').innerHTML=rows.map(r=>'<tr><td>'+r[0]+'</td><td>'+r[1]+'</td></tr>').join('');
+rep={main:main,rows:rows.concat([['Estimated material cost',total>0?fmt(total,2):'-'],['Cost per '+(i?'ft²':'m²'),cpa>0?fmt(cpa,2):'-']])};
+const u=i?' ft':' m';
+$('svL').textContent=S.m==='lw'?'Area '+fmt(Av,2)+(i?' ft²':' m²')+' ('+fmt(Lv,2)+' × '+fmt(Wv,2)+u+')':'Area '+fmt(Av,2)+(i?' ft²':' m²');
+$('svT').textContent='Asphalt layer: '+fmt(T,2)+(i?' in':' cm')+' compacted';
+$('svD').textContent='Mix density: '+fmt(dens,0)+' kg/m³ ('+fmt(dens*0.062427961,0)+' lb/ft³)';
+last='Asphalt needed: '+main+' ('+fmt(V*1.30795062,2)+' cu yd, '+fmt(V,3)+' m³), '+fmt(lb,0)+' lb / '+fmt(kg,0)+' kg, incl. '+w+'% allowance. Calculated at calcsnaps.com';
+}
+function reset(){S.u='imp';S.m='lw';S.p='drv';S.s=2322.7;
+setActive('u','imp');setActive('m','lw');setActive('p','drv');setActive('s','2322.7');
+const d=DEF.imp;$('len').value=d.len;$('wid').value=d.wid;$('area').value=d.area;
+$('waste').value=5;$('pT').value='';$('dens').value=2323;$('densGrp').style.display='none';labels();applyPreset();calc();
+const b=$('resetBtn'),o=b.innerHTML;b.innerHTML='<i class="fas fa-check"></i> Reset Done!';setTimeout(()=>b.innerHTML=o,1400)}
+document.querySelectorAll('.toggle-option').forEach(b=>b.addEventListener('click',()=>{
+const g=b.dataset.g,v=b.dataset.v;setActive(g,v);const prev=S.u,pm=S.m;
+if(g==='s'){S.s=v==='cus'?'cus':+v;$('densGrp').style.display=v==='cus'?'':'none'}else S[g]=v;
+if(g==='u'&&v!==prev)convert(v);
+if(g==='m'&&v!==pm)syncMode(v);
+if(g==='p')applyPreset();
+calc()}));
+document.querySelectorAll('input').forEach(e=>e.addEventListener('input',()=>{if(e.id==='depth'){S.p='cus';setActive('p','cus')}calc()}));
+document.querySelectorAll('input').forEach(e=>e.addEventListener('change',()=>calc(true)));
+function flash(b,m){if(!b.dataset.o)b.dataset.o=b.innerHTML;b.textContent=m;setTimeout(()=>b.innerHTML=b.dataset.o,2000)}
+const FAIL='Unable to copy. Please copy the result manually.';
+$('copyBtn').addEventListener('click',function(){const b=this;
+if(!last)return flash(b,'Fix the highlighted input first.');
+if(navigator.clipboard)navigator.clipboard.writeText(last).then(()=>flash(b,'Copied!')).catch(()=>flash(b,FAIL));else flash(b,FAIL)});
+$('shareBtn').addEventListener('click',function(){const b=this;
+if(!last)return flash(b,'Fix the highlighted input first.');
+if(navigator.share)navigator.share({title:'Asphalt Calculator Result',text:last,url:'https://calcsnaps.com/construction-calculators/asphalt-calculator'}).catch(()=>{});
+else if(navigator.clipboard)navigator.clipboard.writeText(last).then(()=>flash(b,'Copied to share!')).catch(()=>flash(b,FAIL));
+else flash(b,FAIL)});
+function pdf(){const d=new window.jspdf.jsPDF();let y=20;
+d.setFontSize(20);d.setTextColor(139,92,246);d.text('Asphalt Calculator Report',105,y,{align:'center'});y+=8;
+d.setFontSize(10);d.setTextColor(100,100,100);d.text('calcsnaps.com - '+new Date().toLocaleDateString(),105,y,{align:'center'});y+=12;
+d.setFontSize(14);d.setTextColor(0,0,0);d.text('Asphalt to order: '+rep.main,20,y);y+=10;d.setFontSize(11);
+rep.rows.forEach(r=>{d.setTextColor(100,100,100);d.text(r[0],20,y);d.setTextColor(0,0,0);d.text(String(r[1]),80,y);y+=7});
+y+=6;d.setFontSize(9);d.setTextColor(150,0,0);
+d.splitTextToSize('Planning estimate only. Mix density, thickness and compaction vary by job, so confirm tonnage with your asphalt supplier or paving contractor.',170).forEach(l=>{d.text(l,20,y);y+=5});
+d.save('asphalt-calculator-report.pdf')}
+$('pdfBtn').addEventListener('click',function(){const b=this;
+if(!last||!rep)return flash(b,'Fix the highlighted input first.');
+if(!b.dataset.o)b.dataset.o=b.innerHTML;
+const done=()=>{b.disabled=false;b.innerHTML=b.dataset.o},go=()=>{try{pdf()}catch(e){}done()};
+b.disabled=true;b.textContent='Preparing...';
+if(window.jspdf)return go();
+const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+sc.onload=go;sc.onerror=()=>{done();flash(b,'Could not load PDF tool')};document.body.appendChild(sc)});
+$('resetBtn').addEventListener('click',reset);
+document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>{const it=q.parentElement;it.classList.toggle('active');q.setAttribute('aria-expanded',it.classList.contains('active'))}));
+labels();calc();
+})();
+</script>
+</body>
+</html>
