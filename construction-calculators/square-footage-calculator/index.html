@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Square Footage Calculator: Sq Ft of Any Room or Shape</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free square footage calculator. Add rooms and shapes, subtract cutouts, enter feet and inches, and get sq ft, sq m, sq yd, acres, waste and cost.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/square-footage-calculator">
+
+    <meta property="og:title" content="Square Footage Calculator: Sq Ft of Any Room or Shape">
+    <meta property="og:description" content="Free square footage calculator for rooms, walls, and lots. Add shapes, subtract cutouts, and get sq ft, sq m, acres, waste and cost.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/square-footage-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Square Footage Calculator",
+        "description": "Calculate the square footage of rooms, walls, and lots from rectangles, triangles, circles, and trapezoids, with subtract areas, waste, boxes, cost, and unit conversion",
+        "url": "https://calcsnaps.com/construction-calculators/square-footage-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Square Footage Calculator Guide: How to Calculate Square Feet",
+        "description": "How to calculate and measure square footage for rooms, L-shaped spaces, walls, and houses, with formulas, worked examples, and unit conversions.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/construction-calculators/square-footage-calculator"
+        },
+        "datePublished": "2026-10-06",
+        "dateModified": "2026-10-06"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate square footage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Measure the length and width of the space in feet, then multiply them. A room 12 feet long and 14 feet wide is 12 x 14 = 168 square feet. If your measurements are in feet and inches, convert the inches to a decimal of a foot first (divide by 12). For triangles, circles, and irregular spaces, use the matching area formula, or split the space into simple shapes and add the areas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many square feet is a 12 by 14 room?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A 12 ft by 14 ft room is 168 square feet. That is 12 x 14 = 168. In metric, 168 square feet is about 15.6 square meters."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate the square footage of an L-shaped or irregular room?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use one of two methods. Either split the room into rectangles, find each area, and add them, or measure the smallest rectangle that encloses the whole room and subtract the missing corner. Both give the same answer. In the calculator, add each rectangle as its own area, or add the big rectangle and set the missing corner to Subtracted."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I convert square inches to square feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide the number of square inches by 144, because one square foot is 12 inches by 12 inches, which is 144 square inches. For example, 2,500 square inches is 2,500 / 144 = 17.36 square feet. The Convert Area tab in the calculator does this for square inches, square centimeters, square yards, square meters, and acres."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many square feet are in an acre?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "One acre is 43,560 square feet. To convert square feet to acres, divide by 43,560. For example, a lot of 21,780 square feet is 0.5 acre, and 2 acres is 87,120 square feet."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the square footage of a house include the garage, closets, or basement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a home's official figure, a garage is not counted as living area, and closets, hallways, and stairs inside the finished living space are. Under the ANSI Z765-2021 method used by appraisers, only finished above-grade space with enough ceiling height counts, and finished below-grade space is reported separately. Listing and tax records may use different methods, so the numbers can differ."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I turn feet and inches into decimal feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide the inches by 12 and add the result to the feet. For example, 14 ft 6 in is 14 + 6/12 = 14.5 ft, and 11 ft 3 in is 11 + 3/12 = 11.25 ft. A common mistake is writing 14 ft 6 in as 14.6, which is wrong because an inch is one twelfth of a foot, not one tenth."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Square Footage Calculator",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Choose feet and inches, or meters and centimeters."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Pick the shape of your first area. For a normal room, leave it on Rectangle."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Type the measurements. Leave the inches or centimeters box empty if it is zero."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Give the area a name if you like, such as Living room, and set a quantity if you have several identical areas."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Use Add Another Area for each extra room or section, up to 12."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Set an area to Subtracted if it should be taken out, such as a closet, a stair opening, or a cutout."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Optionally add a waste percentage, the coverage of one box, and a price per unit of area."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 8,
+                "text": "Read the total, the unit cards, the breakdown table, and the step-by-step math. Use the Convert Area tab to change any known area between units."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 9,
+                "text": "Use Copy Result, Share Result, or Download PDF to keep the numbers, and Reset All to start again."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calcsnaps.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "All Calculators",
+                "item": "https://calcsnaps.com/all-calculators"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Square Footage Calculator"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .wall-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .wall-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .wall-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-wall-btn, .remove-opening-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-wall-btn:hover, .remove-opening-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-wall-btn:focus-visible, .remove-opening-btn:focus-visible { outline: 3px solid var(--primary); }
+        .openings-title { font-size: 12.5px; font-weight: 700; color: var(--text-dark); margin: 4px 0 10px; }
+        .opening-row { display: grid; grid-template-columns: 84px 1fr 1fr auto; gap: 12px; align-items: center; background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 10px 12px; margin-bottom: 10px; }
+        .opening-tag { font-size: 12.5px; font-weight: 700; color: var(--primary-text); }
+        .opening-row .input-group { padding: 8px 12px; background: white; }
+        .opening-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+        .mini-btn { padding: 8px 14px; border-radius: 40px; border: 1px dashed var(--primary-light); background: rgba(139,92,246,0.05); color: var(--primary-dark); font-weight: 600; font-size: 12.5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .mini-btn:hover { background: rgba(139,92,246,0.1); }
+        .mini-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .mini-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-wall-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-wall-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-wall-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-wall-btn:focus-visible { outline: 3px solid var(--primary); }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { width: 100%; height: auto; }
+        .sv-text { fill: var(--text-dark); font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; font-size: 12px; color: var(--text-dark); margin-bottom: 18px; }
+        .legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+        .breakdown-table tr.total-row td { font-weight: 700; background: rgba(139,92,246,0.06); }
+
+        .info-block { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 16px; margin-top: 14px; text-align: left; font-size: 13.5px; color: var(--text-dark); line-height: 1.7; }
+        .info-block strong { color: var(--primary-text); }
+        .marks-box { max-height: 260px; overflow: auto; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+            .opening-row { grid-template-columns: 1fr 1fr; }
+            .opening-tag { grid-column: 1 / -1; }
+            .remove-opening-btn { grid-column: 1 / -1; justify-self: end; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+
+        .area-meta { display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .sign-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin: 4px 0 12px; }
+        .area-card.is-subtract { border-color: #f59e0b; background: #fffbeb; }
+        .dim-row { display: flex; align-items: baseline; gap: 6px; }
+        .dim-row input { width: 100%; min-width: 0; }
+        .dim-row .unit { margin-right: 10px; }
+        .dim-row .unit:last-child { margin-right: 0; }
+        .input-group select { cursor: pointer; width: 100%; }
+        .sub-row td { color: #b45309; }
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 24px 0 14px; }
+        .tab-btn { padding: 9px 18px; border-radius: 40px; border: 1px solid #e2e8f0; background: white; color: #4a5568; font-weight: 600; font-size: 13px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .tab-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+        .tab-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .tab-panel[hidden] { display: none; }
+        .field-note { font-size: 12.5px; color: var(--gray-text); margin: -6px 0 16px; }
+        .conv-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+        .conv-table td { padding: 9px 12px; border-bottom: 1px solid #eef2f7; }
+        .conv-table tr.total-row td { font-weight: 700; color: var(--primary); }
+        @media (max-width: 768px) { .area-meta { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-ruler-combined"></i> Square Footage Calculator</h1>
+                    <p>Rooms, walls, and lots in sq ft, sq m, sq yd, and acres</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Confirm measurements before ordering materials. A professional measurement governs for appraisals and listings.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Units</span>
+                        <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Unit system">
+                            <button type="button" class="toggle-option active" data-unit="imperial" role="radio" aria-checked="true">Feet and inches</button><button type="button" class="toggle-option" data-unit="metric" role="radio" aria-checked="false">Meters and cm</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-vector-square"></i> Areas</div>
+                    <div id="areasContainer"></div>
+                    <button class="add-wall-btn" id="addAreaBtn" type="button"><i class="fas fa-plus"></i> Add Another Area (up to 12)</button>
+
+                    <div class="section-title"><i class="fas fa-boxes-stacked"></i> Waste, Boxes, and Cost (optional)</div>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="wastePct">Waste allowance</label>
+                            <div class="row"><input type="number" inputmode="decimal" id="wastePct" value="0" min="0" max="100" step="1"><span class="unit">%</span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="coverage">Coverage of one box</label>
+                            <div class="row"><input type="number" inputmode="decimal" id="coverage" data-q="area" data-canon="" min="0" step="any" placeholder="optional"><span class="unit" data-ul="areaU"></span></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="currency">Currency symbol</label>
+                            <div class="row"><input type="text" id="currency" value="$" maxlength="4"></div>
+                        </div>
+                        <div class="input-group">
+                            <label for="price">Price</label>
+                            <div class="row"><input type="number" inputmode="decimal" id="price" data-q="price" data-canon="" min="0" step="any" placeholder="optional"><span class="unit" data-ul="priceU"></span></div>
+                        </div>
+                    </div>
+                    <div class="status-note status-neutral show" id="wasteHint"></div>
+
+                    <div class="results-panel">
+                        <div class="total-payment-card">
+                            <span class="label" id="totalLabel">Total Area (sq ft)</span>
+                            <span class="amount" id="totalResult">0</span>
+                        </div>
+                        <div class="results-grid" id="unitCards"></div>
+                        <div class="results-grid" id="extraCards"></div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table">
+                                <thead><tr><th>Area</th><th>Shape</th><th>Each</th><th>Qty</th><th>Counted</th></tr></thead>
+                                <tbody id="breakdownBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="tabs" role="tablist" aria-label="Result details">
+                        <button type="button" class="tab-btn active" role="tab" id="tab-steps" aria-selected="true" aria-controls="panel-steps">Step-by-step math</button>
+                        <button type="button" class="tab-btn" role="tab" id="tab-conv" aria-selected="false" aria-controls="panel-conv" tabindex="-1">Convert area</button>
+                    </div>
+                    <div class="tab-panel" id="panel-steps" role="tabpanel" aria-labelledby="tab-steps">
+                        <div class="info-block" id="stepBlock"></div>
+                    </div>
+                    <div class="tab-panel" id="panel-conv" role="tabpanel" aria-labelledby="tab-conv" hidden>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="convValue">Area to convert</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="convValue" value="2500" min="0" step="any"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="convUnit">From</label>
+                                <div class="row"><select id="convUnit">
+                                    <option value="sqin" selected>Square inches</option>
+                                    <option value="sqcm">Square centimeters</option>
+                                    <option value="sqft">Square feet</option>
+                                    <option value="sqyd">Square yards</option>
+                                    <option value="sqm">Square meters</option>
+                                    <option value="acre">Acres</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <table class="conv-table"><tbody id="convBody"></tbody></table>
+                        <div class="status-note status-neutral show" id="convNote"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Square Footage Calculator Guide: How to Calculate Square Feet</h2>
+                    <p>Formulas, measuring steps, and worked examples for rooms, walls, lots, and houses</p>
+                </div>
+
+                <div class="article-content">
+
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use It</a></div>
+                            <div class="toc-item"><a href="#formulas">3. Square Footage Formulas</a></div>
+                            <div class="toc-item"><a href="#measure-room">4. How to Measure a Room</a></div>
+                            <div class="toc-item"><a href="#decimal-feet">5. Feet and Inches to Decimal Feet</a></div>
+                            <div class="toc-item"><a href="#l-shaped">6. L-Shaped and Irregular Rooms</a></div>
+                            <div class="toc-item"><a href="#walls">7. Walls, Doors, and Windows</a></div>
+                            <div class="toc-item"><a href="#examples">8. Worked Examples</a></div>
+                            <div class="toc-item"><a href="#house">9. Square Footage of a House</a></div>
+                            <div class="toc-item"><a href="#waste">10. Waste, Boxes, and Cost</a></div>
+                            <div class="toc-item"><a href="#conversions">11. Converting Area Units</a></div>
+                            <div class="toc-item"><a href="#mistakes">12. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">13. Related Calculations</a></div>
+                            <div class="toc-item"><a href="#faq">14. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>This square footage calculator finds the area of a room, wall, lot, or any mix of shapes in square feet. Enter lengths in feet and inches, or in meters and centimeters, add as many areas as you need, and set any area to Subtracted to take out a closet, a cutout, or a window. The total appears in square feet, square inches, square yards, square meters, and acres, with optional waste, boxes, and cost. If you searched for a square foot calculator, a sq ft calculator, a sqft calculator, or a square feet calculator, this is the same tool.</p>
+                    <p>Below you will find the formulas, measuring steps, worked examples, and a plain explanation of how the official square footage of a home is measured, which is not always the same as adding up room sizes.</p>
+
+                    <div class="pro-tip">
+                        <strong>Quick answer:</strong>
+                        <p style="margin: 10px 0 0;">Square footage = length &times; width, with both in feet. A room 12 ft by 10 ft is 120 sq ft. For an irregular shape, split it into rectangles and add them, or subtract the missing part from a larger rectangle.</p>
+                    </div>
+
+                    <h2 id="how-works">1. How the Square Footage Calculator Works</h2>
+                    <p>The calculator is built around a list of areas. Each area has an optional name, a shape, a quantity, and the measurements for that shape. You choose whether the area is Added or Subtracted. The calculator works out the area of each shape from its standard formula, multiplies by the quantity, adds the added areas, and takes away the subtracted ones.</p>
+                    <p>There are five shapes: rectangle or square, triangle from a base and height, triangle from three sides, circle, and trapezoid. Other shapes are built from these. A ring or a border is a big shape with a smaller one subtracted. An L-shape is two rectangles, or one rectangle with a corner subtracted.</p>
+                    <p>Each measurement has two boxes, feet and inches, or meters and centimeters, so you can type 14 ft 6 in exactly as you read it from the tape. The results show the total in your chosen system first, then the same area in the other units. If you fill in the optional fields, you also get the area to order with waste, the number of boxes, and an estimated cost.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions and limits:</strong>
+                        <p style="margin: 10px 0 0;">The calculator measures flat, two-dimensional area. It does not measure walls that slope, curved edges that are not circles, or volume. For rounded or free-form shapes, approximate with several simple shapes. The result is a planning estimate. For a legal or appraisal square footage, a professional measurement governs.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Square Footage Calculator</h2>
+                    <ol>
+                        <li>Choose feet and inches, or meters and centimeters.</li>
+                        <li>Pick the shape of your first area. For a normal room, leave it on Rectangle.</li>
+                        <li>Type the measurements. Leave the inches or centimeters box empty if it is zero.</li>
+                        <li>Give the area a name if you like, such as Living room, and set a quantity if you have several identical areas.</li>
+                        <li>Use Add Another Area for each extra room or section, up to 12.</li>
+                        <li>Set an area to Subtracted if it should be taken out, such as a closet, a stair opening, or a cutout.</li>
+                        <li>Optionally add a waste percentage, the coverage of one box, and a price per unit of area.</li>
+                        <li>Read the total, the unit cards, the breakdown table, and the step-by-step math. Use the Convert Area tab to change any known area between units.</li>
+                        <li>Use Copy Result, Share Result, or Download PDF to keep the numbers, and Reset All to start again.</li>
+                    </ol>
+                    <p>If a required field is blank, an area is incomplete, or a quantity is not a whole number, the calculator tells you which area needs attention and leaves it out until you fix it. If the three sides of a triangle cannot form a triangle, it says so instead of showing a number.</p>
+
+                    <h2 id="formulas">3. Square Footage Formulas</h2>
+                    <p>All formulas below use feet, so the answer comes out in square feet. Convert every measurement to feet before you multiply.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Shape</th><th>Formula</th><th>What you measure</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rectangle or square</td><td>length &times; width</td><td>Two adjacent sides</td></tr>
+                            <tr><td>Triangle (base and height)</td><td>&frac12; &times; base &times; height</td><td>One side and the straight-line height to it</td></tr>
+                            <tr><td>Triangle (three sides)</td><td>&radic;[s(s &minus; a)(s &minus; b)(s &minus; c)], where s = (a + b + c) / 2</td><td>All three sides</td></tr>
+                            <tr><td>Circle</td><td>&pi; &times; (diameter / 2)&sup2;</td><td>Diameter across the middle</td></tr>
+                            <tr><td>Trapezoid</td><td>&frac12; &times; (base 1 + base 2) &times; height</td><td>The two parallel sides and the height between them</td></tr>
+                            <tr><td>Ring or border</td><td>outer area &minus; inner area</td><td>Add the outer shape, subtract the inner one</td></tr>
+                        </tbody>
+                    </table>
+                    <p>The three-side triangle formula is known as Heron's formula. A triangle with sides 13, 14, and 15 ft has s = 21, so the area is &radic;(21 &times; 8 &times; 7 &times; 6) = &radic;7,056 = 84 sq ft. If the two shorter sides do not add up to more than the longest side, no triangle exists.</p>
+
+                    <h2 id="measure-room">4. How to Measure the Square Footage of a Room</h2>
+                    <ol>
+                        <li><strong>Clear the edges.</strong> Move furniture away from the walls so the tape can reach the wall surface.</li>
+                        <li><strong>Measure wall to wall.</strong> Measure the length and the width across the floor from one wall surface to the opposite one.</li>
+                        <li><strong>Measure at more than one point.</strong> Older rooms are rarely perfectly square. If two measurements of the same wall differ, use the larger value for ordering material and the average for a size estimate.</li>
+                        <li><strong>Write down feet and inches exactly.</strong> A reading of 14 ft 6 in goes in as 14 and 6, not 14.6.</li>
+                        <li><strong>Note every jog.</strong> Alcoves, bay windows, closets, and chimney breasts each become their own small area, added or subtracted.</li>
+                    </ol>
+                    <p>For paint, drywall, or wallpaper, the surface you want is the wall, so measure its height from floor to ceiling and its length, then subtract openings. See the section on walls below.</p>
+
+                    <h2 id="decimal-feet">5. Feet and Inches to Decimal Feet</h2>
+                    <p>This is where many hand calculations go wrong. An inch is one twelfth of a foot, so 6 inches is 0.5 ft, not 0.6 ft. To convert, divide the inches by 12 and add them to the feet. The calculator does this for you when you use the two boxes, but the table is handy for checking by hand.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Inches</th><th>Decimal feet</th><th>Inches</th><th>Decimal feet</th></tr></thead>
+                        <tbody>
+                            <tr><td>1 in</td><td>0.083</td><td>7 in</td><td>0.583</td></tr>
+                            <tr><td>2 in</td><td>0.167</td><td>8 in</td><td>0.667</td></tr>
+                            <tr><td>3 in</td><td>0.250</td><td>9 in</td><td>0.750</td></tr>
+                            <tr><td>4 in</td><td>0.333</td><td>10 in</td><td>0.833</td></tr>
+                            <tr><td>5 in</td><td>0.417</td><td>11 in</td><td>0.917</td></tr>
+                            <tr><td>6 in</td><td>0.500</td><td>12 in</td><td>1.000</td></tr>
+                        </tbody>
+                    </table>
+                    <p>For example, 14 ft 6 in is 14.5 ft and 11 ft 3 in is 11.25 ft. Treating 14 ft 6 in as 14.6 ft would overstate this room by about 1.1 square feet. Across a whole floor, mistakes like this add up.</p>
+
+                    <h2 id="l-shaped">6. L-Shaped and Irregular Rooms</h2>
+                    <p>Most rooms that are not rectangles can be handled with rectangles. There are two reliable ways, and they give the same answer.</p>
+                    <p><strong>Method 1: split and add.</strong> Draw a line that cuts the room into rectangles. Find each area and add them.</p>
+                    <p><strong>Method 2: enclose and subtract.</strong> Measure the smallest rectangle that would contain the whole room, then subtract the corner that is missing.</p>
+                    <p>Take an L-shaped room that fits inside an 18 ft by 14 ft rectangle, with a 6 ft by 5 ft corner missing. Splitting it gives a bottom section of 18 &times; 9 = 162 sq ft and a top section of 12 &times; 5 = 60 sq ft, which adds up to 222 sq ft. Enclosing it gives 18 &times; 14 = 252 sq ft, minus 6 &times; 5 = 30 sq ft, which is also 222 sq ft. In the calculator, either enter two Added rectangles, or one Added rectangle and one Subtracted rectangle. Running both methods is a good check.</p>
+
+                    <h2 id="walls">7. Walls, Doors, and Windows</h2>
+                    <p>To find the area of a wall, multiply its length by its height, then subtract each opening you will not cover. Take a wall 16 ft long and 8 ft high, with a door 3 ft by 7 ft and a window 4 ft by 3 ft. The wall is 16 &times; 8 = 128 sq ft. The door is 21 sq ft and the window is 12 sq ft, which is 33 sq ft in total. The area to paint is 128 &minus; 33 = 95 sq ft.</p>
+                    <p>In the calculator, add the wall as an Added rectangle, then add the door and the window as Subtracted rectangles. If a wall has four identical windows, add one window and set its quantity to 4. Whether to subtract small openings is a judgment call. If you want a little extra margin for trim and touch-ups, you can leave very small openings in and subtract only the large ones.</p>
+
+                    <h2 id="examples">8. Worked Examples</h2>
+                    <h3>A bedroom in feet and inches, with waste, boxes, and cost</h3>
+                    <p>A bedroom is 14 ft 6 in long and 11 ft 3 in wide. You will lay plank flooring that comes in boxes covering 20 sq ft each, costs $3.50 per square foot, and needs 10% waste.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead>
+                        <tbody>
+                            <tr><td>Length in feet</td><td>14 + 6/12</td><td>14.5 ft</td></tr>
+                            <tr><td>Width in feet</td><td>11 + 3/12</td><td>11.25 ft</td></tr>
+                            <tr><td>Floor area</td><td>14.5 &times; 11.25</td><td>163.13 sq ft</td></tr>
+                            <tr><td>Area to order</td><td>163.125 &times; 1.10</td><td>179.44 sq ft</td></tr>
+                            <tr><td>Boxes</td><td>179.44 / 20 = 8.97, rounded up</td><td>9 boxes</td></tr>
+                            <tr><td>Cost on the area to order</td><td>179.44 &times; $3.50</td><td>$628.03</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Boxes are rounded up, but the cost uses the area to order, so buying 9 whole boxes may cost slightly more in practice, because you pay for full boxes.</p>
+
+                    <h3>A room in meters</h3>
+                    <p>A room is 4.2 m by 3.6 m. The area is 4.2 &times; 3.6 = 15.12 sq m. To get square feet, multiply by 10.7639, which gives about 162.75 sq ft. In the calculator, switch to Metric, type 4 m 20 cm and 3 m 60 cm, and the same total appears in both systems.</p>
+
+                    <h3>A circular patio</h3>
+                    <p>A round patio has a diameter of 10 ft. The radius is 5 ft, so the area is &pi; &times; 5&sup2; = 78.54 sq ft. Choose Circle, type 10 ft in the Diameter box, and the calculator returns 78.54 sq ft.</p>
+
+                    <h2 id="house">9. Square Footage of a House</h2>
+                    <p>There are two different numbers people call a house's square footage, and they are not the same.</p>
+                    <p><strong>The sum of the rooms.</strong> For flooring, paint, or furniture planning, you add the interior floor area of each room. For a small single-floor home, that might look like this: living room 16 &times; 14 = 224 sq ft, kitchen 12 &times; 10 = 120, bedroom one 13 &times; 12 = 156, bedroom two 11 &times; 10 = 110, bathroom 8 &times; 6 = 48, and hallway 10 &times; 3.5 = 35. The total is 693 sq ft of room floor area. Add each room as its own named area to see the running total.</p>
+                    <p><strong>The official figure.</strong> For appraisals of single-family homes, the standard is ANSI Z765-2021, and Fannie Mae requires appraisers to follow it for most single-family appraisals. Its rules, as <a href="https://singlefamily.fanniemae.com/media/30266/display" target="_blank" rel="noopener">Fannie Mae's published guidance on the ANSI standard</a> explains, include these points:</p>
+                    <ul>
+                        <li>Finished areas must have a ceiling height of at least 7 ft. In a room with a sloping ceiling, at least half of the finished area must be 7 ft or higher, and no part under 5 ft counts.</li>
+                        <li>Staircases are included in the floor from which they descend.</li>
+                        <li>Any space that is partly or fully below grade is reported as below-grade area, not above-grade living area.</li>
+                        <li>Openings to the floor below, such as a two-story foyer, are not included.</li>
+                        <li>The sketch uses exterior dimensions measured to the nearest tenth of a foot, and the final figure is reported to the nearest whole square foot.</li>
+                    </ul>
+                    <p>Because the standard measures the outside of the house, the official number is usually larger than the sum of the rooms, which excludes wall thickness. Square footage from listings and tax records may have been measured in other ways, so numbers for the same house often disagree. The guidance applies to single-family homes, including townhouses. Apartments and condos in multifamily buildings are treated differently, with interior measurements. Local rules can vary.</p>
+                    <p>To estimate the figure for your own house, enter the outside dimensions of each floor as areas and subtract anything that does not count, such as an unfinished section. This gives a planning number only. For a sale, an appraisal, or a legal document, use a professional measurement.</p>
+
+                    <h2 id="waste">10. Waste, Boxes, and Cost</h2>
+                    <p>Area is exact, but material is not. Cuts, mistakes, and damaged pieces mean you need more than the floor area. The waste field adds a percentage to the net area and shows the result as the area to order. Leave it at 0 when you only want the size of the space.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Situation</th><th>Typical planning waste</th></tr></thead>
+                        <tbody>
+                            <tr><td>Simple rectangle, straight layout</td><td>5 to 10%</td></tr>
+                            <tr><td>Diagonal, tile, or rooms with many cuts and corners</td><td>10 to 15%</td></tr>
+                            <tr><td>Patterned or directional material that must line up</td><td>15% or more</td></tr>
+                        </tbody>
+                    </table>
+                    <p>These are planning figures, not rules. Always follow the product's instructions and your installer's advice. To get a box count, enter the coverage printed on one box. The calculator divides the area to order by that coverage and rounds up. Enter a price per square foot, or per square meter in metric mode, to see an estimated cost on the area to order.</p>
+
+                    <h2 id="conversions">11. Converting Area Units</h2>
+                    <p>The Convert Area tab changes an area between square inches, square centimeters, square feet, square yards, square meters, and acres. These are the factors it uses.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Unit</th><th>Equals</th></tr></thead>
+                        <tbody>
+                            <tr><td>1 square foot</td><td>144 square inches</td></tr>
+                            <tr><td>1 square yard</td><td>9 square feet</td></tr>
+                            <tr><td>1 square meter</td><td>10.7639 square feet</td></tr>
+                            <tr><td>1 square foot</td><td>929.03 square centimeters</td></tr>
+                            <tr><td>1 acre</td><td>43,560 square feet</td></tr>
+                        </tbody>
+                    </table>
+                    <p>To change square inches to square feet, divide by 144. For example, 2,500 sq in is 2,500 / 144 = 17.36 sq ft. To change square meters to square feet, multiply by 10.7639, so 50 sq m is about 538.2 sq ft. To change acres to square feet, multiply by 43,560, so 2 acres is 87,120 sq ft. To go the other way from square feet to acres, divide by 43,560.</p>
+
+                    <h2 id="mistakes">12. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Writing 14 ft 6 in as 14.6.</strong> Use 14.5, or use the two boxes in the calculator.</li>
+                        <li><strong>Mixing units.</strong> Multiplying feet by inches gives a meaningless number. Convert first.</li>
+                        <li><strong>Confusing square feet with feet or cubic feet.</strong> Square feet measure flat area. Feet measure length, and cubic feet measure volume.</li>
+                        <li><strong>Forgetting to subtract openings</strong> when you are buying paint or wall material.</li>
+                        <li><strong>Using the diameter as the radius</strong> in the circle formula.</li>
+                        <li><strong>Treating the sum of the rooms as the official house size.</strong> The two figures are measured differently.</li>
+                        <li><strong>Ordering the exact area.</strong> Add waste when you are buying material.</li>
+                    </ul>
+
+                    <h2 id="related">13. Related Calculations and Use Cases</h2>
+                    <p>Area is the starting point for most material estimates. Once you know the square footage, flooring, tile, and paint estimates are a matter of coverage and waste. For loose materials such as gravel, you multiply the area by a depth to get volume, which our <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a> does for you.</p>
+
+                    <h2 id="faq">14. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="sqfaq1-answer">How do I calculate square footage?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq1-answer"><p>Measure the length and width of the space in feet, then multiply them. A room 12 feet long and 14 feet wide is 12 x 14 = 168 square feet. If your measurements are in feet and inches, convert the inches to a decimal of a foot first (divide by 12). For triangles, circles, and irregular spaces, use the matching area formula, or split the space into simple shapes and add the areas.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq2-answer">How many square feet is a 12 by 14 room?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq2-answer"><p>A 12 ft by 14 ft room is 168 square feet. That is 12 x 14 = 168. In metric, 168 square feet is about 15.6 square meters.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq3-answer">How do I calculate the square footage of an L-shaped or irregular room?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq3-answer"><p>Use one of two methods. Either split the room into rectangles, find each area, and add them, or measure the smallest rectangle that encloses the whole room and subtract the missing corner. Both give the same answer. In the calculator, add each rectangle as its own area, or add the big rectangle and set the missing corner to Subtracted.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq4-answer">How do I convert square inches to square feet?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq4-answer"><p>Divide the number of square inches by 144, because one square foot is 12 inches by 12 inches, which is 144 square inches. For example, 2,500 square inches is 2,500 / 144 = 17.36 square feet. The Convert Area tab in the calculator does this for square inches, square centimeters, square yards, square meters, and acres.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq5-answer">How many square feet are in an acre?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq5-answer"><p>One acre is 43,560 square feet. To convert square feet to acres, divide by 43,560. For example, a lot of 21,780 square feet is 0.5 acre, and 2 acres is 87,120 square feet.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq6-answer">Does the square footage of a house include the garage, closets, or basement?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq6-answer"><p>For a home's official figure, a garage is not counted as living area, and closets, hallways, and stairs inside the finished living space are. Under the ANSI Z765-2021 method used by appraisers, only finished above-grade space with enough ceiling height counts, and finished below-grade space is reported separately. Listing and tax records may use different methods, so the numbers can differ.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="sqfaq7-answer">How do I turn feet and inches into decimal feet?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="sqfaq7-answer"><p>Divide the inches by 12 and add the result to the feet. For example, 14 ft 6 in is 14 + 6/12 = 14.5 ft, and 11 ft 3 in is 11 + 3/12 = 11.25 ft. A common mistake is writing 14 ft 6 in as 14.6, which is wrong because an inch is one twelfth of a foot, not one tenth.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>This square footage calculator turns a few measurements into a reliable area, whether you are sizing a single room, planning floor material, or adding up a whole floor plan. Enter feet and inches the way you read them from the tape, split irregular spaces into simple shapes, subtract what you will not cover, and add waste only when you buy material. Remember that a home's official square footage follows its own standard, so use the right number for the right purpose and confirm important measurements before you order or sign anything.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Confirm measurements and material quantities before ordering. A professional measurement governs for appraisals, listings, and legal use.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📐</span> Try the Square Footage Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📐 Square Footage Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/brick-calculator">🧱 Brick Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/asphalt-calculator">🛣️ Asphalt Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/sand-calculator">⏳ Sand Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">🌱 Dirt Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stone-calculator">🪨 Stone Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+        // Same as safeNumber, but also reports whether the raw value had to be capped,
+        // so the page can tell the person instead of silently using a different number.
+        function trackedNumber(raw, opts) {
+            const n = parseFloat(raw);
+            const value = safeNumber(raw, opts);
+            const wasClamped = isFinite(n) && (n < (opts.min ?? 0) || n > (opts.max ?? Infinity));
+            return { value, wasClamped };
+        }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+
+        // ==PURE-START==
+        function ceilEps(x) { return Math.ceil(x - 1e-9); }
+        function fmtN(n, d) { return parseFloat(n.toFixed(d === undefined ? 2 : d)).toString(); }
+        function fmtComma(n, d) {
+            const v = parseFloat(n.toFixed(d === undefined ? 2 : d));
+            return v.toLocaleString('en-US', { maximumFractionDigits: d === undefined ? 2 : d });
+        }
+
+        const FT_M = 0.3048, SQFT_SQM = 0.09290304;
+        const MAX_FT = 100000;
+        // How many of each unit make one square foot
+        const UNIT_PER_SQFT = { sqin: 144, sqcm: 929.0304, sqft: 1, sqyd: 1 / 9, sqm: SQFT_SQM, acre: 1 / 43560 };
+        const UNIT_NAME = { sqin: 'sq in', sqcm: 'sq cm', sqft: 'sq ft', sqyd: 'sq yd', sqm: 'sq m', acre: 'acres' };
+        const UNIT_LONG = { sqin: 'Square inches', sqcm: 'Square centimeters', sqft: 'Square feet', sqyd: 'Square yards', sqm: 'Square meters', acre: 'Acres' };
+        const UNIT_HOW = {
+            sqin: 'divide by 144', sqcm: 'divide by 929.0304', sqft: 'no conversion needed',
+            sqyd: 'multiply by 9', sqm: 'multiply by 10.7639', acre: 'multiply by 43,560'
+        };
+
+        // Dimension slots used by each shape (all lengths in feet)
+        const SHAPES = {
+            rect: { n: 2, name: 'Rectangle or square', labels: ['Length', 'Width'] },
+            tri: { n: 2, name: 'Triangle (base and height)', labels: ['Base', 'Height'] },
+            tri3: { n: 3, name: 'Triangle (three sides)', labels: ['Side a', 'Side b', 'Side c'] },
+            circle: { n: 1, name: 'Circle', labels: ['Diameter'] },
+            trap: { n: 3, name: 'Trapezoid', labels: ['Base 1 (parallel side)', 'Base 2 (parallel side)', 'Height (between the bases)'] }
+        };
+
+        // d: array of lengths in feet, all above zero. Returns area in sq ft, or null if the shape is impossible.
+        function shapeArea(shape, d) {
+            if (shape === 'rect') return d[0] * d[1];
+            if (shape === 'tri') return d[0] * d[1] / 2;
+            if (shape === 'circle') return Math.PI * (d[0] / 2) * (d[0] / 2);
+            if (shape === 'trap') return (d[0] + d[1]) / 2 * d[2];
+            if (shape === 'tri3') {
+                const a = d[0], b = d[1], c = d[2];
+                if (!(a + b > c) || !(a + c > b) || !(b + c > a)) return null;
+                const s = (a + b + c) / 2;
+                const v = s * (s - a) * (s - b) * (s - c);
+                return v > 0 ? Math.sqrt(v) : null;
+            }
+            return null;
+        }
+
+        // items: [{ label, shape, sign: 1 or -1, qty (NaN when blank or invalid), dims: [ft or NaN, ...] }]
+        function computeAreas(items) {
+            return items.map(it => {
+                const n = SHAPES[it.shape].n;
+                const dims = it.dims.slice(0, n);
+                const blanks = dims.filter(v => !isFinite(v)).length;
+                if (blanks === n) return { status: 'blank', label: it.label, issue: '' };
+                if (blanks > 0) return { status: 'bad', label: it.label, issue: it.label + ' needs every measurement filled in, so it is not counted yet.' };
+                if (dims.some(v => !(v > 0))) return { status: 'bad', label: it.label, issue: it.label + ' needs every measurement above zero, so it is not counted yet.' };
+                if (!(it.qty >= 1) || !Number.isInteger(it.qty)) return { status: 'bad', label: it.label, issue: it.label + ' needs a whole-number quantity of 1 or more, so it is not counted yet.' };
+                const each = shapeArea(it.shape, dims);
+                if (each === null) return { status: 'bad', label: it.label, issue: it.label + ': these three sides cannot form a triangle (the two shorter sides must add up to more than the longest side), so it is not counted.' };
+                return { status: 'ok', label: it.label, shape: it.shape, dims: dims, sign: it.sign, qty: it.qty, each: each, signed: it.sign * each * it.qty };
+            });
+        }
+
+        function sumAreas(results) {
+            let add = 0, sub = 0, anyOk = false;
+            results.forEach(r => {
+                if (r.status !== 'ok') return;
+                anyOk = true;
+                if (r.sign > 0) add += r.each * r.qty; else sub += r.each * r.qty;
+            });
+            const net = add - sub;
+            return { add: add, sub: sub, net: net, anyOk: anyOk, valid: anyOk && net > 1e-9 };
+        }
+
+        function convertArea(value, unit) {
+            const sqft = value / UNIT_PER_SQFT[unit];
+            const all = {};
+            Object.keys(UNIT_PER_SQFT).forEach(u => { all[u] = sqft * UNIT_PER_SQFT[u]; });
+            return { sqft: sqft, all: all };
+        }
+        // ==PURE-END==
+
+        const MAX_AREAS = 12;
+        let units = 'imperial';
+        let areaUid = 0;
+        const isMetric = () => units === 'metric';
+
+        // ===== Length and money-per-area values are stored in feet / per sq ft, shown in the chosen system =====
+        function toCanonQ(q, v) {
+            if (!isMetric()) return v;
+            if (q === 'area') return v / SQFT_SQM;
+            if (q === 'price') return v * SQFT_SQM;
+            return v;
+        }
+        function fromCanonQ(q, c) {
+            if (q === 'area') return isMetric() ? fmtN(c * SQFT_SQM, 3) : fmtN(c, 3);
+            if (q === 'price') return isMetric() ? fmtN(c / SQFT_SQM, 2) : fmtN(c, 4);
+            return fmtN(c, 3);
+        }
+        function setQ(el, canon) {
+            if (canon === '' || canon === null || canon === undefined) { el.value = ''; el.dataset.canon = ''; return; }
+            el.dataset.canon = String(canon);
+            el.value = fromCanonQ(el.dataset.q, canon);
+        }
+        function syncQ(el) {
+            const n = parseFloat(el.value);
+            el.dataset.canon = isFinite(n) ? String(toCanonQ(el.dataset.q, n)) : '';
+        }
+        function readQ(el) {
+            const raw = el.dataset.canon;
+            return raw === '' || raw === undefined ? NaN : parseFloat(raw);
+        }
+
+        // ===== A length is two boxes: feet + inches, or meters + centimeters =====
+        function dimHtml(id, slot) {
+            return '<div class="input-group dim-group" data-slot="' + slot + '" data-canon="">' +
+                '<label for="' + id + '-a" class="dim-label"></label>' +
+                '<div class="row dim-row">' +
+                    '<input type="number" inputmode="decimal" id="' + id + '-a" class="dim-major" min="0" step="any">' +
+                    '<span class="unit" data-ul="major"></span>' +
+                    '<input type="number" inputmode="decimal" id="' + id + '-b" class="dim-minor" min="0" step="any" aria-label="Additional ' + (isMetric() ? 'centimeters' : 'inches') + '">' +
+                    '<span class="unit" data-ul="minor"></span>' +
+                '</div></div>';
+        }
+        function syncDim(group) {
+            const a = parseFloat(group.querySelector('.dim-major').value);
+            const b = parseFloat(group.querySelector('.dim-minor').value);
+            if (!isFinite(a) && !isFinite(b)) { group.dataset.canon = ''; return; }
+            const major = isFinite(a) ? a : 0, minor = isFinite(b) ? b : 0;
+            const ft = isMetric() ? (major + minor / 100) / FT_M : major + minor / 12;
+            group.dataset.canon = String(ft);
+        }
+        function readDim(group) {
+            const c = group.dataset.canon;
+            return c === '' || c === undefined ? NaN : parseFloat(c);
+        }
+        function setDim(group, canon) {
+            const A = group.querySelector('.dim-major'), B = group.querySelector('.dim-minor');
+            if (canon === '' || canon === undefined || canon === null || !isFinite(canon)) { A.value = ''; B.value = ''; group.dataset.canon = ''; return; }
+            group.dataset.canon = String(canon);
+            let major, minor;
+            if (isMetric()) {
+                const m = canon * FT_M;
+                major = Math.floor(m + 1e-9);
+                minor = Math.round((m - major) * 100 * 10) / 10;
+                if (minor >= 100) { major += 1; minor = 0; }
+            } else {
+                major = Math.floor(canon + 1e-9);
+                minor = Math.round((canon - major) * 12 * 100) / 100;
+                if (minor >= 12) { major += 1; minor = 0; }
+            }
+            A.value = String(major);
+            B.value = String(minor);
+        }
+        function dimOut(ft) {
+            if (isMetric()) return fmtN(ft * FT_M, 3) + ' m';
+            let f = Math.floor(ft + 1e-9), i = Math.round((ft - f) * 12 * 10) / 10;
+            if (i >= 12) { f += 1; i = 0; }
+            return f + ' ft' + (i > 0 ? ' ' + fmtN(i, 1) + ' in' : '');
+        }
+        const lenNum = ft => isMetric() ? fmtN(ft * FT_M, 3) : fmtN(ft, 3);
+        const lenUnit = () => isMetric() ? 'm' : 'ft';
+
+        const UNIT_TEXT = {
+            imperial: { major: 'ft', minor: 'in', areaU: 'sq ft', priceU: 'per sq ft' },
+            metric: { major: 'm', minor: 'cm', areaU: 'sq m', priceU: 'per sq m' }
+        };
+        function refreshUnitLabels() {
+            const u = UNIT_TEXT[units];
+            document.querySelectorAll('[data-ul]').forEach(el => { el.textContent = u[el.dataset.ul]; });
+            document.querySelectorAll('.dim-minor').forEach(el => el.setAttribute('aria-label', isMetric() ? 'Additional centimeters' : 'Additional inches'));
+        }
+        function applyUnits(u) {
+            units = u;
+            setToggle('unitToggle', 'unit', u);
+            document.querySelectorAll('.dim-group').forEach(g => {
+                const c = g.dataset.canon;
+                setDim(g, c === '' || c === undefined ? '' : parseFloat(c));
+            });
+            document.querySelectorAll('input[data-q]').forEach(el => {
+                const c = el.dataset.canon;
+                if (c !== '' && c !== undefined) setQ(el, parseFloat(c));
+            });
+            refreshUnitLabels();
+            calculateAll();
+        }
+
+        // ===== Toggles =====
+        function setToggle(containerId, attr, value) {
+            $(containerId).querySelectorAll('.toggle-option').forEach(b => {
+                const on = b.dataset[attr] === String(value);
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+        }
+        $('unitToggle').querySelectorAll('.toggle-option').forEach(btn => {
+            btn.addEventListener('click', () => { if (btn.dataset.unit !== units) applyUnits(btn.dataset.unit); });
+        });
+
+        // ===== Area cards =====
+        function applyShape(card) {
+            const shape = card.querySelector('.area-shape').value;
+            const def = SHAPES[shape];
+            card.querySelectorAll('.dim-group').forEach((g, i) => {
+                const show = i < def.n;
+                g.style.display = show ? '' : 'none';
+                if (show) g.querySelector('.dim-label').textContent = def.labels[i];
+            });
+        }
+        function setSign(card, sign) {
+            card.dataset.sign = sign;
+            card.querySelectorAll('.sign-btn').forEach(b => {
+                const on = b.dataset.sign === sign;
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+            card.classList.toggle('is-subtract', sign === 'sub');
+        }
+        function makeAreaCard(index, d) {
+            const uid = 'ar' + (areaUid++);
+            const card = document.createElement('div');
+            card.className = 'wall-card area-card';
+            const opts = Object.keys(SHAPES).map(k => '<option value="' + k + '">' + SHAPES[k].name + '</option>').join('');
+            card.innerHTML =
+                '<div class="wall-card-header"><span class="wall-card-label">Area ' + (index + 1) + '</span>' +
+                    (index > 0 ? '<button type="button" class="remove-wall-btn remove-area-btn"><i class="fas fa-times"></i> Remove</button>' : '') + '</div>' +
+                '<div class="area-meta">' +
+                    '<div class="input-group"><label for="' + uid + '-n">Name (optional)</label><div class="row"><input type="text" id="' + uid + '-n" class="area-name" maxlength="30" placeholder="e.g. Living room"></div></div>' +
+                    '<div class="input-group"><label for="' + uid + '-s">Shape</label><div class="row"><select id="' + uid + '-s" class="area-shape">' + opts + '</select></div></div>' +
+                    '<div class="input-group"><label for="' + uid + '-q">Quantity</label><div class="row"><input type="number" inputmode="numeric" id="' + uid + '-q" class="area-qty" min="1" max="500" step="1" value="1"><span class="unit">pcs</span></div></div>' +
+                '</div>' +
+                '<div class="sign-row"><span class="toggle-label">This area is</span>' +
+                    '<div class="toggle-switch" role="radiogroup" aria-label="Add or subtract this area">' +
+                        '<button type="button" class="toggle-option sign-btn active" data-sign="add" role="radio" aria-checked="true">Added</button>' +
+                        '<button type="button" class="toggle-option sign-btn" data-sign="sub" role="radio" aria-checked="false">Subtracted</button>' +
+                    '</div></div>' +
+                '<div class="input-grid dims-grid">' + dimHtml(uid, 1) + dimHtml(uid + 'x', 2) + dimHtml(uid + 'y', 3) + '</div>';
+            card.querySelector('.area-name').value = d.name || '';
+            card.querySelector('.area-shape').value = d.shape || 'rect';
+            card.querySelector('.area-qty').value = d.qty != null ? d.qty : 1;
+            setSign(card, d.sign || 'add');
+            const groups = card.querySelectorAll('.dim-group');
+            [d.d1, d.d2, d.d3].forEach((v, i) => { if (v !== undefined && v !== null && v !== '') setDim(groups[i], v); });
+            applyShape(card);
+            return card;
+        }
+        function renumberAreas() {
+            const cards = $('areasContainer').querySelectorAll('.area-card');
+            cards.forEach((c, i) => { c.querySelector('.wall-card-label').textContent = 'Area ' + (i + 1); });
+            $('addAreaBtn').disabled = cards.length >= MAX_AREAS;
+        }
+        function addArea(d) {
+            const count = $('areasContainer').querySelectorAll('.area-card').length;
+            if (count >= MAX_AREAS) return;
+            $('areasContainer').appendChild(makeAreaCard(count, d || {}));
+            renumberAreas();
+            refreshUnitLabels();
+            calculateAll();
+        }
+        $('addAreaBtn').addEventListener('click', () => addArea({}));
+        $('areasContainer').addEventListener('input', e => {
+            const g = e.target.closest('.dim-group');
+            if (g) syncDim(g);
+            calculateAll();
+        });
+        $('areasContainer').addEventListener('change', e => {
+            if (e.target.classList.contains('area-shape')) { applyShape(e.target.closest('.area-card')); calculateAll(); }
+        });
+        $('areasContainer').addEventListener('click', e => {
+            const btn = e.target.closest('button');
+            if (!btn) return;
+            const card = btn.closest('.area-card');
+            if (!card) return;
+            if (btn.classList.contains('sign-btn')) { setSign(card, btn.dataset.sign); calculateAll(); }
+            else if (btn.classList.contains('remove-area-btn')) { card.remove(); renumberAreas(); calculateAll(); }
+        });
+        ['wastePct', 'currency', 'price'].forEach(id => $(id).addEventListener('input', () => { if ($(id).dataset.q) syncQ($(id)); calculateAll(); }));
+        $('coverage').addEventListener('input', () => { syncQ($('coverage')); calculateAll(); });
+
+        // ===== Formatting =====
+        const areaVal = sqft => isMetric() ? sqft * SQFT_SQM : sqft;
+        const areaUnitName = () => isMetric() ? 'sq m' : 'sq ft';
+        const areaOut = sqft => fmtComma(areaVal(sqft), 2) + ' ' + areaUnitName();
+        function moneyPlain(n) {
+            return $('currency').value.trim().slice(0, 4) + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+        function unitValText(u, v) {
+            if (u === 'acre') return fmtComma(v, 5);
+            if (u === 'sqin' || u === 'sqcm') return fmtComma(v, 2);
+            return fmtComma(v, 3);
+        }
+        function addCard(parent, label, value) {
+            const c = document.createElement('div');
+            c.className = 'result-card';
+            c.innerHTML = '<div class="result-label">' + escapeHtml(label) + '</div><div class="result-value small">' + escapeHtml(value) + '</div>';
+            parent.appendChild(c);
+        }
+
+        // ===== Step text for one area =====
+        function stepFor(r) {
+            const d = r.dims, L = lenNum, U = lenUnit(), A = areaUnitName();
+            const ar = x => fmtN(areaVal(x), 3) + ' ' + A;
+            let f;
+            if (r.shape === 'rect') f = L(d[0]) + ' ' + U + ' x ' + L(d[1]) + ' ' + U + ' = ' + ar(r.each);
+            else if (r.shape === 'tri') f = '1/2 x ' + L(d[0]) + ' ' + U + ' x ' + L(d[1]) + ' ' + U + ' = ' + ar(r.each);
+            else if (r.shape === 'circle') f = 'pi x (' + L(d[0]) + ' ' + U + ' / 2)^2 = ' + ar(r.each);
+            else if (r.shape === 'trap') f = '(' + L(d[0]) + ' + ' + L(d[1]) + ') / 2 x ' + L(d[2]) + ' ' + U + ' = ' + ar(r.each);
+            else {
+                const s = (d[0] + d[1] + d[2]) / 2;
+                f = 'Heron: s = ' + L(s) + ' ' + U + ', area = sqrt(s(s-a)(s-b)(s-c)) = ' + ar(r.each);
+            }
+            return f + (r.qty > 1 ? ', x ' + r.qty + ' = ' + ar(r.each * r.qty) : '');
+        }
+
+        // ===== Main calculation =====
+        let lastResult = null;
+        function calculateAll() {
+            const issues = [];
+            const clamped = [];
+            const track = (raw, opts, name) => { const t = trackedNumber(raw, opts); if (t.wasClamped) clamped.push(name || 'a value'); return t.value; };
+
+            // Build items from the cards
+            const items = [];
+            $('areasContainer').querySelectorAll('.area-card').forEach((card, i) => {
+                const shape = card.querySelector('.area-shape').value;
+                const typed = card.querySelector('.area-name').value.trim();
+                const label = typed ? typed : 'Area ' + (i + 1);
+                const dims = [];
+                const def = SHAPES[shape];
+                card.querySelectorAll('.dim-group').forEach((g, di) => {
+                    if (di >= def.n) { dims.push(NaN); return; }
+                    const v = readDim(g);
+                    dims.push(isFinite(v) ? (v > 0 ? track(v, { min: 0, max: MAX_FT, fallback: v }, label + ' ' + def.labels[di].toLowerCase()) : v) : NaN);
+                });
+                const qraw = parseFloat(card.querySelector('.area-qty').value);
+                const qty = (!isFinite(qraw) || qraw < 1 || !Number.isInteger(qraw)) ? NaN : track(qraw, { min: 1, max: 500, fallback: 1 }, label + ' quantity');
+                items.push({ label: label, shape: shape, sign: card.dataset.sign === 'sub' ? -1 : 1, qty: qty, dims: dims });
+            });
+            const results = computeAreas(items);
+            results.forEach(r => { if (r.status === 'bad') issues.push(r.issue); });
+            const sums = sumAreas(results);
+            if (sums.anyOk && !sums.valid) issues.push('The subtracted areas are as large as the added areas, so the total is zero or less. Check which areas are set to Subtracted.');
+            const net = sums.valid ? sums.net : 0;
+
+            // Waste, coverage, price
+            const wasteRaw = parseFloat($('wastePct').value);
+            let waste = 0;
+            if (!isFinite(wasteRaw)) issues.push('Enter a waste allowance. Use 0 for none.');
+            else waste = track(wasteRaw, { min: 0, max: 100, fallback: 0 }, 'waste allowance');
+            const order = net * (1 + waste / 100);
+            const covRaw = readQ($('coverage'));
+            let cov = NaN;
+            if (isFinite(covRaw)) {
+                if (covRaw > 0) cov = track(covRaw, { min: 0.01, max: 100000, fallback: covRaw }, 'coverage of one box');
+                else issues.push('Coverage per box must be above zero, or leave it blank.');
+            }
+            const priceRaw = readQ($('price'));
+            const price = isFinite(priceRaw) ? track(priceRaw, { min: 0, max: 1000000, fallback: 0 }, 'price') : 0;
+            const boxes = sums.valid && isFinite(cov) ? ceilEps(order / cov) : NaN;
+            const cost = sums.valid && price > 0 ? order * price : 0;
+
+            // Warnings
+            const warn = $('warningNote');
+            const msgs = issues.slice();
+            if (clamped.length) msgs.push('These values were outside the allowed range, so the nearest allowed value was used in the math: ' + clamped.join(', ') + '. Change the field to see a different result.');
+            if (msgs.length) { warn.innerHTML = msgs.map(escapeHtml).join('<br>'); warn.classList.add('show'); } else { warn.classList.remove('show'); warn.innerHTML = ''; }
+
+            $('wasteHint').textContent = waste === 0
+                ? 'At 0% the result is the exact area. Add a waste allowance only when you are buying material.'
+                : (waste <= 10 ? 'Five to ten percent is a common planning range for simple layouts. Check your product instructions.'
+                    : 'Higher allowances suit diagonal or patterned layouts, tile, and rooms with many cuts.');
+
+            // Headline and unit cards
+            const primary = isMetric() ? 'sqm' : 'sqft';
+            $('totalLabel').textContent = 'Total Area (' + areaUnitName() + ')';
+            $('totalResult').textContent = sums.valid ? fmtComma(areaVal(net), 2) : '0';
+            const uc = $('unitCards'); uc.innerHTML = '';
+            ['sqft', 'sqin', 'sqyd', 'sqm', 'acre'].forEach(u => {
+                if (u === primary) return;
+                addCard(uc, UNIT_LONG[u], sums.valid ? unitValText(u, net * UNIT_PER_SQFT[u]) : '-');
+            });
+            const ec = $('extraCards'); ec.innerHTML = '';
+            if (sums.valid && waste > 0) addCard(ec, 'Area to order (+' + fmtN(waste, 1) + '% waste)', areaOut(order));
+            if (sums.valid && isFinite(boxes)) addCard(ec, 'Boxes needed', fmtComma(boxes, 0));
+            if (sums.valid && price > 0) addCard(ec, 'Estimated cost', moneyPlain(cost));
+
+            // Breakdown
+            const tbody = $('breakdownBody'); tbody.innerHTML = '';
+            results.forEach(r => {
+                const tr = document.createElement('tr');
+                if (r.status === 'ok') {
+                    const signed = r.signed;
+                    tr.innerHTML = '<td>' + escapeHtml(r.label) + '</td><td>' + escapeHtml(SHAPES[r.shape].name) + '</td><td>' + areaOut(r.each) + '</td><td>' + r.qty + '</td><td>' + (signed < 0 ? '-' : '+') + areaOut(Math.abs(signed)) + '</td>';
+                    if (signed < 0) tr.className = 'sub-row';
+                } else {
+                    tr.innerHTML = '<td>' + escapeHtml(r.label) + '</td><td colspan="4">' + (r.status === 'blank' ? 'incomplete' : 'not counted') + '</td>';
+                }
+                tbody.appendChild(tr);
+            });
+            if (sums.anyOk) {
+                const t = document.createElement('tr'); t.className = 'total-row';
+                t.innerHTML = '<td>Total</td><td></td><td></td><td></td><td>' + (sums.valid ? areaOut(net) : '0') + '</td>';
+                tbody.appendChild(t);
+            }
+
+            // Step-by-step
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (sums.anyOk) {
+                results.forEach(r => {
+                    if (r.status !== 'ok') return;
+                    step += '<strong>' + escapeHtml(r.label) + ' (' + (r.sign < 0 ? 'subtracted' : 'added') + '):</strong> ' + escapeHtml(stepFor(r)) + '<br>';
+                });
+                step += '<br><strong>Net total:</strong> ' + areaOut(sums.add) + ' added' + (sums.sub > 0 ? ' &minus; ' + areaOut(sums.sub) + ' subtracted' : '') + ' = ' + (sums.valid ? areaOut(net) : '0');
+                if (sums.valid) {
+                    step += '<br><strong>In other units:</strong> ' + fmtComma(net * 144, 2) + ' sq in, ' + fmtComma(net, 3) + ' sq ft, ' + fmtComma(net / 9, 3) + ' sq yd, ' + fmtComma(net * SQFT_SQM, 3) + ' sq m, ' + fmtComma(net / 43560, 5) + ' acres';
+                    if (waste > 0) step += '<br><strong>With waste:</strong> ' + areaOut(net) + ' x ' + (1 + waste / 100).toFixed(2) + ' = ' + areaOut(order);
+                    if (isFinite(boxes)) step += '<br><strong>Boxes:</strong> ' + areaOut(order) + ' / ' + fmtN(areaVal(cov), 3) + ' ' + areaUnitName() + ' per box = ' + fmtN(order / cov, 2) + ', rounded up = ' + boxes;
+                    if (price > 0) step += '<br><strong>Cost:</strong> ' + areaOut(order) + ' x ' + moneyPlain(isMetric() ? price / SQFT_SQM : price) + ' ' + UNIT_TEXT[units].priceU + ' = ' + moneyPlain(cost);
+                }
+            } else {
+                step += 'Enter a complete area above to see the math.';
+            }
+            $('stepBlock').innerHTML = step;
+
+            lastResult = { results: results, sums: sums, net: net, waste: waste, order: order, cov: cov, boxes: boxes, price: price, cost: cost };
+            return lastResult;
+        }
+
+        // ===== Convert tab =====
+        function renderConvert() {
+            const raw = parseFloat($('convValue').value);
+            const unit = $('convUnit').value;
+            const body = $('convBody'); body.innerHTML = '';
+            if (!isFinite(raw) || raw < 0) {
+                $('convNote').textContent = 'Enter an area of 0 or more to convert.';
+                $('convNote').className = 'status-note status-caution show';
+                return;
+            }
+            if (raw > 1e12) {
+                $('convNote').textContent = 'Enter an area of 1,000,000,000,000 or less.';
+                $('convNote').className = 'status-note status-caution show';
+                return;
+            }
+            const v = raw;
+            const c = convertArea(v, unit);
+            Object.keys(UNIT_PER_SQFT).forEach(u => {
+                const tr = document.createElement('tr');
+                if (u === unit) tr.className = 'total-row';
+                tr.innerHTML = '<td>' + UNIT_LONG[u] + '</td><td>' + unitValText(u, c.all[u]) + '</td>';
+                body.appendChild(tr);
+            });
+            $('convNote').className = 'status-note status-neutral show';
+            $('convNote').textContent = unit === 'sqft'
+                ? fmtComma(v, 3) + ' sq ft is already in square feet. The table shows the same area in the other units.'
+                : fmtComma(v, 3) + ' ' + UNIT_NAME[unit] + ' = ' + fmtComma(c.sqft, 4) + ' sq ft (to get square feet, ' + UNIT_HOW[unit] + ').';
+        }
+        $('convValue').addEventListener('input', renderConvert);
+        $('convUnit').addEventListener('change', renderConvert);
+
+        // ===== Copy / Share =====
+        function buildSummary() {
+            const r = calculateAll();
+            const src = 'Source: CalcSnaps Square Footage Calculator (https://calcsnaps.com/construction-calculators/square-footage-calculator)';
+            if (!r.sums.valid) return 'Square Footage Calculator: enter a complete area to see results.\n' + src;
+            let text = 'Square Footage Calculator Result\nTotal area: ' + areaOut(r.net) + '\n';
+            text += fmtComma(r.net * 144, 2) + ' sq in | ' + fmtComma(r.net, 3) + ' sq ft | ' + fmtComma(r.net / 9, 3) + ' sq yd | ' + fmtComma(r.net * SQFT_SQM, 3) + ' sq m | ' + fmtComma(r.net / 43560, 5) + ' acres\n';
+            r.results.forEach(x => { if (x.status === 'ok') text += (x.sign < 0 ? '- ' : '+ ') + x.label + ': ' + areaOut(x.each) + (x.qty > 1 ? ' x ' + x.qty : '') + '\n'; });
+            if (r.waste > 0) text += 'Area to order with ' + fmtN(r.waste, 1) + '% waste: ' + areaOut(r.order) + '\n';
+            if (isFinite(r.boxes)) text += 'Boxes needed: ' + r.boxes + '\n';
+            if (r.price > 0) text += 'Estimated cost: ' + moneyPlain(r.cost) + '\n';
+            return text + src;
+        }
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Square Footage Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/square-footage-calculator' }).catch(() => {});
+            } else {
+                const btn = this; const original = btn.innerHTML;
+                navigator.clipboard.writeText(text).then(() => { btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!'; })
+                    .catch(() => { btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy'; });
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF export (jsPDF loads only when needed) =====
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+        function downloadPDF() {
+            const r = calculateAll();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+            const ensure = h => { if (y + h > 280) { doc.addPage(); y = 20; } };
+            const write = (str, x, size, color) => {
+                doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
+                doc.splitTextToSize(str, 190 - x).forEach(line => { ensure(6); doc.text(line, x, y); y += 5.5; });
+            };
+            const purple = [139, 92, 246], black = [0, 0, 0], gray = [100, 100, 100];
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Square Footage Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + new Date().toLocaleString(), 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 10;
+            write('Areas', 20, 14, purple); y += 2;
+            r.results.forEach(x => {
+                if (x.status !== 'ok') { write(x.label + ': incomplete, not included', 25, 10, gray); return; }
+                write((x.sign < 0 ? 'Subtract ' : 'Add ') + x.label + ' (' + SHAPES[x.shape].name + '): ' + areaOut(x.each) + (x.qty > 1 ? ' x ' + x.qty : ''), 25, 10, black);
+            });
+            y += 4;
+            write('Results', 20, 14, purple); y += 2;
+            if (r.sums.valid) {
+                write('Total area: ' + areaOut(r.net), 25, 11, black);
+                write(fmtComma(r.net * 144, 2) + ' sq in, ' + fmtComma(r.net, 3) + ' sq ft, ' + fmtComma(r.net / 9, 3) + ' sq yd, ' + fmtComma(r.net * SQFT_SQM, 3) + ' sq m, ' + fmtComma(r.net / 43560, 5) + ' acres', 25, 10, black);
+                if (r.waste > 0) write('Area to order with ' + fmtN(r.waste, 1) + '% waste: ' + areaOut(r.order), 25, 11, black);
+                if (isFinite(r.boxes)) write('Boxes needed: ' + r.boxes, 25, 11, black);
+                if (r.price > 0) write('Estimated cost: ' + moneyPlain(r.cost), 25, 11, black);
+            } else {
+                write('No complete areas were entered.', 25, 11, black);
+            }
+            y += 4;
+            write('Method: added areas minus subtracted areas, each shape from its standard formula. Planning estimate only.', 20, 9, gray);
+            const pages = doc.getNumberOfPages();
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            for (let p = 1; p <= pages; p++) {
+                doc.setPage(p);
+                doc.text('Confirm measurements and quantities before ordering materials.', 105, 285, { align: 'center' });
+                doc.text('Generated by CalcSnaps - Square Footage Calculator', 105, 291, { align: 'center' });
+            }
+            doc.save('Square_Footage_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => { downloadPDF(); btn.innerHTML = original; btn.disabled = false; });
+        });
+
+        // ===== Tabs (arrow keys, Home, End) =====
+        const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+        function activateTab(btn, focus) {
+            tabBtns.forEach(b => { const on = b === btn; b.classList.toggle('active', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; });
+            document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== btn.getAttribute('aria-controls'); });
+            if (focus) btn.focus();
+        }
+        tabBtns.forEach((btn, i) => {
+            btn.addEventListener('click', () => activateTab(btn, false));
+            btn.addEventListener('keydown', e => {
+                let n = -1;
+                if (e.key === 'ArrowRight') n = (i + 1) % tabBtns.length;
+                else if (e.key === 'ArrowLeft') n = (i - 1 + tabBtns.length) % tabBtns.length;
+                else if (e.key === 'Home') n = 0;
+                else if (e.key === 'End') n = tabBtns.length - 1;
+                if (n < 0) return;
+                e.preventDefault();
+                activateTab(tabBtns[n], true);
+            });
+        });
+
+        // ===== Reset =====
+        function loadDefaultAreas() {
+            $('areasContainer').innerHTML = '';
+            addArea({ name: 'Room 1', shape: 'rect', d1: 12, d2: 10, qty: 1, sign: 'add' });
+        }
+        function resetAll() {
+            units = 'imperial';
+            setToggle('unitToggle', 'unit', 'imperial');
+            $('wastePct').value = 0;
+            setQ($('coverage'), '');
+            setQ($('price'), '');
+            $('currency').value = '$';
+            $('convValue').value = '2500';
+            $('convUnit').value = 'sqin';
+            loadDefaultAreas();
+            refreshUnitLabels();
+            renderConvert();
+            calculateAll();
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== Init =====
+        loadDefaultAreas();
+        refreshUnitLabels();
+        renderConvert();
+        calculateAll();
+
+    })();
+    </script>
+</body>
+</html>
