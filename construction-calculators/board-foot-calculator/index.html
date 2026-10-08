@@ -1,0 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Board Foot Calculator: Board Feet for Lumber and Logs</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free board foot calculator. Add boards with fractions and quarters, get total BF, cost, sq ft and cubic conversions, plus log scale. No sign-up.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/board-foot-calculator">
+
+    <meta property="og:title" content="Board Foot Calculator: Board Feet for Lumber and Logs">
+    <meta property="og:description" content="Free board foot calculator for lumber lists and logs. Get total board feet, cost, square feet and cubic conversions.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/board-foot-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Board Foot Calculator",
+        "description": "Calculate board feet for a list of boards with fractions and hardwood quarters, with waste and cost, convert board feet to square feet and cubic units, and scale logs with Doyle, Scribner, and International rules",
+        "url": "https://calcsnaps.com/construction-calculators/board-foot-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Board Foot Calculator Guide: How to Calculate Board Feet",
+        "description": "How to calculate board feet for lumber and logs, with the formula, nominal versus rough sizes, worked examples, conversion tables, and log rules.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/construction-calculators/board-foot-calculator"
+        },
+        "datePublished": "2026-10-07",
+        "dateModified": "2026-10-07"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a board foot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A board foot is a unit of lumber volume equal to the wood in a board 1 foot long, 1 foot wide, and 1 inch thick. That is 144 cubic inches, or one twelfth of a cubic foot. It is abbreviated BF, BDFT, or FBM, and 1,000 board feet is written MBF. Hardwood is usually priced by the board foot because boards come in many widths and thicknesses."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do you calculate board feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply thickness in inches by width in inches by length in feet, then divide by 12. If the length is in inches, divide by 144 instead. A board 1 inch thick, 8 inches wide, and 8 feet long is 1 x 8 x 8 / 12 = 5.33 board feet. For several boards, calculate each one, multiply by its quantity, and add the results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many board feet are in a 2x4x8?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Using the nominal size, a 2x4 that is 8 feet long is 2 x 4 x 8 / 12 = 5.33 board feet. The real piece measures about 1.5 by 3.5 inches, which works out to 3.5 board feet of actual wood. Softwood framing is normally sold by the piece or the linear foot, and board feet are used mainly to compare sizes and prices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I convert board feet to square feet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide the board feet by the thickness in inches. One board foot of 1 inch stock covers 1 square foot, so 60 board feet of 3/4 inch stock covers 60 / 0.75 = 80 square feet. To go the other way, multiply square feet by the thickness in inches, so 100 square feet of 3/4 inch stock is 75 board feet."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate the board feet in a log?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a log rule. Measure the diameter at the small end inside the bark, and the length in feet. The Doyle rule is (diameter - 4) squared times length divided by 16. The Scribner and International 1/4 inch rules give different answers for the same log, so always check which rule a buyer or seller is using. The calculator's Log tab shows all three."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are board feet based on nominal or actual thickness?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For hardwood, board feet are figured from the rough thickness in quarters, such as 4/4 for 1 inch, even when the board is surfaced and measures less. A surfaced 4/4 board is about 13/16 inch thick but is still counted as 1 inch. For softwood framing lumber, board feet are normally figured from the nominal size, such as 2 by 4, and the actual length."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much extra lumber should I buy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the wood and the project. Many woodworkers add roughly 15 to 30 percent to a hardwood cut list to cover defects, grain matching, and cutting losses, and less for straight framing lumber. Treat these as planning figures and ask your supplier. The calculator lets you enter your own waste percentage."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Board Foot Calculator",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Choose imperial units (inches and feet) or metric units. In metric, thickness and width are in millimeters and length is in meters and centimeters."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Pick a quick size, or choose Custom and type the thickness and width yourself. Fractions such as 3/4 and 1 1/2 are accepted."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "Enter the length in feet and inches. Leave the inches box empty if it is zero."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Set the quantity if you need several boards of the same size."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Use Add Another Board for each different size on your list, up to 15."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Optionally enter a waste percentage and a price per board foot."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Read the total board feet, the other units, the breakdown table, and the step-by-step math."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 8,
+                "text": "Use the Convert tab for square feet and cubic units, and the Log tab for logs."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 9,
+                "text": "Use Copy Result, Share Result, or Download PDF for the tool you are on, and Reset All to start again."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calcsnaps.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "All Calculators",
+                "item": "https://calcsnaps.com/all-calculators"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Board Foot Calculator"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .wall-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .wall-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .wall-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-wall-btn, .remove-opening-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-wall-btn:hover, .remove-opening-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-wall-btn:focus-visible, .remove-opening-btn:focus-visible { outline: 3px solid var(--primary); }
+        .openings-title { font-size: 12.5px; font-weight: 700; color: var(--text-dark); margin: 4px 0 10px; }
+        .opening-row { display: grid; grid-template-columns: 84px 1fr 1fr auto; gap: 12px; align-items: center; background: var(--light); border: 1px solid #e2e8f0; border-radius: 16px; padding: 10px 12px; margin-bottom: 10px; }
+        .opening-tag { font-size: 12.5px; font-weight: 700; color: var(--primary-text); }
+        .opening-row .input-group { padding: 8px 12px; background: white; }
+        .opening-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+        .mini-btn { padding: 8px 14px; border-radius: 40px; border: 1px dashed var(--primary-light); background: rgba(139,92,246,0.05); color: var(--primary-dark); font-weight: 600; font-size: 12.5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .mini-btn:hover { background: rgba(139,92,246,0.1); }
+        .mini-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .mini-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-wall-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-wall-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-wall-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-wall-btn:focus-visible { outline: 3px solid var(--primary); }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { width: 100%; height: auto; }
+        .sv-text { fill: var(--text-dark); font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; font-size: 12px; color: var(--text-dark); margin-bottom: 18px; }
+        .legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+        .breakdown-table tr.total-row td { font-weight: 700; background: rgba(139,92,246,0.06); }
+
+        .info-block { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 16px; margin-top: 14px; text-align: left; font-size: 13.5px; color: var(--text-dark); line-height: 1.7; }
+        .info-block strong { color: var(--primary-text); }
+        .marks-box { max-height: 260px; overflow: auto; }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+            .opening-row { grid-template-columns: 1fr 1fr; }
+            .opening-tag { grid-column: 1 / -1; }
+            .remove-opening-btn { grid-column: 1 / -1; justify-self: end; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+
+        .board-meta { display: grid; grid-template-columns: 3fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .dim-row { display: flex; align-items: baseline; gap: 6px; }
+        .dim-row input { width: 100%; min-width: 0; }
+        .dim-row .unit { margin-right: 10px; }
+        .dim-row .unit:last-child { margin-right: 0; }
+        .input-group select { cursor: pointer; width: 100%; }
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 18px; }
+        .tab-btn { padding: 9px 18px; border-radius: 40px; border: 1px solid #e2e8f0; background: white; color: #4a5568; font-weight: 600; font-size: 13px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .tab-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+        .tab-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .tab-panel[hidden] { display: none; }
+        .conv-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px; }
+        .conv-table td, .conv-table th { padding: 9px 12px; border-bottom: 1px solid #eef2f7; text-align: left; }
+        .conv-table th { background: var(--dark); color: white; }
+        .conv-table tr.total-row td { font-weight: 700; color: var(--primary); }
+        .cv-out { margin-top: 10px; }
+        .field-note { font-size: 12.5px; color: var(--gray-text); margin: -6px 0 16px; }
+        @media (max-width: 768px) { .board-meta { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-ruler-horizontal"></i> Board Foot Calculator</h1>
+                    <p>Lumber lists, square feet, cubic units, and log scale</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Dealers may tally boards differently, so confirm sizes and quantities with your supplier before you order.</div>
+
+                <div class="calc-body-inner">
+                    <div class="toggle-row">
+                        <span class="toggle-label">Units</span>
+                        <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Unit system">
+                            <button type="button" class="toggle-option active" data-unit="imperial" role="radio" aria-checked="true">Inches and feet</button><button type="button" class="toggle-option" data-unit="metric" role="radio" aria-checked="false">Metric (mm, m, cm)</button>
+                        </div>
+                    </div>
+
+                    <div class="tabs" role="tablist" aria-label="Calculator tools">
+                        <button type="button" class="tab-btn active" role="tab" id="tab-lumber" data-mode="lumber" aria-selected="true" aria-controls="panel-lumber">Lumber list</button>
+                        <button type="button" class="tab-btn" role="tab" id="tab-convert" data-mode="convert" aria-selected="false" aria-controls="panel-convert" tabindex="-1">Convert</button>
+                        <button type="button" class="tab-btn" role="tab" id="tab-log" data-mode="log" aria-selected="false" aria-controls="panel-log" tabindex="-1">Log scale</button>
+                    </div>
+
+                    <!-- Lumber list -->
+                    <div class="tab-panel" id="panel-lumber" role="tabpanel" aria-labelledby="tab-lumber">
+                        <div class="status-note status-caution" id="warnLumber" role="alert"></div>
+                        <div class="section-title"><i class="fas fa-layer-group"></i> Boards</div>
+                        <div id="boardsContainer"></div>
+                        <button class="add-wall-btn" id="addBoardBtn" type="button"><i class="fas fa-plus"></i> Add Another Board (up to 15)</button>
+
+                        <div class="section-title"><i class="fas fa-coins"></i> Waste and Cost (optional)</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="wastePct">Waste allowance</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="wastePct" value="0" min="0" max="100" step="1"><span class="unit">%</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="currency">Currency symbol</label>
+                                <div class="row"><input type="text" id="currency" value="$" maxlength="4"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="priceBF">Price per board foot</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="priceBF" placeholder="optional" min="0" step="any"><span class="unit">/ BF</span></div>
+                            </div>
+                        </div>
+                        <div class="status-note status-neutral show" id="wasteHint"></div>
+
+                        <div class="results-panel">
+                            <div class="total-payment-card">
+                                <span class="label">Total Board Feet</span>
+                                <span class="amount" id="totalResult">0</span>
+                            </div>
+                            <div class="results-grid" id="unitCards"></div>
+                            <div style="overflow-x:auto;">
+                                <table class="breakdown-table">
+                                    <thead><tr><th>Board</th><th>Size</th><th>Qty</th><th>BF each</th><th>BF total</th></tr></thead>
+                                    <tbody id="breakdownBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="info-block" id="stepBlock"></div>
+                    </div>
+
+                    <!-- Convert -->
+                    <div class="tab-panel" id="panel-convert" role="tabpanel" aria-labelledby="tab-convert" hidden>
+                        <div class="status-note status-caution" id="warnConv" role="alert"></div>
+                        <div class="section-title"><i class="fas fa-right-left"></i> Board feet and square feet</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Direction</span>
+                        <div class="toggle-switch" id="cvDirToggle" role="radiogroup" aria-label="Conversion direction">
+                            <button type="button" class="toggle-option active" data-dir="bf2sqft" role="radio" aria-checked="true">Board feet to area</button><button type="button" class="toggle-option" data-dir="sqft2bf" role="radio" aria-checked="false">Area to board feet</button>
+                        </div>
+                    </div>
+
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="cvValue" id="cvValueLabel">Board feet</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="cvValue" value="100" min="0" step="any"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="cvThick">Thickness</label>
+                                <div class="row"><input type="text" inputmode="text" id="cvThick" class="frac-in" placeholder="e.g. 3/4" autocomplete="off"><span class="unit" data-ul="small"></span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="cvQuarter">Or pick a quarter size</label>
+                                <div class="row"><select id="cvQuarter"><option value="">Custom</option></select></div>
+                            </div>
+                        </div>
+                        <div class="info-block cv-out" id="cvOut"></div>
+
+                        <div class="section-title"><i class="fas fa-cube"></i> Volume units</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="vcValue">Volume</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="vcValue" value="100" min="0" step="any"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="vcUnit">From</label>
+                                <div class="row"><select id="vcUnit">
+                                    <option value="bf" selected>Board feet</option>
+                                    <option value="mbf">MBF (thousand board feet)</option>
+                                    <option value="cuft">Cubic feet</option>
+                                    <option value="cuin">Cubic inches</option>
+                                    <option value="cum">Cubic meters</option>
+                                    <option value="liter">Liters</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <table class="conv-table"><tbody id="vcBody"></tbody></table>
+                        <div class="status-note status-neutral show" id="vcNote"></div>
+                    </div>
+
+                    <!-- Log scale -->
+                    <div class="tab-panel" id="panel-log" role="tabpanel" aria-labelledby="tab-log" hidden>
+                        <div class="status-note status-caution" id="warnLog" role="alert"></div>
+                        <div class="section-title"><i class="fas fa-tree"></i> Log</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="logDiam">Small-end diameter (inside bark)</label>
+                                <div class="row"><input type="text" inputmode="decimal" id="logDiam" class="frac-in" data-u="cm" autocomplete="off"><span class="unit" data-ul="logD"></span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="logLenMain">Log length</label>
+                                <div class="row"><input type="number" inputmode="decimal" id="logLenMain" data-canon="" min="0" step="any"><span class="unit" data-ul="len"></span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="logCount">Number of logs</label>
+                                <div class="row"><input type="number" inputmode="numeric" id="logCount" value="1" min="1" max="10000" step="1"><span class="unit">logs</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="logRule">Log rule for the total</label>
+                                <div class="row"><select id="logRule">
+                                    <option value="doyle" selected>Doyle</option>
+                                    <option value="scribner">Scribner (formula)</option>
+                                    <option value="intl">International 1/4 in</option>
+                                </select></div>
+                            </div>
+                        </div>
+                        <div class="results-panel">
+                            <div class="total-payment-card">
+                                <span class="label" id="logTotalLabel">Board Feet</span>
+                                <span class="amount" id="logTotal">0</span>
+                            </div>
+                            <div class="results-grid" id="logCards"></div>
+                            <div style="overflow-x:auto;">
+                                <table class="breakdown-table">
+                                    <thead><tr><th>Log rule</th><th>BF per log</th><th>BF total</th><th>vs International</th></tr></thead>
+                                    <tbody id="logBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="status-note status-neutral" id="logNote"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Board Foot Calculator Guide: How to Calculate Board Feet</h2>
+                    <p>The formula, nominal versus rough sizes, worked examples, conversions, and log rules</p>
+                </div>
+
+                <div class="article-content">
+
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#what-is">1. What Is a Board Foot?</a></div>
+                            <div class="toc-item"><a href="#how-works">2. How the Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">3. How to Use It</a></div>
+                            <div class="toc-item"><a href="#formula">4. Board Foot Formula</a></div>
+                            <div class="toc-item"><a href="#nominal">5. Nominal, Rough, and Surfaced Sizes</a></div>
+                            <div class="toc-item"><a href="#examples">6. Worked Examples</a></div>
+                            <div class="toc-item"><a href="#charts">7. Board Foot Charts</a></div>
+                            <div class="toc-item"><a href="#sqft">8. Board Feet to Square Feet</a></div>
+                            <div class="toc-item"><a href="#volume">9. Board Feet to Cubic Units</a></div>
+                            <div class="toc-item"><a href="#logs">10. Board Feet in a Log</a></div>
+                            <div class="toc-item"><a href="#compare">11. Board Foot vs Linear and Square Foot</a></div>
+                            <div class="toc-item"><a href="#waste">12. Waste, Tally, and Cost</a></div>
+                            <div class="toc-item"><a href="#mistakes">13. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">14. Related Calculations</a></div>
+                            <div class="toc-item"><a href="#faq">15. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>This board foot calculator finds the volume of lumber in board feet and shows what it will cost. Add as many boards as you need, type thickness and width as decimals or fractions, enter lengths in feet and inches, and the total updates as you go. If you searched for a board feet calculator, a bd ft calculator, a board footage calculator, or a boardfoot calculator, this is the same tool. It also converts board feet to square feet and cubic units, and scales logs with three standard log rules.</p>
+                    <p>Below you will find the formula, the difference between nominal, rough, and surfaced sizes, worked examples, reference charts, and the log formulas.</p>
+
+                    <div class="pro-tip">
+                        <strong>Quick answer:</strong>
+                        <p style="margin: 10px 0 0;">Board feet = thickness (in) &times; width (in) &times; length (ft) &divide; 12. A board 1 in thick, 8 in wide, and 8 ft long is 5.33 board feet.</p>
+                    </div>
+
+                    <h2 id="what-is">1. What Is a Board Foot?</h2>
+                    <p>A board foot is a unit of volume used to buy and sell lumber. One board foot is the amount of wood in a board 1 foot long, 1 foot wide, and 1 inch thick, which is 144 cubic inches or one twelfth of a cubic foot. The unit is written BF, BDFT, or FBM (foot, board measure), and 1,000 board feet is written MBF.</p>
+                    <p>It exists because boards differ in thickness and width, so length alone does not tell you how much wood you are buying. A board 1 in thick, 4 in wide, and 8 ft long holds the same wood as one that is 1 in thick, 8 in wide, and 4 ft long, and the board foot shows that they are equal. Hardwood, rough-sawn lumber, and slabs are usually priced this way, while framing lumber is mostly sold by the piece.</p>
+
+                    <h2 id="how-works">2. How the Board Foot Calculator Works</h2>
+                    <p>The calculator has three tools, which you switch between with the tabs.</p>
+                    <p><strong>Lumber list.</strong> Each board has a quantity, a thickness, a width, and a length. You can pick a quick size, either a hardwood thickness in quarters (4/4 to 16/4) or a nominal dimensional size such as 2 x 4, and the thickness and width fill in. Thickness and width accept decimals and fractions, such as 1.25, 3/4, or 8 1/4. Length has two boxes, feet and inches. The calculator works out the board feet of each board, multiplies by its quantity, and adds them all up. You can add up to 15 boards.</p>
+                    <p><strong>Convert.</strong> This changes board feet to square feet and back for a given thickness, and converts between board feet, MBF, cubic feet, cubic inches, cubic meters, and liters.</p>
+                    <p><strong>Log.</strong> Enter the small-end diameter inside the bark, the length, and the number of logs, and the calculator shows the board feet by the Doyle, Scribner, and International 1/4 inch rules side by side.</p>
+                    <p>In the lumber list you also get cubic feet, cubic meters, MBF, the number of pieces, and total length, plus optional waste, price, and cost. A breakdown table shows every board, and a step-by-step block shows the math.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions and limits:</strong>
+                        <p style="margin: 10px 0 0;">The lumber list uses the exact formula with the thickness and width you enter. It does not apply any dealer's tally rules, such as rounding or dropping fractions of a foot. Log results are estimates, since log rules are formulas, not measurements of the lumber you will actually get. Confirm quantities with your supplier before you order.</p>
+                    </div>
+
+                    <h2 id="how-to-use">3. How to Use the Board Foot Calculator</h2>
+                    <ol>
+                        <li>Choose imperial units (inches and feet) or metric units. In metric, thickness and width are in millimeters and length is in meters and centimeters.</li>
+                        <li>Pick a quick size, or choose Custom and type the thickness and width yourself. Fractions such as 3/4 and 1 1/2 are accepted.</li>
+                        <li>Enter the length in feet and inches. Leave the inches box empty if it is zero.</li>
+                        <li>Set the quantity if you need several boards of the same size.</li>
+                        <li>Use Add Another Board for each different size on your list, up to 15.</li>
+                        <li>Optionally enter a waste percentage and a price per board foot.</li>
+                        <li>Read the total board feet, the other units, the breakdown table, and the step-by-step math.</li>
+                        <li>Use the Convert tab for square feet and cubic units, and the Log tab for logs.</li>
+                        <li>Use Copy Result, Share Result, or Download PDF for the tool you are on, and Reset All to start again.</li>
+                    </ol>
+                    <p>If a board is missing a measurement, has an unreadable fraction, or has a quantity that is not a whole number, the calculator tells you which board needs attention and leaves it out until you fix it.</p>
+
+                    <h2 id="formula">4. Board Foot Formula and How to Calculate It</h2>
+                    <p>There are two forms of the formula. They give the same answer and differ only in the unit of length.</p>
+                    <div class="pro-tip">
+                        <code>Board feet = thickness (in) x width (in) x length (ft) / 12</code>
+                        <code>Board feet = thickness (in) x width (in) x length (in) / 144</code>
+                        <p style="margin: 10px 0 0;">Multiply by the number of boards to get the total for a quantity.</p>
+                    </div>
+                    <p>To measure board feet by hand, follow these steps.</p>
+                    <ol>
+                        <li>Measure the thickness of the board in inches. For hardwood, use its quarter designation, such as 4/4 for 1 inch.</li>
+                        <li>Measure the width across the face in inches. For boards with uneven edges, measure at the narrow point or take an average.</li>
+                        <li>Measure the length in feet.</li>
+                        <li>Multiply the three numbers and divide by 12.</li>
+                        <li>For a stack of different boards, repeat for each size and add the results.</li>
+                    </ol>
+                    <p>To estimate board feet before you buy, work out the size of every part in your plan, calculate each part, add them up, and then add an allowance for waste.</p>
+
+                    <h2 id="nominal">5. Nominal, Rough, and Surfaced Sizes</h2>
+                    <p>This is where most mistakes happen. Lumber has a size it is sold as and a size you can measure, and board feet usually use the first one.</p>
+                    <p><strong>Hardwood.</strong> Thickness is given in quarters of an inch, a system set by the National Hardwood Lumber Association (NHLA). The quarter number refers to the rough thickness. When a board is planed smooth, it gets thinner, but it is still counted at its rough thickness. A 4/4 board is counted as 1 inch even when it is surfaced to about 13/16 inch.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Quarters</th><th>Rough thickness</th><th>Typical surfaced two sides (S2S)</th></tr></thead>
+                        <tbody>
+                            <tr><td>4/4</td><td>1 in</td><td>13/16 in</td></tr>
+                            <tr><td>5/4</td><td>1 1/4 in</td><td>1 1/16 in</td></tr>
+                            <tr><td>6/4</td><td>1 1/2 in</td><td>1 5/16 in</td></tr>
+                            <tr><td>8/4</td><td>2 in</td><td>1 13/16 in</td></tr>
+                            <tr><td>12/4</td><td>3 in</td><td>2 13/16 in</td></tr>
+                        </tbody>
+                    </table>
+                    <p>If you buy surfaced hardwood and calculate with its measured thickness instead of its quarter size, you will come out about 19 percent low on 4/4 stock (13/16 is 0.8125, compared with 1). Rough boards can also vary a little from their nominal thickness, so measure if it matters.</p>
+                    <p><strong>Softwood framing.</strong> A 2 x 4 is called that because of its nominal size before drying and planing. It actually measures about 1.5 by 3.5 inches. In the softwood trade, board feet are normally figured from the nominal width and thickness and the actual length, so a 2 x 4 x 8 counts as 2 x 4 x 8 / 12 = 5.33 board feet, not the 3.5 board feet of wood in the piece. Because of this, the quick sizes for dimensional lumber use nominal values.</p>
+                    <p>The practical rule is to use the size the seller uses for pricing. If you are checking how much real wood a board holds, measure it and enter the actual numbers.</p>
+
+                    <h2 id="examples">6. Worked Examples</h2>
+                    <h3>Three hardwood boards</h3>
+                    <p>You need three 5/4 boards, each 7 1/2 inches wide and 9 feet 6 inches long, priced at $9.50 per board foot.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead>
+                        <tbody>
+                            <tr><td>Thickness</td><td>5/4</td><td>1.25 in</td></tr>
+                            <tr><td>Length in feet</td><td>9 + 6/12</td><td>9.5 ft</td></tr>
+                            <tr><td>Board feet each</td><td>1.25 x 7.5 x 9.5 / 12</td><td>7.42 BF</td></tr>
+                            <tr><td>Total for three</td><td>7.42 x 3</td><td>22.27 BF</td></tr>
+                            <tr><td>Cost</td><td>22.27 x $9.50</td><td>$211.52</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h3>A table cut list with waste and cost</h3>
+                    <table class="compare-table">
+                        <thead><tr><th>Part</th><th>Qty</th><th>Thickness x width x length</th><th>Board feet</th></tr></thead>
+                        <tbody>
+                            <tr><td>Top</td><td>1</td><td>2 in x 30 in x 6 ft</td><td>30.00</td></tr>
+                            <tr><td>Legs</td><td>4</td><td>3 in x 3 in x 2.5 ft</td><td>7.50</td></tr>
+                            <tr><td>Long aprons</td><td>2</td><td>1.25 in x 4 in x 5 ft</td><td>4.17</td></tr>
+                            <tr><td>Short aprons</td><td>2</td><td>1.25 in x 4 in x 2.5 ft</td><td>2.08</td></tr>
+                            <tr><td colspan="3"><strong>Total</strong></td><td><strong>43.75</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <p>Adding 25 percent for defects and cutting losses gives 43.75 x 1.25 = 54.69 board feet to buy. At $8.00 per board foot, that is 54.69 x $8.00 = $437.50. In the calculator, add the four sizes as four boards, set waste to 25, and enter the price.</p>
+
+                    <h3>A 2 x 4 x 8</h3>
+                    <p>Using the nominal size, 2 x 4 x 8 / 12 = 5.33 board feet. Using the actual 1.5 by 3.5 inch size, 1.5 x 3.5 x 8 / 12 = 3.5 board feet. Both are correct for different purposes, which is why it matters which one your seller uses.</p>
+
+                    <h2 id="charts">7. Board Foot Charts</h2>
+                    <p>This chart shows the board feet in one foot of length. Multiply by the length in feet to get the board feet of a board.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Width</th><th>4/4 (1 in)</th><th>5/4 (1.25 in)</th><th>6/4 (1.5 in)</th><th>8/4 (2 in)</th></tr></thead>
+                        <tbody>
+                            <tr><td>4 in</td><td>0.333</td><td>0.417</td><td>0.500</td><td>0.667</td></tr>
+                            <tr><td>6 in</td><td>0.500</td><td>0.625</td><td>0.750</td><td>1.000</td></tr>
+                            <tr><td>8 in</td><td>0.667</td><td>0.833</td><td>1.000</td><td>1.333</td></tr>
+                            <tr><td>10 in</td><td>0.833</td><td>1.042</td><td>1.250</td><td>1.667</td></tr>
+                            <tr><td>12 in</td><td>1.000</td><td>1.250</td><td>1.500</td><td>2.000</td></tr>
+                        </tbody>
+                    </table>
+                    <p>For example, a 6/4 board that is 8 in wide and 10 ft long holds 1.000 x 10 = 10 board feet. This second chart gives board feet per piece for common nominal softwood sizes.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Nominal size</th><th>8 ft</th><th>10 ft</th><th>12 ft</th><th>16 ft</th></tr></thead>
+                        <tbody>
+                            <tr><td>2 x 4</td><td>5.33</td><td>6.67</td><td>8.00</td><td>10.67</td></tr>
+                            <tr><td>2 x 6</td><td>8.00</td><td>10.00</td><td>12.00</td><td>16.00</td></tr>
+                            <tr><td>2 x 8</td><td>10.67</td><td>13.33</td><td>16.00</td><td>21.33</td></tr>
+                            <tr><td>2 x 10</td><td>13.33</td><td>16.67</td><td>20.00</td><td>26.67</td></tr>
+                            <tr><td>2 x 12</td><td>16.00</td><td>20.00</td><td>24.00</td><td>32.00</td></tr>
+                            <tr><td>4 x 4</td><td>10.67</td><td>13.33</td><td>16.00</td><td>21.33</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="sqft">8. Board Feet to Square Feet</h2>
+                    <p>A board foot is volume and a square foot is area, so you cannot convert them without a thickness. Once you know the thickness, the relationship is simple, because one board foot of 1 inch stock covers one square foot.</p>
+                    <div class="pro-tip">
+                        <code>Square feet = board feet / thickness (in)</code>
+                        <code>Board feet = square feet x thickness (in)</code>
+                    </div>
+                    <p>For example, 60 board feet of 3/4 inch stock covers 60 / 0.75 = 80 square feet, and 100 square feet of 3/4 inch stock is 100 x 0.75 = 75 board feet. The Convert tab does this for any thickness, in square feet or square meters. If you only need the area of a room or a surface, our <a href="https://calcsnaps.com/construction-calculators/square-footage-calculator">Square Footage Calculator</a> gives it for any mix of shapes.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Thickness</th><th>Area covered by 1 board foot</th></tr></thead>
+                        <tbody>
+                            <tr><td>1/4 in</td><td>4 sq ft</td></tr>
+                            <tr><td>1/2 in</td><td>2 sq ft</td></tr>
+                            <tr><td>3/4 in</td><td>1.33 sq ft</td></tr>
+                            <tr><td>1 in (4/4)</td><td>1 sq ft</td></tr>
+                            <tr><td>2 in (8/4)</td><td>0.5 sq ft</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="volume">9. Board Feet to Cubic Feet and Other Units</h2>
+                    <p>Because a board foot is a volume, it converts directly to other volume units. One board foot is 144 cubic inches, which is one twelfth of a cubic foot, about 2.36 liters, or 0.00236 cubic meters. Going the other way, one cubic foot is 12 board feet and one cubic meter is about 423.8 board feet. One MBF is 1,000 board feet, or about 83.3 cubic feet.</p>
+                    <p>These conversions use the full volume of the wood as if it were solid. They do not tell you how much lumber a log will yield, which depends on the log rule, sawing losses, and the mill.</p>
+
+                    <h2 id="logs">10. How to Calculate Board Feet in a Log</h2>
+                    <p>Logs are scaled with a log rule, which is a formula or table that estimates the board feet of lumber a log can produce. Three rules are in wide use in the United States, according to <a href="https://www.extension.purdue.edu/extmedia/fnr/fnr-191.pdf" target="_blank" rel="noopener">Purdue Extension's guide to log and tree scaling</a>. For all of them, D is the diameter at the small end inside the bark in inches, and L is the length in feet.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Rule</th><th>Formula</th><th>Notes</th></tr></thead>
+                        <tbody>
+                            <tr><td>Doyle</td><td>(D &minus; 4)&sup2; &times; L / 16</td><td>Simple and common in the east and south. Ignores taper and seriously under-scales small logs.</td></tr>
+                            <tr><td>Scribner</td><td>(0.79D&sup2; &minus; 2D &minus; 4) &times; L / 16</td><td>A formula that approximates the diagram-based Scribner rule. Fairly consistent for logs 16 ft or shorter and under 28 in.</td></tr>
+                            <tr><td>International 1/4 in</td><td>0.04976191LD&sup2; + 0.006220239L&sup2;D &minus; 0.1854762LD + 0.0002591767L&sup3; &minus; 0.01159226L&sup2; + 0.04222222L</td><td>Allows for taper. Probably the most accurate of the three at estimating actual lumber.</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Take a log 16 inches across the small end and 16 feet long. Doyle gives (16 &minus; 4)&sup2; &times; 16 / 16 = 144 board feet. The Scribner formula gives about 166, and the International rule gives about 181. For a smaller log, 10 inches across and 12 feet long, Doyle gives 27 while International gives about 46, so Doyle is far lower on small logs. The Log tab shows all three and how far each one is from the International result.</p>
+                    <p>Measure the diameter at the small end, inside the bark, and average two measurements taken at right angles if the log is not round. Measure the length with a tape, and remember that a log just short of a full foot is normally scaled at the next lower foot. Always agree on a log rule before buying or selling logs. The calculator accepts logs from 6 to 60 inches across and 4 to 20 feet long. Longer logs are normally scaled as two or more shorter ones.</p>
+
+                    <h2 id="compare">11. Board Foot vs Linear Foot vs Square Foot</h2>
+                    <ul>
+                        <li><strong>Linear foot:</strong> length only. A 10 ft board is 10 linear feet, whatever its width or thickness.</li>
+                        <li><strong>Square foot:</strong> area, which is length times width. It ignores thickness.</li>
+                        <li><strong>Board foot:</strong> volume, which is length times width times thickness, standardized to a 1 ft by 1 ft by 1 in unit.</li>
+                    </ul>
+                    <p>Two boards with the same length can have very different board feet, and a board's price per board foot lets you compare them fairly.</p>
+
+                    <h2 id="waste">12. Waste, Tally, and Cost</h2>
+                    <p>The exact board feet of your cut list is not what you should buy. Boards have defects, grain and color need matching, and every cut loses wood. Many woodworkers add roughly 15 to 30 percent to a hardwood cut list, and less for straight framing lumber. These are planning figures, so ask your supplier. The waste field in the calculator adds the percentage and shows the board feet to buy.</p>
+                    <p>Dealers also tally boards in their own way. Many tally lengths to the whole foot and drop any fraction, so a board 10 ft 7 in may count as 10 ft, and they round thickness to quarters. Ask how your dealer tallies, and compare your own calculation with the tag when you pick up the lumber.</p>
+                    <p>To estimate cost, multiply the board feet to buy by the price per board foot. Prices change by species, grade, thickness, and whether the board is rough or surfaced, so use your supplier's current price.</p>
+
+                    <h2 id="mistakes">13. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Dividing by 12 when the length is in inches.</strong> Use 144 for inches and 12 for feet.</li>
+                        <li><strong>Using surfaced thickness for hardwood.</strong> Use the quarter size, such as 4/4, not the measured 13/16 inch.</li>
+                        <li><strong>Mixing nominal and actual sizes</strong> in the same list.</li>
+                        <li><strong>Forgetting the quantity</strong> and counting a stack of boards as one.</li>
+                        <li><strong>Treating a board foot like a square foot or a linear foot.</strong></li>
+                        <li><strong>Rounding too early,</strong> which can add up over a long list.</li>
+                        <li><strong>Mixing log rules,</strong> or comparing one rule's scale with another's price.</li>
+                        <li><strong>Buying the exact number.</strong> Add an allowance for defects and cuts.</li>
+                    </ul>
+
+                    <h2 id="related">14. Related Calculations and Use Cases</h2>
+                    <p>Board feet are used for furniture, cabinetry, flooring stock, slabs, and timber sales, and the same lumber math shows up in framing. If you are planning wall framing and need to know how many pieces to buy, our <a href="https://calcsnaps.com/construction-calculators/stud-calculator">Stud Calculator</a> counts studs and plates, and you can then price them by the piece or by the board foot.</p>
+                    <p>For spray foam insulation, the term board foot also means a volume of 1 square foot at 1 inch thick, so the same area-times-thickness idea applies, but check the product's coverage information.</p>
+
+                    <h2 id="faq">15. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="bffaq1-answer">What is a board foot?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq1-answer"><p>A board foot is a unit of lumber volume equal to the wood in a board 1 foot long, 1 foot wide, and 1 inch thick. That is 144 cubic inches, or one twelfth of a cubic foot. It is abbreviated BF, BDFT, or FBM, and 1,000 board feet is written MBF. Hardwood is usually priced by the board foot because boards come in many widths and thicknesses.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq2-answer">How do you calculate board feet?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq2-answer"><p>Multiply thickness in inches by width in inches by length in feet, then divide by 12. If the length is in inches, divide by 144 instead. A board 1 inch thick, 8 inches wide, and 8 feet long is 1 x 8 x 8 / 12 = 5.33 board feet. For several boards, calculate each one, multiply by its quantity, and add the results.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq3-answer">How many board feet are in a 2x4x8?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq3-answer"><p>Using the nominal size, a 2x4 that is 8 feet long is 2 x 4 x 8 / 12 = 5.33 board feet. The real piece measures about 1.5 by 3.5 inches, which works out to 3.5 board feet of actual wood. Softwood framing is normally sold by the piece or the linear foot, and board feet are used mainly to compare sizes and prices.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq4-answer">How do I convert board feet to square feet?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq4-answer"><p>Divide the board feet by the thickness in inches. One board foot of 1 inch stock covers 1 square foot, so 60 board feet of 3/4 inch stock covers 60 / 0.75 = 80 square feet. To go the other way, multiply square feet by the thickness in inches, so 100 square feet of 3/4 inch stock is 75 board feet.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq5-answer">How do I calculate the board feet in a log?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq5-answer"><p>Use a log rule. Measure the diameter at the small end inside the bark, and the length in feet. The Doyle rule is (diameter - 4) squared times length divided by 16. The Scribner and International 1/4 inch rules give different answers for the same log, so always check which rule a buyer or seller is using. The calculator's Log tab shows all three.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq6-answer">Are board feet based on nominal or actual thickness?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq6-answer"><p>For hardwood, board feet are figured from the rough thickness in quarters, such as 4/4 for 1 inch, even when the board is surfaced and measures less. A surfaced 4/4 board is about 13/16 inch thick but is still counted as 1 inch. For softwood framing lumber, board feet are normally figured from the nominal size, such as 2 by 4, and the actual length.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bffaq7-answer">How much extra lumber should I buy?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bffaq7-answer"><p>It depends on the wood and the project. Many woodworkers add roughly 15 to 30 percent to a hardwood cut list to cover defects, grain matching, and cutting losses, and less for straight framing lumber. Treat these as planning figures and ask your supplier. The calculator lets you enter your own waste percentage.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>This board foot calculator turns thickness, width, and length into board feet, so you can price lumber fairly and plan a purchase. Enter every board in your plan, use fractions and quarters as you read them, add waste when you buy, and use the Convert and Log tabs when you need square feet, cubic units, or a log scale. Remember that board feet follow the size the seller uses, not always the size you measure, and confirm your tally with your supplier before you pay.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Lumber sizes, tally rules, and prices vary by supplier and region. Confirm quantities with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🪵</span> Try the Board Foot Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🪵 Board Foot Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/square-footage-calculator">📐 Square Footage Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stair-calculator">🪜 Stair Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/soffit-calculator">🏠 Soffit Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function safeNumber(raw, { min = 0, max = Infinity, fallback = 0 } = {}) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fallback;
+            return clamp(n, min, max);
+        }
+        // Same as safeNumber, but also reports whether the raw value had to be capped,
+        // so the page can tell the person instead of silently using a different number.
+        function trackedNumber(raw, opts) {
+            const n = parseFloat(raw);
+            const value = safeNumber(raw, opts);
+            const wasClamped = isFinite(n) && (n < (opts.min ?? 0) || n > (opts.max ?? Infinity));
+            return { value, wasClamped };
+        }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+
+        // ==PURE-START==
+        function ceilEps(x) { return Math.ceil(x - 1e-9); }
+        function fmtN(n, d) { return parseFloat(n.toFixed(d === undefined ? 2 : d)).toString(); }
+        function fmtComma(n, d) {
+            const v = parseFloat(n.toFixed(d === undefined ? 2 : d));
+            return v.toLocaleString('en-US', { maximumFractionDigits: d === undefined ? 2 : d });
+        }
+
+        const IN_MM = 25.4, FT_M = 0.3048, SQFT_SQM = 0.09290304;
+        // One board foot expressed in other volume units
+        const VOL_PER_BF = { bf: 1, mbf: 0.001, cuft: 1 / 12, cuin: 144, cum: 0.002359737216, liter: 2.359737216 };
+        const VOL_NAME = { bf: 'Board feet', mbf: 'MBF (thousand board feet)', cuft: 'Cubic feet', cuin: 'Cubic inches', cum: 'Cubic meters', liter: 'Liters' };
+        const LIMITS = { tMax: 100, wMax: 200, lMax: 200, qMax: 10000 };
+
+        // Hardwood thickness in quarters (rough thickness, in inches)
+        const QUARTERS = [['4/4', 1], ['5/4', 1.25], ['6/4', 1.5], ['8/4', 2], ['10/4', 2.5], ['12/4', 3], ['16/4', 4]];
+        // Dimensional lumber, nominal thickness x width in inches
+        const NOMINAL = [['1x4', 1, 4], ['1x6', 1, 6], ['1x8', 1, 8], ['1x10', 1, 10], ['1x12', 1, 12], ['2x2', 2, 2], ['2x4', 2, 4], ['2x6', 2, 6], ['2x8', 2, 8], ['2x10', 2, 10], ['2x12', 2, 12], ['4x4', 4, 4], ['4x6', 4, 6], ['6x6', 6, 6]];
+
+        // Reads "8.25", "3/4", "8 1/4" or "1-1/2". Returns null when blank, NaN when it cannot be read.
+        function parseFrac(s) {
+            if (s === null || s === undefined) return null;
+            const t = String(s).trim();
+            if (t === '') return null;
+            let m;
+            if (/^(\d+(\.\d+)?|\.\d+)$/.test(t)) return parseFloat(t);
+            m = t.match(/^(\d+)\s*[- ]\s*(\d+)\s*\/\s*(\d+)$/);
+            if (m) return +m[3] > 0 ? +m[1] + +m[2] / +m[3] : NaN;
+            m = t.match(/^(\d+)\s*\/\s*(\d+)$/);
+            if (m) return +m[2] > 0 ? +m[1] / +m[2] : NaN;
+            return NaN;
+        }
+
+        // t, w in inches, l in feet
+        function boardFeet(t, w, l) { return t * w * l / 12; }
+
+        // items: [{ label, qty (NaN if blank/invalid), t, w (inches or NaN), l (feet or NaN), bad: [field names] }]
+        function computeBoards(items) {
+            return items.map(it => {
+                const vals = [it.t, it.w, it.l];
+                const blanks = vals.filter(v => !isFinite(v)).length;
+                if (it.bad && it.bad.length) return { status: 'bad', label: it.label, issue: it.label + ': the ' + it.bad.join(' and ') + ' could not be read. Use a decimal like 1.25 or a fraction like 1 1/4.' };
+                if (blanks === 3) return { status: 'blank', label: it.label, issue: '' };
+                if (blanks > 0) return { status: 'bad', label: it.label, issue: it.label + ' needs thickness, width, and length, so it is not counted yet.' };
+                if (vals.some(v => !(v > 0))) return { status: 'bad', label: it.label, issue: it.label + ' needs every measurement above zero, so it is not counted yet.' };
+                if (!(it.qty >= 1) || !Number.isInteger(it.qty)) return { status: 'bad', label: it.label, issue: it.label + ' needs a whole-number quantity of 1 or more, so it is not counted yet.' };
+                const each = boardFeet(it.t, it.w, it.l);
+                return { status: 'ok', label: it.label, t: it.t, w: it.w, l: it.l, qty: it.qty, each: each, total: each * it.qty, linear: it.l * it.qty };
+            });
+        }
+        function sumBoards(results) {
+            let total = 0, pieces = 0, linear = 0, anyOk = false;
+            results.forEach(r => { if (r.status === 'ok') { anyOk = true; total += r.total; pieces += r.qty; linear += r.linear; } });
+            return { total: total, pieces: pieces, linear: linear, anyOk: anyOk };
+        }
+
+        // Board feet and square feet of the same board: BF = sq ft x thickness in inches
+        function bfToSqft(bf, tIn) { return bf / tIn; }
+        function sqftToBf(sqft, tIn) { return sqft * tIn; }
+
+        function convertVolume(value, unit) {
+            const bf = value / VOL_PER_BF[unit];
+            const all = {};
+            Object.keys(VOL_PER_BF).forEach(u => { all[u] = bf * VOL_PER_BF[u]; });
+            return { bf: bf, all: all };
+        }
+
+        // Log rules. D = small-end diameter inside bark (in), L = length (ft)
+        function logDoyle(D, L) { return D > 4 ? (D - 4) * (D - 4) * L / 16 : 0; }
+        function logScribner(D, L) { const v = (0.79 * D * D - 2 * D - 4) * L / 16; return v > 0 ? v : 0; }
+        function logIntl(D, L) {
+            const v = 0.04976191 * L * D * D + 0.006220239 * L * L * D - 0.1854762 * L * D + 0.0002591767 * L * L * L - 0.01159226 * L * L + 0.04222222 * L;
+            return v > 0 ? v : 0;
+        }
+        // ==PURE-END==
+
+        const MAX_BOARDS = 15;
+        let units = 'imperial';
+        let boardUid = 0;
+        let mode = 'lumber';
+        let convDir = 'bf2sqft';
+        const isMetric = () => units === 'metric';
+        const FT_IN = 12;
+
+        // ===== Values are kept in inches (thickness, width, diameter) and feet (length) =====
+        const unitF = el => (el && el.dataset.u === 'cm') ? 2.54 : IN_MM;
+        const toCanonIn = (v, el) => isMetric() ? v / unitF(el) : v;
+        const fromCanonIn = (c, el) => isMetric() ? fmtN(c * unitF(el), 2) : fmtN(c, 4);
+
+        // Text boxes that accept decimals and fractions
+        function readFracEl(el) {
+            const p = parseFrac(el.value);
+            if (p === null) { el.dataset.canon = ''; return; }
+            el.dataset.canon = isFinite(p) ? String(toCanonIn(p, el)) : 'bad';
+        }
+        function inState(el) {
+            const c = el.dataset.canon;
+            if (c === '' || c === undefined) return { blank: true, bad: false, v: NaN };
+            if (c === 'bad') return { blank: false, bad: true, v: NaN };
+            return { blank: false, bad: false, v: parseFloat(c) };
+        }
+        function setInEl(el, canon) {
+            if (canon === '' || canon === null || canon === undefined || !isFinite(canon)) { el.value = ''; el.dataset.canon = ''; return; }
+            el.dataset.canon = String(canon);
+            el.value = fromCanonIn(canon, el);
+        }
+
+        // ===== Length: feet + inches, or meters + centimeters =====
+        function dimHtml(id) {
+            return '<div class="input-group dim-group" data-canon="">' +
+                '<label for="' + id + '-a" class="dim-label">Length</label>' +
+                '<div class="row dim-row">' +
+                    '<input type="number" inputmode="decimal" id="' + id + '-a" class="dim-major" min="0" step="any">' +
+                    '<span class="unit" data-ul="major"></span>' +
+                    '<input type="number" inputmode="decimal" id="' + id + '-b" class="dim-minor" min="0" step="any" aria-label="Additional inches">' +
+                    '<span class="unit" data-ul="minor"></span>' +
+                '</div></div>';
+        }
+        function syncDim(group) {
+            const a = parseFloat(group.querySelector('.dim-major').value);
+            const b = parseFloat(group.querySelector('.dim-minor').value);
+            if (!isFinite(a) && !isFinite(b)) { group.dataset.canon = ''; return; }
+            const major = isFinite(a) ? a : 0, minor = isFinite(b) ? b : 0;
+            group.dataset.canon = String(isMetric() ? (major + minor / 100) / FT_M : major + minor / 12);
+        }
+        function readDim(group) {
+            const c = group.dataset.canon;
+            return c === '' || c === undefined ? NaN : parseFloat(c);
+        }
+        function setDim(group, canon) {
+            const A = group.querySelector('.dim-major'), B = group.querySelector('.dim-minor');
+            if (canon === '' || canon === undefined || canon === null || !isFinite(canon)) { A.value = ''; B.value = ''; group.dataset.canon = ''; return; }
+            group.dataset.canon = String(canon);
+            let major, minor;
+            if (isMetric()) {
+                const m = canon * FT_M;
+                major = Math.floor(m + 1e-9);
+                minor = Math.round((m - major) * 100 * 100) / 100;
+                if (minor >= 100) { major += 1; minor = 0; }
+            } else {
+                major = Math.floor(canon + 1e-9);
+                minor = Math.round((canon - major) * 12 * 100) / 100;
+                if (minor >= 12) { major += 1; minor = 0; }
+            }
+            A.value = String(major); B.value = String(minor);
+        }
+
+        const UNIT_TEXT = {
+            imperial: { major: 'ft', minor: 'in', small: 'in', len: 'ft', area: 'sq ft', logD: 'in' },
+            metric: { major: 'm', minor: 'cm', small: 'mm', len: 'm', area: 'sq m', logD: 'cm' }
+        };
+        function refreshUnitLabels() {
+            const u = UNIT_TEXT[units];
+            document.querySelectorAll('[data-ul]').forEach(el => { el.textContent = u[el.dataset.ul]; });
+            document.querySelectorAll('.dim-minor').forEach(el => el.setAttribute('aria-label', isMetric() ? 'Additional centimeters' : 'Additional inches'));
+            const ph = isMetric()
+                ? { t: 'e.g. 19 or 19.05', w: 'e.g. 203 or 203.2', cv: 'e.g. 19.05', ld: 'e.g. 40 or 40.6' }
+                : { t: 'e.g. 1 or 3/4', w: 'e.g. 8 1/4', cv: 'e.g. 3/4', ld: 'e.g. 16 or 14.5' };
+            document.querySelectorAll('.b-t').forEach(el => el.placeholder = ph.t);
+            document.querySelectorAll('.b-w').forEach(el => el.placeholder = ph.w);
+            $('cvThick').placeholder = ph.cv;
+            $('logDiam').placeholder = ph.ld;
+            document.querySelectorAll('.dim-label').forEach(el => { if (el.closest('.board-card')) el.textContent = 'Length'; });
+        }
+        function applyUnits(u) {
+            units = u;
+            setToggle('unitToggle', 'unit', u);
+            document.querySelectorAll('.dim-group').forEach(g => { const c = g.dataset.canon; setDim(g, c === '' || c === undefined ? '' : parseFloat(c)); });
+            document.querySelectorAll('.frac-in').forEach(el => { const c = el.dataset.canon; if (c !== '' && c !== undefined && c !== 'bad') setInEl(el, parseFloat(c)); });
+            const ll = $('logLenMain'), lc = ll.dataset.canon;
+            if (lc !== '' && lc !== undefined) ll.value = fmtN(parseFloat(lc) * (isMetric() ? FT_M : 1), 3);
+            const cv = parseFloat($('cvValue').value);
+            if (convDir === 'sqft2bf' && isFinite(cv)) $('cvValue').value = fmtN(isMetric() ? cv * SQFT_SQM : cv / SQFT_SQM, 3);
+            refreshUnitLabels();
+            refreshAll();
+        }
+
+        // ===== Toggles =====
+        function setToggle(containerId, attr, value) {
+            $(containerId).querySelectorAll('.toggle-option').forEach(b => {
+                const on = b.dataset[attr] === String(value);
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+        }
+        $('unitToggle').querySelectorAll('.toggle-option').forEach(btn => btn.addEventListener('click', () => { if (btn.dataset.unit !== units) applyUnits(btn.dataset.unit); }));
+        $('cvDirToggle').querySelectorAll('.toggle-option').forEach(btn => btn.addEventListener('click', () => { convDir = btn.dataset.dir; setToggle('cvDirToggle', 'dir', convDir); renderConvert(); }));
+
+        // ===== Boards =====
+        function presetOptions() {
+            let h = '<option value="">Custom size</option><optgroup label="Hardwood thickness (rough, quarters)">';
+            QUARTERS.forEach(q => { h += '<option value="q:' + q[0] + '">' + q[0] + ' (' + fmtN(q[1], 2) + ' in)</option>'; });
+            h += '</optgroup><optgroup label="Dimensional lumber (nominal size)">';
+            NOMINAL.forEach(n => { h += '<option value="n:' + n[0] + '">' + n[0].replace('x', ' x ') + '</option>'; });
+            return h + '</optgroup>';
+        }
+        function makeBoardCard(index, d) {
+            const uid = 'bd' + (boardUid++);
+            const card = document.createElement('div');
+            card.className = 'wall-card board-card';
+            card.innerHTML =
+                '<div class="wall-card-header"><span class="wall-card-label">Board ' + (index + 1) + '</span>' +
+                    (index > 0 ? '<button type="button" class="remove-wall-btn remove-board-btn"><i class="fas fa-times"></i> Remove</button>' : '') + '</div>' +
+                '<div class="board-meta">' +
+                    '<div class="input-group"><label for="' + uid + '-p">Quick size</label><div class="row"><select id="' + uid + '-p" class="board-preset">' + presetOptions() + '</select></div></div>' +
+                    '<div class="input-group"><label for="' + uid + '-q">Quantity</label><div class="row"><input type="number" inputmode="numeric" id="' + uid + '-q" class="board-qty" min="1" max="10000" step="1" value="1"><span class="unit">pcs</span></div></div>' +
+                '</div>' +
+                '<div class="input-grid">' +
+                    '<div class="input-group"><label for="' + uid + '-t">Thickness</label><div class="row"><input type="text" inputmode="text" id="' + uid + '-t" class="frac-in b-t" placeholder="e.g. 1 or 3/4" autocomplete="off"><span class="unit" data-ul="small"></span></div></div>' +
+                    '<div class="input-group"><label for="' + uid + '-w">Width</label><div class="row"><input type="text" inputmode="text" id="' + uid + '-w" class="frac-in b-w" placeholder="e.g. 8 1/4" autocomplete="off"><span class="unit" data-ul="small"></span></div></div>' +
+                    dimHtml(uid) +
+                '</div>';
+            card.querySelector('.board-qty').value = d.qty != null ? d.qty : 1;
+            if (d.t != null) setInEl(card.querySelector('.b-t'), d.t);
+            if (d.w != null) setInEl(card.querySelector('.b-w'), d.w);
+            if (d.l != null) setDim(card.querySelector('.dim-group'), d.l);
+            if (d.preset) card.querySelector('.board-preset').value = d.preset;
+            return card;
+        }
+        function renumberBoards() {
+            const cards = $('boardsContainer').querySelectorAll('.board-card');
+            cards.forEach((c, i) => { c.querySelector('.wall-card-label').textContent = 'Board ' + (i + 1); });
+            $('addBoardBtn').disabled = cards.length >= MAX_BOARDS;
+        }
+        function addBoard(d) {
+            const count = $('boardsContainer').querySelectorAll('.board-card').length;
+            if (count >= MAX_BOARDS) return;
+            $('boardsContainer').appendChild(makeBoardCard(count, d || {}));
+            renumberBoards();
+            refreshUnitLabels();
+            calcLumber();
+        }
+        $('addBoardBtn').addEventListener('click', () => addBoard({}));
+        $('boardsContainer').addEventListener('input', e => {
+            const t = e.target;
+            if (t.classList.contains('frac-in')) {
+                readFracEl(t);
+                const sel = t.closest('.board-card').querySelector('.board-preset');
+                if (sel.value) sel.value = '';
+            }
+            const g = t.closest('.dim-group'); if (g) syncDim(g);
+            calcLumber();
+        });
+        $('boardsContainer').addEventListener('change', e => {
+            if (!e.target.classList.contains('board-preset')) return;
+            const v = e.target.value; if (!v) return;
+            const card = e.target.closest('.board-card');
+            if (v.indexOf('q:') === 0) {
+                const q = QUARTERS.find(x => x[0] === v.slice(2));
+                setInEl(card.querySelector('.b-t'), q[1]);
+            } else {
+                const n = NOMINAL.find(x => x[0] === v.slice(2));
+                setInEl(card.querySelector('.b-t'), n[1]);
+                setInEl(card.querySelector('.b-w'), n[2]);
+            }
+            calcLumber();
+        });
+        $('boardsContainer').addEventListener('click', e => {
+            const btn = e.target.closest('button');
+            if (btn && btn.classList.contains('remove-board-btn')) { btn.closest('.board-card').remove(); renumberBoards(); calcLumber(); }
+        });
+        ['wastePct', 'currency', 'priceBF'].forEach(id => $(id).addEventListener('input', calcLumber));
+
+        // ===== Formatting =====
+        const bfText = n => fmtComma(n, 2) + ' BF';
+        function moneyPlain(n) { return $('currency').value.trim().slice(0, 4) + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+        function addCard(parent, label, value) {
+            const c = document.createElement('div');
+            c.className = 'result-card';
+            c.innerHTML = '<div class="result-label">' + escapeHtml(label) + '</div><div class="result-value small">' + escapeHtml(value) + '</div>';
+            parent.appendChild(c);
+        }
+        function showWarn(id, msgs) {
+            const el = $(id);
+            if (msgs.length) { el.innerHTML = msgs.map(escapeHtml).join('<br>'); el.classList.add('show'); } else { el.classList.remove('show'); el.innerHTML = ''; }
+        }
+        const inchesText = c => fmtN(c, 4) + ' in';
+        function lenText(ft) {
+            let f = Math.floor(ft + 1e-9), i = Math.round((ft - f) * 12 * 10) / 10;
+            if (i >= 12) { f += 1; i = 0; }
+            return f + ' ft' + (i > 0 ? ' ' + fmtN(i, 1) + ' in' : '');
+        }
+
+        // ===== Lumber list =====
+        let lastLumber = null;
+        function calcLumber() {
+            const issues = [];
+            const clamped = [];
+            const track = (raw, opts, name) => { const t = trackedNumber(raw, opts); if (t.wasClamped) clamped.push(name); return t.value; };
+            const items = [];
+            $('boardsContainer').querySelectorAll('.board-card').forEach((card, i) => {
+                const label = 'Board ' + (i + 1);
+                const bad = [];
+                const ts = inState(card.querySelector('.b-t')), ws = inState(card.querySelector('.b-w'));
+                if (ts.bad) bad.push('thickness'); if (ws.bad) bad.push('width');
+                const lv = readDim(card.querySelector('.dim-group'));
+                const qraw = parseFloat(card.querySelector('.board-qty').value);
+                const qty = (!isFinite(qraw) || qraw < 1 || !Number.isInteger(qraw)) ? NaN : track(qraw, { min: 1, max: LIMITS.qMax, fallback: 1 }, label + ' quantity');
+                items.push({
+                    label: label, qty: qty, bad: bad,
+                    t: ts.v > 0 ? track(ts.v, { min: 0, max: LIMITS.tMax, fallback: ts.v }, label + ' thickness') : ts.v,
+                    w: ws.v > 0 ? track(ws.v, { min: 0, max: LIMITS.wMax, fallback: ws.v }, label + ' width') : ws.v,
+                    l: lv > 0 ? track(lv, { min: 0, max: LIMITS.lMax, fallback: lv }, label + ' length') : lv
+                });
+            });
+            const results = computeBoards(items);
+            results.forEach(r => { if (r.status === 'bad') issues.push(r.issue); });
+            const sums = sumBoards(results);
+
+            const wasteRaw = parseFloat($('wastePct').value);
+            let waste = 0;
+            if (!isFinite(wasteRaw)) issues.push('Enter a waste allowance. Use 0 for none.');
+            else waste = track(wasteRaw, { min: 0, max: 100, fallback: 0 }, 'waste allowance');
+            const priceRaw = parseFloat($('priceBF').value);
+            const price = isFinite(priceRaw) ? track(priceRaw, { min: 0, max: 1000000, fallback: 0 }, 'price per board foot') : 0;
+            if (clamped.length) issues.push('These values were outside the allowed range, so the nearest allowed value was used in the math: ' + clamped.join(', ') + '. Change the field to see a different result.');
+            showWarn('warnLumber', issues);
+
+            const total = sums.anyOk ? sums.total : 0;
+            const toBuy = total * (1 + waste / 100);
+            const cost = price > 0 ? toBuy * price : 0;
+            $('wasteHint').textContent = waste === 0
+                ? 'At 0% the result is the exact board feet of your list. Add an allowance when you are buying.'
+                : (waste <= 10 ? 'A small allowance suits straight dimensional lumber. Hardwood cut lists often need more.' : 'Many woodworkers add 15 to 30% on hardwood cut lists to cover defects and cutting losses. Ask your supplier.');
+
+            $('totalResult').textContent = sums.anyOk ? fmtComma(total, 2) : '0';
+            const uc = $('unitCards'); uc.innerHTML = '';
+            if (sums.anyOk) {
+                addCard(uc, 'Cubic feet', fmtComma(total / 12, 3));
+                addCard(uc, 'Cubic meters', fmtComma(total * VOL_PER_BF.cum, 4));
+                addCard(uc, 'MBF (thousand BF)', fmtComma(total / 1000, 4));
+                addCard(uc, 'Pieces', fmtComma(sums.pieces, 0));
+                addCard(uc, 'Total length', fmtComma(sums.linear, 2) + ' ft');
+                if (waste > 0) addCard(uc, 'To buy (+' + fmtN(waste, 1) + '%)', bfText(toBuy));
+                if (price > 0) addCard(uc, 'Estimated cost', moneyPlain(cost));
+            }
+
+            const tbody = $('breakdownBody'); tbody.innerHTML = '';
+            results.forEach(r => {
+                const tr = document.createElement('tr');
+                if (r.status === 'ok') {
+                    tr.innerHTML = '<td>' + escapeHtml(r.label) + '</td><td>' + fmtN(r.t, 3) + ' x ' + fmtN(r.w, 3) + ' in x ' + lenText(r.l) + '</td><td>' + r.qty + '</td><td>' + fmtN(r.each, 3) + '</td><td>' + fmtN(r.total, 3) + '</td>';
+                } else {
+                    tr.innerHTML = '<td>' + escapeHtml(r.label) + '</td><td colspan="4">' + (r.status === 'blank' ? 'incomplete' : 'not counted') + '</td>';
+                }
+                tbody.appendChild(tr);
+            });
+            if (sums.anyOk) {
+                const t = document.createElement('tr'); t.className = 'total-row';
+                t.innerHTML = '<td>Total</td><td></td><td>' + sums.pieces + '</td><td></td><td>' + fmtN(total, 3) + '</td>';
+                tbody.appendChild(t);
+            }
+
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (sums.anyOk) {
+                if (isMetric()) step += 'Your mm, m and cm entries were converted to inches and feet first (25.4 mm = 1 in, 0.3048 m = 1 ft).<br><br>';
+                results.forEach(r => {
+                    if (r.status !== 'ok') return;
+                    step += '<strong>' + escapeHtml(r.label) + ':</strong> ' + (r.qty > 1 ? r.qty + ' x ' : '') + '(' + fmtN(r.t, 3) + ' in x ' + fmtN(r.w, 3) + ' in x ' + fmtN(r.l, 3) + ' ft) / 12 = ' + fmtN(r.total, 3) + ' BF<br>';
+                });
+                step += '<br><strong>Total:</strong> ' + fmtN(total, 3) + ' BF = ' + fmtN(total / 12, 3) + ' cu ft = ' + fmtN(total * VOL_PER_BF.cum, 4) + ' cu m';
+                if (waste > 0) step += '<br><strong>To buy:</strong> ' + fmtN(total, 3) + ' x ' + (1 + waste / 100).toFixed(2) + ' = ' + fmtN(toBuy, 3) + ' BF';
+                if (price > 0) step += '<br><strong>Cost:</strong> ' + fmtN(toBuy, 3) + ' BF x ' + moneyPlain(price) + ' = ' + moneyPlain(cost);
+            } else step += 'Enter a complete board above to see the math.';
+            $('stepBlock').innerHTML = step;
+            lastLumber = { results: results, sums: sums, total: total, waste: waste, toBuy: toBuy, price: price, cost: cost };
+            return lastLumber;
+        }
+
+        // ===== Convert =====
+        let lastConvert = null;
+        function renderConvert() {
+            // A: board feet and square feet
+            const issues = [];
+            const tState = inState($('cvThick'));
+            const raw = parseFloat($('cvValue').value);
+            const out = $('cvOut');
+            const sqUnit = isMetric() ? 'sq m' : 'sq ft';
+            $('cvValueLabel').textContent = convDir === 'bf2sqft' ? 'Board feet' : 'Area (' + sqUnit + ')';
+            lastConvert = null;
+            if (tState.bad) issues.push('The thickness could not be read. Use a decimal like 0.75 or a fraction like 3/4.');
+            else if (tState.blank) issues.push('Enter the thickness of the board.');
+            else if (!(tState.v > 0)) issues.push('The thickness must be above zero.');
+            if (!isFinite(raw)) issues.push('Enter a value to convert.');
+            else if (raw < 0) issues.push('The value must be 0 or more.');
+            else if (raw > 1e9) issues.push('Enter a value of 1,000,000,000 or less.');
+            showWarn('warnConv', issues);
+            if (issues.length) { out.innerHTML = ''; }
+            else {
+                const t = tState.v;
+                if (convDir === 'bf2sqft') {
+                    const sqft = bfToSqft(raw, t);
+                    out.innerHTML = '<strong>' + fmtComma(raw, 3) + ' BF</strong> at ' + inchesText(t) + ' thick covers <strong>' + fmtComma(sqft, 3) + ' sq ft</strong> (' + fmtComma(sqft * SQFT_SQM, 3) + ' sq m).<br>Formula: sq ft = board feet / thickness in inches = ' + fmtN(raw, 3) + ' / ' + fmtN(t, 4) + '.';
+                    lastConvert = { text: fmtComma(raw, 3) + ' BF at ' + inchesText(t) + ' thick = ' + fmtComma(sqft, 3) + ' sq ft (' + fmtComma(sqft * SQFT_SQM, 3) + ' sq m)' };
+                } else {
+                    const sqft = isMetric() ? raw / SQFT_SQM : raw;
+                    const bf = sqftToBf(sqft, t);
+                    out.innerHTML = '<strong>' + fmtComma(raw, 3) + ' ' + sqUnit + '</strong> of ' + inchesText(t) + ' thick stock is <strong>' + fmtComma(bf, 3) + ' BF</strong>.<br>Formula: board feet = sq ft x thickness in inches = ' + fmtN(sqft, 3) + ' x ' + fmtN(t, 4) + '.';
+                    lastConvert = { text: fmtComma(raw, 3) + ' ' + sqUnit + ' of ' + inchesText(t) + ' thick stock = ' + fmtComma(bf, 3) + ' BF' };
+                }
+            }
+            // B: volume units
+            const vraw = parseFloat($('vcValue').value);
+            const vunit = $('vcUnit').value;
+            const body = $('vcBody'); body.innerHTML = '';
+            if (!isFinite(vraw) || vraw < 0) { $('vcNote').textContent = 'Enter a volume of 0 or more.'; $('vcNote').className = 'status-note status-caution show'; return; }
+            if (vraw > 1e12) { $('vcNote').textContent = 'Enter a value of 1,000,000,000,000 or less.'; $('vcNote').className = 'status-note status-caution show'; return; }
+            const c = convertVolume(vraw, vunit);
+            ['bf', 'mbf', 'cuft', 'cuin', 'cum', 'liter'].forEach(u => {
+                const tr = document.createElement('tr');
+                if (u === vunit) tr.className = 'total-row';
+                tr.innerHTML = '<td>' + VOL_NAME[u] + '</td><td>' + fmtComma(c.all[u], u === 'cum' || u === 'mbf' ? 5 : 3) + '</td>';
+                body.appendChild(tr);
+            });
+            $('vcNote').className = 'status-note status-neutral show';
+            $('vcNote').textContent = '1 board foot = 144 cubic inches = 1/12 cubic foot = 2.3597 liters.';
+        }
+        ['cvValue', 'vcValue'].forEach(id => $(id).addEventListener('input', renderConvert));
+        $('cvThick').addEventListener('input', () => { readFracEl($('cvThick')); $('cvQuarter').value = ''; renderConvert(); });
+        $('vcUnit').addEventListener('change', renderConvert);
+        $('cvQuarter').addEventListener('change', () => {
+            const v = $('cvQuarter').value; if (!v) return;
+            setInEl($('cvThick'), QUARTERS.find(q => q[0] === v)[1]);
+            renderConvert();
+        });
+
+        // ===== Log scale =====
+        let lastLog = null;
+        const RULES = { doyle: 'Doyle', scribner: 'Scribner (formula)', intl: 'International 1/4 in' };
+        function calcLog() {
+            const issues = [];
+            const clamped = [];
+            lastLog = null;
+            const ds = inState($('logDiam'));
+            const lcanon = $('logLenMain').dataset.canon;
+            const lenFt = lcanon === '' || lcanon === undefined ? NaN : parseFloat(lcanon);
+            const nraw = parseFloat($('logCount').value);
+            if (ds.bad) issues.push('The diameter could not be read. Use a decimal like 14.5.');
+            else if (ds.blank) issues.push('Enter the diameter at the small end, inside the bark.');
+            else if (!(ds.v >= 6)) issues.push('Log rules are meant for logs at least 6 inches (about 15 cm) across at the small end.');
+            else if (ds.v > 60) issues.push('Enter a diameter of 60 inches (about 152 cm) or less.');
+            if (!isFinite(lenFt)) issues.push('Enter the log length.');
+            else if (lenFt < 4 - 1e-9) issues.push('The log must be at least 4 ft (about 1.2 m) long.');
+            else if (lenFt > 20 + 1e-9) issues.push('Logs longer than 20 ft (about 6.1 m) are normally scaled as two or more shorter logs. Enter each section as its own log.');
+            if (!isFinite(nraw) || nraw < 1 || !Number.isInteger(nraw)) issues.push('Enter a whole number of logs, 1 or more.');
+            else if (nraw > 10000) issues.push('Enter 10,000 logs or fewer.');
+            showWarn('warnLog', issues);
+            const body = $('logBody'); body.innerHTML = '';
+            if (issues.length) { $('logTotal').textContent = '0'; $('logCards').innerHTML = ''; $('logNote').className = 'status-note status-neutral'; return null; }
+            const D = ds.v, L = lenFt, N = nraw;
+            const vals = { doyle: logDoyle(D, L), scribner: logScribner(D, L), intl: logIntl(D, L) };
+            const sel = $('logRule').value;
+            $('logTotal').textContent = fmtComma(vals[sel] * N, 1);
+            $('logTotalLabel').textContent = 'Board Feet (' + RULES[sel] + ', ' + N + (N === 1 ? ' log' : ' logs') + ')';
+            ['doyle', 'scribner', 'intl'].forEach(k => {
+                const tr = document.createElement('tr');
+                if (k === sel) tr.className = 'total-row';
+                const diff = k === 'intl' ? 'reference' : (vals.intl > 0 ? fmtN((vals[k] - vals.intl) / vals.intl * 100, 0) + '%' : '-');
+                tr.innerHTML = '<td>' + RULES[k] + '</td><td>' + fmtComma(vals[k], 1) + '</td><td>' + fmtComma(vals[k] * N, 1) + '</td><td>' + diff + '</td>';
+                body.appendChild(tr);
+            });
+            const lc = $('logCards'); lc.innerHTML = '';
+            addCard(lc, 'Diameter used', fmtN(D, 2) + ' in');
+            addCard(lc, 'Length used', fmtN(L, 2) + ' ft');
+            addCard(lc, 'Per log (' + RULES[sel] + ')', fmtComma(vals[sel], 1) + ' BF');
+            const notes = [];
+            if (sel === 'scribner' && (D >= 28 || L > 16)) notes.push('The Scribner formula is described as fairly consistent only for logs 16 ft or shorter and under 28 in. Outside that range, treat it as a rough guide and use the published table.');
+            if (sel === 'doyle' && D < 14) notes.push('Doyle ignores taper and seriously under-scales small logs, so expect more lumber than it predicts.');
+            notes.push('Scale estimates are not exact. Different scalers get different numbers, and mills expect an overrun or underrun.');
+            $('logNote').innerHTML = escapeHtml(notes.join(' '));
+            $('logNote').className = 'status-note status-neutral show';
+            lastLog = { D: D, L: L, N: N, sel: sel, vals: vals };
+            return lastLog;
+        }
+        $('logDiam').addEventListener('input', () => { readFracEl($('logDiam')); calcLog(); });
+        $('logLenMain').addEventListener('input', () => { const v = parseFloat($('logLenMain').value); $('logLenMain').dataset.canon = isFinite(v) ? String(isMetric() ? v / FT_M : v) : ''; calcLog(); });
+        $('logCount').addEventListener('input', calcLog);
+        $('logRule').addEventListener('change', calcLog);
+
+        function refreshAll() { calcLumber(); renderConvert(); calcLog(); }
+
+        // ===== Copy / Share / PDF (for the active tool) =====
+        const SRC = 'Source: CalcSnaps Board Foot Calculator (https://calcsnaps.com/construction-calculators/board-foot-calculator)';
+        function summaryParts() {
+            if (mode === 'lumber') {
+                const r = calcLumber();
+                if (!r.sums.anyOk) return { title: 'Board Foot Calculator', lines: ['Enter a complete board to see results.'], method: '' };
+                const lines = ['Total: ' + bfText(r.total) + ' (' + fmtN(r.total / 12, 3) + ' cu ft, ' + fmtN(r.total * VOL_PER_BF.cum, 4) + ' cu m)'];
+                r.results.forEach(x => { if (x.status === 'ok') lines.push(x.label + ': ' + (x.qty > 1 ? x.qty + ' x ' : '') + fmtN(x.t, 3) + ' x ' + fmtN(x.w, 3) + ' in x ' + lenText(x.l) + ' = ' + fmtN(x.total, 3) + ' BF'); });
+                if (r.waste > 0) lines.push('To buy with ' + fmtN(r.waste, 1) + '% allowance: ' + bfText(r.toBuy));
+                if (r.price > 0) lines.push('Estimated cost: ' + moneyPlain(r.cost));
+                return { title: 'Board Foot Calculator Result', lines: lines, method: 'Board feet = thickness (in) x width (in) x length (ft) / 12, times quantity.' };
+            }
+            if (mode === 'convert') {
+                renderConvert();
+                const lines = [];
+                if (lastConvert) lines.push(lastConvert.text);
+                else lines.push('Enter a thickness and a value to convert.');
+                return { title: 'Board Foot Conversion', lines: lines, method: 'Square feet = board feet / thickness (in). 1 BF = 144 cubic inches = 1/12 cubic foot.' };
+            }
+            const r = calcLog();
+            if (!r) return { title: 'Log Board Foot Scale', lines: ['Enter a valid log diameter, length, and number of logs.'], method: '' };
+            const lines = ['Log: ' + fmtN(r.D, 2) + ' in small-end diameter (inside bark), ' + fmtN(r.L, 2) + ' ft long, ' + r.N + (r.N === 1 ? ' log' : ' logs')];
+            ['doyle', 'scribner', 'intl'].forEach(k => lines.push(RULES[k] + ': ' + fmtComma(r.vals[k], 1) + ' BF per log, ' + fmtComma(r.vals[k] * r.N, 1) + ' BF total'));
+            return { title: 'Log Board Foot Scale', lines: lines, method: 'Doyle: (D-4)^2 x L/16. Scribner (formula): (0.79D^2 - 2D - 4) x L/16. International 1/4 in: integrated formula (Grosenbaugh). Source: Purdue FNR-191.' };
+        }
+        function buildSummary() { const p = summaryParts(); return p.title + '\n' + p.lines.join('\n') + '\n' + SRC; }
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary(); const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => { btn.innerHTML = '<i class="fas fa-check"></i> Copied!'; setTimeout(() => { btn.innerHTML = original; }, 1500); })
+                .catch(() => { btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy'; setTimeout(() => { btn.innerHTML = original; }, 1500); });
+        });
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) { navigator.share({ title: 'Board Foot Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/board-foot-calculator' }).catch(() => {}); }
+            else {
+                const btn = this; const original = btn.innerHTML;
+                navigator.clipboard.writeText(text).then(() => { btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!'; }).catch(() => { btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy'; });
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+        function downloadPDF() {
+            const p = summaryParts();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+            const ensure = h => { if (y + h > 280) { doc.addPage(); y = 20; } };
+            const write = (str, x, size, color) => {
+                doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
+                doc.splitTextToSize(str, 190 - x).forEach(line => { ensure(6); doc.text(line, x, y); y += 5.5; });
+            };
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text(p.title, 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + new Date().toLocaleString(), 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 10;
+            p.lines.forEach(l => write(l, 25, 11, [0, 0, 0]));
+            y += 4;
+            if (p.method) write('Method: ' + p.method, 20, 9, [100, 100, 100]);
+            const pages = doc.getNumberOfPages();
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            for (let i = 1; i <= pages; i++) {
+                doc.setPage(i);
+                doc.text('Planning estimate only. Confirm sizes and tally with your lumber supplier.', 105, 285, { align: 'center' });
+                doc.text('Generated by CalcSnaps - Board Foot Calculator', 105, 291, { align: 'center' });
+            }
+            doc.save('Board_Foot_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this; btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => { downloadPDF(); btn.innerHTML = original; btn.disabled = false; });
+        });
+
+        // ===== Main tabs (arrow keys, Home, End) =====
+        const tabBtns = Array.from(document.querySelectorAll('.tab-btn'));
+        function activateTab(btn, focus) {
+            tabBtns.forEach(b => { const on = b === btn; b.classList.toggle('active', on); b.setAttribute('aria-selected', on ? 'true' : 'false'); b.tabIndex = on ? 0 : -1; });
+            document.querySelectorAll('.tab-panel').forEach(p => { p.hidden = p.id !== btn.getAttribute('aria-controls'); });
+            mode = btn.dataset.mode;
+            if (focus) btn.focus();
+        }
+        tabBtns.forEach((btn, i) => {
+            btn.addEventListener('click', () => activateTab(btn, false));
+            btn.addEventListener('keydown', e => {
+                let n = -1;
+                if (e.key === 'ArrowRight') n = (i + 1) % tabBtns.length;
+                else if (e.key === 'ArrowLeft') n = (i - 1 + tabBtns.length) % tabBtns.length;
+                else if (e.key === 'Home') n = 0;
+                else if (e.key === 'End') n = tabBtns.length - 1;
+                if (n < 0) return;
+                e.preventDefault();
+                activateTab(tabBtns[n], true);
+            });
+        });
+
+        // ===== Reset =====
+        function loadDefaults() {
+            $('boardsContainer').innerHTML = '';
+            addBoard({ t: 1, w: 8, l: 8, qty: 1, preset: 'q:4/4' });
+        }
+        function resetAll() {
+            units = 'imperial'; convDir = 'bf2sqft';
+            setToggle('unitToggle', 'unit', 'imperial');
+            setToggle('cvDirToggle', 'dir', 'bf2sqft');
+            $('wastePct').value = 0; $('priceBF').value = ''; $('currency').value = '$';
+            $('cvValue').value = '100'; $('cvQuarter').value = ''; setInEl($('cvThick'), 0.75);
+            $('vcValue').value = '100'; $('vcUnit').value = 'bf';
+            $('logDiam').value = ''; $('logDiam').dataset.canon = '';
+            $('logCount').value = 1; $('logRule').value = 'doyle';
+            setInEl($('logDiam'), 16); $('logLenMain').value = '16'; $('logLenMain').dataset.canon = '16';
+            loadDefaults();
+            refreshUnitLabels();
+            refreshAll();
+            const btn = $('resetAllBtn'); const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)'; btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== Init =====
+        QUARTERS.forEach(q => { const o = document.createElement('option'); o.value = q[0]; o.textContent = q[0] + ' (' + fmtN(q[1], 2) + ' in)'; $('cvQuarter').appendChild(o); });
+        setInEl($('cvThick'), 0.75);
+        setInEl($('logDiam'), 16);
+        $('logLenMain').value = '16'; $('logLenMain').dataset.canon = '16';
+        loadDefaults();
+        refreshUnitLabels();
+        refreshAll();
+
+    })();
+    </script>
+</body>
+</html>
