@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Rafter Calculator - Rafter Length, Birdsmouth & Count | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free rafter calculator: find rafter length from span and pitch with overhang and ridge board, plus a birdsmouth check and rafter count. Feet, inches or metric.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/rafter-calculator">
+
+    <meta property="og:title" content="Rafter Calculator - Rafter Length, Birdsmouth & Count | CalcSnaps">
+    <meta property="og:description" content="Free rafter calculator: find rafter length from span and pitch with overhang and ridge board, plus a birdsmouth check and rafter count. Feet, inches or metric.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/rafter-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rafter Calculator",
+        "description": "Calculate common rafter length from span and pitch or rise, with overhang and ridge board deduction, birdsmouth notch check, rafter count and stock length for gable and shed roofs",
+        "url": "https://calcsnaps.com/construction-calculators/rafter-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Rafter Calculator Guide: Rafter Length, Overhang, Birdsmouth and Spacing Explained",
+        "description": "How to calculate common rafter length from span and pitch, add overhang, deduct the ridge board, check the birdsmouth notch and count rafters, with a worked example and rafter length table.",
+        "author": { "@type": "Organization", "name": "CalcSnaps" },
+        "publisher": { "@type": "Organization", "name": "CalcSnaps" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://calcsnaps.com/construction-calculators/rafter-calculator" },
+        "datePublished": "2026-10-10",
+        "dateModified": "2026-10-10"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do you calculate rafter length?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Find the run, which is half the span for a gable roof, then multiply it by the pitch multiplier √(1 + slope²), where slope is rise ÷ run. Add the sloped length of the overhang and subtract half the ridge board's sloped thickness. For a building 24 ft wide at 6:12, the run is 12 ft, the multiplier is 1.1180, and the rafter line length is 13 ft 5 in before overhang and ridge adjustments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I add the overhang to the rafter length?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The overhang is measured horizontally, so multiply it by the same pitch multiplier and add it to the line length. A 12 in overhang at 6:12 adds about 13.42 in along the slope. If your rafters meet a ridge board, also subtract half of its thickness times the multiplier, which is about 0.84 in for a 1½ in ridge board at 6:12."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How far apart should rafters be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Rafters are most often spaced 16 or 24 inches on center, and 12 and 19.2 inches are also used. The allowable spacing depends on the rafter size, species and grade, span, roof and snow loads, and your local code, so check span tables or the American Wood Council's span calculator rather than choosing a spacing from habit. Closer spacing lets a given board span further but needs more pieces."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What size rafter do I need for my span?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "This calculator finds the length, not the size. Rafter size comes from span tables that account for lumber species and grade, spacing, and roof and snow loads, such as the IRC tables or the American Wood Council's free span calculator. Remember that span tables use the horizontal span, not the sloped length of the rafter."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How deep can a birdsmouth cut be?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The IRC's general limit for a notch at the end of a rafter is one-fourth of the rafter's depth (R802.7.1), so a 2x8 rafter, which is 7.25 in deep, should have a notch no deeper than about 1.8 in. The seat should also bear on at least 1½ in of the plate but be no wider than the plate. Local code and engineered framing can differ."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Rafter Calculator",
+        "step": [
+            { "@type": "HowToStep", "position": 1, "text": "Choose the roof type, gable or shed, and your units." },
+            { "@type": "HowToStep", "position": 2, "text": "Enter the building span measured from outside wall to outside wall." },
+            { "@type": "HowToStep", "position": 3, "text": "Enter the roof pitch as x:12, degrees or percent, or switch to rise if you know the ridge height instead." },
+            { "@type": "HowToStep", "position": 4, "text": "Add the eave overhang and, for a gable roof, the ridge board thickness." },
+            { "@type": "HowToStep", "position": 5, "text": "Optionally enter the rafter depth and seat length for the birdsmouth check, and the roof length and spacing for the rafter count." },
+            { "@type": "HowToStep", "position": 6, "text": "Read the rafter length, minimum board length, stock length and rafter count, then copy, share or download the result." }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://calcsnaps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "All Calculators", "item": "https://calcsnaps.com/all-calculators" },
+            { "@type": "ListItem", "position": 3, "name": "Rafter Calculator" }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; min-width: 0; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; margin-right: 8px; }
+        .input-group .unit:last-child { margin-right: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .mini-btn { padding: 8px 14px; border-radius: 40px; border: 1px dashed var(--primary-light); background: rgba(139,92,246,0.05); color: var(--primary-dark); font-weight: 600; font-size: 12.5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .mini-btn:hover { background: rgba(139,92,246,0.1); }
+        .mini-btn:focus-visible { outline: 3px solid var(--primary); }
+        .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 20px; align-items: center; }
+        .chip-label { font-size: 12.5px; font-weight: 600; color: var(--text-dark); margin-right: 4px; }
+        .hint { font-size: 12.5px; color: var(--gray-text); margin: -6px 0 18px; line-height: 1.6; }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { width: 100%; height: auto; }
+        .sv-tri { fill: rgba(139,92,246,0.10); stroke: var(--primary); stroke-width: 2; }
+        .sv-rafter { stroke: var(--primary-dark); stroke-width: 4; stroke-linecap: round; }
+        .sv-guide { stroke: var(--gray); stroke-width: 1.5; fill: none; }
+        .sv-arc { fill: none; stroke: var(--secondary-dark); stroke-width: 2.5; }
+        .sv-text { fill: var(--text-dark); font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .sv-dim { fill: var(--dark); font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 700; }
+        .sv-angle { fill: var(--secondary-dark); font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 800; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.95; }
+        .total-payment-card .label small { display: block; font-size: 12.5px; opacity: 0.9; margin-top: 2px; }
+        .total-payment-card .amount { font-size: 30px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary-text); }
+        .result-value.small { font-size: 16px; }
+        .result-sub { font-size: 11.5px; color: var(--gray-text); margin-top: 4px; }
+
+        .info-block { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 16px; margin-top: 14px; text-align: left; font-size: 13.5px; color: var(--text-dark); line-height: 1.7; }
+        .info-block strong { color: var(--primary-text); }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 24px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+    
+        .sv-tail { stroke: var(--secondary-dark); stroke-width: 4; stroke-linecap: round; }
+        .sv-wall { fill: rgba(100,116,139,0.18); stroke: var(--gray-text); stroke-width: 1.5; }
+        .sv-note { fill: var(--gray-text); font-size: 11.5px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .info-block .ok { color: #047857; font-weight: 700; }
+        .info-block .warnc { color: #b45309; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-ruler-combined"></i> Rafter Calculator</h1>
+                    <p>Rafter length · Overhang · Ridge deduction · Birdsmouth check · Rafter count</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator finds rafter length and layout quantities. It does not size rafters or check spans and loads. Rafter size, spacing and connections must follow your plans, span tables and local building code.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="section-title"><i class="fas fa-house-chimney"></i> Roof Type &amp; Units</div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Roof type</span>
+                        <div class="toggle-switch" id="roofToggle" role="radiogroup" aria-label="Roof type">
+                            <button type="button" class="toggle-option active" data-roof="gable" role="radio" aria-checked="true">Gable (two sides)</button>
+                            <button type="button" class="toggle-option" data-roof="shed" role="radio" aria-checked="false">Shed (single slope)</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row">
+                        <span class="toggle-label">Units</span>
+                        <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Measurement units">
+                            <button type="button" class="toggle-option" data-unit="in" role="radio" aria-checked="false">Inches</button>
+                            <button type="button" class="toggle-option" data-unit="ft" role="radio" aria-checked="false">Feet</button>
+                            <button type="button" class="toggle-option active" data-unit="ftin" role="radio" aria-checked="true">Feet + inches</button>
+                            <button type="button" class="toggle-option" data-unit="mm" role="radio" aria-checked="false">mm</button>
+                            <button type="button" class="toggle-option" data-unit="m" role="radio" aria-checked="false">Meters</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-ruler"></i> Roof Size &amp; Slope</div>
+                    <div class="input-grid">
+                        <div class="input-group" id="spanField"></div>
+                    </div>
+                    <div class="hint" id="spanHint"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">Slope known by</span>
+                        <div class="toggle-switch" id="slopeToggle" role="radiogroup" aria-label="How the slope is known">
+                            <button type="button" class="toggle-option active" data-slope="pitch" role="radio" aria-checked="true">Pitch</button>
+                            <button type="button" class="toggle-option" data-slope="rise" role="radio" aria-checked="false">Rise (ridge height)</button>
+                        </div>
+                    </div>
+
+                    <div id="pitchBlock">
+                        <div class="toggle-row">
+                            <span class="toggle-label">Pitch format</span>
+                            <div class="toggle-switch" id="pitchFmtToggle" role="radiogroup" aria-label="Pitch format">
+                                <button type="button" class="toggle-option active" data-pfmt="x12" role="radio" aria-checked="true">x:12</button>
+                                <button type="button" class="toggle-option" data-pfmt="deg" role="radio" aria-checked="false">Degrees</button>
+                                <button type="button" class="toggle-option" data-pfmt="pct" role="radio" aria-checked="false">Percent</button>
+                            </div>
+                        </div>
+                        <div class="chip-row" id="chipRow">
+                            <span class="chip-label">Quick pitch:</span>
+                            <button type="button" class="mini-btn" data-x="3">3:12</button>
+                            <button type="button" class="mini-btn" data-x="4">4:12</button>
+                            <button type="button" class="mini-btn" data-x="5">5:12</button>
+                            <button type="button" class="mini-btn" data-x="6">6:12</button>
+                            <button type="button" class="mini-btn" data-x="8">8:12</button>
+                            <button type="button" class="mini-btn" data-x="10">10:12</button>
+                            <button type="button" class="mini-btn" data-x="12">12:12</button>
+                        </div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="pitchVal" id="pitchLabelText">Roof pitch (rise per 12 of run)</label>
+                                <div class="row"><input type="number" id="pitchVal" inputmode="decimal" value="6" min="0" step="any"><span class="unit" id="pitchUnit">:12</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-grid" id="riseGrid" style="display:none;">
+                        <div class="input-group" id="riseField"></div>
+                    </div>
+
+                    <div class="section-title"><i class="fas fa-ruler-horizontal"></i> Overhang &amp; Ridge</div>
+                    <div class="input-grid">
+                        <div class="input-group" id="overhangField"></div>
+                        <div class="input-group" id="ridgeField"></div>
+                    </div>
+                    <div class="hint" id="ridgeHint">Overhang is measured horizontally from the outside face of the wall. For a gable roof, enter the ridge board thickness and half of it is deducted from each rafter.</div>
+
+                    <div class="section-title"><i class="fas fa-scissors"></i> Birdsmouth &amp; Board (optional)</div>
+                    <div class="input-grid">
+                        <div class="input-group" id="depthField"></div>
+                        <div class="input-group" id="seatField"></div>
+                    </div>
+                    <div class="chip-row" id="depthChips"><span class="chip-label">Rafter size:</span></div>
+                    <div class="chip-row" id="seatChips"><span class="chip-label">Wall plate:</span></div>
+                    <div class="hint">Rafter depth is the actual depth of the board (a 2x8 is 7.25 in). Seat length is the level bearing cut on the wall plate, which should not be wider than the plate. Both together enable the birdsmouth check and add the plumb-cut allowance to the board length.</div>
+
+                    <div class="section-title"><i class="fas fa-layer-group"></i> Rafter Count (optional)</div>
+                    <div class="input-grid">
+                        <div class="input-group" id="lengthField"></div>
+                        <div class="input-group">
+                            <label for="spacingVal" id="spacingLabel">Spacing on center</label>
+                            <div class="row"><input type="number" id="spacingVal" inputmode="decimal" min="0" step="any" placeholder="0"><span class="unit" id="spacingUnit">in</span></div>
+                        </div>
+                    </div>
+                    <div class="chip-row" id="spacingChips"><span class="chip-label">Common spacing:</span></div>
+                    <div class="hint">Roof length is the length of the building along the ridge (or along the wall on a shed roof), including overhangs at the ends if you want rafters there. Rafters are laid out at your spacing from one end with a rafter at the far end, so the last gap can be shorter. Spacing starts at 16 in, a common choice, so change it to match your plans.</div>
+
+                    <div class="results-panel" aria-live="polite">
+                        <div class="total-payment-card">
+                            <span class="label"><span>Rafter Length (along the top edge)</span><small id="totalSub">Enter your measurements</small></span>
+                            <span class="amount" id="totalResult">—</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card" id="pitchCard"><div class="result-label">Pitch</div><div class="result-value small" id="pitchResult">—</div><div class="result-sub" id="pitchSub"></div></div>
+                            <div class="result-card" id="runCard"><div class="result-label">Run</div><div class="result-value small" id="runResult">—</div><div class="result-sub" id="runSub"></div></div>
+                            <div class="result-card" id="riseCard"><div class="result-label">Rise</div><div class="result-value small" id="riseResult">—</div><div class="result-sub" id="riseSub"></div></div>
+                            <div class="result-card" id="lineCard"><div class="result-label">Rafter Line Length</div><div class="result-value small" id="lineResult">—</div><div class="result-sub" id="lineSub"></div></div>
+                            <div class="result-card" id="tailCard" style="display:none;"><div class="result-label">Overhang Tail</div><div class="result-value small" id="tailResult">—</div><div class="result-sub" id="tailSub"></div></div>
+                            <div class="result-card" id="ridgeCard" style="display:none;"><div class="result-label">Ridge Deduction</div><div class="result-value small" id="ridgeResult">—</div><div class="result-sub" id="ridgeSub"></div></div>
+                            <div class="result-card" id="multCard"><div class="result-label">Pitch Multiplier</div><div class="result-value small" id="multResult">—</div></div>
+                            <div class="result-card" id="minBoardCard" style="display:none;"><div class="result-label">Minimum Board Length</div><div class="result-value small" id="minBoardResult">—</div><div class="result-sub" id="minBoardSub"></div></div>
+                            <div class="result-card" id="stockCard" style="display:none;"><div class="result-label" id="stockLabel">Est. Minimum Stock Length</div><div class="result-value small" id="stockResult">—</div><div class="result-sub" id="stockSub"></div></div>
+                            <div class="result-card" id="heelCard" style="display:none;"><div class="result-label">Heel Cut Height</div><div class="result-value small" id="heelResult">—</div><div class="result-sub" id="heelSub"></div></div>
+                            <div class="result-card" id="notchCard" style="display:none;"><div class="result-label">Notch Depth</div><div class="result-value small" id="notchResult">—</div><div class="result-sub" id="notchSub"></div></div>
+                            <div class="result-card" id="countCard" style="display:none;"><div class="result-label">Rafters Needed</div><div class="result-value small" id="countResult">—</div><div class="result-sub" id="countSub"></div></div>
+                            <div class="result-card" id="lumberCard" style="display:none;"><div class="result-label">Total Lumber</div><div class="result-value small" id="lumberResult">—</div><div class="result-sub" id="lumberSub"></div></div>
+                        </div>
+                        <div class="info-block" id="pitchInfo">Enter a span and a pitch to see the rafter length and cut details.</div>
+                    </div>
+
+                    <div class="diagram-wrap">
+                        <svg id="roofSvg" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rafter diagram showing run, rise, overhang and rafter length"></svg>
+                    </div>
+                    <div class="status-note status-neutral show" style="margin-top:0;">The diagram shows one rafter, drawn to your pitch. Very flat or very steep roofs are adjusted slightly so every label stays readable.</div>
+
+                    <div class="section-title" style="margin-top:22px;"><i class="fas fa-calculator"></i> Step-by-Step Math</div>
+                    <div class="info-block" id="stepBlock"></div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Rafter Calculator Guide: Rafter Length, Overhang, Birdsmouth and Spacing Explained</h2>
+                    <p>How to find common rafter length from span and pitch, add overhang, deduct the ridge board, check the birdsmouth notch and count rafters</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Rafter Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Rafter Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Rafter Length Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#birdsmouth">6. Birdsmouth Cut Calculator and Notch Limits</a></div>
+                            <div class="toc-item"><a href="#table">7. Rafter Length Table</a></div>
+                            <div class="toc-item"><a href="#spacing-span">8. Rafter Spacing, Span and Size</a></div>
+                            <div class="toc-item"><a href="#shed-gable">9. Shed Roof and Gable Roof Rafters</a></div>
+                            <div class="toc-item"><a href="#units">10. Units and Conversions</a></div>
+                            <div class="toc-item"><a href="#tips">11. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">12. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">13. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">14. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>A rafter calculator finds how long each rafter must be for a roof, given the building span and the roof pitch. This free online common rafter calculator also handles the details that decide whether a cut rafter actually fits: the eave overhang, the ridge board deduction, the plumb-cut allowance on the board, and a birdsmouth check on the notch. It then counts how many rafters the roof needs at your chosen spacing. It is built for builders framing a gable, shed, garage or addition, and for homeowners who want to understand a framing quote or a lumber list. Enter your measurements in the calculator above, then use this guide to understand each result before you cut any lumber.</p>
+
+                    <div class="pro-tip">
+                        <strong>Quick answer:</strong>
+                        <p style="margin: 10px 0 0;">Rafter line length = run &times; &radic;(1 + slope&sup2;), where slope = rise &divide; run. For a gable roof the run is half the span. At 6:12 the multiplier is 1.118, so a 12 ft run gives a rafter line length of 13 ft 5 in, before overhang and ridge adjustments.</p>
+                    </div>
+
+                    <h2 id="how-works">1. How the Rafter Calculator Works</h2>
+                    <p>You enter the roof type, the building span, and the slope, either as a pitch or as the rise from the wall plate to the ridge. The calculator converts the span to a run, turns the slope into a pitch multiplier, and multiplies the run by it to get the rafter line length. As a rafter calculator with overhang, it then adds the sloped length of the eave overhang, subtracts half of the ridge board thickness on a gable roof, and reports the rafter length along the top edge. If you add the rafter depth, it adds the plumb-cut allowance to give a minimum board length and a minimum stock length. If you add the seat length, it checks the birdsmouth notch. If you add the roof length and spacing, it counts the rafters.</p>
+                    <p>If you only know the angle, or want to measure the slope of an existing roof, our <a href="https://calcsnaps.com/construction-calculators/roof-pitch-calculator">Roof Pitch Calculator</a> converts between x:12, degrees and percent and includes a full roof pitch chart with roof pitch angles. The rafter calculator accepts all three formats directly, so you can also enter the pitch here.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions and limits:</strong>
+                        <p style="margin: 10px 0 0;">The calculator is for common rafters: straight rafters running from the wall plate to the ridge on a gable roof, or from wall to wall on a shed roof, at one constant pitch with level plates. It does not calculate hip, valley or jack rafters, ridge beams, collar ties or trusses, and it does not size rafters or check spans and loads. Lengths are shown to the nearest 1/16 inch. Treat the results as planning figures, and cut one test rafter before you cut the rest.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Rafter Calculator</h2>
+                    <ol>
+                        <li>Choose the roof type, gable or shed, and your units: inches, feet, feet and inches, millimeters or meters.</li>
+                        <li>Enter the span, measured from the outside face of one wall to the outside face of the other.</li>
+                        <li>Choose how you know the slope. Enter the pitch as x:12, degrees or percent, or use the quick pitch buttons. If you know the ridge height instead, switch to rise.</li>
+                        <li>Enter the eave overhang, measured horizontally, and for a gable roof the ridge board thickness.</li>
+                        <li>Optionally pick the rafter size and the wall plate width to get the birdsmouth check and the minimum board length.</li>
+                        <li>Optionally enter the roof length and the spacing to get the rafter count and total lumber.</li>
+                        <li>Read the results, then copy, share or download them as a PDF.</li>
+                    </ol>
+                    <p>Your entries convert automatically if you change units later. The pitch can be up to 130:12, 85&deg; or 1,000%, and lengths can be up to 1,000 feet. If a value is outside the allowed range, the calculator says so and uses the nearest allowed value.</p>
+
+                    <h2 id="formula">3. Rafter Length Formula</h2>
+                    <div class="pro-tip">
+                        <code>Run = Span &divide; 2 (gable)  |  Run = Span (shed)</code>
+                        <code>Slope = Rise &divide; Run = x &divide; 12 = tan(angle)</code>
+                        <code>Multiplier = &radic;(1 + Slope&sup2;)</code>
+                        <code>Rafter line length = Run &times; Multiplier = &radic;(Run&sup2; + Rise&sup2;)</code>
+                        <code>Rafter length = (Run + Overhang &minus; Ridge thickness &divide; 2) &times; Multiplier</code>
+                        <code>Minimum board length = Rafter length + Rafter depth &times; Slope</code>
+                        <code>Notch depth = Seat length &times; sin(angle)   |   Heel cut height = Seat length &times; Slope</code>
+                        <code>Rafters per side = &lceil;Roof length &divide; Spacing&rceil; + 1</code>
+                    </div>
+                    <p>Where run is the horizontal distance from the outside of the wall to the ridge centerline, rise is the vertical height from the wall plate to the top of the ridge, overhang is the horizontal distance the rafter extends past the wall, and the brackets &lceil; &rceil; mean round up. All lengths must use the same unit. The pitch itself has no unit, so 6:12 is the same slope in inches, feet or millimeters.</p>
+                    <p>To figure rafter length by hand, find the run, turn the pitch into a multiplier and multiply. These rafter length calculations are exactly what the tool runs. The multiplier comes from the Pythagorean theorem. A run of 1 and a rise of 0.5 give a sloped length of &radic;(1 + 0.25) = 1.118. The overhang and the ridge deduction are horizontal distances, so they are multiplied by the same factor to convert them to lengths along the slope. The plumb-cut allowance exists because a vertical cut across a sloped board leaves the bottom edge longer than the top edge by the board's depth times the slope.</p>
+
+                    <h2 id="worked-example">4. Worked Example</h2>
+                    <p>A gable roof covers a building 24 feet wide and 30 feet long. The pitch is 6:12, the rafters overhang the wall by 12 inches, the ridge board is 1&frac12; inches thick, the rafters are 2x8 (7.25 inches deep), the wall plate is 3.5 inches wide, and the rafters are spaced 16 inches on center. To reproduce it, enter these values, including the optional ones, in the calculator.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Step</th><th>Calculation</th><th>Result</th></tr></thead>
+                        <tbody>
+                            <tr><td>Run</td><td>24 ft &divide; 2</td><td>12 ft = 144 in</td></tr>
+                            <tr><td>Slope and rise</td><td>6 &divide; 12 = 0.5; 144 &times; 0.5</td><td>72 in = 6 ft rise</td></tr>
+                            <tr><td>Multiplier</td><td>&radic;(1 + 0.5&sup2;)</td><td>1.1180</td></tr>
+                            <tr><td>Rafter line length</td><td>144 &times; 1.1180</td><td>161.00 in = 13'-5"</td></tr>
+                            <tr><td>Overhang tail</td><td>12 &times; 1.1180</td><td>13.42 in = 1'-1 7/16"</td></tr>
+                            <tr><td>Ridge deduction</td><td>(1.5 &divide; 2) &times; 1.1180</td><td>0.84 in = 13/16"</td></tr>
+                            <tr><td>Rafter length (top edge)</td><td>161.00 + 13.42 &minus; 0.84</td><td>173.57 in = 14'-5 9/16"</td></tr>
+                            <tr><td>Plumb-cut allowance</td><td>7.25 &times; 0.5</td><td>3.63 in</td></tr>
+                            <tr><td>Minimum board length</td><td>173.57 + 3.63</td><td>177.20 in = 14'-9 3/16"</td></tr>
+                            <tr><td>Stock length</td><td>Next standard length up</td><td>16 ft</td></tr>
+                            <tr><td>Notch depth</td><td>3.5 &times; sin(26.57&deg;)</td><td>1.57 in (21.6% of 7.25 in)</td></tr>
+                            <tr><td>Rafters</td><td>&lceil;360 &divide; 16&rceil; + 1 = 24 per side</td><td>48 rafters</td></tr>
+                        </tbody>
+                    </table>
+                    <p>The table rounds each step for display, so adding the rounded figures can differ by 0.01 inch. The calculator carries full precision. Each rafter needs a 16 foot board, so the whole roof needs 48 boards, or 768 lineal feet before any waste. The notch is within the one-fourth limit discussed below, so a 2x8 on a 2x4 wall works at this pitch.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The calculator reports several lengths because framers use several. The <strong>rafter line length</strong> is the theoretical length from the outside of the wall to the ridge centerline, not the cut length. The <strong>rafter length</strong> adds the overhang tail and subtracts the ridge deduction, and is the distance you mark along the top edge of the board, from the plumb cut at the ridge to the plumb mark at the tail. The <strong>minimum board length</strong> adds the plumb-cut allowance, because the longest point of the finished rafter is at the bottom of the tail cut. The <strong>minimum stock length</strong> is the shortest standard board that is at least that long.</p>
+                    <p>The results are exact for the numbers you enter, but real framing is not: walls are rarely perfectly level and spans vary by a fraction of an inch. Keep full precision until you mark the board, cut one test rafter, and if the stock length leaves almost no spare, order the next size up.</p>
+                    <p>To determine or measure rafter length on an existing roof, run a tape along its top edge from the ridge cut to the plumb mark at the tail, and compare it with the calculated rafter length. The numbers help you decide which board length to buy, how many pieces to order, and where to mark the cuts. They do not tell you whether the rafter is strong enough for your loads, which is a separate span-table question covered below.</p>
+
+                    <h2 id="birdsmouth">6. Birdsmouth Cut Calculator and Notch Limits</h2>
+                    <p>A birdsmouth is the notch that lets a rafter sit on the wall plate. It has a level seat cut that bears on the plate and a plumb heel cut. With a seat length equal to the plate width, the heel cut height is the seat length times the slope, and the notch depth, measured square to the rafter edge, is the seat length times sin(angle). The calculator shows both, plus the percentage of the rafter's depth that the notch removes.</p>
+                    <p>Two limits matter. The IRC generally limits a notch at the end of a rafter to one-fourth of the rafter's depth, and requires at least 1&frac12; inches of bearing on wood. As the Journal of Light Construction explains in its <a href="https://www.jlconline.com/how-to/framing/sizing-the-birdsmouth_o" target="_blank" rel="noopener">guide to sizing the birdsmouth</a>, the seat should also be no wider than the plate, and a steep pitch can over-notch a rafter even when the seat is only as wide as the plate.</p>
+                    <p>Here is how that plays out. A 2x6 rafter is 5.5 inches deep, so one-fourth is 1.375 inches. On a 2x4 wall (3.5 inch plate) at 6:12, the notch is 3.5 &times; sin(26.57&deg;) = 1.57 inches, which is over the limit. The same 2x4 wall at 6:12 with a 2x8 rafter is fine, because one-fourth of 7.25 inches is 1.81 inches. If the check fails, use a deeper rafter, a shorter seat that still bears at least 1&frac12; inches, or confirm the detail with your inspector or engineer. Treat this as a preliminary check of notch depth only. Passing it does not establish structural adequacy or code compliance, and bearing, uplift connections, the code edition in force and local requirements must be confirmed.</p>
+
+                    <h2 id="table">7. Rafter Length Table</h2>
+                    <p>This table gives the common rafter line length for common pitches and runs, with no overhang or ridge deduction. For a run that is not in the table, multiply the run by the multiplier. For example, a 9 ft run at 8:12 is 9 &times; 1.2019 = 10.82 ft, or 10'-9 13/16".</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Pitch</th><th>Multiplier</th><th>Run 4 ft</th><th>Run 6 ft</th><th>Run 8 ft</th><th>Run 10 ft</th><th>Run 12 ft</th><th>Run 14 ft</th></tr></thead>
+                        <tbody>
+                            <tr><td>3:12</td><td>1.0308</td><td>4'-1 1/2"</td><td>6'-2 3/16"</td><td>8'-2 15/16"</td><td>10'-3 11/16"</td><td>12'-4 7/16"</td><td>14'-5 3/16"</td></tr>
+                            <tr><td>4:12</td><td>1.0541</td><td>4'-2 5/8"</td><td>6'-3 7/8"</td><td>8'-5 3/16"</td><td>10'-6 1/2"</td><td>12'-7 13/16"</td><td>14'-9 1/16"</td></tr>
+                            <tr><td>5:12</td><td>1.0833</td><td>4'-4"</td><td>6'-6"</td><td>8'-8"</td><td>10'-10"</td><td>13'-0"</td><td>15'-2"</td></tr>
+                            <tr><td>6:12</td><td>1.1180</td><td>4'-5 11/16"</td><td>6'-8 1/2"</td><td>8'-11 5/16"</td><td>11'-2 3/16"</td><td>13'-5"</td><td>15'-7 13/16"</td></tr>
+                            <tr><td>7:12</td><td>1.1577</td><td>4'-7 9/16"</td><td>6'-11 3/8"</td><td>9'-3 1/8"</td><td>11'-6 15/16"</td><td>13'-10 11/16"</td><td>16'-2 1/2"</td></tr>
+                            <tr><td>8:12</td><td>1.2019</td><td>4'-9 11/16"</td><td>7'-2 9/16"</td><td>9'-7 3/8"</td><td>12'-0 1/4"</td><td>14'-5 1/16"</td><td>16'-9 15/16"</td></tr>
+                            <tr><td>9:12</td><td>1.2500</td><td>5'-0"</td><td>7'-6"</td><td>10'-0"</td><td>12'-6"</td><td>15'-0"</td><td>17'-6"</td></tr>
+                            <tr><td>10:12</td><td>1.3017</td><td>5'-2 1/2"</td><td>7'-9 3/4"</td><td>10'-4 15/16"</td><td>13'-0 3/16"</td><td>15'-7 7/16"</td><td>18'-2 11/16"</td></tr>
+                            <tr><td>12:12</td><td>1.4142</td><td>5'-7 7/8"</td><td>8'-5 13/16"</td><td>11'-3 3/4"</td><td>14'-1 11/16"</td><td>16'-11 5/8"</td><td>19'-9 9/16"</td></tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="spacing-span">8. Rafter Spacing, Span and Size</h2>
+                    <p>Rafter spacing is the center-to-center distance between neighbors, called on center. The common choices are 12, 16, 19.2 and 24 inches, and in metric regions 300, 400, 450 or 600 millimeters. The right spacing depends on the rafter size, lumber species and grade, span, and the roof and snow loads, so spacing is chosen together with the rafter size, not on its own. Closer spacing lets a given board span further but needs more pieces. Used as a rafter spacing calculator, the tool lays rafters out at your spacing from one end and adds one at the far end, so a 30 ft roof at 16 in on center gets 22 full bays plus a shorter 8 in bay, or 24 rafters per side.</p>
+                    <p>Rafter spans are a different number from rafter length. The span in a span table is the horizontal distance a rafter covers between supports, not the sloped length of the board, so a 12 ft horizontal span at 6:12 uses a rafter that is about 13 ft 5 in long. Rafter size, also called rafter dimensions, comes from span tables. This calculator is not a rafter span calculator in the structural sense, because it does not check allowable spans. The <a href="https://www.awc.org/codes-standards/calculators-software/spancalc" target="_blank" rel="noopener">American Wood Council's free Maximum Span Calculator for Wood Joists and Rafters</a> finds code-permitted spans by species, grade and spacing, so it doubles as a rafter dimensions calculator, and the IRC includes prescriptive rafter span tables. Use those for sizing, then use this calculator for lengths and quantities.</p>
+                    <p>When you pick a size, remember that lumber is sold by nominal size but measured by actual size. A 2x4 is 1.5 by 3.5 inches, a 2x6 is 1.5 by 5.5, a 2x8 is 1.5 by 7.25, a 2x10 is 1.5 by 9.25, and a 2x12 is 1.5 by 11.25. The calculator's size buttons use these actual depths.</p>
+
+                    <h2 id="shed-gable">9. Shed Roof and Gable Roof Rafters</h2>
+                    <p>On a gable roof, two sets of rafters meet at a ridge board, so each rafter runs half the span and you deduct half of the ridge thickness. On a shed roof, a single slope runs from a high wall to a low wall, so the run is the full span, there is no ridge board, and the high end is cut plumb at the outside face of the high wall. The calculator assumes this for shed roofs and applies the overhang to the low side only.</p>
+                    <p>For a shed roof, the rise is the height difference between the two wall plates. If you know the pitch you want, enter it and read the rise to learn how much taller the high wall must be. If you know the wall heights instead, switch to rise and read the pitch. Used as a shed roof rafter calculator, it gives the length and count for the single set of rafters in one pass. Shed roofs often use lower pitches than gable roofs, so check the roofing manufacturer's minimum slope before you settle on one. The rafter count for a shed roof is a single set, so the total is the per-side count.</p>
+
+                    <h2 id="units">10. Units and Conversions</h2>
+                    <p>The calculator works in inches, feet, feet and inches, millimeters and meters, and converts automatically. One inch is exactly 25.4 millimeters, and one foot is 304.8 millimeters. Small dimensions, such as the ridge board thickness, rafter depth and seat length, are entered in inches or millimeters. The pitch has no unit, so x:12, degrees and percent are the same in every system. Standard stock lengths are shown only in feet, because North American dimensional lumber is commonly sold in 2 ft steps from 8 to 24 ft.</p>
+
+                    <h2 id="tips">11. Practical Tips</h2>
+                    <ul>
+                        <li>Mark all rafters from one pattern rafter, and check it on the building first.</li>
+                        <li>Round board lengths up to the next standard stock length, and order a few extra boards for mistakes.</li>
+                        <li>Confirm rafter size, spacing and connections with your plans, span tables and local code.</li>
+                    </ul>
+
+                    <h2 id="mistakes">12. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Using the full span as the run on a gable roof:</strong> this doubles the rafter length. A gable run is half the span.</li>
+                        <li><strong>Adding the overhang along the slope:</strong> the overhang is horizontal, so it must be multiplied by the pitch multiplier first.</li>
+                        <li><strong>Forgetting the ridge board:</strong> without the deduction, each rafter is slightly too long and the ridge ends up too wide.</li>
+                        <li><strong>Ordering the exact calculated length:</strong> the board must also cover the plumb-cut allowance and trimming.</li>
+                        <li><strong>Over-notching the birdsmouth:</strong> a deep seat on a shallow rafter at a steep pitch removes too much wood.</li>
+                        <li><strong>Mixing up span and length:</strong> span tables use the horizontal span, not the sloped rafter length.</li>
+                        <li><strong>Counting rafters without the end rafter:</strong> a roof 30 ft long at 16 in on center needs 24 per side, not 22.</li>
+                    </ul>
+
+                    <h2 id="related">13. Related Calculations and Use Cases</h2>
+                    <p>This roof rafter length calculator is useful when framing a garage, shed, porch, addition or cabin roof, when checking a framing quote or a lumber list, when ordering rafter stock, and when planning cuts before you pick up a saw. A roof framing calculator like this one turns a few measurements into a cut list, a stock list and a rafter count. Hip, valley and jack rafters, ridge beams and trusses need separate calculations.</p>
+
+                    <h2 id="faq">14. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="rfaq1-answer">How do you calculate rafter length?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="rfaq1-answer"><p>Find the run, which is half the span for a gable roof, then multiply it by the pitch multiplier √(1 + slope²), where slope is rise ÷ run. Add the sloped length of the overhang and subtract half the ridge board's sloped thickness. For a building 24 ft wide at 6:12, the run is 12 ft, the multiplier is 1.1180, and the rafter line length is 13 ft 5 in before overhang and ridge adjustments.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="rfaq2-answer">Do I add the overhang to the rafter length?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="rfaq2-answer"><p>Yes. The overhang is measured horizontally, so multiply it by the same pitch multiplier and add it to the line length. A 12 in overhang at 6:12 adds about 13.42 in along the slope. If your rafters meet a ridge board, also subtract half of its thickness times the multiplier, which is about 0.84 in for a 1½ in ridge board at 6:12.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="rfaq3-answer">How far apart should rafters be?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="rfaq3-answer"><p>Rafters are most often spaced 16 or 24 inches on center, and 12 and 19.2 inches are also used. The allowable spacing depends on the rafter size, species and grade, span, roof and snow loads, and your local code, so check span tables or the American Wood Council's span calculator rather than choosing a spacing from habit. Closer spacing lets a given board span further but needs more pieces.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="rfaq4-answer">What size rafter do I need for my span?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="rfaq4-answer"><p>This calculator finds the length, not the size. Rafter size comes from span tables that account for lumber species and grade, spacing, and roof and snow loads, such as the IRC tables or the American Wood Council's free span calculator. Remember that span tables use the horizontal span, not the sloped length of the rafter.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="rfaq5-answer">How deep can a birdsmouth cut be?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="rfaq5-answer"><p>The IRC's general limit for a notch at the end of a rafter is one-fourth of the rafter's depth (R802.7.1), so a 2x8 rafter, which is 7.25 in deep, should have a notch no deeper than about 1.8 in. The seat should also bear on at least 1½ in of the plate but be no wider than the plate. Local code and engineered framing can differ.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>A rafter calculator turns a building span and a pitch into the lengths you actually cut: the line length, the full length with overhang and ridge deduction, and a minimum board length that covers the plumb cut. Accurate span, pitch and overhang measurements matter most, because every result scales with the pitch multiplier, &radic;(1 + slope&sup2;). Use the birdsmouth check and the rafter count to plan notches and lumber before you buy. Treat the numbers as planning figures, cut one test rafter, and confirm sizing, spacing and connections with your plans and local code. Then use the calculator above whenever the span or pitch changes.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Rafter size, spacing, notching and connections must follow your plans, span tables and local building code. Confirm all quantities with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>📐</span> Try the Rafter Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">📐 Rafter Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/roof-pitch-calculator">🏠 Roof Pitch Calculator</a>
+                            <a href="https://calcsnaps.com/calculators/soffit-calculator">🏠 Soffit &amp; Ventilation Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/board-foot-calculator">🪵 Board Foot Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/stair-calculator">Stair Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+        const RAD = Math.PI / 180;
+        const MAX_IN = 12000; // 1,000 ft
+        const NOTCH_LIMIT = 0.25;      // end-notch limit commonly cited from IRC R802.7.1
+        const MIN_BEARING_IN = 1.5;    // minimum bearing on wood, IRC R802.6
+        const LIMITS = {
+            x12: { min: 0, max: 130, label: 'pitch', unit: ':12' },
+            deg: { min: 0, max: 85, label: 'angle', unit: '°' },
+            pct: { min: 0, max: 1000, label: 'percent slope', unit: '%' }
+        };
+        const STD_FT = [8, 10, 12, 14, 16, 18, 20, 22, 24];
+        const IN_PER = { in: 1, ft: 12, ftin: 12, mm: 1 / 25.4, m: 1 / 0.0254 };
+        const SITE_URL = 'https://calcsnaps.com/construction-calculators/rafter-calculator';
+        const DIMS = {
+            span: { box: 'spanField', short: 'Span' },
+            rise: { box: 'riseField', label: 'Rise (wall plate to top of ridge)', short: 'Rise' },
+            overhang: { box: 'overhangField', label: 'Eave overhang (optional)', short: 'Overhang' },
+            ridge: { box: 'ridgeField', label: 'Ridge board thickness (optional)', short: 'Ridge board thickness', small: true },
+            depth: { box: 'depthField', label: 'Rafter depth (optional)', short: 'Rafter depth', small: true },
+            seat: { box: 'seatField', label: 'Seat cut length (optional)', short: 'Seat cut length', small: true },
+            length: { box: 'lengthField', label: 'Roof length along the ridge (optional)', short: 'Roof length' }
+        };
+        const CHIPS = {
+            depth: { box: 'depthChips', items: [['2x4', 3.5], ['2x6', 5.5], ['2x8', 7.25], ['2x10', 9.25], ['2x12', 11.25]] },
+            seat: { box: 'seatChips', items: [['2x4 wall (3.5 in)', 3.5], ['2x6 wall (5.5 in)', 5.5]] }
+        };
+        const SPACING_IMP = [['12 in', 12], ['16 in', 16], ['19.2 in', 19.2], ['24 in', 24]];
+        const SPACING_MET = [['300 mm', 300 / 25.4], ['400 mm', 400 / 25.4], ['450 mm', 450 / 25.4], ['600 mm', 600 / 25.4]];
+        const DEFAULTS = { roof: 'gable', unit: 'ftin', slope: 'pitch', pfmt: 'x12', pitch: '6', span: 288, rise: null, overhang: null, ridge: null, depth: null, seat: null, length: null, spacing: 16 };
+        const state = Object.assign({}, DEFAULTS);
+
+        // ==PURE-START==
+        function clamp(n, lo, hi) { return Math.min(Math.max(n, lo), hi); }
+        function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
+        function fmtN(n, d) { return parseFloat(n.toFixed(d === undefined ? 2 : d)).toString(); }
+        function numStr(n) { return String(parseFloat(n.toFixed(4))); }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+        function fmtFtIn(inches) {
+            const t = Math.round(inches * 16);
+            if (t <= 0) return '0"';
+            const ft = Math.floor(t / 192);
+            const rem = t - ft * 192;
+            const inch = Math.floor(rem / 16);
+            const f16 = rem - inch * 16;
+            let inchPart;
+            if (f16 > 0) {
+                const g = gcd(f16, 16);
+                const frac = (f16 / g) + '/' + (16 / g);
+                inchPart = (inch > 0 || ft > 0) ? inch + ' ' + frac : frac;
+            } else {
+                inchPart = String(inch);
+            }
+            return ft > 0 ? ft + "'-" + inchPart + '"' : inchPart + '"';
+        }
+        function isImperial(u) { return u === 'in' || u === 'ft' || u === 'ftin'; }
+        function fmtLen(inches, u) {
+            if (u === 'in') return fmtN(inches, 3) + ' in';
+            if (u === 'ft') return fmtN(inches / 12, 3) + ' ft';
+            if (u === 'ftin') return fmtFtIn(inches);
+            if (u === 'mm') return fmtN(inches * 25.4, 1) + ' mm';
+            return fmtN(inches * 0.0254, 3) + ' m';
+        }
+        function fmtLenAlt(inches, u) {
+            if (u === 'ftin') return fmtN(inches / 12, 3) + ' ft';
+            if (u === 'in' || u === 'ft') return fmtFtIn(inches);
+            if (u === 'mm') return fmtN(inches * 0.0254, 3) + ' m';
+            return fmtN(inches * 25.4, 0) + ' mm';
+        }
+        // Short measurements (ridge, rafter depth, notch): inches or mm
+        function fmtSmall(inches, u) {
+            if (isImperial(u)) return fmtN(inches, 3) + ' in';
+            return fmtN(inches * 25.4, 1) + ' mm';
+        }
+        function dec(inches, u) {
+            if (u === 'in') return fmtN(inches, 3) + ' in';
+            if (u === 'ft' || u === 'ftin') return fmtN(inches / 12, 3) + ' ft';
+            if (u === 'mm') return fmtN(inches * 25.4, 1) + ' mm';
+            return fmtN(inches * 0.0254, 3) + ' m';
+        }
+        function slopeFromPitch(fmt, v) {
+            if (fmt === 'x12') return v / 12;
+            if (fmt === 'deg') return Math.tan(v * RAD);
+            return v / 100;
+        }
+        function pitchInFormat(fmt, p) {
+            if (fmt === 'x12') return p * 12;
+            if (fmt === 'deg') return Math.atan(p) / RAD;
+            return p * 100;
+        }
+        function parsePitch(fmt, raw, warnings) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return null;
+            const L = LIMITS[fmt];
+            if (n < L.min) { warnings.push('The ' + L.label + ' cannot be below ' + L.min + ', so ' + L.min + ' was used.'); return L.min; }
+            if (n > L.max) { warnings.push('The ' + L.label + ' was capped at ' + L.max + L.unit + ', the largest value this calculator accepts.'); return L.max; }
+            return n;
+        }
+        function stockLength(inches) {
+            const ft = inches / 12;
+            for (let i = 0; i < STD_FT.length; i++) { if (STD_FT[i] >= ft - 1e-9) return STD_FT[i]; }
+            return null;
+        }
+        // Rafters along a ridge: one at the start, then one every spacing, plus one at the far end
+        function countPerSide(length, spacing) { return Math.ceil(length / spacing - 1e-9) + 1; }
+        // ==PURE-END==
+
+        // ===== Input fields =====
+        function labelOf(key) {
+            const gable = state.roof === 'gable';
+            if (key === 'span') return gable ? 'Building span (outside wall to outside wall)' : 'Span (outside of low wall to outside of high wall)';
+            if (key === 'rise') return gable ? 'Rise (wall plate to top of ridge)' : 'Rise (high wall plate above low wall plate)';
+            if (key === 'length') return gable ? 'Roof length along the ridge (optional)' : 'Roof length along the wall (optional)';
+            return DIMS[key].label;
+        }
+        function renderDim(key) {
+            const f = DIMS[key], v = state[key], u = state.unit;
+            let html;
+            const lab = '<label for="' + key + 'A">' + labelOf(key) + '</label>';
+            if (f.small) {
+                const imp = isImperial(u);
+                const val = v == null ? '' : numStr(imp ? v : v * 25.4);
+                html = lab + '<div class="row"><input type="number" id="' + key + 'A" inputmode="decimal" min="0" step="any" value="' + val + '" placeholder="0"><span class="unit">' + (imp ? 'in' : 'mm') + '</span></div>';
+            } else if (u === 'ftin') {
+                let a = '', b = '';
+                if (v != null) { const ft = Math.floor(v / 12 + 1e-9); a = numStr(ft); b = numStr(Math.max(v - ft * 12, 0)); }
+                html = lab + '<div class="row">' +
+                    '<input type="number" id="' + key + 'A" inputmode="decimal" min="0" step="1" value="' + a + '" placeholder="0"><span class="unit">ft</span>' +
+                    '<input type="number" id="' + key + 'B" inputmode="decimal" min="0" step="any" value="' + b + '" placeholder="0" aria-label="' + f.short + ' inches"><span class="unit">in</span></div>';
+            } else {
+                const val = v == null ? '' : numStr(v / IN_PER[u]);
+                const ul = { in: 'in', ft: 'ft', mm: 'mm', m: 'm' }[u];
+                html = lab + '<div class="row"><input type="number" id="' + key + 'A" inputmode="decimal" min="0" step="any" value="' + val + '" placeholder="0"><span class="unit">' + ul + '</span></div>';
+            }
+            $(f.box).innerHTML = html;
+        }
+        function renderAllDims() { Object.keys(DIMS).forEach(renderDim); }
+        const negParts = {};
+        function readDim(key) {
+            const a = $(key + 'A');
+            if (!a) return state[key];
+            const f = DIMS[key], u = state.unit;
+            negParts[key] = false;
+            if (f.small) {
+                const raw = a.value.trim();
+                if (raw === '') return null;
+                const n = parseFloat(raw);
+                if (!isFinite(n)) return null;
+                return isImperial(u) ? n : n / 25.4;
+            }
+            if (u === 'ftin') {
+                const b = $(key + 'B');
+                const ar = a.value.trim(), br = b ? b.value.trim() : '';
+                if (ar === '' && br === '') return null;
+                let ft = parseFloat(ar), inch = parseFloat(br);
+                ft = isFinite(ft) ? ft : 0; inch = isFinite(inch) ? inch : 0;
+                if (ft < 0 || inch < 0) { negParts[key] = true; ft = Math.max(ft, 0); inch = Math.max(inch, 0); }
+                return ft * 12 + inch;
+            }
+            const raw = a.value.trim();
+            if (raw === '') return null;
+            const n = parseFloat(raw);
+            return isFinite(n) ? n * IN_PER[u] : null;
+        }
+        function renderSpacing() {
+            const imp = isImperial(state.unit);
+            $('spacingVal').value = state.spacing == null ? '' : numStr(imp ? state.spacing : state.spacing * 25.4);
+            $('spacingUnit').textContent = imp ? 'in' : 'mm';
+        }
+        function renderChips() {
+            const mk = (box, key, items) => {
+                const el = $(box);
+                const label = el.querySelector('.chip-label').outerHTML;
+                el.innerHTML = label + items.map(it => '<button type="button" class="mini-btn" data-chip="' + key + '" data-val="' + it[1] + '">' + it[0] + '</button>').join('');
+            };
+            mk('depthChips', 'depth', CHIPS.depth.items);
+            mk('seatChips', 'seat', CHIPS.seat.items);
+            mk('spacingChips', 'spacing', isImperial(state.unit) ? SPACING_IMP : SPACING_MET);
+        }
+        function syncFromDom() {
+            Object.keys(DIMS).forEach(k => { state[k] = readDim(k); });
+            state.pitch = $('pitchVal').value;
+            const sp = parseFloat($('spacingVal').value);
+            state.spacing = isFinite(sp) ? (isImperial(state.unit) ? sp : sp / 25.4) : null;
+        }
+        function applyRoof() {
+            const gable = state.roof === 'gable';
+            $('ridgeField').style.display = gable ? '' : 'none';
+            $('spanHint').textContent = gable
+                ? 'For a gable roof the run is half the span, measured from the outside face of the wall to the centerline of the ridge.'
+                : 'For a shed roof the run is the full span, measured from the outside face of the low wall to the outside face of the high wall.';
+            $('ridgeHint').textContent = gable
+                ? 'Overhang is measured horizontally from the outside face of the wall. Enter the ridge board thickness and half of it is deducted from each rafter.'
+                : 'Overhang is measured horizontally from the outside face of the low wall. The high end is assumed to be cut plumb at the outside face of the high wall.';
+            renderDim('span'); renderDim('rise'); renderDim('length');
+        }
+        function applySlope() {
+            $('pitchBlock').style.display = state.slope === 'pitch' ? 'block' : 'none';
+            $('riseGrid').style.display = state.slope === 'rise' ? 'grid' : 'none';
+        }
+        function applyPitchFormat() {
+            const L = LIMITS[state.pfmt];
+            $('pitchVal').value = state.pitch;
+            $('pitchVal').max = L.max;
+            $('pitchUnit').textContent = L.unit;
+            $('pitchLabelText').textContent = state.pfmt === 'x12' ? 'Roof pitch (rise per 12 of run)' : state.pfmt === 'deg' ? 'Roof angle (degrees)' : 'Roof slope (percent)';
+        }
+        function applyUnit() { renderAllDims(); renderSpacing(); renderChips(); }
+
+        // Radio-group behaviour: only the selected option is in the Tab order, arrow keys move and select
+        function setRoving(box) {
+            box.querySelectorAll('.toggle-option').forEach(b => { b.tabIndex = b.classList.contains('active') ? 0 : -1; });
+        }
+        function wireToggle(containerId, attr, onChange) {
+            const box = $(containerId);
+            const opts = Array.from(box.querySelectorAll('.toggle-option'));
+            opts.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    opts.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-checked', 'false'); });
+                    btn.classList.add('active'); btn.setAttribute('aria-checked', 'true');
+                    setRoving(box);
+                    onChange(btn.dataset[attr]);
+                });
+            });
+            box.addEventListener('keydown', e => {
+                const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[e.key];
+                const cur = opts.indexOf(document.activeElement);
+                if (cur < 0 || (step === undefined && e.key !== 'Home' && e.key !== 'End')) return;
+                e.preventDefault();
+                const next = e.key === 'Home' ? opts[0] : e.key === 'End' ? opts[opts.length - 1] : opts[(cur + step + opts.length) % opts.length];
+                next.focus(); next.click();
+            });
+            setRoving(box);
+        }
+        function setToggle(containerId, attr, value) {
+            const box = $(containerId);
+            box.querySelectorAll('.toggle-option').forEach(b => {
+                const on = b.dataset[attr] === String(value);
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+            setRoving(box);
+        }
+        wireToggle('roofToggle', 'roof', v => { syncFromDom(); state.roof = v; applyRoof(); calculate(); });
+        wireToggle('unitToggle', 'unit', v => { syncFromDom(); state.unit = v; applyUnit(); calculate(); });
+        wireToggle('slopeToggle', 'slope', v => {
+            syncFromDom();
+            const r = compute();
+            if (v === 'rise' && state.slope === 'pitch' && r.valid && r.rise != null) state.rise = r.rise;
+            if (v === 'pitch' && state.slope === 'rise' && r.valid) state.pitch = numStr(pitchInFormat(state.pfmt, r.p));
+            state.slope = v; applySlope(); renderDim('rise'); applyPitchFormat(); calculate();
+        });
+        wireToggle('pitchFmtToggle', 'pfmt', v => {
+            syncFromDom();
+            const n = parseFloat(state.pitch);
+            if (isFinite(n)) state.pitch = numStr(pitchInFormat(v, slopeFromPitch(state.pfmt, n)));
+            state.pfmt = v; applyPitchFormat(); calculate();
+        });
+        document.querySelectorAll('#chipRow .mini-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                syncFromDom();
+                state.pfmt = 'x12'; state.pitch = btn.dataset.x; state.slope = 'pitch';
+                setToggle('pitchFmtToggle', 'pfmt', 'x12'); setToggle('slopeToggle', 'slope', 'pitch');
+                applySlope(); applyPitchFormat(); calculate();
+            });
+        });
+        $('calculator-section').addEventListener('click', function (e) {
+            const btn = e.target.closest ? e.target.closest('[data-chip]') : null;
+            if (!btn) return;
+            syncFromDom();
+            const key = btn.dataset.chip, val = parseFloat(btn.dataset.val);
+            state[key] = val;
+            if (key === 'spacing') renderSpacing(); else renderDim(key);
+            calculate();
+        });
+        $('calculator-section').addEventListener('input', function () { syncFromDom(); calculate(); });
+
+        // ===== Calculation =====
+        function dim(key, warnings) {
+            let v = state[key];
+            if (v == null) return null;
+            if (negParts[key]) warnings.push(DIMS[key].short + ': feet and inches cannot be negative, so any negative part was set to 0.');
+            if (v < 0) { warnings.push(DIMS[key].short + ' cannot be negative, so 0 was used.'); v = 0; }
+            if (v > MAX_IN) { warnings.push(DIMS[key].short + ' was capped at 1,000 ft (about 305 m).'); v = MAX_IN; }
+            return v;
+        }
+        function compute() {
+            const warnings = [];
+            const u = state.unit, gable = state.roof === 'gable';
+            const r = { valid: false, warnings: warnings, unit: u, gable: gable, slope: state.slope, pfmt: state.pfmt };
+            const span = dim('span', warnings);
+            if (span == null || !(span > 0)) { r.message = 'Enter the building span to see the rafter length.'; return r; }
+            if (span < 1) { r.message = 'Enter a span of at least 1 in (25 mm).'; return r; }
+            const run = gable ? span / 2 : span;
+            let p, pv = null, rise;
+            if (state.slope === 'pitch') {
+                pv = parsePitch(state.pfmt, state.pitch, warnings);
+                if (pv == null) { r.message = 'Enter a pitch to see the rafter length.'; return r; }
+                p = slopeFromPitch(state.pfmt, pv);
+                rise = p * run;
+            } else {
+                rise = dim('rise', warnings);
+                if (rise == null) { r.message = 'Enter the rise (wall plate to top of ridge) to see the rafter length.'; return r; }
+                p = rise / run;
+            }
+            if (!Number.isFinite(p) || !Number.isFinite(Math.sqrt(1 + p * p))) { r.message = 'These values give an invalid slope. Check your span and rise.'; return r; }
+            if (p > Math.tan(85 * RAD)) { r.message = 'That slope is steeper than 85°, which is not a practical roof. Check your span and rise.'; return r; }
+            r.valid = true; r.span = span; r.run = run; r.p = p; r.pv = pv; r.rise = rise;
+            r.x12 = p * 12; r.deg = Math.atan(p) / RAD; r.pct = p * 100;
+            r.mult = Math.sqrt(1 + p * p);
+            let t = gable ? (dim('ridge', warnings) || 0) : 0;
+            if (t / 2 >= run) { r.valid = false; r.message = 'Half of the ridge board is as thick as the whole run. Check the ridge board thickness and the span.'; return r; }
+            const oh = dim('overhang', warnings) || 0;
+            r.ridge = t; r.overhang = oh;
+            r.line = run * r.mult;
+            r.tail = oh * r.mult;
+            r.ridgeCut = (t / 2) * r.mult;
+            r.top = r.line + r.tail - r.ridgeCut;
+            r.hasExtras = oh > 0 || t > 0;
+            if (![r.line, r.tail, r.top].every(Number.isFinite)) { r.valid = false; r.message = 'These values give an invalid length. Check your measurements.'; return r; }
+            const D = dim('depth', warnings), S = dim('seat', warnings);
+            r.depth = D != null && D > 0 ? D : null;
+            r.seat = S != null && S > 0 ? S : null;
+            r.base = r.top;
+            if (r.depth != null) {
+                r.allow = r.depth * p;               // extra length at the plumb cut: depth × tan(angle)
+                r.minBoard = r.top + r.allow;
+                r.base = r.minBoard;
+            }
+            r.incomplete = r.depth == null;     // no rafter depth, so no plumb-cut allowance
+            if (isImperial(u) && r.base > 0 && !r.incomplete) { r.stock = stockLength(r.base); r.stockOver = r.stock == null; }
+            if (r.depth != null && r.seat != null) {
+                r.heel = r.seat * p;                                  // plumb heel cut height
+                r.notch = r.seat * Math.sin(Math.atan(p));            // notch depth square to the rafter edge
+                r.notchRatio = r.notch / r.depth;
+                r.notchOver = r.notchRatio > NOTCH_LIMIT + 1e-9;
+                r.lowBearing = r.seat < MIN_BEARING_IN - 1e-9;
+            }
+            const L = dim('length', warnings), sp = state.spacing;
+            if (L != null && L > 0 && sp != null && sp > 0) {
+                if (sp < 4) {
+                    warnings.push('A spacing under 4 in (about 102 mm) is not realistic for rafters, so the rafter count was not calculated.');
+                } else {
+                    r.length = L; r.spacing = sp;
+                    r.perSide = countPerSide(L, sp);
+                    r.count = gable ? r.perSide * 2 : r.perSide;
+                    if (isImperial(u)) { if (r.stock != null) r.lumberFt = r.count * r.stock; }
+                    else if (!r.incomplete) r.lumberIn = r.count * r.base;
+                }
+            }
+            return r;
+        }
+
+        // ===== Rendering =====
+        function setCard(id, show) { $(id).style.display = show ? '' : 'none'; }
+        function buildInfo(r) {
+            const parts = [];
+            if (r.notch != null) {
+                const pct = fmtN(r.notchRatio * 100, 1);
+                let s = '<strong>Birdsmouth check:</strong> the notch is ' + escapeHtml(fmtSmall(r.notch, r.unit)) + ' deep (' + pct + '% of the rafter depth), leaving ' + escapeHtml(fmtSmall(r.depth - r.notch, r.unit)) + '. ';
+                s += r.notchOver
+                    ? '<span class="warnc">That is over the one-fourth end-notch limit commonly cited from IRC R802.7.1.</span> Use a deeper rafter, a shorter seat, or confirm the detail with your inspector or engineer.'
+                    : '<span class="ok">That is within the one-fourth end-notch limit</span> commonly cited from IRC R802.7.1. Confirm with your local code.';
+                if (r.lowBearing) s += ' <span class="warnc">The seat is under 1.5 in, the usual minimum bearing on wood.</span>';
+                s += ' This is a preliminary check of notch depth only. Passing it does not establish structural adequacy or code compliance. Bearing, uplift connections, the code edition in force and local requirements must be confirmed.';
+                parts.push(s);
+            } else {
+                parts.push('<strong>Birdsmouth check:</strong> enter a rafter depth and a seat length to check the notch depth.');
+            }
+            parts.push('<strong>Cut angles:</strong> on a miter saw, set ' + fmtN(r.deg, 2) + '° for the plumb cut and ' + fmtN(90 - r.deg, 2) + '° for the level seat cut.');
+            parts.push('<strong>How it is measured:</strong> the rafter length runs along the top edge from the ridge cut to the plumb mark at the tail. The board is longer than that because the long point of a plumb cut is on the bottom edge' + (r.depth != null ? ', which is why the minimum board length adds ' + escapeHtml(fmtSmall(r.allow, r.unit)) + '. It is an estimate of the shortest blank that covers both plumb cuts at the depth you entered. Trim, defects and waste are extra.' : '. Enter a rafter depth to add that allowance and to get the minimum board length, stock length and total lumber.'));
+            if (!r.gable) parts.push('<strong>Shed roof:</strong> the high end is assumed to be cut plumb at the outside face of the high wall, with no ridge deduction.');
+            return parts.join('<br><br>');
+        }
+        function buildSteps(r) {
+            const u = r.unit, pS = r.p.toFixed(4), mS = r.mult.toFixed(4), L = [];
+            L.push(r.gable ? 'Run = span ÷ 2 = ' + dec(r.span, u) + ' ÷ 2 = ' + dec(r.run, u) : 'Run = span = ' + dec(r.run, u));
+            if (r.slope === 'rise') L.push('Slope = rise ÷ run = ' + dec(r.rise, u) + ' ÷ ' + dec(r.run, u) + ' = ' + pS);
+            else if (r.pfmt === 'x12') L.push('Slope = x ÷ 12 = ' + fmtN(r.pv, 4) + ' ÷ 12 = ' + pS);
+            else if (r.pfmt === 'deg') L.push('Slope = tan(angle) = tan(' + fmtN(r.pv, 4) + '°) = ' + pS);
+            else L.push('Slope = percent ÷ 100 = ' + fmtN(r.pv, 4) + ' ÷ 100 = ' + pS);
+            if (r.slope === 'pitch') L.push('Rise = run × slope = ' + dec(r.run, u) + ' × ' + pS + ' = ' + dec(r.rise, u));
+            L.push('Multiplier = √(1 + ' + pS + '²) = ' + mS);
+            L.push('Rafter line length = run × multiplier = ' + dec(r.run, u) + ' × ' + mS + ' = ' + dec(r.line, u));
+            if (r.hasExtras) L.push('Rafter length = (run + overhang − ridge ÷ 2) × multiplier = (' + dec(r.run, u) + ' + ' + dec(r.overhang, u) + ' − ' + dec(r.ridge, u) + ' ÷ 2) × ' + mS + ' = ' + dec(r.top, u));
+            if (r.depth != null) L.push('Minimum board = rafter length + depth × slope = ' + dec(r.top, u) + ' + ' + dec(r.depth, u) + ' × ' + pS + ' = ' + dec(r.minBoard, u));
+            if (r.notch != null) L.push('Notch depth = seat × sin(angle) = ' + fmtSmall(r.seat, u) + ' × sin(' + fmtN(r.deg, 2) + '°) = ' + fmtSmall(r.notch, u));
+            if (r.count != null) L.push('Rafters per side = roof length ÷ spacing, rounded up, + 1 = ' + dec(r.length, u) + ' ÷ ' + dec(r.spacing, u) + ' → ' + r.perSide + (r.gable ? ' per side × 2 = ' + r.count : ''));
+            return L.map(escapeHtml).join('<br>');
+        }
+        function drawDiagram(r) {
+            const svg = $('roofSvg');
+            if (!r.valid) {
+                svg.innerHTML = '<text class="sv-text" x="320" y="130" text-anchor="middle">Enter your measurements to draw the rafter</text>';
+                svg.setAttribute('aria-label', 'Rafter diagram, waiting for measurements');
+                return;
+            }
+            const H = r.run + r.overhang;
+            const p = Math.max(r.p, 0.0001);
+            const maxW = 360, maxV = 150;
+            let k = Math.min(maxW / H, maxV / (p * H));
+            let runPx = k * r.run, ohPx = k * r.overhang, risePx = k * p * r.run, dropPx = k * p * r.overhang;
+            if (runPx < 60) { const f = 60 / runPx; runPx *= f; ohPx *= f; risePx *= f; dropPx *= f; }
+            if (risePx < 8) risePx = 8;
+            const x0 = Math.round(150 + ohPx);
+            const yt = 34, y0 = yt + risePx;
+            const xb = x0 + runPx, xa = x0 - ohPx, ya = y0 + dropPx;
+            const phi = Math.atan2(risePx, runPx);
+            let s = '';
+            s += '<rect class="sv-wall" x="' + (x0 - 14) + '" y="' + y0 + '" width="14" height="' + Math.max(250 - y0 - 8, 20) + '"/>';
+            s += '<polygon class="sv-tri" points="' + x0 + ',' + y0 + ' ' + xb + ',' + y0 + ' ' + xb + ',' + yt + '"/>';
+            s += '<line class="sv-guide" x1="' + x0 + '" y1="' + y0 + '" x2="' + xb + '" y2="' + y0 + '"/>';
+            s += '<line class="sv-rafter" x1="' + x0 + '" y1="' + y0 + '" x2="' + xb + '" y2="' + yt + '"/>';
+            if (r.overhang > 0) s += '<line class="sv-tail" x1="' + xa.toFixed(1) + '" y1="' + ya.toFixed(1) + '" x2="' + x0 + '" y2="' + y0 + '"/>';
+            const ar = Math.min(46, runPx * 0.4);
+            const flat = phi < 20 * RAD;
+            s += '<path class="sv-arc" d="M' + (x0 + ar) + ',' + y0 + ' A' + ar + ',' + ar + ' 0 0 0 ' + (x0 + ar * Math.cos(phi)).toFixed(1) + ',' + (y0 - ar * Math.sin(phi)).toFixed(1) + '"/>';
+            s += '<text class="sv-angle" x="' + (x0 + ar + 6) + '" y="' + (flat ? y0 + 18 : y0 - 8) + '">' + escapeHtml(fmtN(r.deg, 2)) + '°</text>';
+            s += '<text class="sv-dim" x="' + ((x0 + xb) / 2).toFixed(1) + '" y="' + (flat ? y0 + 42 : y0 + 24) + '" text-anchor="middle">Run ' + escapeHtml(fmtLen(r.run, r.unit)) + '</text>';
+            s += '<text class="sv-dim" x="' + (xb + 14) + '" y="' + ((y0 + yt) / 2 - 2).toFixed(1) + '"><tspan x="' + (xb + 14) + '">Rise</tspan><tspan x="' + (xb + 14) + '" dy="16">' + escapeHtml(fmtLen(r.rise, r.unit)) + '</tspan></text>';
+            const len = Math.sqrt(runPx * runPx + risePx * risePx);
+            const mx = (x0 + xb) / 2 - 16 * risePx / len, my = (y0 + yt) / 2 - 16 * runPx / len;
+            s += '<text class="sv-text" text-anchor="middle" x="' + mx.toFixed(1) + '" y="' + my.toFixed(1) + '" transform="rotate(' + (-phi / RAD).toFixed(2) + ' ' + mx.toFixed(1) + ' ' + my.toFixed(1) + ')">Line ' + escapeHtml(fmtLen(r.line, r.unit)) + '</text>';
+            if (r.overhang > 0) s += '<text class="sv-note" x="' + (xa - 8).toFixed(1) + '" y="' + (ya + 4).toFixed(1) + '" text-anchor="end">Tail ' + escapeHtml(fmtLen(r.tail, r.unit)) + '</text>';
+            s += '<text class="sv-note" x="' + (x0 - 7) + '" y="' + (y0 + Math.max(250 - y0 - 8, 20) + 14) + '" text-anchor="middle">Wall</text>';
+            if (r.gable) s += '<text class="sv-note" x="' + xb + '" y="' + (yt - 10) + '" text-anchor="middle">Ridge centerline</text>';
+            svg.innerHTML = s;
+            svg.setAttribute('aria-label', 'Rafter diagram: pitch ' + fmtN(r.x12, 2) + ' in 12, rafter length ' + fmtLen(r.top, r.unit));
+        }
+        function renderEmpty(r) {
+            $('totalResult').textContent = '—';
+            $('totalSub').textContent = r.message || 'Enter your measurements';
+            ['pitchResult', 'runResult', 'riseResult', 'lineResult', 'multResult'].forEach(id => { $(id).textContent = '—'; });
+            ['pitchSub', 'runSub', 'riseSub', 'lineSub'].forEach(id => { $(id).textContent = ''; });
+            ['tailCard', 'ridgeCard', 'minBoardCard', 'stockCard', 'heelCard', 'notchCard', 'countCard', 'lumberCard'].forEach(id => setCard(id, false));
+            $('pitchInfo').textContent = 'Enter a span and a pitch to see the rafter length and cut details.';
+            $('stepBlock').textContent = 'The step-by-step math appears here once you enter your measurements.';
+            drawDiagram(r);
+        }
+        function render(r) {
+            const wn = $('warningNote');
+            if (r.warnings.length) { wn.innerHTML = r.warnings.map(escapeHtml).join('<br>'); wn.classList.add('show'); }
+            else { wn.innerHTML = ''; wn.classList.remove('show'); }
+            if (!r.valid) { renderEmpty(r); return; }
+            const u = r.unit;
+            $('totalResult').textContent = fmtLen(r.top, u);
+            $('totalSub').textContent = fmtLenAlt(r.top, u) + ' · ' + (r.hasExtras ? 'includes overhang and ridge deduction' : 'line length, no overhang');
+            $('pitchResult').textContent = fmtN(r.x12, 2) + ':12';
+            $('pitchSub').textContent = fmtN(r.deg, 2) + '° · ' + fmtN(r.pct, 1) + '% slope';
+            $('runResult').textContent = fmtLen(r.run, u); $('runSub').textContent = r.gable ? 'Half the span' : 'Full span';
+            $('riseResult').textContent = fmtLen(r.rise, u); $('riseSub').textContent = r.gable ? 'Plate to ridge' : 'High plate above low plate';
+            $('lineResult').textContent = fmtLen(r.line, u); $('lineSub').textContent = 'To ridge centerline, before overhang and deduction';
+            $('multResult').textContent = r.mult.toFixed(4);
+            setCard('tailCard', r.overhang > 0);
+            if (r.overhang > 0) { $('tailResult').textContent = fmtLen(r.tail, u); $('tailSub').textContent = 'Overhang ' + fmtLen(r.overhang, u) + ' × multiplier'; }
+            setCard('ridgeCard', r.ridge > 0);
+            if (r.ridge > 0) { $('ridgeResult').textContent = fmtLen(r.ridgeCut, u); $('ridgeSub').textContent = 'Half of ' + fmtSmall(r.ridge, u) + ' × multiplier'; }
+            setCard('minBoardCard', r.depth != null);
+            if (r.depth != null) { $('minBoardResult').textContent = fmtLen(r.minBoard, u); $('minBoardSub').textContent = 'Includes ' + fmtSmall(r.allow, u) + ' plumb-cut allowance'; }
+            const showStock = r.stock != null || r.stockOver === true;
+            setCard('stockCard', showStock);
+            if (showStock) {
+                $('stockLabel').textContent = r.incomplete ? 'Stock Length (incomplete)' : 'Est. Minimum Stock Length';
+                const note = r.incomplete ? 'Add rafter depth for the plumb-cut allowance' : 'Common length. Check availability, trim and waste';
+                if (r.stockOver) { $('stockResult').textContent = 'Over 24 ft'; $('stockSub').textContent = r.incomplete ? note : 'Beyond common 2x lumber lengths'; }
+                else { $('stockResult').textContent = r.stock + ' ft'; $('stockSub').textContent = note; }
+            }
+            setCard('heelCard', r.notch != null);
+            setCard('notchCard', r.notch != null);
+            if (r.notch != null) {
+                $('heelResult').textContent = fmtSmall(r.heel, u); $('heelSub').textContent = 'Plumb cut above the seat';
+                $('notchResult').textContent = fmtSmall(r.notch, u);
+                $('notchSub').textContent = fmtN(r.notchRatio * 100, 1) + '% of depth · limit 25%';
+            }
+            setCard('countCard', r.count != null);
+            if (r.count != null) {
+                $('countResult').textContent = String(r.count);
+                $('countSub').textContent = r.gable ? r.perSide + ' per side × 2 sides' : 'Single slope';
+            }
+            const showLumber = r.count != null && (r.lumberFt != null || r.lumberIn != null);
+            setCard('lumberCard', showLumber);
+            if (showLumber) {
+                if (r.lumberFt != null) { $('lumberResult').textContent = fmtN(r.lumberFt, 0) + ' ft'; $('lumberSub').textContent = r.count + ' × ' + r.stock + ' ft boards, before waste' + (r.incomplete ? ' (incomplete, no rafter depth)' : ''); }
+                else { $('lumberResult').textContent = fmtN(r.lumberIn * 0.0254, 1) + ' m'; $('lumberSub').textContent = r.count + ' × ' + fmtN(r.base * 0.0254, 3) + ' m calculated blank length, not stock size' + (r.incomplete ? ' (incomplete, no rafter depth)' : ''); }
+            }
+            $('pitchInfo').innerHTML = buildInfo(r);
+            $('stepBlock').innerHTML = buildSteps(r);
+            drawDiagram(r);
+        }
+        function calculate() { const r = compute(); render(r); return r; }
+
+        // ===== Summary lines (copy, share, PDF) =====
+        function inputLines(r) {
+            const u = r.unit, L = [];
+            L.push('Roof type: ' + (r.gable ? 'gable' : 'shed (single slope)'));
+            L.push('Span: ' + fmtLen(r.span, u));
+            if (r.slope === 'pitch') L.push('Pitch entered: ' + fmtN(r.pv, 4) + LIMITS[r.pfmt].unit); else L.push('Rise entered: ' + fmtLen(r.rise, u));
+            if (r.overhang > 0) L.push('Overhang: ' + fmtLen(r.overhang, u));
+            if (r.ridge > 0) L.push('Ridge board thickness: ' + fmtSmall(r.ridge, u));
+            if (r.depth != null) L.push('Rafter depth: ' + fmtSmall(r.depth, u));
+            if (r.seat != null) L.push('Seat cut length: ' + fmtSmall(r.seat, u));
+            if (r.length != null) L.push('Roof length: ' + fmtLen(r.length, u) + ', spacing ' + fmtSmall(r.spacing, u));
+            return L;
+        }
+        function resultLines(r) {
+            const u = r.unit, L = [];
+            L.push('Rafter length (top edge): ' + fmtLen(r.top, u) + (r.hasExtras ? ' (with overhang and ridge deduction)' : ''));
+            L.push('Pitch: ' + fmtN(r.x12, 2) + ':12 (' + fmtN(r.deg, 2) + ' degrees, ' + fmtN(r.pct, 1) + '% slope)');
+            L.push('Run: ' + fmtLen(r.run, u) + ', rise: ' + fmtLen(r.rise, u));
+            L.push('Rafter line length: ' + fmtLen(r.line, u));
+            if (r.overhang > 0) L.push('Overhang tail: ' + fmtLen(r.tail, u));
+            if (r.ridge > 0) L.push('Ridge deduction: ' + fmtLen(r.ridgeCut, u));
+            L.push('Pitch multiplier: ' + r.mult.toFixed(4));
+            if (r.minBoard != null) L.push('Minimum board length: ' + fmtLen(r.minBoard, u) + ' (includes plumb-cut allowance)');
+            if (r.stock != null) L.push((r.incomplete ? 'Stock length (incomplete, add rafter depth): ' : 'Estimated minimum stock length: ') + r.stock + ' ft' + (r.incomplete ? '' : ' (common length; check availability, trim and waste)'));
+            if (r.stockOver) L.push((r.incomplete ? 'Stock length (incomplete, add rafter depth): ' : 'Estimated minimum stock length: ') + 'over 24 ft');
+            if (r.notch != null) L.push('Birdsmouth: heel cut ' + fmtSmall(r.heel, u) + ', notch depth ' + fmtSmall(r.notch, u) + ' (' + fmtN(r.notchRatio * 100, 1) + '% of rafter depth, ' + (r.notchOver ? 'over' : 'within') + ' the 25% end-notch limit)');
+            if (r.count != null) L.push('Rafters needed: ' + r.count + (r.gable ? ' (' + r.perSide + ' per side)' : ''));
+            return L;
+        }
+        function buildSummary() {
+            const r = calculate();
+            if (!r.valid) return 'Rafter Calculator: enter your measurements to see results.\nSource: CalcSnaps Rafter Calculator (' + SITE_URL + ')';
+            return 'Rafter Calculator Result\n' + resultLines(r).join('\n') + '\nSource: CalcSnaps Rafter Calculator (' + SITE_URL + ')';
+        }
+
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Rafter Calculator Result', text: text, url: SITE_URL }).catch(() => {});
+            } else {
+                const btn = this; const original = btn.innerHTML;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                }).catch(() => {
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                });
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF export (jsPDF loads only when needed) =====
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+        function downloadPDF() {
+            const r = calculate();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+            const ensure = h => { if (y + h > 280) { doc.addPage(); y = 20; } };
+            const write = (str, x, size, color) => {
+                doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
+                doc.splitTextToSize(str, 190 - x).forEach(line => { ensure(6); doc.text(line, x, y); y += 5.5; });
+            };
+            const purple = [139, 92, 246], black = [0, 0, 0];
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text('Rafter Calculator Report', 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + new Date().toLocaleString(), 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 10;
+            if (!r.valid) {
+                write('No complete measurements were entered.', 25, 11, black);
+            } else {
+                write('Inputs', 20, 14, purple); y += 2;
+                inputLines(r).forEach(l => write(l, 25, 10, black));
+                y += 4;
+                write('Results', 20, 14, purple); y += 2;
+                resultLines(r).forEach(l => write(l, 25, 11, black));
+                y += 4;
+                write('Rafter cut angles', 20, 14, purple); y += 2;
+                write('Miter saw: ' + fmtN(r.deg, 2) + ' degrees for the plumb cut, ' + fmtN(90 - r.deg, 2) + ' degrees for the level seat cut.', 25, 10, black);
+            }
+            const pages = doc.getNumberOfPages();
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            for (let pg = 1; pg <= pages; pg++) {
+                doc.setPage(pg);
+                doc.text('Planning estimate only. Confirm rafter size, spans and details with your plans and local code.', 105, 285, { align: 'center' });
+                doc.text('Generated by CalcSnaps - Rafter Calculator', 105, 291, { align: 'center' });
+            }
+            doc.save('Rafter_Report_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => {
+                let failed = false;
+                try { downloadPDF(); } catch (err) { failed = true; if (window.console) console.error('Rafter calculator PDF export failed:', err); }
+                btn.disabled = false;
+                if (failed) {
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> PDF failed, try again';
+                    setTimeout(() => { btn.innerHTML = original; }, 2500);
+                } else {
+                    btn.innerHTML = original;
+                }
+            });
+        });
+
+        // ===== Reset =====
+        function resetAll() {
+            Object.assign(state, DEFAULTS);
+            setToggle('roofToggle', 'roof', state.roof);
+            setToggle('unitToggle', 'unit', state.unit);
+            setToggle('slopeToggle', 'slope', state.slope);
+            setToggle('pitchFmtToggle', 'pfmt', state.pfmt);
+            applyUnit(); applyRoof(); applySlope(); applyPitchFormat();
+            calculate();
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== Init =====
+        applyUnit(); applyRoof(); applySlope(); applyPitchFormat();
+        calculate();
+    })();
+    </script>
+</body>
+</html>
