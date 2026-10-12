@@ -959,6 +959,7 @@
             const b = parseFloat(group.querySelector('.dim-minor').value);
             if (!isFinite(a) && !isFinite(b)) { group.dataset.canon = ''; return; }
             const major = isFinite(a) ? a : 0, minor = isFinite(b) ? b : 0;
+            if (major < 0 || minor < 0) { group.dataset.canon = '-1'; return; }
             const ft = isMetric() ? (major + minor / 100) / FT_M : major + minor / 12;
             group.dataset.canon = String(ft);
         }
