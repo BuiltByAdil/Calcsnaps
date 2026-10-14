@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Bitumen Calculator - Road Quantity in Tonnes | CalcSnaps</title>
+
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50' y='78' font-size='85' text-anchor='middle'>🧮</text></svg>">
+
+    <meta name="description" content="Free bitumen calculator: find bitumen quantity in tonnes for any road from length, width, thickness and binder %. Layers, drums, prime coat and m³ to tonnes.">
+    <meta name="author" content="CalcSnaps">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/bitumen-calculator">
+
+    <meta property="og:title" content="Bitumen Calculator - Road Quantity in Tonnes | CalcSnaps">
+    <meta property="og:description" content="Free bitumen calculator: find bitumen quantity in tonnes for any road from length, width, thickness and binder %. Layers, drums, prime coat and m³ to tonnes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/bitumen-calculator">
+    <meta property="og:site_name" content="CalcSnaps">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Bitumen Calculator",
+        "description": "Calculate bitumen quantity in tonnes for roads and pavements from length, width, layer thickness, mix density and binder content, with prime and tack coat quantities and m³ to tonnes conversion",
+        "url": "https://calcsnaps.com/construction-calculators/bitumen-calculator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Bitumen Calculator Guide: How to Calculate Bitumen Quantity for a Road",
+        "description": "How to calculate bitumen quantity for a road or pavement, with the formula, a two-layer worked example, binder percentage, density conversion, and prime and tack coat quantities.",
+        "author": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "CalcSnaps"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://calcsnaps.com/construction-calculators/bitumen-calculator"
+        },
+        "datePublished": "2026-10-11",
+        "dateModified": "2026-10-11"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate bitumen quantity for a road?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply road length, width, and compacted layer thickness (all in metres) to get the mix volume in cubic metres. Multiply by the compacted mix density in kg/m³ to get the mix weight, then multiply by the binder content as a fraction of the mix. For a 1,000 m road, 7 m wide, with a 50 mm layer at 2,350 kg/m³ and 5.5% binder, that is 350 m³ × 2,350 = 822,500 kg of mix, and 822,500 × 0.055 = 45,238 kg, or about 45.2 tonnes of bitumen. The calculator above repeats this for every layer you add."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much bitumen is required for 1 km of road?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the width, layer thickness, mix density, and binder content, so there is no single figure. A 1 km road that is 7 m wide with a 50 mm layer at 5.5% binder needs about 45.2 tonnes, which is roughly 6.5 kg per square metre. Doubling the thickness doubles the bitumen, and each extra 0.5% of binder adds about 4.1 tonnes to that example. Enter 1000 m as the length in the calculator and it also shows the quantity per kilometre."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I convert bitumen from m³ to tonnes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply the volume in cubic metres by the bitumen density in tonnes per cubic metre. At a typical density of about 1.02 t/m³ (1,020 kg/m³), 1 m³ weighs about 1.02 tonnes, and 10 m³ weighs 10.2 tonnes. To go the other way, divide tonnes by the density, so 10 tonnes is about 9.8 m³. Density changes with temperature and grade, so use the figure on your supplier's data sheet and note the temperature it applies to."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate the bitumen percentage in asphalt?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide the weight of bitumen by the total weight of the mix and multiply by 100. For example, 27.5 tonnes of bitumen in 500 tonnes of mix is 5.5%. Check whether your specification states binder as a percentage of the total mix or of the aggregate, because 5.5% of the mix equals about 5.82% of the aggregate weight. The Convert & Percent tab in the calculator does both."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much extra bitumen should I order for waste?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Many estimators add a small allowance, commonly around 2% to 5%, for tank and hose losses, plant start-up, and variations in compacted thickness, but the right figure comes from your contract and site conditions. The calculator applies a 3% default to the bitumen quantity and lets you change it, and it shows the net quantity separately so you can see exactly what the allowance adds."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use the Bitumen Calculator",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "position": 1,
+                "text": "Choose Road / Pavement Mix and pick metric or imperial units."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 2,
+                "text": "Enter the road length and width."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 3,
+                "text": "For each layer, choose a mix type or enter the compacted thickness, mix density, and binder percentage."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 4,
+                "text": "Add more layers if the pavement has more than one course, up to 4 layers."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 5,
+                "text": "Check the bitumen density, set the waste allowance, and enter the drum size if you order in drums."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 6,
+                "text": "Optionally enter a price per tonne for bitumen (charged on the order quantity) and for asphalt mix (charged on the net mix weight) to see an estimated cost."
+            },
+            {
+                "@type": "HowToStep",
+                "position": 7,
+                "text": "Review the bitumen to order, the layer table, and the step-by-step working, then copy, share, or download the report."
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://calcsnaps.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "All Calculators",
+                "item": "https://calcsnaps.com/all-calculators"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Bitumen Calculator",
+                "item": "https://calcsnaps.com/construction-calculators/bitumen-calculator"
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <style>
+        html, body { max-width: 100% !important; overflow-x: hidden !important; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: #8b5cf6; color: white; padding: 8px; z-index: 100; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+
+        :root {
+            --primary: #8b5cf6; --primary-dark: #7c3aed; --primary-light: #a78bfa; --primary-text: #7c3aed;
+            --secondary: #fbbf24; --secondary-dark: #b45309; --dark: #0f172a; --dark-light: #1e293b;
+            --light: #f8fafc; --gray: #94a3b8; --gray-text: #64748b; --text-dark: #4a5568;
+            --success: #10b981; --danger: #ef4444; --warning: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); min-height: 100vh; color: var(--dark); line-height: 1.6; }
+
+        .site-container { max-width: 1280px; width: 100%; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .container { max-width: 900px; width: 100%; margin: 0 auto; padding: 0 20px; }
+        .header { width: 100%; padding: 20px 0; box-sizing: border-box; }
+
+        .calc-container { max-width: 900px; width: 100%; margin: 0 auto; background: white; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25); overflow: hidden; border: 1px solid #e2e8f0; }
+        .calc-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 32px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .calc-header h1 { font-size: 25px; font-weight: 700; color: white; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0; }
+        .calc-header h1 i { color: var(--secondary); }
+        .calc-header p { font-size: 15px; color: var(--gray); margin-top: 8px; }
+        .privacy-badge { display: inline-block; background: rgba(16,185,129,0.15); color: #6ee7b7; padding: 5px 14px; border-radius: 50px; font-size: 12px; margin-top: 14px; border: 1px solid rgba(16,185,129,0.3); }
+        .disclaimer-strip { background: #fef2f2; border-bottom: 1px solid #fecaca; padding: 12px 28px; font-size: 12.5px; color: #991b1b; text-align: center; }
+
+        .calc-body-inner { padding: 28px; }
+        .section-title { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--primary); display: flex; align-items: center; gap: 8px; }
+
+        .input-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 20px; }
+        .input-group { background: var(--light); border-radius: 16px; padding: 14px 16px; border: 1px solid #e2e8f0; }
+        .input-group label { font-size: 12.5px; color: var(--text-dark); margin-bottom: 6px; display: block; font-weight: 500; }
+        .input-group .row { display: flex; align-items: baseline; gap: 4px; }
+        .input-group input, .input-group select { width: 100%; border: none; background: transparent; font-size: 17px; font-weight: 700; color: var(--dark); outline: none; padding: 3px 0; font-family: 'Inter', sans-serif; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+        .input-group .unit { font-size: 13px; color: var(--gray-text); flex-shrink: 0; }
+
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
+        .toggle-label { font-weight: 500; color: var(--dark); font-size: 14px; }
+        .toggle-switch { display: flex; gap: 6px; flex-wrap: wrap; }
+        .toggle-option { padding: 7px 14px; border-radius: 40px; cursor: pointer; font-size: 12.5px; font-weight: 500; transition: all 0.2s; background: white; border: 1px solid #e2e8f0; color: #4a5568; font-family: 'Inter', sans-serif; }
+        .toggle-option:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .toggle-option.active { background: var(--primary); color: white; border-color: var(--primary); }
+        .toggle-option:hover:not(.active) { background: #f8fafc; border-color: var(--primary-light); }
+
+        .wall-card { background: white; border: 2px solid #e2e8f0; border-radius: 18px; padding: 18px; margin-bottom: 16px; }
+        .wall-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .wall-card-label { font-size: 12.5px; font-weight: 700; color: var(--gray-text); text-transform: uppercase; letter-spacing: 0.04em; }
+        .remove-wall-btn, .remove-opening-btn { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 13px; padding: 4px 8px; border-radius: 6px; font-family: 'Inter', sans-serif; }
+        .remove-wall-btn:hover, .remove-opening-btn:hover { background: rgba(239,68,68,0.1); }
+        .remove-wall-btn:focus-visible, .remove-opening-btn:focus-visible { outline: 3px solid var(--primary); }
+        .mini-btn { padding: 8px 14px; border-radius: 40px; border: 1px dashed var(--primary-light); background: rgba(139,92,246,0.05); color: var(--primary-dark); font-weight: 600; font-size: 12.5px; cursor: pointer; font-family: 'Inter', sans-serif; }
+        .mini-btn:hover { background: rgba(139,92,246,0.1); }
+        .mini-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .mini-btn:focus-visible { outline: 3px solid var(--primary); }
+        .add-wall-btn { width: 100%; padding: 13px; border: 2px dashed var(--primary-light); background: rgba(139,92,246,0.05); border-radius: 16px; color: var(--primary-dark); font-weight: 700; font-size: 13px; cursor: pointer; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+        .add-wall-btn:hover { background: rgba(139,92,246,0.1); }
+        .add-wall-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .add-wall-btn:focus-visible { outline: 3px solid var(--primary); }
+
+        .status-note { border-radius: 12px; padding: 12px 16px; font-size: 13.5px; margin: 14px 0; display: none; border-left: 4px solid; }
+        .status-note.show { display: block; }
+        .status-note.status-caution { background: rgba(245,158,11,0.08); border-color: var(--warning); color: #8a5a06; }
+        .status-note.status-neutral { background: rgba(139,92,246,0.06); border-color: var(--primary); color: var(--text-dark); }
+
+        .diagram-wrap { background: var(--light); border-radius: 20px; padding: 16px; margin: 20px 0 8px; text-align: center; border: 1px solid #e2e8f0; }
+        .diagram-wrap svg { width: 100%; height: auto; }
+        .legend { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; font-size: 12px; color: var(--text-dark); margin-bottom: 18px; }
+        .legend span { display: inline-flex; align-items: center; gap: 6px; }
+        .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+
+        .results-panel { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(139,92,246,0.02)); border-radius: 24px; padding: 22px; margin-top: 22px; border: 1px solid rgba(139,92,246,0.15); }
+        .total-payment-card { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 20px 22px; border-radius: 22px; margin: 4px 0 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 10px 20px -8px rgba(139,92,246,0.4); }
+        .total-payment-card .label { font-size: 14px; opacity: 0.9; }
+        .total-payment-card .amount { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; }
+
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .result-card { background: white; border-radius: 16px; padding: 16px; text-align: center; border: 1px solid #e2e8f0; }
+        .result-label { font-size: 12px; color: var(--text-dark); margin-bottom: 6px; font-weight: 500; }
+        .result-value { font-size: 20px; font-weight: 700; color: var(--primary); }
+        .result-value.small { font-size: 15px; }
+
+        .breakdown-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 18px; }
+        .breakdown-table th { background: var(--dark); color: white; padding: 9px 7px; text-align: center; font-weight: 600; }
+        .breakdown-table td { padding: 8px 7px; text-align: center; border-bottom: 1px solid #eef2f7; }
+        .breakdown-table tr:nth-child(even) { background: #f8fafc; }
+        .breakdown-table tr.total-row td { font-weight: 700; background: rgba(139,92,246,0.06); }
+
+        .info-block { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 16px 20px; border-radius: 16px; margin-top: 14px; text-align: left; font-size: 13.5px; color: var(--text-dark); line-height: 1.7; }
+        .info-block strong { color: var(--primary-text); }
+
+        .action-buttons { display: flex; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+        .action-btn { flex: 1; min-width: 140px; padding: 12px 20px; border-radius: 50px; font-weight: 600; cursor: pointer; border: none; background: var(--primary); color: white; transition: all 0.2s; font-family: 'Inter', sans-serif; font-size: 13.5px; }
+        .action-btn:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .action-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .action-btn.secondary { background: #e2e8f0; color: var(--dark); }
+        .action-btn.secondary:hover { background: #cbd5e1; }
+        .action-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+        @media (max-width: 768px) {
+            .calc-header h1 { font-size: 19px; }
+            .calc-body-inner { padding: 18px; }
+            .total-payment-card .amount { font-size: 22px; }
+            .site-container { padding: 0 15px; }
+            .container { padding: 0 15px; }
+            .breakdown-table { display: block; overflow-x: auto; }
+            .remove-opening-btn { grid-column: 1 / -1; justify-self: end; }
+        }
+
+        /* ===== ARTICLE ===== */
+        .article-container { background: white; border-radius: 32px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #e2e8f0; margin: 30px 0; }
+        .article-header { background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%); padding: 40px; text-align: center; border-bottom: 3px solid var(--secondary); }
+        .article-header h2 { font-size: 27px; font-weight: 800; color: white; margin-bottom: 16px; line-height: 1.3; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .article-header p { font-size: 16px; color: var(--gray); max-width: 700px; margin: 0 auto; }
+        .article-content { padding: 40px; }
+        .article-content a { color: #8b5cf6 !important; text-decoration: underline !important; font-weight: 500 !important; }
+        .article-content a:hover { color: #7c3aed !important; }
+
+        .toc { background: var(--light); border-radius: 20px; padding: 25px 30px; margin: 30px 0 40px; border: 1px solid #e2e8f0; }
+        .toc h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; border-bottom: none; padding-bottom: 0; margin-top: 0; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+        .toc-item a { color: var(--primary-text); text-decoration: none; font-size: 15px; font-weight: 500; display: block; }
+        .toc-item a:hover { color: var(--primary-dark); text-decoration: underline; }
+
+        .article-content h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-top: 40px; margin-bottom: 18px; padding-bottom: 10px; border-bottom: 2px solid var(--primary); }
+        .article-content h2:first-of-type { margin-top: 0; }
+        .article-content h3 { font-size: 19px; font-weight: 600; color: var(--dark-light); margin-top: 28px; margin-bottom: 14px; }
+        .article-content p { font-size: 16px; color: var(--gray-text); margin-bottom: 18px; line-height: 1.7; }
+        .article-content ul, .article-content ol { margin-bottom: 18px; padding-left: 26px; }
+        .article-content li { font-size: 16px; color: var(--gray-text); margin-bottom: 8px; }
+
+        .pro-tip { background: rgba(139,92,246,0.05); border-left: 4px solid var(--primary); padding: 18px 22px; border-radius: 16px; margin: 22px 0; }
+        .pro-tip strong { color: var(--primary-text); }
+        .pro-tip code { display: block; font-weight: 700; color: var(--primary-text); margin-bottom: 6px; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--light); border-radius: 16px; overflow: hidden; border: 1px solid #e2e8f0; font-size: 14.5px; }
+        .compare-table th { background: var(--dark); color: white; font-weight: 600; padding: 12px 14px; text-align: left; }
+        .compare-table td { padding: 11px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: var(--gray-text); }
+        .compare-table tr:last-child td { border-bottom: none; }
+
+        .calc-cta { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 60px; padding: 18px 32px; text-align: center; margin: 40px 0 30px; box-shadow: 0 4px 12px rgba(139,92,246,0.3); }
+        .calc-cta:hover { transform: translateY(-3px); }
+        .calc-cta a, .calc-cta a:hover { color: white !important; text-decoration: none !important; font-weight: bold; font-size: 18px; display: block; }
+
+        .faq-section { background: var(--light); border-radius: 24px; padding: 28px; margin: 40px 0; border: 1px solid #e2e8f0; }
+        .faq-item { border-bottom: 1px solid #e2e8f0; padding: 20px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 700; font-size: 17px; color: var(--dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-family: 'Inter', sans-serif; width: 100%; border: none; background: none; text-align: left; }
+        .faq-question:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
+        .faq-question:hover { color: var(--primary-text); }
+        .faq-question i { transition: transform 0.2s; color: var(--gray-text); }
+        .faq-item.active .faq-question i { transform: rotate(180deg); }
+        .faq-answer { display: none; padding-top: 12px; color: var(--gray-text); font-size: 15px; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
+
+        .related-links { background: var(--light); border-radius: 20px; padding: 28px; margin: 40px 0 20px; text-align: center; border: 1px solid #e2e8f0; }
+        .related-links h4 { color: var(--dark); margin-bottom: 20px; font-size: 18px; }
+        .related-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .related-grid a { color: var(--primary-text); text-decoration: none; padding: 10px 20px; background: white; border-radius: 40px; font-size: 14px; font-weight: 500; }
+        .related-grid a:hover { background: var(--primary); color: white; }
+        .calculator-link { background: var(--secondary); color: var(--dark) !important; font-weight: bold; }
+        .calculator-link:hover { background: #f59e0b !important; color: var(--dark) !important; }
+
+        @media (max-width: 768px) {
+            .article-header { padding: 30px 20px; }
+            .article-header h2 { font-size: 21px; }
+            .article-content { padding: 24px 20px; }
+            .article-content h2 { font-size: 20px; }
+            .compare-table { display: block; overflow-x: auto; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .related-grid { flex-direction: column; align-items: center; }
+            .related-grid a { width: 100%; text-align: center; }
+        }
+
+        .toggle-option i { margin-right: 4px; }
+        .sv-text { fill: var(--text-dark); font-size: 11px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .sv-lt { fill: #fff; font-size: 12px; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .sv-l0 { fill: var(--primary); }
+        .sv-l1 { fill: var(--primary-dark); }
+        .sv-l2 { fill: #5b21b6; }
+        .sv-l3 { fill: var(--secondary-dark); }
+        .sv-ground { fill: var(--gray); opacity: 0.35; }
+        .article-content h2 { scroll-margin-top: 16px; }
+        .total-payment-card .amount { word-break: break-word; }
+        .result-value.small { word-break: break-word; }
+        .input-group select.ly-preset { font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="site-container">
+        <header class="header">
+            <a href="/" class="logo">🧮 <span>Calc</span>Snaps</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/all-calculators">All Calculators</a>
+                <a href="/about-us">About</a>
+                <a href="/contact-us">Contact</a>
+            </nav>
+        </header>
+    </div>
+
+    <div class="container">
+        <main id="main-content">
+
+            <!-- ===== CALCULATOR ===== -->
+            <div class="calc-container" id="calculator-section">
+                <div class="calc-header">
+                    <h1><i class="fas fa-road"></i> Bitumen Calculator</h1>
+                    <p>Bitumen quantity · Mix and aggregate weight · Prime and tack coat · m³ to tonnes</p>
+                    <div class="privacy-badge"><i class="fas fa-lock"></i> 100% private, calculates in your browser, no sign-up</div>
+                </div>
+                <div class="disclaimer-strip"><i class="fas fa-circle-info"></i> This calculator gives a planning estimate. Confirm binder content, mix density, and spray rates against your mix design and project specification before you order.</div>
+
+                <div class="calc-body-inner">
+                    <div class="status-note status-caution" id="warningNote" role="alert"></div>
+
+                    <div class="toggle-row">
+                        <span class="toggle-label">What do you want to calculate?</span>
+                        <div class="toggle-switch" id="modeToggle" role="radiogroup" aria-label="Calculation type">
+                            <button type="button" class="toggle-option active" data-mode="road" role="radio" aria-checked="true"><i class="fas fa-road"></i> Road / Pavement Mix</button>
+                            <button type="button" class="toggle-option" data-mode="spray" role="radio" aria-checked="false"><i class="fas fa-fill-drip"></i> Prime / Tack Coat</button>
+                            <button type="button" class="toggle-option" data-mode="convert" role="radio" aria-checked="false"><i class="fas fa-right-left"></i> Convert &amp; Percent</button>
+                        </div>
+                    </div>
+                    <div class="toggle-row" id="unitRow">
+                        <span class="toggle-label">Units</span>
+                        <div class="toggle-switch" id="unitToggle" role="radiogroup" aria-label="Unit system">
+                            <button type="button" class="toggle-option active" data-system="metric" role="radio" aria-checked="true">Metric (m, mm, kg)</button>
+                            <button type="button" class="toggle-option" data-system="imperial" role="radio" aria-checked="false">Imperial (ft, in, lb)</button>
+                        </div>
+                    </div>
+
+                    <!-- ===== MODE 1: ROAD ===== -->
+                    <div id="panelRoad">
+                        <div class="section-title"><i class="fas fa-ruler-combined"></i> Road Dimensions</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="roadL">Road length</label>
+                                <div class="row"><input type="number" id="roadL" data-kind="len" value="1000" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="len">m</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="roadW">Road width</label>
+                                <div class="row"><input type="number" id="roadW" data-kind="len" value="7" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="len">m</span></div>
+                            </div>
+                        </div>
+
+                        <div class="section-title"><i class="fas fa-layer-group"></i> Pavement Layers</div>
+                        <div id="layersContainer"></div>
+                        <button class="add-wall-btn" id="addLayerBtn" type="button"><i class="fas fa-plus"></i> Add Another Layer (up to 4)</button>
+
+                        <div class="section-title"><i class="fas fa-tag"></i> Mix Price (optional)</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="priceMix">Price per <span data-tonlabel>tonne</span> of asphalt mix</label>
+                                <div class="row"><input type="number" id="priceMix" placeholder="0" min="0" step="any" inputmode="decimal"><span class="unit">any currency</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ===== MODE 2: SPRAY ===== -->
+                    <div id="panelSpray" style="display:none;">
+                        <div class="section-title"><i class="fas fa-ruler-combined"></i> Area to Spray</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="sprL">Length</label>
+                                <div class="row"><input type="number" id="sprL" data-kind="len" value="1000" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="len">m</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="sprW">Width</label>
+                                <div class="row"><input type="number" id="sprW" data-kind="len" value="7" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="len">m</span></div>
+                            </div>
+                        </div>
+                        <div class="section-title"><i class="fas fa-fill-drip"></i> Spray Rate</div>
+                        <div class="toggle-row">
+                            <span class="toggle-label">Coat type (fills a typical rate)</span>
+                            <div class="toggle-switch" id="sprayPresetToggle" role="radiogroup" aria-label="Coat type">
+                                <button type="button" class="toggle-option active" data-spray="prime" role="radio" aria-checked="true">Prime coat</button>
+                                <button type="button" class="toggle-option" data-spray="tack" role="radio" aria-checked="false">Tack coat</button>
+                                <button type="button" class="toggle-option" data-spray="custom" role="radio" aria-checked="false">Custom</button>
+                            </div>
+                        </div>
+                        <div class="toggle-row">
+                            <span class="toggle-label">The spray rate is for</span>
+                            <div class="toggle-switch" id="sprBasisToggle" role="radiogroup" aria-label="Spray rate basis">
+                                <button type="button" class="toggle-option active" data-basis="product" role="radio" aria-checked="true">Product sprayed (emulsion, cutback)</button>
+                                <button type="button" class="toggle-option" data-basis="residual" role="radio" aria-checked="false">Residual bitumen</button>
+                            </div>
+                        </div>
+                        <div class="input-grid" id="sprResGroup" style="display:none;">
+                            <div class="input-group">
+                                <label for="sprRes">Residual bitumen in the product</label>
+                                <div class="row"><input type="number" id="sprRes" value="60" min="1" max="100" step="any" inputmode="decimal"><span class="unit">%</span></div>
+                            </div>
+                        </div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="sprRate">Spray rate</label>
+                                <div class="row"><input type="number" id="sprRate" value="0.9" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="rate">kg/m²</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="sprCoats">Number of coats</label>
+                                <div class="row"><input type="number" id="sprCoats" value="1" min="1" max="3" step="1" inputmode="numeric"><span class="unit">coats</span></div>
+                            </div>
+                        </div>
+                        <div class="status-note status-neutral show" id="sprayHint"></div>
+                    </div>
+
+                    <!-- ===== SHARED: ORDERING ===== -->
+                    <div id="panelShared">
+                        <div class="section-title"><i class="fas fa-sliders"></i> Bitumen, Waste &amp; Ordering</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="bitDen" id="bitDenLabel">Bitumen density</label>
+                                <div class="row"><input type="number" id="bitDen" data-kind="dens" value="1020" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="dens">kg/m³</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="wastePct">Waste allowance</label>
+                                <div class="row"><input type="number" id="wastePct" value="3" min="0" max="30" step="any" inputmode="decimal"><span class="unit">%</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="drumKg">Drum net weight</label>
+                                <div class="row"><input type="number" id="drumKg" data-kind="drum" value="200" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="drum">kg</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="priceBit">Price per <span data-tonlabel>tonne</span> <span id="priceBitOf">of bitumen</span></label>
+                                <div class="row"><input type="number" id="priceBit" placeholder="0" min="0" step="any" inputmode="decimal"><span class="unit">any currency</span></div>
+                            </div>
+                        </div>
+                        <div class="status-note status-neutral show" id="wasteHint"></div>
+                    </div>
+
+                    <!-- ===== RESULTS: ROAD ===== -->
+                    <div class="results-panel" id="resRoad">
+                        <div class="total-payment-card">
+                            <span class="label">Bitumen to Order (with waste)</span>
+                            <span class="amount" id="roadHero">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Net Bitumen</div><div class="result-value small" id="roadNet">0</div></div>
+                            <div class="result-card"><div class="result-label">Bitumen Volume</div><div class="result-value small" id="roadVol">0</div></div>
+                            <div class="result-card"><div class="result-label">Total Mix Weight</div><div class="result-value small" id="roadMix">0</div></div>
+                            <div class="result-card"><div class="result-label">Aggregate Weight</div><div class="result-value small" id="roadAgg">0</div></div>
+                            <div class="result-card"><div class="result-label">Road Area</div><div class="result-value small" id="roadArea">0</div></div>
+                            <div class="result-card"><div class="result-label">Mix Volume</div><div class="result-value small" id="roadMixVol">0</div></div>
+                            <div class="result-card"><div class="result-label">Bitumen per Area</div><div class="result-value small" id="roadPerArea">0</div></div>
+                            <div class="result-card"><div class="result-label" id="roadPerLenLabel">Bitumen per km</div><div class="result-value small" id="roadPerLen">0</div></div>
+                            <div class="result-card"><div class="result-label">Drums to Order</div><div class="result-value small" id="roadDrums">-</div></div>
+                            <div class="result-card"><div class="result-label">Est. Cost</div><div class="result-value small" id="roadCost">-</div></div>
+                        </div>
+                        <div style="overflow-x:auto;">
+                            <table class="breakdown-table">
+                                <thead><tr><th>Layer</th><th>Thickness</th><th>Mix Volume</th><th>Mix Weight</th><th>Binder</th><th>Bitumen</th></tr></thead>
+                                <tbody id="roadBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="diagram-wrap">
+                            <svg id="roadSvg" viewBox="0 0 640 60" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of the pavement layers drawn in proportion to their thickness"></svg>
+                        </div>
+                        <div class="status-note status-neutral show" style="margin-top:0;">Cross-section is drawn in proportion to layer thickness. Layer width is not to scale.</div>
+                        <div class="info-block" id="roadSteps"></div>
+                    </div>
+
+                    <!-- ===== RESULTS: SPRAY ===== -->
+                    <div class="results-panel" id="resSpray" style="display:none;">
+                        <div class="total-payment-card">
+                            <span class="label">Product to Order (with waste)</span>
+                            <span class="amount" id="sprHero">0</span>
+                        </div>
+                        <div class="results-grid">
+                            <div class="result-card"><div class="result-label">Area to Spray</div><div class="result-value small" id="sprArea">0</div></div>
+                            <div class="result-card"><div class="result-label">Net Quantity</div><div class="result-value small" id="sprNet">0</div></div>
+                            <div class="result-card"><div class="result-label">Net Volume</div><div class="result-value small" id="sprVol">0</div></div>
+                            <div class="result-card"><div class="result-label">Residual Bitumen</div><div class="result-value small" id="sprResid">-</div></div>
+                            <div class="result-card"><div class="result-label">Order in Weight</div><div class="result-value small" id="sprOrderW">0</div></div>
+                            <div class="result-card"><div class="result-label">Drums to Order</div><div class="result-value small" id="sprDrums">-</div></div>
+                            <div class="result-card"><div class="result-label">Est. Cost</div><div class="result-value small" id="sprCost">-</div></div>
+                        </div>
+                        <div class="info-block" id="sprSteps"></div>
+                    </div>
+
+                    <!-- ===== RESULTS: CONVERT ===== -->
+                    <div id="resConvert" style="display:none;">
+                        <div class="section-title"><i class="fas fa-scale-balanced"></i> Bitumen Volume ↔ Weight</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="cvVal">Amount</label>
+                                <div class="row"><input type="number" id="cvVal" value="10" min="0" step="any" inputmode="decimal"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="cvUnit">Unit</label>
+                                <select id="cvUnit">
+                                    <option value="m3" selected>cubic metres (m³)</option>
+                                    <option value="l">litres (L)</option>
+                                    <option value="gal">US gallons</option>
+                                    <option value="t">tonnes (metric)</option>
+                                    <option value="kg">kilograms (kg)</option>
+                                    <option value="ston">US tons (short)</option>
+                                    <option value="lb">pounds (lb)</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="cvDen">Bitumen density</label>
+                                <div class="row"><input type="number" id="cvDen" value="1020" min="0" step="any" inputmode="decimal"><span class="unit">kg/m³</span></div>
+                            </div>
+                        </div>
+                        <div class="results-panel" style="margin-top:6px;">
+                            <div class="results-grid" id="cvGrid"></div>
+                        </div>
+
+                        <div class="section-title" style="margin-top:28px;"><i class="fas fa-percent"></i> Binder Content from Weights</div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="pcBit">Weight of bitumen</label>
+                                <div class="row"><input type="number" id="pcBit" value="27.5" min="0" step="any" inputmode="decimal"><span class="unit">any weight unit</span></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="pcMix">Total weight of mix</label>
+                                <div class="row"><input type="number" id="pcMix" value="500" min="0" step="any" inputmode="decimal"><span class="unit">same unit</span></div>
+                            </div>
+                        </div>
+                        <div class="results-panel" style="margin-top:6px;">
+                            <div class="results-grid" id="pcGrid"></div>
+                        </div>
+
+                        <div class="section-title" style="margin-top:28px;"><i class="fas fa-arrows-left-right"></i> Binder % by Mix ↔ by Aggregate</div>
+                        <div class="toggle-row">
+                            <span class="toggle-label">Convert from</span>
+                            <div class="toggle-switch" id="ppToggle" role="radiogroup" aria-label="Binder percentage basis">
+                                <button type="button" class="toggle-option active" data-pp="mix" role="radio" aria-checked="true">% of total mix</button>
+                                <button type="button" class="toggle-option" data-pp="agg" role="radio" aria-checked="false">% of aggregate weight</button>
+                            </div>
+                        </div>
+                        <div class="input-grid">
+                            <div class="input-group">
+                                <label for="ppVal">Binder content</label>
+                                <div class="row"><input type="number" id="ppVal" value="5.5" min="0" step="any" inputmode="decimal"><span class="unit">%</span></div>
+                            </div>
+                        </div>
+                        <div class="results-panel" style="margin-top:6px;">
+                            <div class="results-grid" id="ppGrid"></div>
+                        </div>
+                        <div class="info-block" id="cvSteps"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="action-btn" id="copyBtn" type="button"><i class="fas fa-copy"></i> Copy Result</button>
+                        <button class="action-btn" id="shareBtn" type="button"><i class="fas fa-share-alt"></i> Share Result</button>
+                        <button class="action-btn" id="downloadPDFBtn" type="button"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="action-btn secondary" id="resetAllBtn" type="button"><i class="fas fa-redo"></i> Reset All</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ARTICLE ===== -->
+            <div class="article-container">
+                <div class="article-header">
+                    <h2>Bitumen Calculator Guide: How to Calculate Bitumen Quantity for a Road</h2>
+                    <p>From road length and layer thickness to tonnes of bitumen, with density conversion, binder percentage, and prime and tack coat worked out step by step</p>
+                </div>
+
+                <div class="article-content">
+                    <div class="toc">
+                        <h2>📚 What's in This Guide</h2>
+                        <div class="toc-grid">
+                            <div class="toc-item"><a href="#how-works">1. How the Bitumen Calculator Works</a></div>
+                            <div class="toc-item"><a href="#how-to-use">2. How to Use the Bitumen Calculator</a></div>
+                            <div class="toc-item"><a href="#formula">3. Bitumen Calculation Formula</a></div>
+                            <div class="toc-item"><a href="#worked-example">4. Worked Example: 1 km, Two Layers</a></div>
+                            <div class="toc-item"><a href="#understanding-result">5. Understanding Your Result</a></div>
+                            <div class="toc-item"><a href="#binder-content">6. Bitumen Content in Asphalt</a></div>
+                            <div class="toc-item"><a href="#density">7. Bitumen Density and m³ to Tonnes</a></div>
+                            <div class="toc-item"><a href="#spray">8. Prime Coat and Tack Coat</a></div>
+                            <div class="toc-item"><a href="#units">9. Units and Terminology</a></div>
+                            <div class="toc-item"><a href="#tips">10. Practical Tips</a></div>
+                            <div class="toc-item"><a href="#mistakes">11. Common Mistakes</a></div>
+                            <div class="toc-item"><a href="#related">12. Related Calculations and Use Cases</a></div>
+                            <div class="toc-item"><a href="#faq">13. Frequently Asked Questions</a></div>
+                        </div>
+                    </div>
+
+                    <p>A bitumen calculator estimates how much bitumen binder a road or pavement layer needs, starting from its length, width, thickness, mix density, and binder percentage. It is useful for contractors, site engineers, quantity surveyors, students, and anyone pricing a driveway or car park, because bitumen is bought by weight, and an estimate that is a few tonnes out can mean a delayed delivery or an expensive surplus.</p>
+                    <p>This bitumen calculator handles several pavement layers at once and returns the bitumen in tonnes, kilograms, and litres, along with mix weight, aggregate weight, drums, and an optional cost. Two more tabs cover prime and tack coat quantities and m³-to-tonnes conversion. Enter your measurements in the calculator above to see every step of the working.</p>
+
+                    <div class="pro-tip">
+                        <strong>Quick answer:</strong>
+                        <p style="margin: 10px 0 0;">Bitumen (kg) = Length (m) &times; Width (m) &times; Thickness (m) &times; Mix density (kg/m³) &times; Binder % &divide; 100. A 1,000 m road, 7 m wide, with a 50 mm layer at 2,350 kg/m³ and 5.5% binder holds 350 m³ of mix, which weighs 822.5 tonnes, and 5.5% of that is about 45.2 tonnes of bitumen. Work in metres and compacted values, then add a small allowance for waste.</p>
+                    </div>
+
+                    <h2 id="how-works">1. How the Bitumen Calculator Works</h2>
+                    <p>The Road / Pavement Mix tab describes the road once and then each layer separately. You enter the road length and width, and for each layer its compacted thickness, the compacted mix density, and the binder content. The calculator multiplies length by width to get the area, multiplies the area by each layer's thickness to get volume, and converts that volume to weight with the mix density.</p>
+                    <p>It then takes the binder percentage of each layer's weight to find the bitumen, and treats the remainder as aggregate, which includes filler. Layers are added together, so a wearing course over a binder course over a base course is one calculation instead of three separate ones. The waste allowance is applied to the total bitumen to give the quantity to order, and the net figure is always shown beside it.</p>
+                    <p>From the net weight and the bitumen density you enter, the calculator also reports the bitumen volume in litres, and from your drum size it counts the drums, rounded up. If you give a price, it multiplies the order quantity by it.</p>
+                    <div class="pro-tip">
+                        <strong>Assumptions:</strong>
+                        <p style="margin: 10px 0 0;">The road is treated as a rectangle of constant width, and each layer as a uniform slab at its finished, compacted thickness. Binder content is taken as a percentage of the total mix weight, which is the usual way mix designs state it. The calculator does not add allowance for tapered edges, camber, shoulders, patching, or thickness that varies over an uneven base, so measure irregular areas in sections and enter them one at a time. Prime coat and tack coat are separate sprayed applications and are not part of the mix, which is why they have their own tab.</p>
+                    </div>
+
+                    <h2 id="how-to-use">2. How to Use the Bitumen Calculator</h2>
+                    <ol>
+                        <li>Choose Road / Pavement Mix, and pick metric or imperial units.</li>
+                        <li>Enter the road length and width. For a 1 km road, enter 1000 m, and the result also shows bitumen per kilometre.</li>
+                        <li>For each layer, choose a mix type to fill typical values, or leave it on Custom, then enter the thickness, mix density, and binder percentage from your specification.</li>
+                        <li>Use Add Another Layer for each additional course, up to 4 layers.</li>
+                        <li>Check the bitumen density, set the waste allowance, and enter the drum size if you order in drums.</li>
+                        <li>Optionally enter a price per tonne for bitumen (charged on the order quantity) and for asphalt mix (charged on the net mix weight) to see an estimated cost.</li>
+                        <li>Read the bitumen to order, the layer-by-layer table, and the step-by-step working, then use Copy, Share, or Download PDF to keep a record.</li>
+                    </ol>
+                    <p>For prime or tack coat, switch to the Prime / Tack Coat tab and enter the area and spray rate. For converting m³ to tonnes or finding a binder percentage, use the Convert &amp; Percent tab. If a value is outside the allowed range the calculator says so rather than changing it silently. Most fields use the nearest allowed value, while a bitumen density that is empty or outside its accepted range is replaced by the 1,020 kg/m³ default. It also flags values that look unusual, such as a binder content far outside the normal range.</p>
+
+                    <h2 id="formula">3. Bitumen Calculation Formula</h2>
+                    <div class="pro-tip">
+                        <code>Mix volume (m³) = Length (m) &times; Width (m) &times; Thickness (m)</code>
+                        <code>Mix weight (kg) = Mix volume (m³) &times; Mix density (kg/m³)</code>
+                        <code>Bitumen (kg) = Mix weight (kg) &times; Binder % &divide; 100</code>
+                        <p style="margin: 10px 0 0;">Thickness must be in metres, so divide millimetres by 1000 first: 50 mm is 0.05 m. Divide kilograms by 1000 for tonnes.</p>
+                    </div>
+                    <p>Combined, the three steps give one line you can check by hand, and the sum of all layers is the project total:</p>
+                    <div class="pro-tip">
+                        <code>Bitumen (kg) = L &times; W &times; T &times; &rho; &times; B &divide; 100</code>
+                        <code>Aggregate (kg) = Mix weight &minus; Bitumen</code>
+                        <code>Bitumen to order = Net bitumen &times; (1 + Waste %)</code>
+                        <p style="margin: 10px 0 0;">L = length, W = width, T = compacted thickness, &rho; = compacted mix density, and B = binder content as a percentage of total mix weight.</p>
+                    </div>
+                    <p>Two derived figures are handy for checking a result. Bitumen per square metre is the bitumen weight divided by the area, and bitumen volume in litres is the bitumen weight in kilograms divided by its density in kg/m³, multiplied by 1000. For a prime or tack coat there is no mix, so the formula is simply area &times; spray rate &times; number of coats.</p>
+
+                    <h2 id="worked-example">4. Worked Example: 1 km, Two Layers</h2>
+                    <p>These are the calculator's default values: a road 1,000 m long and 7 m wide with a 40 mm wearing course at 2,350 kg/m³ and 5.5% binder, over a 60 mm binder course at 2,400 kg/m³ and 4.5% binder. The bitumen density is 1,020 kg/m³, the waste allowance is 3%, and drums hold 200 kg.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Layer</th><th>Volume</th><th>Mix Weight</th><th>Binder</th><th>Bitumen</th></tr></thead>
+                        <tbody>
+                            <tr><td>Wearing course (40 mm)</td><td>280 m³</td><td>658.00 t</td><td>5.5%</td><td>36.19 t</td></tr>
+                            <tr><td>Binder course (60 mm)</td><td>420 m³</td><td>1,008.00 t</td><td>4.5%</td><td>45.36 t</td></tr>
+                            <tr class="total-row"><td><strong>Total</strong></td><td><strong>700 m³</strong></td><td><strong>1,666.00 t</strong></td><td><strong>4.9%</strong></td><td><strong>81.55 t</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <p>The area is 1,000 &times; 7 = 7,000 m². The wearing course volume is 7,000 &times; 0.040 = 280 m³, which at 2,350 kg/m³ weighs 658,000 kg, and 5.5% of that is 36,190 kg of bitumen. The binder course volume is 7,000 &times; 0.060 = 420 m³, which weighs 1,008,000 kg, and 4.5% of that is 45,360 kg.</p>
+                    <p>Together the layers need 81,550 kg, or 81.55 tonnes, of bitumen in 1,666 tonnes of mix, which leaves 1,584.45 tonnes of aggregate. The overall binder content works out to 81.55 &divide; 1,666 = 4.9%. The spread is 81,550 &divide; 7,000 = 11.65 kg per square metre, and since the road is exactly 1 km long, the same 81.55 tonnes is the figure per kilometre.</p>
+                    <p>A 3% allowance for waste gives 81.55 &times; 1.03 = 84.00 tonnes to order. In litres, 81,550 &divide; 1,020 &times; 1000 = 79,951 litres, or about 80 m³ of bitumen. With 200 kg drums, 83,996.5 kg &divide; 200 = 419.98, which rounds up to 420 drums.</p>
+
+                    <h2 id="understanding-result">5. Understanding Your Result</h2>
+                    <p>The headline figure is the bitumen to order, which is the net requirement plus your waste allowance. Take that to your supplier, and use the net figure when you compare against a bill of quantities or a mix design, because those documents rarely include wastage.</p>
+                    <p>This is an estimate, not a measurement. It is exact for the inputs you give it, but real quantities depend on how closely the finished thickness matches the design, how well the mix is compacted, and how much binder the plant actually adds. A few millimetres of extra thickness over a long road adds tonnes of mix, so the result is only as good as the thickness and density you start with.</p>
+                    <p>For rounding, keep full precision through the calculation and round only at the end. Bitumen is normally quoted in tonnes to two decimals, and drums or tanker loads are rounded up to whole units, because you cannot order a fraction of a drum. If the result sits just above a whole tanker load, check whether a small reduction in waste, or a rounding choice on the length, is hiding a real shortfall.</p>
+
+                    <h2 id="binder-content">6. Bitumen Content in Asphalt</h2>
+                    <p>Binder content is the share of the mix that is bitumen. Most asphalt mixes for roads contain somewhere between about 4% and 7% bitumen by weight, and the exact figure comes from a laboratory mix design for the aggregate and traffic. Different layers use different amounts, so the typical values below are starting points, not substitutes for your specification.</p>
+                    <table class="compare-table">
+                        <thead><tr><th>Mix type</th><th>Typical binder (% of mix)</th><th>Typical compacted density</th><th>Where it is used</th></tr></thead>
+                        <tbody>
+                            <tr><td>Dense-graded wearing course</td><td>5.0 to 6.0%</td><td>2,300 to 2,420 kg/m³</td><td>Top layer under traffic</td></tr>
+                            <tr><td>Binder or intermediate course</td><td>4.0 to 5.0%</td><td>2,350 to 2,450 kg/m³</td><td>Spreads load below the surface</td></tr>
+                            <tr><td>Base course</td><td>3.5 to 4.5%</td><td>2,350 to 2,450 kg/m³</td><td>Structural lower layer</td></tr>
+                            <tr><td>Stone mastic asphalt</td><td>6.0 to 7.0%</td><td>2,300 to 2,400 kg/m³</td><td>Heavy traffic, rut resistance</td></tr>
+                        </tbody>
+                    </table>
+                    <p>To find the percentage from weights, divide the weight of bitumen by the total weight of the mix and multiply by 100. If a plant used 27.5 tonnes of bitumen in 500 tonnes of mix, the binder content is 5.5%.</p>
+                    <p>One detail catches people out: some specifications state binder as a percentage of the aggregate weight rather than of the total mix. The two are not the same number. 5.5% by weight of the mix equals 5.5 &divide; 94.5 = 5.82% by weight of the aggregate, and the conversion in the other direction is aggregate % &divide; (100 + aggregate %). The Convert &amp; Percent tab does this for you, and this calculator always expects the percentage of total mix. The Asphalt Institute's <a href="https://www.asphaltinstitute.org/about-us/glossary/" target="_blank" rel="noopener">engineering glossary</a> treats bitumen and asphalt binder as the same material, which is why "bitumen" and "asphalt binder" are used interchangeably here.</p>
+
+                    <h2 id="density">7. Bitumen Density and m³ to Tonnes</h2>
+                    <p>Paving bitumen is slightly denser than water. A typical planning figure is about 1,020 kg/m³, and common grades fall roughly between 1,000 and 1,050 kg/m³, so one cubic metre weighs a little over one tonne. Always prefer the value on your supplier's data sheet, together with the temperature it applies to.</p>
+                    <p>Volume to weight is a multiplication, and weight to volume is a division:</p>
+                    <div class="pro-tip">
+                        <code>Tonnes = m³ &times; Density (kg/m³) &divide; 1000</code>
+                        <code>m³ = Tonnes &times; 1000 &divide; Density (kg/m³)</code>
+                        <p style="margin: 10px 0 0;">At 1,020 kg/m³, 10 m³ weighs 10.2 tonnes, and 10 tonnes occupies about 9.8 m³, or 9,804 litres.</p>
+                    </div>
+                    <p>Density falls as bitumen is heated, so a cubic metre of hot bitumen in a tank weighs less than a cubic metre at ambient temperature. That is why bitumen is normally bought and invoiced by weight, and why a tank's volume reading is only a rough guide to the tonnes inside. Use weight for ordering, and use volume only for storage and pumping capacity.</p>
+
+                    <h2 id="spray">8. Prime Coat and Tack Coat</h2>
+                    <p>A prime coat is sprayed on an unbound granular base before paving, and a tack coat is sprayed between asphalt layers so they bond. Neither is part of the mix, so their bitumen is calculated separately, from the area and a spray rate:</p>
+                    <div class="pro-tip">
+                        <code>Quantity (kg) = Area (m²) &times; Spray rate (kg/m²) &times; Number of coats</code>
+                        <p style="margin: 10px 0 0;">Litres = kg &divide; density (kg/m³) &times; 1000. In US units, enter the rate in gallons per square yard.</p>
+                    </div>
+                    <p>Spray rates vary with the product and the surface. Prime coat rates on granular bases are commonly under 1.2 kg/m², and tack coat rates are much lower, often a few tenths of a kilogram per square metre, but your specification and the supplier's data sheet decide. Check whether the rate refers to the emulsion or cutback you actually spray or to the residual bitumen left after the water or solvent has gone, because an emulsion contains water and the two figures can differ a lot. The tab lets you choose either basis, and for a residual rate you enter the residual bitumen content of your product, for example the percentage on its data sheet. The presets are only starting points.</p>
+
+                    <h2 id="units">9. Units and Terminology</h2>
+                    <ul>
+                        <li><strong>Bitumen:</strong> the black, sticky binder in asphalt. In North America it is usually called asphalt binder or asphalt cement.</li>
+                        <li><strong>Asphalt or asphalt mix:</strong> bitumen combined with aggregate and filler. Elsewhere it may be called bituminous concrete or hot mix asphalt.</li>
+                        <li><strong>Binder content:</strong> bitumen as a percentage of the total mix weight, typically 4% to 7%.</li>
+                        <li><strong>Compacted thickness and density:</strong> the finished layer after rolling. Use these, not the loose-laid values.</li>
+                        <li><strong>Tonne and US ton:</strong> a metric tonne is 1,000 kg, and a US (short) ton is 2,000 lb, about 907.2 kg. The imperial setting reports US tons.</li>
+                        <li><strong>Useful conversions:</strong> 1 ft = 0.3048 m, 1 in = 25.4 mm, 1 lb/ft³ = 16.018 kg/m³, 1 US gallon = 3.785 litres, 1 yd² = 0.8361 m².</li>
+                    </ul>
+                    <p>Mix density can also be given as bulk specific gravity. Multiply that by about 1,000 to get kg/m³, so a bulk specific gravity of 2.35 corresponds to roughly 2,350 kg/m³.</p>
+
+                    <h2 id="tips">10. Practical Tips</h2>
+                    <ul>
+                        <li>Use the finished, compacted thickness from the design. Loose mix leaves the paver thicker than the finished layer, so loose depth overstates the quantity.</li>
+                        <li>Take mix density and binder content from the job mix formula or mix design when you have it, and fall back on the typical values only for early estimates.</li>
+                        <li>For a road that changes width, split it into sections with a constant width and add the results, or divide the total area by the length to get an average width.</li>
+                        <li>Keep the unit system consistent. Switching to imperial converts your existing numbers, but check the labels before you read a result.</li>
+                        <li>Enter the drum weight your supplier actually delivers. A drum is often quoted around 200 kg, but net weights vary, and a few kilograms per drum adds up over hundreds of drums.</li>
+                        <li>Use the waste allowance for real losses such as tank heels, hose and plant start-up, and keep it separate from any contingency in your contract.</li>
+                        <li>If you like a spreadsheet, the same three formulas fit in three cells, and the PDF report gives you a printable record of inputs and results without one.</li>
+                        <li>Confirm the final order with your bitumen supplier, because grade, delivery temperature, and tanker size affect what can be delivered.</li>
+                    </ul>
+
+                    <h2 id="mistakes">11. Common Mistakes</h2>
+                    <ul>
+                        <li><strong>Leaving thickness in millimetres:</strong> using 50 instead of 0.05 m makes the answer 1,000 times too large. The calculator converts for you, but a hand check must too.</li>
+                        <li><strong>Using the loose-laid thickness:</strong> this overstates the quantity by roughly the amount the mix compacts.</li>
+                        <li><strong>Treating binder percentage as an addition to the aggregate:</strong> 5% of the mix is not 5 kg per 100 kg of aggregate. Check which basis your specification uses.</li>
+                        <li><strong>Mixing up bitumen weight and mix weight:</strong> a road needs hundreds of tonnes of mix but only a few tens of tonnes of bitumen. Ordering the mix figure as bitumen is a very expensive error.</li>
+                        <li><strong>Forgetting that layers differ:</strong> applying one binder content and density to every layer misses that wearing courses carry more binder than base courses.</li>
+                        <li><strong>Ignoring prime and tack coat:</strong> they are extra bitumen outside the mix and are easy to leave out of the order.</li>
+                        <li><strong>Treating one litre as one kilogram:</strong> bitumen is about 2% heavier than water, so a litre weighs roughly 1.02 kg, which is a real error on a large order.</li>
+                        <li><strong>Rounding early:</strong> rounding the volume or the percentage before multiplying compounds across a long road.</li>
+                    </ul>
+
+                    <h2 id="related">12. Related Calculations and Use Cases</h2>
+                    <p>If you want the weight of the finished asphalt for a driveway, car park, or patch repair rather than the binder alone, our <a href="https://calcsnaps.com/construction-calculators/asphalt-calculator">Asphalt Calculator</a> gives the mix tonnage directly. The bitumen figure here is the share of that tonnage that is binder.</p>
+                    <p>Common uses for this bitumen calculator include estimating bitumen for road construction and resurfacing, tender quantities for several pavement layers, bitumen consumption per kilometre or per square metre, driveways and private roads, car parks and hardstandings, and checking a supplier's delivery against the design. Students can also use the step-by-step working to check hand calculations.</p>
+
+                    <h2 id="faq">13. Frequently Asked Questions</h2>
+                    <div class="faq-section">
+                        <div class="faq-item active">
+                            <button type="button" class="faq-question" aria-expanded="true" aria-controls="bitfaq1-answer">How do I calculate bitumen quantity for a road?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bitfaq1-answer"><p>Multiply road length, width, and compacted layer thickness (all in metres) to get the mix volume in cubic metres. Multiply by the compacted mix density in kg/m³ to get the mix weight, then multiply by the binder content as a fraction of the mix. For a 1,000 m road, 7 m wide, with a 50 mm layer at 2,350 kg/m³ and 5.5% binder, that is 350 m³ × 2,350 = 822,500 kg of mix, and 822,500 × 0.055 = 45,238 kg, or about 45.2 tonnes of bitumen. The calculator above repeats this for every layer you add.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bitfaq2-answer">How much bitumen is required for 1 km of road?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bitfaq2-answer"><p>It depends on the width, layer thickness, mix density, and binder content, so there is no single figure. A 1 km road that is 7 m wide with a 50 mm layer at 5.5% binder needs about 45.2 tonnes, which is roughly 6.5 kg per square metre. Doubling the thickness doubles the bitumen, and each extra 0.5% of binder adds about 4.1 tonnes to that example. Enter 1000 m as the length in the calculator and it also shows the quantity per kilometre.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bitfaq3-answer">How do I convert bitumen from m³ to tonnes?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bitfaq3-answer"><p>Multiply the volume in cubic metres by the bitumen density in tonnes per cubic metre. At a typical density of about 1.02 t/m³ (1,020 kg/m³), 1 m³ weighs about 1.02 tonnes, and 10 m³ weighs 10.2 tonnes. To go the other way, divide tonnes by the density, so 10 tonnes is about 9.8 m³. Density changes with temperature and grade, so use the figure on your supplier's data sheet and note the temperature it applies to.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bitfaq4-answer">How do I calculate the bitumen percentage in asphalt?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bitfaq4-answer"><p>Divide the weight of bitumen by the total weight of the mix and multiply by 100. For example, 27.5 tonnes of bitumen in 500 tonnes of mix is 5.5%. Check whether your specification states binder as a percentage of the total mix or of the aggregate, because 5.5% of the mix equals about 5.82% of the aggregate weight. The Convert &amp; Percent tab in the calculator does both.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button type="button" class="faq-question" aria-expanded="false" aria-controls="bitfaq5-answer">How much extra bitumen should I order for waste?<i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer" id="bitfaq5-answer"><p>Many estimators add a small allowance, commonly around 2% to 5%, for tank and hose losses, plant start-up, and variations in compacted thickness, but the right figure comes from your contract and site conditions. The calculator applies a 3% default to the bitumen quantity and lets you change it, and it shows the net quantity separately so you can see exactly what the allowance adds.</p></div>
+                        </div>
+                    </div>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>A road's bitumen quantity comes down to one chain: area times thickness gives volume, volume times mix density gives weight, and weight times binder percentage gives bitumen. This bitumen calculator runs that chain for every layer, adds your waste allowance, and also converts to litres and drums, handles prime and tack coat, and converts m³ to tonnes. Accurate thickness, density, and binder content matter most, because each one multiplies through the whole result. Use the calculator above for your estimate, then confirm the order against your mix design and supplier.</p>
+
+                    <p style="font-size: 13px; color: var(--gray); margin-top: -8px;">This calculator is for planning purposes only. Binder content, mix density, and spray rates must follow your project specification and mix design. Confirm all quantities with your supplier before ordering.</p>
+
+                    <div class="calc-cta">
+                        <a href="#calculator-section" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <span>🛣️</span> Try the Bitumen Calculator Above <span>⚡</span>
+                        </a>
+                    </div>
+
+                    <div class="related-links">
+                        <h4>🔗 Related Calculators</h4>
+                        <div class="related-grid">
+                            <a href="#calculator-section" class="calculator-link" onclick="document.getElementById('calculator-section').scrollIntoView({behavior:'smooth'}); return false;">🛣️ Bitumen Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/asphalt-calculator">⚫ Asphalt Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">🪨 Gravel Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/stone-calculator">🧱 Stone Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">🌱 Dirt Calculator</a>
+                            <a href="https://calcsnaps.com/construction-calculators/square-footage-calculator">📐 Square Footage Calculator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="site-container">
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>🧮 CalcSnaps</h4>
+                    <p>Calculations in a Snap, fast, accurate, free.</p>
+                    <a href="/about-us" class="about-link">About Us →</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/contact-us">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Popular</h4>
+                    <a href="https://calcsnaps.com/construction-calculators/asphalt-calculator">Asphalt Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/gravel-calculator">Gravel Calculator</a>
+                    <a href="https://calcsnaps.com/construction-calculators/dirt-calculator">Dirt Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="/about-us">About Us</a>
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CalcSnaps. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    (function () {
+        'use strict';
+        const $ = id => document.getElementById(id);
+
+        function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = String(str);
+            return div.innerHTML;
+        }
+
+        // ==PURE-START==
+        const KG_LB = 0.45359237, KG_STON = 907.18474, L_GAL = 3.785411784;
+        const M2_YD2 = 0.83612736, M2_FT2 = 0.09290304, M3_YD3 = 0.764554858, M_MILE = 1609.344;
+        const FACT = {
+            metric:   { len: 1,      thk: 0.001,  dens: 1,           drum: 1 },
+            imperial: { len: 0.3048, thk: 0.0254, dens: 16.01846337, drum: KG_LB }
+        };
+        const LABELS = {
+            metric:   { len: 'm',  thk: 'mm', dens: 'kg/m³',  drum: 'kg', rate: 'kg/m²'   },
+            imperial: { len: 'ft', thk: 'in', dens: 'lb/ft³', drum: 'lb', rate: 'gal/yd²' }
+        };
+        // Typical starting values only (metric: thickness in m, density in kg/m3, binder % of mix weight)
+        const PRESETS = {
+            custom:  { name: 'Custom' },
+            wearing: { name: 'Wearing course',       t: 0.040, rho: 2350, pct: 5.5 },
+            binder:  { name: 'Binder course',        t: 0.060, rho: 2400, pct: 4.5 },
+            base:    { name: 'Base course',          t: 0.080, rho: 2400, pct: 4.0 },
+            sma:     { name: 'Stone mastic asphalt', t: 0.040, rho: 2350, pct: 6.5 }
+        };
+        const SPRAY_PRESETS = { prime: 0.9, tack: 0.3 };   // kg/m2, starting points only
+
+        function ceilEps(x) { return Math.ceil(x - 1e-9); }
+        function fmtNum(n, d) {
+            if (!isFinite(n)) return '0';
+            return n.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+        }
+        function trimNum(n, d) { return parseFloat(n.toFixed(d)).toString(); }
+
+        // All inputs here are metric: lengths in m, thickness in m, density in kg/m3, weights in kg.
+        function computeRoad(p) {
+            const area = p.L * p.W;
+            const wasteF = 1 + p.wastePct / 100;
+            const rows = p.layers.map(l => {
+                const vol = area * l.t;
+                const mixKg = vol * l.rho;
+                const bitKg = mixKg * l.pct / 100;
+                return { name: l.name, t: l.t, rho: l.rho, pct: l.pct, vol: vol, mixKg: mixKg, bitKg: bitKg, aggKg: mixKg - bitKg };
+            });
+            const sum = k => rows.reduce((s, r) => s + r[k], 0);
+            const vol = sum('vol'), mixKg = sum('mixKg'), bitKg = sum('bitKg'), aggKg = sum('aggKg');
+            const orderBitKg = bitKg * wasteF;
+            const orderMixKg = mixKg * wasteF;
+            return {
+                valid: area > 0 && rows.length > 0,
+                area: area, rows: rows, vol: vol, mixKg: mixKg, bitKg: bitKg, aggKg: aggKg,
+                wasteF: wasteF, orderBitKg: orderBitKg, orderMixKg: orderMixKg,
+                bitLitres: p.bitDen > 0 ? bitKg / p.bitDen * 1000 : 0,
+                perM2: area > 0 ? bitKg / area : 0,
+                perKmKg: p.L > 0 ? bitKg / p.L * 1000 : 0,
+                perMileKg: p.L > 0 ? bitKg / p.L * M_MILE : 0,
+                effPct: mixKg > 0 ? bitKg / mixKg * 100 : 0,
+                drums: p.drumKg > 0 ? ceilEps(orderBitKg / p.drumKg) : 0,
+                costBit: p.priceBit * orderBitKg / p.perUnitKg,
+                costMix: p.priceMix * mixKg / p.perUnitKg
+            };
+        }
+
+        function computeSpray(p) {
+            const area = p.L * p.W;
+            const netKg = area * p.rateKgM2 * p.coats;
+            const orderKg = netKg * (1 + p.wastePct / 100);
+            return {
+                valid: area > 0 && p.rateKgM2 > 0,
+                area: area, netKg: netKg, orderKg: orderKg,
+                netLitres: p.bitDen > 0 ? netKg / p.bitDen * 1000 : 0,
+                drums: p.drumKg > 0 ? ceilEps(orderKg / p.drumKg) : 0,
+                cost: p.priceBit * orderKg / p.perUnitKg
+            };
+        }
+
+        // value in a given unit -> every unit, via density (kg/m3)
+        const TO_KG = { t: 1000, kg: 1, ston: KG_STON, lb: KG_LB };
+        function convertAll(value, unit, den) {
+            let kg;
+            if (TO_KG[unit] !== undefined) kg = value * TO_KG[unit];
+            else if (unit === 'm3') kg = value * den;
+            else if (unit === 'l') kg = value * den / 1000;
+            else kg = value * L_GAL * den / 1000;                // US gallons
+            const m3 = den > 0 ? kg / den : 0;
+            return { kg: kg, t: kg / 1000, ston: kg / KG_STON, lb: kg / KG_LB, m3: m3, l: m3 * 1000, gal: m3 * 1000 / L_GAL };
+        }
+        function mixToAgg(p) { return p / (100 - p) * 100; }
+        function aggToMix(p) { return p / (100 + p) * 100; }
+        // ==PURE-END==
+
+        // ===== State =====
+        let system = 'metric', mode = 'road', ppMode = 'mix', sprBasis = 'product', basisMsg = '';
+        let layerSeq = 0, anyClamped = false, last = null;
+        const MAX_LAYERS = 4;
+        const isImp = () => system === 'imperial';
+
+        // Read a unit-bearing field (display units) and return the metric value, clamped to metric limits.
+        function tu(raw, kind, min, max, fb) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fb === undefined ? 0 : fb;
+            const m = n * FACT[system][kind];
+            if (m < min || m > max) anyClamped = true;
+            return clamp(m, min, max);
+        }
+        // Read a unit field through its stored metric value, so switching units never loses precision.
+        function tm(el, min, max, fb) {
+            const m = parseFloat(el.dataset.m);
+            if (!isFinite(m)) return fb === undefined ? 0 : fb;
+            if (m < min || m > max) anyClamped = true;
+            return clamp(m, min, max);
+        }
+        function tp(raw, min, max, fb) {
+            const n = parseFloat(raw);
+            if (!isFinite(n)) return fb === undefined ? 0 : fb;
+            if (n < min || n > max) anyClamped = true;
+            return clamp(n, min, max);
+        }
+
+        // ===== Display helpers =====
+        const wBig = kg => isImp() ? { v: kg / KG_STON, u: 'US tons' } : { v: kg / 1000, u: 'tonnes' };
+        const fBig = (kg, d) => { const w = wBig(kg); return fmtNum(w.v, d === undefined ? 2 : d) + ' ' + w.u; };
+        const fSmall = kg => isImp() ? fmtNum(kg / KG_LB, 0) + ' lb' : fmtNum(kg, 0) + ' kg';
+        const fVolBit = litres => isImp() ? fmtNum(litres / L_GAL, 0) + ' US gal' : fmtNum(litres, 0) + ' L';
+        const fArea = m2 => isImp() ? fmtNum(m2 / M2_FT2, 0) + ' ft²' : fmtNum(m2, 0) + ' m²';
+        const fMixVol = m3 => isImp() ? fmtNum(m3 / M3_YD3, 1) + ' yd³' : fmtNum(m3, 1) + ' m³';
+        const fThk = m => isImp() ? trimNum(m / 0.0254, 2) + ' in' : trimNum(m * 1000, 1) + ' mm';
+        const fPerArea = kgm2 => isImp() ? fmtNum(kgm2 / KG_LB * M2_YD2, 2) + ' lb/yd²' : fmtNum(kgm2, 2) + ' kg/m²';
+        function fCost(v) { return fmtNum(v, 2); }
+        function dispVal(metric, kind) { return metric / FACT[system][kind]; }
+        function roundDisp(v, kind) { return trimNum(v, kind === 'dens' ? 2 : 3); }
+
+        // Canonical metric value kept on each unit field so switching systems is lossless.
+        function syncM(el) {
+            const n = parseFloat(el.value);
+            if (isFinite(n)) el.dataset.m = String(n * FACT[system][el.dataset.kind]);
+            else delete el.dataset.m;
+        }
+        function setMetric(el, m) {
+            el.dataset.m = String(m);
+            el.value = roundDisp(dispVal(m, el.dataset.kind), el.dataset.kind);
+        }
+        // A gal/yd2 rate is a volume. For a residual-bitumen rate the volume is bitumen, so it uses a standard
+        // bitumen density; for a product rate it is the product, so it uses the density entered by the user.
+        const RESID_DEN = 1020;
+        // A residual-bitumen volume rate is converted with straight bitumen density (1,020 kg/m3),
+        // a product (emulsion/cutback) volume rate with the density the user entered.
+        function rateDen() { return sprBasis === 'residual' ? RESID_DEN : bitDenM(); }
+        function rateToKg(v) { return isImp() ? v * L_GAL / M2_YD2 * (rateDen() / 1000) : v; }
+        function rateFromKg(kg) { return isImp() ? kg * M2_YD2 / L_GAL * 1000 / rateDen() : kg; }
+        function validDen(m, lo, hi) { lo = lo || 900; hi = hi || 1200; return isFinite(m) && m >= lo && m <= hi ? m : 1020; }
+        function bitDenM() { return validDen(parseFloat($('bitDen').dataset.m), 700, 1300); }   // only used for spray products
+
+        function updateUnitLabels() {
+            document.querySelectorAll('[data-unit]').forEach(s => { s.textContent = LABELS[system][s.dataset.unit]; });
+            document.querySelectorAll('[data-tonlabel]').forEach(s => { s.textContent = isImp() ? 'US ton' : 'tonne'; });
+        }
+
+        function setSystem(next) {
+            if (next === system) return;
+            const rateKg = rateToKg(parseFloat($('sprRate').value));    // convert with the old system first
+            const old = system;
+            system = next;
+            document.querySelectorAll('[data-kind]').forEach(el => {
+                let m = parseFloat(el.dataset.m);
+                if (!isFinite(m)) { const n = parseFloat(el.value); if (!isFinite(n)) return; m = n * FACT[old][el.dataset.kind]; }
+                el.value = roundDisp(dispVal(m, el.dataset.kind), el.dataset.kind);
+                el.dataset.m = String(m);
+            });
+            if (isFinite(rateKg)) $('sprRate').value = trimNum(rateFromKg(rateKg), isImp() ? 4 : 3);
+            setToggle('unitToggle', 'system', system);
+            updateUnitLabels();
+            calculate();
+        }
+
+        // ===== Toggles =====
+        function wireToggle(containerId, attr, onChange) {
+            const box = $(containerId);
+            box.querySelectorAll('.toggle-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    setToggle(containerId, attr, btn.dataset[attr]);
+                    onChange(btn.dataset[attr]);
+                });
+            });
+        }
+        function setToggle(containerId, attr, value) {
+            $(containerId).querySelectorAll('.toggle-option').forEach(b => {
+                const on = b.dataset[attr] === String(value);
+                b.classList.toggle('active', on);
+                b.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+        }
+
+        function showMode(m) {
+            mode = m;
+            $('panelRoad').style.display = m === 'road' ? '' : 'none';
+            $('panelSpray').style.display = m === 'spray' ? '' : 'none';
+            $('panelShared').style.display = m === 'convert' ? 'none' : '';
+            $('unitRow').style.display = m === 'convert' ? 'none' : '';
+            $('resRoad').style.display = m === 'road' ? '' : 'none';
+            $('resSpray').style.display = m === 'spray' ? '' : 'none';
+            $('resConvert').style.display = m === 'convert' ? '' : 'none';
+            calculate();
+        }
+
+        // ===== Layers =====
+        function layerCardHtml(n, key) {
+            const u = LABELS[system];
+            const opts = Object.keys(PRESETS).map(k => '<option value="' + k + '"' + (k === key ? ' selected' : '') + '>' + PRESETS[k].name + '</option>').join('');
+            return '<div class="wall-card-header"><span class="wall-card-label">Layer ' + n + '</span><button type="button" class="remove-wall-btn"><i class="fas fa-trash-can"></i> Remove</button></div>' +
+                '<div class="input-grid">' +
+                '<div class="input-group"><label for="lyP' + n + '">Mix type (fills typical values)</label><select class="ly-preset" id="lyP' + n + '">' + opts + '</select></div>' +
+                '<div class="input-group"><label for="lyT' + n + '">Compacted thickness</label><div class="row"><input type="number" class="ly-t" id="lyT' + n + '" data-kind="thk" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="thk">' + u.thk + '</span></div></div>' +
+                '<div class="input-group"><label for="lyD' + n + '">Compacted mix density</label><div class="row"><input type="number" class="ly-d" id="lyD' + n + '" data-kind="dens" min="0" step="any" inputmode="decimal"><span class="unit" data-unit="dens">' + u.dens + '</span></div></div>' +
+                '<div class="input-group"><label for="lyB' + n + '">Binder content (% of mix)</label><div class="row"><input type="number" class="ly-b" id="lyB' + n + '" min="0" max="20" step="any" inputmode="decimal"><span class="unit">%</span></div></div>' +
+                '</div>';
+        }
+        function applyPreset(card, key) {
+            const p = PRESETS[key];
+            if (!p || key === 'custom') return;
+            setMetric(card.querySelector('.ly-t'), p.t);
+            setMetric(card.querySelector('.ly-d'), p.rho);
+            card.querySelector('.ly-b').value = p.pct;
+        }
+        function addLayer(key, vals) {
+            const count = $('layersContainer').querySelectorAll('.layer-card').length;
+            if (count >= MAX_LAYERS) return;
+            layerSeq += 1;
+            const card = document.createElement('div');
+            card.className = 'wall-card layer-card';
+            card.innerHTML = layerCardHtml(layerSeq, key || 'custom');
+            $('layersContainer').appendChild(card);
+            if (vals) {
+                setMetric(card.querySelector('.ly-t'), vals.t);
+                setMetric(card.querySelector('.ly-d'), vals.rho);
+                card.querySelector('.ly-b').value = vals.pct;
+            } else {
+                applyPreset(card, key || 'custom');
+            }
+            renumberLayers();
+            calculate();
+        }
+        function renumberLayers() {
+            const cards = $('layersContainer').querySelectorAll('.layer-card');
+            cards.forEach((c, i) => {
+                c.querySelector('.wall-card-label').textContent = 'Layer ' + (i + 1);
+                c.querySelector('.remove-wall-btn').style.display = cards.length > 1 ? '' : 'none';
+            });
+            $('addLayerBtn').disabled = cards.length >= MAX_LAYERS;
+        }
+        $('addLayerBtn').addEventListener('click', () => {
+            const n = $('layersContainer').querySelectorAll('.layer-card').length;
+            addLayer(['wearing', 'binder', 'base', 'base'][n] || 'custom');
+        });
+        $('layersContainer').addEventListener('change', e => {
+            if (e.target.classList.contains('ly-preset')) {
+                applyPreset(e.target.closest('.layer-card'), e.target.value);
+                calculate();
+            }
+        });
+        $('layersContainer').addEventListener('click', e => {
+            const btn = e.target.closest('.remove-wall-btn');
+            if (!btn) return;
+            btn.closest('.layer-card').remove();
+            renumberLayers();
+            calculate();
+        });
+
+        // ===== Warnings =====
+        function showWarnings(list) {
+            const w = $('warningNote');
+            if (anyClamped) list.push('One or more values were outside the allowed range and were capped to the nearest allowed value.');
+            if (list.length) {
+                w.innerHTML = '<i class="fas fa-triangle-exclamation"></i> ' + list.map(escapeHtml).join(' ');
+                w.classList.add('show');
+            } else {
+                w.classList.remove('show');
+            }
+        }
+
+        // ===== Road mode =====
+        function stepLine(s) { return s + '<br>'; }
+        function calcRoad() {
+            const issues = [];
+            $('bitDenLabel').textContent = 'Bitumen density';
+            $('priceBitOf').textContent = 'of bitumen';
+            const L = tm($('roadL'), 0, 100000);
+            const W = tm($('roadW'), 0, 500);
+            const common = readCommon();
+            const priceMix = tp($('priceMix').value, 0, 1e9);
+            const layers = [];
+            $('layersContainer').querySelectorAll('.layer-card').forEach((card, i) => {
+                const presetKey = card.querySelector('.ly-preset').value;
+                const name = presetKey === 'custom' ? 'Layer ' + (i + 1) : PRESETS[presetKey].name;
+                const rawT = card.querySelector('.ly-t').value, rawD = card.querySelector('.ly-d').value, rawB = card.querySelector('.ly-b').value;
+                const t = tm(card.querySelector('.ly-t'), 0, 1);
+                const rho = tm(card.querySelector('.ly-d'), 0, 3000);
+                const pct = tp(rawB, 0, 20);
+                if (rawB === '' && t > 0 && rho > 0) {
+                    issues.push('Layer ' + (i + 1) + ' needs a binder content (% of mix), so it is not included yet.');
+                    return;
+                }
+                if (!(t > 0) || !(rho > 0)) {
+                    if (rawT !== '' || rawD !== '') issues.push('Layer ' + (i + 1) + ' needs a thickness and a mix density greater than zero, so it is not included yet.');
+                    return;
+                }
+                if (t < 0.015 || t > 0.3) issues.push('Layer ' + (i + 1) + ' thickness of ' + fThk(t) + ' looks unusual for a single asphalt layer. Check the unit.');
+                if (rho < 2000 || rho > 2600) issues.push('Layer ' + (i + 1) + ' density of ' + fmtNum(rho, 0) + ' kg/m³ is outside the usual 2,000 to 2,600 range for compacted asphalt. Check the unit.');
+                if (pct < 3 || pct > 8) issues.push('Layer ' + (i + 1) + ' binder content of ' + trimNum(pct, 2) + '% is outside the usual 3% to 8% of mix weight. Check that it is not a percentage of aggregate.');
+                layers.push({ name: name, t: t, rho: rho, pct: pct });
+            });
+            if (common.bitDenWarn) issues.push(common.bitDenWarn);
+            if (!(L > 0) && $('roadL').value !== '') issues.push('Road length needs to be greater than zero.');
+            if (!(W > 0) && $('roadW').value !== '') issues.push('Road width needs to be greater than zero.');
+            showWarnings(issues);
+
+            const r = computeRoad({ L: L, W: W, layers: layers, bitDen: common.bitDen, wastePct: common.waste, drumKg: common.drumKg,
+                priceBit: common.priceBit, priceMix: priceMix, perUnitKg: isImp() ? KG_STON : 1000 });
+
+            $('roadHero').textContent = r.valid ? fBig(r.orderBitKg) : '0';
+            $('roadNet').textContent = r.valid ? fBig(r.bitKg) + ' (' + fSmall(r.bitKg) + ')' : '0';
+            $('roadVol').textContent = r.valid ? fVolBit(r.bitLitres) : '0';
+            $('roadMix').textContent = r.valid ? fBig(r.mixKg) : '0';
+            $('roadAgg').textContent = r.valid ? fBig(r.aggKg) : '0';
+            $('roadArea').textContent = r.valid ? fArea(r.area) : '0';
+            $('roadMixVol').textContent = r.valid ? fMixVol(r.vol) : '0';
+            $('roadPerArea').textContent = r.valid ? fPerArea(r.perM2) : '0';
+            $('roadPerLenLabel').textContent = isImp() ? 'Bitumen per mile' : 'Bitumen per km';
+            $('roadPerLen').textContent = r.valid ? (isImp() ? fmtNum(r.perMileKg / KG_STON, 2) + ' US tons' : fmtNum(r.perKmKg / 1000, 2) + ' tonnes') : '0';
+            $('roadDrums').textContent = r.valid && common.drumKg > 0 ? fmtNum(r.drums, 0) : '-';
+            const priced = common.priceBit > 0 || priceMix > 0;
+            const costTotal = r.valid ? (common.priceBit > 0 ? r.costBit : 0) + (priceMix > 0 ? r.costMix : 0) : 0;
+            $('roadCost').textContent = priced && r.valid ? fCost(costTotal) : '-';
+
+            const body = $('roadBody');
+            body.innerHTML = '';
+            if (r.valid) {
+                r.rows.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = '<td>' + escapeHtml(row.name) + '</td><td>' + escapeHtml(fThk(row.t)) + '</td><td>' + escapeHtml(fMixVol(row.vol)) + '</td><td>' + escapeHtml(fBig(row.mixKg)) + '</td><td>' + trimNum(row.pct, 2) + '%</td><td>' + escapeHtml(fBig(row.bitKg)) + '</td>';
+                    body.appendChild(tr);
+                });
+                const tot = document.createElement('tr');
+                tot.className = 'total-row';
+                tot.innerHTML = '<td>Total</td><td></td><td>' + escapeHtml(fMixVol(r.vol)) + '</td><td>' + escapeHtml(fBig(r.mixKg)) + '</td><td>' + trimNum(r.effPct, 2) + '%</td><td>' + escapeHtml(fBig(r.bitKg)) + '</td>';
+                body.appendChild(tot);
+            } else {
+                body.innerHTML = '<tr><td colspan="6">Enter a road length, width, and at least one complete layer.</td></tr>';
+            }
+
+            drawDiagram(r);
+
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (r.valid) {
+                if (isImp()) step += stepLine('<em>Your imperial inputs are converted to metric (m, kg) for the working below.</em>') + '<br>';
+                step += stepLine('<strong>Area:</strong> ' + fmtNum(L, 2) + ' m &times; ' + fmtNum(W, 2) + ' m = ' + fmtNum(r.area, 2) + ' m²');
+                r.rows.forEach(row => {
+                    step += stepLine('<strong>' + escapeHtml(row.name) + ':</strong> ' + fmtNum(r.area, 2) + ' m² &times; ' + trimNum(row.t, 4) + ' m = ' + fmtNum(row.vol, 2) + ' m³; &times; ' + fmtNum(row.rho, 1) + ' kg/m³ = ' + fmtNum(row.mixKg, 0) + ' kg of mix; &times; ' + trimNum(row.pct, 2) + '% = ' + fmtNum(row.bitKg, 0) + ' kg of bitumen');
+                });
+                step += '<br>' + stepLine('<strong>Bitumen:</strong> ' + r.rows.map(x => fmtNum(x.bitKg, 0)).join(' + ') + ' = ' + fmtNum(r.bitKg, 0) + ' kg (' + fmtNum(r.bitKg / 1000, 2) + ' tonnes)');
+                step += stepLine('<strong>Aggregate:</strong> ' + fmtNum(r.mixKg, 0) + ' kg of mix &minus; ' + fmtNum(r.bitKg, 0) + ' kg bitumen = ' + fmtNum(r.aggKg, 0) + ' kg');
+                step += stepLine('<strong>With waste:</strong> ' + fmtNum(r.bitKg / 1000, 2) + ' t &times; ' + r.wasteF.toFixed(2) + ' = ' + fmtNum(r.orderBitKg / 1000, 2) + ' tonnes to order');
+                step += stepLine('<strong>Volume:</strong> ' + fmtNum(r.bitKg, 0) + ' kg &divide; ' + fmtNum(common.bitDen, 1) + ' kg/m³ &times; 1000 = ' + fmtNum(r.bitLitres, 0) + ' litres');
+                if (common.drumKg > 0) step += stepLine('<strong>Drums:</strong> ' + fmtNum(r.orderBitKg, 1) + ' kg &divide; ' + fmtNum(common.drumKg, 1) + ' kg, rounded up = ' + fmtNum(r.drums, 0) + ' drums');
+            } else {
+                step += 'Enter a road length, width, and at least one complete layer to see the math.';
+            }
+            $('roadSteps').innerHTML = step;
+
+            const secs = [];
+            if (r.valid) {
+                secs.push({ h: 'Inputs', items: [
+                    'Road: ' + trimNum(dispVal(L, 'len'), 2) + ' ' + LABELS[system].len + ' long, ' + trimNum(dispVal(W, 'len'), 2) + ' ' + LABELS[system].len + ' wide (' + fArea(r.area) + ')',
+                    'Bitumen density: ' + trimNum(dispVal(common.bitDen, 'dens'), 1) + ' ' + LABELS[system].dens + ', waste: ' + trimNum(common.waste, 2) + '%'
+                ].concat(r.rows.map(x => x.name + ': ' + fThk(x.t) + ', ' + trimNum(dispVal(x.rho, 'dens'), 1) + ' ' + LABELS[system].dens + ', ' + trimNum(x.pct, 2) + '% binder')) });
+                const res = [
+                    'Bitumen to order (with waste): ' + fBig(r.orderBitKg),
+                    'Net bitumen: ' + fBig(r.bitKg) + ' (' + fSmall(r.bitKg) + ')',
+                    'Bitumen volume: ' + fVolBit(r.bitLitres),
+                    'Total mix weight: ' + fBig(r.mixKg),
+                    'Aggregate weight: ' + fBig(r.aggKg),
+                    'Mix volume: ' + fMixVol(r.vol),
+                    'Bitumen per area: ' + fPerArea(r.perM2),
+                    (isImp() ? 'Bitumen per mile: ' + fmtNum(r.perMileKg / KG_STON, 2) + ' US tons' : 'Bitumen per km: ' + fmtNum(r.perKmKg / 1000, 2) + ' tonnes')
+                ];
+                if (common.drumKg > 0) res.push('Drums: ' + fmtNum(r.drums, 0));
+                if (priced) res.push('Estimated cost: ' + fCost(costTotal));
+                secs.push({ h: 'Results', items: res });
+            }
+            last = { title: 'Bitumen Calculator Result', file: 'Bitumen_Calculator_Report', ready: r.valid, sections: secs };
+        }
+
+        function readCommon() {
+            const out = {};
+            const bd = tm($('bitDen'), 0, 1e6, 1020);
+            // Straight bitumen is about 1,000 to 1,050 kg/m3; sprayed emulsions and cutbacks can sit a little outside 900 to 1,200.
+            const lo = mode === 'spray' ? 700 : 900, hi = mode === 'spray' ? 1300 : 1200;
+            out.bitDen = validDen(bd, lo, hi);
+            const denRaw = $('bitDen').value;
+            out.bitDenWarn = (denRaw === '' || !(bd > 0)) ? 'No density was entered, so the default 1,020 kg/m³ was used.' : (out.bitDen !== bd) ? 'Density of ' + fmtNum(bd, 0) + ' kg/m³ is outside the usual ' + fmtNum(lo, 0) + ' to ' + fmtNum(hi, 0) + ' range, so 1,020 kg/m³ was used instead.' : '';
+            out.waste = tp($('wastePct').value, 0, 30);
+            out.drumKg = tm($('drumKg'), 0, 2000);
+            out.priceBit = tp($('priceBit').value, 0, 1e9);
+            return out;
+        }
+
+        // ===== Spray mode =====
+        function calcSpray() {
+            const issues = [];
+            $('bitDenLabel').textContent = 'Density of sprayed product';
+            $('priceBitOf').textContent = 'of sprayed product';
+            const L = tm($('sprL'), 0, 100000);
+            const W = tm($('sprW'), 0, 500);
+            const rawRate = parseFloat($('sprRate').value);
+            const common = readCommon();
+            let rate = isFinite(rawRate) && rawRate > 0 ? rateToKg(rawRate) : 0;
+            if (rate > 5) { anyClamped = true; rate = 5; }
+            const coats = Math.round(tp($('sprCoats').value, 1, 3, 1));
+            if (common.bitDenWarn) issues.push(common.bitDenWarn);
+            // On the residual basis the percentage must be a valid 1-100%. Otherwise the calculation pauses; nothing is adjusted silently.
+            const resNum = parseFloat($('sprRes').value);
+            const resOk = sprBasis !== 'residual' || (resNum >= 1 && resNum <= 100);
+            const resPct = sprBasis === 'residual' && resOk ? resNum : 100;
+            if (!resOk) issues.push('Enter a residual bitumen content between 1% and 100%. The calculation is paused until it is valid.');
+            if (basisMsg) { issues.push(basisMsg); basisMsg = ''; }
+            showWarnings(issues);
+            const r = computeSpray({ L: L, W: W, rateKgM2: resOk ? rate / (resPct / 100) : 0, coats: coats, bitDen: common.bitDen, wastePct: common.waste, drumKg: common.drumKg, priceBit: common.priceBit, perUnitKg: isImp() ? KG_STON : 1000 });
+
+            $('sprHero').textContent = r.valid ? fBig(r.orderKg) : '0';
+            $('sprArea').textContent = r.valid ? fArea(r.area) : '0';
+            $('sprResid').textContent = r.valid && sprBasis === 'residual' ? fBig(r.netKg * resPct / 100) + ' (' + fSmall(r.netKg * resPct / 100) + ')' : '-';
+            $('sprNet').textContent = r.valid ? fBig(r.netKg) + ' (' + fSmall(r.netKg) + ')' : '0';
+            $('sprVol').textContent = r.valid ? fVolBit(r.netLitres) : '0';
+            $('sprOrderW').textContent = r.valid ? fSmall(r.orderKg) : '0';
+            $('sprDrums').textContent = r.valid && common.drumKg > 0 ? fmtNum(r.drums, 0) : '-';
+            $('sprCost').textContent = r.valid && common.priceBit > 0 ? fCost(r.cost) : '-';
+
+            const preset = document.querySelector('#sprayPresetToggle .active').dataset.spray;
+            $('sprayHint').innerHTML = '<i class="fas fa-lightbulb"></i> ' + (preset === 'prime'
+                ? 'Prime coat on a granular base is often sprayed at roughly 0.6 to 1.2 kg/m².'
+                : preset === 'tack'
+                    ? 'Tack coat between asphalt layers is usually much lighter, often roughly 0.2 to 0.5 kg/m².'
+                    : 'Enter the rate from your specification or the supplier data sheet.') +
+                ' Enter the density of the product you actually spray (emulsion and cutback differ from straight bitumen) in the density field below. Check whether the rate is for the emulsion or cutback you spray or for residual bitumen. These are starting points, not specifications.';
+
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (r.valid) {
+                if (isImp()) step += stepLine('<em>Your imperial inputs are converted to metric for the working below.</em>') + '<br>';
+                step += stepLine('<strong>Area:</strong> ' + fmtNum(L, 2) + ' m &times; ' + fmtNum(W, 2) + ' m = ' + fmtNum(r.area, 2) + ' m²');
+                if (sprBasis === 'residual' && isImp()) step += stepLine('<em>The gal/yd² residual rate was converted to kg/m² with straight bitumen density, 1,020 kg/m³.</em>');
+                if (sprBasis === 'residual') step += stepLine('<strong>Residual rate to product:</strong> ' + trimNum(rate, 4) + ' kg/m² of residual bitumen &divide; ' + trimNum(resPct, 2) + '% = ' + trimNum(rate / (resPct / 100), 4) + ' kg/m² of product');
+                step += stepLine('<strong>Product quantity:</strong> ' + fmtNum(r.area, 2) + ' m² &times; ' + trimNum(rate / (resPct / 100), 4) + ' kg/m² &times; ' + coats + ' coat' + (coats === 1 ? '' : 's') + ' = ' + fmtNum(r.netKg, 0) + ' kg');
+                step += stepLine('<strong>With waste:</strong> ' + fmtNum(r.netKg, 0) + ' kg &times; ' + (1 + common.waste / 100).toFixed(2) + ' = ' + fmtNum(r.orderKg, 0) + ' kg');
+                step += stepLine('<strong>Volume:</strong> ' + fmtNum(r.netKg, 0) + ' kg &divide; ' + fmtNum(common.bitDen, 1) + ' kg/m³ &times; 1000 = ' + fmtNum(r.netLitres, 0) + ' litres');
+            } else {
+                step += resOk ? 'Enter a length, width, and spray rate to see the math.' : 'The residual bitumen content must be between 1% and 100%. Enter a valid percentage to see the math.';
+            }
+            $('sprSteps').innerHTML = step;
+
+            const secs = [];
+            if (r.valid) {
+                secs.push({ h: 'Inputs', items: [
+                    'Area: ' + fArea(r.area) + ' (' + trimNum(dispVal(L, 'len'), 2) + ' x ' + trimNum(dispVal(W, 'len'), 2) + ' ' + LABELS[system].len + ')',
+                    'Spray rate: ' + trimNum(parseFloat($('sprRate').value), 4) + ' ' + LABELS[system].rate + (sprBasis === 'residual' ? ' of residual bitumen (' + trimNum(resPct, 2) + '% residual in product)' : ' of product sprayed') + ', ' + coats + ' coat(s)',
+                    'Bitumen density: ' + trimNum(dispVal(common.bitDen, 'dens'), 1) + ' ' + LABELS[system].dens + ', waste: ' + trimNum(common.waste, 2) + '%'] });
+                const res = (sprBasis === 'residual' ? ['Residual bitumen: ' + fBig(r.netKg * resPct / 100)] : []).concat(['Product to order (with waste): ' + fBig(r.orderKg) + ' (' + fSmall(r.orderKg) + ')', 'Net product: ' + fBig(r.netKg), 'Net volume: ' + fVolBit(r.netLitres)]);
+                if (common.drumKg > 0) res.push('Drums: ' + fmtNum(r.drums, 0));
+                if (common.priceBit > 0) res.push('Estimated cost: ' + fCost(r.cost));
+                secs.push({ h: 'Results', items: res });
+            }
+            last = { title: 'Bitumen Prime / Tack Coat Result', file: 'Bitumen_Spray_Report', ready: r.valid, sections: secs };
+        }
+
+        // ===== Convert mode =====
+        function card(label, value) { return '<div class="result-card"><div class="result-label">' + label + '</div><div class="result-value small">' + escapeHtml(value) + '</div></div>'; }
+        const UNIT_NAMES = { m3: 'm³', l: 'litres', gal: 'US gallons', t: 'tonnes', kg: 'kg', ston: 'US tons', lb: 'lb' };
+        function calcConvert() {
+            const issues = [];
+            const v = tp($('cvVal').value, 0, 1e9);
+            const unit = $('cvUnit').value;
+            const den = tp($('cvDen').value, 0, 1500);
+            let den2 = den;
+            if (den > 0 && (den < 900 || den > 1200)) issues.push('Bitumen density of ' + fmtNum(den, 0) + ' kg/m³ is outside the usual 900 to 1,200 range. Check the value.');
+            const c = convertAll(v, unit, den2);
+            const ok = den2 > 0;
+            $('cvGrid').innerHTML = ok
+                ? card('Cubic metres', fmtNum(c.m3, 3) + ' m³') + card('Litres', fmtNum(c.l, 0) + ' L') + card('US gallons', fmtNum(c.gal, 0) + ' gal') +
+                  card('Tonnes (metric)', fmtNum(c.t, 3) + ' t') + card('Kilograms', fmtNum(c.kg, 0) + ' kg') + card('US tons', fmtNum(c.ston, 3) + ' tons') + card('Pounds', fmtNum(c.lb, 0) + ' lb')
+                : '<div class="result-card" style="grid-column:1/-1">Enter a bitumen density above zero.</div>';
+
+            const bit = tp($('pcBit').value, 0, 1e12), mix = tp($('pcMix').value, 0, 1e12);
+            let pcHtml, pct = 0, pctAgg = 0, pcOk = false;
+            if (mix > 0 && bit <= mix) {
+                pcOk = true;
+                pct = bit / mix * 100;
+                pctAgg = mix > bit ? bit / (mix - bit) * 100 : 0;
+                pcHtml = card('Binder % of mix', fmtNum(pct, 2) + '%') + card('Binder % of aggregate', mix > bit ? fmtNum(pctAgg, 2) + '%' : '-') + card('Aggregate weight', fmtNum(mix - bit, 2)) + card('Bitumen per 1,000 of mix', fmtNum(pct * 10, 1));
+            } else if (mix > 0 && bit > mix) {
+                pcHtml = '<div class="result-card" style="grid-column:1/-1">The bitumen weight cannot be larger than the total mix weight.</div>';
+            } else {
+                pcHtml = '<div class="result-card" style="grid-column:1/-1">Enter the bitumen weight and the total mix weight.</div>';
+            }
+            $('pcGrid').innerHTML = pcHtml;
+
+            const pv = tp($('ppVal').value, 0, 99);
+            const conv = ppMode === 'mix' ? mixToAgg(pv) : aggToMix(pv);
+            $('ppGrid').innerHTML = pv > 0
+                ? card(ppMode === 'mix' ? 'Binder % of total mix' : 'Binder % of aggregate', fmtNum(pv, 2) + '%') + card(ppMode === 'mix' ? 'Binder % of aggregate' : 'Binder % of total mix', fmtNum(conv, 2) + '%')
+                : '<div class="result-card" style="grid-column:1/-1">Enter a binder content above zero.</div>';
+
+            showWarnings(issues);
+
+            let step = '<strong>How this was calculated</strong><br><br>';
+            if (ok) step += stepLine('<strong>Volume and weight:</strong> weight = volume &times; density, and volume = weight &divide; density. At ' + fmtNum(den2, 1) + ' kg/m³, ' + fmtNum(v, 3) + ' ' + UNIT_NAMES[unit] + ' = ' + fmtNum(c.kg, 1) + ' kg = ' + fmtNum(c.m3, 4) + ' m³.');
+            if (pcOk) step += stepLine('<strong>Binder %:</strong> ' + fmtNum(bit, 2) + ' &divide; ' + fmtNum(mix, 2) + ' &times; 100 = ' + fmtNum(pct, 2) + '% of the mix.');
+            if (pv > 0) step += stepLine('<strong>Basis change:</strong> ' + (ppMode === 'mix'
+                ? '% of aggregate = ' + fmtNum(pv, 2) + ' &divide; (100 &minus; ' + fmtNum(pv, 2) + ') &times; 100 = ' + fmtNum(conv, 2) + '%.'
+                : '% of mix = ' + fmtNum(pv, 2) + ' &divide; (100 + ' + fmtNum(pv, 2) + ') &times; 100 = ' + fmtNum(conv, 2) + '%.'));
+            $('cvSteps').innerHTML = step;
+
+            const items = [];
+            if (ok) items.push(fmtNum(v, 3) + ' ' + UNIT_NAMES[unit] + ' at ' + fmtNum(den2, 1) + ' kg/m3 = ' + fmtNum(c.t, 3) + ' t, ' + fmtNum(c.kg, 0) + ' kg, ' + fmtNum(c.m3, 3) + ' m3, ' + fmtNum(c.l, 0) + ' L');
+            if (pcOk) items.push('Binder content: ' + fmtNum(pct, 2) + '% of mix (' + (mix > bit ? fmtNum(pctAgg, 2) + '% of aggregate' : 'n/a') + ')');
+            if (pv > 0) items.push((ppMode === 'mix' ? fmtNum(pv, 2) + '% of mix = ' + fmtNum(conv, 2) + '% of aggregate' : fmtNum(pv, 2) + '% of aggregate = ' + fmtNum(conv, 2) + '% of mix'));
+            last = { title: 'Bitumen Conversion Result', file: 'Bitumen_Conversion_Report', ready: items.length > 0, sections: [{ h: 'Results', items: items }] };
+        }
+
+        // ===== Diagram =====
+        function drawDiagram(r) {
+            const svg = $('roadSvg');
+            if (!r.valid) {
+                svg.setAttribute('viewBox', '0 0 640 60');
+                svg.innerHTML = '<text x="320" y="34" text-anchor="middle" class="sv-text">Enter a complete layer to see the cross-section</text>';
+                return;
+            }
+            const totalT = r.rows.reduce((s, x) => s + x.t, 0);
+            const H = 130, pad = 14, gap = 0;
+            const hs = r.rows.map(x => Math.max(26, x.t / totalT * H));
+            let y = pad + 6, out = '';
+            r.rows.forEach((row, i) => {
+                const h = hs[i];
+                out += '<rect x="20" y="' + y.toFixed(1) + '" width="600" height="' + h.toFixed(1) + '" class="sv-l' + (i % 4) + '"/>';
+                out += '<text x="320" y="' + (y + h / 2 + 4).toFixed(1) + '" text-anchor="middle" class="sv-lt">' + escapeHtml(row.name + ' · ' + fThk(row.t) + ' · ' + trimNum(row.pct, 2) + '% binder') + '</text>';
+                y += h + gap;
+            });
+            out += '<rect x="20" y="' + y.toFixed(1) + '" width="600" height="14" class="sv-ground"/>';
+            out += '<text x="320" y="' + (y + 11).toFixed(1) + '" text-anchor="middle" class="sv-text">Base / subgrade</text>';
+            svg.setAttribute('viewBox', '0 0 640 ' + Math.ceil(y + 14 + pad));
+            svg.innerHTML = out;
+        }
+
+        // ===== Dispatcher =====
+        function calculate() {
+            anyClamped = false;
+            if (mode === 'road') calcRoad();
+            else if (mode === 'spray') calcSpray();
+            else calcConvert();
+        }
+
+        document.querySelector('.calc-body-inner').addEventListener('input', e => {
+            const el = e.target;
+            if (el.dataset && el.dataset.kind) syncM(el);
+            if (el.id === 'sprRate') setToggle('sprayPresetToggle', 'spray', 'custom');
+            calculate();
+        });
+        $('cvUnit').addEventListener('change', calculate);
+
+        wireToggle('modeToggle', 'mode', showMode);
+        wireToggle('unitToggle', 'system', v => { const keep = v; system === keep ? calculate() : setSystem(keep); });
+        wireToggle('sprayPresetToggle', 'spray', v => {
+            if (v !== 'custom') {
+                // Preset rates are product rates (kg/m2 of the product sprayed); on the residual basis they are scaled by the residual %.
+                let kg = SPRAY_PRESETS[v];
+                if (sprBasis === 'residual') {
+                    const resPct = parseFloat($('sprRes').value);
+                    if (resPct >= 1 && resPct <= 100) kg = kg * resPct / 100;
+                    else { basisMsg = 'Enter a residual bitumen content between 1% and 100% before choosing a preset, so the preset rate can be converted to residual bitumen.'; setToggle('sprayPresetToggle', 'spray', 'custom'); calculate(); return; }
+                }
+                $('sprRate').value = trimNum(rateFromKg(kg), isImp() ? 4 : 3);
+            }
+            calculate();
+        });
+        wireToggle('sprBasisToggle', 'basis', v => {
+            // Same physical application, new basis: residual rate = product rate x residual %.
+            // Without a valid residual % the rate cannot be converted, so the basis is left unchanged.
+            const resPct = parseFloat($('sprRes').value);
+            const kg = rateToKg(parseFloat($('sprRate').value));
+            if (v !== sprBasis) {
+                if (!(resPct >= 1 && resPct <= 100)) {
+                    setToggle('sprBasisToggle', 'basis', sprBasis);
+                    basisMsg = 'Enter a residual bitumen content between 1% and 100% before switching the rate basis, so the spray rate can be converted correctly.';
+                    calculate();
+                    return;
+                }
+                if (isFinite(kg) && kg > 0) {
+                    const f = resPct / 100;
+                    const newKg = v === 'residual' ? kg * f : kg / f;
+                    sprBasis = v;
+                    $('sprRate').value = trimNum(rateFromKg(newKg), isImp() ? 4 : 3);
+                } else {
+                    sprBasis = v;
+                }
+            }
+            $('sprResGroup').style.display = v === 'residual' ? '' : 'none';
+            setToggle('sprayPresetToggle', 'spray', 'custom');
+            calculate();
+        });
+        wireToggle('ppToggle', 'pp', v => { ppMode = v; calculate(); });
+
+        // ===== Copy / Share =====
+        function buildSummary() {
+            calculate();
+            if (!last.ready) return last.title + ': enter your measurements to see results.\nSource: CalcSnaps Bitumen Calculator (https://calcsnaps.com/construction-calculators/bitumen-calculator)';
+            let text = last.title + '\n';
+            last.sections.forEach(s => { text += s.h + ':\n' + s.items.map(i => '  ' + i).join('\n') + '\n'; });
+            text += 'Source: CalcSnaps Bitumen Calculator (https://calcsnaps.com/construction-calculators/bitumen-calculator)';
+            return text;
+        }
+        $('copyBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            const btn = this; const original = btn.innerHTML;
+            navigator.clipboard.writeText(text).then(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }).catch(() => {
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            });
+        });
+        $('shareBtn').addEventListener('click', function () {
+            const text = buildSummary();
+            if (navigator.share) {
+                navigator.share({ title: 'Bitumen Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/bitumen-calculator' }).catch(() => {});
+            } else {
+                const btn = this; const original = btn.innerHTML;
+                navigator.clipboard.writeText(text).then(() => {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!';
+                }).catch(() => {
+                    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy';
+                });
+                setTimeout(() => { btn.innerHTML = original; }, 1500);
+            }
+        });
+
+        // ===== PDF export (jsPDF loads only when needed) =====
+        let jsPDFReady = false;
+        function ensureJsPDF(callback) {
+            if (jsPDFReady && window.jspdf) { callback(); return; }
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+            script.onload = () => { jsPDFReady = true; callback(); };
+            script.onerror = () => {
+                const btn = $('downloadPDFBtn');
+                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not load PDF tool';
+                setTimeout(() => { btn.innerHTML = '<i class="fas fa-file-pdf"></i> Download PDF'; btn.disabled = false; }, 2000);
+            };
+            document.body.appendChild(script);
+        }
+        // jsPDF's built-in fonts only cover basic Latin, so swap the few symbols the page uses.
+        function pdfSafe(s) { return String(s).replace(/m³/g, 'm3').replace(/m²/g, 'm2').replace(/ft²/g, 'ft2').replace(/ft³/g, 'ft3').replace(/yd²/g, 'yd2').replace(/yd³/g, 'yd3').replace(/·/g, '-').replace(/[^\x20-\x7E]/g, ''); }
+        function downloadPDF() {
+            calculate();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            let y = 20;
+            const ensure = h => { if (y + h > 280) { doc.addPage(); y = 20; } };
+            const write = (str, x, size, color) => {
+                doc.setFontSize(size); doc.setTextColor(color[0], color[1], color[2]);
+                doc.splitTextToSize(pdfSafe(str), 190 - x).forEach(line => { ensure(6); doc.text(line, x, y); y += 5.5; });
+            };
+            const purple = [139, 92, 246], black = [0, 0, 0];
+            doc.setFontSize(20); doc.setTextColor(139, 92, 246);
+            doc.text(pdfSafe(last.title), 105, y, { align: 'center' }); y += 10;
+            doc.setFontSize(10); doc.setTextColor(100, 100, 100);
+            doc.text('Generated: ' + new Date().toLocaleString(), 105, y, { align: 'center' }); y += 8;
+            doc.line(20, y, 190, y); y += 10;
+            if (!last.ready) {
+                write('No complete inputs were entered.', 25, 11, black);
+            } else {
+                last.sections.forEach(s => {
+                    write(s.h, 20, 14, purple); y += 2;
+                    s.items.forEach(i => write(i, 25, 10.5, black));
+                    y += 4;
+                });
+            }
+            doc.setFontSize(9); doc.setTextColor(120, 120, 120);
+            const pages = doc.getNumberOfPages();
+            for (let p = 1; p <= pages; p++) {
+                doc.setPage(p);
+                doc.text('Planning estimate only. Confirm binder content, density, and spray rates with your specification.', 105, 285, { align: 'center' });
+                doc.text('Generated by CalcSnaps - Bitumen Calculator', 105, 291, { align: 'center' });
+            }
+            doc.save(last.file + '_' + Date.now() + '.pdf');
+        }
+        $('downloadPDFBtn').addEventListener('click', function () {
+            const btn = this;
+            btn.disabled = true;
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+            ensureJsPDF(() => {
+                downloadPDF();
+                btn.innerHTML = original;
+                btn.disabled = false;
+            });
+        });
+
+        // ===== Reset =====
+        function loadDefaultLayers() {
+            $('layersContainer').innerHTML = '';
+            layerSeq = 0;
+            addLayer('wearing');
+            addLayer('binder');
+        }
+        function resetAll() {
+            system = 'metric'; mode = 'road'; ppMode = 'mix';
+            setToggle('modeToggle', 'mode', 'road');
+            setToggle('unitToggle', 'system', 'metric');
+            setToggle('sprayPresetToggle', 'spray', 'prime');
+            setToggle('ppToggle', 'pp', 'mix');
+            sprBasis = 'product'; setToggle('sprBasisToggle', 'basis', 'product'); $('sprResGroup').style.display = 'none'; $('sprRes').value = 60;
+            updateUnitLabels();
+            const defs = { roadL: 1000, roadW: 7, sprL: 1000, sprW: 7, bitDen: 1020, drumKg: 200 };
+            Object.keys(defs).forEach(id => setMetric($(id), defs[id]));
+            $('sprRate').value = '0.9'; $('sprCoats').value = 1;
+            $('wastePct').value = 3; $('priceBit').value = ''; $('priceMix').value = '';
+            $('cvVal').value = 10; $('cvUnit').value = 'm3'; $('cvDen').value = 1020;
+            $('pcBit').value = 27.5; $('pcMix').value = 500; $('ppVal').value = 5.5;
+            loadDefaultLayers();
+            showMode('road');
+
+            const btn = $('resetAllBtn');
+            const original = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Reset Done!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            btn.style.color = 'white';
+            setTimeout(() => { btn.innerHTML = original; btn.style.background = ''; btn.style.color = ''; }, 1500);
+        }
+        $('resetAllBtn').addEventListener('click', resetAll);
+
+        // ===== FAQ =====
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    item.classList.toggle('active');
+                    q.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+                });
+            });
+        });
+
+        // ===== Init =====
+        $('wasteHint').innerHTML = '<i class="fas fa-lightbulb"></i> Many estimators allow roughly 2% to 5% extra bitumen for losses and thickness variation. Use the figure in your contract or from your supplier, and keep it separate from any contingency.';
+        document.querySelectorAll('[data-kind]').forEach(syncM);
+        updateUnitLabels();
+        loadDefaultLayers();
+        calculate();
+    })();
+    </script>
+</body>
+</html>
