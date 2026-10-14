@@ -12,12 +12,12 @@
     <meta name="author" content="CalcSnaps">
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://calcsnaps.com/construction-calculators/wallpaper-calculator">
+    <link rel="canonical" href="https://calcsnaps.com/calculators/wallpaper-calculator">
 
     <meta property="og:title" content="Wallpaper Calculator: How Many Rolls Do You Need?">
     <meta property="og:description" content="Free wallpaper calculator with pattern repeat and match types. Get rolls to buy, strips, and cost for any room.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://calcsnaps.com/construction-calculators/wallpaper-calculator">
+    <meta property="og:url" content="https://calcsnaps.com/calculators/wallpaper-calculator">
     <meta property="og:site_name" content="CalcSnaps">
 
     <script type="application/ld+json">
@@ -26,7 +26,7 @@
         "@type": "WebApplication",
         "name": "Wallpaper Calculator",
         "description": "Calculate how many wallpaper rolls a room needs from strips, roll size, pattern repeat, and match type, with optional openings, spare allowance, and cost",
-        "url": "https://calcsnaps.com/construction-calculators/wallpaper-calculator",
+        "url": "https://calcsnaps.com/calculators/wallpaper-calculator",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "Any",
         "offers": {
@@ -52,7 +52,7 @@
         },
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://calcsnaps.com/construction-calculators/wallpaper-calculator"
+            "@id": "https://calcsnaps.com/calculators/wallpaper-calculator"
         },
         "datePublished": "2026-10-11",
         "dateModified": "2026-10-11"
@@ -1417,7 +1417,7 @@
         }
 
         // ===== Copy / Share / PDF =====
-        const SRC = 'Source: CalcSnaps Wallpaper Calculator (https://calcsnaps.com/construction-calculators/wallpaper-calculator)';
+        const SRC = 'Source: CalcSnaps Wallpaper Calculator (https://calcsnaps.com/calculators/wallpaper-calculator)';
         const MATCH_NAME = { straight: 'Straight match', half: 'Half-drop match', random: 'Free (random) match' };
         function summaryLines() {
             const r = calculateAll();
@@ -1439,7 +1439,7 @@
         });
         $('shareBtn').addEventListener('click', function () {
             const text = buildSummary();
-            if (navigator.share) navigator.share({ title: 'Wallpaper Calculator Result', text: text, url: 'https://calcsnaps.com/construction-calculators/wallpaper-calculator' }).catch(() => {});
+            if (navigator.share) navigator.share({ title: 'Wallpaper Calculator Result', text: text, url: 'https://calcsnaps.com/calculators/wallpaper-calculator' }).catch(() => {});
             else {
                 const btn = this; const original = btn.innerHTML;
                 navigator.clipboard.writeText(text).then(() => { btn.innerHTML = '<i class="fas fa-check"></i> Copied to share!'; }).catch(() => { btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Could not copy'; });
